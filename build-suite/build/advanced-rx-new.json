@@ -1,0 +1,67 @@
+{
+  "dependencies": [
+    {
+      "repository": {
+        "url": "../",
+        "type": "file"
+      },
+      "source": {
+        "path": "cartridges"
+      },
+      "npm": {
+        "install": true,
+        "scripts": [
+          "compile:js",
+          "compile:scss",
+          "compile:fonts"
+        ]
+      },
+      "siteImport": {
+        "enabled": "true",
+        "sites": [
+          "AdvancedRx"
+        ],
+        "initPath": "sites/site_template",
+        "demoPath": "sites/site_demo"
+      },
+      "cartridges": [
+        "int_worldpay_core",
+        "int_worldpay_csc",
+        "int_worldpay_sfra",
+        "worldpay_sfra_changes",
+        "app_storefront_base",
+        "bm_app_storefront_base",
+        "modules"
+      ]
+    }
+  ],
+  "environments": {
+    "sample": {
+      "server": "",
+      "username": "",
+      "password": "",
+      "client_id": "",
+      "client_secret": ""
+    }
+  },
+  "settings": {
+    "siteImport": {
+      "enabled": "true",
+      "filenames": {
+        "init": "site_import",
+        "meta": "site_metadata",
+        "content": "site_content"
+      }
+    },
+    "project": {
+      "version": "build-suite-sfra-sample"
+    },
+    "optimize": {
+      "postcss": false,
+      "browserify": false,
+      "js": false,
+      "css": false,
+      "concatenate": true
+    }
+  }
+}

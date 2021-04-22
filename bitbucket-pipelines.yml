@@ -1,0 +1,21 @@
+image: node:10.19.0
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Deploy to CI
+          caches:
+            - node
+            - buildsuite
+          script:
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=advanced-rx-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=advanced-rx-ci
+
+definitions:
+    caches:
+        buildsuite: ~/build-suite/node-modules
