@@ -25,6 +25,7 @@
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
+        "app_drschar_storefront",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
