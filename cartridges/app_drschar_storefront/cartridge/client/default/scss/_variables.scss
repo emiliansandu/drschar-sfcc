@@ -1,0 +1,97 @@
+@import "base/_variables";
+
+$white: #fff !default;
+$black: #000 !default;
+// $blue: #0070d2 !default;
+$green: #008827 !default;
+$red: #c00 !default;
+$salmon: #FFB75D;
+// primary is replaced by css variable --skin-primary-color-1
+
+//Brand
+$primary: rgb(207, 0, 62) !default;
+$blue: rgb(68, 45, 49) !default;
+$primaryHover: rgb(92, 06, 25) !default;
+
+//Messaging
+$success: $green !default;
+$Warning: $salmon !default;
+$danger: $red !default;
+$light-blue: #7ed0ee !default;
+
+// Gray Opaque
+$grey1: #DCD3D4 !default;
+$grey2: #C4B6B8 !default;
+$grey3: #AB999D;
+$grey4: #927E81 !default;
+$grey5: #796266 !default;
+$grey6: #5F474B !default;
+$grey7: #442D31 !default;
+$grey8: #ccc !default;
+$grey8: #999 !default;
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+
+$light-gray: $grey1 !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey6 !default;
+$darker-gray: $grey7 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$menu-link: $grey6 !default;
+$close-menu-bg: $grey2 !default;
+$link-color: $dark-gray !default;
+$hr-border-color: $grey3 !default;
+
+$font-family-regular: "Brandon Grotesque Regular", sans-serif;
+$font-family-bold: "Brandon Grotesque Bold", sans-serif;
+$font-family-black: "Brandon Grotesque Black", sans-serif;
+$font-family-light: "Brandon Grotesque Light", sans-serif;
+$font-family-medium: "Brandon Grotesque Medium", sans-serif;
+$font-family-thin: "Brandon Grotesque Thin", sans-serif;
+
+$font-family-andes:"Andes", sans-serif;
+
+$font-family-base:$font-family-andes!default;
+
+body {
+    font-family: $font-family-base;
+    background-color: black;
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Bold";
+    src: url("../../fonts/Brandon/Brandon_bld.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Black";
+    src: url("../../fonts/Brandon/Brandon_blk.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Light";
+    src: url("../../fonts/Brandon/Brandon_light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Medium";
+    src: url("../../fonts/Brandon/Brandon_med.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Regular";
+    src: url("../../fonts/Brandon/Brandon_reg.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Brandon Grotesque Thin";
+    src: url("../../fonts/Brandon/Brandon_thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Andes";
+    src: url("../../fonts/ANDES/Latinotype-Andes") format("opentype");
+}
+
