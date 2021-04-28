@@ -16,15 +16,9 @@
 }
 
 .suggestions {
-    display: block;
-    position: absolute;
     border: 1px solid $grey3;
     background-color: $white;
     box-shadow: 0 3px 10px rgba(100, 100, 100, 0.5);
-    top: 0;
-    right: 0;
-    width: 21.875rem;
-    z-index: 3;
 
     @include media-breakpoint-only(xs) {
         display: flex;
