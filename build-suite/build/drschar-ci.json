@@ -19,7 +19,7 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
@@ -37,11 +37,11 @@
   ],
   "environments": {
     "sample": {
-      "server": "",
-      "username": "",
-      "password": "",
-      "client_id": "",
-      "client_secret": ""
+      "server": "bglf-004.sandbox.us01.dx.commercecloud.salesforce.com",
+      "username": "aabrego@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_NWckw38JURPLg9jYhOOQmw==",
+      "client_id": "01869803-5ad8-468c-a8bf-a54e3c7b985f",
+      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q=="
     }
   },
   "settings": {
@@ -54,7 +54,7 @@
       }
     },
     "project": {
-      "version": "build-suite-sfra-sample"
+      "version": "drschar_website_ci"
     },
     "optimize": {
       "postcss": false,

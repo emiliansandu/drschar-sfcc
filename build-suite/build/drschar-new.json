@@ -19,12 +19,13 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
+        "app_drschar_storefront",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
@@ -37,11 +38,11 @@
   ],
   "environments": {
     "sample": {
-      "server": "bglf-004.sandbox.us01.dx.commercecloud.salesforce.com",
-      "username": "aabrego@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_NWckw38JURPLg9jYhOOQmw==",
-      "client_id": "01869803-5ad8-468c-a8bf-a54e3c7b985f",
-      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q=="
+      "server": "",
+      "username": "",
+      "password": "",
+      "client_id": "",
+      "client_secret": ""
     }
   },
   "settings": {
@@ -54,7 +55,7 @@
       }
     },
     "project": {
-      "version": "advancedrx_website_ci"
+      "version": "build-suite-sfra-sample"
     },
     "optimize": {
       "postcss": false,
