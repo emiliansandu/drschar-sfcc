@@ -26,7 +26,9 @@ server.get('Start', consentTracking.consent, cache.applyDefaultCache, function (
     var pageMetaHelper = require('*/cartridge/scripts/helpers/pageMetaHelper');
 
     pageMetaHelper.setPageMetaTags(req.pageMetaData, Site.current);
-    res.render('/home/homePage');
+    var PageMgr = require('dw/experience/PageMgr');
+    var page = PageMgr.getPage('drshomepage');
+    res.page(page.ID, {});
     next();
 }, pageMetaData.computedPageMetaData);
 
