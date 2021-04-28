@@ -118,7 +118,7 @@
   "paths": {
     "base": "./cartridges/app_storefront_base"
   },
-  "packageName": "app_storefront_base",
+  "packageName": "app_drschar_storefront",
   "babel": {
     "presets": [
       "env"

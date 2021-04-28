@@ -3,7 +3,7 @@
     <name>AdvancedRx</name>
     <currency>USD</currency>
     <taxation>gross</taxation>
-    <custom-cartridges>bm_app_storefront_base:int_worldpay_sfra:int_worldpay_core:int_worldpay_csc:app_storefront_base</custom-cartridges>
+    <custom-cartridges>app_drschar_storefront:bm_app_storefront_base:int_worldpay_sfra:int_worldpay_core:int_worldpay_csc:app_storefront_base</custom-cartridges>
     <home-page-meta-tag-rules>
         <page-meta-tag-rule rule-id="Homepage Title"/>
         <page-meta-tag-rule rule-id="Homepage Robots"/>
