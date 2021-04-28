@@ -9,7 +9,7 @@
 		<startnode>Reset</startnode>
 	</pipeline>
 	<sites>
-		<site site-id="AdvancedRx"/>
+		<site site-id="drschar"/>
 	</sites>
 	<run-once>2015-05-22T13:40:00.000Z</run-once>
 	<notification>

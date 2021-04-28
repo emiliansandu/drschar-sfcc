@@ -19,7 +19,7 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
@@ -54,7 +54,7 @@
       }
     },
     "project": {
-      "version": "advancedrx_website_ci"
+      "version": "drschar_website_ci"
     },
     "optimize": {
       "postcss": false,

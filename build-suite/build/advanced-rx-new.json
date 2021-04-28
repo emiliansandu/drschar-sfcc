@@ -19,7 +19,7 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
