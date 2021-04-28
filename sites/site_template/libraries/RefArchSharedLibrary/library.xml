@@ -12210,6 +12210,22 @@ Burlington, MA 01803, USA&lt;br /&gt;&#13;
         <online-flag site-id="RefArch">true</online-flag>
         <page-attributes/>
     </content>
+    <content content-id="drshomepage">
+        <display-name xml:lang="x-default">drshomepage</display-name>
+        <description xml:lang="x-default">HomePage for Dr. Schar WebSite</description>
+        <type>page.homePage</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <visibility-mode xml:lang="x-default">visible</visibility-mode>
+        <data xml:lang="x-default">{ }</data>
+        <online-flag>false</online-flag>
+        <online-flag site-id="drschar">true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <searchable-flag site-id="drschar">false</searchable-flag>
+        <page-attributes/>
+        <sitemap-included-flag site-id="drschar">false</sitemap-included-flag>
+    </content>
 
     <content content-id="e1e2eab9a8455daecbcceda4e2">
         <display-name xml:lang="x-default">Product Tile Component</display-name>
