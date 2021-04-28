@@ -19,12 +19,13 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
+        "app_drschar_storefront",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
