@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 
-@import "./variables";
+@import "variables";
 @import "base/global";
-@import "./skin/skinVariables";
 @import "components/header";
 @import "components/headerSearch";
+@import "components/footer";
 

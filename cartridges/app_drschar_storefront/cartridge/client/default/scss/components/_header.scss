@@ -1,3 +1,15 @@
+header {
+    .nav-role-navigation{
+        background-color: $yellow-brand;
+        .header{
+            border-bottom: 0px;
+            color: $blue;
+        }
+        .search-field{
+            border: 0px;
+        }
+    }
+}
 
 .brand{
    img{
