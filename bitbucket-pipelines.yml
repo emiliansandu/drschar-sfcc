@@ -15,7 +15,12 @@ pipelines:
             - npm run test
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=advanced-rx-ci
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=advanced-rx-ci
-
+      - step:
+          name: Deploy to development
+          deployment: development
+          # trigger: manual  # Uncomment to make this a manual deployment.
+          script:
+            - echo "Deploying to test environment"
 definitions:
     caches:
         buildsuite: ~/build-suite/node-modules
