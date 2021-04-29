@@ -13,14 +13,41 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=advanced-rx-ci
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=advanced-rx-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-ci
       - step:
           name: Deploy to development
-          deployment: development
-          # trigger: manual  # Uncomment to make this a manual deployment.
+          caches:
+            - node
+            - buildsuite
+          trigger: manual
           script:
-            - echo "Deploying to test environment"
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development
+    master:
+      - step:
+          name: Ready?
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm install
+              - npm test
+      - step:
+          name: Deploy to Staging
+          trigger: manual
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm --prefix ./build-suite/ install
+              - npm --prefix ./build-suite/ rebuild node-sass
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-staging              
+
 definitions:
     caches:
         buildsuite: ~/build-suite/node-modules
