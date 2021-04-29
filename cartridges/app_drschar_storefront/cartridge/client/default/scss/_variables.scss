@@ -9,23 +9,9 @@ $salmon: #FFB75D;
 // primary is replaced by css variable --skin-primary-color-1
 
 //Brand
-$primary: rgb(207, 0, 62) !default;
-$blue: rgb(68, 45, 49) !default;
-$primaryHover: rgb(92, 06, 25) !default;
-$yellow-brand: rgb(205, 209, 0) !default;
-$brand-footer: #f3f1ee;
-$brand-footer2: #edeae8;
-$brand-footer3: #422d31;
 $primary: rgb(207, 0, 62);
 $blue: rgb(68, 45, 49);
 $primaryHover: rgb(92, 06, 25);
-$primary: rgb(207, 0, 62) !default;
-$blue: rgb(68, 45, 49) !default;
-$primaryHover: rgb(92, 06, 25) !default;
-$yellow-brand: rgb(205, 209, 0) !default;
-$brand-footer: #f3f1ee;
-$brand-footer2: #edeae8;
-$brand-footer3: #422d31;
 
 //Messaging
 $success: $green;
@@ -37,26 +23,26 @@ $light-blue: #7ed0ee;
 $grey1: #DCD3D4;
 $grey2: #C4B6B8;
 $grey3: #AB999D;
-$grey4: #927E81 !default;
-$grey5: #796266 !default;
-$grey6: #5F474B !default;
-$grey7: #442D31 !default;
-$grey8: #ccc !default;
-$grey9: #999 !default;
-$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
-$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+$grey4: #927E81;
+$grey5: #796266;
+$grey6: #5F474B;
+$grey7: #442D31;
+$grey8: #ccc;
+$grey9: #999;
+$grey-transparent-1: rgba(0, 0, 0, 0.65);
+$grey-transparent-2: rgba(0, 0, 0, 0.25);
 
-$light-gray: $grey1 !default;
-$slightly-darker-gray: $grey4 !default;
-$dark-gray: $grey6 !default;
-$darker-gray: $grey7 !default;
-$horizontal-rule-grey: $grey3 !default;
-$product-number-grey: $grey3 !default;
-$horizontal-border-grey: $grey4 !default;
-$menu-link: $grey6 !default;
-$close-menu-bg: $grey2 !default;
-$link-color: $dark-gray !default;
-$hr-border-color: $grey3 !default;
+$light-gray: $grey1;
+$slightly-darker-gray: $grey4;
+$dark-gray: $grey6;
+$darker-gray: $grey7;
+$horizontal-rule-grey: $grey3;
+$product-number-grey: $grey3;
+$horizontal-border-grey: $grey4;
+$menu-link: $grey6;
+$close-menu-bg: $grey2;
+$link-color: $dark-gray;
+$hr-border-color: $grey3;
 
 $font-family-regular: "Brandon Grotesque Regular";
 $font-family-bold: "Brandon Grotesque Bold";
