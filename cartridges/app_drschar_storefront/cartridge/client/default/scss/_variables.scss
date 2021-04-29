@@ -98,3 +98,38 @@ $font-family-base:$font-family-andes;
     src: url("../../fonts/ANDES/Latinotype-Andes.otf") format("opentype");
 }
 
+$white: #fff !default;
+$black: #000 !default;
+$blue: #0070d2 !default;
+$green: #008827 !default;
+// primary is replaced by css variable --skin-primary-color-1
+$primary: #00a1e0 !default;
+$red: #c00 !default;
+$success: $green !default;
+$danger: $red !default;
+$light-blue: #7ed0ee !default;
+
+// Consolidated values
+$grey1: #f9f9f9 !default;
+$grey2: #eee !default;
+$grey3: #AB999D;
+$grey4: #999 !default;
+$grey5: #666 !default;
+$grey6: #444 !default;
+$grey7: #222 !default;
+$grey8: #333 !default;
+$grey9: #927E81;
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+
+$light-gray: $grey1 !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey6 !default;
+$darker-gray: $grey7 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$menu-link: $grey6 !default;
+$close-menu-bg: $grey2 !default;
+$link-color: $dark-gray !default;
+$hr-border-color: $grey3 !default;
