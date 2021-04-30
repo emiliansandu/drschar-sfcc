@@ -3,7 +3,9 @@
 
 @import "variables";
 @import "base/global";
+@import "skin/skinVariables";
 @import "components/header";
 @import "components/headerSearch";
 @import "components/footer";
 @import "components/menu";
+@import "./search";
