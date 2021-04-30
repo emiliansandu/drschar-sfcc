@@ -10,7 +10,15 @@
                 <div>${Resource.msg('info.selectforstock', 'product', 'Select Styles for Availability')}</div>
             <iselse>
                 <isloop items="${product.availability.messages}" var="message">
-                    <div>${message}</div>
+                    <div>
+                    <isif condition="${message =='In Stock'}">
+                        <i class="fa fa-check-circle"></i>                        
+                    </isif> 
+                    <isif condition="${message =='Out of Stock'}">
+                        <i class="fa fa-times-circle"></i>                        
+                    </isif>
+                    ${message}
+                    </div>
                 </isloop>
             </isif>
         </li>
