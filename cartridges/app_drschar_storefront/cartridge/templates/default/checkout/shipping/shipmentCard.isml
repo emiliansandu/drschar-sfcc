@@ -27,10 +27,6 @@
 
                 <isinclude template="checkout/shipping/shippingMethod" />
             </fieldset>
-
-            <fieldset class="gift-message-block">
-                <isinclude template="checkout/shipping/isGift" />
-            </fieldset>
         </div>
 
         <div class="view-address-block ${shippingModel.shippingAddress ? '' : 'd-none' }">
