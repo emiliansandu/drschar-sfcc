@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Schär</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ul-nav-menu-flynav" role="menu">
+            <isif condition="${pdict.categories}">
+                <isloop items="${pdict.categories}" var="category">
+                    <isif condition="${category.subCategories}">
+                        <li class="nav-item dropdown menu-area" >
+                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>"   id="${category.id}" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">${category.name}</a>
+                            <isset name="menuItem" value="${category}" scope="page" />
+                            <isinclude template="components/header/menuItem" />
+                        </li>
+                    <iselse/>
+                        <li class="nav-item">
+                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>"  class="nav-link">${category.name}</a>
+                        </li>
+                    </isif>
+                </isloop>
+            </isif>
+            <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />
+            <isinclude url="${URLUtils.url('Page-Locale', 'mobile', true)}" />
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,30 @@
+<div class="dropdown-menu mega-area" role="menu" aria-hidden="true" aria-label="${category.id}">
+    <div class="row mega-area__row">
+        <isloop items="${menuItem.subCategories}" var="category">
+                <div class="col-lg-3">
+                    <div class="row subcats_row">
+                        <div class="col-12 subcats_row__col-img">   
+                            <img src="${category.image.url}" alt="${category.name}">
+                        </div>
+                        <div class="col-12 subcats_row__col-desc">
+                            <a href="${category.url}">
+                                <h2>${category.name}</h2>
+                            </a>
+                            <span>___</span>
+                        </div>
+                        <isif condition="${category.subCategories}">
+                           <div class="col-12 subcats_row__col-subcat">
+                                <ul class="ul-subcat">
+                                    <isloop items="${category.subCategories}" var="subCategory">
+                                        <li class="ul-subcat__item">
+                                            <a href="${subCategory.url}">${subCategory.name}</a>
+                                        </li>
+                                    </isloop>
+                                </ul>
+                           </div>
+                        </isif>
+                    </div>
+                </div>      
+        </isloop>
+    </div>
+</div>
