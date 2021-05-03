@@ -633,10 +633,10 @@ module.exports = function () {
         console.log(response)
         // bundle individual products
         if(response.message=="<li><div>In Stock</div></li>"){
-            response.message='<li><div><i class="fa fa-check-circle"></i> In Stock</div></li>';
+            response.message='<li><div><i class="far fa-check-circle"></i> In Stock</div></li>';
         }
         if(response.message=="<li><div>Out of Stock</div></li>"){
-            response.message='<li><div><i class="fa fa-times-circle"></i> Out of Stock</div></li>';
+            response.message='<li><div><i class="far fa-times-circle"></i> Out of Stock</div></li>';
         }
         $('.product-availability', response.$productContainer)
             .data('ready-to-order', response.product.readyToOrder)
