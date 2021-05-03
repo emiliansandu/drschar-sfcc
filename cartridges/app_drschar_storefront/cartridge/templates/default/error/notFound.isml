@@ -1,0 +1,16 @@
+<isdecorate template="common/layout/page">
+
+    <div class="container px-lg-5">
+        <h1 class="error-message px-lg-5">${Resource.msg('message.page.not.found.title', 'error', null)}</h1>
+        <p class="px-lg-5">${Resource.msg('message.page.not.found.p1', 'error', null)}</p>
+        <p class="px-lg-5">${Resource.msg('message.page.not.found.p2', 'error', null)}</p>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <a href="${URLUtils.url('Home-Show')}" class="btn btn-primary btn-block error continue-shopping"
+                    role="button" aria-pressed="true">
+                    ${Resource.msg('button.continue.shopping', 'confirmation', null)}
+                </a>
+            </div>
+        </div>
+    </div>
+</isdecorate>
