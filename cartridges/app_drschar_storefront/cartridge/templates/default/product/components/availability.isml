@@ -12,10 +12,10 @@
                 <isloop items="${product.availability.messages}" var="message">
                     <div>
                     <isif condition="${message =='In Stock'}">
-                        <i class="fa fa-check-circle"></i>                        
+                        <i class="far fa-check-circle"></i>                        
                     </isif> 
                     <isif condition="${message =='Out of Stock'}">
-                        <i class="fa fa-times-circle"></i>                        
+                        <i class="far fa-times-circle"></i>                        
                     </isif>
                     ${message}
                     </div>
