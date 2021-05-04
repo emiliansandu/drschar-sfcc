@@ -42,7 +42,7 @@
     }
   ],
   "environments": {
-    "sample": {
+    "development": {
       "server": "development.na01.drschar.demandware.net",
       "username": "sramasamy@unitedvirtualities.com",
       "password": "Colphia030520!4",

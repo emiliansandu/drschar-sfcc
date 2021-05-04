@@ -1,4 +1,4 @@
-{
+ {
   "dependencies": [
     {
       "repository": {
@@ -42,12 +42,12 @@
     }
   ],
   "environments": {
-    "sample": {
-      "server": "bglf-004.sandbox.us01.dx.commercecloud.salesforce.com",
-      "username": "aabrego@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_oYzfThsFD3XLg9jYhOOQmw==",
-      "client_id": "01869803-5ad8-468c-a8bf-a54e3c7b985f",
-      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q=="
+    "development": {
+      "server": "development.na01.drschar.demandware.net",
+      "username": "sramasamy@unitedvirtualities.com",
+      "password": "Colphia030520!4",
+      "client_id": "5800643e-fac0-4390-a5b8-84cf6db4e472",
+      "client_secret": "Colphia030520!4"
     }
   },
   "settings": {
