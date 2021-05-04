@@ -25,24 +25,35 @@
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
-        "app_drschar_storefront",
+        "advanced_rx_custom",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
         "worldpay_sfra_changes",
         "app_storefront_base",
         "bm_app_storefront_base",
+        "int_handlerframework",
+        "int_marketing_cloud",
+        "plugin_marketing_cloud",
+        "plugin_wishlists",
+        "lib_productlist",
         "modules"
       ]
     }
   ],
   "environments": {
     "sample": {
-      "server": "bglf-004.sandbox.us01.dx.commercecloud.salesforce.com",
+      "server": "staging-na01-advancedrx.demandware.net",
       "username": "aabrego@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_NWckw38JURPLg9jYhOOQmw==",
+      "password": "t8kdrXdL61E_oYzfThsFD3XLg9jYhOOQmw==",
       "client_id": "01869803-5ad8-468c-a8bf-a54e3c7b985f",
-      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q=="
+      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q==",
+      "two_factor": {
+        "enabled": "true",
+        "cert": "certs/aabrego.p12",
+        "password": "t8kdrXdL61E_IqdzQvpnhuTNtEHK1mYSkw==",
+        "url": "cert.staging.na01.advancedrx.demandware.net"
+      }
     }
   },
   "settings": {
@@ -55,7 +66,8 @@
       }
     },
     "project": {
-      "version": "advancedrx_website_ci"
+      "version": "advancedrx_website_staging",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
       "postcss": false,
