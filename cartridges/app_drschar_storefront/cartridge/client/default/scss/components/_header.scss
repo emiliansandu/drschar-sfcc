@@ -13,6 +13,9 @@ header {
 
 .brand{
    img{
-       width: 100px;
+       width: 75px;
+       @include media-breakpoint-up(lg) {
+           width: 100px;
+       }
    }
 }
