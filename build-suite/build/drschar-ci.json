@@ -32,11 +32,6 @@
         "worldpay_sfra_changes",
         "app_storefront_base",
         "bm_app_storefront_base",
-        "int_handlerframework",
-        "int_marketing_cloud",
-        "plugin_marketing_cloud",
-        "plugin_wishlists",
-        "lib_productlist",
         "modules"
       ]
     }
