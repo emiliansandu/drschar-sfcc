@@ -51,7 +51,15 @@ function validateBasket(data) {
         }
 
         $('.checkout-btn').addClass('disabled');
-    } else {
+    } else if(data.orderMinimumNotCompleted){
+
+        var errorHtml='<div class="alert alert-danger error-message custom-error-holder" role="alert"><p class="error-message-text">'+data.orderMinimumMessage+'</p></div>';
+        $('.alertOrderMinimum').append(errorHtml);
+        $('.checkout-btn').addClass('disabled');
+    }else{
+        if($('.error-message').length){
+            $('.error-message').remove();
+        }
         $('.checkout-btn').removeClass('disabled');
     }
 }
@@ -341,6 +349,10 @@ module.exports = function () {
                     $('.minicart .popover').removeClass('show');
                     $('body').removeClass('modal-open');
                     $('html').removeClass('veiled');
+                    if($('.error-message').length){
+                        $('.error-message').remove();
+                    }
+                    
                 } else {
                     if (data.toBeDeletedUUIDs && data.toBeDeletedUUIDs.length > 0) {
                         for (var i = 0; i < data.toBeDeletedUUIDs.length; i++) {
@@ -630,7 +642,6 @@ module.exports = function () {
     });
 
     $('body').on('product:updateAvailability', function (e, response) {
-        console.log(response)
         // bundle individual products
         if(response.message=="<li><div>In Stock</div></li>"){
             response.message='<li><div><i class="far fa-check-circle"></i> In Stock</div></li>';
