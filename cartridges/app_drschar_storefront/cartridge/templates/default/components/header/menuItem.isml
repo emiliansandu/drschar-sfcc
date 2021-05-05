@@ -1,7 +1,25 @@
-<div class="dropdown-menu mega-area" role="menu" aria-hidden="true" aria-label="${category.id}">
-    <div class="row mega-area__row">
+<ul class="dropdown-menu mega-area" role="menu" aria-hidden="true" aria-label="${category.id}">
+    <div class="mega-area__row">
         <isloop items="${menuItem.subCategories}" var="category">
-                <div class="col-lg-3">
+            <isif condition="${category.subCategories}">
+                <li class="dropdown-item dropdown d-lg-none" role="presentation">
+                    <a href="${category.url}" id="${category.id}" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">${category.name}</a>
+                    <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="${category.id}">
+                        <isloop items="${category.subCategories}" var="subCategory">
+                            <li class="dropdown-item d-lg-none" role="presentation">
+                                <a href="${subCategory.url}" id="${subCategory.id}" role="menuitem" class="dropdown-link" tabindex="-1">${subCategory.name}</a>
+                            </li>
+                        </isloop>        
+                    </ul>
+                </li>
+            <iselse/>
+                <li class="dropdown-item d-lg-none" role="presentation">
+                    <a href="${category.url}" id="${category.id}" role="menuitem" class="dropdown-link" tabindex="-1">${category.name}</a>
+                </li>
+            </isif>
+        </isloop>
+        <isloop items="${menuItem.subCategories}" var="category">
+                <div class="col-lg-3 d-none d-lg-block">
                     <div class="row subcats_row">
                         <div class="col-12 subcats_row__col-img">   
                             <img src="${category.image.url}" alt="${category.name}">
@@ -17,6 +35,7 @@
                                 <ul class="ul-subcat">
                                     <isloop items="${category.subCategories}" var="subCategory">
                                         <li class="ul-subcat__item">
+                                            <i class="fas fa-chevron-right"></i>
                                             <a href="${subCategory.url}">${subCategory.name}</a>
                                         </li>
                                     </isloop>
@@ -27,4 +46,4 @@
                 </div>      
         </isloop>
     </div>
-</div>
+</ul>

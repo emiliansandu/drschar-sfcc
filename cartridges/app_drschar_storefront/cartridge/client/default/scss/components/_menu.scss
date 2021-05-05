@@ -1,58 +1,71 @@
 .ul-nav-menu-flynav{
-    display: flex;
-    justify-content: space-evenly;
+    .nav-item{
+        a{
+            color: $blue !important;
+        }
+    }
     .menu-area{
-        position: static;
-        .mega-area{
-            position: absolute;
-            width: 100%;
-            left: 0;
-            right: 0;
-            padding: 15px;
-            margin-top: -10px;
-            z-index: 100;
-            &__row{
-                display: flex;
-                justify-content: center;
-                .subcats_row{
-                    &__col-img{
-                       img{
-                           display: none
-                       };
-                        @include media-breakpoint-up(lg) {
-                            img{
-                                width: 100%;
-                                height: auto;
-                                display: block;
+        @include media-breakpoint-up(lg) {
+            position: static;
+            .mega-area{
+                position: absolute;
+                width: 100%;
+                left: 0;
+                right: 0;
+                padding: 15px;
+                margin-top: -10px;
+                z-index: 100;
+                &__row{
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    margin-right: -15px;
+                    margin-left: -15px;
+                    display: flex;
+                    justify-content: center;
+                    .subcats_row{
+                        &__col-img{
+                        img{
+                            display: none
+                        };
+                            @include media-breakpoint-up(lg) {
+                                img{
+                                    width: 100%;
+                                    height: auto;
+                                    display: block;
+                                }
                             }
                         }
-                    }
-                    &__col-desc{
-                        padding-top: 5px;
-                        a{
-                            text-decoration: none;
-                            text-transform: uppercase;
-                            font-weight: bold;
-                            h2{
+                        &__col-desc{
+                            padding-top: 5px;
+                            a{
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                h2{
+                                    color: $blue;
+                                    font-family: $font-family-header;
+                                    font-size: 16pt;
+                                }
+                            }
+                            span{
+                                font-weight: bold;
                                 color: $blue;
-                                font-family: $font-family-header;
-                                font-size: 16pt;
                             }
                         }
-                        span{
-                            font-weight: bold;
-                            color: $blue;
-                        }
-                    }
-                    &__col-subcat{
-                        .ul-subcat{
-                            padding: 0;
-                            &__item{
-                                margin-bottom: 5px;
-                                a{
-                                    font-size: 12pt;
-                                    color: $blue !important;
-                                    font-family: $font-family-base;
+                        &__col-subcat{
+                            .ul-subcat{
+                                padding: 0;
+                                &__item{
+                                    list-style: none;
+                                    margin-bottom: 5px;
+                                    li{
+                                        margin-left: 3px;
+                                    }
+                                    a{
+                                        font-size: 12pt;
+                                        color: $blue !important;
+                                        font-family: $font-family-base;
+                                    }
                                 }
                             }
                         }
