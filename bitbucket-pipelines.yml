@@ -2,7 +2,7 @@ image: node:10.19.0
 
 pipelines:
   branches:
-    develop:
+    release/sprint1-2021:
       - step:
           name: Deploy to CI
           caches:
@@ -13,8 +13,40 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=advanced-rx-ci
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=advanced-rx-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-ci
+      - step:
+          name: Deploy to development
+          caches:
+            - node
+            - buildsuite
+          trigger: manual
+          script:
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development
+    master:
+      - step:
+          name: Ready?
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm install
+              - npm test
+      - step:
+          name: Deploy to Staging
+          trigger: manual
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm --prefix ./build-suite/ install
+              - npm --prefix ./build-suite/ rebuild node-sass
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-staging              
 
 definitions:
     caches:
