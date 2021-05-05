@@ -60,7 +60,7 @@
       }
     },
     "project": {
-      "version": "advancedrx_website_dev",
+      "version": "drschar_website_dev",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
