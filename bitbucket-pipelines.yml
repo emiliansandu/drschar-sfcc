@@ -2,7 +2,7 @@ image: node:10.19.0
 
 pipelines:
   branches:
-    develop:
+    release/sprint1-2021:
       - step:
           name: Deploy to CI
           caches:
