@@ -1,7 +1,14 @@
+<isscript>
+var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
+//DIS Sized Image
+var productid  = dw.catalog.ProductMgr.getProduct(product.id);
+var ProductImage=DISHelper.getImage(productid, 'large', 0);
+var mediaFileURL =ProductImage.getURL();
+</isscript>
 <div class="image-container">
     <a href="${pdict.urls.product}">
         <img class="tile-image"
-             src="${product.images.medium[0].url}"
+             src="${mediaFileURL}"
              alt="${product.productName}"
              title="${product.images.medium[0].title}"
              />

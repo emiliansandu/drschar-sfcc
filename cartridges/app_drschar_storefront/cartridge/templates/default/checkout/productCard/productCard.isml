@@ -1,3 +1,10 @@
+<isscript>
+var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
+//DIS Sized Image
+var productid  = dw.catalog.ProductMgr.getProduct(lineItem.id);
+var ProductImage=DISHelper.getImage(productid, 'large', 0);
+var mediaFileURL =ProductImage.getURL();
+</isscript>
 <div class="product-line-item" data-product-line-item="${lineItem.UUID}">
     <div class="line-item-header">
         <isif condition=${miniCart}>
@@ -15,7 +22,7 @@
         <div class="product-line-item-details d-flex flex-row">
             <div class="item-image">
                 <img class="product-image"
-                    src="${lineItem.images.small[0].url}"
+                    src="${mediaFileURL}"
                     alt="${lineItem.images.small[0].alt}"
                     title="${lineItem.images.small[0].title}">
             </div>
