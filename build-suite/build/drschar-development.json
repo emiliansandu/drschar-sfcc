@@ -1,4 +1,4 @@
- {
+{
   "dependencies": [
     {
       "repository": {
@@ -56,7 +56,8 @@
       }
     },
     "project": {
-      "version": "drschar_website_ci"
+      "version": "drschar_website_dev",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
       "postcss": false,
