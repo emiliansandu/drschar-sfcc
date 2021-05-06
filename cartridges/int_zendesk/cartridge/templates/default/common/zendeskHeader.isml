@@ -1,0 +1,17 @@
+<isif condition="${dw.system.Site.getCurrent().preferences.custom.zendeskCartridgeEnabled}">
+  <!-- Zendesk Head Scripts -->
+  <script type="text/javascript">
+        var zendeskKey = '${dw.system.Site.getCurrent().preferences.custom.zendeskKey}';
+        var zendeskStaticContentURL = "${dw.system.Site.getCurrent().preferences.custom.zendeskStaticContentURL}";
+        var zendeskURL = zendeskStaticContentURL+"?key=" + zendeskKey;
+        (function e() {
+          var e = document.createElement("script");
+            e.id="ze-snippet",
+            e.type = "text/javascript",
+            e.src = zendeskURL;
+            var t = document.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(e, t)
+        })();
+    </script>
+  <!-- /////////////////// -->
+</isif>
