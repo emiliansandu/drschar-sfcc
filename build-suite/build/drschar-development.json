@@ -26,6 +26,7 @@
       },
       "cartridges": [
         "app_drschar_storefront",
+        "plugin_dis",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
