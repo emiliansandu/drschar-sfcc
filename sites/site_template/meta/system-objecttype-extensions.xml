@@ -4412,6 +4412,14 @@
                 <externally-managed-flag>false</externally-managed-flag>
                <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="orderMinimumThresholdAmount">
+                <display-name xml:lang="x-default">orderMinimumThresholdAmount</display-name>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>25.0</default-value>
+            </attribute-definition>
+            
 	    <attribute-definition attribute-id="rateLimiterThreshold">
 		<display-name xml:lang="x-default">Rate Limiter Threshold</display-name>
 		<description xml:lang="x-default">This number indicates the number of times failures for Logins, GiftCert Balances, and Order Tracking requests will be allowed before displaying a CAPTCHA-style pop-up rate limiter</description>
@@ -4603,6 +4611,7 @@
                 <attribute attribute-id="countryCode"/>
                 <attribute attribute-id="customerServiceEmail"/>
                 <attribute attribute-id="mapAPI"/>
+                <attribute attribute-id="orderMinimumThresholdAmount"/>
             </attribute-group>
             <attribute-group group-id="Zendesk_Config">
                 <display-name xml:lang="x-default">Zendesk Configutarions</display-name>
