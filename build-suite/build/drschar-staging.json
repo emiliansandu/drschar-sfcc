@@ -25,7 +25,8 @@
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
-        "advanced_rx_custom",
+        "app_drschar_storefront",
+        "plugin_dis",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
