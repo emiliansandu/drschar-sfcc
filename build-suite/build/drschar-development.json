@@ -19,13 +19,14 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "AdvancedRx"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
       },
       "cartridges": [
         "app_drschar_storefront",
+        "plugin_dis",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
@@ -40,9 +41,9 @@
     "development": {
       "server": "development.na01.drschar.demandware.net",
       "username": "sramasamy@unitedvirtualities.com",
-      "password": "Colphia030520!4",
-      "client_id": "5800643e-fac0-4390-a5b8-84cf6db4e472",
-      "client_secret": "Colphia030520!4"
+      "password": "t8kdrXdL61E_K3asXmYmBMJV4SRNueTISg==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     }
   },
   "settings": {
