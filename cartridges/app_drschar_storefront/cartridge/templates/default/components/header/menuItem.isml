@@ -28,7 +28,7 @@
                             <a href="${category.url}">
                                 <h2>${category.name}</h2>
                             </a>
-                            <span>___</span>
+                           <hr>
                         </div>
                         <isif condition="${category.subCategories}">
                            <div class="col-12 subcats_row__col-subcat">
