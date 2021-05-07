@@ -4592,7 +4592,7 @@
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-                <default-value>awynZGNoCSmEXqmXRQz9HrBGrmTmad4e</default-value>
+                <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="zendeskStaticContentURL">
                 <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
