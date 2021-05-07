@@ -4652,34 +4652,34 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
         <page-attributes/>
         <custom-attributes>
             <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul class="social-links"&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-linkedin-square fa-3x" aria-label="LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-facebook-square fa-3x" aria-label="Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-twitter-square fa-3x" aria-label="Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-youtube-square fa-3x" aria-label="YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-linkedin-square fa-3x" aria-label="LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-facebook-square fa-3x" aria-label="Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-twitter-square fa-3x" aria-label="Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-youtube-square fa-3x" aria-label="YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;</custom-attribute>
             <custom-attribute attribute-id="body" xml:lang="fr-FR">&lt;ul class="social-links"&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-linkedin-square fa-3x" title="Aller sur LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-facebook-square fa-3x" title="Aller sur Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-twitter-square fa-3x" title="Aller sur Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-youtube-square fa-3x" title="Aller sur YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-linkedin-square fa-3x" title="Aller sur LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-facebook-square fa-3x" title="Aller sur Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-twitter-square fa-3x" title="Aller sur Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-youtube-square fa-3x" title="Aller sur YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;</custom-attribute>
             <custom-attribute attribute-id="body" xml:lang="it-IT">&lt;ul class="social-links"&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-linkedin-square fa-3x" title="Vai a LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-facebook-square fa-3x" title="Vai a Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-twitter-square fa-3x" title="Vai a Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-youtube-square fa-3x" title="Vai a YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-linkedin-square fa-3x" title="Vai a LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-facebook-square fa-3x" title="Vai a Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-twitter-square fa-3x" title="Vai a Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-youtube-square fa-3x" title="Vai a YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;</custom-attribute>
             <custom-attribute attribute-id="body" xml:lang="ja-JP">&lt;ul class="social-links"&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-linkedin-square fa-3x" title="LinkedIn に移動する" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-facebook-square fa-3x" title="Facebook に移動する" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-twitter-square fa-3x" title="Twitter に移動する" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-youtube-square fa-3x" title="YouTube に移動する" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-linkedin-square fa-3x" title="LinkedIn に移動する" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-facebook-square fa-3x" title="Facebook に移動する" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-twitter-square fa-3x" title="Twitter に移動する" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-youtube-square fa-3x" title="YouTube に移動する" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;</custom-attribute>
             <custom-attribute attribute-id="body" xml:lang="zh-CN">&lt;ul class="social-links"&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-linkedin-square fa-3x" title="前往 LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-facebook-square fa-3x" title="前往 Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-twitter-square fa-3x" title="前往 Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
-                &lt;li&gt;&lt;a class="fa fa-youtube-square fa-3x" title="前往 YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-linkedin-square fa-3x" title="前往 LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-facebook-square fa-3x" title="前往 Facebook" href="https://www.facebook.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-twitter-square fa-3x" title="前往 Twitter" href="https://twitter.com/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a class="fab fa-youtube-square fa-3x" title="前往 YouTube" href="https://www.youtube.com/user/demandware" target="_blank"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
                 &lt;/ul&gt;</custom-attribute>
         </custom-attributes>
     </content>
