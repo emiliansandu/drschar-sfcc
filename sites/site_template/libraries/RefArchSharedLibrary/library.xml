@@ -3505,6 +3505,26 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
         <searchable-flag>false</searchable-flag>
         <page-attributes/>
     </content>
+    <content content-id="categorylanding">
+        <display-name xml:lang="x-default">Category Landing Default</display-name>
+        <type>page.categoryLandingPage</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <visibility-mode xml:lang="x-default">visible</visibility-mode>
+        <data xml:lang="x-default">{ }</data>
+        <online-flag>false</online-flag>
+        <online-flag site-id="drschar">true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <searchable-flag site-id="drschar">false</searchable-flag>
+        <page-attributes/>
+        <content-links>
+            <content-link content-id="3ecc433abd3b55bf48657c7ff3" type="page.categoryLandingPage.headerbanner">
+                <position>0.0</position>
+            </content-link>
+        </content-links>
+        <sitemap-included-flag site-id="drschar">false</sitemap-included-flag>
+    </content>
 
     <content content-id="checkout">
         <display-name xml:lang="x-default">Checkout</display-name>
