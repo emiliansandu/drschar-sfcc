@@ -4,7 +4,7 @@
         height: 100%;
         @include media-breakpoint-down(xs) {
             &.search-field{
-                border: 2px solid $grey7;
+                border: 1px solid $grey7;
                 border-radius: 0;
                 &:focus{
                     box-shadow: none;
