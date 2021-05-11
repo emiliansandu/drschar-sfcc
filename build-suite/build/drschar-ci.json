@@ -39,8 +39,8 @@
     }
   ],
   "environments": {
-    "development": {
-      "server": "development.na01.drschar.demandware.net",
+    "sandbox-bgpc-001": {
+      "server": "bgpc-001.sandbox.us01.dx.commercecloud.salesforce.com",
       "username": "sramasamy@unitedvirtualities.com",
       "password": "t8kdrXdL61E_K3asXmYmBMJV4SRNueTISg==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
