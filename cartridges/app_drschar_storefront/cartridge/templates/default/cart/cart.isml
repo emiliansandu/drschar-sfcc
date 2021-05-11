@@ -18,11 +18,16 @@
             </div>
         </isif>
     </div>
-
-     <div class="alert alert-danger error-message custom-error-holder" role="alert">
-         <p class="error-message-text"></p>
-     </div>
-
+    <div class="alertOrderMinimum">
+        <isif condition="${pdict.orderMinimumNotCompleted}">
+            <div class="alert alert-danger error-message custom-error-holder" role="alert">
+                <p class="error-message-text">
+                    <i class='fas fa-exclamation-circle'></i>
+                    ${pdict.orderMinimumMessage}
+                </p>
+            </div>
+        </isif>
+    </div>
     <div class="container">
         <h1 class="page-title">${Resource.msg('title.cart','cart',null)}</h1>
         <div class="row cart-header">

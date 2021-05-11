@@ -4619,6 +4619,28 @@
                         <value>s05</value>
                     </value-definition>
                 </value-definitions>
+            <attribute-definition attribute-id="zendeskCartridgeEnabled">
+                <display-name xml:lang="x-default">Zendesk Cartridge Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="zendeskKey">
+                <display-name xml:lang="x-default">Zendesk Key</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="zendeskStaticContentURL">
+                <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
             </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
@@ -4634,6 +4656,11 @@
             <attribute-group group-id="Dynamic Imaging Service">
                 <display-name xml:lang="x-default">Dynamic Imaging Service</display-name>
                 <attribute attribute-id="disImageSourceEnvironment"/>
+            <attribute-group group-id="Zendesk_Config">
+                <display-name xml:lang="x-default">Zendesk Configutarions</display-name>
+                <attribute attribute-id="zendeskCartridgeEnabled"/>
+                <attribute attribute-id="zendeskKey"/>
+                <attribute attribute-id="zendeskStaticContentURL"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
