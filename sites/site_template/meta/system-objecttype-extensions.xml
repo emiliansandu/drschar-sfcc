@@ -4619,6 +4619,7 @@
                         <value>s05</value>
                     </value-definition>
                 </value-definitions>
+            </attribute-definition>
             <attribute-definition attribute-id="zendeskCartridgeEnabled">
                 <display-name xml:lang="x-default">Zendesk Cartridge Enabled</display-name>
                 <type>boolean</type>
@@ -4656,6 +4657,7 @@
             <attribute-group group-id="Dynamic Imaging Service">
                 <display-name xml:lang="x-default">Dynamic Imaging Service</display-name>
                 <attribute attribute-id="disImageSourceEnvironment"/>
+            </attribute-group>
             <attribute-group group-id="Zendesk_Config">
                 <display-name xml:lang="x-default">Zendesk Configutarions</display-name>
                 <attribute attribute-id="zendeskCartridgeEnabled"/>
