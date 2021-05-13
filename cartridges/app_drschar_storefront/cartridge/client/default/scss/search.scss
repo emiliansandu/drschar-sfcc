@@ -42,7 +42,7 @@ div.col-sm-12.col-md-9 {
 .product-tile {
     @include media-breakpoint-up(xs) {
         border: none !important;
-        padding-bottom: 1.25em !important;
+       // padding-bottom: 1.25em !important;
     }
     @include media-breakpoint-up(sm) {
         border: none !important;
@@ -50,9 +50,15 @@ div.col-sm-12.col-md-9 {
 }
 .product-tile .tile-body {
     @include media-breakpoint-up(xs) {
-        padding-bottom: 1.25em;
+        padding-bottom: 1.875em;
         padding-left: 15px;
         padding-right: 15px;
+    }
+    @include media-breakpoint-up(sm) {
+        padding-left: 0px;
+    }
+    @include media-breakpoint-up(md) {
+        padding-left: 0px;
     }
 }
 .tile-body .pdp-link {
