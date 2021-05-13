@@ -2,7 +2,7 @@
 var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
 //DIS Sized Image
 var productid  = dw.catalog.ProductMgr.getProduct(lineItem.id);
-var ProductImage=DISHelper.getImage(productid, 'large', 0);
+var ProductImage=DISHelper.getImage(productid, 'medium', 0);
 var mediaFileURL =ProductImage.getURL();
 </isscript>
 <isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}"  scope="page"/>
@@ -18,7 +18,7 @@ var mediaFileURL =ProductImage.getURL();
             <div class="row">
                 <div class="col-lg-12 d-flex flex-row">
                     <div class="item-image">
-                        <img class="product-image" src="${mediaFileURL}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
+                        <img class="product-image" src="${mediaFileURL}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}"/>
                     </div>
                     <div class="item-attributes d-flex flex-column">
                         <isloop items="${lineItem.variationAttributes}" var="attribute">

@@ -2,14 +2,14 @@
 var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
 //DIS Sized Image
 var productid  = dw.catalog.ProductMgr.getProduct(lineItem.id);
-var ProductImage=DISHelper.getImage(productid, 'large', 0);
+var ProductImage=DISHelper.getImage(productid, 'medium', 0);
 var mediaFileURL =ProductImage.getURL();
 </isscript>
 <div class="product-line-item" data-product-line-item="${lineItem.UUID}">
     <div class="line-item-header">
         <isif condition=${miniCart}>
             <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
-        <iselse>
+        <iselse/>
             <isinclude template="checkout/productCard/productCardProductName" />
         </isif>
     </div>
@@ -24,7 +24,7 @@ var mediaFileURL =ProductImage.getURL();
                 <img class="product-image"
                     src="${mediaFileURL}"
                     alt="${lineItem.images.small[0].alt}"
-                    title="${lineItem.images.small[0].title}">
+                    title="${lineItem.images.small[0].title}"/>
             </div>
             <div class="item-attributes">
                 <isloop items="${lineItem.variationAttributes}" var="attribute">
