@@ -11740,6 +11740,33 @@ Burlington, MA 01803, USA&lt;br /&gt;&#13;
         <page-attributes/>
     </content>
 
+    <content content-id="9be3763c67c873abdb2f9ff657">
+        <type>component.commerce_assets.productListTile</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "ITCLink" : "$url('Page-Show', 'cid', 'drshomepage')$",
+  "ITCText" : "&lt;p&gt;Test of page designer&lt;/p&gt;",
+  "image" : {
+    "path" : "/images/homepage/car-suit.jpg",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 600,
+      "width" : 2200
+    }
+  },
+  "heading" : "&lt;p&gt;Here is the example&lt;/p&gt;",
+  "alt" : "Here is the new promotion"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="drschar">true</online-flag>
+        <page-attributes/>
+    </content>
+
     <content content-id="9f252879138998d7ee1751a23c">
         <display-name xml:lang="x-default">Image And Text Component</display-name>
         <type>component.commerce_assets.imageAndText</type>
