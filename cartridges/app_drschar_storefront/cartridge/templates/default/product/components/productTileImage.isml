@@ -2,7 +2,7 @@
 var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
 //DIS Sized Image
 var productid  = dw.catalog.ProductMgr.getProduct(product.id);
-var ProductImage=DISHelper.getImage(productid, 'large', 0);
+var ProductImage=DISHelper.getImage(productid, 'medium', 0);
 var mediaFileURL =ProductImage.getURL();
 </isscript>
 <div class="image-container">
