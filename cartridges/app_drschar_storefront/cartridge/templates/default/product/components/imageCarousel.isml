@@ -22,10 +22,9 @@
                     var productid  = dw.catalog.ProductMgr.getProduct(product.id);
                     var ProductImage=DISHelper.getImage(productid, 'medium', 0);
                     var mediaFileURL =ProductImage.getURL();
-                    var url = mediaFileURL;
                     </isscript>
                     
-                    <img src="${url}" class="d-block img-fluid"
+                    <img src="${mediaFileURL}" class="d-block img-fluid"
                         alt="${image.alt} image number ${image.index}" itemprop="image" />
                 </div>
             </isloop>
