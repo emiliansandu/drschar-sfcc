@@ -26,9 +26,11 @@
       },
       "cartridges": [
         "app_drschar_storefront",
+        "plugin_dis",
         "int_worldpay_core",
         "int_worldpay_csc",
         "int_worldpay_sfra",
+        "int_zendesk",
         "worldpay_sfra_changes",
         "app_storefront_base",
         "bm_app_storefront_base",
@@ -37,12 +39,12 @@
     }
   ],
   "environments": {
-    "sample": {
-      "server": "",
-      "username": "",
-      "password": "",
-      "client_id": "",
-      "client_secret": ""
+    "development": {
+      "server": "development.na01.drschar.demandware.net",
+      "username": "sramasamy@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_K3asXmYmBMJV4SRNueTISg==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     }
   },
   "settings": {
@@ -55,7 +57,8 @@
       }
     },
     "project": {
-      "version": "build-suite-sfra-sample"
+      "version": "drschar_website_dev",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
       "postcss": false,

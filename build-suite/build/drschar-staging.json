@@ -1,0 +1,77 @@
+{
+  "dependencies": [
+    {
+      "repository": {
+        "url": "../",
+        "type": "file"
+      },
+      "source": {
+        "path": "cartridges"
+      },
+      "npm": {
+        "install": true,
+        "scripts": [
+          "compile:js",
+          "compile:scss",
+          "compile:fonts"
+        ]
+      },
+      "siteImport": {
+        "enabled": "true",
+        "sites": [
+          "drscahr"
+        ],
+        "initPath": "sites/site_template",
+        "demoPath": "sites/site_demo"
+      },
+      "cartridges": [
+        "app_drschar_storefront",
+        "plugin_dis",
+        "int_worldpay_core",
+        "int_worldpay_csc",
+        "int_worldpay_sfra",
+        "int_zendesk",
+        "worldpay_sfra_changes",
+        "app_storefront_base",
+        "bm_app_storefront_base",
+        "modules"
+      ]
+    }
+  ],
+  "environments": {
+    "sample": {
+      "server": "staging-na01-advancedrx.demandware.net",
+      "username": "sramasamy@unitedvirtualities.com",
+      "password": "Colphia030520!4",
+      "client_id": "01869803-5ad8-468c-a8bf-a54e3c7b985f",
+      "client_secret": "t8kdrXdL61E_/Rtt9es3bvK8jFsHN+Zd0Q==",
+      "two_factor": {
+        "enabled": "true",
+        "cert": "certs/aabrego.p12",
+        "password": "t8kdrXdL61E_IqdzQvpnhuTNtEHK1mYSkw==",
+        "url": "cert.staging.na01.advancedrx.demandware.net"
+      }
+    }
+  },
+  "settings": {
+    "siteImport": {
+      "enabled": "true",
+      "filenames": {
+        "init": "site_import",
+        "meta": "site_metadata",
+        "content": "site_content"
+      }
+    },
+    "project": {
+      "version": "advancedrx_website_staging",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
+    },
+    "optimize": {
+      "postcss": false,
+      "browserify": false,
+      "js": false,
+      "css": false,
+      "concatenate": true
+    }
+  }
+}

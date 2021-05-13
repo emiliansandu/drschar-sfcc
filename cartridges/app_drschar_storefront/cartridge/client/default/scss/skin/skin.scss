@@ -20,7 +20,7 @@ body,
 }
 
 .header-banner {
-    background-color: var(--skin-banner-background-color-2);
+    background-color: var(--skin-primary-color-1);
     color: var(--skin-banner-text-color-1);
 }
 
@@ -121,8 +121,8 @@ header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-    background-color: var(--skin-primary-color);
-    border-color: var(--skin-primary-color);
+    background-color: var(--skin-primary-color-1);
+    border-color: var(--skin-primary-color-1);
     color: var(--skin-primary-color-invert-1);
     opacity: 0.5;
 }

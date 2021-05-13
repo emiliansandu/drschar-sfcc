@@ -8,11 +8,23 @@ header {
         .search-field{
             border: 0px;
         }
+        .main-menu{
+            margin-top: 10px;
+            @include media-breakpoint-up(md) {
+                background-color: $yellow-brand;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
     }
 }
 
 .brand{
    img{
-       width: 100px;
+       width: 55px;
+       @include media-breakpoint-up(lg) {
+           width: 100px;
+       }
    }
 }

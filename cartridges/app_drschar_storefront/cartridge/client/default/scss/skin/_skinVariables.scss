@@ -48,8 +48,8 @@
     /** ==================================================================== **/
     --skin-background-color-1: var(--color-gray1);
     --skin-border-color-1: var(--color-white);
-    --skin-main-text-color-1: var(--color-gray7);
-    --skin-main-text-color-2: var(--color-gray7);
+    --skin-main-text-color-1: var(--color-grey7);
+    --skin-main-text-color-2: var(--color-grey7);
     --skin-menu-color-1: #444;
     --skin-menu-color-1-invert: var(--color-white);
     --skin-menu-color-2: #222;
@@ -62,11 +62,11 @@
     --skin-selectbox-background-color-1: var(--color-white);
     --skin-selectbox-text-color-1: var(--skin-main-text-color-1);
     --skin-banner-background-color-1: #444;
-    --skin-banner-background-color-2: #222;
+    --skin-banner-background-color-2: var(--color-primary);
     --skin-banner-text-color-1: var(--color-white);
     --skin-heading-color-1: var(--color-primary);
     --skin-heading-color-1-invert: var(--color-white);
-    --skin-price-1: var(--color-gray7);
+    --skin-price-1: var(--color-grey7);
     --skin-header-font: #{$font-family-header};
     --skin-body-font:  #{$font-family-base};
 }
