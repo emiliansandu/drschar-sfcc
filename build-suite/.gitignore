@@ -14,4 +14,4 @@ node_modules
 !build/config.json.*
 !build/sitegenesis-sample.*
 !build/sfra-sample.*
-build/advanced-rx-local.json
+build/drschar-local.json

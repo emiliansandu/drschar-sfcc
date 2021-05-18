@@ -30,7 +30,7 @@ The latest version of SFRA is 5.1.0
 ## Use build suite for development
 
 * Go to `../build-suite folder`
-* Copy `build/advanced-rx-new.json` to `build/advanced-rx-local.json` and `update` connection params
+* Copy `build/drschar-rx-new.json` to `build/dr-schar-local.json` and `update` connection params
 * Now you can run the following commands:
     * Deploy code: `grunt dist --project=advanced-rx-local`
     * Run build before each import: `grunt build --project=advanced-rx-local`
