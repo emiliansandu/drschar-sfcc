@@ -57,7 +57,8 @@
       }
     },
     "project": {
-      "version": "drschar_website_ci"
+      "version": "drschar_website_ci",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
       "postcss": false,
