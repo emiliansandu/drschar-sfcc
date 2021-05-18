@@ -27,7 +27,11 @@
       "cartridges": [
         "app_drschar_storefront",
         "plugin_dis",
+        "int_worldpay_core",
+        "int_worldpay_csc",
+        "int_worldpay_sfra",
         "int_zendesk",
+        "worldpay_sfra_changes",
         "app_storefront_base",
         "bm_app_storefront_base",
         "modules"
