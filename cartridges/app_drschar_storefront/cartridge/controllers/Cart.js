@@ -60,7 +60,8 @@ server.append(
         if(subTotal<orderMinimum){
             res.setViewData({
                 orderMinimumNotCompleted:true,
-                orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)
+                //orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)
+               orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)+' '+Number(orderMinimum).toFixed(2) 
             });
         }
     }
