@@ -29,7 +29,7 @@ server.append(
             if(subTotal<orderMinimum){
                 res.setViewData({
                     orderMinimumNotCompleted:true,
-                    orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)
+                    orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)+' '+Number(orderMinimum).toFixed(2)
                 });
             }
         }
@@ -59,8 +59,7 @@ server.append(
         var subTotal=Number(viewData.totals.subTotal.slice(1));
         if(subTotal<orderMinimum){
             res.setViewData({
-                orderMinimumNotCompleted:true,
-                //orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)
+               orderMinimumNotCompleted:true,
                orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)+' '+Number(orderMinimum).toFixed(2) 
             });
         }
