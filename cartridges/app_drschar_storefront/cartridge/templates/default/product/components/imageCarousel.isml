@@ -20,7 +20,7 @@
                     //DIS Sized Image
                     
                     var productid  = dw.catalog.ProductMgr.getProduct(product.id);
-                    var ProductImage=DISHelper.getImage(productid, 'medium', 0);
+                    var ProductImage=DISHelper.getImage(productid, 'medium', loopStatus.index);
                     var mediaFileURL =ProductImage.getURL();
                     </isscript>
                     
