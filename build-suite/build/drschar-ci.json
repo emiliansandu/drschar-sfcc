@@ -30,8 +30,6 @@
         "bm_app_storefront_base",
         "bm_paypal",
         "bm_paypal_configuration",
-        "int_adyen_overlay",
-        "int_adyen_SFRA",
         "int_paypal",
         "int_zendesk",        
         "modules",
