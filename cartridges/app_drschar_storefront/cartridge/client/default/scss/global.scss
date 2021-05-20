@@ -11,9 +11,3 @@
 @import "components/menu";
 @import "./search";
 @import "components/tooltip";
-@import "account/account";
-
-.hero.slant-down.account-image {
-    background-image: url(../../images/drschar_static.jpg);
-    background-position-y: 40%;
-}
