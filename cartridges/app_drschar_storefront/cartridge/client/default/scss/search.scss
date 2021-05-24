@@ -1,0 +1,129 @@
+@import "base/search";
+
+.row.product-grid {
+    @include media-breakpoint-up(xs) {
+        margin-right: 0px;
+        margin-left: 0px;
+        gap: 0px 0px;
+        justify-content: center;
+    }
+    @include media-breakpoint-up(sm) {
+        gap: 0px 25px;
+        justify-content: center;
+    }
+}
+
+div.col-sm-4.col-md-4 {
+    @include media-breakpoint-up(xs) {
+        max-width: 50%;
+        padding-left: 0px;
+        padding-right: 0px;
+        flex: 0 0 50%;
+    }
+    @include media-breakpoint-up(sm) {
+        padding-left: 0px;
+        padding-right: 0px;
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}
+div.col-sm-12.col-md-9 {
+    @include media-breakpoint-up(xs) {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+    @include media-breakpoint-up(sm) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+    }
+}
+.product-tile {
+    @include media-breakpoint-up(xs) {
+        border: none !important;
+       // padding-bottom: 1.25em !important;
+    }
+    @include media-breakpoint-up(sm) {
+        border: none !important;
+    }
+}
+.product-tile .tile-body {
+    @include media-breakpoint-up(xs) {
+        padding-bottom: 1.875em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @include media-breakpoint-up(sm) {
+        padding-left: 0px;
+    }
+    @include media-breakpoint-up(md) {
+        padding-left: 0px;
+    }
+}
+.tile-body .pdp-link {
+    @include media-breakpoint-up(xs) {
+        font-size: 13px;
+        color: $grey7;
+    }
+    @include media-breakpoint-up(sm) {
+        font-size: 15px;
+    }
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+    }
+}
+.tile-body .price {
+    @include media-breakpoint-up(xs) {
+        font-size: 16px;
+        span.sales {
+            color: $grey8;
+        }
+        span.strike-through {
+            color: $grey5;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        font-size: 17px;
+    }
+}
+.tile-body-footer .ratings {
+    @include media-breakpoint-up(xs) {
+        display: none;
+    }
+}
+
+i.fa-expand {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    color: $grey8;
+    font-size: 16px;
+}
+.product-tile .swatch-circle {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.3125em;
+}
+.product-tile .tile-body .color-swatches {
+    line-height: 1.25em;
+    min-height: 1.25em;
+}
+
+.product-tile .tile-body .color-swatches,
+.product-tile .tile-body .color-swatches .swatches {
+    line-height: 1.25em;
+    min-height: 1.25em;
+    /*if need to hidde overflow colors add this
+    max-height: 1.25em;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;*/
+}
+
+img,
+svg {
+    vertical-align: unset;
+}
+.swatches a {
+    height: 100%;
+}

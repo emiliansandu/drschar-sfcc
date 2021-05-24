@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
 
+@import "variables";
 @import "base/global";
-@import "./variables";
-@import "./skin/skinVariables";
+@import "skin/skinVariables";
+@import "components/common";
 @import "components/header";
 @import "components/headerSearch";
-
+@import "components/footer";
+@import "components/menu";
+@import "./search";
+@import "components/tooltip";

@@ -11,6 +11,8 @@
     --color-blue: rgb(68, 45, 49);
     --color-green: #{$green};
     --color-primary: rgb(207, 0, 62);
+    --color-primary-hover:rgb(92, 06, 25);
+    --color-primary-shadow:0 0 0 0.2rem rgba(207, 0, 62, 0.5);
     --color-red: #{$red};
     --color-success: var(--color-green);
     --color-danger: var(--color-red);
@@ -46,8 +48,8 @@
     /** ==================================================================== **/
     --skin-background-color-1: var(--color-gray1);
     --skin-border-color-1: var(--color-white);
-    --skin-main-text-color-1: var(--color-gray7);
-    --skin-main-text-color-2: var(--color-gray7);
+    --skin-main-text-color-1: var(--color-grey7);
+    --skin-main-text-color-2: var(--color-grey7);
     --skin-menu-color-1: #444;
     --skin-menu-color-1-invert: var(--color-white);
     --skin-menu-color-2: #222;
@@ -55,15 +57,16 @@
     --skin-link-color-2: var(--color-blue);
     --skin-primary-color-1: var(--color-primary);
     --skin-primary-color-2: var(--color-primary);
+    --skin-primary-color-shadow: var(--color-primary-shadow);
     --skin-primary-color-invert-1: var(--color-white);
     --skin-selectbox-background-color-1: var(--color-white);
     --skin-selectbox-text-color-1: var(--skin-main-text-color-1);
     --skin-banner-background-color-1: #444;
-    --skin-banner-background-color-2: #222;
+    --skin-banner-background-color-2: var(--color-primary);
     --skin-banner-text-color-1: var(--color-white);
     --skin-heading-color-1: var(--color-primary);
     --skin-heading-color-1-invert: var(--color-white);
-    --skin-price-1: var(--color-gray7);
+    --skin-price-1: var(--color-grey7);
     --skin-header-font: #{$font-family-header};
     --skin-body-font:  #{$font-family-base};
 }

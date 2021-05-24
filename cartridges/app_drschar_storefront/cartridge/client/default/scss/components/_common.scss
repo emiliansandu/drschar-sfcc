@@ -1,0 +1,12 @@
+@import "base/components/_common";
+
+.alertOrderMinimum{
+    .error-message {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        .error-message-text{
+            margin-top: 1rem;
+            text-align: center;
+        }
+    }
+}

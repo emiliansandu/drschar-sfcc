@@ -20,8 +20,17 @@ var bootstrapPackages = {
     Util: 'exports-loader?Util!bootstrap/js/src/util'
 };
 
+var mode = 'production'
+try {
+    if (process.env.NODE_ENV === 'development') {
+        mode = 'development'
+    }
+} catch (error) {}
+console.log('webpack mode is:', mode);
+
+
 module.exports = [{
-    mode: 'production',
+    mode: mode,
     name: 'js',
     entry: jsFiles,
     output: {
