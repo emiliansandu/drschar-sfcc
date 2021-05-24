@@ -58,6 +58,9 @@
             <preference preference-id="EnableAPMLookUpService">true</preference>
             <preference preference-id="EnableJobMailerService">false</preference>
             <preference preference-id="OrgUnitId">5bd9b55e4444761ac0af1c80</preference>
+            <preference preference-id="PP_API_Button_Location">Billing</preference>
+            <preference preference-id="PP_API_PaymentAction">true</preference>
+            <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
             <preference preference-id="ValidateIPAddress">false</preference>
             <preference preference-id="WorldPayConfigurablePaymentMethodMask">
                 <value>WorldPay</value>
