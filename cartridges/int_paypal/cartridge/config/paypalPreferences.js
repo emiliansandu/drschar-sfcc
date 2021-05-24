@@ -22,9 +22,11 @@ function getPaypalPaymentMethodId() {
     var paypalPaymentMethodID;
 
     Array.some(activePaymentMethods, function (paymentMethod) {
-        if (paymentMethod.paymentProcessor.ID === allowedProcessorsIds) {
-            paypalPaymentMethodID = paymentMethod.ID;
-            return true;
+        if (paymentMethod.paymentProcessor != null) {
+            if (paymentMethod.paymentProcessor.ID === allowedProcessorsIds) {
+                paypalPaymentMethodID = paymentMethod.ID;
+                return true;
+            }
         }
         return false;
     });

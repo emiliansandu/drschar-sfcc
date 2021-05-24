@@ -46,13 +46,9 @@
     </payment-method>
 
     <payment-method method-id="PayPal">
-        <name xml:lang="x-default">Pay Pal</name>
-        <name xml:lang="fr-FR">Pay Pal</name>
-        <name xml:lang="it-IT">PayPal</name>
-        <name xml:lang="ja-JP">PayPal</name>
-        <name xml:lang="zh-CN">PayPal</name>
-        <enabled-flag>false</enabled-flag>
-        <processor-id>PAYPAL_EXPRESS</processor-id>
+        <name xml:lang="x-default">PayPal</name>
+        <enabled-flag>true</enabled-flag>
+        <processor-id>PAYPAL</processor-id>
     </payment-method>
 
     <payment-method method-id="BML">
