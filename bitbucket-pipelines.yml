@@ -14,20 +14,8 @@ pipelines:
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-007
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-007
-    release/sprint1-2021:
-      - step:
-          name: Deploy to CI
-          caches:
-            - node
-            - buildsuite
-          script:
-            - npm install
-            - npm --prefix ./build-suite/ install
-            - npm --prefix ./build-suite/ rebuild node-sass
-            - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-ci
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-007
+    release/*:
       - step:
           name: Deploy to development
           caches:
