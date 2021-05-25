@@ -28,6 +28,8 @@
         "app_drschar_storefront",
         "app_storefront_base",
         "bm_app_storefront_base",
+        "int_adyen_overlay",
+        "int_adyen_SFRA",
         "int_zendesk",        
         "modules",
         "plugin_dis"
