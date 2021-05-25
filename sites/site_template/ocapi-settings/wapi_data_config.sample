@@ -1,90 +1,32 @@
 {
-  "_v":"15.4",
-  "clients":
-  [ 
-    {
-      "client_id":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "resources":
-      [
-        {
-          "resource_id":"/customers",
-          "methods":["post"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/customers/*",
-          "methods":["get","patch","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/customers/*/addresses",
-          "methods":["get","post"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/customers/*/addresses/*",
-          "methods":["get","patch","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/customer_search",
-          "methods":["post"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/folders/*",
-          "methods":["get","put","patch","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/folders/*/content",
-          "methods":["get"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/folders/*/sub_folders",
-          "methods":["get"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/content/*",
-          "methods":["get","put","patch","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/content/*/folders",
-          "methods":["get"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/libraries/*/folder_assignments/*/*",
-          "methods":["get","put","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/sites/*/slot_configurations",
-          "methods":["post"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        },
-        {
-          "resource_id":"/sites/*/slot_configurations/*",
-          "methods":["get","patch","delete"],
-          "read_attributes":"(**)",
-          "write_attributes":"(**)"
-        }
-      ]
-    }
-  ]
+    "_v": "18.1",
+    "clients": [{
+        "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+        "resources": [{
+            "methods": ["get"],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/code_versions"
+        }, {
+            "methods": ["patch", "delete"],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/code_versions/*"
+        }, {
+            "methods": ["post"],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/jobs/*/executions"
+        }, {
+            "methods": ["get"],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/jobs/*/executions/*"
+        }, {
+            "methods": ["post"],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/sites/*/cartridges"
+        }]
+    }]
 }
