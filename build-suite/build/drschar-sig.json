@@ -1,4 +1,4 @@
-{
+ {
   "dependencies": [
     {
       "repository": {
@@ -19,7 +19,7 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "drschar"
+          "drscahr"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
@@ -42,30 +42,52 @@
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
-    "development": {
-      "server": "development.na01.drschar.demandware.net",
+    "dev2": {
+      "server": "bgpc-002.sandbox.us01.dx.commercecloud.salesforce.com",
       "username": "rcervantes@unitedvirtualities.com",
       "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
-    "staging": {
-      "server": "staging-na01-advancedrx.demandware.net",
+    "dev3": {
+      "server": "bgpc-003.sandbox.us01.dx.commercecloud.salesforce.com",
       "username": "rcervantes@unitedvirtualities.com",
       "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
-      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA==",
-      "two_factor": {
-        "enabled": "true",
-        "cert": "certs/aabrego.p12",
-        "password": "t8kdrXdL61E_IqdzQvpnhuTNtEHK1mYSkw==",
-        "url": "cert.staging.na01.advancedrx.demandware.net"
-      }
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
+    },
+    "dev4": {
+      "server": "bgpc-004.sandbox.us01.dx.commercecloud.salesforce.com",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
+    },
+    "dev5": {
+      "server": "bgpc-005.sandbox.us01.dx.commercecloud.salesforce.com",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
+    },
+    "dev6": {
+      "server": "bgpc-006.sandbox.us01.dx.commercecloud.salesforce.com",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
+    },
+    "ci_new": {
+      "server": "bgpc-007.sandbox.us01.dx.commercecloud.salesforce.com",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     }
   },
   "settings": {
     "general": {
-      "target_environment": "ci"
+      "target_environment": "dev2"
     },
     "siteImport": {
       "enabled": "true",
@@ -76,8 +98,7 @@
       }
     },
     "project": {
-      "version": "drschar_website_dev",
-      "build": "${BITBUCKET_BUILD_NUMBER}"
+      "version": "r_cervantes2"
     },
     "optimize": {
       "postcss": false,

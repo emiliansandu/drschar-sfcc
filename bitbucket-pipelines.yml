@@ -13,8 +13,8 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-007
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-007
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-development --target=ci
     release/*:
       - step:
           name: Deploy to development
@@ -27,8 +27,8 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=development
     master:
       - step:
           name: Ready?
@@ -47,7 +47,7 @@ pipelines:
           script:
               - npm --prefix ./build-suite/ install
               - npm --prefix ./build-suite/ rebuild node-sass
-              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-staging              
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=staging
 
 definitions:
     caches:
