@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Deletes recurring payment instrument from Adyen
  *
@@ -6,28 +8,24 @@
  */
 
 /* API Includes */
-const Logger = require('dw/system/Logger');
-
+var Logger = require('dw/system/Logger');
 /* Script Modules */
-const AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
+
+
+var AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
 
 function deleteRecurringPayment(args) {
   try {
-    const service = AdyenHelper.getService(
-      AdyenHelper.SERVICE.RECURRING_DISABLE,
-    );
+    var service = AdyenHelper.getService(AdyenHelper.SERVICE.RECURRING_DISABLE);
+
     if (!service) {
       throw new Error('Could not do /disable call');
     }
 
-    const customer = args.Customer ? args.Customer : null;
-    const profile = customer && customer.registered && customer.getProfile()
-      ? customer.getProfile()
-      : null;
-    let customerID = null;
-    const recurringDetailReference = args.RecurringDetailReference
-      ? args.RecurringDetailReference
-      : null;
+    var customer = args.Customer ? args.Customer : null;
+    var profile = customer && customer.registered && customer.getProfile() ? customer.getProfile() : null;
+    var customerID = null;
+    var recurringDetailReference = args.RecurringDetailReference ? args.RecurringDetailReference : null;
 
     if (profile && profile.getCustomerNo()) {
       customerID = profile.getCustomerNo();
@@ -37,39 +35,26 @@ function deleteRecurringPayment(args) {
       throw new Error('No Customer ID or RecurringDetailReference provided');
     }
 
-    const requestObject = {
+    var requestObject = {
       merchantAccount: AdyenHelper.getAdyenMerchantAccount(),
       shopperReference: customerID,
       recurringDetailReference: recurringDetailReference,
-      contract: 'ONECLICK',
+      contract: 'ONECLICK'
     };
-
-    const apiKey = AdyenHelper.getAdyenApiKey();
+    var apiKey = AdyenHelper.getAdyenApiKey();
     service.addHeader('Content-type', 'application/json');
     service.addHeader('charset', 'UTF-8');
     service.addHeader('X-API-KEY', apiKey);
-
-    const callResult = service.call(JSON.stringify(requestObject));
+    var callResult = service.call(JSON.stringify(requestObject));
 
     if (!callResult.isOk()) {
-      throw new Error(
-        `/disable Call error code${
-          callResult.getError().toString()
-        } Error => ResponseStatus: ${
-          callResult.getStatus()
-        } | ResponseErrorText: ${
-          callResult.getErrorMessage()
-        } | ResponseText: ${
-          callResult.getMsg()}`,
-      );
+      throw new Error("/disable Call error code".concat(callResult.getError().toString(), " Error => ResponseStatus: ").concat(callResult.getStatus(), " | ResponseErrorText: ").concat(callResult.getErrorMessage(), " | ResponseText: ").concat(callResult.getMsg()));
     }
   } catch (e) {
-    Logger.getLogger('Adyen').fatal(
-      `Adyen: ${e.toString()} in ${e.fileName}:${e.lineNumber}`,
-    );
+    Logger.getLogger('Adyen').fatal("Adyen: ".concat(e.toString(), " in ").concat(e.fileName, ":").concat(e.lineNumber));
   }
 }
 
 module.exports = {
-  deleteRecurringPayment: deleteRecurringPayment,
+  deleteRecurringPayment: deleteRecurringPayment
 };

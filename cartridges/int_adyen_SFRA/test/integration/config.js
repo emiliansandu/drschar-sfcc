@@ -1,23 +1,23 @@
-const cvcFail = '123';
-const cvcSuccess = '737';
-const expiryDate = '1020';
-const mastercard = '5100290029002909';
-const mastercard3D = '5454545454545454';
-const holdernameSuccess = 'Mastercard Success';
-const holdernameFail = 'Mastercard Fail';
-const username = 'YOUR_USERNAME';
-const password = 'YOUR_PASSWORD';
-const password3d = 'password';
-const passwordFail = 'passwordFail';
+"use strict";
 
+var cvcFail = '123';
+var cvcSuccess = '737';
+var expiryDate = '1020';
+var mastercard = '5100290029002909';
+var mastercard3D = '5454545454545454';
+var holdernameSuccess = 'Mastercard Success';
+var holdernameFail = 'Mastercard Fail';
+var username = 'YOUR_USERNAME';
+var password = 'YOUR_PASSWORD';
+var password3d = 'password';
+var passwordFail = 'passwordFail';
 module.exports = {
   Storefront: {
     url: 'https://www.yourstorefront.com?lang=en_US',
     login: '/on/demandware.store/Sites-RefArch-Site/default/Checkout-Login',
     urlEUR: 'https://www.yourstorefront.com?lang=fr_FR',
-    loginEUR: '/on/demandware.store/Sites-RefArch-Site/fr_FR/Checkout-Login',
+    loginEUR: '/on/demandware.store/Sites-RefArch-Site/fr_FR/Checkout-Login'
   },
-
   Guest: {
     guestEmail: 'guest@adyen.com',
     guestFirstName: 'Guest',
@@ -28,47 +28,40 @@ module.exports = {
     guestPostCode: '12321',
     guestCountryCode: 'NL',
     guestPhoneNumber: '0612345679',
-    guestDOB: '1990-10-10',
+    guestDOB: '1990-10-10'
   },
-
   cardSuccess: {
     holderName: holdernameSuccess,
     cardNumber: mastercard,
     expiryDate: expiryDate,
-    cvc: cvcSuccess,
+    cvc: cvcSuccess
   },
-
   cardSuccess3D: {
     holderName: holdernameSuccess,
     cardNumber: mastercard3D,
     expiryDate: expiryDate,
-    cvc: cvcSuccess,
+    cvc: cvcSuccess
   },
-
   cardFail: {
     holderName: holdernameFail,
     cardNumber: mastercard,
     expiryDate: expiryDate,
-    cvc: cvcFail,
+    cvc: cvcFail
   },
-
   cardFail3D: {
     holderName: holdernameFail,
     cardNumber: mastercard3D,
     expiryDate: expiryDate,
-    cvc: cvcFail,
+    cvc: cvcFail
   },
-
   threeds2DetailsSuccess: {
-    password: password3d,
+    password: password3d
   },
-
   threeds2DetailsFail: {
-    password: passwordFail,
+    password: passwordFail
   },
-
   userAccount: {
     username: username,
-    password: password,
-  },
+    password: password
+  }
 };

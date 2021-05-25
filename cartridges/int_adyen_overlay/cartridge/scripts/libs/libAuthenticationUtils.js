@@ -1,11 +1,11 @@
+"use strict";
+
 /**
  *
  * Script use to handle authentications for different Adyen (in) calls
  *
  */
-
-const StringUtils = require('dw/util/StringUtils');
-
+var StringUtils = require('dw/util/StringUtils');
 /**
  *
  * @function Checks the Basic Authentication header agains the give user and password combination
@@ -13,20 +13,23 @@ const StringUtils = require('dw/util/StringUtils');
  * @param baUser The Basic Authentication user
  * @param baPassword The basic Authentication password
  */
+
+
 function checkGivenCredentials(baHeader, baUser, baPassword) {
-  const basicPrefix = 'Basic';
+  var basicPrefix = 'Basic';
+
   if (baHeader && baHeader.indexOf(basicPrefix) === 0) {
     // Authorization: Basic base64credentials
-    const base64Credentials = baHeader.substring(basicPrefix.length).trim();
-    const credentials = StringUtils.decodeBase64(base64Credentials);
-    // credentials = username:password
-    const values = credentials.split(':', 2);
+    var base64Credentials = baHeader.substring(basicPrefix.length).trim();
+    var credentials = StringUtils.decodeBase64(base64Credentials); // credentials = username:password
 
+    var values = credentials.split(':', 2);
     return values[0] === baUser && values[1] === baPassword;
   }
+
   return false;
 }
 
 module.exports = {
-  checkGivenCredentials: checkGivenCredentials,
+  checkGivenCredentials: checkGivenCredentials
 };

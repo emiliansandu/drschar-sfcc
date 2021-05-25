@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Generate the parameters needed for the redirect to the Adyen Hosted Payment Page.
  * A signature is calculated based on the configured HMAC code
@@ -25,55 +27,54 @@
  *
  */
 require('dw/crypto');
-require('dw/system');
-require('dw/order');
-require('dw/util');
-require('dw/value');
-require('dw/net');
-require('dw/web');
 
-// script include
-const LineItemHelper = require('*/cartridge/scripts/util/lineItemHelper');
+require('dw/system');
+
+require('dw/order');
+
+require('dw/util');
+
+require('dw/value');
+
+require('dw/net');
+
+require('dw/web'); // script include
+
+
+var LineItemHelper = require('*/cartridge/scripts/util/lineItemHelper');
 
 function getLineItems(args) {
-  let order;
+  var order;
+
   if (args.Order) {
     order = args.Order;
   } else {
     return null;
-  }
+  } // Add all product and shipping line items to request
 
-  // Add all product and shipping line items to request
-  const lineItems = [];
-  const allLineItems = order.getAllLineItems();
-  for (const item in allLineItems) {
-    const lineItem = allLineItems[item];
-    if (
-      (lineItem instanceof dw.order.ProductLineItem
-        && !lineItem.bonusProductLineItem)
-      || lineItem instanceof dw.order.ShippingLineItem
-      || (lineItem instanceof dw.order.PriceAdjustment
-        && lineItem.promotion.promotionClass
-          === dw.campaign.Promotion.PROMOTION_CLASS_ORDER)
-    ) {
-      const lineItemObject = {};
-      const description = LineItemHelper.getDescription(lineItem);
-      const id = LineItemHelper.getId(lineItem);
-      const quantity = LineItemHelper.getQuantity(lineItem);
-      const itemAmount = LineItemHelper.getItemAmount(lineItem).divide(quantity);
-      const vatAmount = LineItemHelper.getVatAmount(lineItem).divide(quantity);
-      const vatPercentage = LineItemHelper.getVatPercentage(lineItem);
 
+  var lineItems = [];
+  var allLineItems = order.getAllLineItems();
+
+  for (var item in allLineItems) {
+    var lineItem = allLineItems[item];
+
+    if (lineItem instanceof dw.order.ProductLineItem && !lineItem.bonusProductLineItem || lineItem instanceof dw.order.ShippingLineItem || lineItem instanceof dw.order.PriceAdjustment && lineItem.promotion.promotionClass === dw.campaign.Promotion.PROMOTION_CLASS_ORDER) {
+      var lineItemObject = {};
+      var description = LineItemHelper.getDescription(lineItem);
+      var id = LineItemHelper.getId(lineItem);
+      var quantity = LineItemHelper.getQuantity(lineItem);
+      var itemAmount = LineItemHelper.getItemAmount(lineItem).divide(quantity);
+      var vatAmount = LineItemHelper.getVatAmount(lineItem).divide(quantity);
+      var vatPercentage = LineItemHelper.getVatPercentage(lineItem);
       lineItemObject.amountExcludingTax = itemAmount.getValue().toFixed();
       lineItemObject.taxAmount = vatAmount.getValue().toFixed();
       lineItemObject.description = description;
       lineItemObject.id = id;
       lineItemObject.quantity = quantity;
       lineItemObject.taxCategory = 'None';
-      lineItemObject.taxPercentage = (
-        new Number(vatPercentage) * 10000 // eslint-disable-line no-new-wrappers
+      lineItemObject.taxPercentage = (new Number(vatPercentage) * 10000 // eslint-disable-line no-new-wrappers
       ).toFixed();
-
       lineItems.push(lineItemObject);
     }
   }
@@ -82,5 +83,5 @@ function getLineItems(args) {
 }
 
 module.exports = {
-  getLineItems: getLineItems,
+  getLineItems: getLineItems
 };

@@ -1,14 +1,16 @@
-Feature('Credit card');
-const config = require('../config');
+"use strict";
 
-Scenario('Guest Credit card success', (I) => {
+Feature('Credit card');
+
+var config = require('../config');
+
+Scenario('Guest Credit card success', I => {
   I.initiatePayment(function () {
     I.setCardDetails(config.cardSuccess);
   });
   I.see('Thank you');
 });
-
-Scenario('Guest Credit card 3d success', (I) => {
+Scenario('Guest Credit card 3d success', I => {
   I.initiatePayment(function () {
     I.setCardDetails(config.cardSuccess3D);
   });
@@ -16,15 +18,13 @@ Scenario('Guest Credit card 3d success', (I) => {
   I.switchTo();
   I.see('Thank you');
 });
-
-Scenario('Guest Credit card failed', (I) => {
+Scenario('Guest Credit card failed', I => {
   I.initiatePayment(function () {
     I.setCardDetails(config.cardFail);
   });
   I.dontSee('Thank you');
 });
-
-Scenario('Guest Credit card 3d failed', (I) => {
+Scenario('Guest Credit card 3d failed', I => {
   I.initiatePayment(function () {
     I.setCardDetails(config.cardFail3D);
   });
@@ -32,16 +32,14 @@ Scenario('Guest Credit card 3d failed', (I) => {
   I.switchTo();
   I.dontSee('Thank you');
 });
-
-Scenario('Guest iDeal success', (I) => {
+Scenario('Guest iDeal success', I => {
   I.initiatePayment(function () {
     I.selectIdealPayment();
     I.selectIssuerSuccess();
   });
   I.see('Thank you');
 });
-
-Scenario('Guest iDeal failed', (I) => {
+Scenario('Guest iDeal failed', I => {
   I.initiatePayment(function () {
     I.selectIdealPayment();
     I.selectIssuerPending();
@@ -49,8 +47,7 @@ Scenario('Guest iDeal failed', (I) => {
   I.continueOnHppIdeal();
   I.dontSee('Thank you');
 });
-
-Scenario('Multibanco success', (I) => {
+Scenario('Multibanco success', I => {
   I.amOnPage(config.Storefront.urlEUR);
   I.confirmTrackingConsent();
   I.addProductToCart();

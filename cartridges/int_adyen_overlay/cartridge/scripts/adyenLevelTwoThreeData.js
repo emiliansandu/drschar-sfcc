@@ -1,3 +1,11 @@
+"use strict";
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /**
  * Generate the parameters needed for the redirect to the Adyen Hosted Payment Page.
  * A signature is calculated based on the configured HMAC code
@@ -25,54 +33,67 @@
  *
  */
 require('dw/crypto');
+
 require('dw/system');
+
 require('dw/order');
+
 require('dw/util');
+
 require('dw/value');
+
 require('dw/net');
+
 require('dw/web');
 
-const AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
+var AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
 
-const LineItemHelper = require('*/cartridge/scripts/util/lineItemHelper');
+var LineItemHelper = require('*/cartridge/scripts/util/lineItemHelper');
 
-function getLineItems({ Order: order }) {
-  if (!order) return null;
-  // Add all product and shipping line items to request
-  const allLineItems = order.getAllLineItems();
-  const shopperReference = getShopperReference(order);
+function getLineItems(_ref) {
+  var {
+    Order: order
+  } = _ref;
+  if (!order) return null; // Add all product and shipping line items to request
 
+  var allLineItems = order.getAllLineItems();
+  var shopperReference = getShopperReference(order);
   return allLineItems.toArray().reduce((acc, lineItem, index) => {
-    const description = LineItemHelper.getDescription(lineItem);
-    const id = LineItemHelper.getId(lineItem);
-    const quantity = LineItemHelper.getQuantity(lineItem);
-    const itemAmount = LineItemHelper.getItemAmount(lineItem) / quantity;
-    const vatAmount = LineItemHelper.getVatAmount(lineItem) / quantity;
-    const commodityCode = AdyenHelper.getAdyenLevel23CommodityCode();
-    const currentLineItem = {
-      [`enhancedSchemeData.itemDetailLine${index + 1}.unitPrice`]: itemAmount.toFixed(),
-      [`enhancedSchemeData.itemDetailLine${index + 1}.totalAmount`]: parseFloat(itemAmount.toFixed()) + parseFloat(vatAmount.toFixed()),
-      [`enhancedSchemeData.itemDetailLine${index + 1}.quantity`]: quantity,
-      [`enhancedSchemeData.itemDetailLine${index + 1}.unitOfMeasure`]: 'EAC',
-      ...(commodityCode && { [`enhancedSchemeData.itemDetailLine${index + 1}.commodityCode`]: commodityCode }),
-      ...(description && { [`enhancedSchemeData.itemDetailLine${index + 1}.description`]: description.substring(0, 26).replace(/[^\x00-\x7F]/g, '') }),
-      ...(id && { [`enhancedSchemeData.itemDetailLine${index + 1}.productCode`]: id.substring(0, 12) }),
-    };
+    var description = LineItemHelper.getDescription(lineItem);
+    var id = LineItemHelper.getId(lineItem);
+    var quantity = LineItemHelper.getQuantity(lineItem);
+    var itemAmount = LineItemHelper.getItemAmount(lineItem) / quantity;
+    var vatAmount = LineItemHelper.getVatAmount(lineItem) / quantity;
+    var commodityCode = AdyenHelper.getAdyenLevel23CommodityCode();
 
-    return {
-      ...acc,
-      ...currentLineItem,
-      'enhancedSchemeData.totalTaxAmount': acc['enhancedSchemeData.totalTaxAmount'] + parseFloat(vatAmount.toFixed()),
-    };
-  }, { 'enhancedSchemeData.totalTaxAmount': 0.0, 'enhancedSchemeData.customerReference': shopperReference.substring(0, 25) });
+    var currentLineItem = _objectSpread(_objectSpread(_objectSpread({
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitPrice")]: itemAmount.toFixed(),
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".totalAmount")]: parseFloat(itemAmount.toFixed()) + parseFloat(vatAmount.toFixed()),
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".quantity")]: quantity,
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitOfMeasure")]: 'EAC'
+    }, commodityCode && {
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".commodityCode")]: commodityCode
+    }), description && {
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".description")]: description.substring(0, 26).replace(/[^\x00-\x7F]/g, '')
+    }), id && {
+      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".productCode")]: id.substring(0, 12)
+    });
+
+    return _objectSpread(_objectSpread(_objectSpread({}, acc), currentLineItem), {}, {
+      'enhancedSchemeData.totalTaxAmount': acc['enhancedSchemeData.totalTaxAmount'] + parseFloat(vatAmount.toFixed())
+    });
+  }, {
+    'enhancedSchemeData.totalTaxAmount': 0.0,
+    'enhancedSchemeData.customerReference': shopperReference.substring(0, 25)
+  });
 }
 
 function getShopperReference(order) {
-  const customer = order.getCustomer();
-  const isRegistered = customer && customer.registered;
-  const profile = isRegistered && customer.getProfile();
-  const profileCustomerNo = profile && profile.getCustomerNo();
-  const orderNo = profileCustomerNo || order.getCustomerNo();
+  var customer = order.getCustomer();
+  var isRegistered = customer && customer.registered;
+  var profile = isRegistered && customer.getProfile();
+  var profileCustomerNo = profile && profile.getCustomerNo();
+  var orderNo = profileCustomerNo || order.getCustomerNo();
   return orderNo || customer.getID() || 'no-unique-ref';
 }
 

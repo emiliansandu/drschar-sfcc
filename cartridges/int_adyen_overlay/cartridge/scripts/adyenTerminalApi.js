@@ -1,17 +1,22 @@
+"use strict";
+
 // script include
-const Logger = require('dw/system/Logger');
-const StringUtils = require('dw/util/StringUtils');
-const Transaction = require('dw/system/Transaction');
-const Order = require('dw/order/Order');
-const AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
+var Logger = require('dw/system/Logger');
+
+var StringUtils = require('dw/util/StringUtils');
+
+var Transaction = require('dw/system/Transaction');
+
+var Order = require('dw/order/Order');
+
+var AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
 
 function getTerminals() {
   try {
-    const requestObject = {};
-    const getTerminalRequest = {};
-    getTerminalRequest.merchantAccount = AdyenHelper.getAdyenMerchantAccount();
+    var requestObject = {};
+    var getTerminalRequest = {};
+    getTerminalRequest.merchantAccount = AdyenHelper.getAdyenMerchantAccount(); // storeId is optional
 
-    // storeId is optional
     if (AdyenHelper.getAdyenStoreId() !== null) {
       getTerminalRequest.store = AdyenHelper.getAdyenStoreId();
     }
@@ -19,46 +24,31 @@ function getTerminals() {
     requestObject.request = getTerminalRequest;
     return executeCall(AdyenHelper.SERVICE.CONNECTEDTERMINALS, requestObject);
   } catch (e) {
-    Logger.getLogger('Adyen').error(
-      `Adyen getTerminals: ${
-        e.toString()
-      } in ${
-        e.fileName
-      }:${
-        e.lineNumber}`,
-    );
-    return { error: true, response: '{}' };
+    Logger.getLogger('Adyen').error("Adyen getTerminals: ".concat(e.toString(), " in ").concat(e.fileName, ":").concat(e.lineNumber));
+    return {
+      error: true,
+      response: '{}'
+    };
   }
 }
 
 function createTerminalPayment(order, paymentInstrument, terminalId) {
   try {
     Transaction.begin();
-    const terminalRequestObject = {};
+    var terminalRequestObject = {};
+
     if (!order || !paymentInstrument) {
-      throw new Error(
-        `Could not retrieve payment data, order = ${
-          JSON.stringify(order)
-        }, paymentInstrument = ${
-          JSON.stringify(paymentInstrument)}`,
-      );
+      throw new Error("Could not retrieve payment data, order = ".concat(JSON.stringify(order), ", paymentInstrument = ").concat(JSON.stringify(paymentInstrument)));
     }
 
-    const amount = paymentInstrument.paymentTransaction.amount;
+    var amount = paymentInstrument.paymentTransaction.amount; // serviceId should be a unique string
 
-    // serviceId should be a unique string
-    const date = new Date();
-    const dateString = date.getTime().toString();
-    const serviceId = dateString.substr(dateString.length - 10);
-
-    const applicationInfoObject = {};
-    applicationInfoObject.applicationInfo = AdyenHelper.getApplicationInfo(
-      false,
-    );
-    const applicationInfoBase64 = StringUtils.encodeBase64(
-      JSON.stringify(applicationInfoObject),
-    );
-
+    var date = new Date();
+    var dateString = date.getTime().toString();
+    var serviceId = dateString.substr(dateString.length - 10);
+    var applicationInfoObject = {};
+    applicationInfoObject.applicationInfo = AdyenHelper.getApplicationInfo(false);
+    var applicationInfoBase64 = StringUtils.encodeBase64(JSON.stringify(applicationInfoObject));
     terminalRequestObject.request = {
       SaleToPOIRequest: {
         MessageHeader: {
@@ -68,90 +58,80 @@ function createTerminalPayment(order, paymentInstrument, terminalId) {
           MessageType: 'Request',
           ServiceID: serviceId,
           SaleID: 'SalesforceCommerceCloud',
-          POIID: terminalId,
+          POIID: terminalId
         },
         PaymentRequest: {
           SaleData: {
             SaleTransactionID: {
               TransactionID: order.getOrderNo(),
-              TimeStamp: new Date(),
+              TimeStamp: new Date()
             },
             SaleReferenceID: 'SalesforceCommerceCloudPOS',
-            SaleToAcquirerData: applicationInfoBase64,
+            SaleToAcquirerData: applicationInfoBase64
           },
           PaymentTransaction: {
             AmountsReq: {
               Currency: amount.currencyCode,
-              RequestedAmount: amount.value,
-            },
-          },
-        },
-      },
+              RequestedAmount: amount.value
+            }
+          }
+        }
+      }
     };
-
     terminalRequestObject.isPaymentRequest = true;
     terminalRequestObject.serviceId = serviceId;
     terminalRequestObject.terminalId = terminalId;
+    var paymentResult = executeCall(AdyenHelper.SERVICE.POSPAYMENT, terminalRequestObject);
 
-    const paymentResult = executeCall(
-      AdyenHelper.SERVICE.POSPAYMENT,
-      terminalRequestObject,
-    );
     if (paymentResult.error) {
-      throw new Error(
-        `Error in POS payment result: ${JSON.stringify(paymentResult.response)}`,
-      );
+      throw new Error("Error in POS payment result: ".concat(JSON.stringify(paymentResult.response)));
     } else {
-      const terminalResponse = JSON.parse(paymentResult.response);
-      let paymentResponse = '';
+      var terminalResponse = JSON.parse(paymentResult.response);
+      var paymentResponse = '';
+
       if (terminalResponse.SaleToPOIResponse) {
         paymentResponse = terminalResponse.SaleToPOIResponse.PaymentResponse;
+
         if (paymentResponse.Response.Result === 'Success') {
           order.custom.Adyen_eventCode = 'AUTHORISATION';
-          let pspReference = '';
-          if (
-            !empty(
-              paymentResponse.PaymentResult.PaymentAcquirerData
-                .AcquirerTransactionID.TransactionID,
-            )
-          ) {
-            pspReference = paymentResponse.PaymentResult.PaymentAcquirerData
-              .AcquirerTransactionID.TransactionID;
-          } else if (
-            !empty(paymentResponse.POIData.POITransactionID.TransactionID)
-          ) {
-            pspReference = paymentResponse.POIData.POITransactionID.TransactionID.split(
-              '.',
-            )[1];
-          }
-          // Save full response to transaction custom attribute
+          var pspReference = '';
+
+          if (!empty(paymentResponse.PaymentResult.PaymentAcquirerData.AcquirerTransactionID.TransactionID)) {
+            pspReference = paymentResponse.PaymentResult.PaymentAcquirerData.AcquirerTransactionID.TransactionID;
+          } else if (!empty(paymentResponse.POIData.POITransactionID.TransactionID)) {
+            pspReference = paymentResponse.POIData.POITransactionID.TransactionID.split('.')[1];
+          } // Save full response to transaction custom attribute
+
+
           paymentInstrument.paymentTransaction.transactionID = pspReference;
           order.custom.Adyen_pspReference = pspReference;
           order.setPaymentStatus(Order.PAYMENT_STATUS_PAID);
           order.setExportStatus(Order.EXPORT_STATUS_READY);
-          paymentInstrument.paymentTransaction.custom.Adyen_log = JSON.stringify(
-            paymentResponse,
-          );
+          paymentInstrument.paymentTransaction.custom.Adyen_log = JSON.stringify(paymentResponse);
           Transaction.commit();
-          return { error: false, authorized: true };
+          return {
+            error: false,
+            authorized: true
+          };
         }
       }
 
-      throw new Error(
-        `No correct response: ${JSON.stringify(paymentResponse.Response)}`,
-      );
+      throw new Error("No correct response: ".concat(JSON.stringify(paymentResponse.Response)));
     }
   } catch (e) {
     Transaction.rollback();
-    return { error: true, response: e.toString() };
+    return {
+      error: true,
+      response: e.toString()
+    };
   }
 }
 
 function sendAbortRequest(serviceId, terminalId) {
-  const abortRequestObject = {};
-  const newDate = new Date();
-  const newDateString = newDate.getTime().toString();
-  const newServiceId = newDateString.substr(newDateString.length - 10);
+  var abortRequestObject = {};
+  var newDate = new Date();
+  var newDateString = newDate.getTime().toString();
+  var newServiceId = newDateString.substr(newDateString.length - 10);
   abortRequestObject.request = {
     SaleToPOIRequest: {
       AbortRequest: {
@@ -159,8 +139,8 @@ function sendAbortRequest(serviceId, terminalId) {
         MessageReference: {
           SaleID: 'SalesforceCommerceCloud',
           ServiceID: serviceId,
-          MessageCategory: 'Payment',
-        },
+          MessageCategory: 'Payment'
+        }
       },
       MessageHeader: {
         MessageType: 'Request',
@@ -169,59 +149,51 @@ function sendAbortRequest(serviceId, terminalId) {
         ServiceID: newServiceId,
         SaleID: 'SalesforceCommerceCloud',
         POIID: terminalId,
-        ProtocolVersion: '3.0',
-      },
-    },
+        ProtocolVersion: '3.0'
+      }
+    }
   };
   return executeCall(AdyenHelper.SERVICE.POSPAYMENT, abortRequestObject);
 }
 
 function executeCall(serviceType, requestObject) {
-  const service = AdyenHelper.getService(serviceType);
+  var service = AdyenHelper.getService(serviceType);
+
   if (!service) {
-    throw new Error(`Error creating terminal service ${serviceType}`);
+    throw new Error("Error creating terminal service ".concat(serviceType));
   }
 
-  const apiKey = AdyenHelper.getAdyenApiKey();
+  var apiKey = AdyenHelper.getAdyenApiKey();
   service.addHeader('Content-type', 'application/json');
   service.addHeader('charset', 'UTF-8');
   service.addHeader('X-API-KEY', apiKey);
-  const callResult = service.call(JSON.stringify(requestObject.request));
+  var callResult = service.call(JSON.stringify(requestObject.request));
 
   if (callResult.isOk() === false) {
     if (requestObject.isPaymentRequest) {
-      const abortResult = sendAbortRequest(
-        requestObject.serviceId,
-        requestObject.terminalId,
-      ).response;
-      return { error: true, response: `Request aborted: ${abortResult}` };
+      var abortResult = sendAbortRequest(requestObject.serviceId, requestObject.terminalId).response;
+      return {
+        error: true,
+        response: "Request aborted: ".concat(abortResult)
+      };
     }
-    throw new Error(
-      `Call error code${
-        callResult.getError().toString()
-      } Error => ResponseStatus: ${
-        callResult.getStatus()
-      } | ResponseErrorText: ${
-        callResult.getErrorMessage()
-      } | ResponseText: ${
-        callResult.getMsg()}`,
-    );
+
+    throw new Error("Call error code".concat(callResult.getError().toString(), " Error => ResponseStatus: ").concat(callResult.getStatus(), " | ResponseErrorText: ").concat(callResult.getErrorMessage(), " | ResponseText: ").concat(callResult.getMsg()));
   }
 
-  const resultObject = callResult.object;
+  var resultObject = callResult.object;
+
   if (!resultObject || !resultObject.getText()) {
-    throw new Error(
-      `No correct response from ${
-        serviceType
-      }, result: ${
-        JSON.stringify(resultObject)}`,
-    );
+    throw new Error("No correct response from ".concat(serviceType, ", result: ").concat(JSON.stringify(resultObject)));
   }
 
-  return { error: false, response: resultObject.getText() };
+  return {
+    error: false,
+    response: resultObject.getText()
+  };
 }
 
 module.exports = {
   getTerminals: getTerminals,
-  createTerminalPayment: createTerminalPayment,
+  createTerminalPayment: createTerminalPayment
 };

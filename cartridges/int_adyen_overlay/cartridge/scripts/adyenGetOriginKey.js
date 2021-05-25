@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Gets recurring payment list from Adyen
  *
@@ -6,64 +8,53 @@
  */
 
 /* API Includes */
-const Logger = require('dw/system/Logger');
-
+var Logger = require('dw/system/Logger');
 /* Script Modules */
-const AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
+
+
+var AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
 
 function getOriginKey(origin) {
   try {
-    const requestObject = {};
-    const service = AdyenHelper.getService(AdyenHelper.SERVICE.ORIGINKEYS);
+    var requestObject = {};
+    var service = AdyenHelper.getService(AdyenHelper.SERVICE.ORIGINKEYS);
 
     if (!service) {
       throw new Error('Could not do /originKeys call');
     }
 
-    const domain = [];
+    var domain = [];
     domain.push(origin);
     requestObject.originDomains = domain;
-
-    const xapikey = AdyenHelper.getAdyenApiKey();
+    var xapikey = AdyenHelper.getAdyenApiKey();
     service.addHeader('Content-type', 'application/json');
     service.addHeader('charset', 'UTF-8');
     service.addHeader('X-API-key', xapikey);
-    const callResult = service.call(JSON.stringify(requestObject));
+    var callResult = service.call(JSON.stringify(requestObject));
 
     if (!callResult.isOk()) {
-      throw new Error(
-        `/originKeys Call error code${
-          callResult.getError().toString()
-        } Error => ResponseStatus: ${
-          callResult.getStatus()
-        } | ResponseErrorText: ${
-          callResult.getErrorMessage()
-        } | ResponseText: ${
-          callResult.getMsg()}`,
-      );
+      throw new Error("/originKeys Call error code".concat(callResult.getError().toString(), " Error => ResponseStatus: ").concat(callResult.getStatus(), " | ResponseErrorText: ").concat(callResult.getErrorMessage(), " | ResponseText: ").concat(callResult.getMsg()));
     }
 
-    const resultObject = callResult.object;
+    var resultObject = callResult.object;
+
     if (!resultObject || !resultObject.getText()) {
       throw new Error('No correct response from /originKeys call');
     }
 
     return JSON.parse(resultObject.getText());
   } catch (e) {
-    Logger.getLogger('Adyen').fatal(
-      `Adyen: ${e.toString()} in ${e.fileName}:${e.lineNumber}`,
-    );
+    Logger.getLogger('Adyen').fatal("Adyen: ".concat(e.toString(), " in ").concat(e.fileName, ":").concat(e.lineNumber));
   }
 }
 
 function getOriginKeyFromRequest(protocol, host) {
-  const origin = `${protocol}://${host}`;
-  const originKeysResponse = getOriginKey(origin);
-
+  var origin = "".concat(protocol, "://").concat(host);
+  var originKeysResponse = getOriginKey(origin);
   return originKeysResponse.originKeys[origin];
 }
 
 module.exports = {
   getOriginKey: getOriginKey,
-  getOriginKeyFromRequest: getOriginKeyFromRequest,
+  getOriginKeyFromRequest: getOriginKeyFromRequest
 };

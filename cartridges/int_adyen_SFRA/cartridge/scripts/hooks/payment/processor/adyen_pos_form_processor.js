@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Verifies the required information for billing form is provided.
  * @param {Object} req - The request object
@@ -6,24 +8,22 @@
  * @returns {Object} an object that has error information or payment information
  */
 function processForm(req, paymentForm, viewFormData) {
-  const viewData = viewFormData;
+  var viewData = viewFormData;
   viewData.paymentMethod = {
     value: paymentForm.paymentMethod.value,
-    htmlName: paymentForm.paymentMethod.value,
+    htmlName: paymentForm.paymentMethod.value
   };
-
   return {
     error: false,
-    viewData: viewData,
+    viewData: viewData
   };
 }
-
 /**
  * By default no save payment information is supported
  */
-function savePaymentInformation() {
 
-}
+
+function savePaymentInformation() {}
 
 exports.processForm = processForm;
 exports.savePaymentInformation = savePaymentInformation;

@@ -1,3 +1,5 @@
+"use strict";
+
 function getCurrentBasket() {
   return {
     defaultShipment: {
@@ -8,47 +10,47 @@ function getCurrentBasket() {
         address2: '',
         city: 'Allston',
         postalCode: '02135',
-        countryCode: { value: 'us' },
+        countryCode: {
+          value: 'us'
+        },
         phone: '617-555-1234',
         stateCode: 'MA',
-
-        setFirstName: function (firstNameInput) {
+        setFirstName: function setFirstName(firstNameInput) {
           this.firstName = firstNameInput;
         },
-        setLastName: function (lastNameInput) {
+        setLastName: function setLastName(lastNameInput) {
           this.lastName = lastNameInput;
         },
-        setAddress1: function (address1Input) {
+        setAddress1: function setAddress1(address1Input) {
           this.address1 = address1Input;
         },
-        setAddress2: function (address2Input) {
+        setAddress2: function setAddress2(address2Input) {
           this.address2 = address2Input;
         },
-        setCity: function (cityInput) {
+        setCity: function setCity(cityInput) {
           this.city = cityInput;
         },
-        setPostalCode: function (postalCodeInput) {
+        setPostalCode: function setPostalCode(postalCodeInput) {
           this.postalCode = postalCodeInput;
         },
-        setStateCode: function (stateCodeInput) {
+        setStateCode: function setStateCode(stateCodeInput) {
           this.stateCode = stateCodeInput;
         },
-        setCountryCode: function (countryCodeInput) {
+        setCountryCode: function setCountryCode(countryCodeInput) {
           this.countryCode.value = countryCodeInput;
         },
-        setPhone: function (phoneInput) {
+        setPhone: function setPhone(phoneInput) {
           this.phone = phoneInput;
-        },
-      },
+        }
+      }
     },
     totalGrossPrice: {
-      value: 250.0,
+      value: 250.0
     },
-
-    paymentInstruments: {},
+    paymentInstruments: {}
   };
 }
 
 module.exports = {
-  getCurrentBasket: getCurrentBasket,
+  getCurrentBasket: getCurrentBasket
 };

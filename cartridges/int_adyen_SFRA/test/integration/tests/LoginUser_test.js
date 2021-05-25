@@ -1,7 +1,10 @@
-Feature('Credit card');
-const config = require('../config');
+"use strict";
 
-Scenario('Logged in Credit card success', (I) => {
+Feature('Credit card');
+
+var config = require('../config');
+
+Scenario('Logged in Credit card success', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -13,8 +16,7 @@ Scenario('Logged in Credit card success', (I) => {
   I.placeOrder();
   I.see('Thank you');
 });
-
-Scenario('Logged in Credit card 3d success', (I) => {
+Scenario('Logged in Credit card 3d success', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -28,8 +30,7 @@ Scenario('Logged in Credit card 3d success', (I) => {
   I.switchTo();
   I.see('Thank you');
 });
-
-Scenario('Logged in Credit card failed', (I) => {
+Scenario('Logged in Credit card failed', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -41,8 +42,7 @@ Scenario('Logged in Credit card failed', (I) => {
   I.placeOrder();
   I.dontSee('Thank you');
 });
-
-Scenario('Logged in Credit card 3d failed', (I) => {
+Scenario('Logged in Credit card 3d failed', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -55,8 +55,7 @@ Scenario('Logged in Credit card 3d failed', (I) => {
   I.set3dDetails(config.threeds2DetailsFail);
   I.dontSee('Thank you');
 });
-
-Scenario('Logged in Credit card store details and subsequent payment', (I) => {
+Scenario('Logged in Credit card store details and subsequent payment', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -77,8 +76,7 @@ Scenario('Logged in Credit card store details and subsequent payment', (I) => {
   I.placeOrder();
   I.see('Thank you');
 });
-
-Scenario('Logged in Credit card Oneclick success', (I) => {
+Scenario('Logged in Credit card Oneclick success', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -89,8 +87,7 @@ Scenario('Logged in Credit card Oneclick success', (I) => {
   I.placeOrder();
   I.see('Thank you');
 });
-
-Scenario('Logged in Credit card Oneclick fail', (I) => {
+Scenario('Logged in Credit card Oneclick fail', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -101,8 +98,7 @@ Scenario('Logged in Credit card Oneclick fail', (I) => {
   I.placeOrder();
   I.dontSee('Thank you');
 });
-
-Scenario('iDeal success', (I) => {
+Scenario('iDeal success', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
@@ -116,8 +112,7 @@ Scenario('iDeal success', (I) => {
   I.continueOnHppIdeal();
   I.see('Thank you');
 });
-
-Scenario('iDeal fail', (I) => {
+Scenario('iDeal fail', I => {
   I.amOnPage(config.Storefront.url);
   I.confirmTrackingConsent();
   I.addProductToCart();
