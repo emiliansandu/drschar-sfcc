@@ -15,7 +15,17 @@ pipelines:
             - npm run test
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=ci
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-sig --target=ci
-    release/*:
+      -   step:
+              name: Run Smoke test
+              caches:
+                  - maven
+              image: circleci/openjdk:8-jdk-stretch-node-browsers
+              script:
+                  - mvn -f test/automation/pom.xml dependency:go-offline |
+                  - mvn -f test/automation/pom.xml -DthreadCount=2 -Dtest=com.bobs.runner.smoke.* -Denvironment=ci -Dheadless clean test
+              artifacts:
+                  - test/automation/target/surefire-reports/**
+                  - test/automation/target/cucumber/**
       - step:
           name: Deploy to development
           caches:
