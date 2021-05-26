@@ -19,7 +19,7 @@
       "siteImport": {
         "enabled": "true",
         "sites": [
-          "drscahr"
+          "drschar"
         ],
         "initPath": "sites/site_template",
         "demoPath": "sites/site_demo"
@@ -28,8 +28,11 @@
         "app_drschar_storefront",
         "app_storefront_base",
         "bm_app_storefront_base",
+        "bm_paypal",
+        "bm_paypal_configuration",
         "int_adyen_overlay",
         "int_adyen_SFRA",
+        "int_paypal",
         "int_zendesk",        
         "modules",
         "plugin_dis"
@@ -53,8 +56,8 @@
     },
     "dev3": {
       "server": "bgpc-003.sandbox.us01.dx.commercecloud.salesforce.com",
-      "username": "rcervantes@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "username": "ocordero@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_R+gAVbKKhcc/fNnb+uaKbQ==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
