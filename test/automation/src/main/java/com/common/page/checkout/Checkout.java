@@ -58,8 +58,8 @@ public class Checkout extends PageObject {
     }
 
     public void clickCC() {
-        wait.until(ExpectedConditions.visibilityOf(payments));
-        WebElement order = driver.findElement(By.xpath(".//img[contains(@class,'credit-card-option')]"));
+        //wait.until(ExpectedConditions.visibilityOf(payments));
+        WebElement order = driver.findElement(By.xpath(".//li[contains(@data-method-id,'CREDIT_CARD')]"));
         order.click();
     }
 

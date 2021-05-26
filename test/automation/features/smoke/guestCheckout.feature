@@ -1,4 +1,4 @@
-#@Checkout
+@Checkout
 
   Feature: User can start checkout as guest
 
@@ -25,6 +25,7 @@
       Given User fills billing data
       And User clicks Next Payment
       Then Verify Checkout-Payment is displayed
+      And User select CC as payment method
 
       Given User fills payment data
       And User clicks Next Place Order
