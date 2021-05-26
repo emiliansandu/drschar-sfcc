@@ -157,7 +157,8 @@ server.get('Adyen3DS2', consentTracking.consent, csrfProtection.generateToken, s
       originKey: originKey,
       environment: environment,
       resultCode: resultCode,
-      action,
+// SyntaxError: invalid object initializer (int_adyen_SFRA/cartridge/controllers/Adyen.js#161)
+//      action,
       merchantReference: orderNo,
       orderToken: orderToken
     });
