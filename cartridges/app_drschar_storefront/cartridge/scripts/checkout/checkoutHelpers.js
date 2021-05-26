@@ -552,7 +552,8 @@ function sendConfirmationEmail(order, locale) {
         type: emailHelpers.emailTypes.orderConfirmation
     };
 
-    emailHelpers.sendEmail(emailObj, 'checkout/confirmation/confirmationEmail', orderObject);
+    emailHelpers.sendEmail(emailObj, 'emails/orderConfirmation', orderObject);
+   // emailHelpers.sendEmail(emailObj, 'checkout/confirmation/confirmationEmail', orderObject);
 }
 
 /**
