@@ -27,9 +27,12 @@
       "cartridges": [
         "app_drschar_storefront",
         "app_storefront_base",
+        "bm_app_storefront_base",
+        "bm_paypal",
+        "bm_paypal_configuration",
         "int_adyen_overlay",
         "int_adyen_SFRA",
-        "bm_app_storefront_base",
+        "int_paypal",
         "int_zendesk",        
         "modules",
         "plugin_dis"
