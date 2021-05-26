@@ -56,6 +56,13 @@ $font-family-thin: "Brandon Grotesque Thin";
 
 $font-family-andes:"Andes";
 
+$font-family-josefina-regular: "Josefin Sans Regular";
+$font-family-josefina-bold: "Josefin Sans Bold";
+$font-family-josefina-black: "Josefin Sans Black";
+$font-family-josefina-light: "Josefin Sans Light";
+$font-family-josefina-medium: "Josefin Sans Medium";
+$font-family-josefina-thin: "Josefin Sans Thin";
+
 $font-family-header:$font-family-bold;
 $font-family-base:$font-family-andes;
 
@@ -92,6 +99,33 @@ $font-family-base:$font-family-andes;
 @font-face {
     font-family: "Andes";
     src: url("../../fonts/ANDES/Latinotype-Andes.otf") format("opentype");
+}
+
+//josefin sans
+
+@font-face {
+    font-family: "Josefin Sans Regular";
+    src: url("../../fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Bold";
+    src: url("../../fonts/Josefin_Sans/JosefinSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Light";
+    src: url("../../fonts/Josefin_Sans/JosefinSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Medium";
+    src: url("../../fonts/Josefin_Sans/JosefinSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Thin";
+    src: url("../../fonts/Josefin_Sans/JosefinSans-Thin.ttf") format("truetype");
 }
 
 $white: #fff !default;
