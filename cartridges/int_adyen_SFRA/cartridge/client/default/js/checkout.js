@@ -1,6 +1,6 @@
 "use strict";
 
-var processInclude = require('../../../../../app_storefront_base/cartridge/client/default/js/util');
+var processInclude = require('base/util');
 
 var adyenCheckout = require('./adyenCheckout');
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
     adyenCheckout.methods.renderGenericComponent();
   }
 
-  processInclude(require('../../../../../app_storefront_base/cartridge/client/default/js/checkout/checkout'));
+  processInclude(require('base/checkout/checkout'));
   processInclude(require('./checkout/billing'));
   processInclude(require('./checkout/checkout'));
   $('#selectedPaymentOption').val($('.payment-options .nav-item .active').parent().attr('data-method-id'));

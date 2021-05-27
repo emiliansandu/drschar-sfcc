@@ -15,5 +15,6 @@
 
 #paymentMethodsUl {
   width: 80%;
-  padding-inline-start: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
   margin: auto; }

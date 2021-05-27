@@ -93,9 +93,9 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-  "use strict";
-  eval("\n\nvar cardNode = document.getElementById('card');\nvar maskedCardNumber;\nvar isValid = false;\nvar componentState;\nvar MASKED_CC_PREFIX = '************';\nvar checkoutConfiguration = window.Configuration;\ncheckoutConfiguration.amount = {\n  value: 0,\n  currency: 'EUR'\n};\ncheckoutConfiguration.paymentMethodsConfiguration = {\n  card: {\n    enableStoreDetails: false,\n    hasHolderName: true,\n    installments: [],\n    onBrand: function onBrand(brandObject) {\n      $('#cardType').val(brandObject.brand);\n    },\n    onFieldValid: function onFieldValid(data) {\n      if (data.endDigits) {\n        maskedCardNumber = MASKED_CC_PREFIX + data.endDigits;\n        $('#cardNumber').val(maskedCardNumber);\n      }\n    },\n    onChange: function onChange(state) {\n      isValid = state.isValid;\n      componentState = state;\n    }\n  }\n};\nvar checkout = new AdyenCheckout(checkoutConfiguration);\nvar card = checkout.create('card').mount(cardNode);\n$('button[value=\"add-new-payment\"]').on('click', function () {\n  if (isValid) {\n    document.querySelector('#adyenStateData').value = JSON.stringify(componentState.data);\n    return true;\n  }\n\n  card.showValidation();\n  return false;\n});\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/adyenAccount.js?");
-  
-  /***/ })
-  
-  /******/ });
+"use strict";
+eval("\n\nvar cardNode = document.getElementById('card');\nvar maskedCardNumber;\nvar isValid = false;\nvar componentState;\nvar MASKED_CC_PREFIX = '************';\nvar checkoutConfiguration = window.Configuration;\ncheckoutConfiguration.amount = {\n  value: 0,\n  currency: 'EUR'\n};\ncheckoutConfiguration.paymentMethodsConfiguration = {\n  card: {\n    enableStoreDetails: false,\n    hasHolderName: true,\n    installments: [],\n    onBrand: function onBrand(brandObject) {\n      $('#cardType').val(brandObject.brand);\n    },\n    onFieldValid: function onFieldValid(data) {\n      if (data.endDigits) {\n        maskedCardNumber = MASKED_CC_PREFIX + data.endDigits;\n        $('#cardNumber').val(maskedCardNumber);\n      }\n    },\n    onChange: function onChange(state) {\n      isValid = state.isValid;\n      componentState = state;\n    }\n  }\n};\nvar checkout = new AdyenCheckout(checkoutConfiguration);\nvar card = checkout.create('card').mount(cardNode);\n$('button[value=\"add-new-payment\"]').on('click', function () {\n  if (isValid) {\n    document.querySelector('#adyenStateData').value = JSON.stringify(componentState.data);\n    return true;\n  }\n\n  card.showValidation();\n  return false;\n});\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/adyenAccount.js?");
+
+/***/ })
+
+/******/ });
