@@ -1,10 +1,10 @@
 "use strict";
 
-var shippingHelpers = require('base/checkout/shipping');
+var shippingHelpers = require('../../../../../../app_storefront_base/cartridge/client/default/js/checkout/shipping');
 
-var billingHelpers = require('base/checkout/billing');
+var billingHelpers = require('../../../../../../app_storefront_base/cartridge/client/default/js/checkout/billing');
 
-var summaryHelpers = require('base/checkout/summary');
+var summaryHelpers = require('../../../../../../app_storefront_base/cartridge/client/default/js/checkout/summary');
 
 var billing = require('./billing');
 
