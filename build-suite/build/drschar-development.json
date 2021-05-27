@@ -63,7 +63,7 @@
   },
   "settings": {
     "general": {
-      "target_environment": "ci"
+      "target_environment": "no-target-environment-defined"
     },
     "siteImport": {
       "enabled": "true",
@@ -74,7 +74,7 @@
       }
     },
     "project": {
-      "version": "drschar_website_dev",
+      "version": "drschar_website",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {

@@ -37,6 +37,20 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-sig --target=development
+    release/*:
+      - step:
+          name: Deploy to development
+          caches:
+            - node
+            - buildsuite
+          trigger: manual
+          script:
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=development
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=development
     master:
