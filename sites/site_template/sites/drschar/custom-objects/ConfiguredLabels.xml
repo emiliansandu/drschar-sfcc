@@ -13,21 +13,10 @@
         </object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.payment.type.selectedmethod">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Payment By</object-attribute>
-    </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="tooltip.expirationMonth">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Please choose card expiration month.
         </object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.or">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">OR</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.disclaimer.modaloptionno">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">No</object-attribute>
     </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="msg.card.type.ending">
@@ -47,17 +36,12 @@
         </object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.ach.selectaccount">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Select Account Type</object-attribute>
-    </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="label.klarnaPaymentMethod">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Product Type Value</object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.payment.amount">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Amount</object-attribute>
-    </custom-object>
+
 
     <custom-object type-id="ConfiguredLabels" object-id="tooltip.cardOwner">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Please enter a valid card owner name.
@@ -66,16 +50,6 @@
 
     <custom-object type-id="ConfiguredLabels" object-id="tooltip.cardNumber">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Please enter a valid card number.
-        </object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.disclaimer.link">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Disclaimer</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.wechatpay.msg3">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Please note, order may get failed if payment is
-            not completed successfully using the QR code
         </object-attribute>
     </custom-object>
 
@@ -93,13 +67,6 @@
         </object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.paymentmethodtype.wallet">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Wallet</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.paymentmethod.heading">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Select Payment Method</object-attribute>
-    </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="field.credit.card.number">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Card Number</object-attribute>
@@ -136,16 +103,6 @@
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Bank Location</object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.konbini.payment.reference">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Make payment at</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.ccdisclaimer.msg">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Please click on the disclaimer button to
-            continue, and choose yes to save your card
-        </object-attribute>
-    </custom-object>
-
     <custom-object type-id="ConfiguredLabels" object-id="heading.payment"/>
 
     <custom-object type-id="ConfiguredLabels" object-id="action.update.address">
@@ -158,10 +115,6 @@
 
     <custom-object type-id="ConfiguredLabels" object-id="msg.new.address">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">New Address</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.disclaimer.modaloptionyes">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Yes</object-attribute>
     </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="label.credit.card-security.code">
@@ -190,24 +143,6 @@
         </object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.error.generalerror">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Internal error occured please Try after some
-            time
-        </object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.paymentmethodtype.credit">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Credit Card</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.paymentmethodtype.apm">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Alternative Payment</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.paymentmethodtype.worldpay">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Hosted Payment Page</object-attribute>
-    </custom-object>
-
     <custom-object type-id="ConfiguredLabels" object-id="button.place.secure.payment">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Place Secure Payment</object-attribute>
     </custom-object>
@@ -220,20 +155,11 @@
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Routing Number</object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="label.worldpay.cards">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Preferred Card</object-attribute>
-    </custom-object>
-
     <custom-object type-id="ConfiguredLabels" object-id="field.credit.card.expiration.month">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Expiration Month</object-attribute>
     </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="forms.elv.creditoridentifier"/>
-
-    <custom-object type-id="ConfiguredLabels" object-id="tooltip.worldpay.cards">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Please choose preferred card for payment.
-        </object-attribute>
-    </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="tooltip.email">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Please enter a valid email address.
@@ -283,18 +209,6 @@
 
     <custom-object type-id="ConfiguredLabels" object-id="label.ach.check.number">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Check Number</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.ccchosetosave.msg">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Your Card will be saved only when you choose
-            yes option from disclaimer, else your card will not be saved
-        </object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.wechatpay.msg2">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Do not Press Back, Refresh or Close button in
-            browser
-        </object-attribute>
     </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="button.next.payment">
@@ -353,28 +267,8 @@
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Terms &amp; Condition</object-attribute>
     </custom-object>
 
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.payment.clickhere">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">click here</object-attribute>
-    </custom-object>
-
     <custom-object type-id="ConfiguredLabels" object-id="billing.selectpreferedcreditcard">
         <object-attribute attribute-id="labelValue" xml:lang="x-default">Select Prefered Credit Card</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.disclaimer.modalclose">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Close</object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.googlepay.error">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Please Complete Google Pay by clicking on
-            Google Pay Button to proceed
-        </object-attribute>
-    </custom-object>
-
-    <custom-object type-id="ConfiguredLabels" object-id="worldpay.wechatpay.msg1">
-        <object-attribute attribute-id="labelValue" xml:lang="x-default">Please complete your payment using the above QR
-            code for successful order completion
-        </object-attribute>
     </custom-object>
 
     <custom-object type-id="ConfiguredLabels" object-id="heading.billing.address"/>
