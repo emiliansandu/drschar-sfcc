@@ -157,7 +157,7 @@ server.get('Adyen3DS2', consentTracking.consent, csrfProtection.generateToken, s
       originKey: originKey,
       environment: environment,
       resultCode: resultCode,
-      action,
+      action: action,
       merchantReference: orderNo,
       orderToken: orderToken
     });

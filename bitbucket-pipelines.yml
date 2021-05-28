@@ -15,8 +15,6 @@ pipelines:
             - npm run test
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=ci
             - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-sig --target=ci
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=dev1
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-sig --target=dev1
       -   step:
               name: Run Smoke test
               caches:
@@ -74,6 +72,7 @@ pipelines:
               - npm --prefix ./build-suite/ install
               - npm --prefix ./build-suite/ rebuild node-sass
               - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=staging
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=staging
 
 definitions:
     caches:
