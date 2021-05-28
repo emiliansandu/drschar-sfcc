@@ -48,16 +48,16 @@
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
     "staging": {
-      "server": "staging-na01-advancedrx.demandware.net",
+      "server": "staging.na01.drschar.demandware.net",
       "username": "rcervantes@unitedvirtualities.com",
       "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA==",
       "two_factor": {
         "enabled": "true",
-        "cert": "certs/aabrego.p12",
-        "password": "t8kdrXdL61E_IqdzQvpnhuTNtEHK1mYSkw==",
-        "url": "cert.staging.na01.advancedrx.demandware.net"
+        "cert": "../certs/drschar.p12",
+        "password": "t8kdrXdL61E_v7++9kksRYeyYBC3oYGJjC6p3kYdu+Zz",
+        "url": "cert.staging.na01.drschar.demandware.net"
       }
     }
   },
@@ -74,7 +74,7 @@
       }
     },
     "project": {
-      "version": "drschar_website",
+      "version": "drschar_stg",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
