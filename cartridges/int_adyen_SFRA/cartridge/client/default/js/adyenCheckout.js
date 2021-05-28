@@ -1,14 +1,32 @@
 "use strict";
 
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 // eslint-disable-next-line no-unused-vars
 var maskedCardNumber;
@@ -84,7 +102,7 @@ checkoutConfiguration.paymentMethodsConfiguration = {
   },
   paywithgoogle: {
     environment: window.Configuration.environment,
-    onSubmit: () => {
+    onSubmit: function onSubmit() {
       assignPaymentMethodValue();
       document.querySelector('button[value="submit-payment"]').disabled = false;
       document.querySelector('button[value="submit-payment"]').click();
@@ -98,28 +116,28 @@ checkoutConfiguration.paymentMethodsConfiguration = {
   paypal: {
     environment: window.Configuration.environment,
     intent: 'capture',
-    onSubmit: (state, component) => {
+    onSubmit: function onSubmit(state, component) {
       assignPaymentMethodValue();
       document.querySelector('#adyenStateData').value = JSON.stringify(componentsObj[selectedMethod].stateData);
       paymentFromComponent(state.data, component);
     },
-    onCancel: (data, component) => {
+    onCancel: function onCancel(data, component) {
       paymentFromComponent({
         cancelTransaction: true
       }, component);
     },
-    onError: (error, component) => {
+    onError: function onError(error, component) {
       if (component) {
         component.setStatus('ready');
       }
 
       document.querySelector('#showConfirmationForm').submit();
     },
-    onAdditionalDetails: state => {
+    onAdditionalDetails: function onAdditionalDetails(state) {
       document.querySelector('#additionalDetailsHidden').value = JSON.stringify(state.data);
       document.querySelector('#showConfirmationForm').submit();
     },
-    onClick: (data, actions) => {
+    onClick: function onClick(data, actions) {
       $('#dwfrm_billing').trigger('submit');
 
       if (formErrorsExist) {
@@ -129,7 +147,7 @@ checkoutConfiguration.paymentMethodsConfiguration = {
   },
   mbway: {
     showPayButton: true,
-    onSubmit: (state, component) => {
+    onSubmit: function onSubmit(state, component) {
       $('#dwfrm_billing').trigger('submit');
       assignPaymentMethodValue();
 
@@ -139,14 +157,14 @@ checkoutConfiguration.paymentMethodsConfiguration = {
         document.querySelector('#adyenStateData').value = JSON.stringify(state.data);
       }
     },
-    onError: () =>
+    onError: function onError()
     /* error, component */
     {
       document.querySelector('#showConfirmationForm').submit();
     },
-    onAdditionalDetails: (state
+    onAdditionalDetails: function onAdditionalDetails(state
     /* , component */
-    ) => {
+    ) {
       document.querySelector('#additionalDetailsHidden').value = JSON.stringify(state.data);
       document.querySelector('#showConfirmationForm').submit();
     }
@@ -222,7 +240,10 @@ function displaySelectedMethod(type) {
 
 function unmountComponents() {
   var promises = Object.entries(componentsObj).map(function (_ref) {
-    var [key, val] = _ref;
+    var _ref2 = _slicedToArray(_ref, 2),
+        key = _ref2[0],
+        val = _ref2[1];
+
     delete componentsObj[key];
     return resolveUnmount(key, val);
   });
@@ -256,57 +277,73 @@ function renderGenericComponent() {
 }
 
 function _renderGenericComponent() {
-  _renderGenericComponent = _asyncToGenerator(function* () {
-    if (Object.keys(componentsObj).length !== 0) {
-      yield unmountComponents();
-    }
+  _renderGenericComponent = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+    return _regenerator["default"].wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!(Object.keys(componentsObj).length !== 0)) {
+              _context.next = 3;
+              break;
+            }
 
-    getPaymentMethods(function (data) {
-      var paymentMethod;
-      var i;
-      checkoutConfiguration.paymentMethodsResponse = data.AdyenPaymentMethods;
+            _context.next = 3;
+            return unmountComponents();
 
-      if (data.amount) {
-        checkoutConfiguration.amount = data.amount;
-        checkoutConfiguration.paymentMethodsConfiguration.paypal.amount = data.amount;
-      }
+          case 3:
+            getPaymentMethods(function (data) {
+              var paymentMethod;
+              var i;
+              checkoutConfiguration.paymentMethodsResponse = data.AdyenPaymentMethods;
 
-      if (data.countryCode) {
-        checkoutConfiguration.countryCode = data.countryCode;
-      }
+              if (data.amount) {
+                checkoutConfiguration.amount = data.amount;
+                checkoutConfiguration.paymentMethodsConfiguration.paypal.amount = data.amount;
+              }
 
-      checkout = new AdyenCheckout(checkoutConfiguration);
-      document.querySelector('#paymentMethodsList').innerHTML = '';
+              if (data.countryCode) {
+                checkoutConfiguration.countryCode = data.countryCode;
+              }
 
-      if (data.AdyenPaymentMethods.storedPaymentMethods) {
-        for (i = 0; i < checkout.paymentMethodsResponse.storedPaymentMethods.length; i++) {
-          paymentMethod = checkout.paymentMethodsResponse.storedPaymentMethods[i];
+              checkout = new AdyenCheckout(checkoutConfiguration);
+              document.querySelector('#paymentMethodsList').innerHTML = '';
 
-          if (paymentMethod.supportedShopperInteractions.includes('Ecommerce')) {
-            renderPaymentMethod(paymentMethod, true, data.ImagePath);
-          }
+              if (data.AdyenPaymentMethods.storedPaymentMethods) {
+                for (i = 0; i < checkout.paymentMethodsResponse.storedPaymentMethods.length; i++) {
+                  paymentMethod = checkout.paymentMethodsResponse.storedPaymentMethods[i];
+
+                  if (paymentMethod.supportedShopperInteractions.includes('Ecommerce')) {
+                    renderPaymentMethod(paymentMethod, true, data.ImagePath);
+                  }
+                }
+              }
+
+              data.AdyenPaymentMethods.paymentMethods.forEach(function (pm, i) {
+                !isMethodTypeBlocked(pm.type) && renderPaymentMethod(pm, false, data.ImagePath, data.AdyenDescriptions[i].description);
+              });
+
+              if (data.AdyenConnectedTerminals && data.AdyenConnectedTerminals.uniqueTerminalIds && data.AdyenConnectedTerminals.uniqueTerminalIds.length > 0) {
+                var posTerminals = document.querySelector('#adyenPosTerminals');
+
+                while (posTerminals.firstChild) {
+                  posTerminals.removeChild(posTerminals.firstChild);
+                }
+
+                addPosTerminals(data.AdyenConnectedTerminals.uniqueTerminalIds);
+              }
+
+              var firstPaymentMethod = document.querySelector('input[type=radio][name=brandCode]');
+              firstPaymentMethod.checked = true;
+              displaySelectedMethod(firstPaymentMethod.value);
+            });
+
+          case 4:
+          case "end":
+            return _context.stop();
         }
       }
-
-      data.AdyenPaymentMethods.paymentMethods.forEach((pm, i) => {
-        !isMethodTypeBlocked(pm.type) && renderPaymentMethod(pm, false, data.ImagePath, data.AdyenDescriptions[i].description);
-      });
-
-      if (data.AdyenConnectedTerminals && data.AdyenConnectedTerminals.uniqueTerminalIds && data.AdyenConnectedTerminals.uniqueTerminalIds.length > 0) {
-        var posTerminals = document.querySelector('#adyenPosTerminals');
-
-        while (posTerminals.firstChild) {
-          posTerminals.removeChild(posTerminals.firstChild);
-        }
-
-        addPosTerminals(data.AdyenConnectedTerminals.uniqueTerminalIds);
-      }
-
-      var firstPaymentMethod = document.querySelector('input[type=radio][name=brandCode]');
-      firstPaymentMethod.checked = true;
-      displaySelectedMethod(firstPaymentMethod.value);
-    });
-  });
+    }, _callee);
+  }));
   return _renderGenericComponent.apply(this, arguments);
 }
 
@@ -369,14 +406,14 @@ function renderPaymentMethod(paymentMethod, storedPaymentMethodBool, path) {
   if (paymentMethod.type !== 'paywithgoogle') {
     node && node.mount(container);
   } else {
-    node.isAvailable().then(() => {
+    node.isAvailable().then(function () {
       node.mount(container);
-    }).catch(() => {}); // eslint-disable-line no-empty
+    })["catch"](function () {}); // eslint-disable-line no-empty
   }
 
   var input = document.querySelector("#rb_".concat(paymentMethodID));
 
-  input.onchange = event => {
+  input.onchange = function (event) {
     displaySelectedMethod(event.target.value);
   };
 
@@ -492,8 +529,18 @@ function showValidation() {
       return !(input.value && input.value.length > 0);
     });
 
-    for (input of inputs) {
-      input.classList.add('adyen-checkout__input--error');
+    var _iterator = _createForOfIteratorHelper(inputs),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        input = _step.value;
+        input.classList.add('adyen-checkout__input--error');
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
     }
 
     if (inputs.length > 0) {
@@ -533,10 +580,21 @@ function validateComponents() {
   if (document.querySelector('#component_ach')) {
     var inputs = document.querySelectorAll('#component_ach > input');
 
-    for (var input of inputs) {
-      input.onchange = function () {
-        validateCustomInputField(this);
-      };
+    var _iterator2 = _createForOfIteratorHelper(inputs),
+        _step2;
+
+    try {
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var input = _step2.value;
+
+        input.onchange = function () {
+          validateCustomInputField(this);
+        };
+      }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
     }
   }
 

@@ -93,9 +93,9 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("\n\nvar adyenGivingNode = document.getElementById('donate-container');\n\nfunction handleOnDonate(state, component) {\n  if (!state.isValid) {\n    return;\n  }\n\n  var selectedAmount = state.data.amount;\n  var donationData = {\n    amountValue: selectedAmount.value,\n    amountCurrency: selectedAmount.currency,\n    orderNo: orderNo,\n    pspReference: pspReference\n  };\n  $.ajax({\n    url: 'Adyen-Donate',\n    type: 'post',\n    data: donationData,\n    success: function success() {\n      component.setStatus('success');\n    }\n  });\n}\n\nfunction handleOnCancel()\n/* state, component */\n{\n  var adyenGiving = document.getElementById('adyenGiving');\n  adyenGiving.style.transition = 'all 3s ease-in-out';\n  adyenGiving.style.display = 'none';\n  donation.unmount();\n}\n\nvar amounts;\n\ntry {\n  amounts = JSON.parse(donationAmounts);\n} catch (e) {\n  amounts = [];\n}\n\nvar donationConfig = {\n  amounts: amounts,\n  backgroundUrl: adyenGivingBackgroundUrl,\n  description: charityDescription,\n  logoUrl: adyenGivingLogoUrl,\n  name: charityName,\n  url: charityWebsite,\n  showCancelButton: true,\n  onDonate: handleOnDonate,\n  onCancel: handleOnCancel\n};\nvar checkout = new AdyenCheckout(window.Configuration);\nvar donation = checkout.create('donation', donationConfig).mount(adyenGivingNode);\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/adyenGiving.js?");
-
-/***/ })
-
-/******/ });
+  "use strict";
+  eval("\n\nvar adyenGivingNode = document.getElementById('donate-container');\n\nfunction handleOnDonate(state, component) {\n  if (!state.isValid) {\n    return;\n  }\n\n  var selectedAmount = state.data.amount;\n  var donationData = {\n    amountValue: selectedAmount.value,\n    amountCurrency: selectedAmount.currency,\n    orderNo: orderNo,\n    pspReference: pspReference\n  };\n  $.ajax({\n    url: 'Adyen-Donate',\n    type: 'post',\n    data: donationData,\n    success: function success() {\n      component.setStatus('success');\n    }\n  });\n}\n\nfunction handleOnCancel()\n/* state, component */\n{\n  var adyenGiving = document.getElementById('adyenGiving');\n  adyenGiving.style.transition = 'all 3s ease-in-out';\n  adyenGiving.style.display = 'none';\n  donation.unmount();\n}\n\nvar amounts;\n\ntry {\n  amounts = JSON.parse(donationAmounts);\n} catch (e) {\n  amounts = [];\n}\n\nvar donationConfig = {\n  amounts: amounts,\n  backgroundUrl: adyenGivingBackgroundUrl,\n  description: charityDescription,\n  logoUrl: adyenGivingLogoUrl,\n  name: charityName,\n  url: charityWebsite,\n  showCancelButton: true,\n  onDonate: handleOnDonate,\n  onCancel: handleOnCancel\n};\nvar checkout = new AdyenCheckout(window.Configuration);\nvar donation = checkout.create('donation', donationConfig).mount(adyenGivingNode);\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/adyenGiving.js?");
+  
+  /***/ })
+  
+  /******/ });

@@ -182,7 +182,7 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
   if (handlePaymentResult.redirectObject) {
     // If authorized3d, then redirectObject from credit card, hence it is 3D Secure
     if (handlePaymentResult.authorized3d) {
-      Transaction.wrap(() => {
+      Transaction.wrap(function () {
         paymentInstrument.custom.adyenMD = handlePaymentResult.redirectObject.data.MD;
       });
       res.json({

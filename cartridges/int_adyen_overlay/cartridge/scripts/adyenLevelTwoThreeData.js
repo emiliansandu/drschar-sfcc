@@ -51,14 +51,14 @@ var AdyenHelper = require('*/cartridge/scripts/util/adyenHelper');
 var LineItemHelper = require('*/cartridge/scripts/util/lineItemHelper');
 
 function getLineItems(_ref) {
-  var {
-    Order: order
-  } = _ref;
+  var order = _ref.Order;
   if (!order) return null; // Add all product and shipping line items to request
 
   var allLineItems = order.getAllLineItems();
   var shopperReference = getShopperReference(order);
-  return allLineItems.toArray().reduce((acc, lineItem, index) => {
+  return allLineItems.toArray().reduce(function (acc, lineItem, index) {
+    var _objectSpread2;
+
     var description = LineItemHelper.getDescription(lineItem);
     var id = LineItemHelper.getId(lineItem);
     var quantity = LineItemHelper.getQuantity(lineItem);
@@ -66,18 +66,7 @@ function getLineItems(_ref) {
     var vatAmount = LineItemHelper.getVatAmount(lineItem) / quantity;
     var commodityCode = AdyenHelper.getAdyenLevel23CommodityCode();
 
-    var currentLineItem = _objectSpread(_objectSpread(_objectSpread({
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitPrice")]: itemAmount.toFixed(),
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".totalAmount")]: parseFloat(itemAmount.toFixed()) + parseFloat(vatAmount.toFixed()),
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".quantity")]: quantity,
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitOfMeasure")]: 'EAC'
-    }, commodityCode && {
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".commodityCode")]: commodityCode
-    }), description && {
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".description")]: description.substring(0, 26).replace(/[^\x00-\x7F]/g, '')
-    }), id && {
-      ["enhancedSchemeData.itemDetailLine".concat(index + 1, ".productCode")]: id.substring(0, 12)
-    });
+    var currentLineItem = _objectSpread(_objectSpread(_objectSpread((_objectSpread2 = {}, _defineProperty(_objectSpread2, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitPrice"), itemAmount.toFixed()), _defineProperty(_objectSpread2, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".totalAmount"), parseFloat(itemAmount.toFixed()) + parseFloat(vatAmount.toFixed())), _defineProperty(_objectSpread2, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".quantity"), quantity), _defineProperty(_objectSpread2, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".unitOfMeasure"), 'EAC'), _objectSpread2), commodityCode && _defineProperty({}, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".commodityCode"), commodityCode)), description && _defineProperty({}, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".description"), description.substring(0, 26).replace(/[^\x00-\x7F]/g, ''))), id && _defineProperty({}, "enhancedSchemeData.itemDetailLine".concat(index + 1, ".productCode"), id.substring(0, 12)));
 
     return _objectSpread(_objectSpread(_objectSpread({}, acc), currentLineItem), {}, {
       'enhancedSchemeData.totalTaxAmount': acc['enhancedSchemeData.totalTaxAmount'] + parseFloat(vatAmount.toFixed())
