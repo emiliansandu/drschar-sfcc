@@ -42,6 +42,8 @@ function ShippingMethodModel(shippingMethod, shipment) {
     this.description = shippingMethod ? shippingMethod.description : null;
     this.estimatedArrivalTime = shippingMethod && shippingMethod.custom
         ? shippingMethod.custom.estimatedArrivalTime : null;
+    this.image = shippingMethod && shippingMethod.custom
+    ? shippingMethod.custom.image : null;
     this.default = shippingMethod ? shippingMethod.defaultMethod : null;
 
     // Mix in dynamically transformed properties
