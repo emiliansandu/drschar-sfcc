@@ -550,8 +550,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset)
         to: order.customerEmail,
         subject: Resource.msg('subject.order.confirmation.email', 'order', null),
         from: Site.current.getCustomPreferenceValue('customerServiceEmail') || 'no-reply@testorganization.com',
-        type: emailHelpers.emailTypes.orderConfirmation,
-        body: result
+        type: emailHelpers.emailTypes.orderConfirmation
     };
 
     emailHelpers.sendEmail(emailObj, 'emails/orderConfirmation', orderObject);
