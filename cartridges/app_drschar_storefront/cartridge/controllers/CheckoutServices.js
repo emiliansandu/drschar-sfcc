@@ -385,7 +385,7 @@ server.post(
 server.post('PlaceOrder', server.middleware.https, function (req, res, next) {
     var BasketMgr = require('dw/order/BasketMgr');
     var OrderMgr = require('dw/order/OrderMgr');
-    var paymentMgr = require('dw/order/PaymentMgr');
+    
     var Resource = require('dw/web/Resource');
     var Transaction = require('dw/system/Transaction');
     var URLUtils = require('dw/web/URLUtils');
@@ -394,6 +394,13 @@ server.post('PlaceOrder', server.middleware.https, function (req, res, next) {
     var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
     var validationHelpers = require('*/cartridge/scripts/helpers/basketValidationHelpers');
     var addressHelpers = require('*/cartridge/scripts/helpers/addressHelpers');
+    
+    var paymentMgr = require('dw/order/PaymentMgr');
+    var ContentMgr = require('dw/content/ContentMgr');
+    var locateStoreAsset = ContentMgr.getContent('footer-locate-store');
+    var accountAsset = ContentMgr.getContent('footer-account');
+    var supportAsset = ContentMgr.getContent('footer-support');
+    var aboutUsAsset = ContentMgr.getContent('footer-about');
 
     var currentBasket = BasketMgr.getCurrentBasket();
 
@@ -563,10 +570,12 @@ server.post('PlaceOrder', server.middleware.https, function (req, res, next) {
             }
         });
     }
+    var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
+
     var paymentid=order.paymentInstrument.paymentMethod;
     var paymentObject=paymentMgr.getPaymentMethod(paymentid);
     if (order.getCustomerEmail()) {
-        COHelpers.sendConfirmationEmail(order, req.locale.id, req.host, paymentObject);
+        COHelpers.sendConfirmationEmail(order, req.locale.id, req.host, paymentObject, contentAsset);
     }
 
     // Reset usingMultiShip after successful Order placement
