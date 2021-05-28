@@ -534,7 +534,7 @@ function handlePayments(order, orderNumber) {
  * @param {string} locale - the current request's locale id
  * @returns {void}
  */
-function sendConfirmationEmail(order, locale) {
+function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
@@ -543,17 +543,18 @@ function sendConfirmationEmail(order, locale) {
 
     var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
 
-    var orderObject = { order: orderModel };
+    var orderObject = { order: orderModel, host: host, paymentObject: paymentObject, contentAsset: contentAsset};
+
 
     var emailObj = {
         to: order.customerEmail,
         subject: Resource.msg('subject.order.confirmation.email', 'order', null),
         from: Site.current.getCustomPreferenceValue('customerServiceEmail') || 'no-reply@testorganization.com',
-        type: emailHelpers.emailTypes.orderConfirmation
+        type: emailHelpers.emailTypes.orderConfirmation,
+        body: result
     };
 
     emailHelpers.sendEmail(emailObj, 'emails/orderConfirmation', orderObject);
-   // emailHelpers.sendEmail(emailObj, 'checkout/confirmation/confirmationEmail', orderObject);
 }
 
 /**
