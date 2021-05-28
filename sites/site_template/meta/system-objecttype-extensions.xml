@@ -6519,9 +6519,6 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
             </attribute-definition>
         </custom-attribute-definitions>
-        <group-definitions>
-
-        </group-definitions>
     </type-extension>
 
 
