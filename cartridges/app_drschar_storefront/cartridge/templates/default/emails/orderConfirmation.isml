@@ -1,10 +1,250 @@
 <iscontent type="text/html" charset="UTF-8" compact="true" />
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
+<head>
+    <meta charset="utf-8">
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width">
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">
+    <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title>
+    <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+    <style>
+        * {
+            font-family: sans-serif !important;
+        }
+    </style>
+    <![endif]-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    
+    
+    <style>
+    /* vietnamese */
+
+        * {
+            font-family: Arial, sans-serif;
+        }
+        
+    </style>
+   <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> --> 
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+      /* What it does: Remove spaces around the email design added by some email clients. */
+
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+
+        a {
+            text-decoration: none !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+
+        *[x-apple-data-detectors],
+        /* iOS */
+
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+
+        .im {
+            color: inherit !important;
+        }
+ 
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+
+        img.g-img+div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u~div .email-container {
+                min-width: 320px !important;
+            }
+        }
+
+        /* iPhone 6, 6S, 7, 8, and X */
+
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u~div .email-container {
+                min-width: 375px !important;
+            }
+        }
+
+        /* iPhone 6+, 7+, and 8+ */
+
+        @media only screen and (min-device-width: 414px) {
+            u~div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+        /* What it does: Hover styles for buttons */
+
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+       .button-td-primary:hover,
+        .button-a-primary:hover {
+            background: rgb(192, 5, 49) !important;
+            border-color: rgb(192, 5, 49) !important;
+        }
+
+        
+
+        /* Media Queries */
+
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: left !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 15px !important;
+            }
+
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+  
+        
+
+       
+
+
+</head>
+
 <body width="100%" style="margin: 0; padding: 0 !important; background-color: #F3F1EE;">
 
     <main>
-        <div style="width: 100%; background-color: #F3F1EE;">
+        <center style="width: 100%; background-color: #F3F1EE;">
             <div
                 style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: Arial, sans-serif; ">
                 (Optional) This text will appear in the inbox preview, but not the email body. It can be used to
@@ -48,9 +288,9 @@
                                             <table cellpadding="20">
                                                 <tr>
                                                     <td>
-                                                        <img src="/assets/images/mail/mail_header-logo.png" width="100"
+                                                        <img src="${URLUtils.httpsStatic('/images/logo-schaer.png')}" width="100"
                                                             height="84" alt="Schär - Best in Gluten Free" border="0"
-                                                            style="height: auto;">
+                                                            style="height: auto;"/>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -84,7 +324,7 @@
                                     <td
                                         style="text-align: center; padding: 20px 40px; font-family: Arial, sans-serif;  font-size: 14px; line-height: 20px; color: #555555;">
                                         <h1
-                                            style="text-transform: uppercase; margin: 0 0 10px;  font-family: 'Josefin Sans','Roboto',Arial, sans-serif; text-transform: uppercase; font-size: 30px; line-height: 35px; color: #422D31; font-weight: 400;">
+                                            style="text-transform: uppercase; margin: 0 0 10px; font-family: 'Josefin Sans','Roboto',Arial, sans-serif; text-transform: uppercase; font-size: 30px; line-height: 35px; color: #422D31; font-weight: 400;">
                                             ${Resource.msg('label.order.custom.confirmation', 'confirmation', null)}
                                         </h1>
 
@@ -135,11 +375,12 @@
                                         }
                                     if(lateArrivalDayMonth>daysInMonth){
                                             lateArrivalDayMonth=lateArrivalDayMonth-daysInMonth;  
-                                        }
-                                    document.getElementsByName('trackOrderNumber')[0].value='hoxs';
+                                        }  
+                                    
                                     </isscript>
                                             <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, earlyArrivalDayMonth, lateArrivalDayMonth,
-                                                    monthName, deliveryYear)}</strong>
+                                                    monthName, deliveryYear)}                                                    
+                                            </strong>
                                         </p>
 
                                     </td>
@@ -169,7 +410,7 @@
 
                                                         <div class="form-group">
                                                             <button class="button-a button-a-primary"
-                                                                style="background: #CF0031; border: 1px solid #CF0031; font-family: Arial, sans-serif;  font-size: 14px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;font-weight:bold"
+                                                                style="display: inline-block !important; background: #CF0031; border: 1px solid #CF0031; font-family: Arial, sans-serif;  font-size: 14px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;font-weight:bold"
                                                                 type="submit" name="submit" value="submit">
                                                                 ${Resource.msg('label.order.custom.order.cta', 'confirmation', null)}
                                                             </button>
@@ -231,8 +472,8 @@
                                             <tr>
                                                 <td dir="ltr" valign="top"
                                                     style="text-decoration: none; padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
-                                                    <span
-                                                        style="text-decoration: none;">${pdict.order.orderEmail}</span>
+                                                    <!--added as a link ro prevent gmail from adding mailto to email addresses-->
+                                                   <a rel="nofollow" style='text-decoration:none; color:#333'>${pdict.order.orderEmail}</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -344,7 +585,7 @@
                                     </td>
                                     <!-- Column : END -->
                                     <td width="16.66%" class="stack-column-center" valign="top" align="right">
-                                        <img src="/assets/images/content/shipping-example.png" width="80"
+                                        <img src="${shippingModel.selectedShippingMethod.image.absURL}" width="80"
                                             alt="Placeholder" border="0" class="center-on-narrow">
                                     </td>
                                     <!-- Column : END -->
@@ -445,8 +686,20 @@
                                     <!-- Column : END -->
                                     <td width="16.66%" class="stack-column-center" valign="top" align="right"
                                         style="padding: 3px 0">
-                                        <img src="/assets/images/content/payment-mastercard.png" width="40"
+                                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod=='CREDIT_CARD'}">
+                                                <isloop items="${pdict.paymentObject.activePaymentCards}" var="paymentCards" status="paymentCardLoop">
+                                                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].type==paymentCards.cardType}">
+                                                    <img src="${paymentCards.image.absURL}" width="40"
+                                                        alt="Placeholder" border="0" class="center-on-narrow">
+                                                    </isif>
+                                                </isloop>
+                                        <iselse/>
+                                        <img src="${pdict.paymentObject.image.absURL}" width="40"
                                             alt="Placeholder" border="0" class="center-on-narrow">
+                                        </isif>
+                                        
+                                        
+                                          
                                     </td>
                                     <!-- Column : END -->
                                 </tr>
@@ -473,7 +726,7 @@
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
                                     <td width="50%" class="stack-column-center" valign="bottom"
-                                        style="font-family: 'Josefin Sans','Roboto',Arial, sans-serif;  text-transform: uppercase; font-size: 20px; line-height: 35px; color: #422D31; font-weight: 400;">
+                                        style="font-family: 'Josefin Sans','Roboto', Arial, sans-serif;  text-transform: uppercase; font-size: 20px; line-height: 35px; color: #422D31; font-weight: 400;">
                                         <strong>${Resource.msg('label.order.custom.order', 'confirmation', null) + pdict.order.orderNumber}</strong>
                                     </td>
                                     <td width="50%" class="stack-column-center" align="right" valign="bottom"
@@ -514,7 +767,8 @@
                                                     <td dir="ltr" valign="top"
                                                         style="background-color:#F9F8F6; padding: 10px;">
                                                         <center>
-                                                            <img src="${URLUtils.imageURL(itemsList.images.small[0].url)}"
+
+                                                            <img src="${'https://'+pdict.host+itemsList.images.small[0].url}"
                                                                 width="160" height="120"
                                                                 alt="${itemsList.images.small[0].alt}"
                                                                 title="${itemsList.images.small[0].title}" border="0"
@@ -535,7 +789,7 @@
                                                         style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 20px; color: #555555; padding: 20px; text-align: left;"
                                                         class="center-on-narrow">
                                                         <h2
-                                                            style="margin: 0 0 5px 0; font-family: 'Josefin Sans','Roboto',Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: 400;">
+                                                            style="margin: 0 0 5px 0; font-family: 'Josefin Sans', 'Roboto', Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: 400;">
                                                             ${itemsList.productName}</h2>
                                                         <p style="margin: 0 0 20px 0; color: #A09698; font-size: 12px">
                                                             <strong>${itemsList.productType}</strong></p>
@@ -609,22 +863,6 @@
                                         style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;"
                                         valign="top">
                                         ${pdict.order.totals.totalShippingCost}
-                                    </td>
-                                    <!-- Column : END -->
-                                </tr>
-                                <tr>
-                                    <!-- Column : BEGIN -->
-                                    <td width="33.33%" valign="top"
-                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;">
-                                        ${Resource.msg('label.order.custom.order.voucher', 'confirmation', null)}
-                                        <span style="color: #A09698">glutard18</span>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="66.66%" valign="top" align="right"
-                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px; color: #CF0031"
-                                        valign="top">
-                                        -$1.18
                                     </td>
                                     <!-- Column : END -->
                                 </tr>
@@ -718,84 +956,7 @@
                     <!-- Service box : END -->
 
                     <!-- Footer links : BEGIN -->
-                    <tr>
-                        <td valign="top" style="padding: 10px; background-color: #ffffff;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <!-- Column : BEGIN -->
-                                    <td width="33%" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <tr>
-                                                <td align="left" valign="top"
-                                                    style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                    class="center-on-narrow">
-                                                    <p style="text-align: center;">
-                                                        <strong>More</strong>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">About us / Story</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Storefinder</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Help & Services</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Disclaimer</a>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="33%" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <tr>
-                                                <td align="left" valign="top"
-                                                    style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                    class="center-on-narrow">
-                                                    <p style="text-align: center">
-                                                        <strong>Shop</strong>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Bakery</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Creative Kitchen</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Snacks</a>
-                                                        <br>
-                                                        <a href="#" style="color:#422D31">Bontà d’Italia</a>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="33%" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <td align="left" valign="top"
-                                                style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                class="center-on-narrow">
-                                                <p style="text-align: center">
-                                                    <strong>Social Media</strong>
-                                                    <br>
-                                                    <a href="#" style="color:#422D31">Facebook</a>
-                                                    <br>
-                                                    <a href="#" style="color:#422D31">Instagram</a>
-                                                    <br>
-                                                    <a href="#" style="color:#422D31">Pinterest</a>
-                                                    <br>
-                                                    <a href="#" style="color:#422D31">Twitter</a>
-                                                </p>
-                                            </td>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                   <isinclude template="emails/footer" />
                     <!-- Footer links : END -->
                 </isloop>
             </table>
@@ -807,13 +968,16 @@
                 <tr>
                     <td
                         style="padding: 20px; font-family: Arial, sans-serif;  font-size: 12px; line-height: 15px; text-align: center; color: #888888;">
-                        Dr. Schär AG / SPA, Winkelau 9, 39014 Burgstall (BZ) Italy Mwst Nr. IT00605750215, CCIAA BZ
-                        88727 Cap. Soc. 1.100.000 Euro
+                        ${Resource.msg('label.order.custom.order.copyright', 'confirmation', null)}
                     </td>
                 </tr>
             </table>
+           
             <!-- Email Footer : END -->
-        </div>
+        </center>
     </main>
+
+
+            
 
 </body>
