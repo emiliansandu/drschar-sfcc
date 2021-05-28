@@ -4,7 +4,7 @@
     <service-credential service-credential-id="Paypal_Sandbox_Credentials">
         <url>https://api.sandbox.paypal.com/</url>
         <user-id>AfDIcc9K47BupmQH2NpKC_J8lAEHKYH-FJFpgRC0nYFTbDfTVpPFZOeh6Vc_8YLnOn_MFLZYNJ6x8iBL</user-id>
-        <password masked="true">EKYAVYHoXm1jrvWfqK4g8CQkjtRJOR3pLnsuYJw26MxLjUwfqWEyAFuSfqilyvE5Xt752ZWbdUF-YXut</password>
+        <password/>
     </service-credential>
 
     <service-credential service-credential-id="AdyenPayment">
