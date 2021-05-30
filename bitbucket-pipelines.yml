@@ -45,7 +45,6 @@ pipelines:
           caches:
             - node
             - buildsuite
-          trigger: manual
           script:
             - npm install
             - npm --prefix ./build-suite/ install
