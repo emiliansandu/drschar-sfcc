@@ -13,8 +13,65 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=advanced-rx-ci
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=advanced-rx-ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=ci
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js initSite --project=drschar-sig --target=ci
+      -   step:
+              name: Run Smoke test
+              caches:
+                  - maven
+              image: circleci/openjdk:8-jdk-stretch-node-browsers
+              script:
+                  - mvn -f test/automation/pom.xml dependency:go-offline |
+                  - mvn -f test/automation/pom.xml -DthreadCount=2 -Dtest=com.bobs.runner.smoke.* -Denvironment=ci -Dheadless clean test
+              artifacts:
+                  - test/automation/target/surefire-reports/**
+                  - test/automation/target/cucumber/**
+      - step:
+          name: Deploy to development
+          caches:
+            - node
+            - buildsuite
+          trigger: manual
+          script:
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-sig --target=development
+    release/*:
+      - step:
+          name: Deploy to development
+          caches:
+            - node
+            - buildsuite
+          script:
+            - npm install
+            - npm --prefix ./build-suite/ install
+            - npm --prefix ./build-suite/ rebuild node-sass
+            - npm run test
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=development
+    master:
+      - step:
+          name: Ready?
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm install
+              - npm test
+      - step:
+          name: Deploy to Staging
+          trigger: manual
+          caches:
+              - node
+              - buildsuite
+          script:
+              - npm --prefix ./build-suite/ install
+              - npm --prefix ./build-suite/ rebuild node-sass
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=staging
+              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=staging
 
 definitions:
     caches:

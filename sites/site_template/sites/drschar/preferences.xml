@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <standard-preferences>
+        <all-instances>
+            <preference preference-id="AddProductToBasketBehavior">IncrementQuantities</preference>
+            <preference preference-id="CouponGeneratorIncludeDashes">true</preference>
+            <preference preference-id="CouponGeneratorIncludeVowels">true</preference>
+            <preference preference-id="EnableSiteOrderNumbers">false</preference>
+            <preference preference-id="OrderEditExportDelay">30</preference>
+            <preference preference-id="OrderExportDelay">30</preference>
+            <preference preference-id="OrderIPLoggingEnabled">true</preference>
+            <preference preference-id="OrderLifetime">0</preference>
+            <preference preference-id="AccountNumberRetentionDays">0</preference>
+            <preference preference-id="SiteCatalog">storefront-catalog-m-en</preference>
+            <preference preference-id="SiteCurrencies">USD:EUR:JPY:CNY</preference>
+	    <preference preference-id="SiteCustomerList">RefArch</preference>            
+            <preference preference-id="SiteDefaultLocale">en_US</preference>
+            <preference preference-id="SiteLibrary">RefArchSharedLibrary</preference>
+            <preference preference-id="SiteInventoryList">inventory_m</preference>
+            <preference preference-id="SiteLocales">default:en_US</preference>
+            <preference preference-id="SitePriceBooks">cny-m-list-prices:cny-m-sale-prices:eur-m-list-prices:eur-m-sale-prices:jpy-m-list-prices:jpy-m-sale-prices:usd-m-list-prices:usd-m-sale-prices</preference>
+            <preference preference-id="StorefrontURLsEnabled">true</preference>
+        </all-instances>
+        <development>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="PageCacheEnabled">true</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchSuggestions">Disabled</preference>
+            <preference preference-id="StaticCacheTTL">2592000</preference>
+        </development>
+        <staging>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="PageCacheEnabled">false</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchSuggestions">Enabled</preference>
+            <preference preference-id="StaticCacheTTL">0</preference>
+        </staging>
+        <production>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="PageCacheEnabled">true</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchSuggestions">Disabled</preference>
+            <preference preference-id="StaticCacheTTL">2592000</preference>
+        </production>
+    </standard-preferences>
+    <custom-preferences>
+        <all-instances/>
+                 <development>
+            <preference preference-id="EnableAPMLookUpService">true</preference>
+            <preference preference-id="EnableJobMailerService">false</preference>
+            <preference preference-id="OrgUnitId">5bd9b55e4444761ac0af1c80</preference>
+            <preference preference-id="PP_API_Button_Location">Billing</preference>
+            <preference preference-id="PP_API_PaymentAction">true</preference>
+            <preference preference-id="PP_API_BA_Enabled">false</preference>
+            <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
+            <preference preference-id="ValidateIPAddress">false</preference>
+            <preference preference-id="authenticationMethod">localAccount</preference>
+            <preference preference-id="captureservicetrackingid">true</preference>
+            <preference preference-id="challengePreference">challengeMandated</preference>
+            <preference preference-id="challengeWindowSize">fullPage</preference>
+            <preference preference-id="debitNetworks">
+                <value>CU24</value>
+            </preference>
+            <preference preference-id="dstype">two3d</preference>
+            <preference preference-id="enableSalesrequest">false</preference>
+            <preference preference-id="enableStorePickUp">true</preference>
+            <preference preference-id="enableStoredCredentials">true</preference>
+            <preference preference-id="googlePayEnvironment">TEST</preference>
+            <preference preference-id="googlePayMerchantID">32e04907d379490</preference>
+            <preference preference-id="hideApmForMoto">true</preference>
+             <preference preference-id="isDisclaimerMandatory">false</preference>
+            <preference preference-id="iss">5bd9e0e4444dce153428c940</preference>
+            <preference preference-id="jwtMacKey">fa2daee2-1fbb-45ff-4444-52805d5cd9e0</preference>
+            <preference preference-id="riskData">true</preference>
+            <preference preference-id="routingPreference">signatureOnly</preference>
+             <preference preference-id="showDisclaimer">true</preference>
+            <preference preference-id="siteController">app_storefront_controllers</preference>
+            <preference preference-id="siteCore">app_storefront_core</preference>
+            <preference preference-id="storeLookupMaxDistance">200</preference>
+            <preference preference-id="storeLookupUnit">mi</preference>
+            <preference preference-id="tokenType">Shopper</preference>
+            <preference preference-id="zendeskCartridgeEnabled">true</preference>
+            <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
+        </development>
+        <staging/>
+        <production/>
+    </custom-preferences>
+</preferences>

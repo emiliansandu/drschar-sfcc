@@ -1,0 +1,88 @@
+{
+  "dependencies": [
+    {
+      "repository": {
+        "url": "../",
+        "type": "file"
+      },
+      "source": {
+        "path": "cartridges"
+      },
+      "npm": {
+        "install": true,
+        "scripts": [
+          "compile:js",
+          "compile:scss",
+          "compile:fonts"
+        ]
+      },
+      "siteImport": {
+        "enabled": "true",
+        "sites": [
+          "drschar"
+        ],
+        "initPath": "sites/site_template",
+        "demoPath": "sites/site_demo"
+      },
+      "cartridges": [
+        "app_drschar_storefront",
+        "app_storefront_base",
+        "bm_app_storefront_base",
+        "bm_paypal",
+        "bm_paypal_configuration",
+        "int_adyen_overlay",
+        "int_adyen_SFRA",
+        "int_paypal",
+        "int_zendesk",        
+        "modules",
+        "plugin_dis"
+      ]
+    }
+  ],
+  "environments": {
+    "development": {
+      "server": "development.na01.drschar.demandware.net",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
+    },
+    "staging": {
+      "server": "staging.na01.drschar.demandware.net",
+      "username": "rcervantes@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA==",
+      "two_factor": {
+        "enabled": "true",
+        "cert": "../certs/drschar.p12",
+        "password": "t8kdrXdL61E_v7++9kksRYeyYBC3oYGJjC6p3kYdu+Zz",
+        "url": "cert.staging.na01.drschar.demandware.net"
+      }
+    }
+  },
+  "settings": {
+    "general": {
+      "target_environment": "no-target-environment-defined"
+    },
+    "siteImport": {
+      "enabled": "true",
+      "filenames": {
+        "init": "site_import",
+        "meta": "site_metadata",
+        "content": "site_content"
+      }
+    },
+    "project": {
+      "version": "drschar_stg",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
+    },
+    "optimize": {
+      "postcss": false,
+      "browserify": false,
+      "js": false,
+      "css": false,
+      "concatenate": true
+    }
+  }
+}

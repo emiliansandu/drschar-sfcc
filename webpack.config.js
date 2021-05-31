@@ -20,12 +20,21 @@ var bootstrapPackages = {
     Util: 'exports-loader?Util!bootstrap/js/src/util'
 };
 
+var mode = 'production'
+try {
+    if (process.env.NODE_ENV === 'development') {
+        mode = 'development'
+    }
+} catch (error) {}
+console.log('webpack mode is:', mode);
+
+
 module.exports = [{
-    mode: 'production',
+    mode: mode,
     name: 'js',
     entry: jsFiles,
     output: {
-        path: path.resolve('./cartridges/app_storefront_base/cartridge/static'),
+        path: path.resolve('./cartridges/app_drschar_storefront/cartridge/static'),
         filename: '[name].js'
     },
     module: {
@@ -49,7 +58,7 @@ module.exports = [{
     name: 'scss',
     entry: scssFiles,
     output: {
-        path: path.resolve('./cartridges/app_storefront_base/cartridge/static'),
+        path: path.resolve('./cartridges/app_drschar_storefront/cartridge/static'),
         filename: '[name].css'
     },
     module: {

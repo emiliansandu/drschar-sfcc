@@ -1,0 +1,11 @@
+{
+    "name": "dr_schar_HomePage",
+    "description": "Dr. Schar Home Page",
+    "region_definitions":[
+        {
+          "id":"main",
+          "name":"Homepage",
+          "component_type_exclusions": []
+        }
+      ]
+}

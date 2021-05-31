@@ -1,0 +1,30 @@
+header {
+    .nav-role-navigation{
+        background-color: $yellow-brand;
+        .header{
+            border-bottom: 0px;
+            color: $blue;
+        }
+        .search-field{
+            border: 0px;
+        }
+        .main-menu{
+            margin-top: 10px;
+            @include media-breakpoint-up(md) {
+                background-color: $yellow-brand;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.brand{
+   img{
+       width: 55px;
+       @include media-breakpoint-up(lg) {
+           width: 100px;
+       }
+   }
+}

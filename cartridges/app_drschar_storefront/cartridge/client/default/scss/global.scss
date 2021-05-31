@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+
+@import "variables";
+@import "base/global";
+@import "skin/skinVariables";
+@import "components/common";
+@import "components/header";
+@import "components/headerSearch";
+@import "components/footer";
+@import "components/menu";
+@import "./search";
+@import "components/tooltip";
+@import "account/account";
+
+.hero.slant-down.account-image {
+    background-image: url('../../images/drschar_static.jpg');
+    background-position-y: 40%;
+}
