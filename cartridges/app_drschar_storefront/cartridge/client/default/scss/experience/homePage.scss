@@ -16,6 +16,10 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
+    width: max-content;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
 }
 
