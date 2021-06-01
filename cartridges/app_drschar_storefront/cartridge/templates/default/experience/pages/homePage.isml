@@ -1,12 +1,15 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/experience/homePage.css');
+        assets.addJs('/js/homePage.js');
+    </isscript>
 
-
-    <isdecorate template="common/layout/page">
-
-        <div class="homepage">
-            <div class="container">
-              <div class="row">
-                    <isprint value="${pdict.regions.main.setClassName("col-12").render()}" encoding="off" />
-                </div>
-            </div>       
-        </div>
-    </isdecorate>
+    <div class="homepage">
+        <div class="container">
+            <div class="row">
+                <isprint value="${pdict.regions.main.setClassName("col-12").render()}" encoding="off" />
+            </div>
+        </div>       
+    </div>
+</isdecorate>
