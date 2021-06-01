@@ -1,18 +1,21 @@
 @import "./experienceGlobal.scss";
 
 .container {
-    width: 100%;
-}
-.container .row {
-    width: 100%;
-    margin-right: 0px;
+    max-width: 100%;
+    padding-right: 0px; 
+    padding-left: 0px; 
+    margin-right: 0px; 
     margin-left: 0px;
 }
 .banner1 {
     width: 100%;
     height: auto;
 }
-.banner2 {
-    width: 100%;
-    margin: auto;
+.col-12.banner2 {
+    flex: 0 0 auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
+

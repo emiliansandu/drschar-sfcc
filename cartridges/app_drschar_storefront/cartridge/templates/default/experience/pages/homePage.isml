@@ -7,11 +7,11 @@
             <div class="container">
                 <div class="row">
                     <isprint value="${pdict.regions.homeFullWidthBanner
-                          .setClassName("Banner1 col-12").render()}" encoding="off" />
+                          .setClassName("col-12 banner1").render()}" encoding="off" />
                 </div>
                 <div class="row">
                     <isprint value="${pdict.regions.homeAutoMarginBanner
-                          .setClassName("Banner2 col-12").render()}" encoding="off" />
+                          .setClassName("col-12 banner2").render()}" encoding="off" />
                 </div>
 
             </div>
