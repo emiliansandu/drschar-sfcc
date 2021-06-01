@@ -2,14 +2,19 @@
     <isscript>
         var assets = require('*/cartridge/scripts/assets.js');
         assets.addCss('/css/experience/homePage.css');
-        assets.addJs('/js/homePage.js');
     </isscript>
+        <div class="homepage">
+            <div class="container">
+                <div class="row">
+                    <isprint value="${pdict.regions.homeFullWidthBanner
+                          .setClassName("Banner1 col-12").render()}" encoding="off" />
+                </div>
+                <div class="row">
+                    <isprint value="${pdict.regions.homeAutoMarginBanner
+                          .setClassName("Banner2 col-12").render()}" encoding="off" />
+                </div>
 
-    <div class="homepage">
-        <div class="container">
-            <div class="row">
-                <isprint value="${pdict.regions.main.setClassName("col-12").render()}" encoding="off" />
             </div>
-        </div>       
-    </div>
-</isdecorate>
+            
+        </div>
+    </isdecorate>
