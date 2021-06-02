@@ -574,8 +574,11 @@ server.post('PlaceOrder', server.middleware.https, function (req, res, next) {
 
     var paymentid=order.paymentInstrument.paymentMethod;
     var paymentObject=paymentMgr.getPaymentMethod(paymentid);
+    var productQuantities=order.productQuantities;
+    var productWeight=productQuantities.keySet();
+
     if (order.getCustomerEmail()) {
-        COHelpers.sendConfirmationEmail(order, req.locale.id, req.host, paymentObject, contentAsset);
+        COHelpers.sendConfirmationEmail(order, req.locale.id, req.host, paymentObject, contentAsset, productWeight);
     }
 
     // Reset usingMultiShip after successful Order placement

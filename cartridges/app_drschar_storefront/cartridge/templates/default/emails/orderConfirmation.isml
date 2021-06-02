@@ -245,17 +245,6 @@
 
     <main>
         <center style="width: 100%; background-color: #F3F1EE;">
-            <div
-                style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: Arial, sans-serif; ">
-                (Optional) This text will appear in the inbox preview, but not the email body. It can be used to
-                supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490
-                characters) seems like a better UX for anyone using
-                a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not
-                included, email clients will automatically populate it using the text (including image alt text) at the
-                start of the email's body.
-            </div>
-            <!-- Visually Hidden Preheader Text : END -->
-
             <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
             <!-- Preview Text Spacing Hack : BEGIN -->
             <div
@@ -352,7 +341,7 @@
                                     var earlyArrivalDayMonth=parseInt(estimatedArrival[0])+orderDay;
                                     var lateArrivalDayMonth=parseInt(estimatedArrival[1])+orderDay;
                                     var deliveryYear=currentYear.toString();
-                                    
+                                    var monthName;
                                     
                                     //if earlyArrivalDayMonth or lateArrivalDayMonth increases daysInMonth then it means delivery date will be on the next month                                  
                                     if(earlyArrivalDayMonth>daysInMonth || lateArrivalDayMonth>daysInMonth){
@@ -365,10 +354,16 @@
                                             nextMonth=(nextMonth-12);
                                             currentYear=currentYear+1;
                                             deliveryYear=currentYear.toString();
+                                            monthName = monthNames[nextMonth];
                                         }else{
-                                            const monthName = monthNames[nextMonth];
+                                            monthName = monthNames[nextMonth];
                                             }
-                                        }                                  
+                                        }
+                                        else{
+                                            monthName = monthNames[currentMonth];
+                                        }
+                                        
+                                                                 
                                     //and finally calculate the correcta day of the month by taking away total days of current month to calculated gross arrival delivery earlyArrivalDayMonth and lateArrivalDayMonth values                                  
                                     if(earlyArrivalDayMonth>daysInMonth){
                                             earlyArrivalDayMonth=earlyArrivalDayMonth-daysInMonth;
@@ -525,7 +520,9 @@
                                                     <p style="margin: 0px; line-height: 24px;">
                                                         <span>${address.firstName}&nbsp;${address.lastName}</span>
                                                         <br />
-                                                        ${address.address1}
+                                                        ${address.address1}<br />
+                                                        ${address.postalCode}&nbsp;${address.city}<br />
+                                                        ${address.countryCode.value}
                                                     </p>
                                                 </td>
                                             </tr>
@@ -630,7 +627,9 @@
                                                     style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
                                                     <span>${address.firstName}&nbsp;${address.lastName}</span>
                                                     <br />
-                                                    ${address.address1}
+                                                    ${address.address1}<br />
+                                                    ${address.postalCode}&nbsp;${address.city}<br />
+                                                    ${address.countryCode.value}
                                                 </td>
                                             </tr>
                                         </table>
@@ -789,10 +788,16 @@
                                                         style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 20px; color: #555555; padding: 20px; text-align: left;"
                                                         class="center-on-narrow">
                                                         <h2
-                                                            style="margin: 0 0 5px 0; font-family: 'Josefin Sans', 'Roboto', Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: 400;">
+                                                            style="margin: 0 0 5px 0; font-family: 'Josefin Sans', 'Roboto', Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: bold;">
                                                             ${itemsList.productName}</h2>
                                                         <p style="margin: 0 0 20px 0; color: #A09698; font-size: 12px">
-                                                            <strong>${itemsList.productType}</strong></p>
+                                                        <isloop items="${pdict.productWeight}" var="prodWeight" status="prodWeightLoop">
+                                                           <isif condition="${itemsList.id==prodWeight.ID}"> 
+                                                            <strong>${prodWeight.custom.dimWeight}</strong>
+                                                            </isif>
+                                                        </isloop>
+                                                        </p>
+                                                        
                                                         <table role="presentation" border="0" cellpadding="0"
                                                             cellspacing="0" width="100%">
                                                             <tr>
@@ -800,7 +805,7 @@
                                                                     style="font-family: Arial, sans-serif;  font-size: 12px; font-weight: bold; color: #A09698;">
                                                                     ${Resource.msg('label.order.custom.order.product-quantity', 'confirmation', null)}
                                                                     <span
-                                                                        style="color: #422D31;">${itemsList.quantity}</span>
+                                                                        style="color: #422D31;">${itemsList.quantity.toFixed()}</span>
                                                                 </td>
                                                                 <td dir="ltr" valign="top" width="50%" align="right"
                                                                     style="font-family: Arial, sans-serif;  font-size: 12px; font-weight: bold; color: #A09698;">
@@ -884,7 +889,7 @@
                                 <tr>
                                     <!-- Column : BEGIN -->
                                     <td width="33.33%" valign="top"
-                                        style="font-family: Arial, sans-serif;  padding: 0 10px;">
+                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;">
                                         <strong>${Resource.msg('label.order.custom.order.total-amount', 'confirmation', null)}</strong>
                                         <br>
                                         <span
@@ -893,7 +898,7 @@
                                     <!-- Column : END -->
                                     <!-- Column : BEGIN -->
                                     <td width="66.66%" valign="top" align="right"
-                                        style="font-family: Arial, sans-serif;  padding: 0 10px;" valign="top">
+                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;" valign="top">
                                         <strong>${pdict.order.totals.grandTotal}</strong>
                                     </td>
                                     <!-- Column : END -->
@@ -911,9 +916,9 @@
                                 <tr>
                                     <!-- Column : BEGIN -->
                                     <td width="100%" valign="top" align="center"
-                                        style="padding: 20px 10px; font-size:14px; font-family: Arial, sans-serif;  color: #A09698">
+                                        style="padding: 20px 10px; font-size:14px; font-family: Arial, sans-serif;">
                                         <a href="${URLUtils.https('Page-Show', 'cid', 'terms')}"
-                                            style="text-decoration: underline; color: #A09698;">
+                                            style="text-decoration: underline !important; color: rgb(160, 150, 152) !important;">
                                             ${Resource.msg('label.order.custom.order.terms-link', 'confirmation', null)}</a>
                                     </td>
                                     <!-- Column : END -->

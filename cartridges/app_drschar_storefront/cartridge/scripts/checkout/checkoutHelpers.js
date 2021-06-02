@@ -534,7 +534,7 @@ function handlePayments(order, orderNumber) {
  * @param {string} locale - the current request's locale id
  * @returns {void}
  */
-function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset) {
+function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset, productWeight) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
@@ -543,7 +543,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset)
 
     var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
 
-    var orderObject = { order: orderModel, host: host, paymentObject: paymentObject, contentAsset: contentAsset};
+    var orderObject = { order: orderModel, host: host, paymentObject: paymentObject, contentAsset: contentAsset, productWeight: productWeight};
 
 
     var emailObj = {
