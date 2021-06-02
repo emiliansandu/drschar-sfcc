@@ -112,7 +112,18 @@ server.get('Variation', function (req, res, next) {
 
     var params = req.querystring;
     var product = ProductFactory.get(params);
+    
+    //DIS Sized Image functionality
+    var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
+    var productid  = dw.catalog.ProductMgr.getProduct(product.id);
+    var productLength=product.images.large.length;
 
+    for(var i=0; i<productLength; i++){
+    var ProductImage=DISHelper.getImage(productid, 'medium', i);
+    var mediaFileURL =ProductImage.getURL();
+    product.images.large[i].url=mediaFileURL;
+    }
+    
     var context = {
         price: product.price
     };
