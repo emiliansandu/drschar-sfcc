@@ -93,9 +93,9 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("\n\n// Adyen constants\nmodule.exports = {\n  METHOD_ADYEN: 'Adyen',\n  METHOD_ADYEN_POS: 'AdyenPOS',\n  METHOD_ADYEN_COMPONENT: 'AdyenComponent'\n};\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/constants.js?");
-
-/***/ })
-
-/******/ });
+  "use strict";
+  eval("\n\n// Adyen constants\nmodule.exports = {\n  METHOD_ADYEN: 'Adyen',\n  METHOD_ADYEN_POS: 'AdyenPOS',\n  METHOD_ADYEN_COMPONENT: 'AdyenComponent'\n};\n\n//# sourceURL=webpack:///./cartridges/int_adyen_SFRA/cartridge/client/default/js/constants.js?");
+  
+  /***/ })
+  
+  /******/ });

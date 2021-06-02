@@ -3,9 +3,14 @@
     "description": "Dr. Schar Home Page",
     "region_definitions":[
         {
-          "id":"main",
-          "name":"Homepage",
-          "component_type_exclusions": []
-        }
+          "id": "homeFullWidthBanner",
+          "name": "Home Full Width 1 Component DrSchar Region",
+          "max_components": 1
+      },
+      {
+          "id": "homeAutoMarginBanner",
+          "name": "Home Auto Margin multiple Component DrSchar Region"
+      }
+      
       ]
 }

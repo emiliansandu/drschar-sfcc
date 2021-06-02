@@ -1,0 +1,25 @@
+@import "./experienceGlobal.scss";
+
+.container {
+    max-width: 100%;
+    padding-right: 0px; 
+    padding-left: 0px; 
+    margin-right: 0px; 
+    margin-left: 0px;
+}
+.banner1 {
+    width: 100%;
+    height: auto;
+}
+.col-12.banner2 {
+    flex: 0 0 auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
+

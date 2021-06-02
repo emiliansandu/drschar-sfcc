@@ -71,7 +71,6 @@ pipelines:
               - npm --prefix ./build-suite/ install
               - npm --prefix ./build-suite/ rebuild node-sass
               - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=staging
-              - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importSite --project=drschar-development --target=staging
 
 definitions:
     caches:

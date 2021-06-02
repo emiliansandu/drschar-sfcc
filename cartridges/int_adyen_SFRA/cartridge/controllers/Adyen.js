@@ -550,7 +550,7 @@ server.get('GetPaymentMethods', server.middleware.https, function (req, res, nex
     AdyenPaymentMethods: response,
     ImagePath: adyenURL,
     AdyenDescriptions: paymentMethodDescriptions,
-    AdyenConnectedTerminals: JSON.parse(connectedTerminals),
+    AdyenConnectedTerminals: connectedTerminals,
     amount: {
       value: paymentAmount,
       currency: currency
@@ -658,7 +658,7 @@ function clearForms() {
 }
 
 function clearAdyenData(paymentInstrument) {
-  Transaction.wrap(() => {
+  Transaction.wrap(function () {
     paymentInstrument.custom.adyenPaymentData = null;
     paymentInstrument.custom.adyenMD = null;
   });

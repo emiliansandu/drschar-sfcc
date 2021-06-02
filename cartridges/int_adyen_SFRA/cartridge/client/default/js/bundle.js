@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 !function (e) {
   var t = {};
 
@@ -26,7 +28,7 @@
     });
   }, n.t = function (e, t) {
     if (1 & t && (e = n(e)), 8 & t) return e;
-    if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+    if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
     var r = Object.create(null);
     if (n.r(r), Object.defineProperty(r, "default", {
       enumerable: !0,
@@ -39,7 +41,7 @@
     return r;
   }, n.n = function (e) {
     var t = e && e.__esModule ? function () {
-      return e.default;
+      return e["default"];
     } : function () {
       return e;
     };
@@ -128,7 +130,7 @@
     return o(t, e), t;
   }(a);
 
-  t.default = s, window.AdyenCheckout = s;
+  t["default"] = s, window.AdyenCheckout = s;
 }, function (e, t, n) {
   window, e.exports = function (e) {
     var t = {};
@@ -156,7 +158,7 @@
       });
     }, n.t = function (e, t) {
       if (1 & t && (e = n(e)), 8 & t) return e;
-      if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+      if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
       var r = Object.create(null);
       if (n.r(r), Object.defineProperty(r, "default", {
         enumerable: !0,
@@ -169,7 +171,7 @@
       return r;
     }, n.n = function (e) {
       var t = e && e.__esModule ? function () {
-        return e.default;
+        return e["default"];
       } : function () {
         return e;
       };
@@ -189,7 +191,8 @@
           var r = arguments[t];
 
           if (r) {
-            var a = typeof r;
+            var a = _typeof(r);
+
             if ("string" === a || "number" === a) e.push(r);else if (Array.isArray(r) && r.length) {
               var i = o.apply(null, r);
               i && e.push(i);
@@ -202,7 +205,7 @@
         return e.join(" ");
       }
 
-      e.exports ? (o.default = o, e.exports = o) : void 0 === (r = function () {
+      e.exports ? (o["default"] = o, e.exports = o) : void 0 === (r = function () {
         return o;
       }.apply(t, [])) || (e.exports = r);
     }();
@@ -223,7 +226,7 @@
         return e && e.Math == Math && e;
       };
 
-      e.exports = n("object" == typeof globalThis && globalThis) || n("object" == typeof window && window) || n("object" == typeof self && self) || n("object" == typeof t && t) || Function("return this")();
+      e.exports = n("object" == (typeof globalThis === "undefined" ? "undefined" : _typeof(globalThis)) && globalThis) || n("object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && window) || n("object" == (typeof self === "undefined" ? "undefined" : _typeof(self)) && self) || n("object" == _typeof(t) && t) || Function("return this")();
     }).call(this, n(29));
   }, function (e, t, n) {
     e.exports = {
@@ -288,7 +291,7 @@
           y = e.stat;
       if (n = f ? r : y ? r[m] || c(m, {}) : (r[m] || {}).prototype) for (l in t) {
         if (p = t[l], u = e.noTargetGet ? (h = o(n, l)) && h.value : n[l], !s(f ? l : m + (y ? "." : "#") + l, e.forced) && void 0 !== u) {
-          if (typeof p == typeof u) continue;
+          if (_typeof(p) == _typeof(u)) continue;
           d(p, u);
         }
 
@@ -297,7 +300,7 @@
     };
   }, function (e, t) {
     e.exports = function (e) {
-      return "object" == typeof e ? null !== e : "function" == typeof e;
+      return "object" == _typeof(e) ? null !== e : "function" == typeof e;
     };
   }, function (e, t, n) {
     e.exports = {
@@ -462,7 +465,7 @@
     try {
       n = n || new Function("return this")();
     } catch (e) {
-      "object" == typeof window && (n = window);
+      "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (n = window);
     }
 
     e.exports = n;
@@ -1018,7 +1021,7 @@
     }), a("includes");
   }, function (e, t, n) {
     var r = n(50);
-    e.exports = r && !Symbol.sham && "symbol" == typeof Symbol.iterator;
+    e.exports = r && !Symbol.sham && "symbol" == _typeof(Symbol.iterator);
   }, function (e, t, n) {
     var r,
         o = n(15),
@@ -1165,7 +1168,7 @@
       if (!1 === e) return a;
       if (0 === e) return d;
       if ("" === e) return s;
-      if ("object" == typeof e || "function" == typeof e) try {
+      if ("object" == _typeof(e) || "function" == typeof e) try {
         var t = e.then;
         if ("function" == typeof t) return new r(t.bind(e));
       } catch (e) {
@@ -1190,7 +1193,7 @@
         var o = t.length;
 
         function a(i, c) {
-          if (c && ("object" == typeof c || "function" == typeof c)) {
+          if (c && ("object" == _typeof(c) || "function" == typeof c)) {
             if (c instanceof r && c.then === r.prototype.then) {
               for (; 3 === c._V;) {
                 c = c._W;
@@ -1224,7 +1227,7 @@
           r.resolve(e).then(t, n);
         });
       });
-    }, r.prototype.catch = function (e) {
+    }, r.prototype["catch"] = function (e) {
       return this.then(null, e);
     };
   }, function (e, t, n) {
@@ -1238,7 +1241,7 @@
         i = {};
 
     function c(e) {
-      if ("object" != typeof this) throw new TypeError("Promises must be constructed via new");
+      if ("object" != _typeof(this)) throw new TypeError("Promises must be constructed via new");
       if ("function" != typeof e) throw new TypeError("Promise constructor's argument is not a function");
       this._U = 0, this._V = 0, this._W = null, this._X = null, e !== o && h(e, this);
     }
@@ -1271,7 +1274,7 @@
     function s(e, t) {
       if (t === e) return l(e, new TypeError("A promise cannot be resolved with itself."));
 
-      if (t && ("object" == typeof t || "function" == typeof t)) {
+      if (t && ("object" == _typeof(t) || "function" == typeof t)) {
         var n = function (e) {
           try {
             return e.then;
@@ -1525,7 +1528,7 @@
       e = p(e), t = h(t);
       var n = this.map[e];
       this.map[e] = n ? n + ", " + t : t;
-    }, f.prototype.delete = function (e) {
+    }, f.prototype["delete"] = function (e) {
       delete this.map[p(e)];
     }, f.prototype.get = function (e) {
       return e = p(e), this.has(e) ? this.map[e] : null;
@@ -2593,13 +2596,13 @@
             size: "small",
             inline: !0
           }), p.get("payButton.redirecting")),
-          default: fe("span", {
+          "default": fe("span", {
             className: "adyen-checkout__button__content"
           }, h, fe("span", {
             className: "adyen-checkout__button__text"
           }, s))
         },
-            _ = y[l] || y.default;
+            _ = y[l] || y["default"];
 
         return a ? fe("a", {
           className: f,
@@ -2679,7 +2682,7 @@
             data: n,
             isValid: r
           }, e) : (e.showValidation(), !1);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           return r(e);
         });
       }, t.prototype.onComplete = function (e) {
@@ -2779,7 +2782,7 @@
             a(n);
           }, e), t.then(function (e) {
             clearTimeout(r), o(e);
-          }).catch(function (e) {
+          })["catch"](function (e) {
             clearTimeout(r), a(e);
           });
         }),
@@ -2851,7 +2854,7 @@
         var e = this;
         this.deviceFingerPrintPromise = gt(1e4, this.getDfpPromise(), bt), this.deviceFingerPrintPromise.promise.then(function (t) {
           e.props.onCompleteFingerprint(t), window.removeEventListener("message", e.processMessageHandler);
-        }).catch(function (t) {
+        })["catch"](function (t) {
           e.props.onErrorFingerprint(t), window.removeEventListener("message", e.processMessageHandler);
         });
       }, t.prototype.render = function (e) {
@@ -3501,7 +3504,7 @@
     }(ge)),
         Jt = (n(110), function (e, t) {
       var n = {
-        boolean: qt,
+        "boolean": qt,
         date: Lt,
         emailAddress: zt,
         radio: Ut,
@@ -3509,15 +3512,15 @@
         selectList: Yt,
         tel: jt,
         text: Vt,
-        default: Vt
+        "default": Vt
       };
-      return fe(n[e] || n.default, _M({}, t));
+      return fe(n[e] || n["default"], _M({}, t));
     }),
         Zt = /^\s*[\w\-+_]+(\.[\w\-+_]+)*@[\w\-+_]+\.[\w\-+_]+(\.[\w-+_]+)*\s*$/,
         Qt = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s./0-9]*$/,
         $t = {
       blur: {
-        default: function _default(e) {
+        "default": function _default(e) {
           return e && e.length > 0;
         },
         dateOfBirth: function dateOfBirth(e) {
@@ -3536,7 +3539,7 @@
     },
         Xt = {
       input: {
-        default: function _default() {
+        "default": function _default() {
           return !0;
         }
       },
@@ -3544,7 +3547,7 @@
         shopperEmail: function shopperEmail(e) {
           return /\S+@\S+\.\S+/.test(e);
         },
-        default: function _default() {
+        "default": function _default() {
           return !0;
         }
       }
@@ -3746,7 +3749,7 @@
         return e.ok ? e.json() : console.warn("Service at " + s + " is not available");
       }).then(function (e) {
         return e;
-      }).catch(function (e) {
+      })["catch"](function (e) {
         console.warn("Call to " + s + " failed. Error= " + e);
       });
     },
@@ -3774,7 +3777,7 @@
         }).then(function (e) {
           var t = e && e.length ? e : [];
           l(t), h(!0);
-        }).catch(function () {
+        })["catch"](function () {
           l([]), h(!0);
         });
       }, [t]), p && s.length ? fe(Ot, {
@@ -3818,7 +3821,7 @@
             return n.includes(e.id);
           }) : e;
           u(t || []), _(1 === t.length || y), m(!0);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           console.error(e), u([]), m(!0);
         });
       }, []), h ? fe(Ot, {
@@ -3837,7 +3840,7 @@
 
     var dn = {
       blur: {
-        default: function _default(e) {
+        "default": function _default(e) {
           return e && e.length > 0;
         }
       }
@@ -4309,7 +4312,7 @@
           return t(n, r, e.validationURL);
         }).then(function (e) {
           n.session.completeMerchantValidation(e);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           console.error(e), n.session.abort();
         });
       }, e.prototype.onpaymentauthorized = function (e, t) {
@@ -4318,7 +4321,7 @@
           return t(n, r, e);
         }).then(function () {
           n.session.completePayment(ApplePaySession.STATUS_SUCCESS);
-        }).catch(function () {
+        })["catch"](function () {
           n.session.completePayment(ApplePaySession.STATUS_FAILURE);
         });
       }, e.prototype.onpaymentmethodselected = function (e, t) {
@@ -4327,7 +4330,7 @@
           return t(n, r, e);
         }).then(function (e) {
           n.session.completePaymentMethodSelection(e);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           n.session.completePaymentMethodSelection(e);
         });
       }, e.prototype.onshippingcontactselected = function (e, t) {
@@ -4336,7 +4339,7 @@
           return t(n, r, e);
         }).then(function (e) {
           n.session.completeShippingContactSelection(e);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           n.session.completeShippingContactSelection(e);
         });
       }, e.prototype.onshippingmethodselected = function (e, t) {
@@ -4345,7 +4348,7 @@
           return t(n, r, e);
         }).then(function (e) {
           n.session.completeShippingMethodSelection(e);
-        }).catch(function (e) {
+        })["catch"](function (e) {
           n.session.completeShippingMethodSelection(e);
         });
       }, e.prototype.oncancel = function (e, t) {
@@ -5227,7 +5230,7 @@
     };
 
     function Zn(e) {
-      return "object" == typeof e && null !== e && "[object Array]" === Object.prototype.toString.call(e);
+      return "object" == _typeof(e) && null !== e && "[object Array]" === Object.prototype.toString.call(e);
     }
 
     function Qn() {
@@ -5251,7 +5254,7 @@
     var $n = Object.prototype.toString;
 
     function Xn(e) {
-      return "object" == typeof e && null !== e && "[object Array]" === Object.prototype.toString.call(e);
+      return "object" == _typeof(e) && null !== e && "[object Array]" === Object.prototype.toString.call(e);
     }
 
     function er(e) {
@@ -5263,7 +5266,7 @@
     }
 
     function nr(e) {
-      return !!e && "object" == typeof e;
+      return !!e && "object" == _typeof(e);
     }
 
     var rr = window.console && window.console.error && window.console.error.bind(window.console),
@@ -6210,7 +6213,7 @@
 
       var r = function (e) {
         var t;
-        return "object" == typeof e && (t = e), "string" != typeof e || (t = hr(document, e)) ? t : null;
+        return "object" == _typeof(e) && (t = e), "string" != typeof e || (t = hr(document, e)) ? t : null;
       }(t.rootNode);
 
       return r ? (t.rootNode = r, new Kr(t).createReturnObject()) : (window.console && window.console.error && window.console.error("ERROR: SecuredFields cannot find a valid rootNode element for", t.type), null);
@@ -7381,7 +7384,7 @@
           return e.props.beforeRedirect(t, n, e.props.url);
         }).then(function () {
           e.postForm ? e.postForm.submit() : window.location.assign(e.props.url);
-        }).catch(function () {});
+        })["catch"](function () {});
       }, t.prototype.render = function (e) {
         var t = this,
             n = e.url,
@@ -7690,7 +7693,7 @@
               data: t.data,
               isValid: t.isValid
             }, t), a(e);
-          }).catch(function (e) {
+          })["catch"](function (e) {
             return t.props.onError(e), Promise.reject(e);
           });
         }, t.submit = function () {
@@ -7702,7 +7705,7 @@
             if (!e.result) throw new Error("Google Pay is not available");
             if (!1 === e.paymentMethodPresent) throw new Error("Google Pay - No paymentMethodPresent");
             return !0;
-          }).catch(function () {
+          })["catch"](function () {
             return !1;
           });
         }, t.isReadyToPay = function () {
@@ -9318,7 +9321,7 @@
         var e = this;
         this.challengePromise = gt(6e5, this.get3DS2ChallengePromise(), la), this.challengePromise.promise.then(function (t) {
           window.removeEventListener("message", e.processMessageHandler), e.props.onCompleteChallenge(t);
-        }).catch(function (t) {
+        })["catch"](function (t) {
           window.removeEventListener("message", e.processMessageHandler), e.props.onErrorChallenge(t);
         });
       }, t.prototype.componentWillUnmount = function () {
@@ -9459,7 +9462,7 @@
         var e = this;
         this.fingerPrintPromise = gt(1e4, this.get3DS2MethodPromise(), pa), this.fingerPrintPromise.promise.then(function (t) {
           window.removeEventListener("message", e.processMessageHandler), e.props.onCompleteFingerprint(t);
-        }).catch(function (t) {
+        })["catch"](function (t) {
           window.removeEventListener("message", e.processMessageHandler), e.props.onErrorFingerprint(t);
         });
       }, t.prototype.componentWillUnmount = function () {
@@ -9652,7 +9655,7 @@
         body: JSON.stringify(o)
       }, fetch(r, a).then(function (e) {
         return e.json();
-      }).catch(function (e) {
+      })["catch"](function (e) {
         throw e;
       });
     },
@@ -9793,7 +9796,7 @@
             r = t.originKey,
             o = t.clientKey,
             a = t.loadingContext;
-        return Sa(n, o || r, a).then(Da).catch(function (e) {
+        return Sa(n, o || r, a).then(Da)["catch"](function (e) {
           return {
             type: "network-error",
             props: e
@@ -10345,7 +10348,7 @@
         socialSecurityNumber: function socialSecurityNumber(e) {
           return /(^\d{3}\.\d{3}\.\d{3}-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$)/.test(e);
         },
-        default: function _default(e) {
+        "default": function _default(e) {
           return e && e.length > 0;
         }
       }
@@ -11214,7 +11217,7 @@
         return o || e.details || (o = oc("redirect", r)), o;
       }).filter(Mi),
           o = r.map(Di).map(function (e) {
-        return e.catch(function (e) {
+        return e["catch"](function (e) {
           return e;
         });
       });
@@ -11305,7 +11308,7 @@
             }), t.setState({
               isDisabling: !1
             });
-          }).catch(function () {
+          })["catch"](function () {
             t.setState({
               isDisabling: !1
             });
@@ -11444,7 +11447,7 @@
             data: n,
             isValid: r
           }, e) : (e.showValidation(), !1);
-        }).catch(function (t) {
+        })["catch"](function (t) {
           return e.props.onError(t);
         });
       }, t.prototype.handleAction = function (e) {
@@ -11779,7 +11782,7 @@
             value: t
           };
         },
-        default: function _default(e) {
+        "default": function _default(e) {
           return e && e.length > 0;
         }
       },
@@ -11796,7 +11799,7 @@
             value: e
           };
         },
-        default: function _default(e) {
+        "default": function _default(e) {
           return e && e.length > 0;
         }
       }
@@ -11935,7 +11938,7 @@
             r = e.originKey,
             o = e.clientKey,
             i = e.loadingContext;
-        return Sa(n, o || r, i).then(Da).catch(function (e) {
+        return Sa(n, o || r, i).then(Da)["catch"](function (e) {
           return {
             type: "network-error",
             props: e
@@ -12378,10 +12381,10 @@
       giftcard: yi,
       vipps: _i,
       swish: ki,
-      default: null
+      "default": null
     },
         oc = function oc(e, t) {
-      var n = rc[e] || rc.default;
+      var n = rc[e] || rc["default"];
       return n ? new n(_M(_M({}, t), {
         id: e + "-" + "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (e) {
           var t = 16 * Math.random() | 0;
@@ -12487,7 +12490,7 @@
           statusType: "custom"
         }));
       },
-      await: function _await(e, t) {
+      "await": function _await(e, t) {
         return oc(e.paymentMethodType, _M(_M(_M({}, e), t), {
           onComplete: t.onAdditionalDetails,
           onError: t.onError,
@@ -12568,7 +12571,7 @@
 
             return fetch(e.loadingContext + "v1/analytics/log?token=" + o, r).then(function (e) {
               return e.ok;
-            }).catch(function () {});
+            })["catch"](function () {});
           };
         }({
           loadingContext: r,
@@ -12592,14 +12595,14 @@
             throw new Error("Collect ID not available");
           }).then(function (e) {
             return e.id;
-          }).catch(function () {});
+          })["catch"](function () {});
         }({
           loadingContext: r,
           originKey: a,
           clientKey: i
         }).then(function (e) {
           n.conversionId = e, n.queue.run(n.conversionId);
-        }).catch(function () {
+        })["catch"](function () {
           n.queue.run();
         }));
       }
@@ -12671,12 +12674,12 @@
       }, e;
     }();
 
-    t.default = bc;
-  }]).default;
+    t["default"] = bc;
+  }])["default"];
 }, function (e, t, n) {
   var r = n(5),
       o = n(6);
-  "string" == typeof (o = o.__esModule ? o.default : o) && (o = [[e.i, o, ""]]);
+  "string" == typeof (o = o.__esModule ? o["default"] : o) && (o = [[e.i, o, ""]]);
   var a = {
     insert: "head",
     singleton: !1
