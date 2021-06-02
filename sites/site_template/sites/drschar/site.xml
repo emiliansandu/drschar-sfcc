@@ -3,7 +3,7 @@
     <name>drschar</name>
     <currency>USD</currency>
     <taxation>gross</taxation>
-    <custom-cartridges>app_drschar_storefront:plugin_dis:int_zendesk:int_paypal:bm_app_storefront_base:bc_job_components:app_storefront_base</custom-cartridges>
+    <custom-cartridges>app_drschar_storefront:int_google_analytics:plugin_dis:int_zendesk:int_paypal:bm_app_storefront_base:bc_job_components:app_storefront_base</custom-cartridges>
     <home-page-meta-tag-rules>
         <page-meta-tag-rule rule-id="Homepage Title"/>
         <page-meta-tag-rule rule-id="Homepage Robots"/>

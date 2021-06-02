@@ -33,6 +33,7 @@
         "bm_paypal_configuration",
         "int_adyen_overlay",
         "int_adyen_SFRA",
+        "int_google_analytics",
         "int_paypal",
         "int_zendesk",        
         "modules",
@@ -111,8 +112,8 @@
       }
     },
     "project": {
-      "version": "dev_qa_version",
-      "build": "${BITBUCKET_BUILD_NUMBER}"
+      "version": "O_CORDERO_2",
+      "build": ""
     },
     "optimize": {
       "postcss": false,
