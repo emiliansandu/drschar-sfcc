@@ -112,8 +112,8 @@
       }
     },
     "project": {
-      "version": "O_CORDERO_2",
-      "build": ""
+      "version": "dev_qa_version",
+      "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
       "postcss": false,
