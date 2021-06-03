@@ -2,30 +2,26 @@
 var base = require('./base');
 
 $(document).ready(function() {
-
-    var objectPDP = getPDPData();    
-
-    gtag('event', 'view_item',objectPDP );
+    getPDPData();    
 });
 
 function getPDPData(){
-    var id = $('.product-id').text();
-    var name = $('.product-name').text();
+    var url = $('#data-product-analitycs').data("url");
     
-    var finalObj = {
-        "items": [
-          {
-            "id": id,
-            "name": name,
-            "brand": "Dr Schar",
-            "category": "<The category to which the product belongs (e.g. Apparel). Use / as a delimiter to specify up to 5-levels of hierarchy (e.g. Apparel/Men/T-Shirts)>",
-            "variant": "<The variant of the product (e.g. Black).>",
-            "quantity": "<The quantity of a product (e.g. 2).>",
-            "price": '<The price of a product (e.g. 29.20).>'
-          }
-        ]
+    if (url) {
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                gtag('event', 'view_item',data);
+            },
+            error: function() {
+                
+            }
+        });
     }
-    return finalObj;
+
 }
 
 module.exports = {

@@ -357,4 +357,34 @@ server.get('ShowBonusProducts', function (req, res, next) {
     next();
 });
 
+server.get('Data', cache.applyPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
+    var productHelper = require('*/cartridge/scripts/helpers/productHelpers');
+    var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
+    var productType = showProductPageHelperResult.product.productType;
+    if (!showProductPageHelperResult.product.online && productType !== 'set' && productType !== 'bundle') {
+        res.setStatusCode(404);
+        res.render('error/notFound');
+    } else {
+        var product = showProductPageHelperResult.product;
+        var categories = productHelper.getCategories(showProductPageHelperResult.breadcrumbs);
+        var variants = productHelper.getVariants(product.variationAttributes);        
+        res.json({
+            "items": [
+              {
+                "id": product.id,
+                "name": product.productName,
+                "brand": "Dr Schar",
+                "category": categories,
+                "variant": variants,
+                "quantity": product.selectedQuantity,
+                "price": product.price.sales.value
+              }
+            ]
+        }); 
+            
+    }
+    next();
+}, pageMetaData.computedPageMetaData);
+
+
 module.exports = server.exports();
