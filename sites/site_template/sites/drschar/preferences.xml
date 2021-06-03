@@ -13,7 +13,7 @@
             <preference preference-id="AccountNumberRetentionDays">0</preference>
             <preference preference-id="SiteCatalog">storefront-catalog-m-en</preference>
             <preference preference-id="SiteCurrencies">USD:EUR:JPY:CNY</preference>
-	    <preference preference-id="SiteCustomerList">RefArch</preference>            
+	        <preference preference-id="SiteCustomerList">RefArch</preference>            
             <preference preference-id="SiteDefaultLocale">en_US</preference>
             <preference preference-id="SiteLibrary">RefArchSharedLibrary</preference>
             <preference preference-id="SiteInventoryList">inventory_m</preference>
@@ -62,6 +62,8 @@
             <preference preference-id="PP_API_PaymentAction">true</preference>
             <preference preference-id="PP_API_BA_Enabled">false</preference>
             <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
+            <preference preference-id="GAId">UA-197653159-1</preference>
+            <preference preference-id="GAEnable">true</preference>
             <preference preference-id="ValidateIPAddress">false</preference>
             <preference preference-id="authenticationMethod">localAccount</preference>
             <preference preference-id="captureservicetrackingid">true</preference>

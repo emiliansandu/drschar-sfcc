@@ -8,8 +8,6 @@
             <preference preference-id="InstanceTimezone">US/Eastern</preference>
             <preference preference-id="SystemUseNotificationEnabled">false</preference>
             <preference preference-id="SystemUseNotificationMandatory">false</preference>
-            <preference preference-id="GAId">UA-197653159-1</preference>
-            <preference preference-id="GAEnable">true</preference>
         </all-instances>
         <development/>
         <staging/>
