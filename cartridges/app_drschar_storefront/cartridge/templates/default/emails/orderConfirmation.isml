@@ -322,59 +322,8 @@
 
                                         <p style="margin: 0 0 10px;">${Resource.msg('label.order.custom.message', 'confirmation', null)}</p>
                                         <p style="margin: 0 0 10px;">
-                                            <isscript>
-
-                                    var estimatedArrival = shippingModel.selectedShippingMethod.estimatedArrivalTime.replace(" Business Days", "");
-                                    estimatedArrival = estimatedArrival.split("-");                                   
-                                    
-                                    var orderDay = pdict.order.creationDate.getDate();
-
-                                    // getMonth() will return a month between 0 - 11 
-                                    var currentMonth = pdict.order.creationDate.getMonth();
-                                    var currentYear = pdict.order.creationDate.getFullYear();
-                                    // this line does the magic (in collab with the last 2 lines above)
-                                    // we add one to get to the month number from 1 - 12 and obtain correct days of the actual month
-                                    var daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
-                                    //declare months array to use it later
-                                    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                                    //calculated gross arrival day of delivery considering order day creation
-                                    var earlyArrivalDayMonth=parseInt(estimatedArrival[0])+orderDay;
-                                    var lateArrivalDayMonth=parseInt(estimatedArrival[1])+orderDay;
-                                    var deliveryYear=currentYear.toString();
-                                    var monthName;
-                                    
-                                    //if earlyArrivalDayMonth or lateArrivalDayMonth increases daysInMonth then it means delivery date will be on the next month                                  
-                                    if(earlyArrivalDayMonth>daysInMonth || lateArrivalDayMonth>daysInMonth){
-
-                                        var nextMonth = parseInt(currentMonth)+1;
-
-                                        //if nextMonth value increases more than the (0-11) index positions of the monthNames array it takes away those eleven positions plus one to set this value to his correct index position on monthNames array
-                                        //also it means the month belongs to next year
-                                        if(nextMonth>11){ 
-                                            nextMonth=(nextMonth-12);
-                                            currentYear=currentYear+1;
-                                            deliveryYear=currentYear.toString();
-                                            monthName = monthNames[nextMonth];
-                                        }else{
-                                            monthName = monthNames[nextMonth];
-                                            }
-                                        }
-                                        else{
-                                            monthName = monthNames[currentMonth];
-                                        }
-                                        
-                                                                 
-                                    //and finally calculate the correcta day of the month by taking away total days of current month to calculated gross arrival delivery earlyArrivalDayMonth and lateArrivalDayMonth values                                  
-                                    if(earlyArrivalDayMonth>daysInMonth){
-                                            earlyArrivalDayMonth=earlyArrivalDayMonth-daysInMonth;
-                                        }
-                                    if(lateArrivalDayMonth>daysInMonth){
-                                            lateArrivalDayMonth=lateArrivalDayMonth-daysInMonth;  
-                                        }  
-                                    
-                                    </isscript>
-                                            <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, earlyArrivalDayMonth, lateArrivalDayMonth,
-                                                    monthName, deliveryYear)}                                                    
+                                            
+                                            <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, pdict.arrivalEstimatedPeriod.earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName, pdict.arrivalEstimatedPeriod.deliveryYear)}                                                    
                                             </strong>
                                         </p>
 
