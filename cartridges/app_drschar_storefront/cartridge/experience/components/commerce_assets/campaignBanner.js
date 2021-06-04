@@ -16,5 +16,5 @@ module.exports.render = function (context, modelIn) {
 
     model.bannerMessage = content.bannerMessage;
 
-    return new Template('*/experience/components/commerce_assets/campaignBanner').render(model).text;
+    return new Template('experience/components/commerce_assets/campaignBanner').render(model).text;
 };
