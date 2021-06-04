@@ -1,15 +1,34 @@
 @import "./experienceGlobal.scss";
 
-.container {
+.homepage .container{
+    
     max-width: 100%;
-    padding-right: 0px; 
-    padding-left: 0px; 
-    margin-right: 0px; 
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
     margin-left: 0px;
+
 }
-.banner1 {
-    width: 100%;
+.homepage .container .row{
+    
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
+
+.homepage .container .col-12{
+    
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
+.col-12.banner1 {
+    flex: 0 0 auto;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 .col-12.banner2 {
     flex: 0 0 auto;
@@ -22,4 +41,3 @@
         width: 100%;
     }
 }
-
