@@ -523,8 +523,9 @@
                                                         style="color: #A09698">${Resource.msgf('label.order.custom.order.shipping-cost', 'confirmation', null, shippingModel.selectedShippingMethod
                                                                                .shippingCost)}</span>
                                                     <p style="margin: 0 0; font-size: 12px !important; color: #A09698;">
-                                                        ${Resource.msgf('label.order.custom.delivery.estimate', 'confirmation', null, earlyArrivalDayMonth, lateArrivalDayMonth,
-                                                        monthName)}</p>
+                                                        ${Resource.msgf('label.order.custom.delivery.estimate', 'confirmation', null, pdict.arrivalEstimatedPeriod.earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth,
+                                                        pdict.arrivalEstimatedPeriod.monthName)}</p>
+                                                        
                                                 </td>
                                             </tr>
                                         </table>
@@ -741,10 +742,11 @@
                                                             ${itemsList.productName}</h2>
                                                         <p style="margin: 0 0 20px 0; color: #A09698; font-size: 12px">
                                                         <isloop items="${pdict.productWeight}" var="prodWeight" status="prodWeightLoop">
-                                                           <isif condition="${itemsList.id==prodWeight.ID}"> 
+                                                           <isif condition="${itemsList.id==prodWeight.ID && prodWeight.custom.dimWeight}"> 
                                                             <strong>${prodWeight.custom.dimWeight}</strong>
                                                             </isif>
                                                         </isloop>
+                                                        
                                                         </p>
                                                         
                                                         <table role="presentation" border="0" cellpadding="0"
