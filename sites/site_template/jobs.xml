@@ -61,8 +61,47 @@
         </triggers>
     </job>
 
-
-
+    <job job-id="InventoryImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Inventory_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="import" type="ImportInventoryLists" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Inventory_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2021-06-03Z</date>
+                <time>01:48:35.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
 	
     <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
         <description>
