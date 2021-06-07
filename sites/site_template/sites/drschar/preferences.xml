@@ -54,46 +54,59 @@
     </standard-preferences>
     <custom-preferences>
         <all-instances/>
-                 <development>
-            <preference preference-id="EnableAPMLookUpService">true</preference>
-            <preference preference-id="EnableJobMailerService">false</preference>
-            <preference preference-id="OrgUnitId">5bd9b55e4444761ac0af1c80</preference>
-            <preference preference-id="PP_API_Button_Location">Billing</preference>
-            <preference preference-id="PP_API_PaymentAction">true</preference>
-            <preference preference-id="PP_API_BA_Enabled">false</preference>
-            <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
-            <preference preference-id="GAId">UA-197653159-1</preference>
-            <preference preference-id="GAEnable">true</preference>
-            <preference preference-id="ValidateIPAddress">false</preference>
-            <preference preference-id="authenticationMethod">localAccount</preference>
-            <preference preference-id="captureservicetrackingid">true</preference>
-            <preference preference-id="challengePreference">challengeMandated</preference>
-            <preference preference-id="challengeWindowSize">fullPage</preference>
-            <preference preference-id="debitNetworks">
-                <value>CU24</value>
-            </preference>
-            <preference preference-id="dstype">two3d</preference>
-            <preference preference-id="enableSalesrequest">false</preference>
-            <preference preference-id="enableStorePickUp">true</preference>
-            <preference preference-id="enableStoredCredentials">true</preference>
-            <preference preference-id="googlePayEnvironment">TEST</preference>
-            <preference preference-id="googlePayMerchantID">32e04907d379490</preference>
-            <preference preference-id="hideApmForMoto">true</preference>
-             <preference preference-id="isDisclaimerMandatory">false</preference>
-            <preference preference-id="iss">5bd9e0e4444dce153428c940</preference>
-            <preference preference-id="jwtMacKey">fa2daee2-1fbb-45ff-4444-52805d5cd9e0</preference>
-            <preference preference-id="riskData">true</preference>
-            <preference preference-id="routingPreference">signatureOnly</preference>
-             <preference preference-id="showDisclaimer">true</preference>
-            <preference preference-id="siteController">app_storefront_controllers</preference>
-            <preference preference-id="siteCore">app_storefront_core</preference>
-            <preference preference-id="storeLookupMaxDistance">200</preference>
-            <preference preference-id="storeLookupUnit">mi</preference>
-            <preference preference-id="tokenType">Shopper</preference>
-            <preference preference-id="zendeskCartridgeEnabled">true</preference>
-            <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
-        </development>
-        <staging/>
-        <production/>
+            <development>
+                <preference preference-id="Adyen3DS2Enabled">true</preference>
+                <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
+                <preference preference-id="AdyenCardHolderName_enabled">false</preference>
+                <preference preference-id="AdyenGiving_enabled">false</preference>
+                <preference preference-id="AdyenLevel23DataEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenRecurringEnabled">false</preference>
+                <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
+                <preference preference-id="Adyen_API_Key">JgpN/qzOY4qUgEIxBwwDb18fBYkqXkjgJXa/WCoS+QsmURZEjVqeMC5B14vSXSDD8Q3KhaEmeoBiAYXrJPQJmfy3VMoDjdjvFs3HDaTPIZVtPoPrY9frcAmp4Bjmma+wPElN0q7BUsoAlNnf2OAkYWaUeBB8nBAIAjo8fILllg8MXjbleX1SZPu1Z4bADwtzo6rDLJ4dLbtHIHKxbRLIogLSHJYcd4qJfbLGIGHnYHI=</preference>
+                <preference preference-id="Adyen_Mode">TEST</preference>
+                <preference preference-id="Adyen_merchantCode">DrScharUSAIncECOM</preference>
+                <preference preference-id="Adyen_notification_password">ZJG26cr2EhmVXMFJa+VnxGS/VbFPK8zNLlSEq5O2p1v5tSKI9iKZ3p9yB3dSTN7K</preference>
+                <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>
+                <preference preference-id="EnableAPMLookUpService">true</preference>
+                <preference preference-id="EnableJobMailerService">false</preference>
+                <preference preference-id="OrgUnitId">5bd9b55e4444761ac0af1c80</preference>
+                <preference preference-id="PP_API_Button_Location">Billing</preference>
+                <preference preference-id="PP_API_PaymentAction">true</preference>
+                <preference preference-id="PP_API_BA_Enabled">false</preference>
+                <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
+                <preference preference-id="GAId">UA-197653159-1</preference>
+                <preference preference-id="GAEnable">true</preference>
+                <preference preference-id="ValidateIPAddress">false</preference>
+                <preference preference-id="authenticationMethod">localAccount</preference>
+                <preference preference-id="captureservicetrackingid">true</preference>
+                <preference preference-id="challengePreference">challengeMandated</preference>
+                <preference preference-id="challengeWindowSize">fullPage</preference>
+                <preference preference-id="debitNetworks">
+                    <value>CU24</value>
+                </preference>
+                <preference preference-id="dstype">two3d</preference>
+                <preference preference-id="enableSalesrequest">false</preference>
+                <preference preference-id="enableStorePickUp">true</preference>
+                <preference preference-id="enableStoredCredentials">true</preference>
+                <preference preference-id="googlePayEnvironment">TEST</preference>
+                <preference preference-id="googlePayMerchantID">32e04907d379490</preference>
+                <preference preference-id="hideApmForMoto">true</preference>
+                <preference preference-id="isDisclaimerMandatory">false</preference>
+                <preference preference-id="iss">5bd9e0e4444dce153428c940</preference>
+                <preference preference-id="jwtMacKey">fa2daee2-1fbb-45ff-4444-52805d5cd9e0</preference>
+                <preference preference-id="riskData">true</preference>
+                <preference preference-id="routingPreference">signatureOnly</preference>
+                <preference preference-id="showDisclaimer">true</preference>
+                <preference preference-id="siteController">app_storefront_controllers</preference>
+                <preference preference-id="siteCore">app_storefront_core</preference>
+                <preference preference-id="storeLookupMaxDistance">200</preference>
+                <preference preference-id="storeLookupUnit">mi</preference>
+                <preference preference-id="tokenType">Shopper</preference>
+                <preference preference-id="zendeskCartridgeEnabled">true</preference>
+                <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
+            </development>
+            <staging/>
+            <production/>
     </custom-preferences>
 </preferences>

@@ -8,8 +8,11 @@
     <payment-method method-id="Adyen">
         <name xml:lang="x-default">Adyen</name>
         <description xml:lang="x-default">Adyen Redirect</description>
-        <enabled-flag>false</enabled-flag>
+        <enabled-flag>true</enabled-flag>
         <processor-id>Adyen</processor-id>
+        <custom-attributes>
+            <custom-attribute attribute-id="type">DIRECT</custom-attribute>
+        </custom-attributes>
     </payment-method>
 
     <payment-method method-id="AdyenPOS">
@@ -24,6 +27,9 @@
         <description xml:lang="x-default">Adyen Generic Component</description>
         <enabled-flag>true</enabled-flag>
         <processor-id>Adyen_Component</processor-id>
+        <custom-attributes>
+            <custom-attribute attribute-id="type">DIRECT</custom-attribute>
+        </custom-attributes>
     </payment-method>
 
     <payment-method method-id="BANK_TRANSFER">
