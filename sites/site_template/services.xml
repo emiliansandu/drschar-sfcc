@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
 
+    <service-credential service-credential-id="drscharSFTP">
+        <url>sftp://scaftp.schaer.com</url>
+        <user-id>SFWebshopExt</user-id>
+        <password encrypted="true" encryption-type="common.export">SBrIE216oX3nGf6jpBUnLBptT55bc0bH0SbbDsfxWtzggdJKPXAHrUjMYaMn2G0O</password>
+    </service-credential>
+
     <service-credential service-credential-id="Paypal_Sandbox_Credentials">
         <url>https://api.sandbox.paypal.com/</url>
         <user-id>AfDIcc9K47BupmQH2NpKC_J8lAEHKYH-FJFpgRC0nYFTbDfTVpPFZOeh6Vc_8YLnOn_MFLZYNJ6x8iBL</user-id>
@@ -136,6 +142,17 @@
         <cb-calls>0</cb-calls>
         <cb-millis>0</cb-millis>
     </service-profile>
+    
+    <service service-id="drscharSFTP">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id/>
+        <credential-id>drscharSFTP</credential-id>
+    </service>
 
     <service service-id="int_paypal.http.rest">
         <service-type>HTTP</service-type>
@@ -230,6 +247,7 @@
         <credential-id>AdyenGiving</credential-id>
     </service>
 
+<<<<<<< HEAD
     <service service-id="avatax.rest.all">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>
@@ -253,4 +271,6 @@
     </service>
 
 
+=======
+>>>>>>> 54e6bfe... [DRS-58] Service Credentials missing
 </services>
