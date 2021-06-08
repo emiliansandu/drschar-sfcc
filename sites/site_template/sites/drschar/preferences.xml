@@ -105,6 +105,7 @@
                 <preference preference-id="tokenType">Shopper</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
+                <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":false,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":false,"companyCode":"default","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"","line1":"","line2":"","line3":"","city":"","state":"","zipCode":"","countryCode":""}</preference>
             </development>
             <staging/>
             <production/>

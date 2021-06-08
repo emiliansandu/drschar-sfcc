@@ -133,10 +133,71 @@
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="ATCustomsDuty">
+                <display-name xml:lang="x-default">Import Duty / Fees</display-name>
+                <description xml:lang="x-default">Total import duty calculated for the current Basket.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATGenericMessage">
+                <display-name xml:lang="x-default">Transaction Summary</display-name>
+                <description xml:lang="x-default">Transaction messages</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>3</field-height>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATInvoiceMessage">
+                <display-name xml:lang="x-default">Invoice Messages</display-name>
+                <description xml:lang="x-default">Invoice messages, if any, for EU countries.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATLandedCost">
+                <display-name xml:lang="x-default">Cross-Border Summary</display-name>
+                <description xml:lang="x-default">Cross-border messages</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>3</field-height>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATTax">
+                <display-name xml:lang="x-default">Standard Tax/VAT/GST</display-name>
+                <description xml:lang="x-default">Total standard taxes (Sales tax, VAT, GST etc.)</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATTaxDetail">
+                <display-name xml:lang="x-default">Tax break-up (JSON)</display-name>
+                <description xml:lang="x-default">Tax break for all line items in the order in JSON format.</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>5</field-height>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="Status">
                 <display-name xml:lang="x-default">Status</display-name>
+            </attribute-group>
+            <attribute-group group-id="avatax">
+                <display-name xml:lang="x-default">Avalara | AvaTax</display-name>
+                <description xml:lang="x-default">Attribute group to store Avalara-specific values</description>
+                <attribute attribute-id="ATGenericMessage"/>
+                <attribute attribute-id="ATInvoiceMessage"/>
+                <attribute attribute-id="ATCustomsDuty"/>
+                <attribute attribute-id="ATTax"/>
+                <attribute attribute-id="ATLandedCost"/>
+                <attribute attribute-id="ATTaxDetail"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
@@ -1469,6 +1530,57 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="ATCustomsDuty">
+                <display-name xml:lang="x-default">Import Duty / Fees</display-name>
+                <description xml:lang="x-default">Total import duty calculated for the transaction.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATGenericMessage">
+                <display-name xml:lang="x-default">Transaction Summary</display-name>
+                <description xml:lang="x-default">Transaction messages</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>3</field-height>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATInvoiceMessage">
+                <display-name xml:lang="x-default">Invoice Messages</display-name>
+                <description xml:lang="x-default">Invoice messages, if any, for EU countries.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATLandedCost">
+                <display-name xml:lang="x-default">Cross-Border summary</display-name>
+                <description xml:lang="x-default">Cross-border messages</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>3</field-height>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATTax">
+                <display-name xml:lang="x-default">Tax</display-name>
+                <description xml:lang="x-default">Tax</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="ATTaxDetail">
+                <display-name xml:lang="x-default">Tax Break-up (JSON)</display-name>
+                <description xml:lang="x-default">Tax break for all line items in the order in JSON format.</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>70</field-length>
+                <field-height>5</field-height>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="AdyenPayments">
@@ -1478,6 +1590,16 @@
                 <attribute attribute-id="Adyen_paymentMethod"/>
                 <attribute attribute-id="Adyen_value"/>
                 <attribute attribute-id="Adyen_donationAmount"/>
+            </attribute-group>
+            <attribute-group group-id="avatax">
+                <display-name xml:lang="x-default">Avalara | AvaTax</display-name>
+                <description xml:lang="x-default">Attribute group to store Avalara-specific values</description>
+                <attribute attribute-id="ATGenericMessage"/>
+                <attribute attribute-id="ATInvoiceMessage"/>
+                <attribute attribute-id="ATCustomsDuty"/>
+                <attribute attribute-id="ATTax"/>
+                <attribute attribute-id="ATLandedCost"/>
+                <attribute attribute-id="ATTaxDetail"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
@@ -4821,6 +4943,15 @@
                 <min-length>0</min-length>
                 <default-value>{"cartCreditConfig":{"styleLayout":"flex","styleColor":"gray","styleRatio":"8x1","styleLogoType":"","styleLogoPosition":"","styleTextColor":""},"productCreditConfig":{"styleLayout":"text","styleColor":"","styleRatio":"","styleLogoType": "primary","styleLogoPosition":"left","styleTextColor":"black"},"categoryCreditConfig":{"styleLayout":"flex","styleColor":"blue","styleRatio":"20x1","styleLogoType":"","styleLogoPosition":"","styleTextColor":""}}</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="ATSettings">
+                <display-name xml:lang="x-default">AvaTax Settings</display-name>
+                <description xml:lang="x-default">AvaTax Settings</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>{"taxCalculation":true,"addressValidation":false,"taxationpolicy": "net","saveTransactions":true,"commitTransactions":false,"companyCode":"default","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"","line1":"","line2":"","line3":"","city":"","state":"","zipCode":"","countryCode":"us"}</default-value>
+            </attribute-definition>
             
 	    <attribute-definition attribute-id="rateLimiterThreshold">
 		<display-name xml:lang="x-default">Rate Limiter Threshold</display-name>
@@ -5317,6 +5448,10 @@
                 <attribute attribute-id="AdyenGiving_charityUrl"/>
                 <attribute attribute-id="AdyenGiving_backgroundUrl"/>
                 <attribute attribute-id="AdyenGiving_logoUrl"/>
+            </attribute-group>
+            <attribute-group group-id="AvaTax">
+                <display-name xml:lang="x-default">AvaTax</display-name>
+                <attribute attribute-id="ATSettings"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
