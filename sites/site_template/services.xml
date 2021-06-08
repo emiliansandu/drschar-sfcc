@@ -247,7 +247,6 @@
         <credential-id>AdyenGiving</credential-id>
     </service>
 
-<<<<<<< HEAD
     <service service-id="avatax.rest.all">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>
@@ -271,6 +270,4 @@
     </service>
 
 
-=======
->>>>>>> 54e6bfe... [DRS-58] Service Credentials missing
 </services>
