@@ -33,6 +33,9 @@
         "bm_paypal_configuration",
         "int_adyen_overlay",
         "int_adyen_SFRA",
+        "bm_avatax",
+        "int_avatax_sfra",
+        "int_avatax_svcclient", 
         "int_google_analytics",
         "int_paypal",
         "int_zendesk",        
@@ -65,8 +68,8 @@
     },
     "dev4": {
       "server": "bgpc-004.sandbox.us01.dx.commercecloud.salesforce.com",
-      "username": "rcervantes@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "username": "jmorodriguez@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_ScqBOYs5ocqHvINSUNiICA==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
