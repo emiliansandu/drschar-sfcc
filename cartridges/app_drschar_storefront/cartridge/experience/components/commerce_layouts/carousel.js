@@ -13,7 +13,14 @@ var carouselBuilder = require('*/cartridge/scripts/experience/utilities/carousel
  */
 module.exports.render = function (context, modelIn) {
     var model = modelIn || new HashMap();
-
+    
+if(context.content.autoplayControl==true && context.content.autoplaySlideTimeInterval){
+   model.autoplay="carousel";
+   model.autoplaySlideInterval=context.content.autoplaySlideTimeInterval;
+}else{
+    model.autoplay="";
+    model.autoplaySlideInterval='false';
+}
     model = carouselBuilder.init(model, context);
 
     return new Template('experience/components/commerce_layouts/carousel').render(model).text;

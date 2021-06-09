@@ -14,6 +14,23 @@
       ]
     },
     {
+      "id": "autoplay",
+      "attribute_definitions": [
+        {
+          "id": "autoplayControl",
+          "name": "autoplay control for carousel",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "autoplaySlideTimeInterval",
+          "name": "autoplay Slide time interval for carousel",
+          "type": "integer",
+          "required": false
+        }
+      ]
+    },
+    {
       "id": "extraSmallConfiguration",
       "name": "Phone configurations",
       "description": "Configuration for how the carousel will display on phones. Please put like sized items in the carousel",
