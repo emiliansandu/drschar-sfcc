@@ -36,7 +36,7 @@ function screenSize(element) {
  * Makes the next element to be displayed next unreachable for screen readers and keyboard nav
  * @param {jQuery} element - the current carousel that is being used
  */
-function hiddenSlides(element) {
+function hiddenSlides(element, carouselId) {
     var carousel;
 
     if (element) {
@@ -45,6 +45,9 @@ function hiddenSlides(element) {
         carousel = $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel');
     }
 
+    var dataPosition=$('#'+carouselId).find(".carousel-item.active").data('position');
+    $('#'+carouselId).find(".carousel-inner [data-position='" + dataPosition + "']").removeClass('d-none');
+    
     var screenSizeInfo = screenSize(carousel);
 
     var lastDisplayedElement;
@@ -112,7 +115,6 @@ $(document).ready(function () {
                 var xMove = touchMoveEvent.originalEvent.touches[0].pageX;
                 if (Math.floor(xClick - xMove) > 5) {
                     $(this).carousel('next');
-                    alert('hola');
                 } else if (Math.floor(xClick - xMove) < -5) {
                     $(this).carousel('prev');
                 }
@@ -125,6 +127,7 @@ $(document).ready(function () {
 
     $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slide.bs.carousel', function (e) {
         var activeCarouselPosition = $(e.relatedTarget).data('position');
+        $(this).find(".carousel-inner [data-position='" + activeCarouselPosition + "']").addClass('d-none');
         $(this).find('.pd-carousel-indicators .active').removeClass('active');
         $(this).find(".pd-carousel-indicators [data-position='" + activeCarouselPosition + "']").addClass('active');
 
@@ -171,6 +174,7 @@ $(document).ready(function () {
     });
 
     $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slid.bs.carousel', function () {
-        hiddenSlides($(this));
+        var carouselId = $(this).attr('id');
+        hiddenSlides($(this), carouselId);
     });
 });
