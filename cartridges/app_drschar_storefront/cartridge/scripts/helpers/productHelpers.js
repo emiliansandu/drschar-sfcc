@@ -16,20 +16,61 @@ PHelper.getCategories = function getCategories(breadcrumbs){
 
 PHelper.getVariants = function getVariants(variants){
     var text='';
-    for (var i in variants) {
-        var childs = variants[i].values;
-        if(childs){
-            text += variants[i].displayName+':';
-            for(var j in childs){
-                text += childs[j].displayValue+',';
+    if(variants){
+        for (var i in variants) {
+            var childs = variants[i].values;
+            if(childs){
+                text += variants[i].displayName+':';
+                for(var j in childs){
+                    text += childs[j].displayValue+',';
+                }
+            }
+            else{
+                text += 'none,'
             }
         }
-        else{
-            text += 'none,'
-        }
+    }else{
+        return '';
     }
-    var variants = text.slice(0,-1);
-    return variants;
+    
+    var variantsCad = text.slice(0,-1);
+    return variantsCad;
+}
+
+PHelper.getObjectItems = function getObjectItems(product,breadcrumb){
+    var categories = PHelper.getCategories(breadcrumb);
+    var variants = PHelper.getVariants(product.variationAttributes);
+    var brand = product.brand == null ? 'n/a' : product.brand;
+    var price = product.price.sales == undefined ? product.price.min.sales.value : product.price.sales.value;
+
+    if (variants && variants!="") {
+        return {
+            "items": [
+              {
+                "id": product.id,
+                "name": product.productName,
+                "brand": brand,
+                "category": categories,
+                "variant": variants,
+                "quantity": product.selectedQuantity,
+                "price": price
+              }
+            ]
+        };
+    }
+
+    return  {
+        "items": [
+          {
+            "id": product.id,
+            "name": product.productName,
+            "brand": brand,
+            "category": categories,
+            "quantity": product.selectedQuantity,
+            "price": product.price.sales.value
+          }
+        ]
+    };
 }
 
 module.exports = PHelper;

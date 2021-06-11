@@ -1,7 +1,7 @@
 'use strict';
 var base = require('./base');
 
-$(document).ready(function() {
+$(window).on("load",function() {
     getPDPData();    
 });
 
