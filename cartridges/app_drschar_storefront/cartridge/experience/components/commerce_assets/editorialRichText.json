@@ -1,0 +1,43 @@
+{
+  "name": "Textbox",
+  "description": "This is the Textbox Component, can be used as Help or FAQ pages",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "textContent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "richText",
+          "name": "content",
+          "description": "This is the rich text content area",
+          "type": "markup",
+          "required": true
+        },
+        {
+          "id": "dsTextAlignment",
+          "name": "Options for text align horizontally for Desktop",
+          "type": "enum",
+          "values": ["left", "center", "right"],
+          "required": true
+        },
+        {
+          "id": "mbTextAlignment",
+          "name": "Options for text align horizontally for Mobile",
+          "type": "enum",
+          "values": ["left", "center", "right"],
+          "required": true
+        },
+        {
+          "id": "colorSelect",
+          "name": "Options for select font color",
+          "type": "enum",
+          "values": ["Simple-Red", "Red-Brand", "Red-Wine", "Dark-Purpple", "Darker-Purpplee", "Yellow-Brand", "Yellow-Brand-2", "White-Brand", "White-Brand-2"],
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}
