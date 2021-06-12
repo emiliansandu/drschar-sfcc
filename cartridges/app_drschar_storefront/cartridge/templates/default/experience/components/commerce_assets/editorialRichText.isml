@@ -1,6 +1,7 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
     assets.addCss('css/experience/components/commerceAssets/editorialRichText.css');
+    assets.addJs('js/editorialRichText.js');
 </isscript>
 <div class="editorialRichText-component-container">
     <div class="row">
