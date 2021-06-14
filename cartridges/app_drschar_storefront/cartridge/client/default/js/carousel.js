@@ -36,7 +36,7 @@ function screenSize(element) {
  * Makes the next element to be displayed next unreachable for screen readers and keyboard nav
  * @param {jQuery} element - the current carousel that is being used
  */
-function hiddenSlides(element, carouselId) {
+function hiddenSlides(element) {
     var carousel;
 
     if (element) {
@@ -45,9 +45,6 @@ function hiddenSlides(element, carouselId) {
         carousel = $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel');
     }
 
-    var dataPosition=$('#'+carouselId).find(".carousel-item.active").data('position');
-    $('#'+carouselId).find(".carousel-inner [data-position='" + dataPosition + "']").removeClass('d-none');
-    
     var screenSizeInfo = screenSize(carousel);
 
     var lastDisplayedElement;
@@ -55,27 +52,27 @@ function hiddenSlides(element, carouselId) {
 
     switch (screenSizeInfo.itemsToDisplay) {
         case 2:
-            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item');
-            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item');
+            lastDisplayedElement = carousel.find('.active.item + .item');
+            elementToBeDisplayed = carousel.find('.active.item + .item + .item');
             break;
         case 3:
-            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item');
-            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item');
+            lastDisplayedElement = carousel.find('.active.item + .item + .item');
+            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item');
             break;
         case 4:
-            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item');
-            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
+            lastDisplayedElement = carousel.find('.active.item + .item + .item + .item');
+            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item + .item');
             break;
         case 6:
-            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
-            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
+            lastDisplayedElement = carousel.find('.active.item + .item + .item + .item + .item + .item');
+            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item + .item + .item + .item');
             break;
         default:
             break;
     }
 
-    carousel.find('.active.carousel-item').removeAttr('tabindex').removeAttr('aria-hidden');
-    carousel.find('.active.carousel-item').find('a, button, details, input, textarea, select')
+    carousel.find('.active.item').removeAttr('tabindex').removeAttr('aria-hidden');
+    carousel.find('.active.item').find('a, button, details, input, textarea, select')
         .removeAttr('tabindex')
         .removeAttr('aria-hidden');
 
@@ -99,7 +96,6 @@ $(document).ready(function () {
 
     $(window).on('resize', debounce(function () {
         hiddenSlides();
-        
     }, 500));
 
     $('body').on('carousel:setup', function () {
@@ -127,7 +123,6 @@ $(document).ready(function () {
 
     $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slide.bs.carousel', function (e) {
         var activeCarouselPosition = $(e.relatedTarget).data('position');
-        $(this).find(".carousel-inner [data-position='" + activeCarouselPosition + "']").addClass('d-none');
         $(this).find('.pd-carousel-indicators .active').removeClass('active');
         $(this).find(".pd-carousel-indicators [data-position='" + activeCarouselPosition + "']").addClass('active');
 
@@ -152,7 +147,7 @@ $(document).ready(function () {
         var itemsToDisplay = Math.max.apply(Math, arrayOfSlidesToDisplay);
 
         var elementIndex = $(e.relatedTarget).index();
-        var numberOfSlides = $('.carousel-item', this).length;
+        var numberOfSlides = $('.item', this).length;
         var carouselInner = $(this).find('.carousel-inner');
         var carouselItem;
 
@@ -161,11 +156,11 @@ $(document).ready(function () {
             for (var i = 0; i < it; i++) {
                 // append slides to end
                 if (e.direction === 'left') {
-                    carouselItem = $('.carousel-item', this).eq(i);
+                    carouselItem = $('.item', this).eq(i);
 
                     $(carouselItem).appendTo($(carouselInner));
                 } else {
-                    carouselItem = $('.carousel-item', this).eq(0);
+                    carouselItem = $('.item', this).eq(0);
 
                     $(carouselItem).appendTo($(carouselInner));
                 }
@@ -174,7 +169,6 @@ $(document).ready(function () {
     });
 
     $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slid.bs.carousel', function () {
-        var carouselId = $(this).attr('id');
-        hiddenSlides($(this), carouselId);
+        hiddenSlides($(this));
     });
 });
