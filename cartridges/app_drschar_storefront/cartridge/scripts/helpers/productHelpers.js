@@ -40,7 +40,7 @@ PHelper.getVariants = function getVariants(variants){
 PHelper.getObjectItems = function getObjectItems(product,breadcrumb){
     var categories = PHelper.getCategories(breadcrumb);
     var variants = PHelper.getVariants(product.variationAttributes);
-    var brand = product.brand == null ? 'n/a' : product.brand;
+    var brand = product.brand == null ? '' : product.brand;
     var price = product.price.sales == undefined ? product.price.min.sales.value : product.price.sales.value;
 
     if (variants && variants!="") {
