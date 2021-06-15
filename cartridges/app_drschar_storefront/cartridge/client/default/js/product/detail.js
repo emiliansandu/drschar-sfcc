@@ -1,6 +1,29 @@
 'use strict';
 var base = require('./base');
 
+$(document).ready(function() {
+    getPDPData();    
+});
+
+function getPDPData(){
+    var url = $('#data-product-analitycs').data("url");
+    
+    if (url) {
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                gtag('event', 'view_item',data);
+            },
+            error: function() {
+                
+            }
+        });
+    }
+
+}
+
 module.exports = {
     availability: base.availability,
 

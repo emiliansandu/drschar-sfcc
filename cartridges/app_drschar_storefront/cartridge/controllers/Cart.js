@@ -13,14 +13,20 @@ var Site = require('dw/system/Site');
 
 server.extend(page);
 
-server.append(
+//this controller extends Cart-Show Controller to add the minimum amount purchase allowed message prompt
+server.prepend(
     'Show',
     server.middleware.https,
     consentTracking.consent,
     csrfProtection.generateToken,
     function (req, res, next) {
         var Resource = require('dw/web/Resource');
-
+        var BasketMgr = require('dw/order/BasketMgr');
+        var CartModel = require('*/cartridge/models/cart');
+        var currentBasket = BasketMgr.getCurrentBasket();
+        
+        var basketModel = new CartModel(currentBasket);
+        res.setViewData(basketModel);
         var viewData = res.getViewData();
 
         if(viewData.numItems>0){
@@ -58,10 +64,11 @@ server.append(
     if(viewData.numItems>0){
         var orderMinimum=Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
         var subTotal=Number(viewData.totals.subTotal.slice(1));
+        var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
         if(subTotal<orderMinimum){
             res.setViewData({
                orderMinimumNotCompleted:true,
-               orderMinimumMessage:Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null)+' '+Number(orderMinimum).toFixed(2) 
+               orderMinimumMessage: minimumMessage
             });
         }
     }

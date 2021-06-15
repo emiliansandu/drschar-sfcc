@@ -1,12 +1,13 @@
 @import "../../variables";
 
 .campaign-banner {
-    background-color: $thin-banner-background-color;
+    background-color: $primary;
     color: $thin-banner-text-color;
-    height: 3.57em;
+    height: auto;
+    max-width: 100%;
 
     .campaign-banner-container {
-        height: 3.57em;
+        height: auto;
     }
 
     .campaign-banner-message {
@@ -14,7 +15,6 @@
         margin-right: 1em;
         padding-top: 0.25em;
         padding-bottom: 1em;
-        font-family: $thin-banner-font;
         line-height: 1.75em;
 
         h1,
@@ -26,7 +26,6 @@
             font-size: 1em;
             line-height: 1.5em;
         }
-
         a:visited {
             color: $thin-banner-visited-link-color;
         }
@@ -54,4 +53,7 @@
             }
         }
     }
+}
+.campaign-banner-message p img {
+    width: 100% !important;
 }

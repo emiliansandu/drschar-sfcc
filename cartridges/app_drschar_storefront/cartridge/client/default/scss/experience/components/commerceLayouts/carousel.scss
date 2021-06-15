@@ -72,7 +72,7 @@
 .pd-carousel-indicators {
     position: absolute;
     right: 0;
-    bottom: 0.625rem;
+    bottom: 4.625rem;
     left: 0;
     z-index: 15;
     display: none;
@@ -120,3 +120,8 @@
         background-color: $black;
     }
 }
+
+.carousel.slide.carousel-xs-1.carousel-sm-1.carousel-md-1.indicators-xs.indicators-sm.indicators-md.controls-xs.controls-sm.controls-md{
+    padding-bottom: 0px;
+}
+          

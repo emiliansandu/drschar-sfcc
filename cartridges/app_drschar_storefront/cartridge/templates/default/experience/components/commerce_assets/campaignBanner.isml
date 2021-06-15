@@ -1,0 +1,20 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('css/experience/components/commerceAssets/campaignBanner.css');
+        assets.addJs('/js/campaignBanner.js');
+    </isscript>
+<div class="campaign-banner">
+    <div class="container">
+        <div class="campaign-banner-container d-flex justify-content-between">
+            <div></div>
+            <div class="campaign-banner-message pt-3">
+                <isprint value="${pdict.bannerMessage}" encoding="off"/>
+            </div>
+            <div class="close-button">
+                <button class="close pt-3" aria-label="${Resource.msg('button.close','campaignBanner',null)}">
+                    <img src="${URLUtils.staticURL('/images/close-icon.svg')}"/>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

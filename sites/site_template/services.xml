@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
 
+    <service-credential service-credential-id="drscharSFTP">
+        <url>sftp://scaftp.schaer.com</url>
+        <user-id>SFWebshopExt</user-id>
+        <password encrypted="true" encryption-type="common.export">SBrIE216oX3nGf6jpBUnLBptT55bc0bH0SbbDsfxWtzggdJKPXAHrUjMYaMn2G0O</password>
+    </service-credential>
+
     <service-credential service-credential-id="Paypal_Sandbox_Credentials">
         <url>https://api.sandbox.paypal.com/</url>
         <user-id>AfDIcc9K47BupmQH2NpKC_J8lAEHKYH-FJFpgRC0nYFTbDfTVpPFZOeh6Vc_8YLnOn_MFLZYNJ6x8iBL</user-id>
@@ -87,6 +93,16 @@
         <user-id></user-id>
         <password/>
     </service-credential>
+    <service-credential service-credential-id="credentials.avatax.rest">
+        <url>https://sandbox-rest.avatax.com/</url>
+        <user-id>userid</user-id>
+        <password masked="true">password</password>
+    </service-credential>
+    <service-credential service-credential-id="logentries.avatax.rest">
+        <url>https://webhook.logentries.com/noformat/logs/</url>
+        <user-id></user-id>
+        <password masked="true"></password>
+    </service-credential>
 
     <service-profile service-profile-id="PayPal_Profile">
         <timeout-millis>60000</timeout-millis>
@@ -106,6 +122,37 @@
         <timeout-millis>100000</timeout-millis>
         <cb-enabled>false</cb-enabled>
     </service-profile>
+
+    <service-profile service-profile-id="logentries.avatax.profile">
+        <timeout-millis>20000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="profile.avatax.rest">
+        <timeout-millis>3000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    
+    <service service-id="drscharSFTP">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id/>
+        <credential-id>drscharSFTP</credential-id>
+    </service>
 
     <service service-id="int_paypal.http.rest">
         <service-type>HTTP</service-type>
@@ -198,6 +245,28 @@
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>Adyen</profile-id>
         <credential-id>AdyenGiving</credential-id>
+    </service>
+
+    <service service-id="avatax.rest.all">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>profile.avatax.rest</profile-id>
+        <credential-id>credentials.avatax.rest</credential-id>
+    </service>
+
+    <service service-id="logentries.avatax.svc">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>logentries.avatax.profile</profile-id>
+        <credential-id>logentries.avatax.rest</credential-id>
     </service>
 
 
