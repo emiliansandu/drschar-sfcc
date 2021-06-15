@@ -1,0 +1,38 @@
+{
+    "name": "Link Button",
+    "description": "This is a component combined link with button",
+    "group": "drschar_components",
+    "attribute_definition_groups": [
+        {
+            "id": "linkButton",
+            "name": "Link Button",
+            "description": "The visual display a button and the link redirect to the URL provide by the user.",
+            "attribute_definitions": [
+                {
+                  "id": "text",
+                  "name": "Button Text",
+                  "description": "The text shown in the button.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                    "id": "buttonClass",
+                    "name": "Button Class",
+                    "type": "enum",
+                    "values": [
+                        "primary",
+                        "secondary"
+                    ],
+                    "required": true
+                },
+                {
+                    "id": "buttonLink",
+                    "name": "Button Link",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
