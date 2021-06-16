@@ -1,27 +1,54 @@
 @import "../../variables";
 
-.colorSelect--simple-red{
+.colorSelect--danger{
     color:$red;
 }
 .colorSelect--red-brand{
     color:$primary;
 }
-.colorSelect--red-wine{
-    color:$primaryHover;
-}
-.colorSelect--dark-purpple{
-    color:$blue;
-}
-.colorSelect--darker-purpple{
-    color:$brand-footer;
-}
-.colorSelect--yellow-brand{
+.colorSelect--yellow-brand1{
     color:$yellow-brand;
 }
-.colorSelect--yellow-brand-2{
-    color:$salmon;
+.colorSelect--yellow-brand2{
+    color:$Warning;
 }
-.colorSelect--white-brand{
+.colorSelect--success{
+    color:$success;
+}
+.colorSelect--gray-transparent1{
+    color:$grey-transparent-1;
+}
+.colorSelect--gray-transparent2{
+    color:$grey-transparent-2;
+}
+.colorSelect--gray1{
+    color:$grey1;
+}
+.colorSelect--gray2{
+    color:$grey2;
+}
+.colorSelect--gray3{
+    color:$grey3;
+}
+.colorSelect--gray4{
+    color:$grey4;
+}
+.colorSelect--gray5{
+    color:$grey5;
+}
+.colorSelect--gray6{
+    color:$grey6;
+}
+.colorSelect--gray7{
+    color:$grey7;
+}
+.colorSelect--gray8{
+    color:$grey8;
+}
+.colorSelect--gray9{
+    color:$grey9;
+}
+.colorSelect--white-brand1{
     color:$brand-footer;
 }
 .colorSelect--white-brand2{
@@ -30,8 +57,8 @@
 .editorialRichText-component-container img{
     width: 100%;
 }
-
 .editorialRichText-component-container p a{
     text-decoration: underline;
     font-weight: 600;
+    color:inherit !important;
 }

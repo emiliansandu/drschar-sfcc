@@ -20,31 +20,58 @@ module.exports.render = function (context, modelIn) {
         model.mbTextAlignment = content.mbTextAlignment;
     }
     switch(content.colorSelect) {
-        case 'Simple-Red':
-            model.colorSelect = 'simple-red';
+        case 'Danger':
+            model.colorSelect = 'danger';
           break;
         case 'Red-Brand':
             model.colorSelect = 'red-brand';
           break;
-        case 'Red-Wine':
-            model.colorSelect = 'red-wine';
+        case 'Yellow-Brand1':
+            model.colorSelect = 'yellow-brand1';
         break;
-        case 'Dark-Purpple':
-            model.colorSelect = 'dark-purpple';
+        case 'Yellow-Brand2':
+            model.colorSelect = 'yellow-brand2';
+        break;
+        case 'Success':
+            model.colorSelect = 'success';
           break;
-        case 'Darker-Purpple':
-            model.colorSelect = 'darker-purpple';
+        case 'Gray-Transparent1':
+            model.colorSelect = 'gray-transparent1';
         break;
-        case 'Yellow-Brand':
-            model.colorSelect = 'yellow-brand';
+        case 'Gray-Transparent2':
+            model.colorSelect = 'gray-transparent2';
         break;
-        case 'Yellow-Brand-2':
-            model.colorSelect = 'yellow-brand-2';
+        case 'Gray1':
+            model.colorSelect = 'gray1';
         break;
-        case 'White-Brand':
-            model.colorSelect = 'white-brand';
+        case 'Gray2':
+            model.colorSelect = 'gray2';
         break;
-        case 'White-Brand-2':
+        case 'Gray3':
+            model.colorSelect = 'gray3';
+        break;
+        case 'Gray4':
+            model.colorSelect = 'gray4';
+        break;
+        case 'Gray5':
+            model.colorSelect = 'gray5';
+        break;
+        case 'Gray6':
+            model.colorSelect = 'gray6';
+        break;
+        case 'Gray7':
+            model.colorSelect = 'gray7';
+        break;
+        case 'Gray8':
+            model.colorSelect = 'gray8';
+        break;
+        case 'Gray9':
+            model.colorSelect = 'gray9';
+        break;
+        case 'White-Brand1':
+            model.colorSelect = 'white-brand1';
+        break;
+        case 'White-Brand2':
             model.colorSelect = 'white-brand2';
         break;
         
