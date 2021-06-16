@@ -134,7 +134,7 @@
     </service-profile>
 
     <service-profile service-profile-id="profile.avatax.rest">
-        <timeout-millis>20000</timeout-millis>
+        <timeout-millis>3000</timeout-millis>
         <rate-limit-enabled>false</rate-limit-enabled>
         <rate-limit-calls>0</rate-limit-calls>
         <rate-limit-millis>0</rate-limit-millis>

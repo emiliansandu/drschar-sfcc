@@ -2,7 +2,7 @@
 <site xmlns="http://www.demandware.com/xml/impex/site/2007-04-30" site-id="drschar">
     <name>drschar</name>
     <currency>USD</currency>
-    <taxation>gross</taxation>
+    <taxation>net</taxation>
     <custom-cartridges>app_drschar_storefront:int_avatax_sfra:bm_avatax:int_avatax_svcclient:int_google_analytics:plugin_dis:int_zendesk:int_paypal:bm_avatax:bm_app_storefront_base:bc_job_components:app_storefront_base</custom-cartridges>
     <home-page-meta-tag-rules>
         <page-meta-tag-rule rule-id="Homepage Title"/>
