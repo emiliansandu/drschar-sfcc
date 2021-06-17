@@ -1,0 +1,14 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/experience/components/drschar_components/editorialRichTextIcon.css');
+    assets.addJs('js/editorialRichTextIcon.js');
+</isscript>
+<div class="editorialRichTextIcon-component-container">
+    <div class="row">
+        <div class="col-12 align-self-center text-${pdict.mbTextAlignment} text-lg-${pdict.dsTextAlignment} colorSelect--${pdict.colorSelect}">
+            <i class="fas colorSelect--${pdict.iconColorSelect}"><isprint value="${pdict.iCon}" encoding="off"/></i>&nbsp;
+            <isprint value="${pdict.richText}" encoding="off"/>
+        </div>
+    </div>
+</div>
+
