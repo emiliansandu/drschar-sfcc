@@ -14,6 +14,11 @@ var ImageTransformation = require('*/cartridge/experience/utilities/ImageTransfo
 module.exports.render = function (context, modelIn) {
     var model = modelIn || new HashMap();
     var content = context.content;
+    if(content.imageHeight){
+        model.imageHeight=content.imageHeight; 
+    }else{
+        model.imageHeight='auto';
+    }
 
     model.image = ImageTransformation.getScaledImage(content.image);
 
