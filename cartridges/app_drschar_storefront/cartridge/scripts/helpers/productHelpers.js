@@ -43,34 +43,60 @@ PHelper.getObjectItems = function getObjectItems(product,breadcrumb){
     var brand = product.brand == null ? '' : product.brand;
     var price = product.price.sales == undefined ? product.price.min.sales.value : product.price.sales.value;
 
-    if (variants && variants!="") {
-        return {
-            "items": [
-              {
-                "id": product.id,
-                "name": product.productName,
-                "brand": brand,
-                "category": categories,
-                "variant": variants,
-                "quantity": product.selectedQuantity,
-                "price": price
-              }
-            ]
-        };
+    var productObj = {
+        "id": product.id,
+        "name": product.productName,
+        "brand": brand,
+        "category": categories,
+        "quantity": product.selectedQuantity,
+        "price": product.price.sales.value
     }
 
-    return  {
-        "items": [
-          {
-            "id": product.id,
-            "name": product.productName,
-            "brand": brand,
-            "category": categories,
-            "quantity": product.selectedQuantity,
-            "price": product.price.sales.value
-          }
-        ]
+    if (variants && variants!="") {
+        productObj.variant = variants;
+    }
+
+    return productObj;
+}
+
+PHelper.builderObject = function builderObject(order, querystring, pageMetaData){
+    var orderNum = order.orderNo;
+    var total = order.totalNetPrice.value;
+    var currency = order.totalNetPrice.currencyCode;
+    var tax = order.totalTax.value;
+    var shippingCost = order.shippingTotalPrice.value;
+    var params = new Object; 
+    var items = PHelper.getProductItems(order.allProductLineItems,params);
+    var finalObj = {
+        "transaction_id": orderNum,
+        "affiliation": "Google online store",
+        "value": total,
+        "currency": currency,
+        "tax": tax,
+        "shipping": shippingCost,
+        "items": items
     };
+    return finalObj;    
+}
+
+PHelper.getProductItems = function getProductItems(allProducts,params) {
+    var ProductFactory = require('*/cartridge/scripts/factories/product');
+    var items = new Array;
+    for (var i = 0; i < allProducts.length; i++) {
+        params.pid = allProducts[i].productID;
+        var product = ProductFactory.get(params);
+        var breadcrumb = PHelper.getAllBreadcrumbs(null, product.id, []).reverse();
+        var productType = product.productType;
+        if (!product.online && productType !== 'set' && productType !== 'bundle') {
+            res.setStatusCode(404);
+        } else {
+            var productData = PHelper.getObjectItems(product,breadcrumb);
+            productData.list_position = i+1;                      
+            items.push(productData);
+        }
+    }
+
+    return items;
 }
 
 module.exports = PHelper;

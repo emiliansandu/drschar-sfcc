@@ -1,28 +1,12 @@
 'use strict';
 var base = require('./base');
+var helperGA = require('../googleAnalytics')
 
 $(window).on("load",function() {
-    getPDPData();    
-});
-
-function getPDPData(){
     var url = $('#data-product-analitycs').data("url");
-    
-    if (url) {
-        $.ajax({
-            url: url,
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                gtag('event', 'view_item',data);
-            },
-            error: function() {
-                
-            }
-        });
-    }
-
-}
+    var eventType = 'view_item';
+    helperGA.eventGA(url,eventType);    
+});
 
 module.exports = {
     availability: base.availability,
