@@ -12,7 +12,7 @@
                     <img height="${pdict.imageHeight}"
                         class="photo-tile-image photo-tile image-fluid"
                         src="${pdict.image.src.mobile}"
-                        style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}"
+                        style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}; width:${pdict.imageWidth}"
                         <isif condition="${pdict.image.alt}">alt="${pdict.image.alt}" title="${pdict.image.alt}"</isif>
                     />
                 </picture>

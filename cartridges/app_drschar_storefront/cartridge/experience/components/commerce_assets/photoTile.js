@@ -15,9 +15,11 @@ module.exports.render = function (context, modelIn) {
     var model = modelIn || new HashMap();
     var content = context.content;
     if(content.imageHeight){
-        model.imageHeight=content.imageHeight; 
+        model.imageHeight=content.imageHeight;
+        model.imageWidth='auto';
     }else{
         model.imageHeight='auto';
+        model.imageWidth='100%';
     }
 
     model.image = ImageTransformation.getScaledImage(content.image);
