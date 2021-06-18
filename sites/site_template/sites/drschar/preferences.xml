@@ -77,6 +77,8 @@
                 <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
                 <preference preference-id="GAId">UA-197653159-1</preference>
                 <preference preference-id="GAEnable">true</preference>
+                <preference preference-id="GTMId">GTM-W3CN2XN</preference>
+                <preference preference-id="GTMEnable">true</preference>
                 <preference preference-id="ValidateIPAddress">false</preference>
                 <preference preference-id="authenticationMethod">localAccount</preference>
                 <preference preference-id="captureservicetrackingid">true</preference>

@@ -4720,6 +4720,22 @@
 
     <type-extension type-id="SitePreferences">
         <custom-attribute-definitions>
+            <attribute-definition attribute-id="GTMId">
+                <display-name xml:lang="x-default">Google tag manager id</display-name>
+                <description xml:lang="x-default">GTM Id to add code generated in Google Tag Manager.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value></default-value>
+            </attribute-definition>
+             <attribute-definition attribute-id="GTMEnable">
+                <display-name xml:lang="x-default">Google tag manager enable</display-name>
+                <description xml:lang="x-default">Enable or disables GTM script</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value></default-value>
+            </attribute-definition>
             <attribute-definition attribute-id="GAId">
                 <display-name xml:lang="x-default">Google analytics id</display-name>
                 <description xml:lang="x-default">GA Id to add code generated in Google Analytics Tag.</description>
@@ -5387,9 +5403,14 @@
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="GA">
-                <display-name xml:lang="x-default">Google Tag Manager</display-name>
+                <display-name xml:lang="x-default">Google Analitytics</display-name>
                 <attribute attribute-id="GAId"/>
                 <attribute attribute-id="GAEnable"/>
+            </attribute-group>
+            <attribute-group group-id="GTM">
+                <display-name xml:lang="x-default">Google Tag Manager</display-name>
+                <attribute attribute-id="GTMId"/>
+                <attribute attribute-id="GTMEnable"/>
             </attribute-group>
             <attribute-group group-id="Paypal_Checkout">
                 <display-name xml:lang="x-default">Paypal Configuration</display-name>

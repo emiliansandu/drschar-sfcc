@@ -33,7 +33,6 @@
 <isloop items="${ require('*/cartridge/scripts/assets.js').styles }" var="style">
     <link rel="stylesheet" href="${style.src}" <isif condition="${style.integrity != null}">integrity="${style.integrity}" crossorigin="anonymous"</isif> />
 </isloop>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
 <isif condition="${'GoogleVerificationTag' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.GoogleVerificationTag!=''}">
     <meta name="google-site-verification" content="<isprint value="${dw.system.Site.current.preferences.custom.GoogleVerificationTag}"/>" />
