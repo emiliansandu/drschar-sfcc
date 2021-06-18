@@ -13,7 +13,14 @@
                     "name": "Heading",
                     "type": "string",
                     "required": false
-                }
+                },
+                {
+                    "id": "colorSelect",
+                    "name": "Options for select textHeadline font color",
+                    "type": "enum",
+                    "values": ["Danger", "Red-Brand", "Yellow-Brand1", "Yellow-Brand2", "Success", "Gray-Transparent1", "Gray-Transparent2", "Gray1", "Gray2", "Gray3", "Gray4", "Gray5", "Gray6", "Gray7", "Gray8", "Gray9", "White-Brand1", "White-Brand2"],
+                    "required": false
+                  }
             ]
         }
     ],

@@ -1,5 +1,6 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceLayouts/popularCategories.css');
 </isscript>
 <div class="container popular-categories">
     <isscript>
@@ -8,7 +9,7 @@
     </isscript>
 
     <isif condition="${pdict.textHeadline}">
-        <div class="popular-cat-heading">
+        <div class="popular-cat-heading colorSelect--${pdict.colorSelect}">
             <h3>${pdict.textHeadline}</h3>
         </div>
     </isif>
