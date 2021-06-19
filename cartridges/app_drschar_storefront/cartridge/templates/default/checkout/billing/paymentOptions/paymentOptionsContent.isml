@@ -1,0 +1,11 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+    <isif condition="${paymentOption.ID === 'AdyenComponent'}">
+        <isset name="AdyenHelper" value="${require('*/cartridge/scripts/util/adyenHelper')}" scope="pdict" />
+        <script src="${pdict.AdyenHelper.getCheckoutUrl()}" type="text/javascript"></script>
+        <isset name="adyenPaymentFields" value="${pdict.forms.billingForm.adyenPaymentFields}" scope="page" />
+        <isinclude template="checkout/billing/paymentOptions/adyenComponentContent" />
+    </isif>
+    <isif condition="${paymentOption.ID === 'PayPal' && pdict.paypal}">
+        <isinclude template="paypal/checkout/paypalContent" />
+    </isif>
+</isloop>
