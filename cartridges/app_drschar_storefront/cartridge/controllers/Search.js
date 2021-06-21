@@ -11,6 +11,50 @@ var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
 
 /**
+ * Search-UpdateGrid : This endpoint is called when the shopper changes the "Sort Order" or clicks "More Results" on the Product List page
+ * @name Base/Search-UpdateGrid
+ * @function
+ * @memberof Search
+ * @param {querystringparameter} - cgid - Category ID
+ * @param {querystringparameter} - srule - Sort Rule ID
+ * @param {querystringparameter} - start - Offset of the Page
+ * @param {querystringparameter} - sz - Number of Products to Show on the List Page
+ * @param {querystringparameter} - prefn1, prefn2 ... prefn(n) - Names of the selected preferences e.g. refinementColor. These will be added to the query parameters only when refinements are selected
+ * @param {querystringparameter} - prefv1, prefv2 ... prefv(n) - Values of the selected preferences e.g. Blue. These will be added to the query parameters only when refinements are selected
+ * @param {querystringparameter} - selectedUrl - The URL generated with the query parameters included
+ * @param {category} - non-sensitive
+ * @param {renders} - isml
+ * @param {serverfunction} - get
+ */
+ server.get('UpdateGrid', function (req, res, next) {
+    var CatalogMgr = require('dw/catalog/CatalogMgr');
+    var ProductSearchModel = require('dw/catalog/ProductSearchModel');
+    var searchHelper = require('*/cartridge/scripts/helpers/searchHelpers');
+    var ProductSearch = require('*/cartridge/models/search/productSearch');
+
+    var apiProductSearch = new ProductSearchModel();
+    apiProductSearch = searchHelper.setupSearch(apiProductSearch, req.querystring, req.httpParameterMap);
+    apiProductSearch.search();
+
+    if (!apiProductSearch.personalizedSort) {
+        searchHelper.applyCache(res);
+    }
+    var productSearch = new ProductSearch(
+        apiProductSearch,
+        req.querystring,
+        req.querystring.srule,
+        CatalogMgr.getSortingOptions(),
+        CatalogMgr.getSiteCatalog().getRoot()
+    );
+
+    res.render('/search/productGrid', {
+        productSearch: productSearch
+    });
+
+    next();
+});
+
+/**
  * Search-Show : This endpoint is called when a shopper type a query string in the search box
  * @name Base/Search-Show
  * @function
