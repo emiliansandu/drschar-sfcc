@@ -1,5 +1,19 @@
 <span>
     <isset name="finalOrigPrice" value="${price}" scope="page" />
+    <isset name="price" value="${finalOrigPrice.sales}" scope="page" />
+    <span class="sales ${finalOrigPrice.list ? 'reduced-price' : ''}">
+        <isif condition="${isLowPrice == 'range-low'}">
+            <span class="value" content="${price.decimalPrice}">
+        </isif>
+        <isif condition="${isLowPrice == 'range-high'}">
+            <span class="value" content="${price.decimalPrice}">
+        </isif>
+        <isif condition="${isLowPrice == null}">
+            <span class="value" content="${price.decimalPrice}">
+        </isif>
+
+        ${price.formatted}
+    </span>
 
     <isif condition="${finalOrigPrice.list !== null}">
         <isset name="price" value="${finalOrigPrice.list}" scope="page" />
@@ -20,18 +34,5 @@
         </del>
     </isif>
 
-    <isset name="price" value="${finalOrigPrice.sales}" scope="page" />
-    <span class="sales ${finalOrigPrice.list ? 'reduced-price' : ''}">
-        <isif condition="${isLowPrice == 'range-low'}">
-            <span class="value" content="${price.decimalPrice}">
-        </isif>
-        <isif condition="${isLowPrice == 'range-high'}">
-            <span class="value" content="${price.decimalPrice}">
-        </isif>
-        <isif condition="${isLowPrice == null}">
-            <span class="value" content="${price.decimalPrice}">
-        </isif>
-
-        ${price.formatted}
-    </span>
+    
 </span>
