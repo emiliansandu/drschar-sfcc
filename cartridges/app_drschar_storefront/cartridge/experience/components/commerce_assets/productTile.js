@@ -21,6 +21,7 @@ module.exports.render = function (context, modelIn) {
     var product = ProductFactory.get(productTileParams);
 
     var productUrl = URLUtils.url('Product-Show', 'pid', product.id).relative().toString();
+    var productQuickViewUrl = URLUtils.url('Product-ShowQuickView', 'pid', product.id).relative().toString();
 
     model.product = product;
     model.display = {
@@ -29,7 +30,8 @@ module.exports.render = function (context, modelIn) {
     };
 
     model.urls = {
-        product: productUrl
+        product: productUrl,
+        quickView: productQuickViewUrl
     };
 
     return new Template('experience/components/commerce_assets/product/productTile').render(model).text;
