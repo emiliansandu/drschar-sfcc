@@ -1,6 +1,7 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
     assets.addCss('/css/experience/components/commerceAssets/productTile.css');
+    assets.addJs('/js/productTile.js');
 </isscript>
 
 <isset name="product" value="${pdict.product}" scope="page" />
@@ -18,6 +19,19 @@
                                  title="${product.images.medium[0].title}"
                             />
                         </a>
+                        
+                            <a class="quickview hidden-sm-down" href="${pdict.urls.quickView}"
+                            data-toggle="modal"
+                            data-target="#quickViewModal"
+                            title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+                            aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+                            >
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                                    <i class="fa fa-expand fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        
                         <a id="quickShopButton" class="quick-shop btn btn-space"
                            title="${Resource.msgf('button.assistive.text.quickShop', 'productTile', null, product.productName)}"
                            aria-label="${Resource.msgf('button.assistive.text.quickShop', 'productTile', null, product.productName)}"
