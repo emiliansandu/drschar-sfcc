@@ -821,6 +821,24 @@
                                         ${pdict.order.totals.totalShippingCost}
                                     </td>
                                     <!-- Column : END -->
+                                    
+                                </tr>
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" valign="top"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;">
+                                        ${Resource.msg('label.order.sales.tax', 'confirmation', null)}
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <!--- Sales Tax --->
+                                    <td width="66.66%" valign="top" align="right"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;"
+                                        valign="top">
+                                        ${pdict.order.totals.totalTax}
+                                    </td>
+                                    <!-- Column : END -->
+                                    
                                 </tr>
                                 <tr>
                                     <td width="100%" height="20" colspan="2" aria-hidden="true"
@@ -842,9 +860,6 @@
                                     <td width="33.33%" valign="top"
                                         style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;">
                                         <strong>${Resource.msg('label.order.custom.order.total-amount', 'confirmation', null)}</strong>
-                                        <br>
-                                        <span
-                                            style="color: #A09698; font-size: 12px">${Resource.msg('label.order.custom.order.included-vat', 'confirmation', null)}</span>
                                     </td>
                                     <!-- Column : END -->
                                     <!-- Column : BEGIN -->
