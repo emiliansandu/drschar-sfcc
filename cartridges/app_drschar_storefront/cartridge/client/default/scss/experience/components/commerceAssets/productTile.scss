@@ -175,8 +175,11 @@
     overflow: auto;
 }
 .product-tile-pd .product-tile-body .product-price .sales.reduced-price {
-    color: $gray-8; //#333
+    color: $gray-8;
 }
 .product-tile-pd .product-tile-body .product-price .strike-through {
-    color: $gray-5; //#666;
+    color: $gray-5;
+}
+.product-tile-pd .product-tile-body .product-name-link a {
+    text-decoration: none;
 }
