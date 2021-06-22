@@ -92,5 +92,10 @@ module.exports = [{
     },
     plugins: [
         new ExtractTextPlugin({ filename: '[name].css' })
-    ]
+    ],
+    resolve: {
+        alias: {
+            loginRadius: path.resolve(__dirname, 'int_loginradius/cartridge/client/default/js/loginRadius'),
+        }
+    }
 }];
