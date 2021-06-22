@@ -24,28 +24,27 @@
         }
     </style>
     <![endif]-->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
     <!--[if !mso]><!-->
-    
-    
+
+
     <style>
-    /* vietnamese */
+        /* vietnamese */
 
         * {
             font-family: Arial, sans-serif;
         }
-        
     </style>
-   <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> --> 
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
     <!--<![endif]-->
 
     <!-- Web Font / @font-face : END -->
 
     <!-- CSS Reset : BEGIN -->
     <style>
-      /* What it does: Remove spaces around the email design added by some email clients. */
+        /* What it does: Remove spaces around the email design added by some email clients. */
 
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
 
@@ -120,14 +119,14 @@
             font-weight: inherit !important;
             line-height: inherit !important;
         }
-        
+
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
 
         .im {
             color: inherit !important;
         }
- 
+
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
 
         .a6S {
@@ -168,7 +167,6 @@
                 min-width: 414px !important;
             }
         }
-
     </style>
 
     <!-- Progressive Enhancements : BEGIN -->
@@ -179,13 +177,14 @@
         .button-a {
             transition: all 100ms ease-in;
         }
-       .button-td-primary:hover,
+
+        .button-td-primary:hover,
         .button-a-primary:hover {
             background: rgb(192, 5, 49) !important;
             border-color: rgb(192, 5, 49) !important;
         }
 
-        
+
 
         /* Media Queries */
 
@@ -194,6 +193,7 @@
                 width: 100% !important;
                 margin: auto !important;
             }
+
             /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
             .fluid {
                 max-width: 100% !important;
@@ -201,6 +201,7 @@
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
+
             /* What it does: Forces table cells into full-width rows. */
             .stack-column,
             .stack-column-center {
@@ -209,10 +210,12 @@
                 max-width: 100% !important;
                 direction: ltr !important;
             }
+
             /* And center justify these ones. */
             .stack-column-center {
                 text-align: center !important;
             }
+
             /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
             .center-on-narrow {
                 text-align: left !important;
@@ -221,22 +224,23 @@
                 margin-right: auto !important;
                 float: none !important;
             }
+
             table.center-on-narrow {
                 display: inline-block !important;
             }
+
             /* What it does: Adjust typography on small screens to improve readability */
             .email-container p {
                 font-size: 15px !important;
             }
 
         }
-
     </style>
     <!-- Progressive Enhancements : END -->
-  
-        
 
-       
+
+
+
 
 
 </head>
@@ -277,9 +281,9 @@
                                             <table cellpadding="20">
                                                 <tr>
                                                     <td>
-                                                        <img src="${URLUtils.httpsStatic('/images/logo-schaer.png')}" width="100"
-                                                            height="84" alt="Schär - Best in Gluten Free" border="0"
-                                                            style="height: auto;"/>
+                                                        <img src="${URLUtils.httpsStatic('/images/logo-schaer.png')}"
+                                                            width="100" height="84" alt="Schär - Best in Gluten Free"
+                                                            border="0" style="height: auto;" />
                                                     </td>
                                                 </tr>
                                             </table>
@@ -322,8 +326,10 @@
 
                                         <p style="margin: 0 0 10px;">${Resource.msg('label.order.custom.message', 'confirmation', null)}</p>
                                         <p style="margin: 0 0 10px;">
-                                            
-                                            <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, pdict.arrivalEstimatedPeriod.earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName, pdict.arrivalEstimatedPeriod.deliveryYear)}                                                    
+
+                                            <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, pdict.arrivalEstimatedPeriod
+                                                    .earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName,
+                                                    pdict.arrivalEstimatedPeriod.deliveryYear)}
                                             </strong>
                                         </p>
 
@@ -417,7 +423,8 @@
                                                 <td dir="ltr" valign="top"
                                                     style="text-decoration: none; padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
                                                     <!--added as a link ro prevent gmail from adding mailto to email addresses-->
-                                                   <a rel="nofollow" style='text-decoration:none; color:#333'>${pdict.order.orderEmail}</a>
+                                                    <a rel="nofollow"
+                                                        style='text-decoration:none; color:#333'>${pdict.order.orderEmail}</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -523,9 +530,9 @@
                                                         style="color: #A09698">${Resource.msgf('label.order.custom.order.shipping-cost', 'confirmation', null, shippingModel.selectedShippingMethod
                                                                                .shippingCost)}</span>
                                                     <p style="margin: 0 0; font-size: 12px !important; color: #A09698;">
-                                                        ${Resource.msgf('label.order.custom.delivery.estimate', 'confirmation', null, pdict.arrivalEstimatedPeriod.earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth,
-                                                        pdict.arrivalEstimatedPeriod.monthName)}</p>
-                                                        
+                                                        ${Resource.msgf('label.order.custom.delivery.estimate', 'confirmation', null, pdict.arrivalEstimatedPeriod
+                                                        .earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName)}</p>
+
                                                 </td>
                                             </tr>
                                         </table>
@@ -635,20 +642,23 @@
                                     <!-- Column : END -->
                                     <td width="16.66%" class="stack-column-center" valign="top" align="right"
                                         style="padding: 3px 0">
-                                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod=='CREDIT_CARD'}">
-                                                <isloop items="${pdict.paymentObject.activePaymentCards}" var="paymentCards" status="paymentCardLoop">
-                                                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].type==paymentCards.cardType}">
-                                                    <img src="${paymentCards.image.absURL}" width="40"
-                                                        alt="Placeholder" border="0" class="center-on-narrow">
-                                                    </isif>
-                                                </isloop>
+                                        <isif
+                                            condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod == 'CREDIT_CARD'}">
+                                            <isloop items="${pdict.paymentObject.activePaymentCards}" var="paymentCards"
+                                                status="paymentCardLoop">
+                                                <isif
+                                                    condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].type == paymentCards.cardType}">
+                                                    <img src="${paymentCards.image.absURL}" width="40" alt="Placeholder"
+                                                        border="0" class="center-on-narrow">
+                                                </isif>
+                                            </isloop>
                                         <iselse/>
-                                        <img src="${pdict.paymentObject.image.absURL}" width="40"
-                                            alt="Placeholder" border="0" class="center-on-narrow">
+                                            <img src="${pdict.paymentObject.image.absURL}" width="40" alt="Placeholder"
+                                                border="0" class="center-on-narrow">
                                         </isif>
-                                        
-                                        
-                                          
+
+
+
                                     </td>
                                     <!-- Column : END -->
                                 </tr>
@@ -717,7 +727,7 @@
                                                         style="background-color:#F9F8F6; padding: 10px;">
                                                         <center>
 
-                                                            <img src="${'https://'+pdict.host+itemsList.images.small[0].url}"
+                                                            <img src="${'https://' + pdict.host + itemsList.images.small[0].url}"
                                                                 width="160" height="120"
                                                                 alt="${itemsList.images.small[0].alt}"
                                                                 title="${itemsList.images.small[0].title}" border="0"
@@ -741,14 +751,16 @@
                                                             style="margin: 0 0 5px 0; font-family: 'Josefin Sans', 'Roboto', Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: bold;">
                                                             ${itemsList.productName}</h2>
                                                         <p style="margin: 0 0 20px 0; color: #A09698; font-size: 12px">
-                                                        <isloop items="${pdict.productWeight}" var="prodWeight" status="prodWeightLoop">
-                                                           <isif condition="${itemsList.id==prodWeight.ID && prodWeight.custom.dimWeight}"> 
-                                                            <strong>${prodWeight.custom.dimWeight}</strong>
-                                                            </isif>
-                                                        </isloop>
-                                                        
+                                                            <isloop items="${pdict.productWeight}" var="prodWeight"
+                                                                status="prodWeightLoop">
+                                                                <isif
+                                                                    condition="${itemsList.id == prodWeight.ID && prodWeight.custom.dimWeight}">
+                                                                    <strong>${prodWeight.custom.dimWeight}</strong>
+                                                                </isif>
+                                                            </isloop>
+
                                                         </p>
-                                                        
+
                                                         <table role="presentation" border="0" cellpadding="0"
                                                             cellspacing="0" width="100%">
                                                             <tr>
@@ -864,7 +876,8 @@
                                     <!-- Column : END -->
                                     <!-- Column : BEGIN -->
                                     <td width="66.66%" valign="top" align="right"
-                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;" valign="top">
+                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;"
+                                        valign="top">
                                         <strong>${pdict.order.totals.grandTotal}</strong>
                                     </td>
                                     <!-- Column : END -->
@@ -927,7 +940,7 @@
                     <!-- Service box : END -->
 
                     <!-- Footer links : BEGIN -->
-                   <isinclude template="emails/footer" />
+                    <isinclude template="emails/footer" />
                     <!-- Footer links : END -->
                 </isloop>
             </table>
@@ -943,12 +956,12 @@
                     </td>
                 </tr>
             </table>
-           
+
             <!-- Email Footer : END -->
         </center>
     </main>
 
 
-            
+
 
 </body>
