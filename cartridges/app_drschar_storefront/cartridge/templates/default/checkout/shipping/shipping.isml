@@ -10,7 +10,6 @@
 
             <div class="shipping-error"></div>
 
-            <isinclude template="checkout/shipping/multiShipCheckbox" />
 
             <isinclude template="checkout/shipping/shipmentCard" />
         </div>
