@@ -120,13 +120,13 @@ function getService() {
  *
  * @returns {Object} - Returns the results from the API call.
  */
-function getFeed() {
+function getFeed(apiPath, accessToken) {
     var svc = getService();
     var callParams = {
         requestMethod: 'GET',
-        apiPath: 'me/media?fields=id,caption,media_type,media_url',
+        apiPath: apiPath,
         includeApiSecret: false,
-        accessTokenParam:'IGQVJYbk9hYlZAUVmp6eWRfdF9TbUZALdV90ckJZAamdtOHotMTBRMlhHOFhrNDcxTFRQbnN6WVNnSUV6TkpheXA3ZAmNIMXN1SjVZAQkxUczRsOEg0dW16WVhiT011d3FpRVZAIYTY5NlZAKVW5BaV9wa3ZAfQgZDZD'
+        accessTokenParam:accessToken
     };
 
     var result = svc.call(callParams);

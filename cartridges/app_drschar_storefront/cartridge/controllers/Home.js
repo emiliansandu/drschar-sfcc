@@ -34,26 +34,4 @@ server.get('Show', consentTracking.consent, cache.applyDefaultCache, function (r
     next();
 }, pageMetaData.computedPageMetaData);
 
-server.get('ShowInstagram', consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
-    var pageMetaHelper = require('*/cartridge/scripts/helpers/pageMetaHelper');
-    var instaHelper = require('*/cartridge/scripts/helpers/instagramHelper');
-
-    var viewData = res.getViewData();
-
-    var instaFeed = instaHelper.getFeed();
-    res.setViewData({
-        instagramFeed: instaFeed 
-     });
-     
-    res.render('/home/homeInstagram');
-
-    next();
-}, pageMetaData.computedPageMetaData);
-
-server.get('ErrorNotFound', function (req, res, next) {
-    res.setStatusCode(404);
-    res.render('error/notFound');
-    next();
-});
-
 module.exports = server.exports();
