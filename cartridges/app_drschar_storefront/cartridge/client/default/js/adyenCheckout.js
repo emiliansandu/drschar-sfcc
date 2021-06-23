@@ -66,53 +66,6 @@ checkoutConfiguration.onChange = function (state) {
 
 checkoutConfiguration.showPayButton = false;
 checkoutConfiguration.paymentMethodsConfiguration = {
-  card: {
-    enableStoreDetails: showStoreDetails,
-    onBrand: function onBrand(brandObject) {
-      document.querySelector('#cardType').value = brandObject.brand;
-    },
-    onFieldValid: function onFieldValid(data) {
-      if (data.endDigits) {
-        maskedCardNumber = MASKED_CC_PREFIX + data.endDigits;
-        document.querySelector('#cardNumber').value = maskedCardNumber;
-      }
-    },
-    onChange: function onChange(state) {
-      isValid = state.isValid;
-      var componentName = state.data.paymentMethod.storedPaymentMethodId ? "storedCard".concat(state.data.paymentMethod.storedPaymentMethodId) : state.data.paymentMethod.type;
-
-      if (componentName === selectedMethod || selectedMethod === 'bcmc') {
-        componentsObj[selectedMethod].isValid = isValid;
-        componentsObj[selectedMethod].stateData = state.data;
-      }
-    }
-  },
-  boletobancario: {
-    personalDetailsRequired: true,
-    // turn personalDetails section on/off
-    billingAddressRequired: false,
-    // turn billingAddress section on/off
-    showEmailAddress: false,
-    // allow shopper to specify their email address
-    // Optionally prefill some fields, here all fields are filled:
-    data: {
-      firstName: document.getElementById('shippingFirstNamedefault').value,
-      lastName: document.getElementById('shippingLastNamedefault').value
-    }
-  },
-  paywithgoogle: {
-    environment: window.Configuration.environment,
-    onSubmit: function onSubmit() {
-      assignPaymentMethodValue();
-      document.querySelector('button[value="submit-payment"]').disabled = false;
-      document.querySelector('button[value="submit-payment"]').click();
-    },
-    configuration: {
-      gatewayMerchantId: window.merchantAccount
-    },
-    showPayButton: true,
-    buttonColor: 'white'
-  },
   paypal: {
     environment: window.Configuration.environment,
     intent: 'capture',
@@ -143,30 +96,6 @@ checkoutConfiguration.paymentMethodsConfiguration = {
       if (formErrorsExist) {
         return actions.reject();
       }
-    }
-  },
-  mbway: {
-    showPayButton: true,
-    onSubmit: function onSubmit(state, component) {
-      $('#dwfrm_billing').trigger('submit');
-      assignPaymentMethodValue();
-
-      if (!formErrorsExist) {
-        document.getElementById('component_mbway').querySelector('button').disabled = true;
-        paymentFromComponent(state.data, component);
-        document.querySelector('#adyenStateData').value = JSON.stringify(state.data);
-      }
-    },
-    onError: function onError()
-    /* error, component */
-    {
-      document.querySelector('#showConfirmationForm').submit();
-    },
-    onAdditionalDetails: function onAdditionalDetails(state
-    /* , component */
-    ) {
-      document.querySelector('#additionalDetailsHidden').value = JSON.stringify(state.data);
-      document.querySelector('#showConfirmationForm').submit();
     }
   },
   afterpay_default: {
@@ -213,9 +142,6 @@ if (window.paypalMerchantID !== 'null') {
   checkoutConfiguration.paymentMethodsConfiguration.paypal.merchantId = window.paypalMerchantID;
 }
 
-if (window.googleMerchantID !== 'null' && window.Configuration.environment === 'live') {
-  checkoutConfiguration.paymentMethodsConfiguration.paywithgoogle.configuration.merchantIdentifier = window.googleMerchantID;
-}
 /**
  * Changes the "display" attribute of the selected method from hidden to visible
  */
