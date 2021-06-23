@@ -6,7 +6,7 @@ var billingHelpers = require('./billing');
 var summaryHelpers = require('base/checkout/summary');
 var formHelpers = require('base/checkout/formErrors');
 var scrollAnimate = require('base/components/scrollAnimate');
-
+var adyenCheckout = require('../adyenCheckout');
 
 /**
  * Create the jQuery Checkout Plugin.
@@ -96,6 +96,9 @@ var scrollAnimate = require('base/components/scrollAnimate');
                     var formSelector = isMultiShip ?
                         '.multi-shipping .active form' : '.single-shipping .shipping-form';
                     var form = $(formSelector);
+
+                    //render adyen components
+                    adyenCheckout.methods.renderGenericComponent();
 
                     if (isMultiShip && form.length === 0) {
                         // disable the next:Payment button here
@@ -201,6 +204,7 @@ var scrollAnimate = require('base/components/scrollAnimate');
                     var paymentInfoSelector = '#dwfrm_billing .' + activeTabId + ' .payment-form-fields :input';
                     var paymentInfoForm = $(paymentInfoSelector).serialize();
 
+
                     $('body').trigger('checkout:serializeBilling', {
                         form: $(paymentInfoSelector),
                         data: paymentInfoForm,
@@ -212,6 +216,8 @@ var scrollAnimate = require('base/components/scrollAnimate');
                     });
 
                     var paymentForm = billingAddressForm + '&' + contactInfoForm + '&' + paymentInfoForm;
+
+                    console.log(paymentForm);
 
                     if ($('.data-checkout-stage').data('customer-type') === 'registered') {
                         // if payment method is credit card
@@ -243,8 +249,12 @@ var scrollAnimate = require('base/components/scrollAnimate');
                     }
                      // disable the next:Place Order button here
                     $('body').trigger('checkout:disableButton', '.next-step-button button');
-
-                    $.ajax({
+                    
+                    if(activeTabId == 'adyen-component-content'){
+                        //missing data to complete the submit on this point
+                    }else{
+                      console.log('you dont chouse Adyen ')
+                      $.ajax({
                         url: $('#dwfrm_billing').attr('action'),
                         method: 'POST',
                         data: paymentForm,
@@ -253,6 +263,7 @@ var scrollAnimate = require('base/components/scrollAnimate');
                             $('body').trigger('checkout:enableButton', '.next-step-button button');
                             // look for field validation errors
                             if (data.error) {
+                                console.log('all wrong');
                                 if (data.fieldErrors.length) {
                                     data.fieldErrors.forEach(function (error) {
                                         if (Object.keys(error).length) {
@@ -278,6 +289,9 @@ var scrollAnimate = require('base/components/scrollAnimate');
                                 //
                                 // Populate the Address Summary
                                 //
+
+                                console.log('all good');
+
                                 $('body').trigger('checkout:updateCheckoutView',
                                     { order: data.order, customer: data.customer });
 
@@ -305,6 +319,9 @@ var scrollAnimate = require('base/components/scrollAnimate');
                             }
                         }
                     });
+                    }
+
+                    
 
                     return defer;
                 } else if (stage === 'placeOrder') {
@@ -531,6 +548,9 @@ var exports = {
                     data.options
                 );
             });
+            var currentStage = location.search.substring( // eslint-disable-line no-restricted-globals
+                location.search.indexOf('=') + 1 // eslint-disable-line no-restricted-globals
+            );
             billingHelpers.methods.updateBillingInformation(
                 data.order,
                 data.customer,

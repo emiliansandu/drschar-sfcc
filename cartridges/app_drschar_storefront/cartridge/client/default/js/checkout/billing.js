@@ -158,15 +158,29 @@ function updatePaymentInformation(order) {
 
     if (order.billing.payment && order.billing.payment.selectedPaymentInstruments
         && order.billing.payment.selectedPaymentInstruments.length > 0) {
-        htmlToAppend += '<span>' + order.resources.cardType + ' '
-            + order.billing.payment.selectedPaymentInstruments[0].type
-            + '</span><div>'
-            + order.billing.payment.selectedPaymentInstruments[0].maskedCreditCardNumber
-            + '</div><div><span>'
-            + order.resources.cardEnding + ' '
-            + order.billing.payment.selectedPaymentInstruments[0].expirationMonth
-            + '/' + order.billing.payment.selectedPaymentInstruments[0].expirationYear
-            + '</span></div>';
+        
+        var selectedPaymentInstrument = order.billing.payment.selectedPaymentInstruments[0];  
+        
+        if(selectedPaymentInstrument.paymentMethod === 'PayPal'){
+          htmlToAppend += '<div><div><span>' 
+          +selectedPaymentInstrument.paymentMethod 
+          +'</span></div></div>';
+        }
+        if(selectedPaymentInstrument.paymentMethod === 'AdyenComponent'){
+          if (selectedPaymentInstrument.selectedAdyenPM) {
+            htmlToAppend += "<div><span>".concat(selectedPaymentInstrument.selectedAdyenPM, "</span></div>");
+          }
+          if (selectedPaymentInstrument.selectedIssuerName) {
+            htmlToAppend += "<div><span>".concat(selectedPaymentInstrument.selectedIssuerName, "</span></div>");
+          }
+          if (selectedPaymentInstrument.maskedCreditCardNumber) {
+            htmlToAppend += "<div>".concat(selectedPaymentInstrument.maskedCreditCardNumber, "</div>");
+          }
+          if (selectedPaymentInstrument.expirationMonth && selectedPaymentInstrument.expirationYear) {
+            htmlToAppend += "<div><span>".concat(order.resources.cardEnding, " ").concat(selectedPaymentInstrument.expirationMonth, "/").concat(selectedPaymentInstrument.expirationYear, "</span></div>");
+          }
+        }
+        
     }
 
     $paymentSummary.empty().append(htmlToAppend);
