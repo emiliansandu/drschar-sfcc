@@ -35,7 +35,6 @@ server.get('Show', consentTracking.consent, cache.applyDefaultCache, function (r
 }, pageMetaData.computedPageMetaData);
 
 server.get('ShowInstagram', consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
-    var Site = require('dw/system/Site');
     var pageMetaHelper = require('*/cartridge/scripts/helpers/pageMetaHelper');
     var instaHelper = require('*/cartridge/scripts/helpers/instagramHelper');
 

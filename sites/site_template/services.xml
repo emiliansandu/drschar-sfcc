@@ -100,8 +100,6 @@
     </service-credential>
     <service-credential service-credential-id="instagram.http.cred">
         <url>https://graph.instagram.com/</url>
-        <user-id>ngarcia@unitedvirtualities.com</user-id>
-        <password masked="true">********</password>
     </service-credential>
     <service-credential service-credential-id="logentries.avatax.rest">
         <url>https://webhook.logentries.com/noformat/logs/</url>
