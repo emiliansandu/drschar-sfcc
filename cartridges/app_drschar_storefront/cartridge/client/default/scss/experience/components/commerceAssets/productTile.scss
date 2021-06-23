@@ -180,6 +180,10 @@
 .product-tile-pd .product-tile-body .product-price .strike-through {
     color: $gray-5;
 }
+.product-tile-pd .product-tile-body .product-price .sales {
+    color: $gray-8;
+}
 .product-tile-pd .product-tile-body .product-name-link a {
     text-decoration: none;
+    font-size: 0.8888888888888888em;//16px using 18px as base
 }
