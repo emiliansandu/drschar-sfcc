@@ -66,7 +66,7 @@ PHelper.builderObject = function builderObject(order, querystring, pageMetaData)
     var tax = order.totalTax.value;
     var shippingCost = order.shippingTotalPrice.value;
     var params = new Object; 
-    var items = PHelper.getProductItems(order.allProductLineItems,params);
+    var items = PHelper.getProductItems(order.productLineItems,params);
     var finalObj = {
         "transaction_id": orderNum,
         "affiliation": "Google online store",
@@ -92,6 +92,7 @@ PHelper.getProductItems = function getProductItems(allProducts,params) {
         } else {
             var productData = PHelper.getObjectItems(product,breadcrumb);
             productData.list_position = i+1;                      
+            productData.quantity = allProducts[i].quantity.value;
             items.push(productData);
         }
     }
