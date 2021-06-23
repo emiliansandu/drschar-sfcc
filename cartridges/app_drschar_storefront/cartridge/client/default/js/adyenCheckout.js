@@ -37,20 +37,6 @@ var checkoutConfiguration = window.Configuration;
 var formErrorsExist;
 var isValid = false;
 var checkout;
-$('#dwfrm_billing').submit(function (e) {
-  e.preventDefault();
-  var form = $(this);
-  var url = form.attr('action');
-  $.ajax({
-    type: 'POST',
-    url: url,
-    data: form.serialize(),
-    async: false,
-    success: function success(data) {
-      formErrorsExist = 'fieldErrors' in data;
-    }
-  });
-});
 
 checkoutConfiguration.onChange = function (state) {
   var type = state.data.paymentMethod.type;
@@ -66,35 +52,24 @@ checkoutConfiguration.onChange = function (state) {
 
 checkoutConfiguration.showPayButton = false;
 checkoutConfiguration.paymentMethodsConfiguration = {
-  paypal: {
-    environment: window.Configuration.environment,
-    intent: 'capture',
-    onSubmit: function onSubmit(state, component) {
-      assignPaymentMethodValue();
-      document.querySelector('#adyenStateData').value = JSON.stringify(componentsObj[selectedMethod].stateData);
-      paymentFromComponent(state.data, component);
+  card: {
+    enableStoreDetails: showStoreDetails,
+    onBrand: function onBrand(brandObject) {
+      document.querySelector('#cardType').value = brandObject.brand;
     },
-    onCancel: function onCancel(data, component) {
-      paymentFromComponent({
-        cancelTransaction: true
-      }, component);
-    },
-    onError: function onError(error, component) {
-      if (component) {
-        component.setStatus('ready');
+    onFieldValid: function onFieldValid(data) {
+      if (data.endDigits) {
+        maskedCardNumber = MASKED_CC_PREFIX + data.endDigits;
+        document.querySelector('#cardNumber').value = maskedCardNumber;
       }
-
-      document.querySelector('#showConfirmationForm').submit();
     },
-    onAdditionalDetails: function onAdditionalDetails(state) {
-      document.querySelector('#additionalDetailsHidden').value = JSON.stringify(state.data);
-      document.querySelector('#showConfirmationForm').submit();
-    },
-    onClick: function onClick(data, actions) {
-      $('#dwfrm_billing').trigger('submit');
+    onChange: function onChange(state) {
+      isValid = state.isValid;
+      var componentName = state.data.paymentMethod.storedPaymentMethodId ? "storedCard".concat(state.data.paymentMethod.storedPaymentMethodId) : state.data.paymentMethod.type;
 
-      if (formErrorsExist) {
-        return actions.reject();
+      if (componentName === selectedMethod || selectedMethod === 'bcmc') {
+        componentsObj[selectedMethod].isValid = isValid;
+        componentsObj[selectedMethod].stateData = state.data;
       }
     }
   },
@@ -138,9 +113,6 @@ if (window.installments) {
 
 }
 
-if (window.paypalMerchantID !== 'null') {
-  checkoutConfiguration.paymentMethodsConfiguration.paypal.merchantId = window.paypalMerchantID;
-}
 
 /**
  * Changes the "display" attribute of the selected method from hidden to visible
@@ -224,7 +196,6 @@ function _renderGenericComponent() {
 
               if (data.amount) {
                 checkoutConfiguration.amount = data.amount;
-                checkoutConfiguration.paymentMethodsConfiguration.paypal.amount = data.amount;
               }
 
               if (data.countryCode) {
