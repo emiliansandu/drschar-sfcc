@@ -250,74 +250,72 @@ var adyenCheckout = require('../adyenCheckout');
                     
                     if(activeTabId == 'adyen-component-content'){
                         //missing data to complete the submit on this point
-                        $('#dwfrm_billing').trigger('submit');
-                    }else{
-                        $.ajax({
-                            url: $('#dwfrm_billing').attr('action'),
-                            method: 'POST',
-                            data: paymentForm,
-                            success: function (data) {
-                                // enable the next:Place Order button here
-                                $('body').trigger('checkout:enableButton', '.next-step-button button');
-                                // look for field validation errors
-                                if (data.error) {
-                                    if (data.fieldErrors.length) {
-                                        data.fieldErrors.forEach(function (error) {
-                                            if (Object.keys(error).length) {
-                                                formHelpers.loadFormErrors('.payment-form', error);
-                                            }
-                                        });
-                                    }
-
-                                    if (data.serverErrors.length) {
-                                        data.serverErrors.forEach(function (error) {
-                                            $('.error-message').show();
-                                            $('.error-message-text').text(error);
-                                            scrollAnimate($('.error-message'));
-                                        });
-                                    }
-
-                                    if (data.cartError) {
-                                        window.location.href = data.redirectUrl;
-                                    }
-
-                                    defer.reject();
-                                } else {
-                                    //
-                                    // Populate the Address Summary
-                                    //
-
-                                    console.log('all good');
-
-                                    $('body').trigger('checkout:updateCheckoutView',
-                                        { order: data.order, customer: data.customer });
-
-                                    if (data.renderedPaymentInstruments) {
-                                        $('.stored-payments').empty().html(
-                                            data.renderedPaymentInstruments
-                                        );
-                                    }
-
-                                    if (data.customer.registeredUser
-                                        && data.customer.customerPaymentInstruments.length
-                                    ) {
-                                        $('.cancel-new-payment').removeClass('checkout-hidden');
-                                    }
-
-                                    scrollAnimate();
-                                    defer.resolve(data);
-                                }
-                            },
-                            error: function (err) {
-                                // enable the next:Place Order button here
-                                $('body').trigger('checkout:enableButton', '.next-step-button button');
-                                if (err.responseJSON && err.responseJSON.redirectUrl) {
-                                    window.location.href = err.responseJSON.redirectUrl;
-                                }
-                            }
-                        });
+                        var form = $('#dwfrm_billing');
+                        paymentForm = form.serialize()
                     }
+                    
+                    $.ajax({
+                        url: $('#dwfrm_billing').attr('action'),
+                        method: 'POST',
+                        data: paymentForm,
+                        success: function (data) {
+                            // enable the next:Place Order button here
+                            $('body').trigger('checkout:enableButton', '.next-step-button button');
+                            // look for field validation errors
+                            if (data.error) {
+                                if (data.fieldErrors.length) {
+                                    data.fieldErrors.forEach(function (error) {
+                                        if (Object.keys(error).length) {
+                                            formHelpers.loadFormErrors('.payment-form', error);
+                                        }
+                                    });
+                                }
 
+                                if (data.serverErrors.length) {
+                                    data.serverErrors.forEach(function (error) {
+                                        $('.error-message').show();
+                                        $('.error-message-text').text(error);
+                                        scrollAnimate($('.error-message'));
+                                    });
+                                }
+
+                                if (data.cartError) {
+                                    window.location.href = data.redirectUrl;
+                                }
+
+                                defer.reject();
+                            } else {
+                                //
+                                // Populate the Address Summary
+                                //
+
+                                $('body').trigger('checkout:updateCheckoutView',
+                                    { order: data.order, customer: data.customer });
+
+                                if (data.renderedPaymentInstruments) {
+                                    $('.stored-payments').empty().html(
+                                        data.renderedPaymentInstruments
+                                    );
+                                }
+
+                                if (data.customer.registeredUser
+                                    && data.customer.customerPaymentInstruments.length
+                                ) {
+                                    $('.cancel-new-payment').removeClass('checkout-hidden');
+                                }
+
+                                scrollAnimate();
+                                defer.resolve(data);
+                            }
+                        },
+                        error: function (err) {
+                            // enable the next:Place Order button here
+                            $('body').trigger('checkout:enableButton', '.next-step-button button');
+                            if (err.responseJSON && err.responseJSON.redirectUrl) {
+                                window.location.href = err.responseJSON.redirectUrl;
+                            }
+                        }
+                    });
                     return defer;
                 } else if (stage === 'placeOrder') {
                     // disable the placeOrder button here
@@ -577,74 +575,6 @@ var exports = {
             exports[item] = $.extend({}, exports[item], library[item]);
         } else {
             exports[item] = library[item];
-        }
-    });
-});
-
-$('#dwfrm_billing').submit(function (e) {
-    e.preventDefault();
-    var form = $(this);
-    var url = form.attr('action');
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: form.serialize(),
-        async: false,
-        success: function success(data) {
-            // enable the next:Place Order button here
-            $('body').trigger('checkout:enableButton', '.next-step-button button');
-            // look for field validation errors
-            if (data.error) {
-                if (data.fieldErrors.length) {
-                    data.fieldErrors.forEach(function (error) {
-                        if (Object.keys(error).length) {
-                            formHelpers.loadFormErrors('.payment-form', error);
-                        }
-                    });
-                }
-
-                if (data.serverErrors.length) {
-                    data.serverErrors.forEach(function (error) {
-                        $('.error-message').show();
-                        $('.error-message-text').text(error);
-                        scrollAnimate($('.error-message'));
-                    });
-                }
-
-                if (data.cartError) {
-                    window.location.href = data.redirectUrl;
-                }
-
-                defer.reject();
-            } else {
-                //
-                // Populate the Address Summary
-                //
-                $('body').trigger('checkout:updateCheckoutView',
-                    { order: data.order, customer: data.customer });
-
-                if (data.renderedPaymentInstruments) {
-                    $('.stored-payments').empty().html(
-                        data.renderedPaymentInstruments
-                    );
-                }
-
-                if (data.customer.registeredUser
-                    && data.customer.customerPaymentInstruments.length
-                ) {
-                    $('.cancel-new-payment').removeClass('checkout-hidden');
-                }
-
-                scrollAnimate();
-                defer.resolve(data);
-            }
-        },
-        error: function (err) {
-            // enable the next:Place Order button here
-            $('body').trigger('checkout:enableButton', '.next-step-button button');
-            if (err.responseJSON && err.responseJSON.redirectUrl) {
-                window.location.href = err.responseJSON.redirectUrl;
-            }
         }
     });
 });
