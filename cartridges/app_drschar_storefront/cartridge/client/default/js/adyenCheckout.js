@@ -537,6 +537,9 @@ function getFallback(paymentMethod) {
 }
 
 module.exports = {
+  assignPaymentMethodValue:assignPaymentMethodValue,
+  validateComponents:validateComponents,
+  showValidation:showValidation,
   methods: {
     renderGenericComponent: renderGenericComponent
   }

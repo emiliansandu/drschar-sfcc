@@ -249,9 +249,18 @@ var adyenCheckout = require('../adyenCheckout');
                     $('body').trigger('checkout:disableButton', '.next-step-button button');
                     
                     if(activeTabId == 'adyen-component-content'){
-                        //missing data to complete the submit on this point
+                        //Adyen validation
+                        if (document.querySelector('#selectedPaymentOption').value === 'AdyenPOS') {
+                            document.querySelector('#terminalId').value = document.querySelector('#terminalList').value;
+                            return true;
+                        }
+                        adyenCheckout.assignPaymentMethodValue();
+                        adyenCheckout.validateComponents();
+                        adyenCheckout.showValidation();
+
+                        //send the form for adyen
                         var form = $('#dwfrm_billing');
-                        paymentForm = form.serialize()
+                        paymentForm = form.serialize();
                     }
                     
                     $.ajax({
@@ -403,6 +412,8 @@ var adyenCheckout = require('../adyenCheckout');
 
                 $('.payment-summary .edit-button', plugin).on('click', function () {
                     members.gotoStage('payment');
+                    //Render Adyen when try to edit payment                
+                    adyenCheckout.methods.renderGenericComponent();
                 });
 
                 //
@@ -541,9 +552,6 @@ var exports = {
                     data.options
                 );
             });
-            var currentStage = location.search.substring( // eslint-disable-line no-restricted-globals
-                location.search.indexOf('=') + 1 // eslint-disable-line no-restricted-globals
-            );
             billingHelpers.methods.updateBillingInformation(
                 data.order,
                 data.customer,
