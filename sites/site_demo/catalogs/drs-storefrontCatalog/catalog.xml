@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="storefront-catalog">
+    <header>
+        <image-settings>
+            <internal-location base-path="/"/>
+            <view-types>
+                <view-type>large</view-type>
+                <view-type>medium</view-type>
+                <view-type>small</view-type>
+                <view-type>swatch</view-type>
+            </view-types>
+            <alt-pattern>${productname}</alt-pattern>
+            <title-pattern>${productname}</title-pattern>
+        </image-settings>
+    </header>
+
+    <category category-id="root">
+        <online-flag>true</online-flag>
+        <template/>
+        <page-attributes/>
+    </category>
+
+    <category category-id="Products">
+        <display-name xml:lang="x-default">Products</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category-assignment category-id="Products" product-id="1100010800">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100030600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100040501">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100050502">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100080401">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100090401">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100280501">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100440502">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100450501">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100610600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100620600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100690500">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1100720800">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101010800">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101020301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101040000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101050002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101060301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101090300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101390300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1101430000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1102010001">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1102240301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1102310000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103030302">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103130300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103220301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103310301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103460300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103510300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103600301">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1103630000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1104010002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1104020002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1104030002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1105000000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1105020001">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="1106040300">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="71199010000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="71199020000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="71199030000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="71199040000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="71199050000">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="test-set">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>
