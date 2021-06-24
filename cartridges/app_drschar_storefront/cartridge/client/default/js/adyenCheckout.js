@@ -395,18 +395,6 @@ function paymentFromComponent(data, component) {
   }).fail(function () {});
 } // Submit the payment
 
-
-$('button[value="submit-payment"]').on('click', function () {
-  if (document.querySelector('#selectedPaymentOption').value === 'AdyenPOS') {
-    document.querySelector('#terminalId').value = document.querySelector('#terminalList').value;
-    return true;
-  }
-
-  assignPaymentMethodValue();
-  validateComponents();
-  return showValidation();
-});
-
 function assignPaymentMethodValue() {
   var adyenPaymentMethod = document.querySelector('#adyenPaymentMethodName');
   adyenPaymentMethod.value = document.querySelector("#lb_".concat(selectedMethod)).innerHTML;
