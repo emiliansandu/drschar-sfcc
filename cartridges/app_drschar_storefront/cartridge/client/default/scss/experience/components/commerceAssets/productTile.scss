@@ -3,8 +3,7 @@
 @import "../../../utilities/shapes";
 
 .product-tile-pd {
-    font-family: $product-font;
-
+    font-family: $font-family-base;
     .product-tile-image {
         font-size: 1em;
 
@@ -42,7 +41,7 @@
     .product-tile-body {
         @include media-breakpoint-up(md) {
             font-size: 1em;
-            padding: 0.625em 1em;
+            padding: 0.625em 1em 0.625em 0em;
         }
 
         @include media-breakpoint-down(sm) {
@@ -165,4 +164,26 @@
             }
         }
     }
+}
+.product-tile-pd .product-tile-image .quickview {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.product-tile-pd .product-tile-image {
+    position: relative;
+    overflow: auto;
+}
+.product-tile-pd .product-tile-body .product-price .sales.reduced-price {
+    color: $gray-8;
+}
+.product-tile-pd .product-tile-body .product-price .strike-through {
+    color: $gray-5;
+}
+.product-tile-pd .product-tile-body .product-price .sales {
+    color: $gray-8;
+}
+.product-tile-pd .product-tile-body .product-name-link a {
+    text-decoration: none;
+    font-size: 0.8888888888888888em;//16px using 18px as base
 }

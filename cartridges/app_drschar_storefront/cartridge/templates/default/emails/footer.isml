@@ -1,87 +1,81 @@
-
 <head>
-<style>
-button { display: none !important;}
-a { color: #422D31 !important;}
-ul { 
-list-style-type: none !important; 
-padding: 0px !important;
-}
-li {
-    margin-left: 0px !important;
-}
+    <style>
+        button {
+            display: none !important;
+        }
 
-</style>
- </head>
- <!-- Footer links : BEGIN -->
-                    <tr>
-                        <td valign="top" style="text-align: center !important; padding: 10px; background-color: #ffffff;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <!-- Column : BEGIN -->
-                                    <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <tr>
-                                                <td align="left" valign="top"
-                                                    style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                    class="center-on-narrow">
-                                                    
-                                                        <isprint value="${pdict.contentAsset.locateStoreAsset.custom.body}" encoding = "off"/>
-                                                    
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <tr>
-                                                <td align="left" valign="top"
-                                                    style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                    class="center-on-narrow">
-                                                    
-                                                        <isprint value="${pdict.contentAsset.accountAsset.custom.body}" encoding = "off"/>
-                                                    
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <td align="left" valign="top"
-                                                style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                class="center-on-narrow">
-                                                
-                                                   <isprint value="${pdict.contentAsset.supportAsset.custom.body}" encoding = "off"/>
-                                                
-                                            </td>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                    <!-- Column : BEGIN -->
-                                    <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                            width="100%">
-                                            <td align="left" valign="top"
-                                                style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
-                                                class="center-on-narrow">
-                                                
-                                                   <isprint value="${pdict.contentAsset.aboutUsAsset.custom.body}" encoding = "off"/>
-                                                
-                                            </td>
-                                        </table>
-                                    </td>
-                                    <!-- Column : END -->
-                                </tr>
-                            </table>
+        a {
+            color: #422D31 !important;
+        }
+
+        ul {
+            list-style-type: none !important;
+            padding: 0px !important;
+        }
+
+        li {
+            margin-left: 0px !important;
+        }
+    </style>
+</head>
+
+<tr>
+    <td valign="top" style="text-align: center !important; padding: 10px; background-color: #ffffff;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+                <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td align="left" valign="top"
+                                style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
+                                class="center-on-narrow">
+
+                                <isprint value="${pdict.contentAsset.locateStoreAsset.custom.body}" encoding="off" />
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td align="left" valign="top"
+                                style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
+                                class="center-on-narrow">
+
+                                <isprint value="${pdict.contentAsset.accountAsset.custom.body}" encoding="off" />
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <td align="left" valign="top"
+                            style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
+                            class="center-on-narrow">
+
+                            <isprint value="${pdict.contentAsset.supportAsset.custom.body}" encoding="off" />
+
                         </td>
-                    </tr>
-                    <!-- Footer links : END -->
+                    </table>
+                </td>
 
-        
+                <td width="25%" style="text-align: center !important;" class="stack-column-center" valign="top">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <td align="left" valign="top"
+                            style="text-align: center !important; font-family: Arial, sans-serif;  font-size: 14px; line-height: 2; color: #422D31; padding: 20px 0px; text-align: left;"
+                            class="center-on-narrow">
+
+                            <isprint value="${pdict.contentAsset.aboutUsAsset.custom.body}" encoding="off" />
+
+                        </td>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+    </td>
+</tr>

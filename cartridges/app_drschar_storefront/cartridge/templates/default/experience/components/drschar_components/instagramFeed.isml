@@ -1,0 +1,28 @@
+    <div class="homepage-product-listing row">
+        <isloop items="${pdict.instagramFeed.data}" var="post">
+            <div class="col-6 col-sm-4">
+                <div class="product" data-pid="${post.id}">
+                    <div class="product-tile">
+                        <div class="image-container">
+                            <a href="/s/drschar/3/4-sleeve-v-neck-top/25519318M.html?lang=en_US">
+                                <img class="tile-image" src="${post.media_url}" alt="${post.id}" title="${post.id}">
+                            </a>
+                        </div>
+                        <div class="tile-body">
+                            <div class="pdp-link">
+                                <a class="link" href="/s/drschar/3/4-sleeve-v-neck-top/25519318M.html?lang=en_US">
+                                    ${post.caption}
+                                </a>
+                            </div>
+
+                            <div class="price">
+                                PostID: ${post.id} <br>
+                                Media Type: ${post.media_type}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isloop>
+    </div>

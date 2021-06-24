@@ -98,6 +98,9 @@
         <user-id>userid</user-id>
         <password masked="true">password</password>
     </service-credential>
+    <service-credential service-credential-id="instagram.http.cred">
+        <url>https://graph.instagram.com/</url>
+    </service-credential>
     <service-credential service-credential-id="logentries.avatax.rest">
         <url>https://webhook.logentries.com/noformat/logs/</url>
         <user-id></user-id>
@@ -122,7 +125,15 @@
         <timeout-millis>100000</timeout-millis>
         <cb-enabled>false</cb-enabled>
     </service-profile>
-
+    <service-profile service-profile-id="instagram.http.prof">
+        <timeout-millis>6000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>10000</rate-limit-calls>
+        <rate-limit-millis>15000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>6000</cb-millis>
+    </service-profile>
     <service-profile service-profile-id="logentries.avatax.profile">
         <timeout-millis>20000</timeout-millis>
         <rate-limit-enabled>false</rate-limit-enabled>
@@ -153,7 +164,16 @@
         <profile-id/>
         <credential-id>drscharSFTP</credential-id>
     </service>
-
+    <service service-id="instagram.http.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>instagram.http.prof</profile-id>
+        <credential-id>instagram.http.cred</credential-id>
+    </service>
     <service service-id="int_paypal.http.rest">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>

@@ -1,0 +1,30 @@
+{
+    "name": "InstagramFeed",
+    "description": "This is the Instagram Feed Component",
+    "group": "drschar_components",
+    "attribute_definition_groups": [
+      {
+        "id": "apiContent",
+        "name": "Url API Content",
+        "description": "The content to show in this component",
+        "attribute_definitions": [
+          {
+            "id": "apiPath",
+            "name": "API Path URL",
+            "description": "This is the url API Path to get the instgram API data",
+            "type": "string",
+            "required": true
+          },
+          {
+            "id": "accessToken",
+            "name": "API Access Token",
+            "description": "This is the token for access desired API data",
+            "type": "text",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }
+  
