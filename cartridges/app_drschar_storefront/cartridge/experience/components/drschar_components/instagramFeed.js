@@ -21,5 +21,5 @@ module.exports.render = function (context, modelIn) {
     model.instagramFeed=instaFeed;    
     }
    
-    return new Template('experience/components/drschar_components/homeInstagram').render(model).text;
+    return new Template('experience/components/drschar_components/instagramFeed').render(model).text;
 };
