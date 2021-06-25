@@ -11,7 +11,7 @@
           {
             "id": "apiPath",
             "name": "API Path URL",
-            "description": "This is the url API Path to get the instgram API data",
+            "description": "This is the url API Path, url structure goes like this: me/media?fields=field1,field2...",
             "type": "string",
             "required": true
           },
