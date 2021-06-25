@@ -14,24 +14,10 @@
                                 <p class="overlay-text">
                                 <isprint value = "${post.caption}" padding = "160"/>
                                 </p>
-                                <a class="overlay-link" target="_blank" href="/s/drschar/3/4-sleeve-v-neck-top/25519318M.html?lang=en_US">
+                                <a class="overlay-link" target="_blank" href="${post.permalink}">
                                 <p>View More</p>
                                 </a>
                             </div>
-                        </div>
-                        <div class="tile-body d-none">
-                            <div class="pdp-link">
-                                <a class="link" href="/s/drschar/3/4-sleeve-v-neck-top/25519318M.html?lang=en_US">
-                                    ${post.caption}
-                                </a>
-                            </div>
-
-                            <div class="price">
-                                PostID: ${post.id} <br>
-                                Media Type: ${post.media_type}
-                            </div>
-                            
-
                         </div>
                     </div>
                 </div>
