@@ -256,13 +256,16 @@ var adyenCheckout = require('../adyenCheckout');
                         }
                         adyenCheckout.assignPaymentMethodValue();
                         adyenCheckout.validateComponents();
-                        adyenCheckout.showValidation();
-
+                        //validate the form fileds onChange
+                        if(!adyenCheckout.showValidation()){
+                            defer.reject();
+                            return defer;
+                        }
                         //send the form for adyen
                         var form = $('#dwfrm_billing');
                         paymentForm = form.serialize();
                     }
-                    
+                    document.querySelector('button[value="submit-payment"]').disabled = false;
                     $.ajax({
                         url: $('#dwfrm_billing').attr('action'),
                         method: 'POST',

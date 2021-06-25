@@ -70,6 +70,11 @@ checkoutConfiguration.paymentMethodsConfiguration = {
       if (componentName === selectedMethod || selectedMethod === 'bcmc') {
         componentsObj[selectedMethod].isValid = isValid;
         componentsObj[selectedMethod].stateData = state.data;
+        if(!isValid){
+          document.querySelector('button[value="submit-payment"]').disabled = true;
+        }else{
+          document.querySelector('button[value="submit-payment"]').disabled = false;
+        }
       }
     }
   },
@@ -402,7 +407,6 @@ function assignPaymentMethodValue() {
 
 function showValidation() {
   var input;
-
   if (componentsObj[selectedMethod] && !componentsObj[selectedMethod].isValid) {
     componentsObj[selectedMethod].node.showValidation();
     return false;
