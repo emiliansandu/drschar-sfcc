@@ -158,9 +158,15 @@ function updatePaymentInformation(order) {
 
     if (order.billing.payment && order.billing.payment.selectedPaymentInstruments
         && order.billing.payment.selectedPaymentInstruments.length > 0) {
-        
-        var selectedPaymentInstrument = order.billing.payment.selectedPaymentInstruments[0];  
-        
+
+        var numberPayments = order.billing.payment.selectedPaymentInstruments.length;
+        var selectedPaymentInstrument = order.billing.payment.selectedPaymentInstruments[0]; 
+
+        //Shows up the right selected payment instrument
+        if(numberPayments > 1){
+            selectedPaymentInstrument = order.billing.payment.selectedPaymentInstruments[numberPayments-1];
+        }
+
         if(selectedPaymentInstrument.paymentMethod === 'PayPal'){
           htmlToAppend += '<div><div><span>' 
           +selectedPaymentInstrument.paymentMethod 
