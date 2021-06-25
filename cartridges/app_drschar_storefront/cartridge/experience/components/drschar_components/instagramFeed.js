@@ -17,7 +17,8 @@ module.exports.render = function (context, modelIn) {
     var instaHelper = require('*/cartridge/scripts/helpers/instagramHelper');
 
     if (content.apiPath && content.accessToken) {
-    var instaFeed = instaHelper.getFeed(content.apiPath, content.accessToken);
+    var apiPath=content.apiPath+'&limit=8';  
+    var instaFeed = instaHelper.getFeed(apiPath, content.accessToken);
     model.instagramFeed=instaFeed;    
     }
    
