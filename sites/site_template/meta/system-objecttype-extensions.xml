@@ -4635,6 +4635,7 @@
             <attribute-group group-id="shippingMethodAttr">
                 <display-name xml:lang="x-default">Shipping Method Attributes</display-name>
                 <attribute attribute-id="estimatedArrivalTime"/>
+                <attribute attribute-id="image"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
