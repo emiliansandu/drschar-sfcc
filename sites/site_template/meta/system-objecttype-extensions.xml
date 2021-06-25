@@ -3742,6 +3742,18 @@
                 <attribute attribute-id="sheets"/>
                 <attribute attribute-id="isSale"/>
             </attribute-group>
+            <attribute-group group-id="generalInformation">
+                <display-name xml:lang="x-default">General Information</display-name>
+            </attribute-group>
+            <attribute-group group-id="allergyInformation">
+                <display-name xml:lang="x-default">Allergy Information</display-name>
+            </attribute-group>
+            <attribute-group group-id="ingredients">
+                <display-name xml:lang="x-default">Ingredients</display-name>
+            </attribute-group>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+            </attribute-group>
         </group-definitions>
     </type-extension>
 
