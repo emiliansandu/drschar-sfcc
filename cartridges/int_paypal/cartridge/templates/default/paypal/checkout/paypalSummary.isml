@@ -1,8 +1,7 @@
 <div>
     <div>
         <span>
-            ${pdict.paypal.paypalEmail} <br />
-            ${payment.paymentMethod + '/' + pdict.paypal.paymentAmount}
+            ${payment.paymentMethod}
         </span>
     </div>
 </div>

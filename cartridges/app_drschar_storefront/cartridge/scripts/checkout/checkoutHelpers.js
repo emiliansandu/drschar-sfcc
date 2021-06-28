@@ -481,12 +481,16 @@ function handlePayments(order, orderNumber) {
 
     if (order.totalNetPrice !== 0.00) {
         var paymentInstruments = order.paymentInstruments;
-
+        var singlePayment = new Array;
         if (paymentInstruments.length === 0) {
             Transaction.wrap(function () { OrderMgr.failOrder(order, true); });
             result.error = true;
         }
-
+        //Taking the last payment instrument added 
+        if(paymentInstruments.length>1){
+            singlePayment.push(paymentInstruments[(paymentInstruments.length)-1]);
+            paymentInstruments = singlePayment;
+        }
         if (!result.error) {
             for (var i = 0; i < paymentInstruments.length; i++) {
                 var paymentInstrument = paymentInstruments[i];
