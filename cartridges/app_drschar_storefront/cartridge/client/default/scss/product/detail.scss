@@ -83,6 +83,10 @@ label.availability {
     padding-right: 0.3125em;
 }
 
+.fa-check-circle{
+    color:$greenCheckMark;
+}
+
 @include media-breakpoint-up(sm) {
     .product-number-rating {
         border-bottom: 1px solid $hr-border-color;
