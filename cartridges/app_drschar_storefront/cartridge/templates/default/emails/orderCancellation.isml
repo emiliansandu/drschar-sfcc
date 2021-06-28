@@ -322,16 +322,16 @@
                                         </h1>
 
                                         <isset name="address" value="${shippingModel.shippingAddress}" scope="page" />
-                                        <p style="margin: 0 0 10px;">${Resource.msgf('label.order.custom.hey', 'confirmation', null, address.firstName, address.lastName)}</p>
+                                        <p style="margin: 0 0 10px;">${Resource.msgf('label.order.custom.hey.cancel', 'confirmation', null, address.firstName, address.lastName)}</p>
 
-                                        <p style="margin: 0 0 10px;">${Resource.msg('label.order.custom.message', 'confirmation', null)}</p>
-                                        <p style="margin: 0 0 10px;">
+                                        <p style="margin: 0 0 10px;">${Resource.msg('label.order.custom.message.cancel', 'confirmation', null)}</p>
+                                       <!-- <p style="margin: 0 0 10px;">
 
                                             <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, pdict.arrivalEstimatedPeriod
                                                     .earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName,
                                                     pdict.arrivalEstimatedPeriod.deliveryYear)}
                                             </strong>
-                                        </p>
+                                        </p>-->
 
                                     </td>
                                 </tr>
