@@ -27,12 +27,6 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
 
   var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
 
-  var paymentMgr = require('dw/order/PaymentMgr');
-  var ContentMgr = require('dw/content/ContentMgr');
-  var locateStoreAsset = ContentMgr.getContent('footer-locate-store');
-  var accountAsset = ContentMgr.getContent('footer-account');
-  var supportAsset = ContentMgr.getContent('footer-support');
-  var aboutUsAsset = ContentMgr.getContent('footer-about');
 
   var isAdyen = false;
   var currentBasket = BasketMgr.getCurrentBasket();
@@ -237,6 +231,14 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
     this.emit('route:Complete', req, res);
     return;
   }
+
+  var paymentMgr = require('dw/order/PaymentMgr');
+  var ContentMgr = require('dw/content/ContentMgr');
+  var locateStoreAsset = ContentMgr.getContent('footer-locate-store');
+  var accountAsset = ContentMgr.getContent('footer-account');
+  var supportAsset = ContentMgr.getContent('footer-support');
+  var aboutUsAsset = ContentMgr.getContent('footer-about');
+
 
   var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
   var paymentid=order.paymentInstrument.paymentMethod;
