@@ -1,3 +1,9 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/product/productInformation.js');
+    assets.addCss('/css/product/productInformation.css');
+</isscript>
+
 <div class="row col-12 availability">
-    ${Resource.msg('label.more.information', 'product', null)}
+    <span id="more-info-btn" >${Resource.msg('label.more.information', 'product', null)}</span>
 </div>
