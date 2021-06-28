@@ -60,6 +60,9 @@
                         <!-- Short Description -->
                         <isinclude template="product/components/shortDescription" />
 
+                        <!-- More Information Button -->
+                        <isinclude template="product/components/moreInformation" />
+
                         <isset name="isBundle" value="${false}" scope="page" />
                         <isset name="loopState" value="${{count: 1}}" scope="page" />
                         <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">

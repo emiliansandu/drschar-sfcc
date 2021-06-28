@@ -1,0 +1,3 @@
+<div class="row col-12 availability">
+    ${Resource.msg('label.more.information', 'product', null)}
+</div>

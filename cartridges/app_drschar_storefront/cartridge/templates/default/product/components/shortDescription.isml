@@ -1,7 +1,7 @@
 <isif condition="${product.attributes && product.attributes.length}">
-        <hr class="d-sm-none">
-    </isif>
+    <hr class="d-sm-none">
+</isif>
 
-    <div class="row description collapsible-xs <isif condition="${!product.shortDescription}">hidden-xl-down</isif>">
-        <isinclude template="product/components/description" />
-    </div>
+<div class="row description collapsible-xs <isif condition="${!product.shortDescription}">hidden-xl-down</isif>">
+    <isinclude template="product/components/description" />
+</div>
