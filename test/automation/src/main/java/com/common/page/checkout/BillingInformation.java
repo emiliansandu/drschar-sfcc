@@ -85,14 +85,23 @@ public class BillingInformation extends PageObject {
         WebElement field = paymentData.findElement(By.id("email"));
         field.sendKeys(propertyReader.getProperty("payment.email"));
 
-        field = paymentData.findElement(By.id("cardNumber"));
-        field.sendKeys(propertyReader.getProperty("payment.cardNum"));
+        driver.switchTo().frame("js-iframe");
+            driver.findElement(
+                By.xpath("//input[@id='encryptedCardNumber']")
+            ).sendKeys("4111111111111111");
+        driver.switchTo().defaultContent();
 
-        Select select = new Select(paymentData.findElement(By.id("expirationMonth")));
-        select.selectByValue(propertyReader.getProperty("payment.Month"));
+        /*field = paymentData.findElement(By.id("encryptedCardNumber"));
+        field.sendKeys(propertyReader.getProperty("payment.cardNum"));*/
+
+        field = paymentData.findElement(By.id("encryptedExpiryDate"));
+        field.sendKeys(propertyReader.getProperty("payment.expiration"));
+
+        /*Select select = new Select(paymentData.findElement(By.id("encryptedExpiryDate")));
+        select.selectByValue(propertyReader.getProperty("payment.expiration"));
 
         select = new Select(paymentData.findElement(By.id("expirationYear")));
-        select.selectByValue(propertyReader.getProperty("payment.Year"));
+        select.selectByValue(propertyReader.getProperty("payment.Year"));*/
 
         field = paymentData.findElement(By.id("securityCode"));
         field.sendKeys(propertyReader.getProperty("payment.cvv"));

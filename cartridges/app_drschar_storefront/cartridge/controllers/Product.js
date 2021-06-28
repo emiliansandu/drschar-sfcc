@@ -359,29 +359,25 @@ server.get('ShowBonusProducts', function (req, res, next) {
 
 server.get('Data', cache.applyPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
     var productHelper = require('*/cartridge/scripts/helpers/productHelpers');
-    var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
-    var productType = showProductPageHelperResult.product.productType;
-    if (!showProductPageHelperResult.product.online && productType !== 'set' && productType !== 'bundle') {
-        res.setStatusCode(404);
-        res.render('error/notFound');
-    } else {
-        var product = showProductPageHelperResult.product;
-        var categories = productHelper.getCategories(showProductPageHelperResult.breadcrumbs);
-        var variants = productHelper.getVariants(product.variationAttributes);        
-        res.json({
-            "items": [
-              {
-                "id": product.id,
-                "name": product.productName,
-                "brand": "Dr Schar",
-                "category": categories,
-                "variant": variants,
-                "quantity": product.selectedQuantity,
-                "price": product.price.sales.value
-              }
-            ]
-        }); 
-            
+    var OrderMgr = require('dw/order/OrderMgr');
+    var eventType = req.querystring.eventType;
+
+    if(eventType == 'view_item'){
+        var fullObjectProduct = productHelper.showProductPage(req.querystring, req.pageMetaData);
+        var breadcrumb = fullObjectProduct.breadcrumbs;
+        var product = fullObjectProduct.product;
+        var productType = product.productType;
+        if (!product.online && productType !== 'set' && productType !== 'bundle') {
+            res.setStatusCode(404);
+        } else {
+            var productData = productHelper.getObjectItems(product,breadcrumb);          
+            res.json({"items": [productData]});
+        }
+    }
+    if (eventType == 'purchase') {
+        var order = OrderMgr.getOrder(req.querystring.orderNum);
+        var purchaseData = productHelper.builderObject(order, req.querystring, req.pageMetaData);
+        res.json(purchaseData);
     }
     next();
 }, pageMetaData.computedPageMetaData);

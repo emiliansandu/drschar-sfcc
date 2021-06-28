@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/drschar_layouts/configurableBackground.css');
+  //  assets.addJs('/js/carousel.js');
+</isscript>
+
+<div class="configurableBackground configurableBackground--${pdict.colorSelect} ${pdict.backgroundWidth}">
+    <div class="row">
+        <isprint value="${pdict.regions.column1.setClassName("region col-12").render()}" encoding="off"/>
+    </div>
+</div>

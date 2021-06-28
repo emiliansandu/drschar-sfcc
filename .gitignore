@@ -109,3 +109,7 @@ test/appium/webdriver/config.json
 test/acceptance/report
 test/integration/config.json
 
+STG-*
+link_avalara*
+*.zip
+*-workspace

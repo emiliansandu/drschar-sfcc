@@ -56,3 +56,5 @@ ${dw.system.HookMgr.callHook('app.template.htmlHead', 'htmlHead', pdict) || ''}
 </iscomment>
 <isprint value="${require('*/cartridge/scripts/theming/skin.js').renderSkin()}" encoding="off">
 <link rel="stylesheet" href="${URLUtils.staticURL('/css/skin/skin.css')}" />
+
+<isinclude template="/GTScripts/GTHeadScript" />

@@ -1,0 +1,26 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/experience/components/drschar_components/instagramFeed.css');
+</isscript>    
+    <div class="container">
+            <div class="row">
+            <isloop items="${pdict.instagramFeed.data}" var="post">
+                <div class="col-md-3 col-sm-6" data-pid="${post.id}">
+                    <div class="product-tile">
+                        <div class="image-container">
+                                <img class="tile-image" src="${post.media_url}" alt="${post.id}" title="${post.id}">
+                            
+                            <div class="overlay">
+                                <p class="overlay-text">
+                                <isprint value = "${post.caption}" padding = "160"/>
+                                </p>
+                                <a class="overlay-link" target="_blank" href="${post.permalink}">
+                                <p>View More</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </isloop>
+            </div>
+    </div>

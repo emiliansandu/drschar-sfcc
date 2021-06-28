@@ -1,6 +1,0 @@
-{
-    "hooks": [{
-        "name": "app.template.htmlHead",
-        "script": "./cartridge/scripts/header/googleAnalytics.js"
-    }]
-}

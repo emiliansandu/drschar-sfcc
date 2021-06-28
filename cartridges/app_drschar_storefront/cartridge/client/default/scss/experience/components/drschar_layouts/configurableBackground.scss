@@ -1,0 +1,67 @@
+@import "../../variables";
+
+.configurableBackground--danger{
+    background-color:$red;
+}
+.configurableBackground--red-brand{
+    background-color:$primary;
+}
+.configurableBackground--yellow-brand1{
+    background-color:$yellow-brand;
+}
+.configurableBackground--yellow-brand2{
+    background-color:$Warning;
+}
+.configurableBackground--success{
+    background-color:$success;
+}
+.configurableBackground--gray-transparent1{
+    background-color:$grey-transparent-1;
+}
+.configurableBackground--gray-transparent2{
+    background-color:$grey-transparent-2;
+}
+.configurableBackground--gray1{
+    background-color:$grey1;
+}
+.configurableBackground--gray2{
+    background-color:$grey2;
+}
+.configurableBackground--gray3{
+    background-color:$grey3;
+}
+.configurableBackground--gray4{
+    background-color:$grey4;
+}
+.configurableBackground--gray5{
+    background-color:$grey5;
+}
+.configurableBackground--gray6{
+    background-color:$grey6;
+}
+.configurableBackground--gray7{
+    background-color:$grey7;
+}
+.configurableBackground--gray8{
+    background-color:$grey8;
+}
+.configurableBackground--gray9{
+    background-color:$grey9;
+}
+.configurableBackground--white-brand1{
+    background-color:$brand-footer;
+}
+.configurableBackground--white-brand2{
+    background-color:$brand-footer2;
+}
+.experience-component.experience-drschar_layouts-configurableBackground{
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+}
+.configurableBackground{
+    display:flex;
+    flex-basis: auto;
+    justify-content: center; 
+    align-items: center;
+}

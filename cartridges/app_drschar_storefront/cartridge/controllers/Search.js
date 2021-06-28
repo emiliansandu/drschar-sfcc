@@ -3,12 +3,14 @@
 /**
  * @namespace Search
  */
-
+var page = module.superModule;
 var server = require('server');
 
 var cache = require('*/cartridge/scripts/middleware/cache');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
+
+server.extend(page);
 
 /**
  * Search-Show : This endpoint is called when a shopper type a query string in the search box
@@ -25,7 +27,7 @@ var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
  * @param {renders} - isml
  * @param {serverfunction} - get
  */
-server.get('Show', cache.applyShortPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
+server.prepend('Show', cache.applyShortPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
     var searchHelper = require('*/cartridge/scripts/helpers/searchHelpers');
     var Site = require('dw/system/Site');
     var pageMetaHelper = require('*/cartridge/scripts/helpers/pageMetaHelper');

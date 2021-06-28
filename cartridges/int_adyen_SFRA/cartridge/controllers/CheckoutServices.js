@@ -27,6 +27,7 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
 
   var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
 
+
   var isAdyen = false;
   var currentBasket = BasketMgr.getCurrentBasket();
 
@@ -231,7 +232,23 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
     return;
   }
 
-  COHelpers.sendConfirmationEmail(order, req.locale.id); // Reset usingMultiShip after successful Order placement
+  var paymentMgr = require('dw/order/PaymentMgr');
+  var ContentMgr = require('dw/content/ContentMgr');
+  var locateStoreAsset = ContentMgr.getContent('footer-locate-store');
+  var accountAsset = ContentMgr.getContent('footer-account');
+  var supportAsset = ContentMgr.getContent('footer-support');
+  var aboutUsAsset = ContentMgr.getContent('footer-about');
+
+
+  var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
+  var paymentid=order.paymentInstrument.paymentMethod;
+  var paymentObject=paymentMgr.getPaymentMethod(paymentid);
+  var productQuantities=order.productQuantities;
+  var productWeight=productQuantities.keySet();
+
+  if (order.getCustomerEmail()) {
+    COHelpers.sendConfirmationEmail(order, req.locale.id, req.host, paymentObject, contentAsset, productWeight);
+  }
 
   req.session.privacyCache.set('usingMultiShipping', false);
   res.json({

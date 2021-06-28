@@ -3689,6 +3689,13 @@
                 <externally-defined-flag>false</externally-defined-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="ingredients">
+                <display-name xml:lang="x-default">Ingredients</display-name>
+                <type>html</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="ExternalSearch">
@@ -3741,6 +3748,19 @@
                 <attribute attribute-id="isNewtest"/>
                 <attribute attribute-id="sheets"/>
                 <attribute attribute-id="isSale"/>
+            </attribute-group>
+            <attribute-group group-id="generalInformation">
+                <display-name xml:lang="x-default">General Information</display-name>
+            </attribute-group>
+            <attribute-group group-id="allergyInformation">
+                <display-name xml:lang="x-default">Allergy Information</display-name>
+            </attribute-group>
+            <attribute-group group-id="ingredients">
+                <display-name xml:lang="x-default">Ingredients</display-name>
+                <attribute attribute-id="ingredients"/>
+            </attribute-group>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
             </attribute-group>
         </group-definitions>
     </type-extension>
@@ -4635,6 +4655,7 @@
             <attribute-group group-id="shippingMethodAttr">
                 <display-name xml:lang="x-default">Shipping Method Attributes</display-name>
                 <attribute attribute-id="estimatedArrivalTime"/>
+                <attribute attribute-id="image"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
@@ -4720,6 +4741,22 @@
 
     <type-extension type-id="SitePreferences">
         <custom-attribute-definitions>
+            <attribute-definition attribute-id="GTMId">
+                <display-name xml:lang="x-default">Google tag manager id</display-name>
+                <description xml:lang="x-default">GTM Id to add code generated in Google Tag Manager.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value></default-value>
+            </attribute-definition>
+             <attribute-definition attribute-id="GTMEnable">
+                <display-name xml:lang="x-default">Google tag manager enable</display-name>
+                <description xml:lang="x-default">Enable or disables GTM script</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value></default-value>
+            </attribute-definition>
             <attribute-definition attribute-id="GAId">
                 <display-name xml:lang="x-default">Google analytics id</display-name>
                 <description xml:lang="x-default">GA Id to add code generated in Google Analytics Tag.</description>
@@ -5387,9 +5424,14 @@
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="GA">
-                <display-name xml:lang="x-default">Google Tag Manager</display-name>
+                <display-name xml:lang="x-default">Google Analitytics</display-name>
                 <attribute attribute-id="GAId"/>
                 <attribute attribute-id="GAEnable"/>
+            </attribute-group>
+            <attribute-group group-id="GTM">
+                <display-name xml:lang="x-default">Google Tag Manager</display-name>
+                <attribute attribute-id="GTMId"/>
+                <attribute attribute-id="GTMEnable"/>
             </attribute-group>
             <attribute-group group-id="Paypal_Checkout">
                 <display-name xml:lang="x-default">Paypal Configuration</display-name>

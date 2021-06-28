@@ -11,7 +11,7 @@
             <preference preference-id="OrderIPLoggingEnabled">true</preference>
             <preference preference-id="OrderLifetime">0</preference>
             <preference preference-id="AccountNumberRetentionDays">0</preference>
-            <preference preference-id="SiteCatalog">storefront-catalog-m-en</preference>
+            <preference preference-id="SiteCatalog">storefront-catalog</preference>
             <preference preference-id="SiteCurrencies">USD:EUR:JPY:CNY</preference>
 	        <preference preference-id="SiteCustomerList">RefArch</preference>            
             <preference preference-id="SiteDefaultLocale">en_US</preference>
@@ -77,6 +77,8 @@
                 <preference preference-id="PP_API_Smart_Button_Styles">{"cart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"billing":{"height":34,"color":"gold","shape":"rect","layout":"vertical","label":"paypal","tagline":false},"minicart":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false},"pdp":{"height":35,"color":"gold","shape":"rect","layout":"vertical","label":"checkout","tagline":false}}</preference>
                 <preference preference-id="GAId">UA-197653159-1</preference>
                 <preference preference-id="GAEnable">true</preference>
+                <preference preference-id="GTMId">GTM-W3CN2XN</preference>
+                <preference preference-id="GTMEnable">true</preference>
                 <preference preference-id="ValidateIPAddress">false</preference>
                 <preference preference-id="authenticationMethod">localAccount</preference>
                 <preference preference-id="captureservicetrackingid">true</preference>
@@ -105,7 +107,7 @@
                 <preference preference-id="tokenType">Shopper</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
-                <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":false,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":false,"companyCode":"default","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"","line1":"","line2":"","line3":"","city":"","state":"","zipCode":"","countryCode":""}</preference>
+                <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":true,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":true,"companyCode":"DRSCHRUSAINC","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"DEFAULT","line1":"125 Chubb Avenue","line2":"","line3":"","city":"Lyndhurst","state":"NJ","zipCode":"07071","countryCode":"US"}</preference>
             </development>
             <staging/>
             <production/>

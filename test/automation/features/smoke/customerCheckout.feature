@@ -1,4 +1,4 @@
-@customerCheckout
+#@customerCheckout
 
   Feature: User can checkout as customer
 

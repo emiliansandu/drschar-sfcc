@@ -1,0 +1,68 @@
+@import "../../variables";
+
+.colorSelect--danger{
+    color:$red;
+}
+.colorSelect--red-brand{
+    color:$primary;
+}
+.colorSelect--yellow-brand1{
+    color:$yellow-brand;
+}
+.colorSelect--yellow-brand2{
+    color:$Warning;
+}
+.colorSelect--success{
+    color:$success;
+}
+.colorSelect--gray-transparent1{
+    color:$grey-transparent-1;
+}
+.colorSelect--gray-transparent2{
+    color:$grey-transparent-2;
+}
+.colorSelect--gray1{
+    color:$grey1;
+}
+.colorSelect--gray2{
+    color:$grey2;
+}
+.colorSelect--gray3{
+    color:$grey3;
+}
+.colorSelect--gray4{
+    color:$grey4;
+}
+.colorSelect--gray5{
+    color:$grey5;
+}
+.colorSelect--gray6{
+    color:$grey6;
+}
+.colorSelect--gray7{
+    color:$grey7;
+}
+.colorSelect--gray8{
+    color:$grey8;
+}
+.colorSelect--gray9{
+    color:$grey9;
+}
+.colorSelect--white-brand1{
+    color:$brand-footer;
+}
+.colorSelect--white-brand2{
+    color:$brand-footer2;
+}
+.editorialRichTextIcon-component-container img{
+    width: 100%;
+}
+.editorialRichTextIcon-component-container p a{
+    text-decoration: underline;
+    font-weight: 600;
+    color:inherit !important;
+}
+.editorialRichTextIcon-component-container .row div{
+    display: flex;
+    line-height: normal;
+}
