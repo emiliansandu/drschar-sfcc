@@ -3745,6 +3745,286 @@
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="almondFree">
+                <display-name xml:lang="x-default">Almond Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="beechNutFree">
+                <display-name xml:lang="x-default">Beech nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="brazilNutFree">
+                <display-name xml:lang="x-default">Brazil nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="butternutFree">
+                <display-name xml:lang="x-default">Butternut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="cashewFree">
+                <display-name xml:lang="x-default">Cashew Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="chesnutFree">
+                <display-name xml:lang="x-default">Chestnut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="chinquapinFree">
+                <display-name xml:lang="x-default">Chinquapin Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="clubWheatFree">
+                <display-name xml:lang="x-default">Club Wheat Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="coconutFree">
+                <display-name xml:lang="x-default">Coconut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="crustaceansFree">
+                <display-name xml:lang="x-default">Crustaceans Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="durumWheatFree">
+                <display-name xml:lang="x-default">Durum Wheat Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="eggFree">
+                <display-name xml:lang="x-default">Egg Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="einkornFree">
+                <display-name xml:lang="x-default">Einkorn Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emmerFree">
+                <display-name xml:lang="x-default">Emmer Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="filberHazelnutFree">
+                <display-name xml:lang="x-default">Filbert / Hazelnut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="fishFree">
+                <display-name xml:lang="x-default">Fish Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gincoNutFree">
+                <display-name xml:lang="x-default">Ginko nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="glutenFree">
+                <display-name xml:lang="x-default">Gluten Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="glutenFree">
+                <display-name xml:lang="x-default">Gluten Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="hickoryNutFree">
+                <display-name xml:lang="x-default">Hickory nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="kamutFree">
+                <display-name xml:lang="x-default">Kamut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="licheeNutFree">
+                <display-name xml:lang="x-default">Lichee nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="lupineFree">
+                <display-name xml:lang="x-default">Lupine Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="macadamiaNutFree">
+                <display-name xml:lang="x-default">Macadamia nut / Bush nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="milkFree">
+                <display-name xml:lang="x-default">Milk Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="otherTreeNutsFree">
+                <display-name xml:lang="x-default">Other tree nuts Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="peanutsFree">
+                <display-name xml:lang="x-default">Peanuts Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="pecanFree">
+                <display-name xml:lang="x-default">Pecan Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="pineNutFree">
+                <display-name xml:lang="x-default">Pine nut / Pinon nut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="pistachioFree">
+                <display-name xml:lang="x-default">Pistachio Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="semolinaFree">
+                <display-name xml:lang="x-default">Semolina Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="sheanutFree">
+                <display-name xml:lang="x-default">Sheanut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="shellfisFree">
+                <display-name xml:lang="x-default">Shellfish Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="soyFree">
+                <display-name xml:lang="x-default">Soy Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="treeNutsFree">
+                <display-name xml:lang="x-default">Tree nuts Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="triticaleFree">
+                <display-name xml:lang="x-default">Triticale Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="walnutFree">
+                <display-name xml:lang="x-default">Walnut Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="wheatFree">
+                <display-name xml:lang="x-default">Wheat Free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="allergyContains">
+                <display-name xml:lang="x-default">Contains</display-name>
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="allergyMayContain">
+                <display-name xml:lang="x-default">May Contain</display-name>
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="ExternalSearch">
@@ -3811,6 +4091,45 @@
             </attribute-group>
             <attribute-group group-id="allergyInformation">
                 <display-name xml:lang="x-default">Allergy Information</display-name>
+                <attribute attribute-id="almondFree"/>
+                <attribute attribute-id="beechNutFree"/>
+                <attribute attribute-id="brazilNutFree"/>
+                <attribute attribute-id="butternutFree"/>
+                <attribute attribute-id="cashewFree"/>
+                <attribute attribute-id="chesnutFree"/>
+                <attribute attribute-id="chinquapinFree"/>
+                <attribute attribute-id="clubWheatFree"/>
+                <attribute attribute-id="coconutFree"/>
+                <attribute attribute-id="crustaceansFree"/>
+                <attribute attribute-id="durumWheatFree"/>
+                <attribute attribute-id="eggFree"/>
+                <attribute attribute-id="einkornFree"/>
+                <attribute attribute-id="emmerFree"/>
+                <attribute attribute-id="filberHazelnutFree"/>
+                <attribute attribute-id="fishFree"/>
+                <attribute attribute-id="gincoNutFree"/>
+                <attribute attribute-id="glutenFree"/>
+                <attribute attribute-id="hickoryNutFree"/>
+                <attribute attribute-id="kamutFree"/>
+                <attribute attribute-id="licheeNutFree"/>
+                <attribute attribute-id="lupineFree"/>
+                <attribute attribute-id="macadamiaNutFree"/>
+                <attribute attribute-id="milkFree"/>
+                <attribute attribute-id="otherTreeNutsFree"/>
+                <attribute attribute-id="peanutsFree"/>
+                <attribute attribute-id="pecanFree"/>
+                <attribute attribute-id="pineNutFree"/>
+                <attribute attribute-id="pistachioFree"/>
+                <attribute attribute-id="semolinaFree"/>
+                <attribute attribute-id="sheanutFree"/>
+                <attribute attribute-id="shellfisFree"/>
+                <attribute attribute-id="soyFree"/>
+                <attribute attribute-id="treeNutsFree"/>
+                <attribute attribute-id="triticaleFree"/>
+                <attribute attribute-id="walnutFree"/>
+                <attribute attribute-id="wheatFree"/>
+                <attribute attribute-id="allergyContains"/>
+                <attribute attribute-id="allergyMayContain"/>
             </attribute-group>
             <attribute-group group-id="ingredients">
                 <display-name xml:lang="x-default">Ingredients</display-name>
