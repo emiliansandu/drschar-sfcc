@@ -1,7 +1,7 @@
 var server = require('server');
 var page = module.superModule;
 server.extend(page);
-/*Email test is an endpoint created in this controller to test
+/*EmailCancel is an endpoint created in this controller to test
  of mailing of cancellation purchase orders without having to capture an order every time we make a change*/
  server.get('EmailCancel', function(req, res, next) {
     var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
@@ -28,7 +28,8 @@ server.extend(page);
     res.json({ value: 'Order: '+orderid+' has been canceled'});
     next();
 });
-
+/*EmailOrderShipped is an endpoint created in this controller to test
+ of mailing of orders shipping confirmation without having to capture an order every time we make a change*/
 server.get('EmailOrderShipped', function(req, res, next) {
     var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
     var OrderMgr = require('dw/order/OrderMgr');
@@ -43,7 +44,7 @@ server.get('EmailOrderShipped', function(req, res, next) {
 
     var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
 
-    var orderid = '00001303';//put here number of an existing order to be canceled
+    var orderid = '00001303';//put here number of an existing order to confirm shipping
     var paymentid='CREDIT_CARD'//put here payment method used for the order
     var paymentObject=paymentMgr.getPaymentMethod(paymentid);
     var order = OrderMgr.getOrder(orderid);
