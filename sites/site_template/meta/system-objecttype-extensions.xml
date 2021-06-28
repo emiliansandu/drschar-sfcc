@@ -3696,6 +3696,55 @@
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="gcDairyFree">
+                <display-name xml:lang="x-default">Dairy free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gcGlutenFree">
+                <display-name xml:lang="x-default">Gluten free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gcLactoseFree">
+                <display-name xml:lang="x-default">Lactose free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gcNonGMO">
+                <display-name xml:lang="x-default">Non GMO</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gcPreservativeFree">
+                <display-name xml:lang="x-default">Preservative free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gcWheatFree">
+                <display-name xml:lang="x-default">Wheat free</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="textClaim">
+                <display-name xml:lang="x-default">Text Claim</display-name>
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="ExternalSearch">
@@ -3751,6 +3800,14 @@
             </attribute-group>
             <attribute-group group-id="generalInformation">
                 <display-name xml:lang="x-default">General Information</display-name>
+                <attribute attribute-id="dimWeight"/>
+                <attribute attribute-id="gcDairyFree"/>
+                <attribute attribute-id="gcGlutenFree"/>
+                <attribute attribute-id="gcLactoseFree"/>
+                <attribute attribute-id="gcNonGMO"/>
+                <attribute attribute-id="gcPreservativeFree"/>
+                <attribute attribute-id="gcWheatFree"/>
+                <attribute attribute-id="textClaim"/>
             </attribute-group>
             <attribute-group group-id="allergyInformation">
                 <display-name xml:lang="x-default">Allergy Information</display-name>
