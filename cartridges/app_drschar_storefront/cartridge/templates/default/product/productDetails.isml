@@ -128,7 +128,15 @@
 
                             <!-- Cart and [Optionally] Apple Pay -->
                             <isinclude template="product/components/addToCartProduct" />
+
+                            <!-- EAN number -->
+                            <div class="row">
+                                <isinclude template="product/components/eanNumber" />
+                            </div>
+
                         </div>
+
+                        
 
                         <!-- Social Sharing Icons -->
                         <div class="row">

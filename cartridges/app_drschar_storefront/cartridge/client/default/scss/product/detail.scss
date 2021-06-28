@@ -87,6 +87,11 @@ label.availability {
     color:$greenCheckMark;
 }
 
+.ean-number{
+    color: $grey3;
+    margin-top: 1.071em;
+}
+
 @include media-breakpoint-up(sm) {
     .product-number-rating {
         border-bottom: 1px solid $hr-border-color;
