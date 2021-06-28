@@ -3,9 +3,9 @@ var page = module.superModule;
 server.extend(page);
 /*Email test is an endpoint created in this controller to test
  of mailing of cancellation purchase orders without having to capture an order every time we make a change*/
- server.get('EmailTest', function(req, res, next) {
+ server.get('EmailCancel', function(req, res, next) {
     var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
-    var OrderMgr = require('dw/order/OrderMgr');//necesario para que jale
+    var OrderMgr = require('dw/order/OrderMgr');
     
     var paymentMgr = require('dw/order/PaymentMgr');
     var ContentMgr = require('dw/content/ContentMgr');

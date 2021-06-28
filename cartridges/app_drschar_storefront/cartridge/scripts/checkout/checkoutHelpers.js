@@ -609,7 +609,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset,
     emailHelpers.sendEmail(emailObj, 'emails/orderConfirmation', orderObject);
 }
 /**
- * Sends a confirmation to the current user
+ * Sends a cancellation order email to the current user
  * @param {dw.order.Order} order - The current user's order
  * @param {string} locale - the current request's locale id
  * @returns {void}
@@ -836,6 +836,7 @@ module.exports = {
     savePaymentInstrumentToWallet: savePaymentInstrumentToWallet,
     getRenderedPaymentInstruments: getRenderedPaymentInstruments,
     sendConfirmationEmail: sendConfirmationEmail,
+    sendCancellationEmail: sendCancellationEmail,
     ensureValidShipments: ensureValidShipments,
     setGift: setGift
 };
