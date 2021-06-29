@@ -16,9 +16,8 @@ server.extend(page);
     var aboutUsAsset = ContentMgr.getContent('footer-about');
 
     var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
-
-    var orderid = '00001303';//put here number of an existing order to be canceled
-    var paymentid='CREDIT_CARD'//put here payment method used for the order
+    var orderid = req.querystring.orderid;//number of an existing order to be canceled
+    var paymentid= req.querystring.paymentid;//payment method used for the order
     var paymentObject=paymentMgr.getPaymentMethod(paymentid);
     var order = OrderMgr.getOrder(orderid);
     var productQuantities=order.productQuantities;
@@ -43,7 +42,6 @@ server.get('EmailOrderShipped', function(req, res, next) {
     var aboutUsAsset = ContentMgr.getContent('footer-about');
 
     var contentAsset = { locateStoreAsset: locateStoreAsset, accountAsset: accountAsset, supportAsset: supportAsset, aboutUsAsset: aboutUsAsset};
-
     var orderid = req.querystring.orderid;//number of an existing order to confirm shipping
     var paymentid= req.querystring.paymentid;//payment method used for the order
     var paymentObject=paymentMgr.getPaymentMethod(paymentid);
