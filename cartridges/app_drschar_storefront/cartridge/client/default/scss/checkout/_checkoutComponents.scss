@@ -6,3 +6,9 @@
     background-image: url('../../images/drschar_static.jpg');
     background-position-y: -8.125em;
 }
+#paymentMethodsList{
+    padding-left: 0;
+    #rb_scheme,.paymentMethod_img,#lb_scheme{
+        display: none;
+    }
+}
