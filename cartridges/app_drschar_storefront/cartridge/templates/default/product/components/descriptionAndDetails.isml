@@ -28,7 +28,13 @@
             <div class="tab-pane general-information active" id="general-content" role="tabpanel">
                 <isinclude template="product/components/details" />
             </div>
-            <div class="tab-pane general-information" id="allergy-content" role="tabpanel">
+            <div class="tab-pane allergy-information" id="allergy-content" role="tabpanel">
+                
+            </div>
+            <div class="tab-pane ingredients-information" id="ingredients-content" role="tabpanel">
+                <isinclude template="product/components/ingredients" />
+            </div>
+            <div class="tab-pane nutrition-information" id="nutrition-content" role="tabpanel">
 
             </div>
         </div>
