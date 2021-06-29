@@ -59,7 +59,8 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
                 breadcrumbs: showProductPageHelperResult.breadcrumbs,
                 canonicalUrl: showProductPageHelperResult.canonicalUrl,
                 schemaData: showProductPageHelperResult.schemaData,
-                EAN:fullProduct.EAN
+                EAN:fullProduct.EAN,
+                ingredients:fullProduct.custom.ingredients
             });
         }
     }
