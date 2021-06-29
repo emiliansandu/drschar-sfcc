@@ -6,3 +6,21 @@
          cursor: pointer;
     }
 }
+
+
+.nav-tabs{
+    border-bottom: 0;
+}
+
+.nav-tabs .nav-link {
+    border-bottom: .188em solid $grey3;
+    &:hover{
+        border-bottom: .188em solid $blue;
+    }
+}
+
+.nav-item{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+

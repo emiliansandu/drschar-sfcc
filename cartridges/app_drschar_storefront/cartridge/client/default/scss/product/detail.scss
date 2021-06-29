@@ -90,6 +90,7 @@ label.availability {
 .ean-number{
     color: $grey3;
     margin-top: 1.071em;
+    text-align: center;
 }
 
 @include media-breakpoint-up(sm) {

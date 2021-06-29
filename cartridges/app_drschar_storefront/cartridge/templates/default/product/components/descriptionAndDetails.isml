@@ -1,24 +1,37 @@
 <div class="description-and-detail">
-    <div class="row product-attributes collapsible-xs">
-        <isinclude template="product/components/attributes" />
-    </div>
 
-    <isif condition="${product.longDescription}">
-        <hr class="d-sm-none">
-    </isif>
+    <ul class="nav nav-tabs nav-fill" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#general-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.general', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#allergy-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.allergy', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#ingredients-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.ingredients', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#nutrition-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</span>
+            </a>
+        </li>
+    </ul>
 
-    <div class="row details collapsible-xs <isif condition="${!product.longDescription}">hidden-xl-down</isif>">
-        <div class="col-sm-12 col-md-4 col-lg-3">
-            <button class="title btn text-left btn-block d-sm-none"
-                    aria-expanded="false" aria-controls="collapsible-details-${loopState && loopState.count ? loopState.count : '1' }"
-            >
-                ${Resource.msg('label.details', 'product', null)}
-            </button>
-            <h2 class="title d-none d-sm-block">
-                ${Resource.msg('label.details', 'product', null)}
-            </h2>
+    <div class="information-content">
+        <div class="tab-content">
+            <div class="tab-pane general-information active" id="general-content" role="tabpanel">
+                <isinclude template="product/components/details" />
+            </div>
+            <div class="tab-pane general-information" id="allergy-content" role="tabpanel">
+
+            </div>
         </div>
-
-        <isinclude template="product/components/details" />
     </div>
+
 </div>
