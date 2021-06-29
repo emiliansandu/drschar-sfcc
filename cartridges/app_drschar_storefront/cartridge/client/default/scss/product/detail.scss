@@ -124,8 +124,8 @@ label.availability {
     }
 }
 
-.product-number {
-    color: $product-number-grey;
+.product-number,.weight {
+    color: $grey3;
     font-size: 0.875em;
     padding-bottom: 0.938em;
     padding-top: 0.938em;
