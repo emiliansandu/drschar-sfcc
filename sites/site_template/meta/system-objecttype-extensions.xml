@@ -7261,6 +7261,44 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusIsEnabled">
+                <display-name xml:lang="x-default">login Radius IsEnabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusApiKey">
+                <display-name xml:lang="x-default">Api Key</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>Api Key</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusGoogleRecaptchaSiteKey">
+                <display-name xml:lang="x-default">Google Recaptcha SiteKey</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>Google Recaptcha SiteKey</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusSiteName">
+                <display-name xml:lang="x-default">Site Name</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>Your site name</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusDebuggingEnabled">
+                <display-name xml:lang="x-default">Debugging</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
             <attribute-definition attribute-id="mapAPI">
                 <display-name xml:lang="x-default">google map api key</display-name>
                 <type>string</type>
@@ -7643,6 +7681,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Google Tag Manager</display-name>
                 <attribute attribute-id="GTMId"/>
                 <attribute attribute-id="GTMEnable"/>
+            </attribute-group>
+            <attribute-group group-id="LoginRadius">
+                <display-name xml:lang="x-default">LoginRadius</display-name>
+                <attribute attribute-id="loginRadiusIsEnabled"/>
+                <attribute attribute-id="loginRadiusApiKey"/>
+                <attribute attribute-id="loginRadiusGoogleRecaptchaSiteKey"/>
+                <attribute attribute-id="loginRadiusSiteName"/>
+                <attribute attribute-id="loginRadiusDebuggingEnabled"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
