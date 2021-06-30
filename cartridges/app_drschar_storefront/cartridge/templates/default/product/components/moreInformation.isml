@@ -1,6 +1,6 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets');
-    assets.addJs('/js/product/productInformation.js');
+    assets.addJs('/js/productInformation.js');
     assets.addCss('/css/product/productInformation.css');
 </isscript>
 
