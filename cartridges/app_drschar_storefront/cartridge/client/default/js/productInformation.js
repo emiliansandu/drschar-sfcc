@@ -10,10 +10,11 @@ $(document).ready(function () {
     });
 
     //Dinamic resize image height - Square image
-    var elem = $(".img-fluid, .img-thumbnail")[0];
+    var elem = $(".carousel-item.active")[0];
   
     let resizeObserver = new ResizeObserver(() => {
-        var cw = $('.img-fluid, .img-thumbnail').width();
+        var cw = $('.carousel-item.active').width();
+        $('.img-fluid, .img-thumbnail').css({'width':cw+'px'});
         $('.img-fluid, .img-thumbnail').css({'height':cw+'px'});
     });
 
