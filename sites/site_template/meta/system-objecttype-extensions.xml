@@ -5156,6 +5156,13 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="googleEventAffiliation">
+                <display-name xml:lang="x-default">GoogleVerificationTag - Affiliation</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="checkTLS">
                 <display-name xml:lang="x-default">Check TLS</display-name>
                 <description xml:lang="x-default">When true, this causes a TLS check to take place based on whether or not a cookie ('dw_TLSWarning') has been set on the browser</description>
@@ -5808,6 +5815,8 @@
                 <display-name xml:lang="x-default">Google Tag Manager</display-name>
                 <attribute attribute-id="GTMId"/>
                 <attribute attribute-id="GTMEnable"/>
+                <attribute attribute-id="GoogleVerificationTag"/>
+                <attribute attribute-id="googleEventAffiliation"/>
             </attribute-group>
             <attribute-group group-id="Paypal_Checkout">
                 <display-name xml:lang="x-default">Paypal Configuration</display-name>
@@ -5822,7 +5831,6 @@
             <attribute-group group-id="Storefront Configs">
                 <display-name xml:lang="x-default">Storefront Configurations</display-name>
                 <attribute attribute-id="listPriceDefault"/>
-                <attribute attribute-id="GoogleVerificationTag"/>
                 <attribute attribute-id="countryCode"/>
                 <attribute attribute-id="customerServiceEmail"/>
                 <attribute attribute-id="mapAPI"/>

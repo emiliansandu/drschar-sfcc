@@ -27,7 +27,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -41,7 +41,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>womens-jewelry</category-id>
                             </category-condition>
                         </condition-group>
@@ -118,7 +118,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -193,7 +193,7 @@
         <excluded-products>
             <included-products>
                 <condition-group>
-                    <category-condition catalog-id="storefront-catalog-m-en">
+                    <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                         <category-id>electronics-televisions</category-id>
                     </category-condition>
                 </condition-group>
@@ -262,7 +262,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronic-games</category-id>
                             </category-condition>
                         </condition-group>
@@ -276,7 +276,7 @@
         <excluded-products>
             <included-products>
                 <condition-group>
-                    <category-condition catalog-id="storefront-catalog-m-en">
+                    <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                         <category-id>newarrivals</category-id>
                         <category-id>womens</category-id>
                         <category-id>mens</category-id>
@@ -380,7 +380,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -454,7 +454,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -502,18 +502,18 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">5.99</amount>
-            <amount order-value="100.0">7.99</amount>
-            <amount order-value="200.0">9.99</amount>
-            <amount order-value="500.0">15.99</amount>
+            <amount order-value="100">7.99</amount>
+            <amount order-value="200">9.99</amount>
+            <amount order-value="500">15.99</amount>
         </price-table>
         <product-cost-groups>
             <product-cost-group>
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="electronics-m-catalog">
+                            <category-condition catalog-id="electronics-m-catalog" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -527,7 +527,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>womens-jewelry</category-id>
                             </category-condition>
                         </condition-group>
@@ -593,18 +593,18 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">9.99</amount>
-            <amount order-value="100.0">11.99</amount>
-            <amount order-value="200.0">15.99</amount>
-            <amount order-value="500.0">20.99</amount>
+            <amount order-value="100">11.99</amount>
+            <amount order-value="200">15.99</amount>
+            <amount order-value="500">20.99</amount>
         </price-table>
         <product-cost-groups>
             <product-cost-group>
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -670,11 +670,11 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">15.99</amount>
-            <amount order-value="100.0">19.99</amount>
-            <amount order-value="200.0">21.99</amount>
-            <amount order-value="500.0">29.99</amount>
+            <amount order-value="100">19.99</amount>
+            <amount order-value="200">21.99</amount>
+            <amount order-value="500">29.99</amount>
         </price-table>
         <excluded-addresses>
             <included-addresses>
@@ -731,7 +731,7 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">1.99</amount>
         </price-table>
         <product-cost-groups>
@@ -739,7 +739,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-gaming</category-id>
                             </category-condition>
                         </condition-group>
