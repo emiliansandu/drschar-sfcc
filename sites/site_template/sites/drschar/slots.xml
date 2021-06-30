@@ -115,6 +115,15 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="help-slot-m" context="global" configuration-id="Help Slot" assigned-to-site="false">
+        <description>Provide information about the product</description>
+        <template>slots/content/htmlSlotContainer.isml</template>
+        <enabled-flag>false</enabled-flag>
+        <content>
+            <html/>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="404-promo-m" context="global" configuration-id="Promo Zune" default="true" assigned-to-site="true">
         <description>Free Microsoft Zune with Purchase of $500 or More in Electronics</description>
         <template>slots/content/htmlSlotContainer.isml</template>
