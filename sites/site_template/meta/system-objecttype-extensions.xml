@@ -7266,7 +7266,7 @@ Direct or Redirect</description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
-                <default-value>true</default-value>
+                <default-value>false</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="loginRadiusApiKey">
                 <display-name xml:lang="x-default">Api Key</display-name>
