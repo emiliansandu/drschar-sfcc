@@ -27,5 +27,6 @@ module.exports = {
     bonusUnitPrice: require('*/cartridge/models/product/decorators/bonusUnitPrice'),
     raw: require('*/cartridge/models/product/decorators/raw'),
     pageMetaData: require('*/cartridge/models/product/decorators/pageMetaData'),
-    template: require('*/cartridge/models/product/decorators/template')
+    template: require('*/cartridge/models/product/decorators/template'),
+    drscharProdAttributes: require('*/cartridge/models/product/decorators/drscharProdAttributes')
 };
