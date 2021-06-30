@@ -1,59 +1,91 @@
 <div class="description-and-detail">
 
-    <!-- Nav Tabs section -->
+    <!-- Mobile drawer section -->
     <ul class="nav nav-tabs nav-fill" role="tablist">
-        <li class="nav-item collapsible-xs">
-            <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="collapsible-general-${loopState && loopState.count ? loopState.count : '1'}">
+        <li class="nav-item collapsible-xs active">
+            <button class="title btn text-left btn-block d-sm-none" aria-expanded="true"
+                aria-controls="m-general-${loopState && loopState.count ? loopState.count : '1'}">
                 ${Resource.msg('label.tab.tittle.general', 'product', null)}
             </button>
-            <a class="nav-link active d-none d-sm-block" data-toggle="tab" href="#general-content" role="tab">
-                <span class="title">${Resource.msg('label.tab.tittle.general', 'product', null)}</span>
-            </a>
+            <div class="d-sm-none">
+                <isinclude template="product/components/details" />
+            </div>
         </li>
         <li class="nav-item collapsible-xs">
             <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="collapsible-allergy-${loopState && loopState.count ? loopState.count : '1'}">
+                aria-controls="m-allergy-${loopState && loopState.count ? loopState.count : '1'}">
                 ${Resource.msg('label.tab.tittle.allergy', 'product', null)}
             </button>
-            <a class="nav-link d-none d-sm-block" data-toggle="tab" href="#allergy-content" role="tab">
-                <span class="title">${Resource.msg('label.tab.tittle.allergy', 'product', null)}</span>
-            </a>
+            <div class="d-sm-none">
+                <isinclude template="product/components/allergy" />
+            </div>
         </li>
         <li class="nav-item collapsible-xs">
             <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="collapsible-ingredients-${loopState && loopState.count ? loopState.count : '1'}">
+                aria-controls="m-ingredients-${loopState && loopState.count ? loopState.count : '1'}">
                 ${Resource.msg('label.tab.tittle.ingredients', 'product', null)}
             </button>
-            <a class="nav-link d-none d-sm-block" data-toggle="tab" href="#ingredients-content" role="tab">
-                <span class="title">${Resource.msg('label.tab.tittle.ingredients', 'product', null)}</span>
-            </a>
+            <div class="d-sm-none">
+                <isinclude template="product/components/ingredients" />
+            </div>
         </li>
         <li class="nav-item collapsible-xs">
             <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="collapsible-nutrition-${loopState && loopState.count ? loopState.count : '1'}">
+                aria-controls="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}">
                 ${Resource.msg('label.tab.tittle.nutrition', 'product', null)}
             </button>
-            <a class="nav-link d-none d-sm-block" data-toggle="tab" href="#nutrition-content" role="tab">
-                <span class="title">${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</span>
+            <div class="d-sm-none">
+                <isinclude template="product/components/nutrition" />
+            </div>
+        </li>
+    </ul>
+
+    <!-- Tabs Section -->
+    <ul class="nav nav-tabs nav-fill" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active d-none d-sm-block" data-toggle="tab"
+                href="#general-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.general', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-none d-sm-block" data-toggle="tab"
+                href="#allergy-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.allergy', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link title d-none d-sm-block" data-toggle="tab"
+                href="#ingredients-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.ingredients', 'product', null)}</span>
+            </a>
+        </li>
+        <li class="nav-item collapsible-xs">
+            <a class="nav-link title d-none d-sm-block" data-toggle="tab"
+                href="#nutrition-content" role="tab">
+                <span>${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</span>
             </a>
         </li>
     </ul>
 
     <!-- Content Tabs Section-->
-    <div class="information-content">
+    <div class="information-content" id="content-attributes-tab">
         <div class="tab-content">
-            <div class="tab-pane general-information active" id="general-content" role="tabpanel">
+            <div id="general-content"
+                class="tab-pane general-information active" role="tabpanel">
                 <isinclude template="product/components/details" />
             </div>
-            <div class="tab-pane allergy-information" id="allergy-content" role="tabpanel">
-
+            <div id="allergy-content"
+                class="tab-pane allergy-information" role="tabpanel">
+                <isinclude template="product/components/allergy" />
             </div>
-            <div class="tab-pane ingredients-information" id="ingredients-content" role="tabpanel">
+            <div id="ingredients-content"
+                class="tab-pane ingredients-information" role="tabpanel">
                 <isinclude template="product/components/ingredients" />
             </div>
-            <div class="tab-pane nutrition-information" id="nutrition-content" role="tabpanel">
-
+            <div id="nutrition-content"
+                class="tab-pane nutrition-information" role="tabpanel">
+                <isinclude template="product/components/nutrition" />
             </div>
         </div>
     </div>

@@ -25,6 +25,14 @@ label.color ~ a:hover {
 }
 
 .description-and-detail {
+
+    @media (max-width: 700px){
+        #content-attributes-tab{
+            display: none;
+        }
+    }
+    
+
     margin-top: 2em;
 
     @include media-breakpoint-only(xs) {

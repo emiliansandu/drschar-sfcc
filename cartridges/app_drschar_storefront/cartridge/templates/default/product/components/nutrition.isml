@@ -1,0 +1,3 @@
+<div id="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
+    <isprint value="${product.shortDescription}" encoding="off" />
+</div>
