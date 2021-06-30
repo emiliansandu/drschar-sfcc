@@ -156,6 +156,9 @@
             <div class="recommendations">
                 <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
             </div>
+            <div class="help">
+                <isslot id="help-slot-m" description="Help with products" context="global" context-object="${pdict.product.raw}" />
+            </div>
         </div>
     </isobject>
     <object id="data-product-analitycs" data-url="${URLUtils.https('Product-Data', 'pid', pdict.product.id,'eventType','view_item')}" />
