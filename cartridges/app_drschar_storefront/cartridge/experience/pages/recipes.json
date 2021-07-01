@@ -1,0 +1,16 @@
+{
+    "name": "dr_schar_Recipes",
+    "description": "Dr. Schar Recipes Page",
+    "region_definitions":[
+        {
+          "id": "region1",
+          "name": "Recipes 1st DrSchar Region",
+          "max_components": 1
+      },
+      {
+          "id": "region2",
+          "name": "Recipes 2nd DrSchar Region"
+      }
+      
+      ]
+}
