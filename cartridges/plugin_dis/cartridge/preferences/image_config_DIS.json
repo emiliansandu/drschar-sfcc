@@ -8,8 +8,8 @@
 		"scaleHeight": 800
 	},
 	"medium": {
-		"scaleWidth": 400,
-		"scaleHeight": 400
+		"scaleWidth": 650,
+		"scaleHeight": 650
 	},
 	"small": {
 		"scaleWidth": 140,
