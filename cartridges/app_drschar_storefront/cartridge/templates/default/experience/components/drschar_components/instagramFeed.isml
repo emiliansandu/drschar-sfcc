@@ -9,10 +9,12 @@
                     <div class="product-tile">
                         <div class="image-container">
                                 <isif condition="${post.media_type=='IMAGE'}">
-                                <img class="tile-image" src="${post.media_url}" alt="${post.id}" title="${post.id}">
+                                <div class="tile-image-background" style="background-image:url(${post.media_url})" alt="${post.id}" title="${post.id}">
+                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden"/>
+                                </div>
                                 </isif>
                                 <isif condition="${post.media_type=='VIDEO'}">
-                                <div class="tile-image-video" style="background-image:url(${post.thumbnail_url})" alt="${post.id}" title="${post.id}">
+                                <div class="tile-image-background" style="background-image:url(${post.thumbnail_url})" alt="${post.id}" title="${post.id}">
                                 </div>
                                 </isif>
                             <div class="overlay">
