@@ -1,4 +1,5 @@
 <div class="container d-flex flex-column flex-lg-row justify-content-center">
+   <isif condition="${product.videoMedia}">
     <div class="col-lg-6 col-12 flex-column">
         <isif condition="${product.longDescription}">
             <div class="row">
@@ -45,4 +46,49 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
-    </div>
+    </div>   
+        
+    <iselse/>
+    <div class="col-lg-12 col-12 flex-column">
+        <isif condition="${product.longDescription}">
+            <div class="row">
+                <div class="col-12">${product.longDescription}</div>
+            </div>
+        </isif>
+        <div class="row mt-3">
+            <isif condition="${product.gcGlutenFree}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/GlutenFree.svg')}" width="100"
+                    height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+            <isif condition="${product.gcWheatFree}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/WheatFree.svg')}" width="100"
+                    height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+            <isif condition="${product.gcDairyFree}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/DairyFree.svg')}" width="100"
+                    height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+            <isif condition="${product.gcLactoseFree}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/LactoseFree.svg')}" width="100"
+                    height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+            <isif condition="${product.gcNonGMO}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/NonGMO.svg')}" width="100"
+                    height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+            <isif condition="${product.gcPreservativeFree}">
+                <img class="mx-2" src="${URLUtils.httpsStatic('/images/generalInfoTab/PreservativeFree.svg')}"
+                    width="100" height="84" alt="Schär - Best in Gluten Free" border="0" style="height: auto;" />
+            </isif>
+        </div>
+        <div class="row mt-3">
+            <isif condition="${product.textClaim}">
+                <isloop items="${product.textClaim}" var="textclaim" status="loopstatus">
+                    <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${textclaim}&nbsp;</div>
+                </isloop>
+            </isif>
+        </div>
+    </div>   
+        
+    </isif>
+</div>
