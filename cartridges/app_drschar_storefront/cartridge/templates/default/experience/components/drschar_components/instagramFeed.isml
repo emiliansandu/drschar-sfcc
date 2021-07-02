@@ -1,6 +1,7 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
     assets.addCss('css/experience/components/drschar_components/instagramFeed.css');
+    assets.addJs('/js/instagramFeed.js');
 </isscript>    
     <div class="container">
             <div class="row">
@@ -9,12 +10,13 @@
                     <div class="product-tile">
                         <div class="image-container">
                                 <isif condition="${post.media_type=='IMAGE'}">
-                                <div class="tile-image-background" style="background-image:url(${post.media_url})" alt="${post.id}" title="${post.id}">
-                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden"/>
+                                <div class="tile-image-background" style="background-image:url(${post.media_url})">
+                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden" alt="${post.id}" title="${post.id}"/>
                                 </div>
                                 </isif>
                                 <isif condition="${post.media_type=='VIDEO'}">
-                                <div class="tile-image-background" style="background-image:url(${post.thumbnail_url})" alt="${post.id}" title="${post.id}">
+                                <div class="tile-image-background" style="background-image:url(${post.thumbnail_url})" >
+                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden" alt="${post.id}" title="${post.id}"/>
                                 </div>
                                 </isif>
                             <div class="overlay">
