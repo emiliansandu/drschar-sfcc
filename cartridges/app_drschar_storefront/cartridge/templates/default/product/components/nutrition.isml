@@ -1,3 +1,154 @@
 <div id="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
-    <isprint value="${product.shortDescription}" encoding="off" />
+    <isif condition="${pdict.NutritionFacts}">
+        <div id="NutritionFactsTabContent">
+            <section class="nutrition-label vertical-label">
+                <div class="nutrition-row">
+                    <div class="nutrition-column">
+                    <header class="nutrition-header">
+                        <h1 class="nutrition-facts border-b">Nutrition Facts</h1>
+                        <div class="nutrition-row">
+                        <div class="nutrition-column">
+                            <div class="servings">8 servings per container</div>
+                            <div class="text-md text-bold show-tablet">Serving size</div>
+                        </div>
+                        </div>
+                        <div class="nutrition-row border-b-lg border-b-tablet">
+                        <div class="nutrition-column hide-tablet">
+                            <div class="text-md text-bold">Serving size</div>
+                        </div>
+                        <div class="nutrition-column">
+                            <div class="text-md text-bold text-right text-left-tablet">2/3 cup (55g)</div>
+                        </div>
+                        </div>
+                        <div class="nutrition-row border-b-md border-b-none-tablet">
+                        <div class="nutrition-column text-bold">
+                            <div class="text-sm hide-tablet">Amount per serving</div>
+                            <div class="calories">Calories</div>
+                            <div class="text-sm show-tablet">per serving</div>
+                        </div>
+                        <div class="nutrition-column calories amount align-bottom text-right">
+                            230
+                        </div>
+                        </div>
+                    </header>
+                    </div>
+                    <div class="nutrition-column">
+                    <div class="nutrition-row">
+                        <div class="nutrition-column">
+                        <div class="nutrition-row border-b border-b-md-tablet">
+                            <div class="nutrition-column text-bold text-sm show-tablet">
+                            Amount/serving
+                            </div>
+                            <div class="nutrition-column text-right text-bold text-sm">
+                            % Daily Value *
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">Total Fat</span> 8g
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            10%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">Saturated Fat 1g</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            5%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">
+                                    <i>Trans</i> Fat 0g</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">Cholesterol</span> 0mg
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            0%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b border-b-md-tablet">
+                            <div class="nutrition-column">
+                            <span class="text-bold">Sodium</span> 160mg
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            7%
+                            </div>
+                        </div>
+                        </div>
+                        <div class="nutrition-column">
+                        <div class="nutrition-row border-b-md show-tablet">
+                            <div class="nutrition-column text-bold text-sm">
+                            Amount/serving
+                            </div>
+                            <div class="nutrition-column text-right text-bold text-sm">
+                            % Daily Value *
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">Total Carbohydrate</span> 37g
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            13%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">Dietary Fiber 4g</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            14%
+                            </div>
+                        </div>
+                        <div class="nutrition-row">
+                            <div class="nutrition-column">
+                            <span class="text-indent">Total Sugars 12g</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            </div>
+                        </div>
+                        <div class="nutrition-row text-indent-md border-t-sm">
+                            <div class="nutrition-column">
+                            Includes 10g Added Sugars
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            20%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-t-sm border-b-lg border-b-md-tablet">
+                            <div class="nutrition-column">
+                            <span class="text-bold">Protein</span> 3g
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="nutrition-row">
+                        <div class="nutrition-column">
+                        Vitamin D 2mcg 10% • Calcium 260mg 20% • Iron 8mg 45% • Potassium 235mg 6% • Thiamin 15% • Riboflavin 8% • Niacin 10% • Vitamin B6 0.4mg 25%
+                        </div>
+                    </div>
+                    </div>
+                    <div class="nutrition-column">
+                    <footer class="nutrition-footer">
+                        <div class="asteric">*</div>
+                        <div class="footnote">
+                        The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+                        </div>
+                    </footer>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </isif>
 </div>

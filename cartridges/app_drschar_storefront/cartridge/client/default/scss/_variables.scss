@@ -65,6 +65,9 @@ $font-family-josefina-thin: "Josefin Sans Thin";
 
 $font-family-header:$font-family-bold;
 $font-family-base:$font-family-andes;
+$font-regular: 'Arial', 'Helvetica', 'sans-serif';
+$font-black: "Arial Black", "Helvetica Black", "Arial-BoldMT";
+$tablet-up: "min-width: 767px";
 
 @font-face {
     font-family: "Brandon Grotesque Bold";
