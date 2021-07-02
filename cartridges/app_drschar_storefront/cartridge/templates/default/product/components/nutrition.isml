@@ -8,7 +8,7 @@
                         <h1 class="nutrition-facts border-b">Nutrition Facts</h1>
                         <div class="nutrition-row">
                         <div class="nutrition-column">
-                            <div class="servings">8 servings per container</div>
+                            <div class="servings">${pdict.NutritionFacts.servingPerContainer} servings per container</div>
                             <div class="text-md text-bold show-tablet">Serving size</div>
                         </div>
                         </div>
@@ -17,7 +17,7 @@
                             <div class="text-md text-bold">Serving size</div>
                         </div>
                         <div class="nutrition-column">
-                            <div class="text-md text-bold text-right text-left-tablet">2/3 cup (55g)</div>
+                            <div class="text-md text-bold text-right text-left-tablet">${pdict.NutritionFacts.servingSize}</div>
                         </div>
                         </div>
                         <div class="nutrition-row border-b-md border-b-none-tablet">
@@ -27,7 +27,7 @@
                             <div class="text-sm show-tablet">per serving</div>
                         </div>
                         <div class="nutrition-column calories amount align-bottom text-right">
-                            230
+                            ${pdict.NutritionFacts.calories}
                         </div>
                         </div>
                     </header>
@@ -45,42 +45,42 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Total Fat</span> 8g
+                            <span class="text-bold">Total Fat</span> ${pdict.NutritionFacts.totalFat1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            10%
+                            ${pdict.NutritionFacts.totalFat2}%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">Saturated Fat 1g</span>
+                            <span class="text-indent">Saturated Fat ${pdict.NutritionFacts.satFat1}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            5%
+                            ${pdict.NutritionFacts.satFat2}%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
                             <span class="text-indent">
-                                    <i>Trans</i> Fat 0g</span>
+                                    <i>Trans</i> Fat ${pdict.NutritionFacts.transFat}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Cholesterol</span> 0mg
+                            <span class="text-bold">Cholesterol</span> ${pdict.NutritionFacts.cholesterol1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            0%
+                            ${pdict.NutritionFacts.cholesterol2}%
                             </div>
                         </div>
                         <div class="nutrition-row border-b border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">Sodium</span> 160mg
+                            <span class="text-bold">Sodium</span> ${pdict.NutritionFacts.sodium1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            7%
+                            ${pdict.NutritionFacts.sodium2}%
                             </div>
                         </div>
                         </div>
@@ -95,47 +95,48 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Total Carbohydrate</span> 37g
+                            <span class="text-bold">Total Carbohydrate</span> ${pdict.NutritionFacts.totalCarb1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            13%
+                            ${pdict.NutritionFacts.totalCarb2}%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">Dietary Fiber 4g</span>
+                            <span class="text-indent">Dietary Fiber ${pdict.NutritionFacts.fiber1}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            14%
+                            ${pdict.NutritionFacts.fiber2}%
                             </div>
                         </div>
                         <div class="nutrition-row">
                             <div class="nutrition-column">
-                            <span class="text-indent">Total Sugars 12g</span>
+                            <span class="text-indent">Total Sugars ${pdict.NutritionFacts.totalSugars}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             </div>
                         </div>
                         <div class="nutrition-row text-indent-md border-t-sm">
                             <div class="nutrition-column">
-                            Includes 10g Added Sugars
+                            Includes ${pdict.NutritionFacts.sugars1} Added Sugars
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            20%
+                            ${pdict.NutritionFacts.sugars2}%
                             </div>
                         </div>
                         <div class="nutrition-row border-t-sm border-b-lg border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">Protein</span> 3g
+                            <span class="text-bold">Protein</span> ${pdict.NutritionFacts.protein1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.protein2}%
                             </div>
                         </div>
                         </div>
                     </div>
                     <div class="nutrition-row">
                         <div class="nutrition-column">
-                        Vitamin D 2mcg 10% • Calcium 260mg 20% • Iron 8mg 45% • Potassium 235mg 6% • Thiamin 15% • Riboflavin 8% • Niacin 10% • Vitamin B6 0.4mg 25%
+                        Vitamin D ${pdict.NutritionFacts.vitaminD1 + ' ' + pdict.NutritionFacts.vitaminD2}% • Calcium ${pdict.NutritionFacts.calcium1 + ' ' + pdict.NutritionFacts.calcium2}% • Iron ${pdict.NutritionFacts.iron1 + ' ' + pdict.NutritionFacts.iron2}% • Potassium ${pdict.NutritionFacts.potassium1 + ' ' + pdict.NutritionFacts.potassium2}% • Thiamin ${pdict.NutritionFacts.thiamin1 + ' ' + pdict.NutritionFacts.thiamin2}% • Riboflavin ${pdict.NutritionFacts.riboflavin1 + ' ' + pdict.NutritionFacts.riboflavin2}% • Niacin ${pdict.NutritionFacts.niacin1 + ' ' + pdict.NutritionFacts.niacin2}% 
                         </div>
                     </div>
                     </div>
