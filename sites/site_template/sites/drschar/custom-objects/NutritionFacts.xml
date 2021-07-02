@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="NutritionFacts" object-id="1100610600">
+        <object-attribute attribute-id="calcium1">14mg</object-attribute>
+        <object-attribute attribute-id="calcium2">12.0</object-attribute>
+        <object-attribute attribute-id="calories">32</object-attribute>
+        <object-attribute attribute-id="cholesterol1">0g</object-attribute>
+        <object-attribute attribute-id="cholesterol2">0.0</object-attribute>
+        <object-attribute attribute-id="fiber1">12mg</object-attribute>
+        <object-attribute attribute-id="fiber2">3.0</object-attribute>
+        <object-attribute attribute-id="iron1">0mg</object-attribute>
+        <object-attribute attribute-id="iron2">0.0</object-attribute>
+        <object-attribute attribute-id="niacin1">14g</object-attribute>
+        <object-attribute attribute-id="niacin2">1.2</object-attribute>
+        <object-attribute attribute-id="potassium1">23mg</object-attribute>
+        <object-attribute attribute-id="potassium2">33.0</object-attribute>
+        <object-attribute attribute-id="productID">1100610600</object-attribute>
+        <object-attribute attribute-id="protein1">12g</object-attribute>
+        <object-attribute attribute-id="protein2">99.0</object-attribute>
+        <object-attribute attribute-id="riboflavin1">0mg</object-attribute>
+        <object-attribute attribute-id="riboflavin2">0.0</object-attribute>
+        <object-attribute attribute-id="satFat1">23mg</object-attribute>
+        <object-attribute attribute-id="satFat2">1.0</object-attribute>
+        <object-attribute attribute-id="servingPerContainer">200</object-attribute>
+        <object-attribute attribute-id="servingSize">10 mg</object-attribute>
+        <object-attribute attribute-id="sodium1">20 mg</object-attribute>
+        <object-attribute attribute-id="sodium2">0.0</object-attribute>
+        <object-attribute attribute-id="sugars1">4mg</object-attribute>
+        <object-attribute attribute-id="sugars2">3.0</object-attribute>
+        <object-attribute attribute-id="thiamin1">22mg</object-attribute>
+        <object-attribute attribute-id="thiamin2">3.0</object-attribute>
+        <object-attribute attribute-id="totalCarb1">14mg</object-attribute>
+        <object-attribute attribute-id="totalCarb2">23.0</object-attribute>
+        <object-attribute attribute-id="totalFat1">44mg</object-attribute>
+        <object-attribute attribute-id="totalFat2">33.0</object-attribute>
+        <object-attribute attribute-id="totalSugars">23mg</object-attribute>
+        <object-attribute attribute-id="transFat">always</object-attribute>
+        <object-attribute attribute-id="vitaminD1">1mg</object-attribute>
+        <object-attribute attribute-id="vitaminD2">4.0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="NutritionFacts" object-id="1100030600">
+        <object-attribute attribute-id="calcium1">14mg</object-attribute>
+        <object-attribute attribute-id="calcium2">12.0</object-attribute>
+        <object-attribute attribute-id="calories">322</object-attribute>
+        <object-attribute attribute-id="cholesterol1">0g</object-attribute>
+        <object-attribute attribute-id="cholesterol2">0.0</object-attribute>
+        <object-attribute attribute-id="fiber1">12mg</object-attribute>
+        <object-attribute attribute-id="fiber2">3.0</object-attribute>
+        <object-attribute attribute-id="iron1">0mg</object-attribute>
+        <object-attribute attribute-id="iron2">0.0</object-attribute>
+        <object-attribute attribute-id="niacin1">14g</object-attribute>
+        <object-attribute attribute-id="niacin2">1.2</object-attribute>
+        <object-attribute attribute-id="potassium1">23mg</object-attribute>
+        <object-attribute attribute-id="potassium2">33.0</object-attribute>
+        <object-attribute attribute-id="productID">1100030600</object-attribute>
+        <object-attribute attribute-id="protein1">12g</object-attribute>
+        <object-attribute attribute-id="protein2">99.0</object-attribute>
+        <object-attribute attribute-id="riboflavin1">0mg</object-attribute>
+        <object-attribute attribute-id="riboflavin2">0.0</object-attribute>
+        <object-attribute attribute-id="satFat1">23mg</object-attribute>
+        <object-attribute attribute-id="satFat2">1.0</object-attribute>
+        <object-attribute attribute-id="servingPerContainer">200</object-attribute>
+        <object-attribute attribute-id="servingSize">10 mg</object-attribute>
+        <object-attribute attribute-id="sodium1">20 mg</object-attribute>
+        <object-attribute attribute-id="sodium2">0.0</object-attribute>
+        <object-attribute attribute-id="sugars1">4mg</object-attribute>
+        <object-attribute attribute-id="sugars2">3.0</object-attribute>
+        <object-attribute attribute-id="thiamin1">22mg</object-attribute>
+        <object-attribute attribute-id="thiamin2">3.0</object-attribute>
+        <object-attribute attribute-id="totalCarb1">14mg</object-attribute>
+        <object-attribute attribute-id="totalCarb2">23.0</object-attribute>
+        <object-attribute attribute-id="totalFat1">44mg</object-attribute>
+        <object-attribute attribute-id="totalFat2">33.0</object-attribute>
+        <object-attribute attribute-id="totalSugars">23mg</object-attribute>
+        <object-attribute attribute-id="transFat">23mg</object-attribute>
+        <object-attribute attribute-id="vitaminD1">1mg</object-attribute>
+        <object-attribute attribute-id="vitaminD2">4.0</object-attribute>
+    </custom-object>
+
+</custom-objects>
