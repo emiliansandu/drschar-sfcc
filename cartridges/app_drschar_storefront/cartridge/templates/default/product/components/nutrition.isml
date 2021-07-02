@@ -5,16 +5,16 @@
                 <div class="nutrition-row">
                     <div class="nutrition-column">
                     <header class="nutrition-header">
-                        <h1 class="nutrition-facts border-b">Nutrition Facts</h1>
+                        <h1 class="nutrition-facts border-b">${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</h1>
                         <div class="nutrition-row">
                         <div class="nutrition-column">
-                            <div class="servings">${pdict.NutritionFacts.servingPerContainer} servings per container</div>
-                            <div class="text-md text-bold show-tablet">Serving size</div>
+                            <div class="servings">${pdict.NutritionFacts.servingPerContainer} ${Resource.msg('label.tab.nutrition.servingPerContainer', 'product', null)}</div>
+                            <div class="text-md text-bold show-tablet">${Resource.msg('label.tab.nutrition.servingSize', 'product', null)}</div>
                         </div>
                         </div>
                         <div class="nutrition-row border-b-lg border-b-tablet">
                         <div class="nutrition-column hide-tablet">
-                            <div class="text-md text-bold">Serving size</div>
+                            <div class="text-md text-bold">${Resource.msg('label.tab.nutrition.servingSize', 'product', null)}</div>
                         </div>
                         <div class="nutrition-column">
                             <div class="text-md text-bold text-right text-left-tablet">${pdict.NutritionFacts.servingSize}</div>
@@ -22,9 +22,9 @@
                         </div>
                         <div class="nutrition-row border-b-md border-b-none-tablet">
                         <div class="nutrition-column text-bold">
-                            <div class="text-sm hide-tablet">Amount per serving</div>
-                            <div class="calories">Calories</div>
-                            <div class="text-sm show-tablet">per serving</div>
+                            <div class="text-sm hide-tablet">${Resource.msg('label.tab.nutrition.amountPerServing', 'product', null)}</div>
+                            <div class="calories">${Resource.msg('label.tab.nutrition.calories', 'product', null)}</div>
+                            <div class="text-sm show-tablet">${Resource.msg('label.tab.nutrition.perServing', 'product', null)}</div>
                         </div>
                         <div class="nutrition-column calories amount align-bottom text-right">
                             ${pdict.NutritionFacts.calories}
@@ -37,15 +37,15 @@
                         <div class="nutrition-column">
                         <div class="nutrition-row border-b border-b-md-tablet">
                             <div class="nutrition-column text-bold text-sm show-tablet">
-                            Amount/serving
+                            ${Resource.msg('label.tab.nutrition.amountServing', 'product', null)}
                             </div>
                             <div class="nutrition-column text-right text-bold text-sm">
-                            % Daily Value *
+                            % ${Resource.msg('label.tab.nutrition.dailyValue', 'product', null)} *
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Total Fat</span> ${pdict.NutritionFacts.totalFat1}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalFat', 'product', null)}</span> ${pdict.NutritionFacts.totalFat1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.totalFat2}%
@@ -53,7 +53,7 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">Saturated Fat ${pdict.NutritionFacts.satFat1}</span>
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.satFat', 'product', null)} ${pdict.NutritionFacts.satFat1}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.satFat2}%
@@ -62,14 +62,14 @@
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
                             <span class="text-indent">
-                                    <i>Trans</i> Fat ${pdict.NutritionFacts.transFat}</span>
+                                ${Resource.msg('label.tab.nutrition.transFat', 'product', null)} ${pdict.NutritionFacts.transFat}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Cholesterol</span> ${pdict.NutritionFacts.cholesterol1}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.cholesterol', 'product', null)}</span> ${pdict.NutritionFacts.cholesterol1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.cholesterol2}%
@@ -77,7 +77,7 @@
                         </div>
                         <div class="nutrition-row border-b border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">Sodium</span> ${pdict.NutritionFacts.sodium1}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.sodium', 'product', null)}</span> ${pdict.NutritionFacts.sodium1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.sodium2}%
@@ -87,15 +87,15 @@
                         <div class="nutrition-column">
                         <div class="nutrition-row border-b-md show-tablet">
                             <div class="nutrition-column text-bold text-sm">
-                            Amount/serving
+                            ${Resource.msg('label.tab.nutrition.amountServing', 'product', null)}
                             </div>
                             <div class="nutrition-column text-right text-bold text-sm">
-                            % Daily Value *
+                            % ${Resource.msg('label.tab.nutrition.dailyValue', 'product', null)} *
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">Total Carbohydrate</span> ${pdict.NutritionFacts.totalCarb1}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalCarb', 'product', null)}</span> ${pdict.NutritionFacts.totalCarb1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.totalCarb2}%
@@ -103,7 +103,7 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">Dietary Fiber ${pdict.NutritionFacts.fiber1}</span>
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.dietaryFiber', 'product', null)} ${pdict.NutritionFacts.fiber1}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.fiber2}%
@@ -111,14 +111,14 @@
                         </div>
                         <div class="nutrition-row">
                             <div class="nutrition-column">
-                            <span class="text-indent">Total Sugars ${pdict.NutritionFacts.totalSugars}</span>
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.totalSugars', 'product', null)} ${pdict.NutritionFacts.totalSugars}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             </div>
                         </div>
                         <div class="nutrition-row text-indent-md border-t-sm">
                             <div class="nutrition-column">
-                            Includes ${pdict.NutritionFacts.sugars1} Added Sugars
+                            ${Resource.msg('label.tab.nutrition.includes', 'product', null)} ${pdict.NutritionFacts.sugars1} ${Resource.msg('label.tab.nutrition.addedSugars', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.sugars2}%
@@ -126,7 +126,7 @@
                         </div>
                         <div class="nutrition-row border-t-sm border-b-lg border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">Protein</span> ${pdict.NutritionFacts.protein1}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.protein', 'product', null)}</span> ${pdict.NutritionFacts.protein1}
                             </div>
                             <div class="nutrition-column text-bold text-right">
                             ${pdict.NutritionFacts.protein2}%
@@ -136,7 +136,7 @@
                     </div>
                     <div class="nutrition-row">
                         <div class="nutrition-column">
-                        Vitamin D ${pdict.NutritionFacts.vitaminD1 + ' ' + pdict.NutritionFacts.vitaminD2}% • Calcium ${pdict.NutritionFacts.calcium1 + ' ' + pdict.NutritionFacts.calcium2}% • Iron ${pdict.NutritionFacts.iron1 + ' ' + pdict.NutritionFacts.iron2}% • Potassium ${pdict.NutritionFacts.potassium1 + ' ' + pdict.NutritionFacts.potassium2}% • Thiamin ${pdict.NutritionFacts.thiamin1 + ' ' + pdict.NutritionFacts.thiamin2}% • Riboflavin ${pdict.NutritionFacts.riboflavin1 + ' ' + pdict.NutritionFacts.riboflavin2}% • Niacin ${pdict.NutritionFacts.niacin1 + ' ' + pdict.NutritionFacts.niacin2}% 
+                        ${Resource.msg('label.tab.nutrition.vitaminD', 'product', null)} ${pdict.NutritionFacts.vitaminD1 + ' ' + pdict.NutritionFacts.vitaminD2}% • ${Resource.msg('label.tab.nutrition.calcium', 'product', null)} ${pdict.NutritionFacts.calcium1 + ' ' + pdict.NutritionFacts.calcium2}% • ${Resource.msg('label.tab.nutrition.iron', 'product', null)} ${pdict.NutritionFacts.iron1 + ' ' + pdict.NutritionFacts.iron2}% • ${Resource.msg('label.tab.nutrition.potassium', 'product', null)} ${pdict.NutritionFacts.potassium1 + ' ' + pdict.NutritionFacts.potassium2}% • ${Resource.msg('label.tab.nutrition.thiamin', 'product', null)} ${pdict.NutritionFacts.thiamin1 + ' ' + pdict.NutritionFacts.thiamin2}% • ${Resource.msg('label.tab.nutrition.riboflavin', 'product', null)} ${pdict.NutritionFacts.riboflavin1 + ' ' + pdict.NutritionFacts.riboflavin2}% • ${Resource.msg('label.tab.nutrition.niacin', 'product', null)} ${pdict.NutritionFacts.niacin1 + ' ' + pdict.NutritionFacts.niacin2}% 
                         </div>
                     </div>
                     </div>
@@ -144,7 +144,7 @@
                     <footer class="nutrition-footer">
                         <div class="asteric">*</div>
                         <div class="footnote">
-                        The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+                            ${Resource.msg('label.tab.nutrition.footNote', 'product', null)}
                         </div>
                     </footer>
                     </div>
