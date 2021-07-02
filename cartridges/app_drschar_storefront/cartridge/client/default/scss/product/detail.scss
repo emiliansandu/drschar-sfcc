@@ -223,3 +223,19 @@ label.availability {
         }
     }
 }
+
+@include media-breakpoint-down(lg) {
+    .generalInfoImage{   
+            width: 70px;
+            height: 70px;        
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .generalInfoImage{   
+            width: 75px;
+            height: 75px;        
+    }
+  }
+
+
+
