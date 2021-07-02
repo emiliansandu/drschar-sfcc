@@ -9,6 +9,7 @@ var server = require('server');
 var cache = require('*/cartridge/scripts/middleware/cache');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
+const CustomObjectMgr = require('dw/object/CustomObjectMgr');
 
 /**
  * @typedef ProductDetailPageResourceMap
@@ -38,6 +39,7 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     var fullProduct = ProductMgr.getProduct(req.querystring.pid);
     var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
     var productType = showProductPageHelperResult.product.productType;
+    var NutritionalFactsObj = CustomObjectMgr.queryCustomObject('NutritionFacts','custom.productID = {0}', fullProduct.ID);
     if (!showProductPageHelperResult.product.online && productType !== 'set' && productType !== 'bundle') {
         res.setStatusCode(404);
         res.render('error/notFound');
@@ -60,7 +62,8 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
                 canonicalUrl: showProductPageHelperResult.canonicalUrl,
                 schemaData: showProductPageHelperResult.schemaData,
                 EAN:fullProduct.EAN,
-                ingredients:fullProduct.custom.ingredients
+                ingredients:fullProduct.custom.ingredients,
+                NutritionFacts: NutritionalFactsObj.custom
             });
         }
     }
