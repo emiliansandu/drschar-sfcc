@@ -1,5 +1,5 @@
 <div id="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
-    <isif condition="${pdict.NutritionFacts}">
+    <isif condition="${pdict.NutritionFacts !== null}">
         <div id="NutritionFactsTabContent">
             <section class="nutrition-label vertical-label">
                 <div class="nutrition-row">
