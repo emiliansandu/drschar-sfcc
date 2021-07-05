@@ -20,4 +20,8 @@ $(document).ready(function () {
 
     resizeObserver.observe(elem);
 
+    var longDescContent = $('.longDescContent').text();
+    $('.longDescContent').text('');
+    $('.longDescContent').append($.parseHTML(longDescContent));
+
 });
