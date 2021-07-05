@@ -1,3 +1,170 @@
-<div id="m-allergy-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
-    <isprint value="${product.shortDescription}" encoding="off" />
+<div class="container d-flex flex-column flex-lg-column justify-content-center">
+    <div class="row mt-3">
+        <div class="col-12">${Resource.msg('label.allergycontains', 'product', null)}</div>
+        <isif condition="${product.allergyContains}">
+            <isloop items="${product.allergyContains.value}" var="allergycontains" status="allergyContLoopstatus">
+                <div class="col-lg-3 col-6 mt-2"><i
+                        class='far fa-exclamation-circle'></i></i>&nbsp;${allergycontains}&nbsp;</div>
+            </isloop>
+        </isif>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">${Resource.msg('label.productis', 'product', null)}</div>
+        <isif condition="${product.almondFree}">
+            <div class="col-lg-3 col-6 mt-2"> <i class="far fa-check-circle"></i>&nbsp;${product.almondFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.beechNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.beechNutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.brazilNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.brazilNutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.butternutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.butternutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.cashewFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.cashewFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.chesnutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.chesnutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.chinquapinFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.chinquapinFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.clubWheatFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.clubWheatFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.coconutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.coconutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.crustaceansFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.crustaceansFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.durumWheatFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.durumWheatFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.eggFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.durumWheatFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.einkornFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.einkornFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.emmerFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.emmerFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.filberHazelnutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.filberHazelnutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.fishFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.fishFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.gincoNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.gincoNutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.glutenFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.glutenFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.hickoryNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.hickoryNutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.kamutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.kamutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.licheeNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.licheeNutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.lupineFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.lupineFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.macadamiaNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.macadamiaNutFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.milkFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.milkFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.otherTreeNutsFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.otherTreeNutsFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.peanutsFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.peanutsFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.pecanFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.pecanFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.pineNutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.pineNutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.pistachioFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.pistachioFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.semolinaFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.semolinaFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.sheanutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.sheanutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.shellfisFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.shellfisFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.soyFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.soyFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.treeNutsFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.treeNutsFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.triticaleFree}">
+            <div class="col-lg-3 col-6 mt-2"><i
+                    class="far fa-check-circle"></i>&nbsp;${product.triticaleFree.name}&nbsp;</div>
+        </isif>
+        <isif condition="${product.walnutFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.walnutFree.name}&nbsp;
+            </div>
+        </isif>
+        <isif condition="${product.wheatFree}">
+            <div class="col-lg-3 col-6 mt-2"><i class="far fa-check-circle"></i>&nbsp;${product.wheatFree.name}&nbsp;
+            </div>
+        </isif>
+
+        <div class="col-lg-12 col-12 mt-3">
+            <p>${Resource.msgf('label.allergenfilterhelp', 'product', null)}
+                <a href="${URLUtils.https('Page-Show', 'cid', 'allergen-help')}">
+                    ${Resource.msgf('label.allergencontentasset', 'product', null)}
+                </a>
+            </p>
+        </div>
+    </div>
 </div>
