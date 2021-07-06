@@ -136,13 +136,27 @@
                     </div>
                     <div class="nutrition-row">
                         <div class="nutrition-column">
-                            ${Resource.msg('label.tab.nutrition.vitaminD', 'product', null)} ${pdict.NutritionFacts.vitaminD1 != null ? pdict.NutritionFacts.vitaminD1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.vitaminD2 != null ? pdict.NutritionFacts.vitaminD2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% •
-                            ${Resource.msg('label.tab.nutrition.calcium', 'product', null)} ${pdict.NutritionFacts.calcium1 != null ? pdict.NutritionFacts.calcium1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.calcium2 != null ? pdict.NutritionFacts.calcium2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% • 
-                            ${Resource.msg('label.tab.nutrition.iron', 'product', null)} ${pdict.NutritionFacts.iron1 != null ? pdict.NutritionFacts.iron1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.iron2 != null ? pdict.NutritionFacts.iron2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% • 
-                            ${Resource.msg('label.tab.nutrition.potassium', 'product', null)} ${pdict.NutritionFacts.potassium1 != null ? pdict.NutritionFacts.potassium1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}  ${pdict.NutritionFacts.potassium2 != null ? pdict.NutritionFacts.potassium2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }% •
-                            ${Resource.msg('label.tab.nutrition.thiamin', 'product', null)} ${pdict.NutritionFacts.thiamin1 != null ? pdict.NutritionFacts.thiamin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.thiamin2 != null ? pdict.NutritionFacts.thiamin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% • 
-                            ${Resource.msg('label.tab.nutrition.riboflavin', 'product', null)} ${pdict.NutritionFacts.riboflavin1 != null ? pdict.NutritionFacts.riboflavin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.riboflavin2 != null ? pdict.NutritionFacts.riboflavin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% • 
-                            ${Resource.msg('label.tab.nutrition.niacin', 'product', null)} ${pdict.NutritionFacts.niacin1 != null ? pdict.NutritionFacts.niacin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.niacin2 != null ? pdict.NutritionFacts.niacin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% 
+                        <isif condition="${pdict.NutritionFacts.vitaminD1 != null}">
+                             ${Resource.msg('label.tab.nutrition.vitaminD', 'product', null)} ${pdict.NutritionFacts.vitaminD1 != null ? pdict.NutritionFacts.vitaminD1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.vitaminD2 != null ? pdict.NutritionFacts.vitaminD2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% •
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.calcium1 != null}">
+                               ${Resource.msg('label.tab.nutrition.calcium', 'product', null)} ${pdict.NutritionFacts.calcium1 != null ? pdict.NutritionFacts.calcium1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.calcium2 != null ? pdict.NutritionFacts.calcium2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% •  
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.iron1 != null}">
+                                ${Resource.msg('label.tab.nutrition.iron', 'product', null)} ${pdict.NutritionFacts.iron1 != null ? pdict.NutritionFacts.iron1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.iron2 != null ? pdict.NutritionFacts.iron2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% •      
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.potassium1 != null}">
+                                 ${Resource.msg('label.tab.nutrition.potassium', 'product', null)} ${pdict.NutritionFacts.potassium1 != null ? pdict.NutritionFacts.potassium1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}  ${pdict.NutritionFacts.potassium2 != null ? pdict.NutritionFacts.potassium2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }% •
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.potassium1 != null}">
+                                ${Resource.msg('label.tab.nutrition.thiamin', 'product', null)} ${pdict.NutritionFacts.thiamin1 != null ? pdict.NutritionFacts.thiamin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.thiamin2 != null ? pdict.NutritionFacts.thiamin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% • 
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.riboflavin1 != null}">
+                                ${Resource.msg('label.tab.nutrition.riboflavin', 'product', null)} ${pdict.NutritionFacts.riboflavin1 != null ? pdict.NutritionFacts.riboflavin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.riboflavin2 != null ? pdict.NutritionFacts.riboflavin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}% •  
+                        </isif>
+                        <isif condition="${pdict.NutritionFacts.niacin1 != null}">
+                            ${Resource.msg('label.tab.nutrition.niacin', 'product', null)} ${pdict.NutritionFacts.niacin1 != null ? pdict.NutritionFacts.niacin1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)} ${pdict.NutritionFacts.niacin2 != null ? pdict.NutritionFacts.niacin2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                        </isif>
                         </div>
                     </div>
                     </div>
