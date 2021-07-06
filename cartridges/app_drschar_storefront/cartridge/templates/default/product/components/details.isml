@@ -8,27 +8,27 @@
         </isif>
         <div class="row mt-3">
             <isif condition="${product.gcGlutenFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/GlutenFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/GlutenFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcWheatFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/WheatFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/WheatFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcDairyFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/DairyFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/DairyFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcLactoseFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/LactoseFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/LactoseFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcNonGMO}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/NonGMO.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/NonGMO.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcPreservativeFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/PreservativeFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/PreservativeFree.png')}"
                  alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
         </div>
@@ -57,27 +57,27 @@
         </isif>
         <div class="row mt-3">
             <isif condition="${product.gcGlutenFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/GlutenFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/GlutenFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcWheatFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/WheatFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/WheatFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcDairyFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/DairyFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/DairyFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcLactoseFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/LactoseFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/LactoseFree.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcNonGMO}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/NonGMO.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/NonGMO.png')}"
                     alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
             <isif condition="${product.gcPreservativeFree}">
-                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/PreservativeFree.svg')}"
+                <img class="mx-2 generalInfoImage" src="${URLUtils.httpsStatic('/images/generalInfoTab/PreservativeFree.png')}"
                      alt="Schär - Best in Gluten Free" border="0"/>
             </isif>
         </div>
