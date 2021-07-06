@@ -1,3 +1,5 @@
+<isset name="isProductBundle" value="${pdict.product.productType === 'bundle'}" scope="page" />
+
 <div class="description-and-detail">
 
     <!-- Mobile drawer section -->
@@ -48,24 +50,35 @@
                 <span>${Resource.msg('label.tab.tittle.general', 'product', null)}</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link d-none d-sm-block" data-toggle="tab"
-                href="#allergy-content" role="tab">
-                <span>${Resource.msg('label.tab.tittle.allergy', 'product', null)}</span>
-            </a>
-        </li>
+        <isif condition="${!isProductBundle}">
+            <li class="nav-item">
+                <a class="nav-link d-none d-sm-block" data-toggle="tab"
+                    href="#allergy-content" role="tab">
+                    <span>${Resource.msg('label.tab.tittle.allergy', 'product', null)}</span>
+                </a>
+            </li>
+        </isif>
         <li class="nav-item">
             <a class="nav-link title d-none d-sm-block" data-toggle="tab"
                 href="#ingredients-content" role="tab">
                 <span>${Resource.msg('label.tab.tittle.ingredients', 'product', null)}</span>
             </a>
         </li>
-        <li class="nav-item collapsible-xs">
-            <a class="nav-link title d-none d-sm-block" data-toggle="tab"
-                href="#nutrition-content" role="tab">
-                <span>${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</span>
-            </a>
-        </li>
+        <isif condition="${isProductBundle}">
+            <li class="nav-item collapsible-xs">
+                <a class="nav-link title d-none d-sm-block" data-toggle="tab"
+                    href="#bundle-content" role="tab">
+                    <span>${Resource.msg('label.tab.tittle.bundles', 'product', null)}</span>
+                </a>
+            </li>
+        <iselse/>
+            <li class="nav-item collapsible-xs">
+                <a class="nav-link title d-none d-sm-block" data-toggle="tab"
+                    href="#nutrition-content" role="tab">
+                    <span>${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</span>
+                </a>
+            </li>
+        </isif>
     </ul>
 
     <!-- Content Tabs Section-->
@@ -75,18 +88,27 @@
                 class="tab-pane general-information active" role="tabpanel">
                 <isinclude template="product/components/details" />
             </div>
-            <div id="allergy-content"
-                class="tab-pane allergy-information" role="tabpanel">
-                <isinclude template="product/components/allergy" />
-            </div>
+            <isif condition="${!isProductBundle}">
+                <div id="allergy-content"
+                    class="tab-pane allergy-information" role="tabpanel">
+                    <isinclude template="product/components/allergy" />
+                </div>
+            </isif>
             <div id="ingredients-content"
                 class="tab-pane ingredients-information" role="tabpanel">
                 <isinclude template="product/components/ingredients" />
             </div>
-            <div id="nutrition-content"
-                class="tab-pane nutrition-information" role="tabpanel">
-                <isinclude template="product/components/nutrition" />
-            </div>
+            <isif condition="${isProductBundle}">
+                <div id="bundle-content"
+                    class="tab-pane bundle-panel" role="tabpanel">
+                    <isinclude template="product/components/bundleItems"/>
+                </div>
+            <iselse/>
+                <div id="nutrition-content"
+                    class="tab-pane nutrition-information" role="tabpanel">
+                    <isinclude template="product/components/nutrition" />
+                </div>
+            </isif>
         </div>
     </div>
 
