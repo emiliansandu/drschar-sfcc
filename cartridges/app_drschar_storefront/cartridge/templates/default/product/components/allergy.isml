@@ -160,9 +160,9 @@
         </isif>
 
         <div class="col-lg-12 col-12 mt-3">
-            <p>${Resource.msgf('label.allergenfilterhelp', 'product', null)}
+            <p>${Resource.msg('label.allergenfilterhelp', 'product', null)}
                 <a href="${URLUtils.https('Page-Show', 'cid', 'allergen-help')}">
-                    ${Resource.msgf('label.allergencontentasset', 'product', null)}
+                    ${Resource.msg('label.allergencontentasset', 'product', null)}
                 </a>
             </p>
         </div>
