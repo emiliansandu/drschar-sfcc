@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                <div class="attributes">
+                <div class="bundle-footer">
                     <!-- Short Description -->
                     <isinclude template="product/components/shortDescription" />
 
@@ -67,12 +67,12 @@
                     <isinclude template="product/components/moreInformation" />
 
                     <!-- Quantity -->
-                    <div class="availability" >
+                    <div class="availability">
                         <isset name="loopState" value="${{count: 1}}" scope="page" />
                         <isset name="product" value="${bundle}" scope="page" />
                         <isinclude template="product/components/quantity" />
-                    </div>  
-
+                    </div>
+                    
                     <!-- Availability -->
                     <div class="availability clearfix global-availability" data-ready-to-order="${bundle.readyToOrder}">
                         <isinclude template="product/components/availabilityBundleContainer" />
