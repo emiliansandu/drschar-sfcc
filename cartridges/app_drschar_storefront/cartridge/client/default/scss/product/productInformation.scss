@@ -217,3 +217,37 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .carousel-inner .bundle-item > div {
+        display: none;
+    }
+    .carousel-inner .bundle-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .bundle-item.active,
+.carousel-inner .bundle-item.carousel-item-next,
+.carousel-inner .bundle-item.carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 546px) {
+    
+    .active.bundle-item.carousel-item-right,.bundle-item.carousel-item-next:not(.bundle-item.carousel-item-left){
+        transform: translateX(25%);
+    }
+
+    .active.bundle-item.carousel-item-left,.bundle-item.carousel-item-prev:not(.bundle-item.carousel-item-right){
+        transform: translateX(-25%);
+    }
+    
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
