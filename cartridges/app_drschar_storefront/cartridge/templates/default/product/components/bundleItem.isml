@@ -1,0 +1,9 @@
+<div class="col-md-3">
+    <div class="ciontainer">
+        <div class="card-img">
+            
+            <span class="product-name">${product.productName}</span>
+            <isinclude template="product/components/quantityStatic">
+        </div>
+    </div>
+</div>
