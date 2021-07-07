@@ -1,0 +1,18 @@
+<div class="primary-images">
+    <div class="budles-images">
+        <isloop items="${product.images['large']}" var="image" status="loopStatusChild">
+            <isif condition="${loopStatusChild.index == 0}">
+                    <isscript>
+                        var DISHelper= require('*/cartridge/scripts/helpers/ProductImageDIS.js');
+                        //DIS Sized Image
+                        
+                        var productidChild  = dw.catalog.ProductMgr.getProduct(product.id);
+                        var ProductImageChild=DISHelper.getImage(productidChild, 'medium', loopStatusChild.index);
+                        var mediaFileURLChild =ProductImageChild.getURL();
+                    </isscript>
+                <img src="${mediaFileURLChild}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}"
+                    itemprop="image" />
+            </isif>
+        </isloop>
+    </div>
+</div>

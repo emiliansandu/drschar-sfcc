@@ -100,4 +100,16 @@ PHelper.getProductItems = function getProductItems(allProducts,params) {
     return items;
 }
 
+PHelper.addUnitToBundleChilds = function addUnitToBundleChilds (showProductPageHelperResult){
+    var ProductMgr = require('dw/catalog/ProductMgr');
+    var childs = showProductPageHelperResult.product.bundledProducts;
+    for (var i = 0; i < childs.length; i++) {
+        var pid = childs[i].id;
+        var fullChild = ProductMgr.getProduct(pid);
+        childs[i].unit = fullChild.unit;
+    }
+    return showProductPageHelperResult;
+}
+
+
 module.exports = PHelper;

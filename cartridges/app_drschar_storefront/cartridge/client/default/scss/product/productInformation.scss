@@ -218,7 +218,7 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 545px) {
     .carousel-inner .bundle-item > div {
         display: none;
     }
@@ -251,3 +251,28 @@
   transform: translateX(0);
 }
 
+#bundle-child-carousel{
+    .carousel-control-prev{
+        margin-left: -25px;
+    }
+    .carousel-control-next{
+        margin-right: -25px;
+    }
+}
+
+.bundle-item {
+    border-bottom: none;
+}
+
+.bundle-unit{
+    color: $grey3;
+    padding-left: 5px;
+}
+
+.quantity-unit{
+justify-content: center
+}
+
+.bundle-items-label{
+    text-align: center;
+}

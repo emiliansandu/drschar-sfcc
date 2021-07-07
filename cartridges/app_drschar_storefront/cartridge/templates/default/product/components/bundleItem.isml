@@ -1,9 +1,21 @@
-<div class="col-md-3">
-    <div class="ciontainer">
-        <div class="card-img">
-            
-            <span class="product-name">${product.productName}</span>
-            <isinclude template="product/components/quantityStatic">
+<div class="product-detail col-md-3">
+    <div class="bundle-childs">
+        <isinclude template="product/components/imageBundleCarousel" />
+        <span class="product-name">${product.productName}</span>
+        <!-- Attributes and Quantity -->
+        <isinclude template="product/components/mainAttributes" />
+
+        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+            <div data-attr="${attr.id}" class="row swatch">
+                <div class="col">
+                    <isinclude template="product/components/variationAttribute" />
+                </div>
+            </div>
+        </isloop>
+        <div class="row quantity-unit">       
+                <isinclude template="product/components/quantityStatic" />    
+                <span class="bundle-unit">${product.unit}</span>
         </div>
+        
     </div>
 </div>

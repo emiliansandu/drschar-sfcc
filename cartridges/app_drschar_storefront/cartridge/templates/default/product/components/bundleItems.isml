@@ -6,21 +6,20 @@
 
 <div class="container text-center">
     <div class="row justify-content-center">
-        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="bundle-child-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <isloop items="${product.bundledProducts}" var="productItem" status="loopState">
                     <isset name="product" value="${productItem}" scope="page" />
-                    <isset name="isBundle" value="${true}" scope="page" />
                     <div class="bundle-item carousel-item <isif condition="${loopState.index == 0}">active</isif>">
                         <isinclude template="product/components/bundleItem" />
                     </div>
                 </isloop>
             </div>
-            <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <a class="carousel-control-prev" href="#bundle-child-carousel" role="button" data-slide="prev">
+                <span class="fa icon-prev" aria-hidden="true"></span>
             </a>
-            <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <a class="carousel-control-next" href="#bundle-child-carousel" role="button" data-slide="next">
+                <span class="fa icon-next" aria-hidden="true"></span>
             </a>
             
         </div>

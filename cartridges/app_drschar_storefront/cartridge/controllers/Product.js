@@ -40,6 +40,7 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
     var productType = showProductPageHelperResult.product.productType;
     var NutritionalFactsObj = CustomObjectMgr.queryCustomObject('NutritionFacts','custom.productID = {0}', fullProduct.ID);
+    productHelper.addUnitToBundleChilds(showProductPageHelperResult);
     if (NutritionalFactsObj == null) {
         NutritionalFactsObj = {custom: null};
     }
