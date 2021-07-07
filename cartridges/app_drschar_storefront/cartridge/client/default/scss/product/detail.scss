@@ -229,6 +229,13 @@ label.availability {
             width: 70px;
             height: 70px;        
     }
+    .tabContent {
+        text-align: left;
+        padding: 0;
+    }
+    .tabContent .col-lg-6.col-12{
+        padding: 0;
+    }
   }
   @include media-breakpoint-up(lg) {
     .generalInfoImage{   
