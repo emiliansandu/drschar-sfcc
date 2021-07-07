@@ -1,4 +1,4 @@
-<div class="product-detail col-md-3">
+<div class="product-child product-detail col-md-3">
     <div class="bundle-childs">
         <isinclude template="product/components/imageBundleCarousel" />
         <span class="product-name">${product.productName}</span>
@@ -12,10 +12,13 @@
                 </div>
             </div>
         </isloop>
-        <div class="row quantity-unit">       
-                <isinclude template="product/components/quantityStatic" />    
-                <span class="bundle-unit">${product.unit}</span>
+        <div class="row quantity-unit">
+            <isinclude template="product/components/quantityStatic" />
         </div>
-        
+
+        <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
+            <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
+        </a>
+
     </div>
 </div>
