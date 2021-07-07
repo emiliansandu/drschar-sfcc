@@ -1,5 +1,3 @@
-<isset name="isProductBundle" value="${pdict.product.productType === 'bundle'}" scope="page" />
-
 <div class="description-and-detail">
 
     <!-- Mobile drawer section -->

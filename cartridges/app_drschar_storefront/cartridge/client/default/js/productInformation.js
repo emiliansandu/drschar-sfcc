@@ -14,8 +14,8 @@ $(document).ready(function () {
   
     let resizeObserver = new ResizeObserver(() => {
         var cw = $('.carousel-item.active').width();
-        $('.img-fluid, .img-thumbnail').css({'width':cw+'px'});
-        $('.img-fluid, .img-thumbnail').css({'height':cw+'px'});
+        $('.carousel-image, .img-thumbnail').css({'width':cw+'px'});
+        $('.carousel-image, .img-thumbnail').css({'height':cw+'px'});
     });
 
     resizeObserver.observe(elem);
