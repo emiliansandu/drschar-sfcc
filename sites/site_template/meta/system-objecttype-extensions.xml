@@ -8202,14 +8202,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Calories per serving</display-name>
                 <type>int</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="cholesterol1">
                 <display-name xml:lang="x-default">Cholesterol</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8217,14 +8217,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Cholesterol %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="fiber1">
                 <display-name xml:lang="x-default">Dietary Fiber</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8232,7 +8232,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Dietary Fiber %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="iron1">
@@ -8284,7 +8284,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Product Id</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8292,7 +8292,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Protein</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8300,7 +8300,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Protein %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="riboflavin1">
@@ -8322,7 +8322,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Sat. Fat</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8330,7 +8330,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Sat. Fat %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8338,14 +8338,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Servings per container</display-name>
                 <type>int</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="servingSize">
                 <display-name xml:lang="x-default">Serving Size</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8353,7 +8353,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Sodium</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8361,7 +8361,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Sodium %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8369,7 +8369,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Includes Added Sugars</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8377,14 +8377,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Includes Added Sugars %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="transFat">
                 <display-name xml:lang="x-default">Trans Fat</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8407,7 +8407,7 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Total Carbohydrate</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8415,14 +8415,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Total Carbohydrate %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="totalFat1">
                 <display-name xml:lang="x-default">Total Fat</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
@@ -8430,14 +8430,14 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Total Fat %</display-name>
                 <type>double</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="totalSugars">
                 <display-name xml:lang="x-default">Total Sugars</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
+                <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
