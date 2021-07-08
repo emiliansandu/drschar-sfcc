@@ -11,15 +11,17 @@
                 <isinclude template="product/components/details" />
             </div>
         </li>
-        <li class="nav-item collapsible-xs">
-            <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="m-allergy-${loopState && loopState.count ? loopState.count : '1'}">
-                ${Resource.msg('label.tab.tittle.allergy', 'product', null)}
-            </button>
-            <div class="d-sm-none">
-                <isinclude template="product/components/allergy" />
-            </div>
-        </li>
+        <isif condition="${!isProductBundle}">
+            <li class="nav-item collapsible-xs">
+                <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
+                    aria-controls="m-allergy-${loopState && loopState.count ? loopState.count : '1'}">
+                    ${Resource.msg('label.tab.tittle.allergy', 'product', null)}
+                </button>
+                <div class="d-sm-none">
+                    <isinclude template="product/components/allergy" />
+                </div>
+            </li>
+        </isif>
         <li class="nav-item collapsible-xs">
             <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
                 aria-controls="m-ingredients-${loopState && loopState.count ? loopState.count : '1'}">
@@ -29,15 +31,27 @@
                 <isinclude template="product/components/ingredients" />
             </div>
         </li>
-        <li class="nav-item collapsible-xs">
-            <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
-                aria-controls="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}">
-                ${Resource.msg('label.tab.tittle.nutrition', 'product', null)}
-            </button>
-            <div class="d-sm-none">
-                <isinclude template="product/components/nutrition" />
-            </div>
-        </li>
+        <isif condition="${isProductBundle}">
+            <li class="nav-item collapsible-xs">
+                <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
+                    aria-controls="m-bundle-${loopState && loopState.count ? loopState.count : '1'}">
+                    ${Resource.msg('label.tab.tittle.bundles', 'product', null)}
+                </button>
+                <div class="d-sm-none">
+                    <isinclude template="product/components/mobileBundleItems" />
+                </div>
+            </li>
+        <iselse/>
+            <li class="nav-item collapsible-xs">
+                <button class="title btn text-left btn-block d-sm-none" aria-expanded="false"
+                    aria-controls="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}">
+                    ${Resource.msg('label.tab.tittle.nutrition', 'product', null)}
+                </button>
+                <div class="d-sm-none">
+                    <isinclude template="product/components/nutrition" />
+                </div>
+            </li>
+        </isif>
     </ul>
 
     <!-- Tabs Section -->
