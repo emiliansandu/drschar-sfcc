@@ -50,14 +50,14 @@
     "development": {
       "server": "development.na01.drschar.demandware.net",
       "username": "rcervantes@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "password": "t8kdrXdL61E_gwCoGgDygpqX5vGy69O60Q==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
     "staging": {
       "server": "staging.na01.drschar.demandware.net",
       "username": "rcervantes@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_gwCoGgDygpqA/YL+lWk4Ng==",
+      "password": "t8kdrXdL61E_gwCoGgDygpqX5vGy69O60Q==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA==",
       "two_factor": {
