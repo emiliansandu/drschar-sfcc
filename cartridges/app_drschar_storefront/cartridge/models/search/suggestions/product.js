@@ -4,6 +4,7 @@ var URLUtils = require('dw/web/URLUtils');
 var preferences = require('*/cartridge/config/preferences');
 var ACTION_ENDPOINT = preferences.suggestionsActionEnpoint ? preferences.suggestionsActionEnpoint : 'Product-Show';
 var IMAGE_SIZE = preferences.imageSize ? preferences.imageSize : 'medium';
+var ProductImageDIS = require('*/cartridge/scripts/helpers/ProductImageDIS');
 
 
 /**
@@ -17,7 +18,7 @@ function getImageUrl(product) {
     if (product.master) {
         imageProduct = product.variationModel.defaultVariant;
     }
-    return imageProduct.getImage(IMAGE_SIZE).URL.toString();
+    return ProductImageDIS.getImage(imageProduct, IMAGE_SIZE, 0).getURL();
 }
 
 /**
