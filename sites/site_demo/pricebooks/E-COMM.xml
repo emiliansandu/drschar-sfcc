@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31">
+    <pricebook>
+        <header pricebook-id="E-COMM">
+            <currency>USD</currency>
+            <display-name xml:lang="x-default">E-Commerce</display-name>
+            <description xml:lang="x-default">E-Commerce</description>
+            <online-flag>true</online-flag>
+        </header>
+
+        <price-tables>
+            <price-table product-id="1100010800">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100030600">
+                <online-from>2020-12-17T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100040501">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100050502">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">6.99</amount>
+            </price-table>
+
+            <price-table product-id="1100080401">
+                <online-from>2020-10-03T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1100090401">
+                <online-from>2020-11-12T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">7.99</amount>
+            </price-table>
+
+            <price-table product-id="1100280501">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">6.99</amount>
+            </price-table>
+
+            <price-table product-id="1100440502">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100450501">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100610600">
+                <online-from>2019-09-16T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100620600">
+                <online-from>2019-09-16T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1100690500">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">6.99</amount>
+            </price-table>
+
+            <price-table product-id="1100720800">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1101010800">
+                <online-from>2019-12-31T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">7.99</amount>
+            </price-table>
+
+            <price-table product-id="1101020301">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1101040000">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1101050002">
+                <online-from>2020-10-03T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1101060301">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1101090300">
+                <online-from>2020-05-07T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1101390300">
+                <online-from>2020-05-07T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">5.99</amount>
+            </price-table>
+
+            <price-table product-id="1101430000">
+                <online-from>2020-10-03T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1102010001">
+                <online-from>2019-09-05T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">6.49</amount>
+            </price-table>
+
+            <price-table product-id="1102240301">
+                <online-from>2020-06-10T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1102310000">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103030302">
+                <online-from>2019-12-31T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103130300">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103220301">
+                <online-from>2020-10-03T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103310301">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103460300">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103510300">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103600301">
+                <online-from>2020-06-02T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="1103630000">
+                <online-from>2020-01-23T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">6.99</amount>
+            </price-table>
+
+            <price-table product-id="1104010002">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">3.99</amount>
+            </price-table>
+
+            <price-table product-id="1104020002">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">3.99</amount>
+            </price-table>
+
+            <price-table product-id="1104030002">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">3.99</amount>
+            </price-table>
+
+            <price-table product-id="1105000000">
+                <online-from>2019-09-02T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.49</amount>
+            </price-table>
+
+            <price-table product-id="1105020001">
+                <online-from>2020-11-17T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.49</amount>
+            </price-table>
+
+            <price-table product-id="1106040300">
+                <online-from>2019-07-11T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">4.99</amount>
+            </price-table>
+
+            <price-table product-id="71199000000">
+                <online-from>2019-11-14T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">27.00</amount>
+            </price-table>
+
+            <price-table product-id="71199010000">
+                <online-from>2020-11-30T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">26.00</amount>
+            </price-table>
+
+            <price-table product-id="71199020000">
+                <online-from>2021-01-27T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">30.00</amount>
+            </price-table>
+
+            <price-table product-id="71199030000">
+                <online-from>2020-06-03T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">33.00</amount>
+            </price-table>
+
+            <price-table product-id="71199040000">
+                <online-from>2020-10-12T22:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">35.00</amount>
+            </price-table>
+
+            <price-table product-id="71199050000">
+                <online-from>2021-02-28T23:00:00.000Z</online-from>
+                <online-to>2999-12-30T23:00:00.000Z</online-to>
+                <amount quantity="1">26.00</amount>
+            </price-table>
+
+        </price-tables>
+    </pricebook>
+</pricebooks>
