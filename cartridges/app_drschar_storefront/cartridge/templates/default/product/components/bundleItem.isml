@@ -1,4 +1,4 @@
-<div class="product-child product-detail col-md-3">
+<div class="product-child product-detail col-md-3" data-pid="${product.id}">
     <div class="bundle-childs">
         <isinclude template="product/components/imageBundleCarousel" />
         <span class="product-name">${product.productName}</span>
@@ -14,6 +14,7 @@
         </isloop>
         <div class="row quantity-unit">
             <isinclude template="product/components/quantityStatic" />
+            <span class="selected-quantity-child d-none">${parseInt(product.selectedQuantity, 10).toString()}</span>
         </div>
 
         <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
