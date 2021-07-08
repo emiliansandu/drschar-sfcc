@@ -204,6 +204,26 @@
         <primary-flag>true</primary-flag>
     </category-assignment>
 
+    <category-assignment category-id="Products" product-id="easports-fight-night-round-3-xbox360M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="microsoft-xbox360-bundleM">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="microsoft-xbox360-consoleM">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="rockstar-games-grand-theft-auto-iv-xbox360M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="Products" product-id="sierra-the-bourne-conspiracy-xbox360M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
     <category-assignment category-id="Products" product-id="test-set">
         <primary-flag>true</primary-flag>
     </category-assignment>

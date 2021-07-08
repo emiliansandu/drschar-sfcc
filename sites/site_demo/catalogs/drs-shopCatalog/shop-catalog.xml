@@ -236,14 +236,25 @@
     </product>
 
     <product product-id="1100440502">
-        <ean/>
+        <ean>810757010029</ean>
         <upc>810757010029</upc>
         <unit>UNIT</unit>
         <min-order-quantity>1</min-order-quantity>
         <step-quantity>1</step-quantity>
         <display-name xml:lang="x-default">HAMBURGER BUNS 10.6oz</display-name>
-        <short-description xml:lang="x-default">TBD</short-description>
-        <long-description xml:lang="x-default">TBD</long-description>
+        <short-description xml:lang="x-default">NEW RECIPE! &#13;
+This American classic is not just perfect for your &#13;
+next BBQ but great as dinner rolls. Made with sourdough, they are also baked with ancient grains, fortified with vitamins and minerals &#13;
+and a good source of fiber.</short-description>
+        <long-description xml:lang="x-default">NEW RECIPE! &#13;
+On our list of backyard barbecue essentials, Schär Gluten Free Hamburger Buns are &#13;
+right at the top. Made with sourdough, never frozen, and baked with ancient grains &#13;
+and fortified with vitamins and minerals, we took an American classic and made &#13;
+it nutritious and Certified Gluten-Free. Our recipe is high in fiber and free &#13;
+of wheat, lactose, GMOs and preservatives.&amp;nbsp;Even if the grill is retired for the &#13;
+season, our hamburger buns make delicious dinner rolls.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Storage &#13;
+Instructions:&lt;br&gt;&lt;/strong&gt;&#13;
+Unopened product can be stored at room temperature until the ""best before"" date. Once opened, refrigerate in an airtight bag or container and use within 2-3 days. Packed in a modified atmosphere..</long-description>
         <store-force-price-flag>false</store-force-price-flag>
         <store-non-inventory-flag>false</store-non-inventory-flag>
         <store-non-revenue-flag>false</store-non-revenue-flag>
@@ -251,9 +262,71 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="hamburger_buns_10_6oz_1100440503_11264.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050072</tax-class-id>
         <brand>SCHÄR</brand>
-        <page-attributes/>
+        <manufacturer-sku>110044</manufacturer-sku>
+        <page-attributes>
+            <page-title xml:lang="x-default">Hamburger Buns</page-title>
+            <page-description xml:lang="x-default">Schär Gluten Free Hamburger Buns</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="allergyContains">
+                <value>Soy</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="almondFree">true</custom-attribute>
+            <custom-attribute attribute-id="beechNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="brazilNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="butternutFree">true</custom-attribute>
+            <custom-attribute attribute-id="cashewFree">true</custom-attribute>
+            <custom-attribute attribute-id="chesnutFree">true</custom-attribute>
+            <custom-attribute attribute-id="chinquapinFree">true</custom-attribute>
+            <custom-attribute attribute-id="clubWheatFree">true</custom-attribute>
+            <custom-attribute attribute-id="coconutFree">true</custom-attribute>
+            <custom-attribute attribute-id="crustaceansFree">true</custom-attribute>
+            <custom-attribute attribute-id="dimWeight">10.6 oz (300g)</custom-attribute>
+            <custom-attribute attribute-id="durumWheatFree">true</custom-attribute>
+            <custom-attribute attribute-id="eggFree">true</custom-attribute>
+            <custom-attribute attribute-id="einkornFree">true</custom-attribute>
+            <custom-attribute attribute-id="emmerFree">true</custom-attribute>
+            <custom-attribute attribute-id="filberHazelnutFree">true</custom-attribute>
+            <custom-attribute attribute-id="fishFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcDairyFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcGlutenFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcNonGMO">true</custom-attribute>
+            <custom-attribute attribute-id="gcWheatFree">true</custom-attribute>
+            <custom-attribute attribute-id="gincoNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="glutenFree">true</custom-attribute>
+            <custom-attribute attribute-id="hickoryNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="ingredients">Water, Corn starch, Sourdough (Rice flour, Water), Millet flour, Rice flour, Rice starch, Agave syrup, Psyllium seed husk (Vegetable fiber), Modified cellulose, Sunflower oil, Navy bean powder, Yeast, Rice syrup, Salt, Calcium citrate, Corn flour, Soy protein, Niacin, Iron, Thiamine, Riboflavin.</custom-attribute>
+            <custom-attribute attribute-id="kamutFree">true</custom-attribute>
+            <custom-attribute attribute-id="licheeNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="lupineFree">true</custom-attribute>
+            <custom-attribute attribute-id="macadamiaNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="milkFree">true</custom-attribute>
+            <custom-attribute attribute-id="otherTreeNutsFree">true</custom-attribute>
+            <custom-attribute attribute-id="peanutsFree">true</custom-attribute>
+            <custom-attribute attribute-id="pecanFree">true</custom-attribute>
+            <custom-attribute attribute-id="pineNutFree">true</custom-attribute>
+            <custom-attribute attribute-id="pistachioFree">true</custom-attribute>
+            <custom-attribute attribute-id="semolinaFree">true</custom-attribute>
+            <custom-attribute attribute-id="sheanutFree">true</custom-attribute>
+            <custom-attribute attribute-id="shellfisFree">true</custom-attribute>
+            <custom-attribute attribute-id="textClaim">
+                <value>Egg free</value>
+                <value>Fortified with Vitamins &amp; Minerals</value>
+                <value>Good Source of Fiber</value>
+                <value>Vegetarian</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="treeNutsFree">true</custom-attribute>
+            <custom-attribute attribute-id="triticaleFree">true</custom-attribute>
+            <custom-attribute attribute-id="walnutFree">true</custom-attribute>
+            <custom-attribute attribute-id="wheatFree">true</custom-attribute>
+        </custom-attributes>
         <classification-category>root</classification-category>
         <pinterest-enabled-flag>false</pinterest-enabled-flag>
         <facebook-enabled-flag>false</facebook-enabled-flag>
@@ -311,6 +384,11 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="hamburger_buns_10_6oz_1100440503_11264.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050122</tax-class-id>
         <brand>SCHÄR</brand>
         <page-attributes/>
@@ -341,9 +419,18 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="hamburger_buns_10_6oz_1100440503_11264.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050122</tax-class-id>
         <brand>SCHÄR</brand>
         <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="dimWeight">30 gr</custom-attribute>
+            <custom-attribute attribute-id="videoMedia">http://youtu.be/ddaXO9t-5EU</custom-attribute>
+        </custom-attributes>
         <classification-category>root</classification-category>
         <pinterest-enabled-flag>false</pinterest-enabled-flag>
         <facebook-enabled-flag>false</facebook-enabled-flag>
@@ -671,6 +758,11 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="hamburger_buns_10_6oz_1100440503_11264.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050075</tax-class-id>
         <brand>SCHÄR</brand>
         <page-attributes/>
@@ -1001,9 +1093,42 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="hamburger_buns_10_6oz_1100440503_11264.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050002</tax-class-id>
         <brand>SCHÄR</brand>
         <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="allergyContains">
+                <value>Milk</value>
+                <value>Soy</value>
+                <value>Tree Nuts (Coconut)</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="dimWeight">75 gr</custom-attribute>
+            <custom-attribute attribute-id="gcDairyFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcGlutenFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcLactoseFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcNonGMO">true</custom-attribute>
+            <custom-attribute attribute-id="gcPreservativeFree">true</custom-attribute>
+            <custom-attribute attribute-id="gcWheatFree">true</custom-attribute>
+            <custom-attribute attribute-id="hickoryNutFree">false</custom-attribute>
+            <custom-attribute attribute-id="ingredients">corn starch , water , corn flour , rice flour , psyllium seed husk (vegetable fiber) , dextrose , modified cellulose , soy protein , sunflower oil , yeast , salt , tartaric acid , citric acid . Contains: Soy .</custom-attribute>
+            <custom-attribute attribute-id="lupineFree">false</custom-attribute>
+            <custom-attribute attribute-id="milkFree">false</custom-attribute>
+            <custom-attribute attribute-id="semolinaFree">false</custom-attribute>
+            <custom-attribute attribute-id="soyFree">false</custom-attribute>
+            <custom-attribute attribute-id="textClaim">
+                <value>Non GMO</value>
+                <value>Egg Free</value>
+                <value>Gluten Free</value>
+                <value>Source Fiber</value>
+                <value>Wheat Free</value>
+                <value>Dairy Free</value>
+            </custom-attribute>
+        </custom-attributes>
         <classification-category>root</classification-category>
         <pinterest-enabled-flag>false</pinterest-enabled-flag>
         <facebook-enabled-flag>false</facebook-enabled-flag>
@@ -1211,9 +1336,37 @@
         <online-flag>true</online-flag>
         <available-flag>true</available-flag>
         <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="_p1536_summer_bbq_bundle_71199030000_11280.jpeg"/>
+            </image-group>
+        </images>
         <tax-class-id>PF050075</tax-class-id>
         <brand>SCHÄR</brand>
         <page-attributes/>
+        <bundled-products>
+            <bundled-product product-id="1102010001">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1103130300">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1103630000">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1105020001">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1102240301">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1103030302">
+                <quantity>1</quantity>
+            </bundled-product>
+            <bundled-product product-id="1103460300">
+                <quantity>1</quantity>
+            </bundled-product>
+        </bundled-products>
         <classification-category>root</classification-category>
         <pinterest-enabled-flag>false</pinterest-enabled-flag>
         <facebook-enabled-flag>false</facebook-enabled-flag>
