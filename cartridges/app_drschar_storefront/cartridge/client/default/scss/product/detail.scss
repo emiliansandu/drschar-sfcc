@@ -25,6 +25,8 @@ label.color ~ a:hover {
 }
 
 .description-and-detail {
+    margin-top: 2em;
+    margin-bottom: 2em;
 
     @media (max-width: 545px){
         #content-attributes-tab{
@@ -32,11 +34,7 @@ label.color ~ a:hover {
         }
     }
     
-
-    margin-top: 2em;
-
     @include media-breakpoint-only(xs) {
-        margin-top: 0;
 
         .title {
             font-size: 1.5rem;
