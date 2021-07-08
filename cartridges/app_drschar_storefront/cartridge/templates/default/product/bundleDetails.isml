@@ -15,7 +15,7 @@
     <isset name="bundle" value="${pdict.product}" scope="page" />
     <isset name="product" value="${pdict.product}" scope="page" />
     <isobject object="${product.raw}" view="detail" />
-    <isset name="isProductBundle" value="${pdict.product.productType === 'bundle'}" scope="page" />
+    <isset name="isProductBundle" value="${true}" scope="page" />
     
     <div class="container product-detail" data-pid="${product.id}">
         <div class="row">
