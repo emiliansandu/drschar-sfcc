@@ -37,6 +37,11 @@ public class HeaderSteps extends DriverFactory {
         header.closeModal();
     }
 
+    @Given("User closes cookie")
+    public void closecookie() {
+        header.closeCookie();
+    }
+
     @Given("^User clicks \"([^\"]*)\" category in fly nav$")
     public void clickCategoryInFlyNav(String category) {
         header.clickFlyNavCategory(category);

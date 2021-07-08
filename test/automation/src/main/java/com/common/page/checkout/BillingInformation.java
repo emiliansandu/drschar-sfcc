@@ -15,7 +15,7 @@ public class BillingInformation extends PageObject {
     @FindBy(id = "dwfrm_billing")
     private WebElement paymentData;
 
-    @FindBy(id = "braintree-hosted-field-number")
+    @FindBy(xpath = "//li[contains(@id,'paymentMethod')]")
     private WebElement paymentInfo;
 
     @FindBy(xpath = "//div[contains(@id,'maincontent')]")
@@ -85,14 +85,14 @@ public class BillingInformation extends PageObject {
         WebElement field = paymentData.findElement(By.id("email"));
         field.sendKeys(propertyReader.getProperty("payment.email"));
 
-        driver.switchTo().frame("js-iframe");
+        /*driver.switchTo().frame("js-iframe");
             driver.findElement(
                 By.xpath("//input[@id='encryptedCardNumber']")
             ).sendKeys("4111111111111111");
-        driver.switchTo().defaultContent();
+        driver.switchTo().defaultContent();*/
 
-        /*field = paymentData.findElement(By.id("encryptedCardNumber"));
-        field.sendKeys(propertyReader.getProperty("payment.cardNum"));*/
+        field = paymentData.findElement(By.id("encryptedCardNumber"));
+        field.sendKeys(propertyReader.getProperty("payment.cardNum"));
 
         field = paymentData.findElement(By.id("encryptedExpiryDate"));
         field.sendKeys(propertyReader.getProperty("payment.expiration"));

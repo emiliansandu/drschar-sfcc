@@ -66,6 +66,11 @@ public class Header extends PageObject{
         }
     }
 
+    public void closeCookie() {
+        WebElement cookie = driver.findElement(By.xpath(".//button[contains(@id,'onetrust-accept-btn-handler')]"));
+        cookie.click();
+    }
+
     public void clickFlyNavCategory(String category) {
         WebElement categoryLink = driver.findElement(By.xpath(Util.replaceXpath(l2Xpath,category)));
         categoryLink.click();
