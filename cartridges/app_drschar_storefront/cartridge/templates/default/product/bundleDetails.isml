@@ -15,18 +15,19 @@
     <isset name="bundle" value="${pdict.product}" scope="page" />
     <isset name="product" value="${pdict.product}" scope="page" />
     <isobject object="${product.raw}" view="detail" />
-
+    <isset name="isProductBundle" value="${true}" scope="page" />
+    
     <div class="container product-detail" data-pid="${product.id}">
         <div class="row">
             <div class="col-12">
                 <!---Breadcrumbs--->
-                <div class="product-breadcrumb">
+                <div class="product-breadcrumb d-md-none">
                     <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
                 </div>
 
                 <!-- Product Name -->
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="d-md-none col-sm-12">
                         <h1 class="product-name">${product.productName}</h1>
                     </div>
                 </div>
@@ -38,52 +39,75 @@
             <isinclude template="product/components/imageCarousel" />
 
             <div class="col-12 col-sm-6">
+
+                <!--Breadcrumbs-->
+                <div class="row">
+                    <div class="product-breadcrumb col hidden-sm-down">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                    </div>
+                </div>
+
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-12">
                         <isinclude template="product/components/pidRating" />
                     </div>
                 </div>
 
-                <!-- Applicable Promotions -->
-                <div class="row promotions">
-                    <div class="col-12 align-self-center">
-                        <isinclude template="product/components/promotions" />
+                <div class="bundle-footer">
+                    <!-- Short Description -->
+                    <isinclude template="product/components/shortDescription" />
+
+                    <!-- More Information Button -->
+                    <isinclude template="product/components/moreInformation" />
+
+                    <!-- Quantity -->
+                    <div class="availability">
+                        <isset name="loopState" value="${{count: 1}}" scope="page" />
+                        <isset name="product" value="${bundle}" scope="page" />
+                        <isinclude template="product/components/quantity" />
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <isinclude template="product/components/bundleItems" />
-
-        <hr>
-
-        <div class="row">
-            <div class="col-12 col-sm-6 offset-sm-6 bundle-footer">
-                <!-- Quantity -->
-                <isset name="loopState" value="${{count: 1}}" scope="page" />
-                <isset name="product" value="${bundle}" scope="page" />
-                <isinclude template="product/components/quantity" />
-
-                <!-- Availability -->
-                <div class="availability clearfix global-availability" data-ready-to-order="${bundle.readyToOrder}">
-                    <isinclude template="product/components/availabilityBundleContainer" />
-                </div>
-
-                <div class="col-12 prices-add-to-cart-actions">
-                    <!-- Prices -->
-                    <div class="prices">
-                        <isset name="price" value="${product.price}" scope="page" />
-                        <isinclude template="product/components/pricing/main" />
+                    
+                    <!-- Availability -->
+                    <div class="availability clearfix global-availability" data-ready-to-order="${bundle.readyToOrder}">
+                        <isinclude template="product/components/availabilityBundleContainer" />
                     </div>
 
-                    <!-- Cart and [Optionally] Apple Pay -->
-                    <isinclude template="product/components/addToCartGlobal" />
+                    <!-- Applicable Promotions -->
+                    <div class="row promotions">
+                        <div class="col-12 promotions">
+                            <isinclude template="product/components/promotions" />
+                        </div>
+                    </div>
+
+                    <div class="prices-add-to-cart-actions">
+                        <!-- Prices -->
+                        <div class="prices">
+                            <isset name="price" value="${product.price}" scope="page" />
+                            <isinclude template="product/components/pricing/main" />
+                        </div>
+
+                        <!-- Cart and [Optionally] Apple Pay -->
+                        <isinclude template="product/components/addToCartGlobal" />
+
+                        <!-- EAN number -->
+                        <div class="row">
+                            <isinclude template="product/components/eanNumber" />
+                        </div>
+
+                    </div>
+
+                    <!-- Social Sharing Icons -->
+                    <isinclude template="product/components/socialIcons" />
                 </div>
 
-                <!-- Social Sharing Icons -->
-                <isinclude template="product/components/socialIcons" />
+                
             </div>
         </div>
 
@@ -93,4 +117,5 @@
             <isslot id="product-recommendations-m" description="Recommended products" context="global" />
         </div>
     </div>
+    <object id="data-product-analitycs" data-url="${URLUtils.https('Product-Data', 'pid', pdict.product.id,'eventType','view_item')}" />
 </isdecorate>
