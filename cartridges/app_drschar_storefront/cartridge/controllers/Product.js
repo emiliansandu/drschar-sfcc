@@ -5,7 +5,7 @@
  */
 
 var server = require('server');
-
+var Resource = require('dw/web/Resource');
 var cache = require('*/cartridge/scripts/middleware/cache');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
@@ -39,12 +39,100 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     var fullProduct = ProductMgr.getProduct(req.querystring.pid);
     var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
     var productType = showProductPageHelperResult.product.productType;
-    var NutritionalFactsObj = CustomObjectMgr.queryCustomObject('NutritionFacts','custom.productID = {0}', fullProduct.ID);
+    var NutritionalFactsObj = CustomObjectMgr.queryCustomObject('NutritionFacts','custom.productID = {0}', fullProduct.ID) || null;
+    var NutFactData = {calories: '', cholesterol1: '', cholesterol2: '', fiber1: '', fiber2: '',protein1: '', protein2: '', satFat1: '',
+        satFat2: '', servingPerContainer: '', servingSize: '', sodium1: '', sodium2: '', sugars1: '', sugars2: '', transFat: '',
+        totalCarb1: '', totalCarb2: '', totalFat1: '', totalFat2: '',totalSugars: '', NutritionColumn: []
+    }
+    var fact = { propName: '', propVal1: '', propVal2: ''};
+
+
+    if (NutritionalFactsObj) {
+            NutFactData.calories = NutritionalFactsObj.custom.calories;
+            NutFactData.cholesterol1 = NutritionalFactsObj.custom.cholesterol1;
+            NutFactData.cholesterol2 = NutritionalFactsObj.custom.cholesterol2;
+            NutFactData.fiber1 = NutritionalFactsObj.custom.fiber1;
+            NutFactData.fiber2 = NutritionalFactsObj.custom.fiber2;
+            NutFactData.protein1 = NutritionalFactsObj.custom.protein1;
+            NutFactData.protein2 = NutritionalFactsObj.custom.protein2;
+            NutFactData.satFat1 = NutritionalFactsObj.custom.satFat1;
+            NutFactData.satFat2 = NutritionalFactsObj.custom.satFat2;
+            NutFactData.servingPerContainer = NutritionalFactsObj.custom.servingPerContainer;
+            NutFactData.servingSize = NutritionalFactsObj.custom.servingSize;
+            NutFactData.sodium1 = NutritionalFactsObj.custom.sodium1;
+            NutFactData.sodium2 = NutritionalFactsObj.custom.sodium2;
+            NutFactData.sugars1 = NutritionalFactsObj.custom.sugars1;
+            NutFactData.sugars2 = NutritionalFactsObj.custom.sugars2;
+            NutFactData.transFat = NutritionalFactsObj.custom.transFat;
+            NutFactData.totalCarb1 = NutritionalFactsObj.custom.totalCarb1;
+            NutFactData.totalCarb2 = NutritionalFactsObj.custom.totalCarb2;
+            NutFactData.totalFat1 = NutritionalFactsObj.custom.totalFat1;
+            NutFactData.totalFat2 = NutritionalFactsObj.custom.totalFat2;
+            NutFactData.totalSugars = NutritionalFactsObj.custom.totalSugars;
+        
+        if (NutritionalFactsObj.custom.calcium1 && NutritionalFactsObj.custom.calcium2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.calcium', 'product', null),
+                propVal1: NutritionalFactsObj.custom.calcium1,
+                propVal2: NutritionalFactsObj.custom.calcium2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.iron1 && NutritionalFactsObj.custom.iron2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.iron', 'product', null),
+                propVal1: NutritionalFactsObj.custom.iron1,
+                propVal2: NutritionalFactsObj.custom.iron2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.niacin1 && NutritionalFactsObj.custom.niacin2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.niacin', 'product', null),
+                propVal1: NutritionalFactsObj.custom.niacin1,
+                propVal2: NutritionalFactsObj.custom.niacin2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.potassium1 && NutritionalFactsObj.custom.potassium2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.potassium', 'product', null),
+                propVal1: NutritionalFactsObj.custom.potassium1,
+                propVal2: NutritionalFactsObj.custom.potassium2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.riboflavin1 && NutritionalFactsObj.custom.riboflavin2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.riboflavin', 'product', null),
+                propVal1: NutritionalFactsObj.custom.riboflavin1,
+                propVal2: NutritionalFactsObj.custom.riboflavin2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.thiamin1 && NutritionalFactsObj.custom.thiamin2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.thiamin', 'product', null),
+                propVal1: NutritionalFactsObj.custom.thiamin1,
+                propVal2: NutritionalFactsObj.custom.thiamin2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutritionalFactsObj.custom.vitaminD1 && NutritionalFactsObj.custom.vitaminD2) {
+            fact = {
+                propName: Resource.msg('label.tab.nutrition.vitaminD', 'product', null),
+                propVal1: NutritionalFactsObj.custom.vitaminD1,
+                propVal2: NutritionalFactsObj.custom.vitaminD2
+            }
+            NutFactData.NutritionColumn.push(fact);
+        }
+        if (NutFactData.NutritionColumn.length == 0){
+            NutFactData.NutritionColumn = null
+        }
+    }else(NutFactData = null)
+
     if (productType == 'bundle') {
         productHelper.addUnitToBundleChilds(showProductPageHelperResult);
-    }
-    if (NutritionalFactsObj == null) {
-        NutritionalFactsObj = {custom: null};
     }
     if (!showProductPageHelperResult.product.online && productType !== 'set' && productType !== 'bundle') {
         res.setStatusCode(404);
@@ -69,7 +157,7 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
                 schemaData: showProductPageHelperResult.schemaData,
                 EAN:fullProduct.EAN,
                 ingredients:fullProduct.custom.ingredients,
-                NutritionFacts: NutritionalFactsObj.custom
+                NutritionFacts: NutFactData
             });
         }
     }
