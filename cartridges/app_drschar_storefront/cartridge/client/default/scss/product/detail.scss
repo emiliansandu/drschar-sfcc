@@ -28,6 +28,10 @@ label.color ~ a:hover {
     margin-top: 2em;
     margin-bottom: 2em;
 
+    .prod-desc{
+        padding: 0;
+    }
+
     @media (max-width: 545px){
         #content-attributes-tab{
             display: none;
