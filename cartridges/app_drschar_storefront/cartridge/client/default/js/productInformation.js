@@ -20,9 +20,9 @@ $(document).ready(function () {
 
     resizeObserver.observe(elem);
 
-    var longDescContent = $('.longDescContent').text();
-    $('.longDescContent').text('');
-    $('.longDescContent').append($.parseHTML(longDescContent));
+    var prod_desc = $('.prod-desc').text();
+    $('.prod-desc').text('');
+    $('.prod-desc').append($.parseHTML(prod_desc));
 
     let items = document.querySelectorAll('.carousel .bundle-item')
 
