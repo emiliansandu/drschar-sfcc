@@ -491,10 +491,10 @@ function handlePostCartAdd(response) {
  */
 function getChildProducts() {
     var childProducts = [];
-    $('#bundle-child-carousel .bundle-item').each(function () {
+    $('.bundle-item').each(function () {
         childProducts.push({
-            pid: $(this).find('.product-child').data('pid'),
-            quantity: parseInt($(this).find('.quantity').data('quantity'), 10)
+            pid: $(this).find('.product-id').text(),
+            quantity: parseInt($(this).find('label.quantity').data('quantity'), 10)
         });
     });
 
