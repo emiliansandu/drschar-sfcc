@@ -18,7 +18,7 @@
             <preference preference-id="SiteLibrary">RefArchSharedLibrary</preference>
             <preference preference-id="SiteInventoryList">DRS</preference>
             <preference preference-id="SiteLocales">default:en_US</preference>
-            <preference preference-id="SitePriceBooks">cny-m-list-prices:cny-m-sale-prices:eur-m-list-prices:eur-m-sale-prices:jpy-m-list-prices:jpy-m-sale-prices:usd-m-list-prices:usd-m-sale-prices</preference>
+            <preference preference-id="SitePriceBooks">E-COMM</preference>
             <preference preference-id="StorefrontURLsEnabled">true</preference>
         </all-instances>
         <development>
