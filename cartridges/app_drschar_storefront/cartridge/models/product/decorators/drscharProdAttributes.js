@@ -64,12 +64,14 @@ module.exports = function (object, apiProduct) {
             var groupName=attrGroups[i].displayName;
             var groupId=attrGroups[i].ID;
             var attributeDefinitionAllergyInf=attrGroups[i].attributeDefinitions;
+            var newArr =new Array();
+            Object.defineProperty(object, 'allergyGroupProperties', {
+                enumerable: true,
+                value: {groupName: groupName, groupId: groupId, contentProperties:newArr}
+            });
             for(var j=0; j<attributeDefinitionAllergyInf.length; j++){
-                 var valor=apiProduct.custom[attributeDefinitionAllergyInf[j].ID];
-                Object.defineProperty(object, attributeDefinitionAllergyInf[j].ID, {
-                    enumerable: true,
-                    value: {value: valor , name: attributeDefinitionAllergyInf[j].displayName, groupName: groupName, groupId: groupId}
-                });
+                 var attributeDefinitionValue=apiProduct.custom[attributeDefinitionAllergyInf[j].ID];
+                object.allergyGroupProperties.contentProperties.push({value:attributeDefinitionValue, name: attributeDefinitionAllergyInf[j].displayName, id: attributeDefinitionAllergyInf[j].ID});
             }
         }
     }  
