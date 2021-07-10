@@ -14,6 +14,10 @@ public class Header extends PageObject{
     @FindBy(xpath = "//a[contains(@class,'logo-home')]")
     private WebElement logo;
 
+    @FindBy(xpath = "//div[contains(@id,'onetrust-button-group-parent')]")
+    private WebElement cookie;
+
+
     @FindBy(name = "q")
     private WebElement searchInput;
 
@@ -67,6 +71,8 @@ public class Header extends PageObject{
     }
 
     public void closeCookie() {
+        wait.until(ExpectedConditions.visibilityOf(cookie));
+
         WebElement cookie = driver.findElement(By.xpath(".//button[contains(@id,'onetrust-accept-btn-handler')]"));
         cookie.click();
     }

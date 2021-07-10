@@ -8,9 +8,13 @@
       Then Verify logo is visible
 
     Scenario: Place an Order with Credit Card as customer
-      Given User clicks on "top-seller" category
+      Given User clicks on "Products" category
+      And User closes cookie
       And User opens a PDP from current PLP
       Then Verify user is seeing the selected PDP
+
+      Given User closes cookie
+      And User selects a quantity
 
       Given User adds product to cart
       And User clicks on cart icon
