@@ -22,7 +22,7 @@
                 <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
                 <preference preference-id="Adyen3DS2Enabled">true</preference>
                 <preference preference-id="AdyenRecurringEnabled">false</preference>
-                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">true</preference>
                 <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
                 <preference preference-id="AdyenLevel23DataEnabled">false</preference>
                 <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>
@@ -36,7 +36,7 @@
                 <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
                 <preference preference-id="Adyen3DS2Enabled">true</preference>
                 <preference preference-id="AdyenRecurringEnabled">false</preference>
-                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">true</preference>
                 <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
                 <preference preference-id="AdyenLevel23DataEnabled">false</preference>
                 <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>

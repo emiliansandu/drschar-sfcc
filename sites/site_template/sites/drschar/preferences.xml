@@ -60,7 +60,7 @@
                 <preference preference-id="AdyenCardHolderName_enabled">false</preference>
                 <preference preference-id="AdyenGiving_enabled">false</preference>
                 <preference preference-id="AdyenLevel23DataEnabled">false</preference>
-                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">true</preference>
                 <preference preference-id="AdyenRecurringEnabled">false</preference>
                 <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
                 <preference preference-id="Adyen_API_Key">JgpN/qzOY4qUgEIxBwwDb18fBYkqXkjgJXa/WCoS+QsmURZEjVqeMC5B14vSXSDD8Q3KhaEmeoBiAYXrJPQJmfy3VMoDjdjvFs3HDaTPIZVtPoPrY9frcAmp4Bjmma+wPElN0q7BUsoAlNnf2OAkYWaUeBB8nBAIAjo8fILllg8MXjbleX1SZPu1Z4bADwtzo6rDLJ4dLbtHIHKxbRLIogLSHJYcd4qJfbLGIGHnYHI=</preference>
