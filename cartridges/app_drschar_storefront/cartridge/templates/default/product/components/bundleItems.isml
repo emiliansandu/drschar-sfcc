@@ -1,6 +1,3 @@
-<div id="m-general-${loopState && loopState.count ? loopState.count : '1'}" class="content">
-
-
     <div class="row">
         <div class="col-12">
             <h2 class="bundle-items-label">${Resource.msg('label.bundle.contains', 'product', null)}</h2>
@@ -15,5 +12,3 @@
             <isinclude template="product/components/bundleItem" />
         </isloop>
     </div>
-
-</div>
