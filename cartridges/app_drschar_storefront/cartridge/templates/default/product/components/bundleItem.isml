@@ -1,5 +1,5 @@
-<div class="container product-detail bundle-item" data-pid="${product.id}">
-    <div class="row">
+<div class="container product-detail bundle-item col-3" data-pid="${product.id}">
+    <div class="row d-none">
         <div class="col-12">
             <!---Breadcrumbs--->
             <div class="product-breadcrumb d-md-none">
@@ -17,23 +17,23 @@
 
     <div class="row">
         <!-- Product Images Carousel -->
-        <isinclude template="product/components/imageCarousel" />
+        <isinclude template="product/components/imageBundleCarousel" />
 
-        <div class="col-12 col-sm-6">
+        <div class="col-12">
             <!-- Product Name -->
             <div class="row">
                 <div class="col">
-                    <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                    <span class="product-name">${product.productName}</span>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row d-none">
                 <div class="col">
                     <isinclude template="product/components/pidRating" />
                 </div>
             </div>
 
-            <div class="attributes">
+            <div class="attributes d-none">
                 <!-- Attributes and Quantity -->
                 <isinclude template="product/components/mainAttributes" />
 
@@ -83,6 +83,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row quantity-unit">
+                <isinclude template="product/components/quantityStatic" />
+                <span class="selected-quantity-child d-none">${parseInt(product.selectedQuantity, 10).toString()}</span>
+            </div>
+
+            <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
+                <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
+            </a>
         </div>
     </div>
 </div>

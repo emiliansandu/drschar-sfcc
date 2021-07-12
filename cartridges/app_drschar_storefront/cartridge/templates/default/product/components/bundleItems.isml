@@ -1,14 +1,31 @@
+<div id="m-general-${loopState && loopState.count ? loopState.count : '1'}" class="content">
+
     <div class="row">
         <div class="col-12">
             <h2 class="bundle-items-label">${Resource.msg('label.bundle.contains', 'product', null)}</h2>
         </div>
     </div>
 
-    <div class="bundle-items">
-        <isloop items="${product.bundledProducts}" var="productItem" status="loopState">
-            <isset name="product" value="${productItem}" scope="page" />
-            <isset name="isBundle" value="${true}" scope="page" />
+    <div class="row justify-content-center">
+        <div id="bundle-child-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <isloop items="${pdict.product.bundledProducts}" var="productItem" status="loopState">
+                    <isset name="product" value="${productItem}" scope="page" />
+                    <div class="bundle-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
+                        <isset name="product" value="${productItem}" scope="page" />
+                        <isset name="isBundle" value="${true}" scope="page" />
 
-            <isinclude template="product/components/bundleItem" />
-        </isloop>
+                        <isinclude template="product/components/bundleItem" />
+                    </div>
+                </isloop>
+            </div>
+            <a class="carousel-control-prev" href="#bundle-child-carousel" role="button" data-slide="prev">
+                <span class="fa icon-prev" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#bundle-child-carousel" role="button" data-slide="next">
+                <span class="fa icon-next" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
+
+</div>
