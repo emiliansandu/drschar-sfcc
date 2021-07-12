@@ -1,0 +1,3 @@
+<div class="col-12 ean-number">
+    <span>${Resource.msg('label.ean.number', 'product', null)}: ${pdict.EAN}</span>
+</div>

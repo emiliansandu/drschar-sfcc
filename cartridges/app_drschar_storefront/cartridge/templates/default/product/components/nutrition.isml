@@ -1,0 +1,159 @@
+<div id="m-nutrition-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
+    <isif condition="${pdict.NutritionFacts !== null}">
+        <div id="NutritionFactsTabContent">
+            <section class="nutrition-label vertical-label">
+                <div class="nutrition-row">
+                    <div class="nutrition-column">
+                    <header class="nutrition-header">
+                        <h1 class="nutrition-facts border-b">${Resource.msg('label.tab.tittle.nutrition', 'product', null)}</h1>
+                        <div class="nutrition-row">
+                        <div class="nutrition-column">
+                            <div class="servings">${pdict.NutritionFacts.servingPerContainer != null ? pdict.NutritionFacts.servingPerContainer : Resource.msg('label.tab.nutrition.emptyField', 'product', null)  } ${Resource.msg('label.tab.nutrition.servingPerContainer', 'product', null)}</div>
+                            <div class="text-md text-bold show-tablet">${Resource.msg('label.tab.nutrition.servingSize', 'product', null)}</div>
+                        </div>
+                        </div>
+                        <div class="nutrition-row border-b-lg border-b-tablet">
+                        <div class="nutrition-column hide-tablet">
+                            <div class="text-md text-bold">${Resource.msg('label.tab.nutrition.servingSize', 'product', null)}</div>
+                        </div>
+                        <div class="nutrition-column">
+                            <div class="text-md text-bold text-right text-left-tablet">${pdict.NutritionFacts.servingSize != null ? pdict.NutritionFacts.servingSize : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}</div>
+                        </div>
+                        </div>
+                        <div class="nutrition-row border-b-md border-b-none-tablet">
+                        <div class="nutrition-column text-bold">
+                            <div class="text-sm hide-tablet">${Resource.msg('label.tab.nutrition.amountPerServing', 'product', null)}</div>
+                            <div class="calories">${Resource.msg('label.tab.nutrition.calories', 'product', null)}</div>
+                            <div class="text-sm show-tablet">${Resource.msg('label.tab.nutrition.perServing', 'product', null)}</div>
+                        </div>
+                        <div class="nutrition-column calories amount align-bottom text-right">
+                            ${pdict.NutritionFacts.calories != null ? pdict.NutritionFacts.calories : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }
+                        </div>
+                        </div>
+                    </header>
+                    </div>
+                    <div class="nutrition-column">
+                    <div class="nutrition-row">
+                        <div class="nutrition-column">
+                        <div class="nutrition-row border-b border-b-md-tablet">
+                            <div class="nutrition-column text-bold text-sm show-tablet">
+                            ${Resource.msg('label.tab.nutrition.amountServing', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-right text-bold text-sm">
+                            % ${Resource.msg('label.tab.nutrition.dailyValue', 'product', null)} *
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalFat', 'product', null)}</span> ${pdict.NutritionFacts.totalFat != null ? pdict.NutritionFacts.totalFat : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.totalFat_percent != null ? pdict.NutritionFacts.totalFat_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.satFat', 'product', null)} ${pdict.NutritionFacts.satFat != null ? pdict.NutritionFacts.satFat : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.satFat_percent != null ? pdict.NutritionFacts.satFat_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">
+                                ${Resource.msg('label.tab.nutrition.transFat', 'product', null)} ${pdict.NutritionFacts.transFat != null ? pdict.NutritionFacts.transFat : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.cholesterol', 'product', null)}</span> ${pdict.NutritionFacts.cholesterol != null ? pdict.NutritionFacts.cholesterol : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.cholesterol_percent != null ? pdict.NutritionFacts.cholesterol_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b border-b-md-tablet">
+                            <div class="nutrition-column">
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.sodium', 'product', null)}</span> ${pdict.NutritionFacts.sodium != null ? pdict.NutritionFacts.sodium : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.sodium_percent != null ? pdict.NutritionFacts.sodium_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            </div>
+                        </div>
+                        </div>
+                        <div class="nutrition-column">
+                        <div class="nutrition-row border-b-md show-tablet">
+                            <div class="nutrition-column text-bold text-sm">
+                            ${Resource.msg('label.tab.nutrition.amountServing', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-right text-bold text-sm">
+                            % ${Resource.msg('label.tab.nutrition.dailyValue', 'product', null)} *
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalCarb', 'product', null)}</span> ${pdict.NutritionFacts.totalCarb != null ? pdict.NutritionFacts.totalCarb : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.totalCarb_percent != null ? pdict.NutritionFacts.totalCarb_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                            <div class="nutrition-column">
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.dietaryFiber', 'product', null)} ${pdict.NutritionFacts.fiber}</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.fiber_percent != null ? pdict.NutritionFacts.fiber2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            </div>
+                        </div>
+                        <div class="nutrition-row">
+                            <div class="nutrition-column">
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.totalSugars', 'product', null)} ${pdict.NutritionFacts.totalSugars != null ? pdict.NutritionFacts.totalSugars : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }</span>
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            </div>
+                        </div>
+                        <div class="nutrition-row text-indent-md border-t-sm">
+                            <div class="nutrition-column">
+                            ${Resource.msg('label.tab.nutrition.includes', 'product', null)} ${pdict.NutritionFacts.sugars != null ? pdict.NutritionFacts.sugars : Resource.msg('label.tab.nutrition.emptyField', 'product', null) } ${Resource.msg('label.tab.nutrition.addedSugars', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.sugars_percent != null ? pdict.NutritionFacts.sugars_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            </div>
+                        </div>
+                        <div class="nutrition-row border-t-sm border-b-lg border-b-md-tablet">
+                            <div class="nutrition-column">
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.protein', 'product', null)}</span> ${pdict.NutritionFacts.protein != null ? pdict.NutritionFacts.protein : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            </div>
+                            <div class="nutrition-column text-bold text-right">
+                            ${pdict.NutritionFacts.protein_percent != null ? pdict.NutritionFacts.protein_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="nutrition-row">
+                        <div class="nutrition-column">
+                            <isif condition="${pdict.NutritionFacts !== null}">
+                                <isloop items="${pdict.NutritionFacts.NutritionColumn}" var="NutritionColumn">
+                                    ${NutritionColumn.propName} ${NutritionColumn.propVal1} ${NutritionColumn.propVal2}% •
+                                </isloop>
+                            </isif>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="nutrition-column">
+                    <footer class="nutrition-footer">
+                        <div class="asteric">*</div>
+                        <div class="footnote">
+                            ${Resource.msg('label.tab.nutrition.footNote', 'product', null)}
+                        </div>
+                    </footer>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </isif>
+</div>

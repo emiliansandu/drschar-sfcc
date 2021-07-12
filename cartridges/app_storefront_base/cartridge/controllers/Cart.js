@@ -63,6 +63,7 @@ server.post('AddProduct', function (req, res, next) {
     var childProducts = Object.hasOwnProperty.call(req.form, 'childProducts')
         ? JSON.parse(req.form.childProducts)
         : [];
+    var childs = req.form.childProducts;
     var options = req.form.options ? JSON.parse(req.form.options) : [];
     var quantity;
     var result;

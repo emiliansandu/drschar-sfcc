@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <payment-processors xmlns="http://www.demandware.com/xml/impex/paymentprocessor/2007-03-31">
+
+    <payment-processor processor-id="ADYEN_CREDIT">
+        <description>Adyen credit card payment processor</description>
+        <preferences>
+            <all-instances/>
+            <development/>
+            <staging/>
+            <production/>
+        </preferences>
+    </payment-processor>
+
+    <payment-processor processor-id="Adyen">
+        <description>redirect to Adyen payment page</description>
+        <preferences>
+            <all-instances/>
+            <development>
+                <preference preference-id="Adyen_merchantCode">DrScharUSAIncECOM</preference>
+                <preference preference-id="Adyen_Mode">TEST</preference>
+                <preference preference-id="Adyen_API_Key">qukU2G7VIMfhrv8zf44B6V8fBYkqXkjgJXa/WCoS+QsmURZEjVqeMC5B14vSXSDD8Q3KhaEmeoBiAYXrJPQJmfy3VMoDjdjvFs3HDaTPIZVtPoPrY9frcAmp4Bjmma+wPElN0q7BUsoAlNnf2OAkYWaUeBB8nBAIAjo8fILllg8MXjbleX1SZPu1Z4bADwtzsOZQ1FzmiX7OZGQA13vrlf5Rf668zLhb60jt67abTzE=</preference>
+                <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
+                <preference preference-id="Adyen3DS2Enabled">true</preference>
+                <preference preference-id="AdyenRecurringEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
+                <preference preference-id="AdyenLevel23DataEnabled">false</preference>
+                <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>
+                <preference preference-id="Adyen_notification_password">0UIXnUeZvw03I7UzsnRbM9Hp6o4h8rC8RfX6nu02RSid+WIC6orQUBI5WSBzJtPo</preference>
+                <preference preference-id="AdyenGiving_enabled">false</preference>
+            </development>
+            <staging>
+                <preference preference-id="Adyen_merchantCode">DrScharUSAIncECOM</preference>
+                <preference preference-id="Adyen_Mode">TEST</preference>
+                <preference preference-id="Adyen_API_Key">6awRPK+88Hg3OCHiuwrr9V8fBYkqXkjgJXa/WCoS+QsmURZEjVqeMC5B14vSXSDD8Q3KhaEmeoBiAYXrJPQJmfy3VMoDjdjvFs3HDaTPIZVtPoPrY9frcAmp4Bjmma+wPElN0q7BUsoAlNnf2OAkYWaUeBB8nBAIAjo8fILllg8MXjbleX1SZPu1Z4bADwtztKQjxa79qMt0pEFft6n6ddFcpKX8Z7pXItqvqSrD9Tw=</preference>
+                <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
+                <preference preference-id="Adyen3DS2Enabled">true</preference>
+                <preference preference-id="AdyenRecurringEnabled">false</preference>
+                <preference preference-id="AdyenOneClickEnabled">false</preference>
+                <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
+                <preference preference-id="AdyenLevel23DataEnabled">false</preference>
+                <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>
+                <preference preference-id="Adyen_notification_password">qKQaOpJCtfGhpCInwMFecn31baLI7Dx10LBXKvEE103aGFKxoz8bJpwDwGlNK3zs</preference>
+            </staging>
+            <production/>
+        </preferences>
+    </payment-processor>
+    <payment-processor processor-id="Adyen_Component">
+        <description>Adyen Component payment processor</description>
+        <preferences>
+            <all-instances/>
+            <development/>
+
+            <staging/>
+            <production/>
+        </preferences>
+    </payment-processor>
+    <payment-processor processor-id="Adyen_POS">
+        <description>Adyen pos payment processor</description>
+        <preferences>
+            <all-instances/>
+            <development/>
+            <staging/>
+            <production/>
+        </preferences>
+    </payment-processor>
+
     <payment-processor processor-id="BASIC_CREDIT">
         <description>Internal credit card handling with simple card number check only.</description>
         <preferences>
@@ -71,56 +136,6 @@
 
     <payment-processor processor-id="VERISIGN_CREDIT">
         <description>Verisign online credit card authorization (test and production systems).</description>
-        <preferences>
-            <all-instances/>
-            <development/>
-            <staging/>
-            <production/>
-        </preferences>
-    </payment-processor>
-    <payment-processor processor-id="Adyen">
-        <description>redirect to Adyen payment page</description>
-        <preferences>
-            <all-instances/>
-            <development>
-                <preference preference-id="Adyen_merchantCode">DrScharUSAIncECOM</preference>
-                <preference preference-id="Adyen_Mode">TEST</preference>
-                <preference preference-id="Adyen_API_Key">7weret2aH62bmYAazDCC0l8fBYkqXkjgJXa/WCoS+QsmURZEjVqeMC5B14vSXSDD8Q3KhaEmeoBiAYXrJPQJmfy3VMoDjdjvFs3HDaTPIZVtPoPrY9frcAmp4Bjmma+wPElN0q7BUsoAlNnf2OAkYWaUeBB8nBAIAjo8fILllg8MXjbleX1SZPu1Z4bADwtz881Rh44lMaj1TU//+dMQbGVQcu4UUt/xW1enhQX8u9o=</preference>
-                <preference preference-id="AdyenSecuredFieldsEnabled">false</preference>
-                <preference preference-id="Adyen3DS2Enabled">true</preference>
-                <preference preference-id="AdyenRecurringEnabled">false</preference>
-                <preference preference-id="AdyenOneClickEnabled">false</preference>
-                <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
-                <preference preference-id="Adyen_notification_user">Company.DrScharUSAInc</preference>
-                <preference preference-id="Adyen_notification_password">ua0qHTaurKqJaeEubDh3UhuSZ+ivAUIPs6NmWzNPwA1FBKtPM4V/5u8eV20l92bv</preference>
-                <preference preference-id="AdyenLevel23DataEnabled">false</preference>
-                <preference preference-id="AdyenCardHolderName_enabled">false</preference>
-                <preference preference-id="AdyenGiving_enabled">false</preference>
-            </development>
-            <staging/>
-            <production/>
-        </preferences>
-    </payment-processor>
-    <payment-processor processor-id="ADYEN_CREDIT">
-        <description>Adyen credit card payment processor</description>
-        <preferences>
-            <all-instances/>
-            <development/>
-            <staging/>
-            <production/>
-        </preferences>
-    </payment-processor>
-    <payment-processor processor-id="Adyen_POS">
-        <description>Adyen pos payment processor</description>
-        <preferences>
-            <all-instances/>
-            <development/>
-            <staging/>
-            <production/>
-        </preferences>
-    </payment-processor>
-    <payment-processor processor-id="Adyen_Component">
-        <description>Adyen Component payment processor</description>
         <preferences>
             <all-instances/>
             <development/>

@@ -24,7 +24,7 @@
                     var mediaFileURL =ProductImage.getURL();
                     </isscript>
                     
-                    <img src="${mediaFileURL}" class="d-block img-fluid"
+                    <img src="${mediaFileURL}" class="d-block img-fluid carousel-image"
                         alt="${image.alt} image number ${image.index}" itemprop="image" />
                 </div>
             </isloop>

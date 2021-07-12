@@ -49,6 +49,11 @@ public class PdpSteps extends DriverFactory {
         pdp.clickSize();
     }
 
+    @Given("User selects a quantity")
+    public void selectQuantity(){
+        pdp.clickQuantity();
+    }
+
     @Given("User adds product to cart")
     public void addToCart() {
         pdp.clickAddToCart();

@@ -1,0 +1,16 @@
+<isdecorate template="common/layout/page">
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceLayouts/layout.css');
+</isscript>
+            <div class="mobile-2r-1c">
+                <div class="row mx-n2 justify-content-center">
+                    <isprint value="${pdict.regions.region1
+                          .setClassName("region col-lg-8 col-12").render()}" encoding="off" />
+                
+                    <isprint value="${pdict.regions.region2
+                          .setClassName("region col-lg-4 col-12").render()}" encoding="off" />
+                </div>
+
+            </div>
+    </isdecorate>

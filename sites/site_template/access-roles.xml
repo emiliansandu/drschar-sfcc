@@ -73,8 +73,16 @@
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/-/studio_system_obj" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/-/wapi_settings" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/-/webdavclient_permissions" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_abtesting" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_catalog" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_conversion" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_customer" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_historical_reports" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_purchase" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_reportsdashboards" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_seachnav" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_technical" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/analytics_traffic" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/content_impex" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/content_pages" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/customer_service_center_module" permission="ACCESS"/>
@@ -171,6 +179,14 @@
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/sorting_rules" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/sourcecode" permission="ACCESS"/>
             <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/drschar/stemming_exceptions" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_abtesting" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_catalog" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_conversion" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_customer" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_purchase" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_seachnav" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_technical" permission="ACCESS"/>
+            <access-control resource-path="BUSINESSMGR/SystemMenu/Sites/RefArchGlobal/analytics_traffic" permission="ACCESS"/>
             <access-control resource-path="LOCALES/*" permission="ACCESS"/>
             <access-control resource-path="OBJECT/Organization/Sites" permission="Delete_All_Catalogs"/>
             <access-control resource-path="OBJECT/Organization/Sites" permission="Manage_All_Catalogs"/>

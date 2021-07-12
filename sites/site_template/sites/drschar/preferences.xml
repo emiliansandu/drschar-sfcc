@@ -13,12 +13,12 @@
             <preference preference-id="AccountNumberRetentionDays">0</preference>
             <preference preference-id="SiteCatalog">storefront-catalog</preference>
             <preference preference-id="SiteCurrencies">USD:EUR:JPY:CNY</preference>
-	        <preference preference-id="SiteCustomerList">RefArch</preference>            
+	        <preference preference-id="SiteCustomerList">drschar</preference>            
             <preference preference-id="SiteDefaultLocale">en_US</preference>
             <preference preference-id="SiteLibrary">RefArchSharedLibrary</preference>
-            <preference preference-id="SiteInventoryList">inventory_m</preference>
+            <preference preference-id="SiteInventoryList">DRS</preference>
             <preference preference-id="SiteLocales">default:en_US</preference>
-            <preference preference-id="SitePriceBooks">cny-m-list-prices:cny-m-sale-prices:eur-m-list-prices:eur-m-sale-prices:jpy-m-list-prices:jpy-m-sale-prices:usd-m-list-prices:usd-m-sale-prices</preference>
+            <preference preference-id="SitePriceBooks">E-COMM</preference>
             <preference preference-id="StorefrontURLsEnabled">true</preference>
         </all-instances>
         <development>

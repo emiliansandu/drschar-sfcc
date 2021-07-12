@@ -1,0 +1,12 @@
+<div class="product-number-rating clearfix">
+    <!-- Product Number -->
+    <div class="product-number pull-left">
+        <isinclude template="product/components/productNumber" />
+    </div>
+
+    <!-- Product Weight -->
+    <div class="weight pull-right">
+        <isinclude template="product/components/productWeight" />
+    </div>
+
+</div>

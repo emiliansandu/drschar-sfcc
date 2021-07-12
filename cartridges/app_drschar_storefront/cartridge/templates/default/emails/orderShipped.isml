@@ -1,0 +1,967 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width">
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">
+    <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title>
+    <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+    <style>
+        * {
+            font-family: sans-serif !important;
+        }
+    </style>
+    <![endif]-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+
+
+    <style>
+        /* vietnamese */
+
+        * {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+        /* What it does: Remove spaces around the email design added by some email clients. */
+
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+
+        a {
+            text-decoration: none !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+
+        *[x-apple-data-detectors],
+        /* iOS */
+
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+
+        img.g-img+div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u~div .email-container {
+                min-width: 320px !important;
+            }
+        }
+
+        /* iPhone 6, 6S, 7, 8, and X */
+
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u~div .email-container {
+                min-width: 375px !important;
+            }
+        }
+
+        /* iPhone 6+, 7+, and 8+ */
+
+        @media only screen and (min-device-width: 414px) {
+            u~div .email-container {
+                min-width: 414px !important;
+            }
+        }
+    </style>
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+        /* What it does: Hover styles for buttons */
+
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+
+        .button-td-primary:hover,
+        .button-a-primary:hover {
+            background: rgb(192, 5, 49) !important;
+            border-color: rgb(192, 5, 49) !important;
+        }
+
+
+
+        /* Media Queries */
+
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: left !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 15px !important;
+            }
+
+        }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+
+
+
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; background-color: #F3F1EE;">
+
+    <main>
+        <center style="width: 100%; background-color: #F3F1EE;">
+            <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+            <!-- Preview Text Spacing Hack : BEGIN -->
+            <div
+                style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: Arial, sans-serif; ">
+                &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            </div>
+            <!-- Preview Text Spacing Hack : END -->
+
+            <!-- Email Body : BEGIN -->
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                style="background-color: #FFFFFF; margin: 0 auto;" class="email-container">
+                <isloop items="${pdict.order.shipping}" var="shippingModel" status="shippingLoop">
+                    <!-- Background Image with Text : BEGIN -->
+                    <tr>
+                        <!-- Bulletproof Background Images c/o https://backgrounds.cm -->
+                        <td height="104" valign="middle"
+                            style="text-align: center; background-image: url('/assets/images/mail/mail_header-bg.png'); background-color: #FFFFFF; background-repeat: repeat-x; background-position: center -25px !important;">
+                            <!--[if gte mso 9]>
+                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:104px; background-position: center -25px !important; background-repeat: repeat-x !important;">
+                        <v:fill type="tile" src="/assets/images/mail/mail_header-bg.png" color="#FFFFFF" />
+                        <v:textbox inset="0,0,0,0">
+                    <![endif]-->
+                            <div>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                    height="84">
+                                    <tr>
+                                        <td width="20">&nbsp;</td>
+                                        <td valign="bottom" align="left" height="104" width="100"
+                                            style="text-align: left;">
+                                            <table cellpadding="20">
+                                                <tr>
+                                                    <td>
+                                                        <img src="${URLUtils.httpsStatic('/images/logo-schaer.png')}"
+                                                            width="100" height="84" alt="Schär - Best in Gluten Free"
+                                                            border="0" style="height: auto;" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td valign="middle" height="84" width="auto"
+                                            style="text-align: right; font-weight: bold; font-size: 14px; font-family: Arial, sans-serif; ">
+                                            <span>${Resource.msg('label.order.custom.order-number', 'confirmation', null) + pdict.order.orderNumber}</span>
+                                            <br>&nbsp;
+                                            <br>&nbsp;
+                                            <br>&nbsp;
+                                            <br>&nbsp;
+                                        </td>
+                                        <td width="40">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if gte mso 9]>
+                    </v:textbox>
+                    </v:rect>
+                    <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- Background Image with Text : END -->
+
+
+                    <!-- 1 Column Text + Button : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td
+                                        style="text-align: center; padding: 20px 40px; font-family: Arial, sans-serif;  font-size: 14px; line-height: 20px; color: #555555;">
+                                        <h1
+                                            style="text-transform: uppercase; margin: 0 0 10px; font-family: 'Josefin Sans','Roboto',Arial, sans-serif; text-transform: uppercase; font-size: 30px; line-height: 35px; color: #422D31; font-weight: 400;">
+                                            ${Resource.msg('label.order.custom.shipping', 'confirmation', null)}
+                                        </h1>
+
+                                        <isset name="address" value="${shippingModel.shippingAddress}" scope="page" />
+                                        <p style="margin: 0 0 10px;">${Resource.msgf('label.order.custom.hey.shipping.confirm', 'confirmation', null, address.firstName, address.lastName)}</p>
+
+                                        <p style="margin: 0 0 10px;">${Resource.msg('label.order.custom.message.shipping', 'confirmation', null)}</p>
+                                        <p style="margin: 0 0 10px;">
+
+                                            <strong>${Resource.msgf('label.order.custom.delivery.estimation', 'confirmation', null, pdict.arrivalEstimatedPeriod
+                                                    .earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName,
+                                                    pdict.arrivalEstimatedPeriod.deliveryYear)}
+                                            </strong>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 20px 20px;">
+                                        <!-- Button : BEGIN -->
+                                        <table align="center" role="presentation" cellspacing="0" cellpadding="0"
+                                            border="0" style="margin: auto;">
+                                            <tr>
+                                                <td class="button-td button-td-primary"
+                                                    style="border-radius: 4px; background: #CF0031;">
+
+                                                    <form action="${URLUtils.https('Order-Track')}" method="POST"
+                                                        name="trackorder-form">
+                                                        <input type="hidden" id="trackorder-form-number"
+                                                            name="trackOrderNumber" value="${pdict.order.orderNumber}">
+                                                        <input type="hidden" id="trackorder-form-email"
+                                                            name="trackOrderEmail" value="${pdict.order.orderEmail}">
+                                                        <input type="hidden" id="trackorder-form-zip"
+                                                            name="trackOrderPostal"
+                                                            value="${pdict.order.billing.billingAddress.address.postalCode}">
+
+                                                        <input type="hidden"
+                                                            name="${dw.web.CSRFProtection.getTokenName()}"
+                                                            value="${dw.web.CSRFProtection.generateToken()}" />
+
+                                                        <div class="form-group">
+                                                            <button class="button-a button-a-primary"
+                                                                style="display: inline-block !important; background: #CF0031; border: 1px solid #CF0031; font-family: Arial, sans-serif;  font-size: 14px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;font-weight:bold"
+                                                                type="submit" name="submit" value="submit">
+                                                                ${Resource.msg('label.order.custom.order.cta', 'confirmation', null)}
+                                                            </button>
+                                                        </div>
+
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Button : END -->
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text + Button : END -->
+
+                    <!-- Order summary -->
+                    <!-- ROW : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="100%" height="1" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW : END -->
+
+
+                    <!-- ROW : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 10px; font-size:14px; color: #A09698; font-family: Arial, sans-serif;  ">
+                                                    ${Resource.msg('label.order.custom.order.email', 'confirmation', null)}
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="text-decoration: none; padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
+                                                    <!--added as a link ro prevent gmail from adding mailto to email addresses-->
+                                                    <a rel="nofollow"
+                                                        style='text-decoration:none; color:#333'>${pdict.order.orderEmail}</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="2" class="stack-column-center"
+                                        aria-hidden="true"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="1" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW : END -->
+
+                    <!-- ROW : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 10px; font-size:14px; color: #A09698; font-family: Arial, sans-serif;  ">
+                                                    ${Resource.msg('label.order.custom.order.shipping', 'confirmation', null)}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
+                                                    <p style="margin: 0px; line-height: 24px;">
+                                                        <span>${address.firstName}&nbsp;${address.lastName}</span>
+                                                        <br />
+                                                        ${address.address1}<br />
+                                                        ${address.postalCode}&nbsp;${address.city}<br />
+                                                        ${address.countryCode.value}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="1" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW : END -->
+
+                    <!-- ROW 3cols: BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 10px; font-size:14px; color: #A09698; font-family: Arial, sans-serif;  ">
+                                                    ${Resource.msg('label.order.custom.order.shipping-method', 'confirmation', null)}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="50%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
+                                                    ${shippingModel.selectedShippingMethod.displayName}
+                                                    <span
+                                                        style="color: #A09698">${Resource.msgf('label.order.custom.order.shipping-cost', 'confirmation', null, shippingModel.selectedShippingMethod
+                                                                               .shippingCost)}</span>
+                                                    <p style="margin: 0 0; font-size: 12px !important; color: #A09698;">
+                                                        ${Resource.msgf('label.order.custom.delivery.estimate', 'confirmation', null, pdict.arrivalEstimatedPeriod
+                                                        .earlyArrivalDayMonth, pdict.arrivalEstimatedPeriod.lateArrivalDayMonth, pdict.arrivalEstimatedPeriod.monthName)}</p>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <td width="16.66%" class="stack-column-center" valign="top" align="right">
+                                        <img src="${shippingModel.selectedShippingMethod.image.absURL}" width="80"
+                                            alt="Placeholder" border="0" class="center-on-narrow">
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="3" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="1" colspan="3" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW 3cols: END -->
+
+                    <!-- ROW : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 10px; font-size:14px; color: #A09698; font-family: Arial, sans-serif;  ">
+                                                    ${Resource.msg('label.order.custom.order.billing', 'confirmation', null)}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
+                                                    <span>${address.firstName}&nbsp;${address.lastName}</span>
+                                                    <br />
+                                                    ${address.address1}<br />
+                                                    ${address.postalCode}&nbsp;${address.city}<br />
+                                                    ${address.countryCode.value}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="1" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW : END -->
+
+                    <!-- ROW 3cols: BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 10px; font-size:14px; color: #A09698; font-family: Arial, sans-serif;  ">
+                                                    ${Resource.msg('label.order.custom.order.payment-method', 'confirmation', null)}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="50%" class="stack-column-center" valign="top">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%">
+                                            <tr>
+                                                <td dir="ltr" valign="top"
+                                                    style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
+                                                    ${pdict.order.billing.payment.selectedPaymentInstruments[0].type}
+                                                    <span
+                                                        style="color: #A09698">${Resource.msgf('label.order.custom.order.payment-amount', 'confirmation', null, pdict.order.billing.payment
+                                                                               .selectedPaymentInstruments[0].amount)}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <td width="16.66%" class="stack-column-center" valign="top" align="right"
+                                        style="padding: 3px 0">
+                                        <isif
+                                            condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod == 'CREDIT_CARD'}">
+                                            <isloop items="${pdict.paymentObject.activePaymentCards}" var="paymentCards"
+                                                status="paymentCardLoop">
+                                                <isif
+                                                    condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].type == paymentCards.cardType}">
+                                                    <img src="${paymentCards.image.absURL}" width="40" alt="Placeholder"
+                                                        border="0" class="center-on-narrow">
+                                                </isif>
+                                            </isloop>
+                                        <iselse/>
+                                            <img src="${pdict.paymentObject.image.absURL}" width="40" alt="Placeholder"
+                                                border="0" class="center-on-narrow">
+                                        </isif>
+
+
+
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="3" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="1" colspan="3" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ROW 3cols: END -->
+
+                    <!-- Order summary : END -->
+
+
+                    <!-- List Title : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%"
+                            style="padding: 40px 40px 10px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="50%" class="stack-column-center" valign="bottom"
+                                        style="font-family: 'Josefin Sans','Roboto', Arial, sans-serif;  text-transform: uppercase; font-size: 20px; line-height: 35px; color: #422D31; font-weight: 400;">
+                                        <strong>${Resource.msg('label.order.custom.order', 'confirmation', null) + pdict.order.orderNumber}</strong>
+                                    </td>
+                                    <td width="50%" class="stack-column-center" align="right" valign="bottom"
+                                        style="color: #A09698; font-family: Arial, sans-serif;  font-size:14px; font-weight: 400;">
+                                        <span>
+                                            <isprint value="${pdict.order.creationDate}" style="DATE_LONG" />&nbsp;
+                                            <isprint value="${pdict.order.creationDate}" style="DATE_TIME" /></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="15" colspan="2" class="stack-column-center"
+                                        aria-hidden="true"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="2" colspan="2" class="stack-column-center"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Title : END -->
+
+                    <!-- Order list -->
+                    <isloop items="${pdict.order.items.items}" var="itemsList" status="itemsLoop">
+                        <tr>
+                            <td dir="ltr" valign="top" width="100%"
+                                style="padding: 10px 40px; background-color: #ffffff;">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <!-- Column : BEGIN -->
+                                        <td width="33.33%" class="stack-column-center">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                                width="100%">
+                                                <tr>
+                                                    <td dir="ltr" valign="top"
+                                                        style="background-color:#F9F8F6; padding: 10px;">
+                                                        <center>
+
+                                                            <img src="${'https://' + pdict.host + itemsList.images.small[0].url}"
+                                                                width="160" height="120"
+                                                                alt="${itemsList.images.small[0].alt}"
+                                                                title="${itemsList.images.small[0].title}" border="0"
+                                                                class="center-on-narrow"
+                                                                style="height: auto; background: #F9F8F6; font-family: Arial, sans-serif;  font-size: 14px; line-height: 15px; color: #555555;" />
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Column : END -->
+                                        <!-- Column : BEGIN -->
+                                        <td width="66.66%" class="stack-column-center" valign="top">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                                width="100%">
+                                                <tr>
+                                                    <td dir="ltr" valign="top"
+                                                        style="font-family: Arial, sans-serif;  font-size: 14px; line-height: 20px; color: #555555; padding: 20px; text-align: left;"
+                                                        class="center-on-narrow">
+                                                        <h2
+                                                            style="margin: 0 0 5px 0; font-family: 'Josefin Sans', 'Roboto', Arial, sans-serif; text-transform: uppercase;  font-size: 18px; line-height: 26px; color: #422D31; font-weight: bold;">
+                                                            ${itemsList.productName}</h2>
+                                                        <p style="margin: 0 0 20px 0; color: #A09698; font-size: 12px">
+                                                            <isloop items="${pdict.productWeight}" var="prodWeight"
+                                                                status="prodWeightLoop">
+                                                                <isif
+                                                                    condition="${itemsList.id == prodWeight.ID && prodWeight.custom.dimWeight}">
+                                                                    <strong>${prodWeight.custom.dimWeight}</strong>
+                                                                </isif>
+                                                            </isloop>
+
+                                                        </p>
+
+                                                        <table role="presentation" border="0" cellpadding="0"
+                                                            cellspacing="0" width="100%">
+                                                            <tr>
+                                                                <td dir="ltr" valign="top" width="50%" align="left"
+                                                                    style="font-family: Arial, sans-serif;  font-size: 12px; font-weight: bold; color: #A09698;">
+                                                                    ${Resource.msg('label.order.custom.order.product-quantity', 'confirmation', null)}
+                                                                    <span
+                                                                        style="color: #422D31;">${itemsList.quantity.toFixed()}</span>
+                                                                </td>
+                                                                <td dir="ltr" valign="top" width="50%" align="right"
+                                                                    style="font-family: Arial, sans-serif;  font-size: 12px; font-weight: bold; color: #A09698;">
+                                                                    ${Resource.msg('label.order.custom.order.product-total-price', 'confirmation', null)}
+                                                                    <span
+                                                                        style="color: #422D31;">${itemsList.priceTotal.price}</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Column : END -->
+                                    </tr>
+                                    <tr>
+                                        <td width="100%" height="20" colspan="2" class="stack-column-center"
+                                            style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="100%" height="1" colspan="2" class="stack-column-center"
+                                            style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </isloop>
+                    <!-- Order list : END -->
+
+                    <!-- Total summary : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" valign="top"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;">
+                                        ${Resource.msg('label.order.custom.order.subtotal', 'confirmation', null)}
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" valign="top" align="right"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;"
+                                        valign="top">
+                                        ${pdict.order.totals.subTotal}
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" valign="top"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;">
+                                        ${Resource.msg('label.order.custom.order.shipping-costs', 'confirmation', null)}
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" valign="top" align="right"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;"
+                                        valign="top">
+                                        ${pdict.order.totals.totalShippingCost}
+                                    </td>
+                                    <!-- Column : END -->
+                                    
+                                </tr>
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" valign="top"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;">
+                                        ${Resource.msg('label.order.sales.tax', 'confirmation', null)}
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <!--- Sales Tax --->
+                                    <td width="66.66%" valign="top" align="right"
+                                        style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px;"
+                                        valign="top">
+                                        ${pdict.order.totals.totalTax}
+                                    </td>
+                                    <!-- Column : END -->
+                                    
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="2" aria-hidden="true"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="2" colspan="2"
+                                        style="font-size: 1px; line-height: 1px; background-color: #EDEAE8;">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="20" colspan="2" aria-hidden="true"
+                                        style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="33.33%" valign="top"
+                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;">
+                                        <strong>${Resource.msg('label.order.custom.order.total-amount', 'confirmation', null)}</strong>
+                                    </td>
+                                    <!-- Column : END -->
+                                    <!-- Column : BEGIN -->
+                                    <td width="66.66%" valign="top" align="right"
+                                        style="font-size: 16px; font-family: Arial, sans-serif;  padding: 0 10px;"
+                                        valign="top">
+                                        <strong>${pdict.order.totals.grandTotal}</strong>
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Total summary : END -->
+
+
+                    <!-- Terms of services : BEGIN -->
+                    <tr>
+                        <td dir="ltr" valign="top" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Column : BEGIN -->
+                                    <td width="100%" valign="top" align="center"
+                                        style="padding: 20px 10px; font-size:14px; font-family: Arial, sans-serif;">
+                                        <a href="${URLUtils.https('Page-Show', 'cid', 'terms')}"
+                                            style="text-decoration: underline !important; color: rgb(160, 150, 152) !important;">
+                                            ${Resource.msg('label.order.custom.order.terms-link', 'confirmation', null)}</a>
+                                    </td>
+                                    <!-- Column : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Terms of services : END -->
+
+                    <!-- Service box : BEGIN -->
+                    <tr>
+                        <td valign="middle" style="text-align: center; background-color: #DCD6D1;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td valign="middle"
+                                        style="text-align: center; padding: 40px; font-family: Arial, sans-serif;  font-size: 14px; font-weight: bold; line-height: 20px; color: #422D31;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            ${Resource.msg('label.order.custom.order.question-contactus', 'confirmation', null)}
+                                            <br> ${Resource.msg('label.order.custom.order.contactus', 'confirmation', null)}</p>
+                                        <!-- Button : BEGIN -->
+                                        <table align="center" role="presentation" cellspacing="0" cellpadding="0"
+                                            border="0" style="margin: auto;">
+                                            <tr>
+                                                <td class="button-td button-td-primary"
+                                                    style="border-radius: 4px; background: #CF0031;">
+                                                    <a class="button-a button-a-primary"
+                                                        href="${URLUtils.https('ContactUs-Landing')}"
+                                                        style="background: #CF0031; border: 1px solid #CF0031; font-family: Arial, sans-serif;  font-size: 14px; line-height: 15px; text-decoration: none; padding: 13px 17px; font-weight: bold; color: #ffffff; display: block; border-radius: 4px;">
+                                                        ${Resource.msg('label.order.custom.order.cta-contactus', 'confirmation', null)}</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Button : END -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <!-- Service box : END -->
+
+                    <!-- Footer links : BEGIN -->
+                    <isinclude template="emails/footer" />
+                    <!-- Footer links : END -->
+                </isloop>
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                style="margin: 0 auto;" class="email-container">
+                <tr>
+                    <td
+                        style="padding: 20px; font-family: Arial, sans-serif;  font-size: 12px; line-height: 15px; text-align: center; color: #888888;">
+                        ${Resource.msg('label.order.custom.order.copyright', 'confirmation', null)}
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Email Footer : END -->
+        </center>
+    </main>
+
+
+
+
+</body>

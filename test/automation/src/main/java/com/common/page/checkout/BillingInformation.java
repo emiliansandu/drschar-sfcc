@@ -15,7 +15,7 @@ public class BillingInformation extends PageObject {
     @FindBy(id = "dwfrm_billing")
     private WebElement paymentData;
 
-    @FindBy(id = "braintree-hosted-field-number")
+    @FindBy(xpath = "//li[contains(@id,'paymentMethod')]")
     private WebElement paymentInfo;
 
     @FindBy(xpath = "//div[contains(@id,'maincontent')]")
@@ -85,27 +85,32 @@ public class BillingInformation extends PageObject {
         WebElement field = paymentData.findElement(By.id("email"));
         field.sendKeys(propertyReader.getProperty("payment.email"));
 
-        driver.switchTo().frame("js-iframe");
+        /*driver.switchTo().frame("js-iframe");
             driver.findElement(
                 By.xpath("//input[@id='encryptedCardNumber']")
             ).sendKeys("4111111111111111");
+        driver.switchTo().defaultContent();*/
+
+        WebElement frameElementCC = driver.findElement(By.xpath("//fieldset//ul[@id='paymentMethodsList']//iframe"));
+        driver.switchTo().frame(frameElementCC);
+           driver.findElement(
+               By.xpath("//input[@id='encryptedCardNumber']")
+           ).sendKeys("4111111111111111");
         driver.switchTo().defaultContent();
 
-        /*field = paymentData.findElement(By.id("encryptedCardNumber"));
-        field.sendKeys(propertyReader.getProperty("payment.cardNum"));*/
+        WebElement frameElementDate = driver.findElement(By.xpath("//div[@class='adyen-checkout__card__exp-cvc adyen-checkout__field-wrapper']//iframe"));
+        driver.switchTo().frame(frameElementDate);
+        driver.findElement(
+            By.xpath("//input[@id='encryptedExpiryDate']")
+        ).sendKeys("03/30");
+        driver.switchTo().defaultContent();
 
-        field = paymentData.findElement(By.id("encryptedExpiryDate"));
-        field.sendKeys(propertyReader.getProperty("payment.expiration"));
-
-        /*Select select = new Select(paymentData.findElement(By.id("encryptedExpiryDate")));
-        select.selectByValue(propertyReader.getProperty("payment.expiration"));
-
-        select = new Select(paymentData.findElement(By.id("expirationYear")));
-        select.selectByValue(propertyReader.getProperty("payment.Year"));*/
-
-        field = paymentData.findElement(By.id("securityCode"));
-        field.sendKeys(propertyReader.getProperty("payment.cvv"));
-
+        WebElement frameElementCVV = driver.findElement(By.xpath("//div[@class='adyen-checkout__field adyen-checkout__field--50 adyen-checkout__field__cvc adyen-checkout__field--securityCode']//iframe"));
+        driver.switchTo().frame(frameElementCVV);
+        driver.findElement(
+            By.xpath("//input[@id='encryptedSecurityCode']")
+        ).sendKeys("737");
+        driver.switchTo().defaultContent();
 
     }
 

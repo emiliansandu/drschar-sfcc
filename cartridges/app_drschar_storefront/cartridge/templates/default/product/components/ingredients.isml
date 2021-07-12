@@ -1,0 +1,5 @@
+<isif condition="${pdict.ingredients}">
+    <div id="m-ingredients-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content">
+        <isprint value="${pdict.ingredients}" encoding="off" />
+    </div>
+</isif>

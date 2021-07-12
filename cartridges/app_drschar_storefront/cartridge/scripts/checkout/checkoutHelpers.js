@@ -608,6 +608,158 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset,
 
     emailHelpers.sendEmail(emailObj, 'emails/orderConfirmation', orderObject);
 }
+/**
+ * Sends a cancellation order email to the current user
+ * @param {dw.order.Order} order - The current user's order
+ * @param {string} locale - the current request's locale id
+ * @returns {void}
+ */
+ function sendCancellationEmail(order, locale, host, paymentObject, contentAsset, productWeight) {
+    var OrderModel = require('*/cartridge/models/order');
+    var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
+    var Locale = require('dw/util/Locale');
+
+    var currentLocale = Locale.getLocale(locale);
+
+    var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
+
+    var estimatedArrival = orderModel.shipping[0].selectedShippingMethod.estimatedArrivalTime.replace(" Business Days", "");
+    estimatedArrival = estimatedArrival.split("-");                                   
+    
+    var orderDay = orderModel.creationDate.getDate();
+
+    // getMonth() will return a month between 0 - 11 
+    var currentMonth = orderModel.creationDate.getMonth();
+    var currentYear = orderModel.creationDate.getFullYear();
+    // this line does the magic (in collab with the last 2 lines above)
+    // we add one to get to the month number from 1 - 12 and obtain correct days of the actual month
+    var daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+    
+    //calculated gross arrival day of delivery considering order day creation
+    var earlyArrivalDayMonth=parseInt(estimatedArrival[0])+orderDay;
+    var lateArrivalDayMonth=parseInt(estimatedArrival[1])+orderDay;
+    var deliveryYear=currentYear.toString();
+    var monthName;
+    
+    //if earlyArrivalDayMonth or lateArrivalDayMonth increases daysInMonth then it means delivery date will be on the next month                                  
+    if(earlyArrivalDayMonth>daysInMonth || lateArrivalDayMonth>daysInMonth){
+
+        var nextMonth = parseInt(currentMonth)+1;
+
+        //if nextMonth value increases more than the (0-11) index positions of the monthNames array it takes away those eleven positions plus one to set this value to his correct index position on monthNames array
+        //also it means the month belongs to next year
+        if(nextMonth>11){ 
+            nextMonth=(nextMonth-12);
+            currentYear=currentYear+1;
+            deliveryYear=currentYear.toString();
+            monthName = new Date(0, nextMonth);
+        }else{
+            monthName = new Date(0, nextMonth);
+            }
+        }
+        else{
+            monthName = new Date(0, currentMonth);   
+        }
+        
+           monthName = monthName.toLocaleDateString().split(' ');
+
+    //and finally calculate the correcta day of the month by taking away total days of current month to calculated gross arrival delivery earlyArrivalDayMonth and lateArrivalDayMonth values                                  
+    if(earlyArrivalDayMonth>daysInMonth){
+            earlyArrivalDayMonth=earlyArrivalDayMonth-daysInMonth;
+        }
+    if(lateArrivalDayMonth>daysInMonth){
+            lateArrivalDayMonth=lateArrivalDayMonth-daysInMonth;  
+        }  
+        var arrivalEstimatedPeriod = { earlyArrivalDayMonth: earlyArrivalDayMonth, lateArrivalDayMonth: lateArrivalDayMonth, monthName: monthName[0], deliveryYear: deliveryYear};
+        
+    var orderObject = { order: orderModel, host: host, paymentObject: paymentObject, contentAsset: contentAsset, productWeight: productWeight, arrivalEstimatedPeriod: arrivalEstimatedPeriod};
+
+
+    var emailObj = {
+        to: order.customerEmail,
+        subject: Resource.msg('subject.order.cancellation.email', 'order', null),
+        from: Site.current.getCustomPreferenceValue('customerServiceEmail') || 'no-reply@testorganization.com',
+        type: emailHelpers.emailTypes.orderConfirmation
+    };
+
+    emailHelpers.sendEmail(emailObj, 'emails/orderCancellation', orderObject);
+}
+/**
+ * Sends a shipping order email confirmation to the current user
+ * @param {dw.order.Order} order - The current user's order
+ * @param {string} locale - the current request's locale id
+ * @returns {void}
+ */
+ function sendShippingEmail(order, locale, host, paymentObject, contentAsset, productWeight) {
+    var OrderModel = require('*/cartridge/models/order');
+    var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
+    var Locale = require('dw/util/Locale');
+
+    var currentLocale = Locale.getLocale(locale);
+
+    var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
+
+    var estimatedArrival = orderModel.shipping[0].selectedShippingMethod.estimatedArrivalTime.replace(" Business Days", "");
+    estimatedArrival = estimatedArrival.split("-");                                   
+    
+    var orderDay = orderModel.creationDate.getDate();
+
+    // getMonth() will return a month between 0 - 11 
+    var currentMonth = orderModel.creationDate.getMonth();
+    var currentYear = orderModel.creationDate.getFullYear();
+    // this line does the magic (in collab with the last 2 lines above)
+    // we add one to get to the month number from 1 - 12 and obtain correct days of the actual month
+    var daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+    
+    //calculated gross arrival day of delivery considering order day creation
+    var earlyArrivalDayMonth=parseInt(estimatedArrival[0])+orderDay;
+    var lateArrivalDayMonth=parseInt(estimatedArrival[1])+orderDay;
+    var deliveryYear=currentYear.toString();
+    var monthName;
+    
+    //if earlyArrivalDayMonth or lateArrivalDayMonth increases daysInMonth then it means delivery date will be on the next month                                  
+    if(earlyArrivalDayMonth>daysInMonth || lateArrivalDayMonth>daysInMonth){
+
+        var nextMonth = parseInt(currentMonth)+1;
+
+        //if nextMonth value increases more than the (0-11) index positions of the monthNames array it takes away those eleven positions plus one to set this value to his correct index position on monthNames array
+        //also it means the month belongs to next year
+        if(nextMonth>11){ 
+            nextMonth=(nextMonth-12);
+            currentYear=currentYear+1;
+            deliveryYear=currentYear.toString();
+            monthName = new Date(0, nextMonth);
+        }else{
+            monthName = new Date(0, nextMonth);
+            }
+        }
+        else{
+            monthName = new Date(0, currentMonth);   
+        }
+        
+           monthName = monthName.toLocaleDateString().split(' ');
+
+    //and finally calculate the correcta day of the month by taking away total days of current month to calculated gross arrival delivery earlyArrivalDayMonth and lateArrivalDayMonth values                                  
+    if(earlyArrivalDayMonth>daysInMonth){
+            earlyArrivalDayMonth=earlyArrivalDayMonth-daysInMonth;
+        }
+    if(lateArrivalDayMonth>daysInMonth){
+            lateArrivalDayMonth=lateArrivalDayMonth-daysInMonth;  
+        }  
+        var arrivalEstimatedPeriod = { earlyArrivalDayMonth: earlyArrivalDayMonth, lateArrivalDayMonth: lateArrivalDayMonth, monthName: monthName[0], deliveryYear: deliveryYear};
+        
+    var orderObject = { order: orderModel, host: host, paymentObject: paymentObject, contentAsset: contentAsset, productWeight: productWeight, arrivalEstimatedPeriod: arrivalEstimatedPeriod};
+
+
+    var emailObj = {
+        to: order.customerEmail,
+        subject: Resource.msg('subject.order.shippingconfirmation.email', 'order', null),
+        from: Site.current.getCustomPreferenceValue('customerServiceEmail') || 'no-reply@testorganization.com',
+        type: emailHelpers.emailTypes.orderConfirmation
+    };
+
+    emailHelpers.sendEmail(emailObj, 'emails/orderShipped', orderObject);
+}
 
 /**
  * Attempts to place the order
@@ -760,6 +912,8 @@ module.exports = {
     savePaymentInstrumentToWallet: savePaymentInstrumentToWallet,
     getRenderedPaymentInstruments: getRenderedPaymentInstruments,
     sendConfirmationEmail: sendConfirmationEmail,
+    sendCancellationEmail: sendCancellationEmail,
+    sendShippingEmail: sendShippingEmail,
     ensureValidShipments: ensureValidShipments,
     setGift: setGift
 };

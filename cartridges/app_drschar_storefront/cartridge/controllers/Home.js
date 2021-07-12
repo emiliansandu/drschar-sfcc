@@ -34,4 +34,10 @@ server.get('Show', consentTracking.consent, cache.applyDefaultCache, function (r
     next();
 }, pageMetaData.computedPageMetaData);
 
+server.get('ErrorNotFound', function (req, res, next) {
+    res.setStatusCode(404);
+    res.render('error/notFound');
+    next();
+});
+
 module.exports = server.exports();

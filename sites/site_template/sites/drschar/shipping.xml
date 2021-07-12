@@ -27,7 +27,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -41,7 +41,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>womens-jewelry</category-id>
                             </category-condition>
                         </condition-group>
@@ -86,6 +86,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">7-10 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -117,7 +118,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -162,6 +163,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">2 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -191,7 +193,7 @@
         <excluded-products>
             <included-products>
                 <condition-group>
-                    <category-condition catalog-id="storefront-catalog-m-en">
+                    <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                         <category-id>electronics-televisions</category-id>
                     </category-condition>
                 </condition-group>
@@ -231,6 +233,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">Next Day</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -259,7 +262,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronic-games</category-id>
                             </category-condition>
                         </condition-group>
@@ -273,7 +276,7 @@
         <excluded-products>
             <included-products>
                 <condition-group>
-                    <category-condition catalog-id="storefront-catalog-m-en">
+                    <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                         <category-id>newarrivals</category-id>
                         <category-id>womens</category-id>
                         <category-id>mens</category-id>
@@ -321,6 +324,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">3-7 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -344,6 +348,7 @@
         </price-table>
         <custom-attributes>
             <custom-attribute attribute-id="storePickupEnabled">true</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -375,7 +380,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -417,6 +422,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">2-3 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -448,7 +454,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -474,6 +480,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">7-10 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>USD</currency>
     </shipping-method>
@@ -495,18 +502,18 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">5.99</amount>
-            <amount order-value="100.0">7.99</amount>
-            <amount order-value="200.0">9.99</amount>
-            <amount order-value="500.0">15.99</amount>
+            <amount order-value="100">7.99</amount>
+            <amount order-value="200">9.99</amount>
+            <amount order-value="500">15.99</amount>
         </price-table>
         <product-cost-groups>
             <product-cost-group>
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="electronics-m-catalog">
+                            <category-condition catalog-id="electronics-m-catalog" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -520,7 +527,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>womens-jewelry</category-id>
                             </category-condition>
                         </condition-group>
@@ -565,6 +572,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">7-10 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>EUR</currency>
     </shipping-method>
@@ -585,18 +593,18 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">9.99</amount>
-            <amount order-value="100.0">11.99</amount>
-            <amount order-value="200.0">15.99</amount>
-            <amount order-value="500.0">20.99</amount>
+            <amount order-value="100">11.99</amount>
+            <amount order-value="200">15.99</amount>
+            <amount order-value="500">20.99</amount>
         </price-table>
         <product-cost-groups>
             <product-cost-group>
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-televisions</category-id>
                             </category-condition>
                         </condition-group>
@@ -641,6 +649,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">2 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>EUR</currency>
     </shipping-method>
@@ -661,11 +670,11 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">15.99</amount>
-            <amount order-value="100.0">19.99</amount>
-            <amount order-value="200.0">21.99</amount>
-            <amount order-value="500.0">29.99</amount>
+            <amount order-value="100">19.99</amount>
+            <amount order-value="200">21.99</amount>
+            <amount order-value="500">29.99</amount>
         </price-table>
         <excluded-addresses>
             <included-addresses>
@@ -701,6 +710,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">Next Day</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>EUR</currency>
     </shipping-method>
@@ -721,7 +731,7 @@
         <online-flag>true</online-flag>
         <tax-class-id>standard</tax-class-id>
         <price-table>
-            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0">0</amount>
             <amount order-value="0.01">1.99</amount>
         </price-table>
         <product-cost-groups>
@@ -729,7 +739,7 @@
                 <products>
                     <included-products>
                         <condition-group>
-                            <category-condition catalog-id="storefront-catalog-m-en">
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
                                 <category-id>electronics-gaming</category-id>
                             </category-condition>
                         </condition-group>
@@ -774,6 +784,7 @@
         </excluded-addresses>
         <custom-attributes>
             <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">3-7 Business Days</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>EUR</currency>
     </shipping-method>
@@ -797,6 +808,7 @@
         </price-table>
         <custom-attributes>
             <custom-attribute attribute-id="storePickupEnabled">true</custom-attribute>
+            <custom-attribute attribute-id="image">images/shipping.png</custom-attribute>
         </custom-attributes>
         <currency>EUR</currency>
     </shipping-method>

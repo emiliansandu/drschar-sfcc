@@ -4,42 +4,52 @@
         <searchable-attribute>
             <attribute-path>category.displayName</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>content.custom.body</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>false</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>content.description</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>content.name</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.ID</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.brand</attribute-path>
             <boost>1.01</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.custom.color</attribute-path>
             <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.custom.digitalCameraFeatures</attribute-path>
             <boost>0.5</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.custom.digitalCameraType</attribute-path>
             <boost>0.5</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
         <searchable-attribute>
             <attribute-path>product.name</attribute-path>
             <boost>2.0</boost>
+            <auto-correction>true</auto-correction>
         </searchable-attribute>
     </searchable-attributes>
     <stopword-list xml:lang="en-US">
@@ -72,41 +82,49 @@
         <redirect>
             <keywords xml:lang="en-US">new arrivals, what's new, just in</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <category-redirect category-id="newarrivals"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">about, about us, history</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <page-redirect page-id="about-us"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">jobs, employment, careers</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <page-redirect page-id="jobs-landing"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">shipping, delivery, timetables</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <page-redirect page-id="shipping"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">account, my account, order history</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <pipeline-redirect pipeline-name="Account-Show"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">contact, contact us</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <pipeline-redirect pipeline-name="CustomerService-ContactUs"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">customer service, help, order status</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <pipeline-redirect pipeline-name="CustomerService-Show"/>
         </redirect>
         <redirect>
             <keywords xml:lang="en-US">stores, store, store locator</keywords>
             <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
             <pipeline-redirect pipeline-name="Stores-Find"/>
         </redirect>
     </redirect-list>
@@ -133,9 +151,6 @@
         <suggestions>Wii</suggestions>
         <suggestions>Xbox</suggestions>
         <suggestions>iPod</suggestions>
-        <minimum-term-length>1</minimum-term-length>
-    </suggestion-list>
-    <suggestion-list xml:lang="default">
         <minimum-term-length>1</minimum-term-length>
     </suggestion-list>
     <compound-word-list xml:lang="en-US">
@@ -166,29 +181,25 @@
             <unit>days</unit>
         </full-reindexing-schedule>
         <full-reindexing-enabled>
-            <index-type>activedata</index-type>
-            <index-type>content</index-type>
             <index-type>product</index-type>
             <index-type>synonym</index-type>
-            <index-type>redirect</index-type>
             <index-type>suggest</index-type>
-            <index-type>availability</index-type>
+            <index-type>activedata</index-type>
+            <index-type>content</index-type>
         </full-reindexing-enabled>
         <incremental-reindexing-enabled>
-            <index-type>activedata</index-type>
-            <index-type>content</index-type>
             <index-type>product</index-type>
             <index-type>synonym</index-type>
-            <index-type>redirect</index-type>
             <index-type>suggest</index-type>
-            <index-type>availability</index-type>
+            <index-type>activedata</index-type>
+            <index-type>content</index-type>
         </incremental-reindexing-enabled>
         <indexed-locales>
-            <locale>en-US</locale>
             <locale>x-default</locale>
+            <locale>en-US</locale>
         </indexed-locales>
-        <stemming xml:lang="en-US">English</stemming>
         <stemming xml:lang="x-default">English</stemming>
+        <stemming xml:lang="en-US">English</stemming>
     </index-settings>
 </search>
 

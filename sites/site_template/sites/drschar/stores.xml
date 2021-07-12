@@ -9,6 +9,9 @@
         <store-hours xml:lang="x-default">Closed Sundays.</store-hours>
         <latitude>50.9288039</latitude>
         <longitude>11.583270299999981</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">DE</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_german_store</custom-attribute>
@@ -30,6 +33,9 @@ All Men's T-shirts are 2 for $40!&lt;br /&gt;</store-events>
 Sun: 12pm - 6pm</store-hours>
         <latitude>42.5273334</latitude>
         <longitude>-71.13758250000001</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store1</custom-attribute>
@@ -49,6 +55,9 @@ Sun: 12pm - 6pm</store-hours>
             Sun: 12pm - 6pm</store-hours>
         <latitude>42.3569512</latitude>
         <longitude>-71.05902600000002</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store10</custom-attribute>
@@ -66,6 +75,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-203-965-7014</phone>
         <latitude>41.177589</latitude>
         <longitude>-73.20250829999998</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store11</custom-attribute>
@@ -83,6 +95,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-401-312-6284</phone>
         <latitude>41.83170819999999</latitude>
         <longitude>-71.41499299999998</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store2</custom-attribute>
@@ -100,6 +115,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-617-318-2860</phone>
         <latitude>42.27451190000001</latitude>
         <longitude>-71.02692050000002</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store3</custom-attribute>
@@ -117,6 +135,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-617-714-2640</phone>
         <latitude>42.3729794</latitude>
         <longitude>-71.09346089999997</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store4</custom-attribute>
@@ -135,6 +156,9 @@ Sun: 12pm - 6pm</store-hours>
             Sun: 12pm - 6pm</store-hours>
         <latitude>42.3403189</latitude>
         <longitude>-71.0817859</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store5</custom-attribute>
@@ -151,6 +175,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-978-580-2704</phone>
         <latitude>42.6895548</latitude>
         <longitude>-71.14878340000001</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store6</custom-attribute>
@@ -167,6 +194,9 @@ Sun: 12pm - 6pm</store-hours>
         <phone>+1-207-599-5467</phone>
         <latitude>43.656852</latitude>
         <longitude>-70.25567999999998</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store7</custom-attribute>
@@ -185,6 +215,9 @@ Sun: 12pm - 6pm</store-hours>
             Sun: 12pm - 6pm</store-hours>
         <latitude>42.99555650000001</latitude>
         <longitude>-71.45255480000003</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store8</custom-attribute>
@@ -203,6 +236,9 @@ Sun: 12pm - 6pm</store-hours>
         <store-hours xml:lang="x-default">Here are the store hours</store-hours>
         <latitude>42.13028129999999</latitude>
         <longitude>-72.53457359999999</longitude>
+        <store-locator-enabled-flag>true</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
         <custom-attributes>
             <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
             <custom-attribute attribute-id="inventoryListId">inventory_m_store_store9</custom-attribute>

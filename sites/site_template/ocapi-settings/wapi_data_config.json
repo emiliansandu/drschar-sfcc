@@ -1,0 +1,36 @@
+{
+  "_v": "18.1",
+  "clients": [
+    {
+      "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
+      "allowed_origins": [],
+      "resources": [
+        {
+          "resource_id": "/code_versions/*",
+          "methods": [
+            "patch"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+        {
+          "resource_id": "/jobs/*/executions",
+          "methods": [
+            "post",
+            "get"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+        {
+          "resource_id": "/jobs/*/executions/*",
+          "methods": [
+            "get"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        }
+      ]
+    }
+  ]
+}

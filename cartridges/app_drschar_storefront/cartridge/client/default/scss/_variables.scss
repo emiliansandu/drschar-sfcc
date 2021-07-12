@@ -65,6 +65,9 @@ $font-family-josefina-thin: "Josefin Sans Thin";
 
 $font-family-header:$font-family-bold;
 $font-family-base:$font-family-andes;
+$font-regular: 'Arial', 'Helvetica', 'sans-serif';
+$font-black: "Arial Black", "Helvetica Black", "Arial-BoldMT";
+$tablet-up: "min-width: 767px";
 
 @font-face {
     font-family: "Brandon Grotesque Bold";
@@ -132,6 +135,8 @@ $white: #fff !default;
 $black: #000 !default;
 $blue: #0070d2 !default;
 $green: #008827 !default;
+$greenCheckMark: #3a7328;
+
 // primary is replaced by css variable --skin-primary-color-1
 $primary: #00a1e0 !default;
 $red: #c00 !default;

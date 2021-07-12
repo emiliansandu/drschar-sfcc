@@ -1,0 +1,13 @@
+<isif condition="${product.attributes && product.attributes.length > 0}">
+    <isloop items="${product.attributes}" var="attributeGroup" status="level1LoopState">
+        <isif condition="${attributeGroup.ID === 'generalInformation'}">
+            <isloop items="${attributeGroup.attributes}" var="attributes" status="level2LoopState">
+                <isif condition="${attributes.label=='Weight'}">
+                    <isloop items="${attributes.value}" var="value" status="level3LoopState">
+                        ${value}
+                    </isloop> 
+                </isif> 
+            </isloop>
+        </isif>
+    </isloop>
+</isif>

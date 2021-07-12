@@ -9,6 +9,8 @@
     <isset name="product" value="${pdict.product}" scope="page" />
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isset name="isProductBundle" value="${false}" scope="page" />
+    
     <isobject object="${product.raw}" view="detail" />
         <div class="container product-detail product-wrapper" data-pid="${product.id}">
             <div class="row">
@@ -57,6 +59,12 @@
                         <!-- Attributes and Quantity -->
                         <isinclude template="product/components/mainAttributes" />
 
+                        <!-- Short Description -->
+                        <isinclude template="product/components/shortDescription" />
+
+                        <!-- More Information Button -->
+                        <isinclude template="product/components/moreInformation" />
+
                         <isset name="isBundle" value="${false}" scope="page" />
                         <isset name="loopState" value="${{count: 1}}" scope="page" />
                         <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
@@ -102,6 +110,11 @@
                         <!-- Product Availability -->
                         <isinclude template="product/components/productAvailability" />
 
+                        <!-- EAN number -->
+                            <div class="row mb-3">
+                                <isinclude template="product/components/eanNumber" />
+                            </div>
+
                         <!-- Applicable Promotions -->
                         <div class="row">
                             <div class="col-12 promotions">
@@ -122,7 +135,10 @@
 
                             <!-- Cart and [Optionally] Apple Pay -->
                             <isinclude template="product/components/addToCartProduct" />
+
                         </div>
+
+                        
 
                         <!-- Social Sharing Icons -->
                         <div class="row">
@@ -142,7 +158,10 @@
             <div class="recommendations">
                 <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
             </div>
+            <div class="help">
+                <isslot id="help-slot-m" description="Help with products" context="global" context-object="${pdict.product.raw}" />
+            </div>
         </div>
     </isobject>
-    <object id="data-product-analitycs" data-url="${URLUtils.https('Product-Data', 'pid', pdict.product.id)}" />
+    <object id="data-product-analitycs" data-url="${URLUtils.https('Product-Data', 'pid', pdict.product.id,'eventType','view_item')}" />
 </isdecorate>

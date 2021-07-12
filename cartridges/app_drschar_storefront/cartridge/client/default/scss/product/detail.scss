@@ -26,14 +26,24 @@ label.color ~ a:hover {
 
 .description-and-detail {
     margin-top: 2em;
+    margin-bottom: 2em;
 
+    .prod-desc{
+        padding: 0;
+    }
+
+    @media (max-width: 545px){
+        #content-attributes-tab{
+            display: none;
+        }
+    }
+    
     @include media-breakpoint-only(xs) {
-        margin-top: 0;
 
         .title {
             font-size: 1.5rem;
             margin-bottom: 0;
-            font-family: 'Dosis', sans-serif;
+            font-family: $font-family-andes;
         }
 
         > div:last-child {
@@ -83,6 +93,16 @@ label.availability {
     padding-right: 0.3125em;
 }
 
+.fa-check-circle{
+    color:$greenCheckMark;
+}
+
+.ean-number{
+    color: $grey3;
+    margin-top: 1.071em;
+    text-align: center;
+}
+
 @include media-breakpoint-up(sm) {
     .product-number-rating {
         border-bottom: 1px solid $hr-border-color;
@@ -115,8 +135,8 @@ label.availability {
     }
 }
 
-.product-number {
-    color: $product-number-grey;
+.product-number,.weight {
+    color: $grey3;
     font-size: 0.875em;
     padding-bottom: 0.938em;
     padding-top: 0.938em;
@@ -205,3 +225,26 @@ label.availability {
         }
     }
 }
+
+@include media-breakpoint-down(lg) {
+    .generalInfoImage{   
+            width: 70px;
+            height: 70px;        
+    }
+    .tabContent {
+        text-align: left;
+        padding: 0;
+    }
+    .tabContent .col-lg-6.col-12{
+        padding: 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .generalInfoImage{   
+            width: 74px;
+            height: 74px;        
+    }
+  }
+
+
+

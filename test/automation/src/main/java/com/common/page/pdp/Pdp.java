@@ -65,6 +65,11 @@ public class Pdp extends PageObject {
         select.selectByValue(propertyReader.getProperty("pdp.size"));
     }
 
+    public void clickQuantity() {
+        Select select = new Select(pdp.findElement(By.id("quantity-1")));
+        select.selectByValue("5");
+    }
+
     public void clickAddToCart() {
         stateHolder.put("addToCartPDP", getName());
 

@@ -8,6 +8,7 @@
             <preference preference-id="InstanceTimezone">US/Eastern</preference>
             <preference preference-id="SystemUseNotificationEnabled">false</preference>
             <preference preference-id="SystemUseNotificationMandatory">false</preference>
+            <preference preference-id="SiteInventoryList">DRS</preference>
         </all-instances>
         <development/>
         <staging/>

@@ -1,5 +1,19 @@
+@import '../variables';
+@import 'base/components/_footer';
+
+footer .footer-container .footer-item.collapsible-xs button{
+    font-family: $font-family-andes;
+}
+
 .footercontent{
     background-color: $brand-footer;
     border-top: $brand-footer2 1px solid;
     color: $brand-footer3;
+    .container{
+        .collapsible-xs{
+            .title {
+                font-family: $font-family-andes;
+            }
+        }
+    }   
 }
