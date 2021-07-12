@@ -40,89 +40,89 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
     var productType = showProductPageHelperResult.product.productType;
     var NutritionalFactsObj = CustomObjectMgr.queryCustomObject('NutritionFacts','custom.productID = {0}', fullProduct.ID) || null;
-    var NutFactData = {calories: '', cholesterol1: '', cholesterol2: '', fiber1: '', fiber2: '',protein1: '', protein2: '', satFat1: '',
-        satFat2: '', servingPerContainer: '', servingSize: '', sodium1: '', sodium2: '', sugars1: '', sugars2: '', transFat: '',
-        totalCarb1: '', totalCarb2: '', totalFat1: '', totalFat2: '',totalSugars: '', NutritionColumn: []
+    var NutFactData = {calories: '', cholesterol: '', cholesterol_percent: '', fiber: '', fiber_percent: '',protein: '', protein_percent: '',
+        satFat: '', satFat_percent: '', servingPerContainer: '', servingSize: '', sodium: '', sodium_percent: '', sugars: '', sugars_percent: '',
+        transFat: '', totalCarb: '', totalCarb_percent: '', totalFat: '', totalFat_percent: '',totalSugars: '', NutritionColumn: []
     }
     var fact = { propName: '', propVal1: '', propVal2: ''};
 
 
     if (NutritionalFactsObj) {
             NutFactData.calories = NutritionalFactsObj.custom.calories;
-            NutFactData.cholesterol1 = NutritionalFactsObj.custom.cholesterol1;
-            NutFactData.cholesterol2 = NutritionalFactsObj.custom.cholesterol2;
-            NutFactData.fiber1 = NutritionalFactsObj.custom.fiber1;
-            NutFactData.fiber2 = NutritionalFactsObj.custom.fiber2;
-            NutFactData.protein1 = NutritionalFactsObj.custom.protein1;
-            NutFactData.protein2 = NutritionalFactsObj.custom.protein2;
-            NutFactData.satFat1 = NutritionalFactsObj.custom.satFat1;
-            NutFactData.satFat2 = NutritionalFactsObj.custom.satFat2;
+            NutFactData.cholesterol = NutritionalFactsObj.custom.cholesterol;
+            NutFactData.cholesterol_percent = NutritionalFactsObj.custom.cholesterol_percent;
+            NutFactData.fiber = NutritionalFactsObj.custom.fiber;
+            NutFactData.fiber_percent = NutritionalFactsObj.custom.fiber_percent;
+            NutFactData.protein = NutritionalFactsObj.custom.protein;
+            NutFactData.protein_percent = NutritionalFactsObj.custom.protein_percent;
+            NutFactData.satFat = NutritionalFactsObj.custom.satFat;
+            NutFactData.satFat_percent = NutritionalFactsObj.custom.satFat_percent;
             NutFactData.servingPerContainer = NutritionalFactsObj.custom.servingPerContainer;
             NutFactData.servingSize = NutritionalFactsObj.custom.servingSize;
-            NutFactData.sodium1 = NutritionalFactsObj.custom.sodium1;
-            NutFactData.sodium2 = NutritionalFactsObj.custom.sodium2;
-            NutFactData.sugars1 = NutritionalFactsObj.custom.sugars1;
-            NutFactData.sugars2 = NutritionalFactsObj.custom.sugars2;
+            NutFactData.sodium = NutritionalFactsObj.custom.sodium;
+            NutFactData.sodium_percent = NutritionalFactsObj.custom.sodium_percent;
+            NutFactData.sugars = NutritionalFactsObj.custom.sugars;
+            NutFactData.sugars_percent = NutritionalFactsObj.custom.sugars_percent;
             NutFactData.transFat = NutritionalFactsObj.custom.transFat;
-            NutFactData.totalCarb1 = NutritionalFactsObj.custom.totalCarb1;
-            NutFactData.totalCarb2 = NutritionalFactsObj.custom.totalCarb2;
-            NutFactData.totalFat1 = NutritionalFactsObj.custom.totalFat1;
-            NutFactData.totalFat2 = NutritionalFactsObj.custom.totalFat2;
+            NutFactData.totalCarb = NutritionalFactsObj.custom.totalCarb;
+            NutFactData.totalCarb_percent = NutritionalFactsObj.custom.totalCarb_percent;
+            NutFactData.totalFat = NutritionalFactsObj.custom.totalFat;
+            NutFactData.totalFat_percent = NutritionalFactsObj.custom.totalFat_percent;
             NutFactData.totalSugars = NutritionalFactsObj.custom.totalSugars;
         
-        if (NutritionalFactsObj.custom.calcium1 && NutritionalFactsObj.custom.calcium2) {
+        if (NutritionalFactsObj.custom.calcium && NutritionalFactsObj.custom.calcium_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.calcium', 'product', null),
-                propVal1: NutritionalFactsObj.custom.calcium1,
-                propVal2: NutritionalFactsObj.custom.calcium2
+                propVal1: NutritionalFactsObj.custom.calcium,
+                propVal2: NutritionalFactsObj.custom.calcium_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.iron1 && NutritionalFactsObj.custom.iron2) {
+        if (NutritionalFactsObj.custom.iron && NutritionalFactsObj.custom.iron_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.iron', 'product', null),
-                propVal1: NutritionalFactsObj.custom.iron1,
-                propVal2: NutritionalFactsObj.custom.iron2
+                propVal1: NutritionalFactsObj.custom.iron,
+                propVal2: NutritionalFactsObj.custom.iron_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.niacin1 && NutritionalFactsObj.custom.niacin2) {
+        if (NutritionalFactsObj.custom.niacin && NutritionalFactsObj.custom.niacin_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.niacin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.niacin1,
-                propVal2: NutritionalFactsObj.custom.niacin2
+                propVal1: NutritionalFactsObj.custom.niacin,
+                propVal2: NutritionalFactsObj.custom.niacin_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.potassium1 && NutritionalFactsObj.custom.potassium2) {
+        if (NutritionalFactsObj.custom.potassium && NutritionalFactsObj.custom.potassium_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.potassium', 'product', null),
-                propVal1: NutritionalFactsObj.custom.potassium1,
-                propVal2: NutritionalFactsObj.custom.potassium2
+                propVal1: NutritionalFactsObj.custom.potassium,
+                propVal2: NutritionalFactsObj.custom.potassium_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.riboflavin1 && NutritionalFactsObj.custom.riboflavin2) {
+        if (NutritionalFactsObj.custom.riboflavin && NutritionalFactsObj.custom.riboflavin_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.riboflavin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.riboflavin1,
-                propVal2: NutritionalFactsObj.custom.riboflavin2
+                propVal1: NutritionalFactsObj.custom.riboflavin,
+                propVal2: NutritionalFactsObj.custom.riboflavin_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.thiamin1 && NutritionalFactsObj.custom.thiamin2) {
+        if (NutritionalFactsObj.custom.thiamin && NutritionalFactsObj.custom.thiamin_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.thiamin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.thiamin1,
-                propVal2: NutritionalFactsObj.custom.thiamin2
+                propVal1: NutritionalFactsObj.custom.thiamin,
+                propVal2: NutritionalFactsObj.custom.thiamin_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }
-        if (NutritionalFactsObj.custom.vitaminD1 && NutritionalFactsObj.custom.vitaminD2) {
+        if (NutritionalFactsObj.custom.vitaminD && NutritionalFactsObj.custom.vitaminD_percent) {
             fact = {
                 propName: Resource.msg('label.tab.nutrition.vitaminD', 'product', null),
-                propVal1: NutritionalFactsObj.custom.vitaminD1,
-                propVal2: NutritionalFactsObj.custom.vitaminD2
+                propVal1: NutritionalFactsObj.custom.vitaminD,
+                propVal2: NutritionalFactsObj.custom.vitaminD_percent
             }
             NutFactData.NutritionColumn.push(fact);
         }

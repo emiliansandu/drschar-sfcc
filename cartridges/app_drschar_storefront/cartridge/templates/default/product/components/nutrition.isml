@@ -45,18 +45,18 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalFat', 'product', null)}</span> ${pdict.NutritionFacts.totalFat1 != null ? pdict.NutritionFacts.totalFat1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalFat', 'product', null)}</span> ${pdict.NutritionFacts.totalFat != null ? pdict.NutritionFacts.totalFat : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.totalFat2 != null ? pdict.NutritionFacts.totalFat2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            ${pdict.NutritionFacts.totalFat_percent != null ? pdict.NutritionFacts.totalFat_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">${Resource.msg('label.tab.nutrition.satFat', 'product', null)} ${pdict.NutritionFacts.satFat1 != null ? pdict.NutritionFacts.satFat1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }</span>
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.satFat', 'product', null)} ${pdict.NutritionFacts.satFat != null ? pdict.NutritionFacts.satFat : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.satFat2 != null ? pdict.NutritionFacts.satFat2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            ${pdict.NutritionFacts.satFat_percent != null ? pdict.NutritionFacts.satFat_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
@@ -69,18 +69,18 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">${Resource.msg('label.tab.nutrition.cholesterol', 'product', null)}</span> ${pdict.NutritionFacts.cholesterol1 != null ? pdict.NutritionFacts.cholesterol1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.cholesterol', 'product', null)}</span> ${pdict.NutritionFacts.cholesterol != null ? pdict.NutritionFacts.cholesterol : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.cholesterol2 != null ? pdict.NutritionFacts.cholesterol2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            ${pdict.NutritionFacts.cholesterol_percent != null ? pdict.NutritionFacts.cholesterol_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
                             </div>
                         </div>
                         <div class="nutrition-row border-b border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">${Resource.msg('label.tab.nutrition.sodium', 'product', null)}</span> ${pdict.NutritionFacts.sodium1 != null ? pdict.NutritionFacts.sodium1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.sodium', 'product', null)}</span> ${pdict.NutritionFacts.sodium != null ? pdict.NutritionFacts.sodium : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.sodium2 != null ? pdict.NutritionFacts.sodium2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            ${pdict.NutritionFacts.sodium_percent != null ? pdict.NutritionFacts.sodium_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
                             </div>
                         </div>
                         </div>
@@ -95,18 +95,18 @@
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalCarb', 'product', null)}</span> ${pdict.NutritionFacts.totalCarb1 != null ? pdict.NutritionFacts.totalCarb1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.totalCarb', 'product', null)}</span> ${pdict.NutritionFacts.totalCarb != null ? pdict.NutritionFacts.totalCarb : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.totalCarb2 != null ? pdict.NutritionFacts.totalCarb2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            ${pdict.NutritionFacts.totalCarb_percent != null ? pdict.NutritionFacts.totalCarb_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
                             </div>
                         </div>
                         <div class="nutrition-row border-b">
                             <div class="nutrition-column">
-                            <span class="text-indent">${Resource.msg('label.tab.nutrition.dietaryFiber', 'product', null)} ${pdict.NutritionFacts.fiber1}</span>
+                            <span class="text-indent">${Resource.msg('label.tab.nutrition.dietaryFiber', 'product', null)} ${pdict.NutritionFacts.fiber}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.fiber2 != null ? pdict.NutritionFacts.fiber2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            ${pdict.NutritionFacts.fiber_percent != null ? pdict.NutritionFacts.fiber2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
                             </div>
                         </div>
                         <div class="nutrition-row">
@@ -118,18 +118,18 @@
                         </div>
                         <div class="nutrition-row text-indent-md border-t-sm">
                             <div class="nutrition-column">
-                            ${Resource.msg('label.tab.nutrition.includes', 'product', null)} ${pdict.NutritionFacts.sugars1 != null ? pdict.NutritionFacts.sugars1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) } ${Resource.msg('label.tab.nutrition.addedSugars', 'product', null)}
+                            ${Resource.msg('label.tab.nutrition.includes', 'product', null)} ${pdict.NutritionFacts.sugars != null ? pdict.NutritionFacts.sugars : Resource.msg('label.tab.nutrition.emptyField', 'product', null) } ${Resource.msg('label.tab.nutrition.addedSugars', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.sugars2 != null ? pdict.NutritionFacts.sugars2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            ${pdict.NutritionFacts.sugars_percent != null ? pdict.NutritionFacts.sugars_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
                             </div>
                         </div>
                         <div class="nutrition-row border-t-sm border-b-lg border-b-md-tablet">
                             <div class="nutrition-column">
-                            <span class="text-bold">${Resource.msg('label.tab.nutrition.protein', 'product', null)}</span> ${pdict.NutritionFacts.protein1 != null ? pdict.NutritionFacts.protein1 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
+                            <span class="text-bold">${Resource.msg('label.tab.nutrition.protein', 'product', null)}</span> ${pdict.NutritionFacts.protein != null ? pdict.NutritionFacts.protein : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.protein2 != null ? pdict.NutritionFacts.protein2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
+                            ${pdict.NutritionFacts.protein_percent != null ? pdict.NutritionFacts.protein_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null) }%
                             </div>
                         </div>
                         </div>
