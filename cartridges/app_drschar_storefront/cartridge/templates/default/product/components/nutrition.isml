@@ -106,7 +106,7 @@
                             <span class="text-indent">${Resource.msg('label.tab.nutrition.dietaryFiber', 'product', null)} ${pdict.NutritionFacts.fiber}</span>
                             </div>
                             <div class="nutrition-column text-bold text-right">
-                            ${pdict.NutritionFacts.fiber_percent != null ? pdict.NutritionFacts.fiber2 : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
+                            ${pdict.NutritionFacts.fiber_percent != null ? pdict.NutritionFacts.fiber_percent : Resource.msg('label.tab.nutrition.emptyField', 'product', null)}%
                             </div>
                         </div>
                         <div class="nutrition-row">
