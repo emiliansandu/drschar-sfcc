@@ -173,6 +173,7 @@
 .product-tile-pd .product-tile-image {
     position: relative;
     overflow: auto;
+    overflow-y: hidden;
 }
 .product-tile-pd .product-tile-body .product-price .sales.reduced-price {
     color: $gray-8;
