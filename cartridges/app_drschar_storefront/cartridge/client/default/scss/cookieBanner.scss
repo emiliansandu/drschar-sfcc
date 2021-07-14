@@ -1,0 +1,66 @@
+#onetrust-banner-sdk{
+    max-height: fit-content !important;
+} 
+
+@media (min-width:320px)  { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    #onetrust-banner-sdk{
+        margin-top: -18%;
+    } 
+}
+
+@media (min-width:360px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    #onetrust-banner-sdk{
+        margin-top: -10%;
+    }  
+}
+
+@media (min-width:455px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    #onetrust-banner-sdk{
+        margin-top: -8%;
+    }  
+}
+
+@media (min-width:465px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    #onetrust-banner-sdk{
+        margin-top: -4%;
+    }  
+}
+
+@media (min-width:480px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    #onetrust-banner-sdk{
+        margin-top: -2%;
+    }  
+}
+
+@media (min-width:600px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    #onetrust-banner-sdk{
+        margin-top: -3%;
+    }  
+}
+
+@media (min-width:901px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    #onetrust-banner-sdk{
+        margin-top: 3.5%;
+    } 
+}
+
+@media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */
+    #onetrust-banner-sdk{
+        margin-top: 3.5%;
+    }  
+}
+
+@media (min-width:1281px) { 
+    /* hi-res laptops and desktops */
+    #onetrust-banner-sdk{
+        margin-top: 8%;
+    }  
+}
