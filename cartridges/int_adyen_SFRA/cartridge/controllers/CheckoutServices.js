@@ -12,6 +12,8 @@ var collections = require('*/cartridge/scripts/util/collections');
 
 var constants = require('*/cartridge/adyenConstants/constants');
 
+var voidDocument = require('../../../bm_avatax/cartridge/controllers/AVSettings')
+
 server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) {
   var BasketMgr = require('dw/order/BasketMgr');
 
@@ -160,6 +162,7 @@ server.prepend('PlaceOrder', server.middleware.https, function (req, res, next) 
   var handlePaymentResult = adyenHelpers.handlePayments(order, order.orderNo);
 
   if (handlePaymentResult.error) {
+    voidDocument.VoidDoc(order.orderNo);
     res.json({
       error: true,
       errorMessage: Resource.msg('error.payment.not.valid', 'checkout', null)

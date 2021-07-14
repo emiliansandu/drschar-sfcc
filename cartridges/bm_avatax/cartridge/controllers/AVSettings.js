@@ -442,3 +442,4 @@ exports.Test = guard.ensure(['https'], testConnection);
 exports.Void = guard.ensure(['https'], voidTransaction);
 exports.Commit = guard.ensure(['https'], commitTransaction);
 exports.Validate = guard.ensure(['https'], validateAddress);
+exports.VoidDoc = guard.ensure(['https'], voidDocument);
