@@ -145,6 +145,55 @@
         </triggers>
     </job>
 
+    <job job-id="ExportOrder" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="export" type="ExportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="Created">true</parameter>
+                    <parameter name="New">true</parameter>
+                    <parameter name="Open">true</parameter>
+                    <parameter name="Completed">true</parameter>
+                    <parameter name="Failed">true</parameter>
+                    <parameter name="Canceled">true</parameter>
+                    <parameter name="Replaced">true</parameter>
+                    <parameter name="Use Order Export Delay">false</parameter>
+                    <parameter name="Confirmation Status">All</parameter>
+                    <parameter name="Shipment Status">All</parameter>
+                    <parameter name="Payment Status">All</parameter>
+                    <parameter name="Export Status">Ready for Export</parameter>
+                    <parameter name="FileNamePrefix">Orders</parameter>
+                    <parameter name="OverwriteExportFile">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="upload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Orders-drschar-*</parameter>
+                    <parameter name="SourceFolder">src</parameter>
+                    <parameter name="TargetFolder">IN</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2021-07-15Z</date>
+                <time>17:35:48.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
     <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
         <description>
             Removes PaypalNewTransactions custom object that is older than a year with info about PayPal transaction from BM.
