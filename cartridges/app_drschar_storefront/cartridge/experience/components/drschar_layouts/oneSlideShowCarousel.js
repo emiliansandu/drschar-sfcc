@@ -13,7 +13,7 @@ var carouselBuilder = require('*/cartridge/scripts/experience/utilities/carousel
  */
 module.exports.render = function (context, modelIn) {
     var model = modelIn || new HashMap();
-    
+
     context.content.xsCarouselSlidesToDisplay = "1";
     context.content.smCarouselSlidesToDisplay = "1";
     context.content.mdCarouselSlidesToDisplay = "1";
