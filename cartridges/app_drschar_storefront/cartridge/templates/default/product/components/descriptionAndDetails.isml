@@ -38,7 +38,7 @@
                     ${Resource.msg('label.tab.tittle.bundles', 'product', null)}
                 </button>
                 <div class="d-sm-none">
-                    
+                    <isinclude template="product/components/mobileBundleItems" />
                 </div>
             </li>
         <iselse/>

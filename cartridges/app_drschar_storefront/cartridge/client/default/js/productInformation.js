@@ -36,5 +36,6 @@ $(document).ready(function () {
         }
     })
 
+    $('#bundle-child-carousel-m').find('.product-detail.bundle-item').removeClass('col-3');
 
 });

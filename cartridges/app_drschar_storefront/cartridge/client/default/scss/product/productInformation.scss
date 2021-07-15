@@ -219,13 +219,26 @@
     }
 }
 
+//Carousel Secction
+
 @media (max-width: 545px) {
+    //Carousel mobile
     .carousel-inner .bundle-items > div {
         display: none;
     }
     .carousel-inner .bundle-items > div:first-child {
         display: block;
     }
+    #bundle-child-carousel-m{
+        .product-detail.bundle-item{
+            width: 75%;
+        }
+    }
+}
+
+.d-sm-none .bundle-title-m{
+    padding-bottom: 15px;
+    font-size: 1.3rem;
 }
 
 .carousel-inner .bundle-items.active,
