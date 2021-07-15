@@ -97,7 +97,7 @@
           "id": "mdCarouselSlidesToDisplay",
           "name": "Number of slides to display on desktop",
           "type": "enum",
-          "values": [1, 2, 3, 4, 6],
+          "values": [2, 3, 4, 6],
           "required": true
         }
       ]

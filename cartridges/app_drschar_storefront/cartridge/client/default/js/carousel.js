@@ -11,7 +11,8 @@ function screenSize(element) {
         itemsToDisplay: null,
         sufficientSlides: true
     };
-    var viewSize = $(window).width();
+    var viewSize = $(window).width();    
+    
     var extraSmallDisplay = element.data('xs');
     var smallDisplay = element.data('sm');
     var mediumDisplay = element.data('md');
@@ -28,7 +29,16 @@ function screenSize(element) {
     if (result.itemsToDisplay && numberOfSlides <= result.itemsToDisplay) {
         result.sufficientSlides = false;
     }
-
+    if(result.itemsToDisplay>1){
+        $(element).find('.carousel-item').each(function(index,element) {
+            $(element).css('margin-right', '0%');   
+       });
+     }else{
+        $(element).find('.carousel-item.active').each(function(index,element) {
+            $(element).css('margin-right', '-100%');      
+          });   
+     }
+   
     return result;
 }
 
@@ -52,27 +62,27 @@ function hiddenSlides(element) {
 
     switch (screenSizeInfo.itemsToDisplay) {
         case 2:
-            lastDisplayedElement = carousel.find('.active.item + .item');
-            elementToBeDisplayed = carousel.find('.active.item + .item + .item');
+            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item');
+            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item');
             break;
         case 3:
-            lastDisplayedElement = carousel.find('.active.item + .item + .item');
-            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item');
+            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item');
+            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item');
             break;
         case 4:
-            lastDisplayedElement = carousel.find('.active.item + .item + .item + .item');
-            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item + .item');
+            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item');
+            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
             break;
         case 6:
-            lastDisplayedElement = carousel.find('.active.item + .item + .item + .item + .item + .item');
-            elementToBeDisplayed = carousel.find('.active.item + .item + .item + .item + .item + .item + .item');
+            lastDisplayedElement = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
+            elementToBeDisplayed = carousel.find('.active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item');
             break;
         default:
             break;
     }
 
-    carousel.find('.active.item').removeAttr('tabindex').removeAttr('aria-hidden');
-    carousel.find('.active.item').find('a, button, details, input, textarea, select')
+    carousel.find('.active.carousel-item').removeAttr('tabindex').removeAttr('aria-hidden');
+    carousel.find('.active.carousel-item').find('a, button, details, input, textarea, select')
         .removeAttr('tabindex')
         .removeAttr('aria-hidden');
 
@@ -147,7 +157,7 @@ $(document).ready(function () {
         var itemsToDisplay = Math.max.apply(Math, arrayOfSlidesToDisplay);
 
         var elementIndex = $(e.relatedTarget).index();
-        var numberOfSlides = $('.item', this).length;
+        var numberOfSlides = $('.carousel-item', this).length;
         var carouselInner = $(this).find('.carousel-inner');
         var carouselItem;
 
@@ -156,11 +166,11 @@ $(document).ready(function () {
             for (var i = 0; i < it; i++) {
                 // append slides to end
                 if (e.direction === 'left') {
-                    carouselItem = $('.item', this).eq(i);
+                    carouselItem = $('.carousel-item', this).eq(i);
 
                     $(carouselItem).appendTo($(carouselInner));
                 } else {
-                    carouselItem = $('.item', this).eq(0);
+                    carouselItem = $('.carousel-item', this).eq(0);
 
                     $(carouselItem).appendTo($(carouselInner));
                 }
