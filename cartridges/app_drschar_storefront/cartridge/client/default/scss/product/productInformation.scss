@@ -220,28 +220,28 @@
 }
 
 @media (max-width: 545px) {
-    .carousel-inner .bundle-item > div {
+    .carousel-inner .bundle-items > div {
         display: none;
     }
-    .carousel-inner .bundle-item > div:first-child {
+    .carousel-inner .bundle-items > div:first-child {
         display: block;
     }
 }
 
-.carousel-inner .bundle-item.active,
-.carousel-inner .bundle-item.carousel-item-next,
-.carousel-inner .bundle-item.carousel-item-prev {
+.carousel-inner .bundle-items.active,
+.carousel-inner .bundle-items.carousel-item-next,
+.carousel-inner .bundle-items.carousel-item-prev {
     display: flex;
 }
 
 /* medium and up screens */
 @media (min-width: 546px) {
     
-    .active.bundle-item.carousel-item-right,.bundle-item.carousel-item-next:not(.bundle-item.carousel-item-left){
+    .active.bundle-items.carousel-item-right,.bundle-items.carousel-item-next:not(.bundle-items.carousel-item-left){
         transform: translateX(25%);
     }
 
-    .active.bundle-item.carousel-item-left,.bundle-item.carousel-item-prev:not(.bundle-item.carousel-item-right){
+    .active.bundle-items.carousel-item-left,.bundle-items.carousel-item-prev:not(.bundle-items.carousel-item-right){
         transform: translateX(-25%);
     }
     
