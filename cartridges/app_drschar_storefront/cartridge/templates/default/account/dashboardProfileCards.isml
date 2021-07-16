@@ -17,7 +17,5 @@
             <isset name="order" value="${pdict.account.orderHistory}" scope="page"/>
             <isinclude template="account/order/orderHistoryCard"/>
         </isif>
-        <!---Payment--->
-        <isinclude template="account/paymentCard"/>
     </div>
 </div>
