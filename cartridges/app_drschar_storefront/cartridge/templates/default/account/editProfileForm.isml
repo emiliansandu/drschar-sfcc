@@ -30,7 +30,7 @@
         <div class="invalid-feedback"></div>
     </div>
 
-    <div class="form-group
+    <div class="form-group d-none
         <isif condition="${pdict.profileForm.customer.email.mandatory === true}">required</isif>">
         <label class="form-control-label" for="email">
             <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
@@ -40,7 +40,7 @@
         <div class="invalid-feedback"></div>
     </div>
 
-    <div class="form-group
+    <div class="form-group d-none
         <isif condition="${pdict.profileForm.customer.emailconfirm.mandatory === true}">required</isif>">
         <label class="form-control-label" for="confirmEmail">
             <isprint value="${pdict.profileForm.customer.emailconfirm.label}" encoding="htmlcontent" />
