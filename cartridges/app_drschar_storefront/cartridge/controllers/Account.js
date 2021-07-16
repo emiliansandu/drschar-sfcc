@@ -43,6 +43,7 @@ server.prepend(
         profileForm.customer.lastname.value = accountModel.profile.lastName;
         profileForm.customer.phone.value = accountModel.profile.phone;
         profileForm.customer.email.value = accountModel.profile.email;
+        profileForm.customer.emailconfirm.value = accountModel.profile.email;
         res.render('account/profile', {
             profileForm: profileForm,
             breadcrumbs: [
