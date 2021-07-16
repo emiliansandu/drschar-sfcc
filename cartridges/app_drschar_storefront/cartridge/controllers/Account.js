@@ -25,7 +25,7 @@ server.extend(page);
  * @param {renders} - isml
  * @param {serverfunction} - get
  */
-server.prepend(
+server.append(
     'EditProfile',
     server.middleware.https,
     csrfProtection.generateToken,
