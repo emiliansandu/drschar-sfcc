@@ -41,3 +41,14 @@
         width: 100%;
     }
 }
+
+@include media-breakpoint-down(lg) {
+    .experience-component{
+        padding-bottom: 0rem;
+        }
+  }
+  @include media-breakpoint-up(lg) {
+    .experience-component{
+        padding-bottom: 2.188rem;
+        }
+  }
