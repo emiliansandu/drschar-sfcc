@@ -117,7 +117,7 @@
                     <parameter name="TargetFolder">src/download</parameter>
                     <parameter name="Recursive">false</parameter>
                     <parameter name="DeleteRemoteFiles">true</parameter>
-                    <parameter name="NoFileFoundStatus">ERROR</parameter>
+                    <parameter name="NoFileFoundStatus">WARN</parameter>
                 </parameters>
             </step>
         </flow>
@@ -272,7 +272,7 @@
                     <parameter name="TargetFolder">src/download</parameter>
                     <parameter name="Recursive">false</parameter>
                     <parameter name="DeleteRemoteFiles">true</parameter>
-                    <parameter name="NoFileFoundStatus">ERROR</parameter>
+                    <parameter name="NoFileFoundStatus">WARN</parameter>
                 </parameters>
             </step>
         </flow>
