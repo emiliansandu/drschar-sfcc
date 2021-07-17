@@ -41,12 +41,14 @@
 }
 
 @include media-breakpoint-down(lg) {
-    .experience-component{
+    .banner1 > .experience-component,
+    .banner2 > .experience-component{
         padding-bottom: 0rem;
         }
   }
   @include media-breakpoint-up(lg) {
-    .experience-component{
+    .banner1 > .experience-component,
+    .banner2 > .experience-component{
         padding-bottom: 2.188rem;
         }
   }
