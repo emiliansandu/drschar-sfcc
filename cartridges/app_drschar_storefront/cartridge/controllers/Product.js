@@ -46,86 +46,70 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     }
     var fact = { propName: '', propVal1: '', propVal2: ''};
 
+    const addToNutritionCol = function(Name, propVal, propPercent) {
+        fact = {
+            propName: Name,
+            propVal1: propVal,
+            propVal2: calcNutritionPercent(propPercent)
+        }
+        NutFactData.NutritionColumn.push(fact);
+    }
+
+    const calcNutritionPercent = function (proPercent){
+        return Math.round( parseFloat(proPercent) * 100 );
+    }
 
     if (NutritionalFactsObj) {
             NutFactData.calories = NutritionalFactsObj.custom.calories;
             NutFactData.cholesterol = NutritionalFactsObj.custom.cholesterol;
-            NutFactData.cholesterol_percent = NutritionalFactsObj.custom.cholesterol_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.cholesterol_percent) * 100 ) : null ;
+            NutFactData.cholesterol_percent = NutritionalFactsObj.custom.cholesterol_percent ? calcNutritionPercent(NutritionalFactsObj.custom.cholesterol_percent) : null ;
             NutFactData.fiber = NutritionalFactsObj.custom.fiber;
-            NutFactData.fiber_percent = NutritionalFactsObj.custom.fiber_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.fiber_percent) * 100 ) : null ;
+            NutFactData.fiber_percent = NutritionalFactsObj.custom.fiber_percent ? calcNutritionPercent(NutritionalFactsObj.custom.fiber_percent) : null ;
             NutFactData.protein = NutritionalFactsObj.custom.protein;
-            NutFactData.protein_percent = NutritionalFactsObj.custom.protein_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.protein_percent) * 100 ) : null ;
+            NutFactData.protein_percent = NutritionalFactsObj.custom.protein_percent ? calcNutritionPercent(NutritionalFactsObj.custom.protein_percent) : null ;
             NutFactData.satFat = NutritionalFactsObj.custom.satFat;
-            NutFactData.satFat_percent = NutritionalFactsObj.custom.satFat_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.satFat_percent) * 100 ) : null ;
+            NutFactData.satFat_percent = NutritionalFactsObj.custom.satFat_percent ? calcNutritionPercent(NutritionalFactsObj.custom.satFat_percent) : null ;
             NutFactData.servingPerContainer = NutritionalFactsObj.custom.servingPerContainer;
             NutFactData.servingSize = NutritionalFactsObj.custom.servingSize;
             NutFactData.sodium = NutritionalFactsObj.custom.sodium;
-            NutFactData.sodium_percent = NutritionalFactsObj.custom.sodium_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.sodium_percent ) * 100 ) : null ;
+            NutFactData.sodium_percent = NutritionalFactsObj.custom.sodium_percent ? calcNutritionPercent(NutritionalFactsObj.custom.sodium_percent ) : null ;
             NutFactData.sugars = NutritionalFactsObj.custom.sugars;
-            NutFactData.sugars_percent = NutritionalFactsObj.custom.sugars_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.sugars_percent) * 100 ) : null ;
+            NutFactData.sugars_percent = NutritionalFactsObj.custom.sugars_percent ? calcNutritionPercent(NutritionalFactsObj.custom.sugars_percent) : null ;
             NutFactData.transFat = NutritionalFactsObj.custom.transFat;
             NutFactData.totalCarb = NutritionalFactsObj.custom.totalCarb;
-            NutFactData.totalCarb_percent = NutritionalFactsObj.custom.totalCarb_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.totalCarb_percent) * 100 ) : null ;
+            NutFactData.totalCarb_percent = NutritionalFactsObj.custom.totalCarb_percent ? calcNutritionPercent(NutritionalFactsObj.custom.totalCarb_percent) : null ;
             NutFactData.totalFat = NutritionalFactsObj.custom.totalFat;
-            NutFactData.totalFat_percent = NutritionalFactsObj.custom.totalFat_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.totalFat_percent) * 100 ) : null ;
+            NutFactData.totalFat_percent = NutritionalFactsObj.custom.totalFat_percent ? calcNutritionPercent(NutritionalFactsObj.custom.totalFat_percent) : null ;
             NutFactData.totalSugars = NutritionalFactsObj.custom.totalSugars;
         
         if (NutritionalFactsObj.custom.calcium && NutritionalFactsObj.custom.calcium_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.calcium', 'product', null),
-                propVal1: NutritionalFactsObj.custom.calcium,
-                propVal2: NutritionalFactsObj.custom.calcium_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.calcium_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.calcium', 'product', null), NutritionalFactsObj.custom.calcium, NutritionalFactsObj.custom.calcium_percent);
         }
+
         if (NutritionalFactsObj.custom.iron && NutritionalFactsObj.custom.iron_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.iron', 'product', null),
-                propVal1: NutritionalFactsObj.custom.iron,
-                propVal2: NutritionalFactsObj.custom.iron_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.iron_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.iron', 'product', null), NutritionalFactsObj.custom.iron, NutritionalFactsObj.custom.iron_percent);
         }
+    
         if (NutritionalFactsObj.custom.niacin && NutritionalFactsObj.custom.niacin_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.niacin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.niacin,
-                propVal2: NutritionalFactsObj.custom.niacin_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.niacin_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.niacin', 'product', null), NutritionalFactsObj.custom.niacin, NutritionalFactsObj.custom.niacin_percent);
         }
+
         if (NutritionalFactsObj.custom.potassium && NutritionalFactsObj.custom.potassium_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.potassium', 'product', null),
-                propVal1: NutritionalFactsObj.custom.potassium,
-                propVal2: NutritionalFactsObj.custom.potassium_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.potassium_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.potassium', 'product', null), NutritionalFactsObj.custom.potassium, NutritionalFactsObj.custom.potassium_percent);
         }
+
         if (NutritionalFactsObj.custom.riboflavin && NutritionalFactsObj.custom.riboflavin_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.riboflavin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.riboflavin,
-                propVal2: NutritionalFactsObj.custom.riboflavin_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.riboflavin_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.riboflavin', 'product', null), NutritionalFactsObj.custom.riboflavin, NutritionalFactsObj.custom.riboflavin_percent);
         }
+
         if (NutritionalFactsObj.custom.thiamin && NutritionalFactsObj.custom.thiamin_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.thiamin', 'product', null),
-                propVal1: NutritionalFactsObj.custom.thiamin,
-                propVal2: NutritionalFactsObj.custom.thiamin_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.thiamin_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.thiamin', 'product', null), NutritionalFactsObj.custom.thiamin, NutritionalFactsObj.custom.thiamin_percent);
         }
+    
         if (NutritionalFactsObj.custom.vitaminD && NutritionalFactsObj.custom.vitaminD_percent) {
-            fact = {
-                propName: Resource.msg('label.tab.nutrition.vitaminD', 'product', null),
-                propVal1: NutritionalFactsObj.custom.vitaminD,
-                propVal2: NutritionalFactsObj.custom.vitaminD_percent ? Math.round( parseFloat(NutritionalFactsObj.custom.vitaminD_percent) * 100 ) : null 
-            }
-            NutFactData.NutritionColumn.push(fact);
+            addToNutritionCol(Resource.msg('label.tab.nutrition.vitaminD', 'product', null), NutritionalFactsObj.custom.vitaminD, NutritionalFactsObj.custom.vitaminD_percent);
         }
+
         if (NutFactData.NutritionColumn.length == 0){
             NutFactData.NutritionColumn = null
         }
