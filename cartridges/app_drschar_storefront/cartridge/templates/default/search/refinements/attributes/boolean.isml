@@ -4,7 +4,7 @@
         <isif condition="${refinementValue.selected && refinementValue.selectable}">
             <i class="fa fa-check-square"></i>
         <iselse>
-            <i class="fa fa-square-o"></i>
+            <i class="far fa-square"></i>
         </isif>
 
         <iscomment>Label</iscomment>
