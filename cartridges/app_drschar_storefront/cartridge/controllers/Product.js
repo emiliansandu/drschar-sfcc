@@ -56,30 +56,37 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     }
 
     const calcNutritionPercent = function (proPercent){
-        return Math.round( parseFloat(proPercent) * 100 );
+        if (proPercent) {
+            var calcpercent = Math.round( parseFloat(proPercent) * 100 );
+            var percent = calcpercent + '%';
+            return percent;
+        }
+        else{
+            return ''
+        }
     }
 
     if (NutritionalFactsObj) {
             NutFactData.calories = NutritionalFactsObj.custom.calories;
             NutFactData.cholesterol = NutritionalFactsObj.custom.cholesterol;
-            NutFactData.cholesterol_percent = NutritionalFactsObj.custom.cholesterol_percent ? calcNutritionPercent(NutritionalFactsObj.custom.cholesterol_percent) : null ;
+            NutFactData.cholesterol_percent = calcNutritionPercent(NutritionalFactsObj.custom.cholesterol_percent);
             NutFactData.fiber = NutritionalFactsObj.custom.fiber;
-            NutFactData.fiber_percent = NutritionalFactsObj.custom.fiber_percent ? calcNutritionPercent(NutritionalFactsObj.custom.fiber_percent) : null ;
+            NutFactData.fiber_percent = calcNutritionPercent(NutritionalFactsObj.custom.fiber_percent);
             NutFactData.protein = NutritionalFactsObj.custom.protein;
-            NutFactData.protein_percent = NutritionalFactsObj.custom.protein_percent ? calcNutritionPercent(NutritionalFactsObj.custom.protein_percent) : null ;
+            NutFactData.protein_percent = calcNutritionPercent(NutritionalFactsObj.custom.protein_percent);
             NutFactData.satFat = NutritionalFactsObj.custom.satFat;
-            NutFactData.satFat_percent = NutritionalFactsObj.custom.satFat_percent ? calcNutritionPercent(NutritionalFactsObj.custom.satFat_percent) : null ;
+            NutFactData.satFat_percent = calcNutritionPercent(NutritionalFactsObj.custom.satFat_percent);
             NutFactData.servingPerContainer = NutritionalFactsObj.custom.servingPerContainer;
             NutFactData.servingSize = NutritionalFactsObj.custom.servingSize;
             NutFactData.sodium = NutritionalFactsObj.custom.sodium;
-            NutFactData.sodium_percent = NutritionalFactsObj.custom.sodium_percent ? calcNutritionPercent(NutritionalFactsObj.custom.sodium_percent ) : null ;
+            NutFactData.sodium_percent = calcNutritionPercent(NutritionalFactsObj.custom.sodium_percent );
             NutFactData.sugars = NutritionalFactsObj.custom.sugars;
-            NutFactData.sugars_percent = NutritionalFactsObj.custom.sugars_percent ? calcNutritionPercent(NutritionalFactsObj.custom.sugars_percent) : null ;
+            NutFactData.sugars_percent = calcNutritionPercent(NutritionalFactsObj.custom.sugars_percent);
             NutFactData.transFat = NutritionalFactsObj.custom.transFat;
             NutFactData.totalCarb = NutritionalFactsObj.custom.totalCarb;
-            NutFactData.totalCarb_percent = NutritionalFactsObj.custom.totalCarb_percent ? calcNutritionPercent(NutritionalFactsObj.custom.totalCarb_percent) : null ;
+            NutFactData.totalCarb_percent = calcNutritionPercent(NutritionalFactsObj.custom.totalCarb_percent);
             NutFactData.totalFat = NutritionalFactsObj.custom.totalFat;
-            NutFactData.totalFat_percent = NutritionalFactsObj.custom.totalFat_percent ? calcNutritionPercent(NutritionalFactsObj.custom.totalFat_percent) : null ;
+            NutFactData.totalFat_percent = calcNutritionPercent(NutritionalFactsObj.custom.totalFat_percent);
             NutFactData.totalSugars = NutritionalFactsObj.custom.totalSugars;
         
         if (NutritionalFactsObj.custom.calcium && NutritionalFactsObj.custom.calcium_percent) {
