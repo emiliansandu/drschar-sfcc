@@ -53,7 +53,13 @@
         </production>
     </standard-preferences>
     <custom-preferences>
-        <all-instances/>
+        <all-instances>
+            <preference preference-id="enableGoogleRecaptcha">true</preference> 
+                <preference preference-id="googleRecaptchaSiteKey">6Lcshp4bAAAAAJQCTRHXizwAoRM8o4uoFkKoERkG</preference>
+                <preference preference-id="googleRecaptchaScript">https://www.google.com/recaptcha/api.js</preference>
+                <preference preference-id="botScoreThreshold">0.5</preference>
+            <preference preference-id="formNameForRecaptchaVerification">"dwfrm_profile": true</preference>
+        </all-instances>
             <development>
                 <preference preference-id="Adyen3DS2Enabled">true</preference>
                 <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
