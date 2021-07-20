@@ -75,7 +75,7 @@
         border-bottom: 1px solid #000000;
         }
         .border-b-md {
-        border-bottom: 6px solid #000000;
+        border-bottom: 6px solid $grey7;
         }
         .border-b-lg {
         border-bottom: 10px solid #000000;
@@ -168,6 +168,7 @@
         .nutrition-footer {
             border-top: 6px solid #000000;
             margin-top: 2px;
+            background-color: $brand-footer;
             @media screen and ($tablet-up) {
             border-top: 0;
             margin-top: 18px;
@@ -218,29 +219,42 @@
     }
 }
 
+//Carousel Secction
+
 @media (max-width: 545px) {
-    .carousel-inner .bundle-item > div {
+    //Carousel mobile
+    .carousel-inner .bundle-items > div {
         display: none;
     }
-    .carousel-inner .bundle-item > div:first-child {
+    .carousel-inner .bundle-items > div:first-child {
         display: block;
+    }
+    #bundle-child-carousel-m{
+        .product-detail.bundle-item{
+            width: 75%;
+        }
     }
 }
 
-.carousel-inner .bundle-item.active,
-.carousel-inner .bundle-item.carousel-item-next,
-.carousel-inner .bundle-item.carousel-item-prev {
+.d-sm-none .bundle-title-m{
+    padding-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.carousel-inner .bundle-items.active,
+.carousel-inner .bundle-items.carousel-item-next,
+.carousel-inner .bundle-items.carousel-item-prev {
     display: flex;
 }
 
 /* medium and up screens */
 @media (min-width: 546px) {
     
-    .active.bundle-item.carousel-item-right,.bundle-item.carousel-item-next:not(.bundle-item.carousel-item-left){
+    .active.bundle-items.carousel-item-right,.bundle-items.carousel-item-next:not(.bundle-items.carousel-item-left){
         transform: translateX(25%);
     }
 
-    .active.bundle-item.carousel-item-left,.bundle-item.carousel-item-prev:not(.bundle-item.carousel-item-right){
+    .active.bundle-items.carousel-item-left,.bundle-items.carousel-item-prev:not(.bundle-items.carousel-item-right){
         transform: translateX(-25%);
     }
     

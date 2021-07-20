@@ -550,284 +550,318 @@
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-        <attribute-definition attribute-id="calcium">
-            <display-name xml:lang="x-default">Calcium</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="calcium2">
-            <display-name xml:lang="x-default">Calcium %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="calories">
-            <display-name xml:lang="x-default">Calories per serving</display-name>
-            <type>int</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
+            <attribute-definition attribute-id="calcium">
+                <display-name xml:lang="x-default">Calcium</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
-        <attribute-definition attribute-id="cholesterol">
-            <display-name xml:lang="x-default">Cholesterol</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="cholesterol_percent">
-            <display-name xml:lang="x-default">Cholesterol %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="fiber">
-        <display-name xml:lang="x-default">Dietary Fiber</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
+            <attribute-definition attribute-id="calcium_percent">
+                <display-name xml:lang="x-default">Calcium %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="calories">
+                <display-name xml:lang="x-default">Calories per serving</display-name>
+                <type>int</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="cholesterol">
+                <display-name xml:lang="x-default">Cholesterol</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="cholesterol_percent">
+                <display-name xml:lang="x-default">Cholesterol %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="fiber">
+                <display-name xml:lang="x-default">Dietary Fiber</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
             <attribute-definition attribute-id="fiber_percent">
-            <display-name xml:lang="x-default">Dietary Fiber %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="iron">
-            <display-name xml:lang="x-default">Iron</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="iron_percent">
-            <display-name xml:lang="x-default">Iron %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="niacin">
-            <display-name xml:lang="x-default">Niacin</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="niacin_percent">
-            <display-name xml:lang="x-default">Niacin %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="potassium">
-            <display-name xml:lang="x-default">Potassium</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="potassium_percent">
-            <display-name xml:lang="x-default">Potassium %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="productID">
-            <display-name xml:lang="x-default">Product Id</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="protein">
-            <display-name xml:lang="x-default">Protein</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="protein_percent">
-            <display-name xml:lang="x-default">Protein %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
+                <display-name xml:lang="x-default">Dietary Fiber %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="iron">
+                <display-name xml:lang="x-default">Iron</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="iron_percent">
+                <display-name xml:lang="x-default">Iron %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="niacin">
+                <display-name xml:lang="x-default">Niacin</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="niacin_percent">
+                <display-name xml:lang="x-default">Niacin %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="potassium">
+                <display-name xml:lang="x-default">Potassium</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="potassium_percent">
+                <display-name xml:lang="x-default">Potassium %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="productID">
+                <display-name xml:lang="x-default">Product Id</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="protein">
+                <display-name xml:lang="x-default">Protein</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="protein_percent">
+                <display-name xml:lang="x-default">Protein %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="riboflavin">
-            <display-name xml:lang="x-default">Riboflavin</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="riboflavin_percent">
-            <display-name xml:lang="x-default">Riboflavin %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="satFat">
-            <display-name xml:lang="x-default">Sat. Fat</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
+                <display-name xml:lang="x-default">Riboflavin</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="riboflavin_percent">
+                <display-name xml:lang="x-default">Riboflavin %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="satFat">
+                <display-name xml:lang="x-default">Sat. Fat</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
             <attribute-definition attribute-id="satFat_percent">
-            <display-name xml:lang="x-default">Sat. Fat %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
+                <display-name xml:lang="x-default">Sat. Fat %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
             <attribute-definition attribute-id="servingPerContainer">
-            <display-name xml:lang="x-default">Servings per container</display-name>
-            <type>int</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="servingSize">
-            <display-name xml:lang="x-default">Serving Size</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
+                <display-name xml:lang="x-default">Servings per container</display-name>
+                <type>int</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="servingSize">
+                <display-name xml:lang="x-default">Serving Size</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
             <attribute-definition attribute-id="sodium">
-            <display-name xml:lang="x-default">Sodium</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="sodium_percent">
-            <display-name xml:lang="x-default">Sodium %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
+                <display-name xml:lang="x-default">Sodium</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="sodium_percent">
+                <display-name xml:lang="x-default">Sodium %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="sugars">
-            <display-name xml:lang="x-default">Includes Added Sugars</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="sugars_percent">
-            <display-name xml:lang="x-default">Includes Added Sugars %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
+                <display-name xml:lang="x-default">Includes Added Sugars</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
-            <attribute-definition attribute-id="tansFat">
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="thiamin">
-            <display-name xml:lang="x-default">Thiamin</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="thiamin_percent">
-            <display-name xml:lang="x-default">Thiamin %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
+            <attribute-definition attribute-id="sugars_percent">
+                <display-name xml:lang="x-default">Includes Added Sugars %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-        <attribute-definition attribute-id="totalCarb">
-            <display-name xml:lang="x-default">Total Carbohydrate</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="totalCarb_percent">
-            <display-name xml:lang="x-default">Total Carbohydrate %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="totalFat">
-            <display-name xml:lang="x-default">Total Fat</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="totalFat_percent">
-            <display-name xml:lang="x-default">Total Fat %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
-        <attribute-definition attribute-id="totalSugars">
-            <display-name xml:lang="x-default">Total Sugars</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>true</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="transFat">
-            <display-name xml:lang="x-default">Trans Fat</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="vitaminD">
-            <display-name xml:lang="x-default">Vitamin D</display-name>
-            <type>string</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-            <min-length>0</min-length>
-        </attribute-definition>
-        <attribute-definition attribute-id="vitaminD_percent">
-            <display-name xml:lang="x-default">Vitamin D %</display-name>
-            <type>double</type>
-            <localizable-flag>false</localizable-flag>
-            <mandatory-flag>false</mandatory-flag>
-            <externally-managed-flag>false</externally-managed-flag>
-        </attribute-definition>
+            <attribute-definition attribute-id="transFat">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="thiamin">
+                <display-name xml:lang="x-default">Thiamin</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="thiamin_percent">
+                <display-name xml:lang="x-default">Thiamin %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="totalCarb">
+                <display-name xml:lang="x-default">Total Carbohydrate</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="totalCarb_percent">
+                <display-name xml:lang="x-default">Total Carbohydrate %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="totalFat">
+                <display-name xml:lang="x-default">Total Fat</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="totalFat_percent">
+                <display-name xml:lang="x-default">Total Fat %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="totalSugars">
+                <display-name xml:lang="x-default">Total Sugars</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="vitaminD">
+                <display-name xml:lang="x-default">Vitamin D</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="vitaminD_percent">
+                <display-name xml:lang="x-default">Vitamin D %</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
         </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="NutritionFactsGroup">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="ID"/>
+                <attribute attribute-id="productID"/>
+                <attribute attribute-id="calcium"/>
+                <attribute attribute-id="calcium_percent"/>
+                <attribute attribute-id="calories"/>
+                <attribute attribute-id="cholesterol"/>
+                <attribute attribute-id="cholesterol_percent"/>
+                <attribute attribute-id="fiber"/>
+                <attribute attribute-id="fiber_percent"/>
+                <attribute attribute-id="iron"/>
+                <attribute attribute-id="iron_percent"/>
+                <attribute attribute-id="niacin"/>
+                <attribute attribute-id="niacin_percent"/>
+                <attribute attribute-id="potassium"/>
+                <attribute attribute-id="potassium_percent"/>
+                <attribute attribute-id="protein"/>
+                <attribute attribute-id="protein_percent"/>
+                <attribute attribute-id="riboflavin"/>
+                <attribute attribute-id="riboflavin_percent"/>
+                <attribute attribute-id="satFat"/>
+                <attribute attribute-id="satFat_percent"/>
+                <attribute attribute-id="servingPerContainer"/>
+                <attribute attribute-id="servingSize"/>
+                <attribute attribute-id="sodium"/>
+                <attribute attribute-id="sodium_percent"/>
+                <attribute attribute-id="sugars"/>
+                <attribute attribute-id="sugars_percent"/>
+                <attribute attribute-id="transFat"/>
+                <attribute attribute-id="thiamin"/>
+                <attribute attribute-id="thiamin_percent"/>
+                <attribute attribute-id="totalCarb"/>
+                <attribute attribute-id="totalCarb_percent"/>
+                <attribute attribute-id="totalFat"/>
+                <attribute attribute-id="totalFat_percent"/>
+                <attribute attribute-id="totalSugars"/>
+                <attribute attribute-id="vitaminD"/>
+                <attribute attribute-id="vitaminD_percent"/>
+            </attribute-group>
+        </group-definitions>
     </custom-type>
 </metadata>

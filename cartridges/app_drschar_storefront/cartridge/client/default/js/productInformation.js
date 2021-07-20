@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     resizeObserver.observe(elem);
 
-    let items = document.querySelectorAll('.carousel .bundle-item')
+    let items = document.querySelectorAll('.carousel .bundle-items')
 
     items.forEach((el) => {
         const minPerSlide = 4
@@ -36,5 +36,6 @@ $(document).ready(function () {
         }
     })
 
+    $('#bundle-child-carousel-m').find('.product-detail.bundle-item').removeClass('col-3');
 
 });

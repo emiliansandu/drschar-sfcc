@@ -1,6 +1,6 @@
 {
-  "name": "Carousel",
-  "group": "commerce_layouts",
+  "name": "One Slide Show Carousel",
+  "group": "drschar_layouts",
   "attribute_definition_groups": [
     {
       "id": "heading",
@@ -46,13 +46,6 @@
           "name": "Display carousel controls on phones",
           "type": "boolean",
           "required": false
-        },
-        {
-          "id": "xsCarouselSlidesToDisplay",
-          "name": "Number of slides to display on phones",
-          "type": "enum",
-          "values": [1, 2, 3],
-          "required": true
         }
       ]
     },
@@ -72,13 +65,6 @@
           "name": "Display carousel controls on tablets",
           "type": "boolean",
           "required": false
-        },
-        {
-          "id": "smCarouselSlidesToDisplay",
-          "name": "Number of slides to display on tablets",
-          "type": "enum",
-          "values": [1, 2, 3, 4, 6],
-          "required": true
         }
       ]
     },
@@ -92,13 +78,6 @@
           "name": "Display carousel indicators on desktop",
           "type": "boolean",
           "required": false
-        },
-        {
-          "id": "mdCarouselSlidesToDisplay",
-          "name": "Number of slides to display on desktop",
-          "type": "enum",
-          "values": [2, 3, 4, 6],
-          "required": true
         }
       ]
     }

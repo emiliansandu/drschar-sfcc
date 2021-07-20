@@ -54,6 +54,9 @@
 .configurableBackground--white-brand2{
     background-color:$brand-footer2;
 }
+.configurableBackground--white{
+    background-color:$white;
+}
 .experience-component.experience-drschar_layouts-configurableBackground{
     display:flex;
     justify-content: center; 
@@ -64,4 +67,14 @@
     flex-basis: auto;
     justify-content: center; 
     align-items: center;
+}
+.configurableBackground .row .region.col-12{
+    display:flex;
+    flex-basis: auto;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }

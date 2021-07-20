@@ -7,12 +7,13 @@ var debounce = require('lodash/debounce');
  * @returns {Object} an object with display information
  */
 function screenSize(element) {
+    
     var result = {
         itemsToDisplay: null,
         sufficientSlides: true
     };
-    var viewSize = $(window).width();    
-    
+    var viewSize = $(window).width();
+
     var extraSmallDisplay = element.data('xs');
     var smallDisplay = element.data('sm');
     var mediumDisplay = element.data('md');
@@ -31,15 +32,15 @@ function screenSize(element) {
     }
     if(result.itemsToDisplay>1){
         $(element).find('.carousel-item').each(function(index,element) {
-            $(element).css('margin-right', '0%');   
+         $(element).css('margin-right', '0%');      
        });
      }else{
-        $(element).find('.carousel-item.active').each(function(index,element) {
+        $(element).find('.carousel-item').each(function(index,element) {
             $(element).css('margin-right', '-100%');      
           });   
      }
-   
     return result;
+
 }
 
 /**
@@ -52,7 +53,7 @@ function hiddenSlides(element) {
     if (element) {
         carousel = element;
     } else {
-        carousel = $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel');
+        carousel = $('.experience-drschar_layouts-oneSlideShowCarousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel');
     }
 
     var screenSizeInfo = screenSize(carousel);
@@ -112,7 +113,7 @@ $(document).ready(function () {
         hiddenSlides();
     });
 
-    $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('touchstart', function (touchStartEvent) {
+    $('.experience-drschar_layouts-oneSlideShowCarousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('touchstart', function (touchStartEvent) {
         var screenSizeInfo = screenSize($(this));
 
         if (screenSizeInfo.sufficientSlides) {
@@ -125,13 +126,13 @@ $(document).ready(function () {
                     $(this).carousel('prev');
                 }
             });
-            $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('touchend', function () {
+            $('.experience-drschar_layouts-oneSlideShowCarousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('touchend', function () {
                 $(this).off('touchmove');
             });
         }
     });
 
-    $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slide.bs.carousel', function (e) {
+    $('.experience-drschar_layouts-oneSlideShowCarousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slide.bs.carousel', function (e) {
         var activeCarouselPosition = $(e.relatedTarget).data('position');
         $(this).find('.pd-carousel-indicators .active').removeClass('active');
         $(this).find(".pd-carousel-indicators [data-position='" + activeCarouselPosition + "']").addClass('active');
@@ -178,7 +179,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.experience-commerce_layouts-carousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slid.bs.carousel', function () {
+    $('.experience-drschar_layouts-oneSlideShowCarousel .carousel, .experience-einstein-einsteinCarousel .carousel, .experience-einstein-einsteinCarouselCategory .carousel, .experience-einstein-einsteinCarouselProduct .carousel').on('slid.bs.carousel', function () {
         hiddenSlides($(this));
     });
 });

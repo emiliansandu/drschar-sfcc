@@ -1,28 +1,29 @@
-<div id="m-general-${loopState && loopState.count ? loopState.count : '1'}" class="content">
+<div id="m-bundle-${loopState && loopState.count ? loopState.count : '1'}" class="content">
     <div class="row">
-        <div class="col-12">
+        <div class="bundle-title-m col-12">
             <span class="bundle-items-label">${Resource.msg('label.bundle.contains', 'product', null)}</span>
         </div>
     </div>
 
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div id="bundle-child-carousel-mobile" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                    <isloop items="${product.bundledProducts}" var="productItemMovile" status="loopState">
-                        <isset name="product" value="${productItemMovile}" scope="page" />
-                        <div class="bundle-item carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
-                            <isinclude template="product/components/bundleItem" />
-                        </div>
-                    </isloop>
-                </div>
-                <a class="carousel-control-prev" href="#bundle-child-carousel-mobile" role="button" data-slide="prev">
-                    <span class="fa icon-prev" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next" href="#bundle-child-carousel-mobile" role="button" data-slide="next">
-                    <span class="fa icon-next" aria-hidden="true"></span>
-                </a>
+    <div class="row justify-content-center">
+        <div id="bundle-child-carousel-m" class="carousel slide">
+            <div class="carousel-inner" role="listbox">
+                <isloop items="${pdict.product.bundledProducts}" var="productItem" status="loopState">
+                    <isset name="product" value="${productItem}" scope="page" />
+                    <div class="bundle-items-m carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
+                        <isset name="product" value="${productItem}" scope="page" />
+                        <isset name="isBundle" value="${true}" scope="page" />
+
+                        <isinclude template="product/components/bundleItem" />
+                    </div>
+                </isloop>
             </div>
+            <a class="carousel-control-prev" href="#bundle-child-carousel-m" role="button" data-slide="prev">
+                <span class="fa icon-prev" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#bundle-child-carousel-m" role="button" data-slide="next">
+                <span class="fa icon-next" aria-hidden="true"></span>
+            </a>
         </div>
     </div>
 </div>

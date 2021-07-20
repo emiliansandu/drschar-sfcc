@@ -2,6 +2,7 @@
 
 
 @import "variables";
+@import "cookieBanner";
 @import "base/global";
 @import "skin/skinVariables";
 @import "components/common";
@@ -16,9 +17,4 @@
 .hero.slant-down.account-image {
     background-image: url('../../images/drschar_static.jpg');
     background-position-y: 40%;
-}
-
-#onetrust-banner-sdk{
-    max-height: fit-content !important;
-    margin-top: 3.5%;
 }

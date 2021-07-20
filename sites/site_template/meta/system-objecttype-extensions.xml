@@ -2169,24 +2169,8 @@
             <attribute-definition attribute-id="countryCode">
                 <value-definitions>
                     <value-definition>
-                        <display xml:lang="x-default">Sweden</display>
-                        <value>SE</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">Norway</display>
-                        <value>NO</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">Finland</display>
-                        <value>FI</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">Denmark</display>
-                        <value>DK</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">Switzerland</display>
-                        <value>CH</value>
+                        <display xml:lang="x-default">USA</display>
+                        <value>US</value>
                     </value-definition>
                 </value-definitions>
             </attribute-definition>
