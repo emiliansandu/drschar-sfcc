@@ -9,7 +9,7 @@
                 <div class="col-lg-3 col-6" data-pid="${post.id}">
                     <div class="product-tile">
                         <div class="image-container">
-                                <isif condition="${post.media_type=='IMAGE'}">
+                                <isif condition="${post.media_type=='IMAGE' || post.media_type=='CAROUSEL_ALBUM'}">
                                 <div class="tile-image-background" style="background-image:url(${post.media_url})">
                                 <img src="${post.media_url}" class="tile-image" style="visibility:hidden" alt="${post.id}" title="${post.id}"/>
                                 </div>
