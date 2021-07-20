@@ -864,4 +864,23 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
+    <custom-type type-id="instagramToken">
+        <display-name xml:lang="x-default">Token Key Value</display-name>
+        <description xml:lang="x-default">This Custom Object is designed to contain token key value for instagram feed API requests</description>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="tokenKey">
+            <display-name xml:lang="x-default">Token Key</display-name>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="tokenKeys">
+                <display-name xml:lang="x-default">Token Key Values</display-name>
+                <attribute attribute-id="tokenKey"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="creationDate" system="true"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
 </metadata>
