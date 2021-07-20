@@ -299,6 +299,35 @@
             </run-once>
         </triggers>
     </job>
+    <job job-id="tokenRenew" priority="0">
+        <description>This job has been created to renew Instagram API token</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_30">
+                <all-storefront-sites/>
+            </contexts>
+            <flow-template template-id="template_30">
+                <step step-id="getCustomObjectData" type="custom.getCustomObjects" enforce-restart="true">
+                    <description>This will make a request to renew token for 60 days</description>
+                    <parameters>
+                        <parameter name="CustomObjectType">instagramToken</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-20Z</date-from>
+                    <start-time>17:59:45.000Z</start-time>
+                    <interval>59d</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
 
 
 

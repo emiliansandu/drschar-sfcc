@@ -1,0 +1,49 @@
+{
+    "step-types":
+    {
+      "script-module-step":
+      [
+        {
+          "@type-id":"custom.getCustomObjects",
+          "@supports-parallel-execution":"false",
+          "@supports-site-context":"true",
+          "@supports-organization-context":"true",
+          "description":"This script retrieves instagramToken custom object tokenKey attribute. It runs in site scope.",
+          "module":"app_drschar_storefront/cartridge/scripts/steps/getCustomObject.js",
+          "function":"getCOs",
+          "transactional":"true",
+          "timeout-in-seconds":"900",
+          "parameters":
+          {
+            "parameter":
+            [
+              {
+                "@name":"CustomObjectType",
+                "@type":"string",
+                "@required":"true",
+                "description":"The Custom Object type to be data retrieved."
+              }
+            ]
+          },
+          "status-codes": 
+          {
+            "status": 
+            [
+                {
+                    "@code": "ERROR",
+                    "description": "Used when the step failed with an error."
+                },
+                {
+                    "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+                },
+                {
+                    "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+                }
+            ]
+          }
+        }
+      ]
+    }
+  }
