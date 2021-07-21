@@ -25,6 +25,7 @@
         {
           "id": "autoplaySlideTimeInterval",
           "name": "autoplay Slide time interval for carousel",
+          "description": "The time interval is expressed in milliseconds 1=0.001 which means 1 second = 1000 milliseconds",
           "type": "integer",
           "required": false
         }
