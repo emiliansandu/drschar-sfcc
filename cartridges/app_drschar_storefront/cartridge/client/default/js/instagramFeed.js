@@ -1,11 +1,14 @@
 "use strict";
 
 $(function () {
-   var div_height = $(".product-tile").height()+'px';
-    $(".tile-image-background").css({'height': div_height }); 
+   var div_width = $(".product-tile").width()+'px';
+    $(".tile-image-background").css({'height': div_width }); 
     $(window).on("resize",(function() {
-        $(".tile-image-background").css({'height': 100+'%' });
-        var div_height = $(".product-tile").height()+'px';
-        $(".tile-image-background").css({'height': div_height });
+     
+        var div_width = $(".product-tile").width()+'px';
+        $(".product-tile").css({'min-height': div_width });
+        $(".tile-image-background").css({'height': div_width }); 
+        $(".image-container").css({'height': div_width });
+        $(".overlay").css({'height': div_width });
       }));    
 });
