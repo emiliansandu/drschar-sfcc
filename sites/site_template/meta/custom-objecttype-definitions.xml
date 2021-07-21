@@ -18,6 +18,13 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+             <attribute-definition attribute-id="googleRecaptchaSecretKey">
+                <display-name xml:lang="x-default">Google Recaptcha Secret Key</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="googleRecaptchaScript">
                 <display-name xml:lang="x-default">Google Recaptcha Script</display-name>
                 <type>string</type>
@@ -46,6 +53,7 @@
                 <display-name xml:lang="x-default">Google Recaptcha Configuration</display-name>
                 <attribute attribute-id="enableGoogleRecaptcha"/>
                 <attribute attribute-id="googleRecaptchaSiteKey"/>
+                <attribute attribute-id="googleRecaptchaSecretKey"/>
                 <attribute attribute-id="googleRecaptchaScript"/>
                 <attribute attribute-id="botScoreThreshold"/>
                 <attribute attribute-id="formNameForRecaptchaVerification"/>

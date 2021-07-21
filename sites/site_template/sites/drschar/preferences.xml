@@ -55,9 +55,10 @@
     <custom-preferences>
         <all-instances>
             <preference preference-id="enableGoogleRecaptcha">true</preference> 
-                <preference preference-id="googleRecaptchaSiteKey">6Lcshp4bAAAAAJQCTRHXizwAoRM8o4uoFkKoERkG</preference>
-                <preference preference-id="googleRecaptchaScript">https://www.google.com/recaptcha/api.js</preference>
-                <preference preference-id="botScoreThreshold">0.5</preference>
+            <preference preference-id="googleRecaptchaSiteKey">6Lcshp4bAAAAAJQCTRHXizwAoRM8o4uoFkKoERkG</preference>
+            <preference preference-id="googleRecaptchaSecretKey">6Lcshp4bAAAAAHaACty0H7hebDC-Q5ZDZ9rV0VGy</preference>
+            <preference preference-id="googleRecaptchaScript">https://www.google.com/recaptcha/api.js</preference>
+            <preference preference-id="botScoreThreshold">0.5</preference>
             <preference preference-id="formNameForRecaptchaVerification">"dwfrm_profile": true</preference>
         </all-instances>
             <development>
