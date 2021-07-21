@@ -1,10 +1,12 @@
 <div id="m-allergy-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content tabContent">
     <div class="container d-flex flex-column flex-lg-column justify-content-center text-left">
         <isif condition="${product.allergyGroupProperties.contentProperties}">
-            <div class="row">
-                <div class="col-12">${Resource.msg('label.allergycontains', 'product', null)}</div>
+            <div class="row">            
                 <isloop items="${product.allergyGroupProperties.contentProperties}" var="contentproperties"
                     status="contentPropLoopstatus">
+                    <isif condition="${contentproperties.id == 'allergyContains' && contentproperties.value.length > '0'}">
+                    <div class="col-12">${Resource.msg('label.allergycontains', 'product', null)}</div>
+                    </isif>
                     <isif condition="${contentproperties.id == 'allergyContains'}">
                         <isloop items="${contentproperties.value}" var="allergyvals" status="allergyvaloopstatus">
                             <div class="col-lg-3 col-6 mt-2"><i
