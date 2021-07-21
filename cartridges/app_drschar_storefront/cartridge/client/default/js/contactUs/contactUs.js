@@ -32,27 +32,33 @@ module.exports = {
     subscribeContact: function () {
         $('form.contact-us').submit(function (e) {
             e.preventDefault();
+            var RCSK = $('#siteKey').val();
             var form = $(this);
             var button = $('.subscribe-contact-us');
             var url = form.attr('action');
 
             $.spinner().start();
             button.attr('disabled', true);
-            $.ajax({
-                url: url,
-                type: 'post',
-                dataType: 'json',
-                data: form.serialize(),
-                success: function (data) {
-                    displayMessage(data, button);
-                    if (data.success) {
-                        $('.contact-us').trigger('reset');
-                    }
-                },
-                error: function (err) {
-                    displayMessage(err, button);
-                }
-            });
+            grecaptcha.ready(function() {
+                grecaptcha.execute(RCSK, {action: 'contactUs'}).then(function(token) {
+                    form.prepend('<input type="hidden" name="g_token" value="' + token + '">');
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: form.serialize(),
+                        success: function (data) {
+                            displayMessage(data, button);
+                            if (data.success) {
+                                $('.contact-us').trigger('reset');
+                            }
+                        },
+                        error: function (err) {
+                            displayMessage(err, button);
+                        }
+                    });
+                });
+              });
         });
     }
 };

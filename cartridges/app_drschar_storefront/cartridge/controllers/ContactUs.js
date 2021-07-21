@@ -45,8 +45,24 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
     var Resource = require('dw/web/Resource');
     var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
     var emailHelper = require('*/cartridge/scripts/helpers/emailHelpers');
-
+    var Site = require('dw/system/Site');
+    var recaptcha = require('*/cartridge/helpers/recaptchaGoogle');
+    var enableGoogle = Site.getCurrent().getCustomPreferenceValue('enableGoogleRecaptcha');
     var myForm = req.form;
+    const g_token = myForm.g_token;
+
+    if(enableGoogle == true && g_token){
+        var response =  recaptcha.callReCaptchaService(g_token);
+        if(response.allowSubmit == false){
+            res.setStatusCode(500);
+            res.json({
+                error: true,
+                msg: 'Mayday mayday...do you copy?'
+            });
+            return;
+        }
+    }
+
     var isValidEmailid = emailHelper.validateEmail(myForm.contactEmail);
     if (isValidEmailid) {
         var contactDetails = [myForm.contactFirstName, myForm.contactLastName, myForm.contactEmail, myForm.contactTopic, myForm.contactComment];
