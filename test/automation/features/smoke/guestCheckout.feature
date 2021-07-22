@@ -15,6 +15,7 @@
 
       Given User closes cookie
       And User selects a quantity
+
       #And User selects a size
 
       Given User adds product to cart
