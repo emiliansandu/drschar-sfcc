@@ -1,7 +1,5 @@
 'use strict';
 
-const { entries } = require("lodash");
-
 /**
  * Display the returned message.
  * @param {string} data - data returned from the server's ajax call
