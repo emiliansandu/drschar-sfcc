@@ -36,7 +36,6 @@
         "bm_avatax",
         "int_avatax_sfra",
         "int_avatax_svcclient",
-        "int_loginradius",
         "int_google_tag",
         "int_googlerecaptcha",
         "int_paypal",
