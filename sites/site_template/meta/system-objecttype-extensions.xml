@@ -7602,6 +7602,14 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="zendeskDomain">
+                <display-name xml:lang="x-default">zendeskDomain</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>https://xxxxxxxx.zendesk.com</default-value>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="GA">
@@ -7637,6 +7645,7 @@ Direct or Redirect</description>
                 <attribute attribute-id="zendeskCartridgeEnabled"/>
                 <attribute attribute-id="zendeskKey"/>
                 <attribute attribute-id="zendeskStaticContentURL"/>
+                <attribute attribute-id="zendeskDomain"/>
             </attribute-group>
             <attribute-group group-id="Adyen">
                 <display-name xml:lang="x-default">Adyen Account Settings</display-name>
