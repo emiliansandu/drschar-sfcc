@@ -83,6 +83,8 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <input type="hidden" id="siteKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('googleRecaptchaSiteKey')}"/>
+                                        <input type="hidden" id="ticketKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('zendeskKey')}"/>
+                                        <input type="hidden" id="zendeskDomain" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('zendeskDomain')}"/>
                                         <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
                                             ${Resource.msg('label.input.contact-us-submit', 'contactUs', null)}
                                         </button>
