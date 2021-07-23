@@ -53,7 +53,7 @@ function createTicket(data){
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
-            'Authorization': 'Bearer ' + data.token 
+            'Authorization': 'Basic ' + btoa(data.zenMail + '/token:' + data.token)
         },
         data: JSON.stringify(reqData),
         success: function (data) {
@@ -80,7 +80,8 @@ module.exports = {
                 subject: $('#contact-subject').val(),
                 problem: $('#contact-problem').val(),
                 domain: $('#zendeskDomain').val(),
-                token: $('#ticketKey').val()
+                token: $('#ticketKey').val(),
+                zenMail: $('#zendeskEmail').val()
             }
 
             $.spinner().start();
