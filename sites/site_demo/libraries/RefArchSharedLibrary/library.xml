@@ -3898,7 +3898,7 @@ Sintonizzatore esterno ATSC DTB-H260F Samsung&lt;/div&gt;&#13;
 
     <content content-id="tracking_hint">
         <display-name xml:lang="x-default">tracking hint</display-name>
-        <online-flag>true</online-flag>
+        <online-flag>false</online-flag>
         <searchable-flag>false</searchable-flag>
         <page-attributes/>
         <custom-attributes>
