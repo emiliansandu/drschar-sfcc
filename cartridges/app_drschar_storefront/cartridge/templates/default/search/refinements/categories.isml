@@ -6,7 +6,7 @@
                 <isif condition="${category.selected}">
                     <i class="fa fa-check-circle"></i>
                 <iselse>
-                    <i class="fa fa-circle-o"></i>
+                    <i class="far fa-circle"></i>
                 </isif>
 
                 <!--- Label --->
