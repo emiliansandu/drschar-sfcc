@@ -7702,6 +7702,13 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://xxxxxxxx.zendesk.com</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="zendeskEmail">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="yotpoExportGroupIdInOrder">
                 <display-name xml:lang="x-default">Yotpo Export Group Id In Order</display-name>
                 <description xml:lang="x-default">This yotpo site preference is used to make the logic configurable that whether the master product will be exported in JSON or not.</description>
@@ -7868,6 +7875,7 @@ Direct or Redirect</description>
                 <attribute attribute-id="zendeskKey"/>
                 <attribute attribute-id="zendeskStaticContentURL"/>
                 <attribute attribute-id="zendeskDomain"/>
+                <attribute attribute-id="zendeskEmail"/>
             </attribute-group>
             <attribute-group group-id="Adyen">
                 <display-name xml:lang="x-default">Adyen Account Settings</display-name>
