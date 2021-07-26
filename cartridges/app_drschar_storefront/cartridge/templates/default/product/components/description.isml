@@ -1,5 +1,5 @@
 <isif condition="${product.shortDescription}">
-    <div id="m-general-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 availability">
+    <div id="m-general-description" class="col-12 availability">
         <isprint value="${product.shortDescription}" encoding="off" />
     </div>
 </isif>
