@@ -20,6 +20,11 @@ module.exports.render = function (context, modelIn) {
     var productTileParams = { pview: 'tile', pid: context.content.product.ID };
     var product = ProductFactory.get(productTileParams);
 
+    var params = new Object;
+    params.pid = product.id;
+    var fullProduct = ProductFactory.get(params);
+    product.price.list = fullProduct.price.list;
+
     var productUrl = URLUtils.url('Product-Show', 'pid', product.id).relative().toString();
     var productQuickViewUrl = URLUtils.url('Product-ShowQuickView', 'pid', product.id).relative().toString();
 
