@@ -137,6 +137,16 @@
         <password/>
     </service-credential>
 
+    <service-credential service-credential-id="zendesk.service.cred">
+        <url>https://drschaer.zendesk.com</url>
+    </service-credential>
+
+
+    <service-profile service-profile-id="zendesk.service.prof">
+        <timeout-millis>5000</timeout-millis>
+    </service-profile>
+
+
     <service-profile service-profile-id="int_yotpo_sfra.rest.api.profile">
         <timeout-millis>120000</timeout-millis>
         <rate-limit-enabled>false</rate-limit-enabled>
@@ -402,4 +412,14 @@
         <credential-id>int_yotpo_sfra.https.post.loyalty.api.cred</credential-id>
     </service>
 
+    <service service-id="zendeskService">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>ServiceZendesk</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>zendesk.service.prof</profile-id>
+        <credential-id>zendesk.service.cred</credential-id>
+    </service>
 </services>

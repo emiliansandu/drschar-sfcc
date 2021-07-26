@@ -50,6 +50,19 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
     var enableGoogle = Site.getCurrent().getCustomPreferenceValue('enableGoogleRecaptcha');
     var myForm = req.form;
     const g_token = myForm.g_token;
+    const ticketData = {
+        ticket: {
+            comment: {
+                body: myForm.contactProblem
+            },
+            subject: myForm.contactSubject,
+            requester: {
+                name: myForm.contactFirstName + ' ' + myForm.contactLastName,
+                email: myForm.contactEmail
+            }
+        }
+    }
+    
 
     if(enableGoogle == true && g_token){
         var response =  recaptcha.callReCaptchaService(g_token);
@@ -66,7 +79,9 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
     var isValidEmailid = emailHelper.validateEmail(myForm.contactEmail);
     if (isValidEmailid) {
         var contactDetails = [myForm.contactFirstName, myForm.contactLastName, myForm.contactEmail, myForm.contactTopic, myForm.contactComment];
+        var connectionService = require('*/cartridge/helpers/connectionZendeskService');
         hooksHelper('app.contactUs.subscribe', 'subscribe', contactDetails, function () {});
+        connectionService.endPoints.createTicket(JSON.stringify(ticketData));
 
         res.json({
             success: true,
