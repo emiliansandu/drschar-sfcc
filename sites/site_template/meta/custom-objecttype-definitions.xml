@@ -1257,4 +1257,19 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
+    <custom-type type-id="marketingCustomer">
+        <display-name xml:lang="x-default">Marketing Customer</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="emailAddress">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="marketingCustomerData">
+                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
+                <attribute attribute-id="emailAddress"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
 </metadata>
