@@ -1,379 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
-
-    <type-extension type-id="SitePreferences">
-        <custom-attribute-definitions>
-            <attribute-definition attribute-id="enableGoogleRecaptcha">
-                <display-name xml:lang="x-default">Enable Google Recaptcha V3</display-name>
-                <description xml:lang="x-default">If enable, Google recaptcha V3 is enabled</description>
-                <type>boolean</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <default-value>false</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="googleRecaptchaSiteKey">
-                <display-name xml:lang="x-default">Google Recaptcha Site Key</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-             <attribute-definition attribute-id="googleRecaptchaSecretKey">
-                <display-name xml:lang="x-default">Google Recaptcha Secret Key</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="googleRecaptchaScript">
-                <display-name xml:lang="x-default">Google Recaptcha Script</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="botScoreThreshold">
-                <display-name xml:lang="x-default">Bot Score Threshold</display-name>
-                <description xml:lang="x-default">Configure score threshold to identify bot vs human. The score needs to be between 0 to 1 where score 1 is identifies as human.</description>
-                <type>double</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <default-value>0.3</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="formNameForRecaptchaVerification">
-                <display-name xml:lang="x-default">Form Name For Recaptcha Verification</display-name>
-                <description xml:lang="x-default">Configure the Form Name and true/false In JSON format for Recaptcha Verification.</description>
-                <type>text</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-        </custom-attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="GoogleRecaptchaConfig">
-                <display-name xml:lang="x-default">Google Recaptcha Configuration</display-name>
-                <attribute attribute-id="enableGoogleRecaptcha"/>
-                <attribute attribute-id="googleRecaptchaSiteKey"/>
-                <attribute attribute-id="googleRecaptchaSecretKey"/>
-                <attribute attribute-id="googleRecaptchaScript"/>
-                <attribute attribute-id="botScoreThreshold"/>
-                <attribute attribute-id="formNameForRecaptchaVerification"/>
-            </attribute-group>
-        </group-definitions>
-    </type-extension>
-
-    <custom-type type-id="adyenNotification">
-        <display-name xml:lang="x-default">Adyen Notification</display-name>
-        <description xml:lang="x-default">Adyen Notification Update Queue</description>
-        <staging-mode>no-staging</staging-mode>
+    <custom-type type-id="ConfiguredLabels">
+        <display-name xml:lang="x-default">Configured Labels</display-name>
+        <description xml:lang="x-default">This Custom Object Will Have all The name value pairs of configured labels in BM</description>
+        <staging-mode>source-to-target</staging-mode>
         <storage-scope>site</storage-scope>
-        <retention-days>3</retention-days>
-        <key-definition attribute-id="orderId">
+        <key-definition attribute-id="labelName">
             <type>string</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="currency">
-                <display-name xml:lang="x-default">Currency</display-name>
+            <attribute-definition attribute-id="labelValue">
+                <display-name xml:lang="x-default">Lable Value</display-name>
+                <description xml:lang="x-default">It stores value for particular label name</description>
                 <type>string</type>
-                <localizable-flag>false</localizable-flag>
+                <localizable-flag>true</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="eventCode">
-                <display-name xml:lang="x-default">Event Code</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="eventDate">
-                <display-name xml:lang="x-default">Event Date</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="httpRemoteAddress">
-                <display-name xml:lang="x-default">Remote Address</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="live">
-                <display-name xml:lang="x-default">Live</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="merchantAccountCode">
-                <display-name xml:lang="x-default">Merchant Account Code</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="merchantReference">
-                <display-name xml:lang="x-default">Merchant Reference</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="operations">
-                <display-name xml:lang="x-default">Operations</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="paymentMethod">
-                <display-name xml:lang="x-default">Payment Method</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="processedDate">
-                <display-name xml:lang="x-default">Processed Date</display-name>
-                <type>datetime</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="processedStatus">
-                <display-name xml:lang="x-default">Processed Status</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="pspReference">
-                <display-name xml:lang="x-default">PSP Reference</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="reason">
-                <display-name xml:lang="x-default">Reason</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="success">
-                <display-name xml:lang="x-default">Success</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="updateStatus">
-                <display-name xml:lang="x-default">Update Status</display-name>
-                <type>enum-of-string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <value-definitions>
-                    <value-definition>
-                        <display xml:lang="x-default">PENDING</display>
-                        <value>PENDING</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">PROCESSED</display>
-                        <value>PROCESSED</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">PROCESS</display>
-                        <value>PROCESS</value>
-                    </value-definition>
-                </value-definitions>
-            </attribute-definition>
-            <attribute-definition attribute-id="value">
-                <display-name xml:lang="x-default">Reason</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="version">
-                <display-name xml:lang="x-default">Version</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="Adyen_log">
-                <display-name xml:lang="x-default">Adyen Log</display-name>
-                <type>text</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
         </attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="general">
-                <display-name xml:lang="x-default">General</display-name>
-                <attribute attribute-id="reason"/>
-                <attribute attribute-id="orderId"/>
-                <attribute attribute-id="creationDate" system="true"/>
-                <attribute attribute-id="version"/>
-                <attribute attribute-id="eventCode"/>
-                <attribute attribute-id="merchantAccountCode"/>
-                <attribute attribute-id="processedDate"/>
-                <attribute attribute-id="operations"/>
-                <attribute attribute-id="processedStatus"/>
-                <attribute attribute-id="success"/>
-                <attribute attribute-id="updateStatus"/>
-                <attribute attribute-id="httpRemoteAddress"/>
-                <attribute attribute-id="paymentMethod"/>
-                <attribute attribute-id="currency"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="merchantReference"/>
-                <attribute attribute-id="pspReference"/>
-                <attribute attribute-id="value"/>
-                <attribute attribute-id="live"/>
-                <attribute attribute-id="eventDate"/>
-                <attribute attribute-id="Adyen_log"/>
+            <attribute-group group-id="keyValuePair">
+                <display-name xml:lang="x-default">Lable Name and Value</display-name>
+                <attribute attribute-id="labelName"/>
+                <attribute attribute-id="labelValue"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
-    
-    <custom-type type-id="PayPalNewTransactions">
-        <display-name xml:lang="x-default">PayPal new transaction</display-name>
-        <description xml:lang="x-default">List of transactions, created via "New Transaction" feature</description>
-        <staging-mode>no-staging</staging-mode>
+
+    <custom-type type-id="CustomExtendedResponseMessages">
+        <display-name xml:lang="x-default">ErrorCode</display-name>
+        <staging-mode>source-to-target</staging-mode>
         <storage-scope>site</storage-scope>
-        <key-definition attribute-id="orderNo">
+        <key-definition attribute-id="errorCode">
+            <display-name xml:lang="x-default">Error Code</display-name>
             <type>string</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="currencyCode">
+            <attribute-definition attribute-id="errorMessage">
+                <display-name xml:lang="x-default">Error Message</display-name>
                 <type>string</type>
-                <localizable-flag>false</localizable-flag>
+                <localizable-flag>true</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="email">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="firstName">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="lastName">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="orderDate">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="orderTotal">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="paymentStatus">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="transactionId">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="transactionsHistory">
-                <type>set-of-string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
         </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Config">
+                <display-name xml:lang="x-default">Configuration of Error Messages</display-name>
+                <attribute attribute-id="errorCode"/>
+                <attribute attribute-id="errorMessage"/>
+            </attribute-group>
+        </group-definitions>
     </custom-type>
 
-    <custom-type type-id="OrderNotifyUpdates">
+    <custom-type type-id="MultiMerchantByChannel">
+        <display-name xml:lang="x-default">Multi Merchant By Channel</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="Name">
+            <display-name xml:lang="x-default">Channel Name</display-name>
+            <description xml:lang="x-default">Channel Name</description>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="GooglePayMerchantID">
+                <display-name xml:lang="x-default">Google Pay Merchant ID</display-name>
+                <description xml:lang="x-default">Google Pay Merchant ID</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="MerchantID">
+                <display-name xml:lang="x-default">Merchant ID</display-name>
+                <description xml:lang="x-default">Merchant ID</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="XMLPassword">
+                <display-name xml:lang="x-default">XML Password</display-name>
+                <description xml:lang="x-default">XML Password</description>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="XMLUserName">
+                <display-name xml:lang="x-default">XML User Name</display-name>
+                <description xml:lang="x-default">XML User Name</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Config">
+                <display-name xml:lang="x-default">Config</display-name>
+                <attribute attribute-id="Name"/>
+                <attribute attribute-id="MerchantID"/>
+                <attribute attribute-id="GooglePayMerchantID"/>
+                <attribute attribute-id="XMLUserName"/>
+                <attribute attribute-id="XMLPassword"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="MultiMerchantByPaymentMethod">
+        <display-name xml:lang="x-default">Multi Merchant By Payment Method</display-name>
         <staging-mode>no-staging</staging-mode>
         <storage-scope>site</storage-scope>
         <key-definition attribute-id="ID">
+            <display-name xml:lang="x-default">Payment Method ID</display-name>
+            <description xml:lang="x-default">Payment Method ID</description>
             <type>string</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="orderNo">
-                <display-name xml:lang="x-default">orderNo</display-name>
+            <attribute-definition attribute-id="googlePayMerchantID">
+                <display-name xml:lang="x-default">Google Pay Merchant ID</display-name>
+                <description xml:lang="x-default">Google Pay Merchant ID for respective merchant code</description>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-                <field-length>0</field-length>
             </attribute-definition>
-            <attribute-definition attribute-id="timeStamp">
-                <display-name xml:lang="x-default">timeStamp</display-name>
-                <type>datetime</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="xmlString">
-                <display-name xml:lang="x-default">xmlString</display-name>
+            <attribute-definition attribute-id="mandateNumber">
+                <display-name xml:lang="x-default">SEPA Mandate Number</display-name>
+                <description xml:lang="x-default">SEPA Mandate Number</description>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-                <field-length>0</field-length>
+                <field-length>50</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="merchantID">
+                <display-name xml:lang="x-default">Merchant ID</display-name>
+                <description xml:lang="x-default">Merchant ID</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="password">
+                <display-name xml:lang="x-default">XML Password</display-name>
+                <description xml:lang="x-default">XML Password</description>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="userName">
+                <display-name xml:lang="x-default">XML User Name</display-name>
+                <description xml:lang="x-default">XML User Name</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
         </attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="orders">
-                <attribute attribute-id="orderNo"/>
-                <attribute attribute-id="xmlString"/>
+            <attribute-group group-id="custom">
+                <display-name xml:lang="x-default">custom</display-name>
                 <attribute attribute-id="ID"/>
-                <attribute attribute-id="timeStamp"/>
+                <attribute attribute-id="merchantID"/>
+                <attribute attribute-id="userName"/>
+                <attribute attribute-id="password"/>
+                <attribute attribute-id="googlePayMerchantID"/>
+                <attribute attribute-id="mandateNumber"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
+
     <custom-type type-id="MultiMerchantBySite">
         <display-name xml:lang="x-default">Multi Merchant By Site</display-name>
         <staging-mode>no-staging</staging-mode>
@@ -421,186 +231,7 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
-    <custom-type type-id="ConfiguredLabels">
-        <display-name xml:lang="x-default">Configured Labels</display-name>
-        <description xml:lang="x-default">This Custom Object Will Have all The name value pairs of configured labels in BM</description>
-        <staging-mode>source-to-target</staging-mode>
-        <storage-scope>site</storage-scope>
-        <key-definition attribute-id="labelName">
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <attribute-definitions>
-            <attribute-definition attribute-id="labelValue">
-                <display-name xml:lang="x-default">Lable Value</display-name>
-                <description xml:lang="x-default">It stores value for particular label name</description>
-                <type>string</type>
-                <localizable-flag>true</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-        </attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="keyValuePair">
-                <display-name xml:lang="x-default">Lable Name and Value</display-name>
-                <attribute attribute-id="labelName"/>
-                <attribute attribute-id="labelValue"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
-	<custom-type type-id="CustomExtendedResponseMessages">
-        <display-name xml:lang="x-default">ErrorCode</display-name>
-        <staging-mode>source-to-target</staging-mode>
-        <storage-scope>site</storage-scope>
-        <key-definition attribute-id="errorCode">
-            <display-name xml:lang="x-default">Error Code</display-name>
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <attribute-definitions>
-            <attribute-definition attribute-id="errorMessage">
-                <display-name xml:lang="x-default">Error Message</display-name>
-                <type>string</type>
-                <localizable-flag>true</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-        </attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="Config">
-                <display-name xml:lang="x-default">Configuration of Error Messages</display-name>
-                <attribute attribute-id="errorCode"/>
-                <attribute attribute-id="errorMessage"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
-	<custom-type type-id="MultiMerchantByChannel">
-		<display-name xml:lang="x-default">Multi Merchant By Channel</display-name>
-		<staging-mode>no-staging</staging-mode>
-		<storage-scope>site</storage-scope>
-		<key-definition attribute-id="Name">
-			<display-name xml:lang="x-default">Channel Name</display-name>
-			<description xml:lang="x-default">Channel Name</description>
-			<type>string</type>
-			<min-length>0</min-length>
-		</key-definition>
-		<attribute-definitions>
-			<attribute-definition attribute-id="MerchantID">
-				<display-name xml:lang="x-default">Merchant ID</display-name>
-				<description xml:lang="x-default">Merchant ID</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-			<attribute-definition attribute-id="GooglePayMerchantID">
-				<display-name xml:lang="x-default">Google Pay Merchant ID</display-name>
-				<description xml:lang="x-default">Google Pay Merchant ID</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-			<attribute-definition attribute-id="XMLPassword">
-				<display-name xml:lang="x-default">XML Password</display-name>
-				<description xml:lang="x-default">XML Password</description>
-				<type>password</type>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-			</attribute-definition>
-			<attribute-definition attribute-id="XMLUserName">
-				<display-name xml:lang="x-default">XML User Name</display-name>
-				<description xml:lang="x-default">XML User Name</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-		</attribute-definitions>
-		<group-definitions>
-			<attribute-group group-id="Config">
-				<display-name xml:lang="x-default">Config</display-name>
-				<attribute attribute-id="Name"/>
-				<attribute attribute-id="MerchantID"/>
-				<attribute attribute-id="GooglePayMerchantID"/>
-				<attribute attribute-id="XMLUserName"/>
-				<attribute attribute-id="XMLPassword"/>
-			</attribute-group>
-		</group-definitions>
-	</custom-type>
-	<custom-type type-id="MultiMerchantByPaymentMethod">
-		<display-name xml:lang="x-default">Multi Merchant By Payment Method</display-name>
-		<staging-mode>no-staging</staging-mode>
-		<storage-scope>site</storage-scope>
-		<key-definition attribute-id="ID">
-			<display-name xml:lang="x-default">Payment Method ID</display-name>
-			<description xml:lang="x-default">Payment Method ID</description>
-			<type>string</type>
-			<min-length>0</min-length>
-		</key-definition>
-		<attribute-definitions>
-			<attribute-definition attribute-id="merchantID">
-				<display-name xml:lang="x-default">Merchant ID</display-name>
-				<description xml:lang="x-default">Merchant ID</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-			<attribute-definition attribute-id="userName">
-				<display-name xml:lang="x-default">XML User Name</display-name>
-				<description xml:lang="x-default">XML User Name</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-			<attribute-definition attribute-id="password">
-				<display-name xml:lang="x-default">XML Password</display-name>
-				<description xml:lang="x-default">XML Password</description>
-				<type>password</type>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-			</attribute-definition>
-			<attribute-definition attribute-id="googlePayMerchantID">
-				<display-name xml:lang="x-default">Google Pay Merchant ID</display-name>
-				<description xml:lang="x-default">Google Pay Merchant ID for respective merchant code</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-			</attribute-definition>
-			<attribute-definition attribute-id="mandateNumber">
-				<display-name xml:lang="x-default">SEPA Mandate Number</display-name>
-				<description xml:lang="x-default">SEPA Mandate Number</description>
-				<type>string</type>
-				<localizable-flag>false</localizable-flag>
-				<mandatory-flag>false</mandatory-flag>
-				<externally-managed-flag>false</externally-managed-flag>
-				<min-length>0</min-length>
-				<field-length>50</field-length>
-			</attribute-definition>
-		</attribute-definitions>
-		<group-definitions>
-			<attribute-group group-id="custom">
-				<display-name xml:lang="x-default">custom</display-name>
-				<attribute attribute-id="ID"/>
-				<attribute attribute-id="merchantID"/>
-				<attribute attribute-id="userName"/>
-				<attribute attribute-id="password"/>
-				<attribute attribute-id="googlePayMerchantID"/>
-				<attribute attribute-id="mandateNumber"/>
-			</attribute-group>
-		</group-definitions>
-	</custom-type>
+
     <custom-type type-id="NutritionFacts">
         <display-name xml:lang="x-default">Nutrition Facts</display-name>
         <staging-mode>no-staging</staging-mode>
@@ -805,13 +436,6 @@
                 <mandatory-flag>true</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="transFat">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>true</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
             <attribute-definition attribute-id="thiamin">
                 <display-name xml:lang="x-default">Thiamin</display-name>
                 <type>string</type>
@@ -859,6 +483,14 @@
             </attribute-definition>
             <attribute-definition attribute-id="totalSugars">
                 <display-name xml:lang="x-default">Total Sugars</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="transFat">
+                <display-name xml:lang="x-default">Trans Fat</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>true</mandatory-flag>
@@ -924,225 +556,286 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
-    <custom-type type-id="instagramToken">
-        <display-name xml:lang="x-default">Token Key Value</display-name>
-        <description xml:lang="x-default">This Custom Object is designed to contain token key value for instagram feed API requests</description>
-        <staging-mode>source-to-target</staging-mode>
-        <storage-scope>site</storage-scope>
-        <key-definition attribute-id="tokenKey">
-            <display-name xml:lang="x-default">Token Key</display-name>
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <group-definitions>
-            <attribute-group group-id="tokenKeys">
-                <display-name xml:lang="x-default">Token Key Values</display-name>
-                <attribute attribute-id="tokenKey"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="creationDate" system="true"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
 
-    <custom-type type-id="yotpoConfiguration">
-        <display-name xml:lang="x-default">Yotpo Configuration</display-name>
-        <description xml:lang="x-default">The configuration object that holds mandatory parameters for Yotpo.</description>
+    <custom-type type-id="OrderNotifyUpdates">
         <staging-mode>no-staging</staging-mode>
         <storage-scope>site</storage-scope>
-        <key-definition attribute-id="localeID">
-            <display-name xml:lang="x-default">Locale ID</display-name>
-            <description xml:lang="x-default">The locale ID which represents the specific language, which maps with a specific account on Yotpo.</description>
+        <key-definition attribute-id="ID">
             <type>string</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="appKey">
-                <display-name xml:lang="x-default">App Key</display-name>
-                <description xml:lang="x-default">This is the App Key for a specific account on Yotpo</description>
+            <attribute-definition attribute-id="orderNo">
+                <display-name xml:lang="x-default">orderNo</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
+                <field-length>0</field-length>
             </attribute-definition>
-            <attribute-definition attribute-id="clientSecretKey">
-                <display-name xml:lang="x-default">Client Secret Key</display-name>
-                <description xml:lang="x-default">This is the Client Secret Key for a specific account on Yotpo</description>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="enableRatings">
-                <display-name xml:lang="x-default">Enable Ratings</display-name>
-                <description xml:lang="x-default">This flag indicates whether the ratings are enabled for the specific Locale.</description>
-                <type>boolean</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="enablePurchaseFeed">
-                <display-name xml:lang="x-default">Enable Purchase Feed</display-name>
-                <description xml:lang="x-default">This flag indicates whether the purchase feed is enabled for the specific Locale.</description>
-                <type>boolean</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="enableReviews">
-                <display-name xml:lang="x-default">Enable Reviews</display-name>
-                <description xml:lang="x-default">This flag indicates whether the reviews are enabled for the specific Locale.</description>
-                <type>boolean</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="utokenAuthCode">
-                <display-name xml:lang="x-default">utoken Authentication Code</display-name>
-                <description xml:lang="x-default">This token is retrieved from Yotpo Authentication call response. It remains valid for few hours before it expires. It is updated by the Yotpo authentication process once it expires.</description>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="yotpoLoyaltyAPIKey">
-                <display-name xml:lang="x-default">Yotpo Loyalty API Key</display-name>
-                <description xml:lang="x-default">This is the API Key for a specific account on Yotpo Loyalty</description>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="yotpoLoyaltyGUID">
-                <display-name xml:lang="x-default">Yotpo Loyalty GUID</display-name>
-                <description xml:lang="x-default">This is the GUID for a specific account on Yotpo Loyalty</description>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-        </attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="yotpoConfigurationAttributes">
-                <display-name xml:lang="x-default">Yotpo Configuration Attributes</display-name>
-                <description xml:lang="x-default">This is default group to combine Yotpo Configuration attributes</description>
-                <attribute attribute-id="localeID"/>
-                <attribute attribute-id="appKey"/>
-                <attribute attribute-id="clientSecretKey"/>
-                <attribute attribute-id="utokenAuthCode"/>
-                <attribute attribute-id="enableReviews"/>
-                <attribute attribute-id="enableRatings"/>
-                <attribute attribute-id="enablePurchaseFeed"/>
-            </attribute-group>
-            <attribute-group group-id="YotpoLoyalty">
-                <display-name xml:lang="x-default">Yotpo Loyalty</display-name>
-                <attribute attribute-id="yotpoLoyaltyGUID"/>
-                <attribute attribute-id="yotpoLoyaltyAPIKey"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
-
-    <custom-type type-id="yotpoJobsConfiguration">
-        <display-name xml:lang="x-default">Yotpo Jobs Configuration</display-name>
-        <description xml:lang="x-default">This saves configuration related to Yotpo Jobs</description>
-        <staging-mode>no-staging</staging-mode>
-        <storage-scope>site</storage-scope>
-        <key-definition attribute-id="id">
-            <display-name xml:lang="x-default">ID</display-name>
-            <description xml:lang="x-default">The unique ID for Yotpo Configuration Job</description>
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <attribute-definitions>
-            <attribute-definition attribute-id="orderFeedJobLastExecutionDateTime">
-                <display-name xml:lang="x-default">Order Feed Job Last Execution Date Time</display-name>
-                <description xml:lang="x-default">This attribute stores the order feed job last execution date time.</description>
+            <attribute-definition attribute-id="timeStamp">
+                <display-name xml:lang="x-default">timeStamp</display-name>
                 <type>datetime</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="xmlString">
+                <display-name xml:lang="x-default">xmlString</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
         </attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="jobsConfiguration">
-                <display-name xml:lang="x-default">Jobs Configuration</display-name>
-                <description xml:lang="x-default">This is default group to combine Yotpo Jobs Configuration attributes</description>
-                <attribute attribute-id="orderFeedJobLastExecutionDateTime"/>
-                <attribute attribute-id="id"/>
+            <attribute-group group-id="orders">
+                <attribute attribute-id="orderNo"/>
+                <attribute attribute-id="xmlString"/>
+                <attribute attribute-id="ID"/>
+                <attribute attribute-id="timeStamp"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
 
-    <custom-type type-id="yotpoLoyaltyCustomer">
-        <description xml:lang="x-default">This Custom Object is the fallback placeholder for holding Customer information that fails to send to Yotpo real-time. These fallback COs will attempt to be sent again later via a Customer Feed job.</description>
+    <custom-type type-id="PayPalNewTransactions">
+        <display-name xml:lang="x-default">PayPal new transaction</display-name>
+        <description xml:lang="x-default">List of transactions, created via "New Transaction" feature</description>
         <staging-mode>no-staging</staging-mode>
         <storage-scope>site</storage-scope>
-        <retention-days>30</retention-days>
-        <key-definition attribute-id="ID">
-            <display-name xml:lang="x-default">ID</display-name>
-            <description xml:lang="x-default">Unique ID</description>
+        <key-definition attribute-id="orderNo">
             <type>string</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="CustomerID">
-                <display-name xml:lang="x-default">Customer ID</display-name>
+            <attribute-definition attribute-id="currencyCode">
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
-            <attribute-definition attribute-id="Payload">
-                <display-name xml:lang="x-default">Payload</display-name>
-                <description xml:lang="x-default">JSON blob representing Yotpo Customer object</description>
+            <attribute-definition attribute-id="email">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="firstName">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastName">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="orderDate">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="orderTotal">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentStatus">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="transactionId">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="transactionsHistory">
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+    </custom-type>
+
+    <custom-type type-id="adyenNotification">
+        <display-name xml:lang="x-default">Adyen Notification</display-name>
+        <description xml:lang="x-default">Adyen Notification Update Queue</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>3</retention-days>
+        <key-definition attribute-id="orderId">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="Adyen_log">
+                <display-name xml:lang="x-default">Adyen Log</display-name>
                 <type>text</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="PayloadDeliveryDate">
-                <display-name xml:lang="x-default">PayloadDeliveryDate</display-name>
-                <description xml:lang="x-default">Date payload delivered to Yotpo API successfully</description>
+            <attribute-definition attribute-id="currency">
+                <display-name xml:lang="x-default">Currency</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="eventCode">
+                <display-name xml:lang="x-default">Event Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="eventDate">
+                <display-name xml:lang="x-default">Event Date</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="httpRemoteAddress">
+                <display-name xml:lang="x-default">Remote Address</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="live">
+                <display-name xml:lang="x-default">Live</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="merchantAccountCode">
+                <display-name xml:lang="x-default">Merchant Account Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="merchantReference">
+                <display-name xml:lang="x-default">Merchant Reference</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="operations">
+                <display-name xml:lang="x-default">Operations</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentMethod">
+                <display-name xml:lang="x-default">Payment Method</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="processedDate">
+                <display-name xml:lang="x-default">Processed Date</display-name>
                 <type>datetime</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="Status">
-                <display-name xml:lang="x-default">Status</display-name>
-                <description xml:lang="x-default">QUEUED, SUCCESS, FAIL</description>
+            <attribute-definition attribute-id="processedStatus">
+                <display-name xml:lang="x-default">Processed Status</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="pspReference">
+                <display-name xml:lang="x-default">PSP Reference</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="reason">
+                <display-name xml:lang="x-default">Reason</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="success">
+                <display-name xml:lang="x-default">Success</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="updateStatus">
+                <display-name xml:lang="x-default">Update Status</display-name>
                 <type>enum-of-string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <value-definitions>
-                    <value-definition default="true">
-                        <display xml:lang="x-default">QUEUED</display>
-                        <value>QUEUED</value>
+                    <value-definition>
+                        <display xml:lang="x-default">PENDING</display>
+                        <value>PENDING</value>
                     </value-definition>
                     <value-definition>
-                        <display xml:lang="x-default">SUCCESS</display>
-                        <value>SUCCESS</value>
+                        <display xml:lang="x-default">PROCESSED</display>
+                        <value>PROCESSED</value>
                     </value-definition>
                     <value-definition>
-                        <display xml:lang="x-default">FAIL</display>
-                        <value>FAIL</value>
+                        <display xml:lang="x-default">PROCESS</display>
+                        <value>PROCESS</value>
                     </value-definition>
                 </value-definitions>
             </attribute-definition>
-            <attribute-definition attribute-id="StatusDetails">
-                <display-name xml:lang="x-default">StatusDetails</display-name>
-                <description xml:lang="x-default">JSON - message to record if a payload send failure happens</description>
-                <type>text</type>
+            <attribute-definition attribute-id="value">
+                <display-name xml:lang="x-default">Reason</display-name>
+                <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
             </attribute-definition>
-            <attribute-definition attribute-id="locale">
-                <display-name xml:lang="x-default">locale</display-name>
-                <description xml:lang="x-default">locale</description>
+            <attribute-definition attribute-id="version">
+                <display-name xml:lang="x-default">Version</display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
@@ -1151,125 +844,31 @@
             </attribute-definition>
         </attribute-definitions>
         <group-definitions>
-            <attribute-group group-id="custom">
-                <display-name xml:lang="x-default">Custom</display-name>
-                <attribute attribute-id="Payload"/>
-                <attribute attribute-id="PayloadDeliveryDate"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="Status"/>
+            <attribute-group group-id="general">
+                <display-name xml:lang="x-default">General</display-name>
+                <attribute attribute-id="reason"/>
+                <attribute attribute-id="orderId"/>
                 <attribute attribute-id="creationDate" system="true"/>
-                <attribute attribute-id="ID"/>
-                <attribute attribute-id="StatusDetails"/>
-                <attribute attribute-id="CustomerID"/>
-                <attribute attribute-id="locale"/>
+                <attribute attribute-id="version"/>
+                <attribute attribute-id="eventCode"/>
+                <attribute attribute-id="merchantAccountCode"/>
+                <attribute attribute-id="processedDate"/>
+                <attribute attribute-id="operations"/>
+                <attribute attribute-id="processedStatus"/>
+                <attribute attribute-id="success"/>
+                <attribute attribute-id="updateStatus"/>
+                <attribute attribute-id="httpRemoteAddress"/>
+                <attribute attribute-id="paymentMethod"/>
+                <attribute attribute-id="currency"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="merchantReference"/>
+                <attribute attribute-id="pspReference"/>
+                <attribute attribute-id="value"/>
+                <attribute attribute-id="live"/>
+                <attribute attribute-id="eventDate"/>
+                <attribute attribute-id="Adyen_log"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
 
-    <custom-type type-id="yotpoLoyaltyOrder">
-        <description xml:lang="x-default">This Custom Object is the fallback placeholder for holding Order information that fails to send to Yotpo real-time. These fallback COs will attempt to be sent again later via an Order Feed job.</description>
-        <staging-mode>no-staging</staging-mode>
-        <storage-scope>site</storage-scope>
-        <retention-days>30</retention-days>
-        <key-definition attribute-id="ID">
-            <display-name xml:lang="x-default">ID</display-name>
-            <description xml:lang="x-default">Unique ID</description>
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <attribute-definitions>
-            <attribute-definition attribute-id="OrderID">
-                <display-name xml:lang="x-default">Order ID</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="Payload">
-                <display-name xml:lang="x-default">Payload</display-name>
-                <description xml:lang="x-default">JSON blob representing swell order object</description>
-                <type>text</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="PayloadDeliveryDate">
-                <display-name xml:lang="x-default">PayloadDeliveryDate</display-name>
-                <description xml:lang="x-default">Date payload delivered to Swell API successfully</description>
-                <type>datetime</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="Status">
-                <display-name xml:lang="x-default">Status</display-name>
-                <description xml:lang="x-default">QUEUED, SUCCESS, FAIL</description>
-                <type>enum-of-string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <value-definitions>
-                    <value-definition default="true">
-                        <display xml:lang="x-default">QUEUED</display>
-                        <value>QUEUED</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">SUCCESS</display>
-                        <value>SUCCESS</value>
-                    </value-definition>
-                    <value-definition>
-                        <display xml:lang="x-default">FAIL</display>
-                        <value>FAIL</value>
-                    </value-definition>
-                </value-definitions>
-            </attribute-definition>
-            <attribute-definition attribute-id="StatusDetails">
-                <display-name xml:lang="x-default">StatusDetails</display-name>
-                <description xml:lang="x-default">JSON - message to record if a payload send failure happens</description>
-                <type>text</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-            <attribute-definition attribute-id="locale">
-                <display-name xml:lang="x-default">locale</display-name>
-                <description xml:lang="x-default">locale</description>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-        </attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="custom">
-                <display-name xml:lang="x-default">Custom</display-name>
-                <attribute attribute-id="Payload"/>
-                <attribute attribute-id="PayloadDeliveryDate"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="Status"/>
-                <attribute attribute-id="creationDate" system="true"/>
-                <attribute attribute-id="ID"/>
-                <attribute attribute-id="StatusDetails"/>
-                <attribute attribute-id="OrderID"/>
-                <attribute attribute-id="locale"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
-    <custom-type type-id="marketingCustomer">
-        <display-name xml:lang="x-default">Marketing Customer</display-name>
-        <staging-mode>no-staging</staging-mode>
-        <storage-scope>organization</storage-scope>
-        <key-definition attribute-id="emailAddress">
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <group-definitions>
-            <attribute-group group-id="marketingCustomerData">
-                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
-                <attribute attribute-id="emailAddress"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
 </metadata>
