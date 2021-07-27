@@ -54,11 +54,12 @@ server.append('Show', cache.applyPromotionSensitiveCache, function (req, res, ne
         productUrl = URLUtils.url('Product-Show', 'pid', product.id).relative().toString();
         quickViewUrl = URLUtils.url('Product-ShowQuickView', 'pid', product.id)
             .relative().toString();
-        //missing price list
+        //Missing prices
         var params = new Object;
         params.pid = product.id;
         var fullProduct = ProductFactory.get(params);
         product.price.list = fullProduct.price.list;
+        product.price.sales = fullProduct.price.sales;
     } catch (e) {
         product = false;
         productUrl = URLUtils.url('Home-Show');// TODO: change to coming soon page
