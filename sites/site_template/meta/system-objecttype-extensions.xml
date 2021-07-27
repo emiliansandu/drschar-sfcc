@@ -5651,6 +5651,20 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="subscribed">
+                <display-name xml:lang="x-default">Subscribed</display-name>
+                <description xml:lang="x-default"></description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="synced">
+                <display-name xml:lang="x-default">Synced</display-name>
+                <description xml:lang="x-default"></description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="Standard">
@@ -5679,6 +5693,11 @@ Direct or Redirect</description>
                 <display-name xml:lang="x-default">Loyalty</display-name>
                 <attribute attribute-id="isLoyaltyProgramInitialized"/>
                 <attribute attribute-id="yotpoLoyaltyTier"/>
+            </attribute-group>
+            <attribute-group group-id="MarketingCloud">
+                <display-name xml:lang="x-default">Marketing Cloud</display-name>
+                <attribute attribute-id="subscribed"/>
+                <attribute attribute-id="synced"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
