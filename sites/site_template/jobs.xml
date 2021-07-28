@@ -449,7 +449,7 @@
     </job>
 
     <job job-id="Yotpo Loyalty Customer Export" priority="0">
-        <description/>
+        <description>This job handles marketingCloudSignup Page Designer Component Emails saved on marketingCustomer Custom Object and upload them to Impex</description>
         <parameters/>
         <flow>
             <context site-id="RefArch"/>
@@ -474,6 +474,30 @@
                         <weekday>Monday</weekday>
                         <weekday>Friday</weekday>
                     </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+    <job job-id="marketing_Cloud_Signup_Emails_Page_Designer_Component_Job" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="exportXMLEmailFile" type="custom.getCustomObjectEmails" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="CustomObjectType">marketingCustomer</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-28Z</date-from>
+                    <start-time>15:14:02.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week/>
                 </recurrence>
             </run-recurring>
         </triggers>
