@@ -43,6 +43,64 @@
                 }
             ]
           }
+        },
+        {
+          "@type-id":"custom.getCustomObjectEmails",
+          "@supports-parallel-execution":"false",
+          "@supports-site-context":"true",
+          "@supports-organization-context":"true",
+          "description":"This script retrieves marketingCustomer custom object emailAddress attribute. It runs in site scope.",
+          "module":"app_drschar_storefront/cartridge/scripts/steps/getCustomObjectEmails.js",
+          "function":"getCOmarketingCustomer",
+          "transactional":"true",
+          "timeout-in-seconds":"900",
+          "parameters":
+          {
+            "parameter":
+            [
+              {
+                "@name":"CustomObjectType",
+                "@type":"string",
+                "@required":"true",
+                "description":"The Custom Object type to be data retrieved."
+              },
+              {
+                "@name": "TargetFolder",
+                "@type": "string",
+                "@required": "true",
+                "@trim": "true",
+                "description": "Target folder path (in IMPEX)",
+                "default-value": "MarketingCloud"
+            },
+            {
+                "@name": "Filename",
+                "description": "Filename of the generated files that will contains exported data",
+                "@type": "string",
+                "@required": "false",
+                "@trim": "true",
+                "default-value": "export-customer_emails_page_designer_marketing_cloud.xml"
+            }
+
+            ]
+          },
+          "status-codes": 
+          {
+            "status": 
+            [
+                {
+                    "@code": "ERROR",
+                    "description": "Used when the step failed with an error."
+                },
+                {
+                    "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+                },
+                {
+                    "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+                }
+            ]
+          }  
         }
       ]
     }
