@@ -246,5 +246,11 @@ label.availability {
     }
   }
 
+  .allergenHelpLink{
+    color: $primary !important;
+}
+.allergenHelpLink:visited,.allergenHelpLink:hover,.allergenHelpLink:active {
+    text-decoration:none;
+  }
 
 

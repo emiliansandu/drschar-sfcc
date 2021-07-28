@@ -786,8 +786,11 @@ function calculateTax(basket, orderNo) {
 		}
 		beforeSvcTime = new Date().getTime();
 		// ********* 	Call the tax calculation service 	********** //
-		svcResponse = avaTaxClient.createTransaction(transactionModel, '');
-
+		if(shipToAddress.city != null && shipToAddress.region != null && shipToAddress.line1 != null && shipToAddress.postalCode != null && shipToAddress.country != null){
+			svcResponse = avaTaxClient.createTransaction(transactionModel, '');
+		}else{
+			svcResponse.statusCode ='ERROR';
+		}
 		// If AvaTax returns error, set taxes to Zero
 		if (svcResponse.statusCode === 'ERROR') {
 			var lineItems = basket.getAllLineItems();

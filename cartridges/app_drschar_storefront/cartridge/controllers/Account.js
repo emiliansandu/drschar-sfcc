@@ -61,4 +61,44 @@ server.append(
     }
 );
 
+server.post(
+    'MarketingSignup',
+    server.middleware.https,
+    csrfProtection.validateRequest,
+    function (req, res, next) {
+        var CustomObjectMgr = require('dw/object/CustomObjectMgr');
+        var Logger = require('dw/system/Logger');
+        var Transaction = require('dw/system/Transaction');
+        var URLUtils = require('dw/web/URLUtils');
+        var server = require('server');
+       
+        //when using post method instead of req.querystring must use req.form
+        var emailCustomer=req.form.dwfrm_marketingCloudSignupForm_email;
+        var customObjectKeyValueExists = CustomObjectMgr.getCustomObject('marketingCustomer', emailCustomer);
+        if(!customObjectKeyValueExists){
+        Transaction.begin();
+        try {
+            //by generating a model/instance of the custom object as arguments the Custom Object ID and primary key ID
+            var NewCustomObjectSample = CustomObjectMgr.createCustomObject('marketingCustomer', 'emailAddress');
+            //here the value is inserted in the Custom Object model/instance
+            NewCustomObjectSample.custom.emailAddress = emailCustomer;
+            //the insertion is executed
+            Transaction.commit();
+        }catch(e){
+            Logger.error(e)
+            Transaction.rollback();
+        }
+            server.forms.getForm('marketingCloudSignupForm').clear();
+            res.redirect(URLUtils.url('Home-Show'));
+            next();
+        } 
+        else {
+            server.forms.getForm('marketingCloudSignupForm').clear();
+            res.redirect(URLUtils.url('Home-Show'));
+            next();
+        } 
+    }
+         
+);
+
 module.exports = server.exports();

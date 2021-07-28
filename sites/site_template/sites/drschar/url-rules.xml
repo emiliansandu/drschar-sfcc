@@ -62,6 +62,14 @@
         <pipeline-alias pipeline="GiftCert-Purchase">giftcertpurchase</pipeline-alias>
         <pipeline-alias pipeline="Wishlist-Show">wishlist</pipeline-alias>
         <pipeline-alias pipeline="COCustomer-Start">checkout</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetCustomer">swell/index/customer</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetCustomers">swell/index/customers</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetOrderCountByVolume">swell/index/thirty-day-order-volume</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-CreateGiftCertificate">swell/index/create-gift-certificate</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetCouponCode">swell/index/coupon-code</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetOrder">swell/index/order</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetOrderCountByState">swell/index/order-count</pipeline-alias>
+        <pipeline-alias pipeline="YotpoLoyalty-GetOrders">swell/index/orders</pipeline-alias>
     </pipeline-aliases>
 </url-rules>
 

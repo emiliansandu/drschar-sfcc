@@ -1,0 +1,7 @@
+{
+  "name": "marketingCloudSignup",
+  "description": "This is the Marketing Cloud Signup Component, used to register customers to marketing cloud",
+  "group": "drschar_components",
+  "attribute_definition_groups": [],
+  "region_definitions": []
+}

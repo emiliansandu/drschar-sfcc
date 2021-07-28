@@ -53,7 +53,14 @@
         </production>
     </standard-preferences>
     <custom-preferences>
-        <all-instances/>
+        <all-instances>
+            <preference preference-id="enableGoogleRecaptcha">true</preference> 
+            <preference preference-id="googleRecaptchaSiteKey">6Lcshp4bAAAAAJQCTRHXizwAoRM8o4uoFkKoERkG</preference>
+            <preference preference-id="googleRecaptchaSecretKey">6Lcshp4bAAAAAHaACty0H7hebDC-Q5ZDZ9rV0VGy</preference>
+            <preference preference-id="googleRecaptchaScript">https://www.google.com/recaptcha/api.js</preference>
+            <preference preference-id="botScoreThreshold">0.5</preference>
+            <preference preference-id="formNameForRecaptchaVerification">"dwfrm_profile": true</preference>
+        </all-instances>
             <development>
                 <preference preference-id="Adyen3DS2Enabled">true</preference>
                 <preference preference-id="AdyenBasketFieldsEnabled">false</preference>
@@ -107,6 +114,9 @@
                 <preference preference-id="tokenType">Shopper</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
+                <preference preference-id="zendeskKey">IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</preference>
+                <preference preference-id="zendeskEmail">emma.pragnell@drschaer.com</preference>
+                <preference preference-id="zendeskDomain">https://drschaer.zendesk.com</preference>
                 <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":true,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":true,"companyCode":"DRSCHRUSAINC","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"DEFAULT","line1":"125 Chubb Avenue","line2":"","line3":"","city":"Lyndhurst","state":"NJ","zipCode":"07071","countryCode":"US"}</preference>
             </development>
             <staging/>

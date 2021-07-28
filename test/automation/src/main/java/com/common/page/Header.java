@@ -73,6 +73,7 @@ public class Header extends PageObject{
     public void closeCookie() {
         wait.until(ExpectedConditions.visibilityOf(cookie));
 
+        wait(10);
         WebElement cookie = driver.findElement(By.xpath(".//button[contains(@id,'onetrust-accept-btn-handler')]"));
         cookie.click();
     }

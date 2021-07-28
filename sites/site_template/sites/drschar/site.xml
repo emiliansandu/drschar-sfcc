@@ -4,7 +4,7 @@
     <currency>USD</currency>
     <taxation>net</taxation>
     <custom-cartridges>
-    app_drschar_storefront:int_loginradius:int_avatax_sfra:bm_avatax:int_avatax_svcclient:int_google_tag:plugin_dis:plugin_sitemap:int_zendesk:int_adyen_SFRA:int_adyen_overlay:int_paypal:bm_app_storefront_base:bc_job_components:app_storefront_base</custom-cartridges>
+    app_drschar_storefront:int_avatax_sfra:bm_avatax:int_avatax_svcclient:int_yotpo_sfra:bm_yotpo:int_googlerecaptcha:int_google_tag:plugin_dis:plugin_sitemap:int_zendesk:int_adyen_SFRA:int_adyen_overlay:int_paypal:bm_app_storefront_base:bc_job_components:app_storefront_base</custom-cartridges>
     <home-page-meta-tag-rules>
         <page-meta-tag-rule rule-id="Homepage Title"/>
         <page-meta-tag-rule rule-id="Homepage Robots"/>

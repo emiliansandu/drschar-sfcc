@@ -4,8 +4,7 @@
     "region_definitions":[
         {
           "id": "region1",
-          "name": "Recipes 1st DrSchar Region",
-          "max_components": 1
+          "name": "Recipes 1st DrSchar Region"
       },
       {
           "id": "region2",

@@ -1,0 +1,17 @@
+<form action="${URLUtils.url('Account-MarketingSignup')}" method="POST" <isprint value=${pdict.signupForm.attributes} encoding="off"/>>
+            <div class="d-flex d-row justify-content-center">
+            <input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}" />
+            <div class="col-4">
+            <input class="form-control" placeholder="Your email address" id="email" <isprint value=${pdict.signupForm.email.attributes} encoding="off"/>/>
+            <div class="invalid-feedback" id="form-contact-email-error">
+            ${Resource.msg('marketing.email.failed', 'registration', null)}
+            </div>
+            </div>
+            <div class="col-2 pl-0">        
+            <button class="btn btn-block btn-primary" <isprint value=${pdict.signupForm.submit.attributes} encoding="off">>
+                <span>${Resource.msg('marketing.signup.submit', 'registration', null)}</span>
+            </button>
+            </div>
+            </div>
+            
+          </form>

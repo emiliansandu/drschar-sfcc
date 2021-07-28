@@ -1,4 +1,7 @@
 <isdecorate template="common/layout/page">
+<isset name="googleRecaptchaSiteKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('googleRecaptchaSiteKey')}" scope="page"/>
+<isset name="googleRecaptchaScript" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('googleRecaptchaScript')}" scope="page"/>
+<script src="${googleRecaptchaScript + '?render=' + googleRecaptchaSiteKey}" async defer></script>
     <isscript>
         var assets = require('*/cartridge/scripts/assets.js');
         assets.addJs('/js/contactUs.js');
@@ -54,23 +57,10 @@
                             <div class="row contact-us-topic">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="contact-topic">
-                                            ${Resource.msg('label.input.contact-us-topic', 'contactUs', null)}
+                                        <label class="form-control-label" for="contact-subject">
+                                            ${Resource.msg('label.input.contact-us-subject', 'contactUs', null)}
                                         </label>
-                                        <select type="text" required class="form-control required" id="contact-topic" name="contactTopic">
-                                            <option value="GI">
-                                                ${Resource.msg('label.input.contact-topic-general-information', 'contactUs', null)}
-                                            </option>
-                                            <option value="OS">
-                                                ${Resource.msg('label.input.contact-topic-order-status', 'contactUs', null)}
-                                            </option>
-                                            <option value="MA">
-                                                ${Resource.msg('label.input.contact-topic-my-account', 'contactUs', null)}
-                                            </option>
-                                            <option value="O">
-                                                ${Resource.msg('label.input.contact-topic-other', 'contactUs', null)}
-                                            </option>
-                                        </select>
+                                        <input type="text" required class="form-control required" id="contact-subject" name="contactSubject"/>
                                     </div>
                                 </div>
                             </div>
@@ -79,11 +69,10 @@
                             <div class="row contact-us-comment">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="contact-comment">
-                                            ${Resource.msg('label.input.contact-us-comment', 'contactUs', null)}
+                                        <label class="form-control-label" for="contact-problem">
+                                            ${Resource.msg('label.input.contact-us-problem', 'contactUs', null)}
                                         </label>
-                                        <textarea class="form-control" id="contact-comment" name="contactComment" rows="4" maxlength="250"></textarea>
-                                    </div>
+                                        <textarea class="form-control" id="contact-problem" name="contactProblem" rows="4" maxlength="250"></textarea>                                    </div>
                                 </div>
                             </div>
 
@@ -93,6 +82,10 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
+                                        <input type="hidden" id="siteKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('googleRecaptchaSiteKey')}"/>
+                                        <input type="hidden" id="ticketKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('zendeskKey')}"/>
+                                        <input type="hidden" id="zendeskDomain" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('zendeskDomain')}"/>
+                                        <input type="hidden" id="zendeskEmail" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('zendeskEmail')}"/>
                                         <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
                                             ${Resource.msg('label.input.contact-us-submit', 'contactUs', null)}
                                         </button>

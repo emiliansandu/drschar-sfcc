@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+<field formid="email" label="Email" 
+		type="string" mandatory="true"
+		regexp="[-a-zA-Z0-9~!$%^&amp;*_=+}{'?]+(\.[-a-zA-Z0-9~!$%^&amp;*_=+}{'?]+)*@([a-zA-Z0-9_][-a-zA-Z0-9_]*(\.[-a-zA-Z0-9_]+)*\.([cC][oO][mM]))(:[0-9]{1,5})?"
+		missing-error="error.card.info.missing.email"
+        parse-error="error.message.parse.email.profile.form" range-error="error.message.50orless" binding="email" />
+<action formid="submit" valid-form="true" binding="submit"/>
+</form>
+ 

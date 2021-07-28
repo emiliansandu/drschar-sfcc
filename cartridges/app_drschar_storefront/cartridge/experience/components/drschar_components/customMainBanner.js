@@ -26,6 +26,10 @@ module.exports.render = function (context, modelIn) {
 
     model.color = content.color;
     model.position = content.position;
+    if(content.position == 'bottom'){
+        model.position = content.position+'-custom-banner';
+    }
+    
 
     return new Template('experience/components/drschar_components/customMainBanner').render(model).text;
 };
