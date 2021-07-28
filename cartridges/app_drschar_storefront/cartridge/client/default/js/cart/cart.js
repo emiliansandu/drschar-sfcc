@@ -52,10 +52,11 @@ function validateBasket(data) {
 
         $('.checkout-btn').addClass('disabled');
     } else if(data.orderMinimumNotCompleted){
-
-        var errorHtml='<div class="alert alert-danger error-message custom-error-holder" role="alert"><p class="error-message-text"><i class="fas fa-exclamation-circle"></i> '+data.orderMinimumMessage+'</p></div>';
-        $('.alertOrderMinimum').append(errorHtml);
-        $('.checkout-btn').addClass('disabled');
+        if(!$('.alertMinAmount').length){
+            var errorHtml='<div class="alert alert-danger error-message custom-error-holder alertMinAmount" role="alert"><p class="error-message-text"><i class="fas fa-exclamation-circle"></i> '+data.orderMinimumMessage+'</p></div>';
+            $('.alertOrderMinimum').append(errorHtml);
+            $('.checkout-btn').addClass('disabled');
+        }
     }else{
         if($('.error-message').length){
             $('.error-message').remove();

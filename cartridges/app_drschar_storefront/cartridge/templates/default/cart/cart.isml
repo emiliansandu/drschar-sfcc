@@ -20,7 +20,7 @@
     </div>
     <div class="alertOrderMinimum">
         <isif condition="${pdict.orderMinimumNotCompleted}">
-            <div class="alert alert-danger error-message custom-error-holder" role="alert">
+            <div class="alert alert-danger error-message custom-error-holder alertMinAmount" role="alert">
                 <p class="error-message-text">
                     <i class='fas fa-exclamation-circle'></i>
                     ${pdict.orderMinimumMessage}
