@@ -358,7 +358,7 @@
             </run-once>
         </triggers>
     </job>
-    <job job-id="marketing_Cloud_Signup_Emails_Page_Designer_Component_Job" priority="0">
+    <job job-id="marketingCloudSignupEmails" priority="0">
         <description/>
         <parameters/>
         <flow>
