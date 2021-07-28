@@ -14,12 +14,12 @@
         <iselse>
             <isinclude template="product/components/pricing/main" />
         </isif>
-        <div class="yotpo-ratings">
-            <isinclude template="widget/yotpoRatingsWidget" />    
-        </div>
         <isif condition="${pdict.display.ratings !== false}">
             <isinclude template="product/productTileFooter" />
         </isif>
+        <div class="yotpo-ratings">
+            <isinclude template="widget/yotpoRatingsWidget" />    
+        </div>
     </div>
     <!-- END_dwmarker -->
 </div>
