@@ -21,7 +21,7 @@ module.exports = {
         var customObjectInstanceList = CustomObjectMgr.getAllCustomObjects(parameters.CustomObjectType);
         var CustomObjectCount=customObjectInstanceList.getCount();
         var CustomObjectData=customObjectInstanceList.asList(0, CustomObjectCount);
-        // Save XML on: /on/demandware.servlet/webdav/Sites/Impex/MarketingCloud/export-customer_emails_page_designer_marketing_cloud.xml 
+        // Save XML on: /on/demandware.servlet/webdav/Sites/Impex/src/IMPEX/MarketingCloud/export-customer_emails_page_designer_marketing_cloud.xml 
         var impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX';
         var customDir = new File(impexPath);
         var existsDir=customDir.exists();
