@@ -155,6 +155,14 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     next();
 }, pageMetaData.computedPageMetaData);
 
+server.append('Show', function (req, res, next) {
+    var YotpoIntegrationHelper = require('*/cartridge/scripts/common/integrationHelper.js');
+    var viewData = YotpoIntegrationHelper.addRatingsOrReviewsToViewData(res.getViewData());
+    res.setViewData(viewData);
+
+    next();
+});
+
 /**
  * Product-ShowInCategory : The Product-ShowInCategory endpoint renders the product detail page within the context of a category
  * @name Base/Product-ShowInCategory
