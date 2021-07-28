@@ -2,11 +2,6 @@
     <!-- dwMarker="product" dwContentID="${product.uuid}" -->
     <isinclude template="product/components/productTileImage" />
     <div class="tile-body">
-        <div class="estrellitas">
-            <isinclude template="widget/yotpoRatingsWidget" />    
-        </div>
-
-
         <isif condition="${pdict.display.swatches !== false}">
             <isinclude template="product/components/productTileSwatch" />
         </isif>
@@ -19,7 +14,9 @@
         <iselse>
             <isinclude template="product/components/pricing/main" />
         </isif>
-
+        <div class="yotpo-ratings">
+            <isinclude template="widget/yotpoRatingsWidget" />    
+        </div>
         <isif condition="${pdict.display.ratings !== false}">
             <isinclude template="product/productTileFooter" />
         </isif>
