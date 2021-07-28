@@ -1259,6 +1259,7 @@
     </custom-type>
     <custom-type type-id="marketingCustomer">
         <display-name xml:lang="x-default">Marketing Customer</display-name>
+        <description xml:lang="x-default">This Custom Object is designed to contain emails captured on marketingCloudSignup Page Designer Component</description>
         <staging-mode>no-staging</staging-mode>
         <storage-scope>organization</storage-scope>
         <key-definition attribute-id="emailAddress">
