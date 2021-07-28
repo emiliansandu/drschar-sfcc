@@ -22,14 +22,11 @@ module.exports = {
         var CustomObjectCount=customObjectInstanceList.getCount();
         var CustomObjectData=customObjectInstanceList.asList(0, CustomObjectCount);
         // Save XML on: /on/demandware.servlet/webdav/Sites/Impex/src/IMPEX/MarketingCloud/export-customer_emails_page_designer_marketing_cloud.xml 
-        var impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX';
+        var impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder;
         var customDir = new File(impexPath);
         var existsDir=customDir.exists();
         if(existsDir==false){
-            customDir.mkdir();
-             impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder;
-              customDir = new File(impexPath);
-               customDir.mkdir();
+            customDir.mkdirs();
         }
         var impexPathFile = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder + File.SEPARATOR + parameters.Filename;
         var file = new File(impexPathFile);
