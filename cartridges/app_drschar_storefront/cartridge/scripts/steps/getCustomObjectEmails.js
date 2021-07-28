@@ -22,14 +22,18 @@ module.exports = {
         var CustomObjectCount=customObjectInstanceList.getCount();
         var CustomObjectData=customObjectInstanceList.asList(0, CustomObjectCount);
         // Save XML on: /on/demandware.servlet/webdav/Sites/Impex/MarketingCloud/export-customer_emails_page_designer_marketing_cloud.xml 
-        var impexPath = File.IMPEX + File.SEPARATOR + 'Impex' + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder;
-        var impexPathFile = File.IMPEX + File.SEPARATOR + 'Impex' + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder + File.SEPARATOR + parameters.Filename;
+        var impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX';
         var customDir = new File(impexPath);
-        var file = new File(impexPathFile);
         var existsDir=customDir.exists();
-    if(existsDir==false){
-        customDir.mkdir();
-    }
+        if(existsDir==false){
+            customDir.mkdir();
+             impexPath = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder;
+              customDir = new File(impexPath);
+               customDir.mkdir();
+        }
+        var impexPathFile = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder + File.SEPARATOR + parameters.Filename;
+        var file = new File(impexPathFile);
+    
         var fileWriter : FileWriter = new FileWriter(file, "UTF-8");
         var xsw : XMLStreamWriter = new XMLStreamWriter(fileWriter);
 
