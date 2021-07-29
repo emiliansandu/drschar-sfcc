@@ -18,7 +18,9 @@ var mediaFileURL =ProductImage.getURL();
             <div class="row">
                 <div class="col-lg-12 d-flex flex-row">
                     <div class="item-image">
+                    <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">
                         <img class="product-image" src="${mediaFileURL}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}"/>
+                    </a>
                     </div>
                     <div class="item-attributes d-flex flex-column">
                         <isloop items="${lineItem.variationAttributes}" var="attribute">
@@ -33,7 +35,6 @@ var mediaFileURL =ProductImage.getURL();
                         </isloop>
 
                         <isinclude template="cart/productCard/cartProductCardAvailability" />
-                        <isinclude template="cart/productCard/cartProductCardEdit" />
                     </div>
                 </div>
             </div>
