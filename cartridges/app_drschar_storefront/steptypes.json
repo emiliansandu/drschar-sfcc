@@ -78,7 +78,7 @@
                 "@type": "string",
                 "@required": "false",
                 "@trim": "true",
-                "default-value": "export-customer_emails_page_designer_marketing_cloud.xml"
+                "default-value": "export-customer_emails_page_designer_marketing_cloud"
             }
 
             ]

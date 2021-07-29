@@ -4,7 +4,11 @@
 var Logger = require('dw/system/Logger');
 var CustomObjectMgr = require('dw/object/CustomObjectMgr');
 var Transaction = require('dw/system/Transaction');
-var instaHelper = require('~/cartridge/scripts/helpers/instagramHelper');
+var Calendar = require('dw/util/Calendar');
+var Site = require('dw/system/Site');
+var StringUtils = require('dw/util/StringUtils');
+var DATE_FORMAT = 'yyyy-MM-dd';
+var DATETIME_FORMAT = 'yyyyMMdd_HHmmssSSS';
 
 /**
  * @function getCOs
@@ -28,8 +32,9 @@ module.exports = {
         if(existsDir==false){
             customDir.mkdirs();
         }
-        var impexPathFile = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder + File.SEPARATOR + parameters.Filename;
-        var file = new File(impexPathFile);
+        var impexPathFile = File.IMPEX + File.SEPARATOR + 'src' + File.SEPARATOR + 'IMPEX' + File.SEPARATOR + parameters.TargetFolder + File.SEPARATOR + parameters.Filename+'_now_';
+        var filename = dateFormat(impexPathFile);
+        var file = new File(filename);
     
         var fileWriter : FileWriter = new FileWriter(file, "UTF-8");
         var xsw : XMLStreamWriter = new XMLStreamWriter(fileWriter);
@@ -54,6 +59,25 @@ module.exports = {
        
         xsw.close();
         fileWriter.close();
+        for(var i=0; i<CustomObjectData.length; i++){
+        CustomObjectMgr.remove(CustomObjectData[i]);
+        }
+        function dateFormat(path){
+            var siteID = Site.getCurrent().getID();
+            var calendar = new Calendar();
+        
+            if (path.indexOf('_today_') > -1) {
+                path = path.replace(/_today_/, StringUtils.formatCalendar(calendar, DATE_FORMAT));
+            }
+            if (path.indexOf('_now_') > -1) {
+                path = path.replace(/_now_/, StringUtils.formatCalendar(calendar, DATETIME_FORMAT));
+            }
+            if (path.indexOf('_siteid_') > -1) {
+                path = path.replace(/_siteid_/, siteID);
+            }
+            return path;
+        }
             
     }
+    
         };
