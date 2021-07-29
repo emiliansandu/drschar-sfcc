@@ -1,0 +1,3 @@
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isBundle" value="${true}" scope="page" />
+<isinclude template="product/components/recomendedItem" />

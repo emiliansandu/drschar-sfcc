@@ -1,7 +1,7 @@
 <isif condition="${slotcontent}">
     <div class="row">
         <div class="col-12">
-            <h2 class="bundle-items-label">${Resource.msg('label.bundle.contains', 'product', null)}</h2>
+            <h3 class="bundle-items-label">${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
         </div>
     </div>
 
@@ -11,10 +11,7 @@
                 <isloop items="${slotcontent.content}" var="productItem" status="loopState">
                     <isset name="product" value="${productItem}" scope="page" />
                     <div class="bundle-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
-                        <isset name="product" value="${productItem}" scope="page" />
-                        <isset name="isBundle" value="${true}" scope="page" />
-
-                        <isinclude template="product/components/bundleItem" />
+                        <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', product.ID)}" />
                     </div>
                 </isloop>
             </div>

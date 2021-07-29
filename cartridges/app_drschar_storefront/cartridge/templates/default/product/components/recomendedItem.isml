@@ -1,0 +1,26 @@
+<div class="container product-detail bundle-item col-3" data-pid="${product.id}">
+    <div class="row">
+        <!-- Product Images Carousel -->
+        <isinclude template="product/components/imageBundleCarousel" />
+
+        <div class="col-12">
+            <!-- Product Name -->
+            <div class="row">
+                <div class="col">
+                    <span class="product-name">${product.productName}</span>
+                </div>
+            </div>
+
+            <isset name="price" value="${product.price}" scope="page" />
+            <isif condition="${product.productType === 'set'}">
+                <isinclude template="product/components/pricing/setPrice" />
+            <iselse>
+                <isinclude template="product/components/pricing/main" />
+            </isif>
+
+            <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
+                <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
+            </a>
+        </div>
+    </div>
+</div>
