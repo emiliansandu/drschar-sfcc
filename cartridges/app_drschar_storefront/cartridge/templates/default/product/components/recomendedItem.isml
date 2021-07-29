@@ -1,4 +1,4 @@
-<div class="container product-detail bundle-item col-3" data-pid="${product.id}">
+<div class="container product-detail recomended-item col-3">
     <div class="row">
         <!-- Product Images Carousel -->
         <isinclude template="product/components/imageBundleCarousel" />

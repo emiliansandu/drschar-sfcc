@@ -1,26 +1,27 @@
 <isif condition="${slotcontent}">
     <div class="row">
         <div class="col-12">
-            <h3 class="bundle-items-label">${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
+            <h3 class="recomended-items-label">${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
         </div>
     </div>
 
     <div class="row justify-content-center">
         <div id="product-recomended-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
-                <isloop items="${slotcontent.content}" var="productItem" status="loopState">
-                    <isset name="product" value="${productItem}" scope="page" />
-                    <div class="bundle-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
+                <isloop items="${slotcontent.content}" var="product" status="loopState">
+                    <div class="recomended-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
                         <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', product.ID)}" />
                     </div>
                 </isloop>
             </div>
-            <a class="carousel-control-prev" href="#bundle-child-carousel" role="button" data-slide="prev">
-                <span class="fa icon-prev" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next" href="#bundle-child-carousel" role="button" data-slide="next">
-                <span class="fa icon-next" aria-hidden="true"></span>
-            </a>
+            <isif condition="${slotcontent.content.length > 1}">
+                <a class="carousel-control-prev" href="#product-recomended-carousel" role="button" data-slide="prev">
+                    <span class="fa icon-prev" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#product-recomended-carousel" role="button" data-slide="next">
+                    <span class="fa icon-next" aria-hidden="true"></span>
+                </a>
+            </isif>
         </div>
     </div>
 </isif>
