@@ -299,6 +299,9 @@
     .primary-images{
         margin-bottom: 10px;
     }
+    .tile-body .price span.sales{
+        color:$grey7;
+    }
 }
 
 @media (max-width: 545px) {

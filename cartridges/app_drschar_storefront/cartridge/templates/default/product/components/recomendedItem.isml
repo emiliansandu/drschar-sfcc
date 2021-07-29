@@ -3,11 +3,11 @@
         <!-- Product Images Carousel -->
         <isinclude template="product/components/imageBundleCarousel" />
 
-        <div class="col-12">
+        <div class="col-12 tile-body">
             <!-- Product Name -->
             <div class="row">
                 <div class="col">
-                    <span class="product-name">${product.productName}</span>
+                    <span class="pdp-link">${product.productName}</span>
                 </div>
             </div>
 
