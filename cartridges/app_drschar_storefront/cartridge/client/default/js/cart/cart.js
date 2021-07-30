@@ -4,7 +4,7 @@ var base = require('base/product/base');
 var focusHelper = require('base/components/focus');
 
 $(document).ready(function () {
-    carouselFormat(6000);
+    carouselFormat(3000);
 });
 
 function carouselFormat(time){
