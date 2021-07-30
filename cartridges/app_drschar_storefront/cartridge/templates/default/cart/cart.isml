@@ -99,6 +99,11 @@
         <isinclude template="cart/cartRemoveCouponModal"/>
     </isif>
     <div class="container">
+        <div class="row">
+        <div class="col-12">
+            <h4 class="recomended-items-label-cart">${Resource.msg('label.title.recomended.product', 'cart', null)}</h4>
+        </div>
+    </div>
         <isslot id="cart-recommendations-m" description="Recommended products" context="global" />
     </div>
 </isdecorate>
