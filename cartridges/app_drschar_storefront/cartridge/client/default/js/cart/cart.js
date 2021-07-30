@@ -2,7 +2,7 @@
 
 var base = require('base/product/base');
 var focusHelper = require('base/components/focus');
-
+require('../productInformation');
 /**
  * appends params to a url
  * @param {string} url - Original url
