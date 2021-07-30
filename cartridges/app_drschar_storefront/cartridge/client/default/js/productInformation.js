@@ -37,13 +37,13 @@ $(document).ready(function () {
         }
     });
 
-    carouselFormat();
+    carouselFormat(3000);
 
     $('#bundle-child-carousel-m').find('.product-detail.bundle-item').removeClass('col-3');
 
 });
 
-function carouselFormat(){
+function carouselFormat(time){
     setTimeout(function(){  
         //Infinity carousel for recomended products
        let recomendedItems = document.querySelectorAll('.carousel .recomended-items');
@@ -61,9 +61,5 @@ function carouselFormat(){
                next = next.nextElementSibling
            }
        });
-   }, 3000);
-}
-
-module.exports = {
-    carouselFormat : carouselFormat
+   }, time);
 }

@@ -2,7 +2,32 @@
 
 var base = require('base/product/base');
 var focusHelper = require('base/components/focus');
-require('../productInformation');
+
+$(document).ready(function () {
+    carouselFormat(6000);
+});
+
+function carouselFormat(time){
+    setTimeout(function(){  
+        //Infinity carousel for recomended products
+       let recomendedItems = document.querySelectorAll('.carousel .recomended-items');
+
+       recomendedItems.forEach((el) => {
+           const minPerSlide = 4
+           let next = el.nextElementSibling
+           for (var i=1; i<minPerSlide; i++) {
+               if (!next) {
+                   // wrap carousel by using first child
+                   next = recomendedItems[0]
+               }
+               let cloneChild = next.cloneNode(true)
+               el.appendChild(cloneChild.children[0])
+               next = next.nextElementSibling
+           }
+       });
+   }, time);
+}
+
 /**
  * appends params to a url
  * @param {string} url - Original url
