@@ -1,26 +1,29 @@
 <div class="container product-detail recomended-item col-3">
-    <div class="row">
-        <!-- Product Images Carousel -->
-        <isinclude template="product/components/imageBundleCarousel" />
+    <isobject object="${product}" view="recommendation">
+        <div class="row">
+            <!-- Product Images Carousel -->
+            <isinclude template="product/components/imageBundleCarousel" />
 
-        <div class="col-12 tile-body">
-            <!-- Product Name -->
-            <div class="row">
-                <div class="col">
-                    <span class="pdp-link">${product.productName}</span>
+            <div class="col-12 tile-body">
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="col">
+                        <span class="pdp-link">${product.productName}</span>
+                    </div>
                 </div>
+
+                <isset name="price" value="${product.price}" scope="page" />
+                <isif condition="${product.productType === 'set'}">
+                    <isinclude template="product/components/pricing/setPrice" />
+                    <iselse>
+                        <isinclude template="product/components/pricing/main" />
+                </isif>
+
+                <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
+                    <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
+                </a>
             </div>
-
-            <isset name="price" value="${product.price}" scope="page" />
-            <isif condition="${product.productType === 'set'}">
-                <isinclude template="product/components/pricing/setPrice" />
-            <iselse>
-                <isinclude template="product/components/pricing/main" />
-            </isif>
-
-            <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
-                <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
-            </a>
         </div>
-    </div>
+
+    </isobject>
 </div>
