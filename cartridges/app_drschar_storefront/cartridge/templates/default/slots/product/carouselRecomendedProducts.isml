@@ -11,7 +11,7 @@
                 <isloop items="${slotcontent.content}" var="product" status="loopState">
                     <div class="recomended-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
                         <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', product.ID)}" />
-                    </div>
+                    </div>                   
                 </isloop>
             </div>
             <isif condition="${slotcontent.content.length > 1}">
@@ -24,4 +24,14 @@
             </isif>
         </div>
     </div>
+
+    <!-- ViewReco event --> 
+    <isloop items="${slotcontent.content}" var="productViewReco" status="loopState">
+        <isobject object="${productViewReco}" view="recommendation">
+            <div class="d-none">
+                <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', productViewReco.ID)}" />
+            </div>
+        </isobject>
+    </isloop>
+    
 </isif>

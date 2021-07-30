@@ -24,4 +24,14 @@
             </isif>
         </div>
     </div>
+
+    <!-- ViewReco event --> 
+    <isloop items="${slotcontent.content}" var="productViewReco" status="loopState">
+        <isobject object="${productViewReco}" view="recommendation">
+            <div class="d-none">
+                <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', productViewReco.ID)}" />
+            </div>
+        </isobject>
+    </isloop>
+
 </isif>
