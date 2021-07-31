@@ -40,7 +40,9 @@
                         <isinclude template="experience/components/commerce_assets/product/pricing/main" />
 
                         <isif condition="${pdict.display && pdict.display.ratings !== false}">
-                            <isinclude template="experience/components/commerce_assets/product/productTileRatings" />
+                            <div class="yotpo-ratings">
+                                <isinclude template="widget/yotpoRatingsWidget" />    
+                            </div>
                         </isif>
 
                         <isif condition="${pdict.display && pdict.display.swatches !== false &&
