@@ -2,7 +2,6 @@
 
 var Template = require('dw/util/Template');
 var HashMap = require('dw/util/HashMap');
-var Localex = require('dw/util/Locale');
 var URLUtils = require('dw/web/URLUtils');
 /**
  * Render logic for storefront.productTile component.
