@@ -30,7 +30,7 @@ function CategorySuggestions(suggestions, maxItems) {
             category = iter.next().category;
             this.categories.push({
                 name: category.displayName,
-                imageUrl: category.image ? category.thumbnail.url : '',
+                imageUrl: category.thumbnail ? category.thumbnail.url : '',
                 url: URLUtils.url(endpoint, 'cgid', category.ID),
                 parentID: category.parent.ID,
                 parentName: category.parent.displayName
