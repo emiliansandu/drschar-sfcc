@@ -7785,6 +7785,14 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>100</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="yotpoDisplayPLPRatings">
+                <display-name xml:lang="x-default">Yotpo Display PLP Ratings</display-name>
+                <description xml:lang="x-default">If this attribute is true the stars ratings is displayed on the PLP.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
             <attribute-definition attribute-id="yotpoStaticContentURL">
                 <display-name xml:lang="x-default">Yotpo Static Content URL</display-name>
                 <description xml:lang="x-default">This is the base URL to load static content from Yotpo</description>
@@ -7944,6 +7952,7 @@ Direct or Redirect</description>
             </attribute-group>
             <attribute-group group-id="Yotpo Configs">
                 <display-name xml:lang="x-default">Yotpo Configurations</display-name>
+                <attribute attribute-id="yotpoDisplayPLPRatings"/>
                 <attribute attribute-id="yotpoCartridgeEnabled"/>
                 <attribute attribute-id="yotpoStaticContentURL"/>
                 <attribute attribute-id="yotpoLoyaltySDKURL"/>
