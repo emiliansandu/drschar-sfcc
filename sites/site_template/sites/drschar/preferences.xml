@@ -112,6 +112,7 @@
                 <preference preference-id="storeLookupMaxDistance">200</preference>
                 <preference preference-id="storeLookupUnit">mi</preference>
                 <preference preference-id="tokenType">Shopper</preference>
+                <preference preference-id="yotpoDisplayPLPRatings">false</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
                 <preference preference-id="zendeskKey">IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</preference>
