@@ -173,60 +173,6 @@
         </triggers>
     </job>
 
-    <job job-id="PricebookImport" priority="0">
-        <description/>
-        <parameters/>
-        <flow>
-            <context site-id="Sites"/>
-            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
-                <description/>
-                <parameters>
-                    <parameter name="ServiceID">drscharSFTP</parameter>
-                    <parameter name="FilePattern">Pricebook_[0-9]*\.xml</parameter>
-                    <parameter name="SourceFolder">OUT</parameter>
-                    <parameter name="TargetFolder">src/download</parameter>
-                    <parameter name="Recursive">false</parameter>
-                    <parameter name="DeleteRemoteFiles">true</parameter>
-                    <parameter name="NoFileFoundStatus">ERROR</parameter>
-                </parameters>
-            </step>
-        </flow>
-        <flow>
-            <context site-id="Sites"/>
-            <step step-id="import" type="ImportPriceBook" enforce-restart="false">
-                <description/>
-                <parameters>
-                    <parameter name="WorkingFolder">download</parameter>
-                    <parameter name="FileNamePattern">Pricebook_[0-9]*\.xml</parameter>
-                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
-                    <parameter name="ImportMode">Merge</parameter>
-                    <parameter name="ImportFailedHandling">WARN</parameter>
-                    <parameter name="AfterImportFileHandling">Archive</parameter>
-                    <parameter name="ArchiveFolder">archive</parameter>
-                </parameters>
-            </step>
-        </flow>
-        <rules/>
-        <triggers>
-            <run-recurring enabled="true">
-                <recurrence>
-                    <date-from>2021-07-22Z</date-from>
-                    <start-time>09:00:00.000Z</start-time>
-                    <interval>1d</interval>
-                    <day-of-week>
-                        <weekday>Thursday</weekday>
-                        <weekday>Wednesday</weekday>
-                        <weekday>Sunday</weekday>
-                        <weekday>Saturday</weekday>
-                        <weekday>Tuesday</weekday>
-                        <weekday>Monday</weekday>
-                        <weekday>Friday</weekday>
-                    </day-of-week>
-                </recurrence>
-            </run-recurring>
-        </triggers>
-    </job>
-
     <job job-id="Reindex" priority="0">
         <description/>
         <parameters/>
@@ -294,6 +240,68 @@
                     <from>drschar-sfcc-staging@unitedvirtualities.com</from>
                     <to>Linda.Davidson@drschar.com, Burrell.King@drschar.com</to>
                     <cc>ngarcia@unitedvirtualities.com, rcervantes@unitedvirtualities.com</cc>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-22Z</date-from>
+                    <start-time>09:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Thursday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="PricebookImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Pricebook_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="import" type="ImportPriceBook" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Pricebook_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="ERROR" enabled="true">
+                <send-mail>
+                    <from>drschar-sfcc@unitedvirtualities.com</from>
+                    <to>Linda.Davidson@drschar.com</to>
+                    <cc>ngarcia@unitedvirtualities.com</cc>
                 </send-mail>
             </on-exit>
         </rules>
