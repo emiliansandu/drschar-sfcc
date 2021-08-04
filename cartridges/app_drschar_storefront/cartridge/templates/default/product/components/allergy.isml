@@ -21,7 +21,7 @@
                 <isloop items="${product.allergyGroupProperties.contentProperties}" var="contentproperties"
                     status="contentPropLoopstatus">
                     <isif
-                        condition="${contentproperties.id !== 'allergyContains' && contentproperties.id !== 'allergyMayContain'}">
+                        condition="${contentproperties.id !== 'allergyContains' && contentproperties.id !== 'allergyMayContain'  && contentproperties.value == true }">
                         <div class="col-lg-3 col-6 mt-2"><i
                                 class='far fa-check-circle'></i></i>&nbsp;${contentproperties.name}&nbsp;
                         </div>
