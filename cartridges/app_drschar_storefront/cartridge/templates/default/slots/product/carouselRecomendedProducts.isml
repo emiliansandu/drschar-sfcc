@@ -1,7 +1,10 @@
 <isif condition="${slotcontent}">
     <div class="row">
-        <div class="col-12">
-            <h3 class="recomended-items-label">${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
+        <div class="col-12 recomended-items-label">
+            <h3>${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
+        </div>
+        <div class="col-12 recomended-items-label-cart">
+            <h4>${Resource.msg('label.title.recomended.product', 'cart', null)}</h4>
         </div>
     </div>
 
