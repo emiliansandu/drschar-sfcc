@@ -77,4 +77,8 @@
         }
     }
 }
+.dropdown-item:last-child {
+    background-color: inherit;
+    height: 100%;
+}
 
