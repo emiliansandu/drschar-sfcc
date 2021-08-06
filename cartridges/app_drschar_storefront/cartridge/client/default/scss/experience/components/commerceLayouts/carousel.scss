@@ -81,6 +81,42 @@
     }
 }
 
+.container-fluid .experience-einstein-einsteinCarousel .carousel-control-prev,
+.banner1 .experience-einstein-einsteinCarousel .carousel-control-prev,
+.container-fluid .experience-einstein-einsteinCarouselCategory .carousel-control-prev,
+.banner1 .experience-einstein-einsteinCarouselCategory .carousel-control-prev,
+.container-fluid .experience-einstein-einsteinCarouselProduct .carousel-control-prev,
+.banner1 .experience-einstein-einsteinCarouselProduct .carousel-control-prev,
+.container-fluid .experience-commerce_layouts-carousel .carousel-control-prev,
+.banner1 .experience-commerce_layouts-carousel .carousel-control-prev,
+.container-fluid .experience-drschar_layouts-oneSlideShowCarousel .carousel-control-prev,
+.banner1 .experience-drschar_layouts-oneSlideShowCarousel .carousel-control-prev {
+    left: 0.044rem;
+
+    .carousel-control-prev-icon {
+        position: absolute;
+        left: 25%;
+    }
+}
+
+.container-fluid .experience-einstein-einsteinCarousel .carousel-control-next,
+.banner1 .experience-einstein-einsteinCarousel .carousel-control-next,
+.container-fluid .experience-einstein-einsteinCarouselCategory .carousel-control-next,
+.banner1 .experience-einstein-einsteinCarouselCategory .carousel-control-next,
+.container-fluid .experience-einstein-einsteinCarouselProduct .carousel-control-next,
+.banner1 .experience-einstein-einsteinCarouselProduct .carousel-control-next,
+.container-fluid .experience-commerce_layouts-carousel .carousel-control-next,
+.banner1 .experience-commerce_layouts-carousel .carousel-control-next,
+.container-fluid .experience-drschar_layouts-oneSlideShowCarousel .carousel-control-next,
+.banner1 .experience-drschar_layouts-oneSlideShowCarousel .carousel-control-next {
+    right: 0.044rem;
+
+    .carousel-control-next-icon {
+        position: absolute;
+        right: 25%;
+    }
+}
+
 .pd-carousel-indicators {
     position: absolute;
     right: 0;

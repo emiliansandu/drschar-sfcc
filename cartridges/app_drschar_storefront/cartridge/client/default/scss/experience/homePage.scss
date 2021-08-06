@@ -7,7 +7,7 @@
 
 }
 
-.homepage .container .row{
+.homepage .container .row, .homepage .container-fluid .row{
     
     margin-right: 0px;
     margin-left: 0px;
@@ -27,7 +27,14 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
 }
+.col-12.banner1 .col-12{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 .col-12.banner2 {
     flex: 0 0 auto;
     height: auto;
