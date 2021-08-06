@@ -9,6 +9,8 @@ var collections = require('*/cartridge/scripts/util/collections');
 var ShippingHelpers = require('*/cartridge/scripts/checkout/shippingHelpers');
 var productHelper = require('*/cartridge/scripts/helpers/productHelpers');
 var arrayHelper = require('*/cartridge/scripts/util/array');
+var preferences = require('*/cartridge/config/preferences');
+var DEFAULT_MAX_ORDER_QUANTITY = preferences.maxOrderQty || 10;
 var BONUS_PRODUCTS_PAGE_SIZE = 6;
 
 var CHelper = module.superModule;
@@ -38,7 +40,9 @@ var CHelper = module.superModule;
         message: Resource.msg('text.alert.addedtobasket', 'product', null)
     };
 
+    var maxOrderQty = product.custom.maxOrderQty || DEFAULT_MAX_ORDER_QUANTITY;
     var totalQtyRequested = 0;
+    var maxProdPerOrdrExc = false;
     var canBeAdded = false;
 
     if (product.bundle) {
@@ -49,6 +53,23 @@ var CHelper = module.superModule;
         canBeAdded =
             (perpetual
             || totalQtyRequested <= product.availabilityModel.inventoryRecord.ATS.value);
+    }
+
+    if (totalQtyRequested > maxOrderQty) {
+        maxProdPerOrdrExc=true;
+    }
+
+    //Send merror message if the Max Quantity per Order is exceeded
+    if (maxProdPerOrdrExc) {
+        result.error = true;
+        result.message = Resource.msgf(
+            'error.alert.max.quantity.in.order',
+            'product',
+            null,
+            maxOrderQty,
+            product.name
+        );
+        return result;
     }
 
     if (!canBeAdded) {
