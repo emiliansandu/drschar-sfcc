@@ -3285,6 +3285,17 @@ Direct or Redirect</description>
             </attribute-definition>
         </system-attribute-definitions>
         <custom-attribute-definitions>
+            <attribute-definition attribute-id="maxOrderQty">
+                <display-name xml:lang="x-default">Maximum Quantity</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>true</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
             <attribute-definition attribute-id="allergyContains">
                 <display-name xml:lang="x-default">Contains</display-name>
                 <type>set-of-string</type>
@@ -3828,6 +3839,7 @@ Direct or Redirect</description>
                 <attribute attribute-id="stepQuantity" system="true"/>
                 <attribute attribute-id="EAN" system="true"/>
                 <attribute attribute-id="UPC" system="true"/>
+                <attribute attribute-id="maxOrderQty"/>
             </attribute-group>
             <attribute-group group-id="Store">
                 <display-name xml:lang="x-default">Store Attributes</display-name>
