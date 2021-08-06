@@ -94,6 +94,11 @@ function updateSortOptions(response) {
     });
 }
 
+function refreshYotpoWidget() {
+    var api = new Yotpo.API(yotpo);
+    api.refreshWidgets();
+}
+
 module.exports = {
     filter: function () {
         // Display refinements bar when Menu icon clicked
@@ -143,6 +148,7 @@ module.exports = {
                 method: 'GET',
                 success: function (response) {
                     $('.product-grid').empty().html(response);
+                    refreshYotpoWidget();
                     $.spinner().stop();
                 },
                 error: function () {
@@ -168,6 +174,7 @@ module.exports = {
                 success: function (response) {
                     $('.grid-footer').replaceWith(response);
                     updateSortOptions(response);
+                    refreshYotpoWidget();
                     $.spinner().stop();
                 },
                 error: function () {
@@ -197,6 +204,7 @@ module.exports = {
                     method: 'GET',
                     success: function (response) {
                         parseResults(response);
+                        refreshYotpoWidget();
                         $.spinner().stop();
                     },
                     error: function () {

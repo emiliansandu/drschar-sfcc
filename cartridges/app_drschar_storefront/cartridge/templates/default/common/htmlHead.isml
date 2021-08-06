@@ -56,3 +56,4 @@ ${dw.system.HookMgr.callHook('app.template.htmlHead', 'htmlHead', pdict) || ''}
 <link rel="stylesheet" href="${URLUtils.staticURL('/css/skin/skin.css')}" />
 
 <isinclude template="/GTScripts/GTHeadScript" />
+<isinclude template="common/yotpoHeader" />
