@@ -21,8 +21,10 @@ function getMinMaxQuantityOptions(productLineItem, quantity) {
         perpetual = inventoryRecord.perpetual;
     }
 
+    var customMaxQuantity = productLineItem.product.custom.maxOrderQty;
+    
     if (perpetual) {
-        max = Math.max(DEFAULT_MAX_ORDER_QUANTITY, quantity);
+        max = Math.max(customMaxQuantity || DEFAULT_MAX_ORDER_QUANTITY, quantity);
     } else {
         max = Math.max(Math.min(availableToSell, DEFAULT_MAX_ORDER_QUANTITY), quantity);
     }
