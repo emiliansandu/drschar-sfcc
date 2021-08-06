@@ -14,6 +14,6 @@ module.exports = function (object, product, quantity) {
     });
     Object.defineProperty(object, 'maxOrderQuantity', {
         enumerable: true,
-        value: DEFAULT_MAX_ORDER_QUANTITY
+        value: product.custom.maxOrderQty || DEFAULT_MAX_ORDER_QUANTITY
     });
 };
