@@ -548,7 +548,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset,
     var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
     for(var i=0; i<orderModel.items.items.length; i++){
         var imageURL=orderModel.items.items[i].images.small[0].url;
-        if (imageURL.indexOf('https://edge.') == -1) {
+        if (imageURL.indexOf('?sw=140&sh=140') == -1) {
             imageURL = 'https://' + host + imageURL;
             orderModel.items.items[i].images.small[0].url = imageURL;
         }
@@ -631,7 +631,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset,
 
     for(var i=0; i<orderModel.items.items.length; i++){
         var imageURL=orderModel.items.items[i].images.small[0].url;
-        if (imageURL.indexOf('https://edge.') == -1) {
+        if (imageURL.indexOf('?sw=140&sh=140') == -1) {
             imageURL = 'https://' + host + imageURL;
             orderModel.items.items[i].images.small[0].url = imageURL;
         }
@@ -715,7 +715,7 @@ function sendConfirmationEmail(order, locale, host, paymentObject, contentAsset,
 
     for(var i=0; i<orderModel.items.items.length; i++){
         var imageURL=orderModel.items.items[i].images.small[0].url;
-        if (imageURL.indexOf('https://edge.') == -1) {
+        if (imageURL.indexOf('?sw=140&sh=140') == -1) {
             imageURL = 'https://' + host + imageURL;
             orderModel.items.items[i].images.small[0].url = imageURL;
         }

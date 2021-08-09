@@ -26,7 +26,7 @@ function getMinMaxQuantityOptions(productLineItem, quantity) {
     if (perpetual) {
         max = Math.max(customMaxQuantity || DEFAULT_MAX_ORDER_QUANTITY, quantity);
     } else {
-        max = Math.max(Math.min(availableToSell, DEFAULT_MAX_ORDER_QUANTITY), quantity);
+        max = Math.max(Math.min(availableToSell, customMaxQuantity || DEFAULT_MAX_ORDER_QUANTITY), quantity);
     }
 
     return {

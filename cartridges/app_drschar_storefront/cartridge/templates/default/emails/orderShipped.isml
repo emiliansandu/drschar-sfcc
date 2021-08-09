@@ -727,7 +727,7 @@
                                                         style="background-color:#F9F8F6; padding: 10px;">
                                                         <center>
 
-                                                            <img src="${'https://' + pdict.host + itemsList.images.small[0].url}"
+                                                            <img src="${itemsList.images.small[0].url}"
                                                                 width="160" height="120"
                                                                 alt="${itemsList.images.small[0].alt}"
                                                                 title="${itemsList.images.small[0].title}" border="0"
