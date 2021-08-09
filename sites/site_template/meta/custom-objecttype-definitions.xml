@@ -934,6 +934,40 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
+
+    <custom-type type-id="instagramToken">
+        <display-name xml:lang="x-default">Token Key Value</display-name>
+        <description xml:lang="x-default">This Custom Object is designed to contain token key value for instagram feed API requests</description>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="tokenKey">
+            <display-name xml:lang="x-default">Token Key</display-name>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="marketingCustomerData">
+                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
+                <attribute attribute-id="emailAddress"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="marketingCustomer">
+        <display-name xml:lang="x-default">Marketing Customer</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="emailAddress">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="marketingCustomerData">
+                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
+                <attribute attribute-id="emailAddress"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
     <custom-type type-id="marketingCustomer">
         <display-name xml:lang="x-default">Marketing Customer</display-name>
         <staging-mode>no-staging</staging-mode>
@@ -979,16 +1013,16 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
-            <attribute-definition attribute-id="enableRatings">
-                <display-name xml:lang="x-default">Enable Ratings</display-name>
-                <description xml:lang="x-default">This flag indicates whether the ratings are enabled for the specific Locale.</description>
+            <attribute-definition attribute-id="enablePurchaseFeed">
+                <display-name xml:lang="x-default">Enable Purchase Feed</display-name>
+                <description xml:lang="x-default">This flag indicates whether the purchase feed is enabled for the specific Locale.</description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="enablePurchaseFeed">
-                <display-name xml:lang="x-default">Enable Purchase Feed</display-name>
-                <description xml:lang="x-default">This flag indicates whether the purchase feed is enabled for the specific Locale.</description>
+            <attribute-definition attribute-id="enableRatings">
+                <display-name xml:lang="x-default">Enable Ratings</display-name>
+                <description xml:lang="x-default">This flag indicates whether the ratings are enabled for the specific Locale.</description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
@@ -1259,25 +1293,6 @@
                 <attribute attribute-id="StatusDetails"/>
                 <attribute attribute-id="OrderID"/>
                 <attribute attribute-id="locale"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
-    <custom-type type-id="instagramToken">
-        <display-name xml:lang="x-default">Token Key Value</display-name>
-        <description xml:lang="x-default">This Custom Object is designed to contain token key value for instagram feed API requests</description>
-        <staging-mode>source-to-target</staging-mode>
-        <storage-scope>site</storage-scope>
-        <key-definition attribute-id="tokenKey">
-            <display-name xml:lang="x-default">Token Key</display-name>
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <group-definitions>
-            <attribute-group group-id="tokenKeys">
-                <display-name xml:lang="x-default">Token Key Values</display-name>
-                <attribute attribute-id="tokenKey"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="creationDate" system="true"/>
             </attribute-group>
         </group-definitions>
     </custom-type>

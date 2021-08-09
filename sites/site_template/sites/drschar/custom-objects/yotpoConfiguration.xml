@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="yotpoConfiguration" object-id="en_US">
+        <object-attribute attribute-id="appKey">Jdm54kNDta8geatsFqmPbmm4mJfUjdzrWhBbekTn</object-attribute>
+        <object-attribute attribute-id="clientSecretKey">kLi87R5iNnsGIuIv11tK34MgklKSg9ZECe6Nszy8</object-attribute>
+        <object-attribute attribute-id="enablePurchaseFeed">true</object-attribute>
+        <object-attribute attribute-id="enableRatings">true</object-attribute>
+        <object-attribute attribute-id="enableReviews">true</object-attribute>
+    </custom-object>
+
+</custom-objects>

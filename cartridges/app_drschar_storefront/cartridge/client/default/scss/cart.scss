@@ -1,0 +1,15 @@
+@import 'base/cart.scss';
+@import 'product/productInformation.scss';
+
+.recomended-items-label-cart{
+    display: block;
+    text-align: center;
+}
+
+.recomended-items-label{
+    display: none;
+}
+
+.cart-page{
+    margin-bottom: 20px;
+}

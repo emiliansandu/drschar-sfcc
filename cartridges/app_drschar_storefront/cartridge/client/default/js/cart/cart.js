@@ -3,6 +3,31 @@
 var base = require('base/product/base');
 var focusHelper = require('base/components/focus');
 
+$(document).ready(function () {
+    carouselFormat(3000);
+});
+
+function carouselFormat(time){
+    setTimeout(function(){  
+        //Infinity carousel for recomended products
+       let recomendedItems = document.querySelectorAll('.carousel .recomended-items');
+
+       recomendedItems.forEach((el) => {
+           const minPerSlide = 4
+           let next = el.nextElementSibling
+           for (var i=1; i<minPerSlide; i++) {
+               if (!next) {
+                   // wrap carousel by using first child
+                   next = recomendedItems[0]
+               }
+               let cloneChild = next.cloneNode(true)
+               el.appendChild(cloneChild.children[0])
+               next = next.nextElementSibling
+           }
+       });
+   }, time);
+}
+
 /**
  * appends params to a url
  * @param {string} url - Original url
@@ -52,10 +77,11 @@ function validateBasket(data) {
 
         $('.checkout-btn').addClass('disabled');
     } else if(data.orderMinimumNotCompleted){
-
-        var errorHtml='<div class="alert alert-danger error-message custom-error-holder" role="alert"><p class="error-message-text"><i class="fas fa-exclamation-circle"></i> '+data.orderMinimumMessage+'</p></div>';
-        $('.alertOrderMinimum').append(errorHtml);
-        $('.checkout-btn').addClass('disabled');
+        if(!$('.alertMinAmount').length){
+            var errorHtml='<div class="alert alert-danger error-message custom-error-holder alertMinAmount" role="alert"><p class="error-message-text"><i class="fas fa-exclamation-circle"></i> '+data.orderMinimumMessage+'</p></div>';
+            $('.alertOrderMinimum').append(errorHtml);
+            $('.checkout-btn').addClass('disabled');
+        }
     }else{
         if($('.error-message').length){
             $('.error-message').remove();

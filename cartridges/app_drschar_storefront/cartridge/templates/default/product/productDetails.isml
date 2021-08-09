@@ -24,6 +24,9 @@
                     <div class="row">
                         <div class="d-md-none col-sm-12">
                             <h1 class="product-name">${product.productName}</h1>
+                            <div class="product-name-Ratings d-sm-none ">
+                                <isinclude template="widget/yotpoRatingsWidget" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,6 +48,9 @@
                     <div class="row">
                         <div class="col">
                             <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                            <div class="product-name-Ratings d-none d-sm-block">
+                                <isinclude template="widget/yotpoRatingsWidget" />
+                            </div>
                         </div>
                     </div>
 
@@ -157,6 +163,9 @@
 
             <div class="recommendations">
                 <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+            </div>
+            <div class="yotpoReviewsContainer">
+                <isinclude template="widget/yotpoReviewsWidget" />
             </div>
             <div class="help">
                 <isslot id="help-slot-m" description="Help with products" context="global" context-object="${pdict.product.raw}" />

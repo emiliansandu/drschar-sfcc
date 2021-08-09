@@ -101,4 +101,37 @@ server.post(
          
 );
 
+/**
+ * Extends Account-SubmitRegistration controller to set subscription
+ */
+ server.append('SubmitRegistration', function (req, res, next) {
+    this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
+        var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+        var CustomerMgr = require('dw/customer/CustomerMgr');
+        var Transaction = require('dw/system/Transaction');
+        var currViewData = res.getViewData();
+        var locale = currViewData.locale;
+
+        if (currViewData.success) {
+            var email = currViewData.email;
+            var registeredCustomer = CustomerMgr.getCustomerByLogin(email);
+            var customerNo = currViewData.authenticatedCustomer.profile.customerNo;
+            var checkboxValue = currViewData.form.customer.addtoemaillist.checked;
+
+            if (registeredCustomer) {
+                Transaction.wrap(function () {
+                    var error;
+                    var customer = CustomerMgr.getCustomerByCustomerNumber(customerNo);
+
+                    // assign values to the profile
+                    var customerProfile = customer.getProfile();
+
+                    customerProfile.custom.subscribed = checkboxValue;
+                });
+            }
+        }
+    });
+    return next();
+});
+
 module.exports = server.exports();

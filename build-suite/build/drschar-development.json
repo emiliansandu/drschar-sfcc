@@ -29,6 +29,8 @@
         "app_storefront_base",
         "bc_job_components",
         "bm_app_storefront_base",
+        "bm_yotpo",
+        "int_yotpo_sfra",
         "bm_paypal",
         "bm_paypal_configuration",
         "int_adyen_overlay",

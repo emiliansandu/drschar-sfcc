@@ -25,6 +25,7 @@ header {
        width: 55px;
        @include media-breakpoint-up(lg) {
            width: 100px;
+           max-height: 100px;
        }
    }
 }

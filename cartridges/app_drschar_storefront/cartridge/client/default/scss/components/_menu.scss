@@ -1,6 +1,5 @@
 .ul-nav-menu-flynav{
     @include media-breakpoint-up(lg) {
-        margin-left: 8%;
     }
     .nav-item{
         a{
@@ -33,7 +32,7 @@
                             @include media-breakpoint-up(lg) {
                                 img{
                                     width: 100%;
-                                    height: auto;
+                                    max-height: 100px;
                                     display: block;
                                 }
                             }
@@ -77,5 +76,9 @@
             }
         }
     }
+}
+.dropdown-item:last-child {
+    background-color: inherit;
+    height: 100%;
 }
 

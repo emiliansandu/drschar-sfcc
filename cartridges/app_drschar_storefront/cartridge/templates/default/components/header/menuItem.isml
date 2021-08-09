@@ -19,10 +19,12 @@
             </isif>
         </isloop>
         <isloop items="${menuItem.subCategories}" var="category">
-                <div class="col-lg-3 d-none d-lg-block">
+                <div class="col-lg-2 d-none d-lg-block">
                     <div class="row subcats_row">
-                        <div class="col-12 subcats_row__col-img">   
-                            <img src="${category.image.url}" alt="${category.name}">
+                        <div class="col-12 subcats_row__col-img">
+                            <a href="${category.url}">
+                                <img src="${category.image.url}" alt="${category.name}">
+                            </a>
                         </div>
                         <div class="col-12 subcats_row__col-desc">
                             <a href="${category.url}">

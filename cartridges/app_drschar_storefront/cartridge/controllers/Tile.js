@@ -88,4 +88,28 @@ server.append('Show', cache.applyPromotionSensitiveCache, function (req, res, ne
     next();
 });
 
+server.get('ShowRecomended', cache.applyPromotionSensitiveCache, function (req, res, next) {
+    var URLUtils = require('dw/web/URLUtils');
+    var ProductFactory = require('*/cartridge/scripts/factories/product');
+
+    var product;
+    var params = new Object;
+
+    try {
+        params.pid = req.querystring.pid;
+        product = ProductFactory.get(params);
+    } catch (e) {
+        product = false;
+    }
+
+    var context = {
+        product: product,
+    };
+
+    res.render('product/recomendedTile.isml', context);
+
+    next();
+});
+
+
 module.exports = server.exports();

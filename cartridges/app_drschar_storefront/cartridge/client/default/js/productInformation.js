@@ -20,6 +20,7 @@ $(document).ready(function () {
 
     resizeObserver.observe(elem);
 
+    //Infinity carousel for bundle childs
     let items = document.querySelectorAll('.carousel .bundle-items')
 
     items.forEach((el) => {
@@ -34,8 +35,31 @@ $(document).ready(function () {
             el.appendChild(cloneChild.children[0])
             next = next.nextElementSibling
         }
-    })
+    });
+
+    carouselFormat(3000);
 
     $('#bundle-child-carousel-m').find('.product-detail.bundle-item').removeClass('col-3');
 
 });
+
+function carouselFormat(time){
+    setTimeout(function(){  
+        //Infinity carousel for recomended products
+       let recomendedItems = document.querySelectorAll('.carousel .recomended-items');
+
+       recomendedItems.forEach((el) => {
+           const minPerSlide = 4
+           let next = el.nextElementSibling
+           for (var i=1; i<minPerSlide; i++) {
+               if (!next) {
+                   // wrap carousel by using first child
+                   next = recomendedItems[0]
+               }
+               let cloneChild = next.cloneNode(true)
+               el.appendChild(cloneChild.children[0])
+               next = next.nextElementSibling
+           }
+       });
+   }, time);
+}

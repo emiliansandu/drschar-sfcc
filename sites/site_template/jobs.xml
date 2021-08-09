@@ -49,6 +49,49 @@
         </triggers>
     </job>
 
+    <job job-id="ExportCustomer" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="export" type="custom.CSComponents.ExportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="TargetFolder">MarketingCloud</parameter>
+                    <parameter name="Filename">subscribed-customers.xml</parameter>
+                    <parameter name="Query">custom.subscribed = true AND custom.synced= false</parameter>
+                    <parameter name="OverwriteExportFile">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="upload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="SourceFolder">src/IMPEX/MarketingCloud</parameter>
+                    <parameter name="TargetFolder">IN</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-28Z</date-from>
+                    <date-to>2023-12-01Z</date-to>
+                    <start-time>04:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
     <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
         <description>
             Removes PaypalNewTransactions custom object that is older than a year with info about PayPal transaction from BM.
@@ -130,60 +173,6 @@
         </triggers>
     </job>
 
-    <job job-id="PricebookImport" priority="0">
-        <description/>
-        <parameters/>
-        <flow>
-            <context site-id="Sites"/>
-            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
-                <description/>
-                <parameters>
-                    <parameter name="ServiceID">drscharSFTP</parameter>
-                    <parameter name="FilePattern">Pricebook_[0-9]*\.xml</parameter>
-                    <parameter name="SourceFolder">OUT</parameter>
-                    <parameter name="TargetFolder">src/download</parameter>
-                    <parameter name="Recursive">false</parameter>
-                    <parameter name="DeleteRemoteFiles">true</parameter>
-                    <parameter name="NoFileFoundStatus">ERROR</parameter>
-                </parameters>
-            </step>
-        </flow>
-        <flow>
-            <context site-id="Sites"/>
-            <step step-id="import" type="ImportPriceBook" enforce-restart="false">
-                <description/>
-                <parameters>
-                    <parameter name="WorkingFolder">download</parameter>
-                    <parameter name="FileNamePattern">Pricebook_[0-9]*\.xml</parameter>
-                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
-                    <parameter name="ImportMode">Merge</parameter>
-                    <parameter name="ImportFailedHandling">WARN</parameter>
-                    <parameter name="AfterImportFileHandling">Archive</parameter>
-                    <parameter name="ArchiveFolder">archive</parameter>
-                </parameters>
-            </step>
-        </flow>
-        <rules/>
-        <triggers>
-            <run-recurring enabled="true">
-                <recurrence>
-                    <date-from>2021-07-22Z</date-from>
-                    <start-time>09:00:00.000Z</start-time>
-                    <interval>1d</interval>
-                    <day-of-week>
-                        <weekday>Thursday</weekday>
-                        <weekday>Wednesday</weekday>
-                        <weekday>Sunday</weekday>
-                        <weekday>Saturday</weekday>
-                        <weekday>Tuesday</weekday>
-                        <weekday>Monday</weekday>
-                        <weekday>Friday</weekday>
-                    </day-of-week>
-                </recurrence>
-            </run-recurring>
-        </triggers>
-    </job>
-
     <job job-id="Reindex" priority="0">
         <description/>
         <parameters/>
@@ -213,6 +202,226 @@
     </job>
 
     <job job-id="CatalogImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downdload" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Catalog_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="importCatalog" type="ImportCatalog" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Catalog_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">ERROR</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="ERROR" enabled="false">
+                <send-mail>
+                    <from>drschar-sfcc-staging@unitedvirtualities.com</from>
+                    <to>Linda.Davidson@drschar.com, Burrell.King@drschar.com</to>
+                    <cc>ngarcia@unitedvirtualities.com, rcervantes@unitedvirtualities.com</cc>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-22Z</date-from>
+                    <start-time>09:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Thursday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="PricebookImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Pricebook_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="import" type="ImportPriceBook" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Pricebook_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="ERROR" enabled="true">
+                <send-mail>
+                    <from>drschar-sfcc@unitedvirtualities.com</from>
+                    <to>Linda.Davidson@drschar.com</to>
+                    <cc>ngarcia@unitedvirtualities.com</cc>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-22Z</date-from>
+                    <start-time>09:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Thursday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="InventoryImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Inventory_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="import" type="ImportInventoryLists" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Inventory_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2021-06-03Z</date>
+                <time>01:48:35.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+    <job job-id="marketingCloudSignupEmails" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="exportXMLEmailFile" type="custom.getCustomObjectEmails" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="CustomObjectType">marketingCustomer</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-07-28Z</date-from>
+                    <start-time>15:14:02.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+
+    <job job-id="tokenRenew" priority="0">
+        <description>This job has been created to renew Instagram API token</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_45">
+                <context site-id="drschar"/>
+            </contexts>
+            <flow-template template-id="template_45">
+                <step step-id="Reindex" type="SearchReindex" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="Product related search indexes">true</parameter>
+                        <parameter name="Active data search index">true</parameter>
+                        <parameter name="Content search index">true</parameter>
+                        <parameter name="Indexer Type">Full Index Rebuild</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:36:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+
+    <job job-id="Yotpo Loyalty Order Export" priority="0">
         <description/>
         <parameters/>
         <flow>
@@ -345,7 +554,6 @@
             </run-recurring>
         </triggers>
     </job>
-
 
 
 

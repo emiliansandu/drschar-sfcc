@@ -1,0 +1,40 @@
+<isif condition="${slotcontent}">
+    <div class="row">
+        <div class="col-12 recomended-items-label">
+            <h3>${Resource.msg('label.title.recomended.product', 'product', null)}</h3>
+        </div>
+        <div class="col-12 recomended-items-label-cart">
+            <h4>${Resource.msg('label.title.recomended.product', 'cart', null)}</h4>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div id="product-recomended-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <isloop items="${slotcontent.content}" var="product" status="loopState">
+                    <div class="recomended-items carousel-item <isif condition=" ${loopState.index == 0}">active</isif>">
+                        <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', product.ID)}" />
+                    </div>                   
+                </isloop>
+            </div>
+            <isif condition="${slotcontent.content.length > 1}">
+                <a class="carousel-control-prev" href="#product-recomended-carousel" role="button" data-slide="prev">
+                    <span class="fa icon-prev" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#product-recomended-carousel" role="button" data-slide="next">
+                    <span class="fa icon-next" aria-hidden="true"></span>
+                </a>
+            </isif>
+        </div>
+    </div>
+
+    <!-- ViewReco event --> 
+    <isloop items="${slotcontent.content}" var="productViewReco" status="loopState">
+        <isobject object="${productViewReco}" view="recommendation">
+            <div class="d-none">
+                <isinclude url="${URLUtils.url('Tile-ShowRecomended', 'pid', productViewReco.ID)}" />
+            </div>
+        </isobject>
+    </isloop>
+    
+</isif>
