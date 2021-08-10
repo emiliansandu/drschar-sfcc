@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "aad7183b-0ce1-4a1f-a454-3ec50b3b35e0",
+		"name": "OCAPI demo drschar",
+		"description": "A few useful OCAPI calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shop API Usage",
+			"item": [
+				{
+					"name": "1a. Get OAuth2 client token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var tokenData = JSON.parse(responseBody);",
+									"",
+									"if(tokenData.access_token!==null && tokenData.token_type!==null ){",
+									"    postman.setEnvironmentVariable(\"Authorization_key\", tokenData.token_type + \" \" + tokenData.access_token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{clientid_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{clientid}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": true,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://account.demandware.com/dw/oauth2/access_token",
+							"protocol": "https",
+							"host": [
+								"account",
+								"demandware",
+								"com"
+							],
+							"path": [
+								"dw",
+								"oauth2",
+								"access_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2a. Get Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-dw-client-id",
+								"value": "{{clientid}}"
+							}
+						],
+						"url": {
+							"raw": "{{shop_url}}/categories/root?levels=2",
+							"host": [
+								"{{shop_url}}"
+							],
+							"path": [
+								"categories",
+								"root"
+							],
+							"query": [
+								{
+									"key": "levels",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3a. Get Products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-dw-client-id",
+								"value": "{{clientid}}"
+							}
+						],
+						"url": {
+							"raw": "{{shop_url}}/products/({{productIds}})",
+							"host": [
+								"{{shop_url}}"
+							],
+							"path": [
+								"products",
+								"({{productIds}})"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Data API Usage",
+			"item": [
+				{
+					"name": "1b. Get BM OAuth2 token (need BM user for this)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var tokenData = JSON.parse(responseBody);",
+									"",
+									"if(tokenData.access_token!==null && tokenData.token_type!==null ){",
+									"    postman.setEnvironmentVariable(\"Authorization_key\", tokenData.token_type + \" \" + tokenData.access_token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bm_pwd}}:{{clientid_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bm_user}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": true,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "urn:demandware:params:oauth:grant-type:client-id:dwsid:dwsecuretoken",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{host_server}}/dw/oauth2/access_token?client_id={{clientid}}",
+							"protocol": "https",
+							"host": [
+								"{{host_server}}"
+							],
+							"path": [
+								"dw",
+								"oauth2",
+								"access_token"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{clientid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2b. Get Order (order must exist in BM)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-dw-client-id",
+								"value": "{{clientid}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{shop_url}}/orders/{{order_no}}",
+							"host": [
+								"{{shop_url}}"
+							],
+							"path": [
+								"orders",
+								"{{order_no}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3c. PATCH Order Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-dw-client-id",
+								"value": "{{clientid}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"completed\"\n}"
+						},
+						"url": {
+							"raw": "{{shop_url}}/orders/{{order_no}}",
+							"host": [
+								"{{shop_url}}"
+							],
+							"path": [
+								"orders",
+								"{{order_no}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
