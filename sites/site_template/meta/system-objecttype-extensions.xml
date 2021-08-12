@@ -6584,7 +6584,7 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-                <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
+                <default-value>IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="zendeskStaticContentURL">
                 <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>

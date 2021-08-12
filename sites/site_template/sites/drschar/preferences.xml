@@ -115,6 +115,7 @@
                 <preference preference-id="yotpoDisplayPLPRatings">false</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
+                <preference preference-id="zendeskContacUsKey">IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</preference>
                 <preference preference-id="zendeskKey">5e3b063d-ff00-492d-badd-0b96bedbed16</preference>
                 <preference preference-id="zendeskEmail">emma.pragnell@drschaer.com</preference>
                 <preference preference-id="zendeskDomain">https://drschaer.zendesk.com</preference>
