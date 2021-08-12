@@ -89,32 +89,32 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
             NutFactData.totalFat_percent = calcNutritionPercent(NutritionalFactsObj.custom.totalFat_percent);
             NutFactData.totalSugars = NutritionalFactsObj.custom.totalSugars;
         
-        if (NutritionalFactsObj.custom.calcium && NutritionalFactsObj.custom.calcium_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.calcium', 'product', null), NutritionalFactsObj.custom.calcium, NutritionalFactsObj.custom.calcium_percent);
+        if (NutritionalFactsObj.custom.calcium || NutritionalFactsObj.custom.calcium_percent >= 0) { 
+            addToNutritionCol(Resource.msg('label.tab.nutrition.calcium', 'product', null), NutritionalFactsObj.custom.calcium || '' , NutritionalFactsObj.custom.calcium_percent);
         }
 
-        if (NutritionalFactsObj.custom.iron && NutritionalFactsObj.custom.iron_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.iron', 'product', null), NutritionalFactsObj.custom.iron, NutritionalFactsObj.custom.iron_percent);
+        if (NutritionalFactsObj.custom.iron || NutritionalFactsObj.custom.iron_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.iron', 'product', null), NutritionalFactsObj.custom.iron || '', NutritionalFactsObj.custom.iron_percent);
         }
     
-        if (NutritionalFactsObj.custom.niacin && NutritionalFactsObj.custom.niacin_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.niacin', 'product', null), NutritionalFactsObj.custom.niacin, NutritionalFactsObj.custom.niacin_percent);
+        if (NutritionalFactsObj.custom.niacin || NutritionalFactsObj.custom.niacin_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.niacin', 'product', null), NutritionalFactsObj.custom.niacin || '', NutritionalFactsObj.custom.niacin_percent);
         }
 
-        if (NutritionalFactsObj.custom.potassium && NutritionalFactsObj.custom.potassium_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.potassium', 'product', null), NutritionalFactsObj.custom.potassium, NutritionalFactsObj.custom.potassium_percent);
+        if (NutritionalFactsObj.custom.potassium || NutritionalFactsObj.custom.potassium_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.potassium', 'product', null), NutritionalFactsObj.custom.potassium || '', NutritionalFactsObj.custom.potassium_percent);
         }
 
-        if (NutritionalFactsObj.custom.riboflavin && NutritionalFactsObj.custom.riboflavin_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.riboflavin', 'product', null), NutritionalFactsObj.custom.riboflavin, NutritionalFactsObj.custom.riboflavin_percent);
+        if (NutritionalFactsObj.custom.riboflavin || NutritionalFactsObj.custom.riboflavin_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.riboflavin', 'product', null), NutritionalFactsObj.custom.riboflavin || '', NutritionalFactsObj.custom.riboflavin_percent);
         }
 
-        if (NutritionalFactsObj.custom.thiamin && NutritionalFactsObj.custom.thiamin_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.thiamin', 'product', null), NutritionalFactsObj.custom.thiamin, NutritionalFactsObj.custom.thiamin_percent);
+        if (NutritionalFactsObj.custom.thiamin || NutritionalFactsObj.custom.thiamin_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.thiamin', 'product', null), NutritionalFactsObj.custom.thiamin || '', NutritionalFactsObj.custom.thiamin_percent);
         }
     
-        if (NutritionalFactsObj.custom.vitaminD && NutritionalFactsObj.custom.vitaminD_percent) {
-            addToNutritionCol(Resource.msg('label.tab.nutrition.vitaminD', 'product', null), NutritionalFactsObj.custom.vitaminD, NutritionalFactsObj.custom.vitaminD_percent);
+        if (NutritionalFactsObj.custom.vitaminD || NutritionalFactsObj.custom.vitaminD_percent >= 0) {
+            addToNutritionCol(Resource.msg('label.tab.nutrition.vitaminD', 'product', null), NutritionalFactsObj.custom.vitaminD || '', NutritionalFactsObj.custom.vitaminD_percent);
         }
 
         if (NutFactData.NutritionColumn.length == 0){
