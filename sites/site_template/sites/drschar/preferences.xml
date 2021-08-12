@@ -115,7 +115,7 @@
                 <preference preference-id="yotpoDisplayPLPRatings">false</preference>
                 <preference preference-id="zendeskCartridgeEnabled">true</preference>
                 <preference preference-id="zendeskStaticContentURL">https://static.zdassets.com/ekr/snippet.js</preference>
-                <preference preference-id="zendeskKey">IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</preference>
+                <preference preference-id="zendeskKey">5e3b063d-ff00-492d-badd-0b96bedbed16</preference>
                 <preference preference-id="zendeskEmail">emma.pragnell@drschaer.com</preference>
                 <preference preference-id="zendeskDomain">https://drschaer.zendesk.com</preference>
                 <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":true,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":true,"companyCode":"DRSCHRUSAINC","useCustomCustomerCode":"customer_number","customCustomerAttribute":"","defaultShippingMethodTaxCode":"FR","locationCode":"DEFAULT","line1":"125 Chubb Avenue","line2":"","line3":"","city":"Lyndhurst","state":"NJ","zipCode":"07071","countryCode":"US"}</preference>
