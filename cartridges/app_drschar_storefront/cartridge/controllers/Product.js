@@ -62,7 +62,7 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
             return percent;
         }
         else{
-            return ''
+            return '0%'
         }
     }
 
