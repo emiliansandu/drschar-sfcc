@@ -153,7 +153,7 @@
             <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
         >
         <label class="custom-control-label" for="add-to-email-list">
-            <isprint value="${pdict.profileForm.customer.addtoemaillist.label}" encoding="htmlcontent" />
+            <isinclude template="account/components/registerPrivacy"/>
         </label>
     </div>
 
