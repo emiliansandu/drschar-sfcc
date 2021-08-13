@@ -36,6 +36,19 @@
     </div>
 
     <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.gender.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-gender">
+            <isprint value="${pdict.profileForm.customer.gender.label}" encoding="htmlcontent" />
+        </label>
+        <select class="form-control gender custom-select" id="registration-form-gender"
+            <isprint value=${pdict.profileForm.customer.gender.attributes} encoding="off"/>>
+                <isloop items=${pdict.profileForm.customer.gender.options} var="gender">
+                    <option id="${gender.id}" value="${gender.htmlValue}" ${gender.id == 'select' ? ' selected disabled' : ''} >${gender.label}</option>
+                </isloop>
+        </select>
+    </div>
+
+    <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-phone">
             <isprint value="${pdict.profileForm.customer.phone.label}" encoding="htmlcontent" />
@@ -85,6 +98,18 @@
             aria-describedby="form-email-confirm-error"
             <isprint value=${pdict.profileForm.customer.emailconfirm.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-email-confirm-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.dateofbirth.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-dateofbirth">
+            <isprint value="${pdict.profileForm.customer.dateofbirth.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="date"
+            class="form-control"
+            id="registration-form-dateofbirth"
+            <isprint value=${pdict.profileForm.customer.dateofbirth.attributes} encoding="off" />>
     </div>
 
     <div class="form-group

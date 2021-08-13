@@ -58,6 +58,23 @@
 			formid="addtoemaillist" 
 			label="description.checkbox.emailsignup.profile"  
 			type="boolean"/>
+
+		<field 
+			formid="dateofbirth" 
+			label="label.input.birthday.profile" 
+			mandatory="false" 
+			type="date" />
+
+		<field 
+			formid="gender" 
+			label="label.input.gender.profile" 
+			type="string">
+			<options>
+				<option optionid="select" label="select.option.gender.select" value="0" />
+				<option optionid="male" label="select.option.gender.male" value="1"/>
+				<option optionid="female" label="select.option.gender.female" value="2"/>
+			</options>
+    	</field>		
 	</group>
 
 	<group formid="login">
