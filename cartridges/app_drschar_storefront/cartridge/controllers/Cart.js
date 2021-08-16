@@ -31,7 +31,7 @@ server.prepend(
 
         if(viewData.numItems>0){
             var orderMinimum=Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
-            var subTotal=Number(viewData.totals.subTotal.slice(1));
+            var subTotal=Number(viewData.totals.grandTotal.slice(1));
             var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
             if(subTotal<orderMinimum){
                 res.setViewData({
@@ -63,7 +63,7 @@ server.prepend(
 
     if(viewData.numItems>0){
         var orderMinimum=Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
-        var subTotal=Number(viewData.totals.subTotal.slice(1));
+        var subTotal=Number(viewData.totals.grandTotal.slice(1));
         var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
         if(subTotal<orderMinimum){
             res.setViewData({
