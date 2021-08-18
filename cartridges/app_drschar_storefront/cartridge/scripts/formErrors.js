@@ -41,7 +41,6 @@ function removeFormValues(form) {
         if (form[key]) {
             if (form[key].formType === 'formField') {
                 delete form[key].htmlValue; // eslint-disable-line no-param-reassign
-                delete form[key].value; // eslint-disable-line no-param-reassign
             }
 
             if (form[key].formType === 'formGroup') {
