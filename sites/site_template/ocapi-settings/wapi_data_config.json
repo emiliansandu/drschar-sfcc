@@ -47,7 +47,21 @@
           "methods": ["get", "patch", "delete"],
           "read_attributes": "(**)",
           "write_attributes": "(**)"
-        }
+        },
+				{
+					"resource_id": "/customer_lists/{{list_id}}/customers/{{customer_no}}",
+					"read_attributes": "(**)",
+					"methods": ["get"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				},
+				{
+					"resource_id": "/customer_lists/{customer_list_id}/customer_search",
+					"read_attributes": "(**)",
+					"methods": ["post"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				}
       ]
     }
   ]
