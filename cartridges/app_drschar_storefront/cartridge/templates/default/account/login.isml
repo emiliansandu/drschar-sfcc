@@ -5,7 +5,7 @@
         assets.addJs('/js/login.js');
     </isscript>
 
-    <div class="hero slant-down login-banner">
+    <div class="hero login-banner">
         <h1 class="page-title">${Resource.msg('header.hero.image.login', 'login', null)}</h1>
     </div>
     <div class="container login-page">
@@ -21,7 +21,6 @@
                                 <div class="tab-pane ${pdict.navTabValue === 'login' ? 'active' : ''}" id="login" role="tabpanel" aria-labelledby="login-tab">
                                     <isinclude template="account/components/loginForm" />
                                     <isinclude template="account/password/requestPasswordResetModal"/>
-                                    <isinclude template="account/components/oauth" />
                                 </div>
                                 <div class="tab-pane ${pdict.navTabValue === "register" ? 'active' : ''}" id="register" role="tabpanel" aria-labelledby="register-tab">
                                     <isinclude template="account/components/registerForm" />

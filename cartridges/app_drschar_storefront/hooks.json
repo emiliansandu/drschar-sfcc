@@ -3,6 +3,10 @@
         {
             "name": "app.experience.editmode",
             "script": "./cartridge/experience/hooks.js"
+        },
+        {
+            "name": "dw.ocapi.shop.order.afterPATCH",
+            "script": "./cartridge/scripts/hooks/orders/orders.js"
         }
     ]
 }

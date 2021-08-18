@@ -70,68 +70,198 @@ server.post(
         var Logger = require('dw/system/Logger');
         var Transaction = require('dw/system/Transaction');
         var URLUtils = require('dw/web/URLUtils');
-        var server = require('server');
-       
+        var server = require('server');
+
         //when using post method instead of req.querystring must use req.form
-        var emailCustomer=req.form.dwfrm_marketingCloudSignupForm_email;
+        var emailCustomer = req.form.dwfrm_marketingCloudSignupForm_email;
         var customObjectKeyValueExists = CustomObjectMgr.getCustomObject('marketingCustomer', emailCustomer);
-        if(!customObjectKeyValueExists){
-        Transaction.begin();
-        try {
-            //by generating a model/instance of the custom object as arguments the Custom Object ID and primary key ID
-            var NewCustomObjectSample = CustomObjectMgr.createCustomObject('marketingCustomer', 'emailAddress');
-            //here the value is inserted in the Custom Object model/instance
-            NewCustomObjectSample.custom.emailAddress = emailCustomer;
-            //the insertion is executed
-            Transaction.commit();
-        }catch(e){
-            Logger.error(e)
-            Transaction.rollback();
-        }
+        if (!customObjectKeyValueExists) {
+            Transaction.begin();
+            try {
+                //by generating a model/instance of the custom object as arguments the Custom Object ID and primary key ID
+                var NewCustomObjectSample = CustomObjectMgr.createCustomObject('marketingCustomer', 'emailAddress');
+                //here the value is inserted in the Custom Object model/instance
+                NewCustomObjectSample.custom.emailAddress = emailCustomer;
+                //the insertion is executed
+                Transaction.commit();
+            } catch (e) {
+                Logger.error(e)
+                Transaction.rollback();
+            }
             server.forms.getForm('marketingCloudSignupForm').clear();
             res.redirect(URLUtils.url('Home-Show'));
             next();
-        } 
+        }
         else {
             server.forms.getForm('marketingCloudSignupForm').clear();
             res.redirect(URLUtils.url('Home-Show'));
             next();
-        } 
+        }
     }
-         
+
 );
 
-/**
- * Extends Account-SubmitRegistration controller to set subscription
- */
- server.append('SubmitRegistration', function (req, res, next) {
-    this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
-        var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+server.replace('SubmitRegistration',
+    server.middleware.https,
+    csrfProtection.validateAjaxRequest,
+    function (req, res, next) {
         var CustomerMgr = require('dw/customer/CustomerMgr');
-        var Transaction = require('dw/system/Transaction');
-        var currViewData = res.getViewData();
-        var locale = currViewData.locale;
+        var Resource = require('dw/web/Resource');
 
-        if (currViewData.success) {
-            var email = currViewData.email;
-            var registeredCustomer = CustomerMgr.getCustomerByLogin(email);
-            var customerNo = currViewData.authenticatedCustomer.profile.customerNo;
-            var checkboxValue = currViewData.form.customer.addtoemaillist.checked;
+        var formErrors = require('*/cartridge/scripts/formErrors');
+        var registrationForm = server.forms.getForm('profile');
+        registrationForm.valid = true;
 
-            if (registeredCustomer) {
-                Transaction.wrap(function () {
-                    var error;
-                    var customer = CustomerMgr.getCustomerByCustomerNumber(customerNo);
-
-                    // assign values to the profile
-                    var customerProfile = customer.getProfile();
-
-                    customerProfile.custom.subscribed = checkboxValue;
-                });
-            }
+        // form validation
+        if (registrationForm.customer.email.value.toLowerCase()
+            !== registrationForm.customer.emailconfirm.value.toLowerCase()
+        ) {
+            registrationForm.customer.email.valid = false;
+            registrationForm.customer.emailconfirm.valid = false;
+            registrationForm.customer.emailconfirm.error =
+                Resource.msg('error.message.mismatch.email', 'forms', null);
+            registrationForm.valid = false;
         }
-    });
-    return next();
+
+        if (registrationForm.login.password.value
+            !== registrationForm.login.passwordconfirm.value
+        ) {
+            registrationForm.login.password.valid = false;
+            registrationForm.login.passwordconfirm.valid = false;
+            registrationForm.login.passwordconfirm.error =
+                Resource.msg('error.message.mismatch.password', 'forms', null);
+            registrationForm.valid = false;
+        }
+
+        if (!CustomerMgr.isAcceptablePassword(registrationForm.login.password.value)) {
+            registrationForm.login.password.valid = false;
+            registrationForm.login.passwordconfirm.valid = false;
+            registrationForm.login.passwordconfirm.error =
+                Resource.msg('error.message.password.constraints.not.matched', 'forms', null);
+            registrationForm.valid = false;
+        }
+
+        var birthday = null;
+        if(registrationForm.customer.dateofbirth.htmlValue != ''){
+            var birthdayForm = registrationForm.customer.dateofbirth.htmlValue;
+            birthday = new Date(birthdayForm);
+        }
+
+        // setting variables for the BeforeComplete function
+        var registrationFormObj = {
+            firstName: registrationForm.customer.firstname.value,
+            lastName: registrationForm.customer.lastname.value,
+            phone: registrationForm.customer.phone.value,
+            gender: registrationForm.customer.gender.value,
+            email: registrationForm.customer.email.value,
+            emailConfirm: registrationForm.customer.emailconfirm.value,
+            birthday: birthday,
+            password: registrationForm.login.password.value,
+            passwordConfirm: registrationForm.login.passwordconfirm.value,
+            validForm: registrationForm.valid,
+            form: registrationForm
+        };
+
+        if (registrationForm.valid) {
+            res.setViewData(registrationFormObj);
+            this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
+                var Transaction = require('dw/system/Transaction');
+                var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+                var authenticatedCustomer;
+                var serverError;
+
+                // getting variables for the BeforeComplete function
+                var registrationForm = res.getViewData(); // eslint-disable-line
+
+                if (registrationForm.validForm) {
+                    var login = registrationForm.email;
+                    var password = registrationForm.password;
+
+                    // attempt to create a new user and log that user in.
+                    try {
+                        Transaction.wrap(function () {
+                            var error = {};
+                            var newCustomer = CustomerMgr.createCustomer(login, password);
+
+                            var authenticateCustomerResult = CustomerMgr.authenticateCustomer(login, password);
+                            if (authenticateCustomerResult.status !== 'AUTH_OK') {
+                                error = { authError: true, status: authenticateCustomerResult.status };
+                                throw error;
+                            }
+
+                            authenticatedCustomer = CustomerMgr.loginCustomer(authenticateCustomerResult, false);
+
+                            if (!authenticatedCustomer) {
+                                error = { authError: true, status: authenticateCustomerResult.status };
+                                throw error;
+                            } else {
+                                // assign values to the profile
+                                var newCustomerProfile = newCustomer.getProfile();
+
+                                if (registrationForm.gender != null) {
+                                    newCustomerProfile.gender = registrationForm.gender;
+                                }
+                                if (registrationForm.birthday != null) {
+                                    newCustomerProfile.birthday = registrationForm.birthday;
+                                }
+                                newCustomerProfile.firstName = registrationForm.firstName;
+                                newCustomerProfile.lastName = registrationForm.lastName;
+                                newCustomerProfile.phoneHome = registrationForm.phone;
+                                newCustomerProfile.email = registrationForm.email;
+                                newCustomerProfile.custom.subscribed = registrationForm.form.customer.addtoemaillist.checked;
+                            }
+                        });
+                    } catch (e) {
+                        if (e.authError) {
+                            serverError = true;
+                        } else {
+                            registrationForm.validForm = false;
+                            registrationForm.form.customer.email.valid = false;
+                            registrationForm.form.customer.emailconfirm.valid = false;
+                            registrationForm.form.customer.email.error =
+                                Resource.msg('error.message.username.invalid', 'forms', null);
+                        }
+                    }
+                }
+
+                delete registrationForm.password;
+                delete registrationForm.passwordConfirm;
+                formErrors.removeFormValues(registrationForm.form);
+
+                if (serverError) {
+                    res.setStatusCode(500);
+                    res.json({
+                        success: false,
+                        errorMessage: Resource.msg('error.message.unable.to.create.account', 'login', null)
+                    });
+
+                    return;
+                }
+
+                if (registrationForm.validForm) {
+                    // send a registration email
+                    accountHelpers.sendCreateAccountEmail(authenticatedCustomer.profile);
+
+                    res.setViewData({ authenticatedCustomer: authenticatedCustomer });
+                    res.json({
+                        success: true,
+                        redirectUrl: accountHelpers.getLoginRedirectURL(req.querystring.rurl, req.session.privacyCache, true)
+                    });
+
+                    req.session.privacyCache.set('args', null);
+                } else {
+                    res.json({
+                        fields: formErrors.getFormErrors(registrationForm)
+                    });
+                }
+            });
+        } else {
+            res.json({
+                fields: formErrors.getFormErrors(registrationForm)
+            });
+        }
+
+        return next();
 });
 
 module.exports = server.exports();

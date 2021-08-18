@@ -8,6 +8,12 @@
       "resources":
       [
         {
+					"resource_id": "/customers/{customer_id}",
+					"methods": ["get","patch"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+        {
           "resource_id":"/baskets",
           "methods":["post"],
           "read_attributes":"(**)",

@@ -138,7 +138,9 @@
                         <div class="nutrition-column">
                             <isif condition="${pdict.NutritionFacts !== null}">
                                 <isloop items="${pdict.NutritionFacts.NutritionColumn}" var="NutritionColumn">
-                                    ${NutritionColumn.propName} ${NutritionColumn.propVal1} ${NutritionColumn.propVal2} •
+                                    <isif condition="${NutritionColumn.propVal1 != '' || NutritionColumn.propVal2 != ''}">
+                                        ${NutritionColumn.propName} ${NutritionColumn.propVal1} ${NutritionColumn.propVal2} •
+                                    </isif>   
                                 </isloop>
                             </isif>
                         </div>
