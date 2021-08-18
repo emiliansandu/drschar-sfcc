@@ -1,15 +1,20 @@
 "use strict";
 var Status = require("dw/system/Status");
 var URLUtils = require('dw/web/URLUtils');
+var OrderUtil = require('../util/orderUtil');
+var paymentMgr = require('dw/order/PaymentMgr');
+var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
 
 function sendMail(order) {
-  var Mail = require("dw/net/Mail");
   var status;
+  var host = OrderUtil.getHost();
+  var locale = OrderUtil.getLocale();
+  var contentAsset = OrderUtil.getContentAsset();
+  var paymentid= order.paymentInstrument.paymentMethod;
+  var paymentObject=paymentMgr.getPaymentMethod(paymentid);
+  var productQuantities=order.productQuantities;
+  var productWeight=productQuantities.keySet();
 
-  var email = new Mail();
-  email.addTo("ocordero@unitedvirtualities.com");
-  email.setFrom("no-reply-stord@unitedvirtualities.com");
-  email.setSubject("Order updated");
   // sets the content of the mail as plain string
   switch (parseInt(order.status)) {
     case 0:
@@ -29,9 +34,11 @@ function sendMail(order) {
       break;
     case 5:
       status = "Completed";
+      COHelpers.sendConfirmationEmail(order, locale, host, paymentObject, contentAsset, productWeight);
       break;
     case 6:
       status = "Cancelled";
+      COHelpers.sendCancellationEmail(order, locale, host, paymentObject, contentAsset, productWeight);
       break;
     case 7:
       status = "Replaced";
@@ -43,9 +50,6 @@ function sendMail(order) {
       status = "";
       break;
   }
-
-  email.setContent("The order " + order.orderNo + " was updated as " + status + " the payment method used was: " + order.paymentInstruments[0].paymentMethod );
-  email.send();
 }
 
 exports.afterPATCH = function (order) {

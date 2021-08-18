@@ -153,7 +153,7 @@
             <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
         >
         <label class="custom-control-label" for="add-to-email-list">
-            <isprint value="${pdict.profileForm.customer.addtoemaillist.label}" encoding="htmlcontent" />
+            <isinclude template="account/components/registerPrivacy"/>
         </label>
     </div>
 
@@ -162,10 +162,5 @@
     <button type="submit" class="btn btn-block btn-primary">
         ${Resource.msg('button.createaccount.registration', 'registration', null)}
     </button>
-    <div class="privacy-policy">
-        ${Resource.msg('description.privacypolicy.registration', 'registration', null)}
-        <a href="${'#'}">
-            ${Resource.msg('link.privacypolicy.registration', 'registration', null)}
-        </a>
-    </div>
+    
 </form>
