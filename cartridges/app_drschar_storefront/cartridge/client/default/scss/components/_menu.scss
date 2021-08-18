@@ -9,7 +9,11 @@
     .menu-area{
         @include media-breakpoint-up(lg) {
             position: static;
+            .show{
+                display: flex;
+            }
             .mega-area{
+                justify-content: center;
                 position: absolute;
                 width: 100%;
                 left: 0;
@@ -23,6 +27,7 @@
                     margin-right: -15px;
                     margin-left: -15px;
                     display: flex;
+                    max-width: 1550px;
                     justify-content: center;
                     .subcats_row{
                         &__col-img{
