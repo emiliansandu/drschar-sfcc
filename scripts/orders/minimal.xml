@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders xmlns="http://www.demandware.com/xml/impex/order/2006-10-31">
+    <order order-no="20000001">
+        <order-date>2021-07-13T16:14:45.000Z</order-date>
+        <created-by>storefront</created-by>
+        <currency>USD</currency>
+        <customer-locale>default</customer-locale>
+        <taxation>net</taxation>
+        <customer>
+            <customer-no>00006001</customer-no>
+            <customer-name>Yo merenges registrado </customer-name>
+            <customer-email>rcervantes@unitedvirtualities.com</customer-email>
+        </customer>
+        <status>
+            <order-status>NEW</order-status>
+            <shipping-status>NOT_SHIPPED</shipping-status>
+            <confirmation-status>CONFIRMED</confirmation-status>
+            <payment-status>NOT_PAID</payment-status>
+        </status>
+        <product-lineitems>
+            <product-lineitem>
+                <net-price>11229.95</net-price>
+                <tax>0.19</tax>
+                <gross-price>129.95</gross-price>
+                <base-price>55.99</base-price>
+                <lineitem-text>HAMBURGER Chily Cheese BUNS 10.6oz</lineitem-text>
+                <tax-basis>29.95</tax-basis>
+                <position>1</position>
+                <product-id>1100440502</product-id>
+                <product-name>HAMBURGER Chily Cheese BUNS 10.6oz</product-name>
+                <quantity unit="UNIT">12.0</quantity>
+                <tax-rate>0.2</tax-rate>
+                <shipment-id>00005324</shipment-id>
+                <gift>false</gift>
+            </product-lineitem>
+            <product-lineitem>
+                <net-price>8829.95</net-price>
+                <tax>0.19</tax>
+                <gross-price>129.95</gross-price>
+                <base-price>55.99</base-price>
+                <lineitem-text>mal sku8.5 oz </lineitem-text>
+                <tax-basis>29.95</tax-basis>
+                <position>1</position>
+                <product-id>113-sd0800</product-id>
+                <product-name>Producto Inexistente</product-name>
+                <quantity unit="UNIT">12.0</quantity>
+                <tax-rate>0.2</tax-rate>
+                <shipment-id>00005324</shipment-id>
+                <gift>false</gift>
+            </product-lineitem>
+        </product-lineitems>
+        <shipping-lineitems>
+            <shipping-lineitem>
+                <net-price>5.99</net-price>
+                <tax>0.00</tax>
+                <gross-price>5.99</gross-price>
+                <base-price>5.99</base-price>
+                <lineitem-text>Shipping</lineitem-text>
+                <tax-basis>5.99</tax-basis>
+                <item-id>STANDARD_SHIPPING</item-id>
+                <shipment-id>00005324</shipment-id>
+                <tax-rate>0.0</tax-rate>
+            </shipping-lineitem>
+        </shipping-lineitems>
+        <shipments>
+            <shipment shipment-id="20000001">
+                <status>
+                    <shipping-status>SHIPPED</shipping-status>
+                </status>
+                <shipping-method>001</shipping-method>
+                <shipping-address>
+                    <first-name>Ruben</first-name>
+                    <last-name>Cervantes</last-name>
+                    <address1>Uhlandstr 8</address1>
+                    <city>Atlantic City</city>
+                    <postal-code>92237</postal-code>
+                    <state-code>NJ</state-code>
+                    <country-code>US</country-code>
+                    <phone>9876543219</phone>
+                </shipping-address>
+                <totals>
+                    <merchandize-total>
+                        <net-price>1299.95</net-price>
+                        <tax>0.00</tax>
+                        <gross-price>289.95</gross-price>
+                    </merchandize-total>
+                    <adjusted-merchandize-total>
+                        <net-price>279.95</net-price>
+                        <tax>0.00</tax>
+                        <gross-price>269.95</gross-price>
+                    </adjusted-merchandize-total>
+                    <shipping-total>
+                        <net-price>1235.99</net-price>
+                        <tax>0.00</tax>
+                        <gross-price>445.99</gross-price>
+                    </shipping-total>
+                    <adjusted-shipping-total>
+                        <net-price>5412.99</net-price>
+                        <tax>0.00</tax>
+                        <gross-price>5.99</gross-price>
+                    </adjusted-shipping-total>
+                    <shipment-total>
+                        <net-price>35.94</net-price>
+                        <tax>0.00</tax>
+                        <gross-price>35.94</gross-price>
+                    </shipment-total>
+                </totals>
+            </shipment>
+        </shipments>
+        <totals>
+            <merchandize-total>
+                <net-price>2977.95</net-price>
+                <tax>0.00</tax>
+                <gross-price>2977.95</gross-price>
+            </merchandize-total>
+            <adjusted-merchandize-total>
+                <net-price>2944.95</net-price>
+                <tax>0.00</tax>
+                <gross-price>29.95</gross-price>
+            </adjusted-merchandize-total>
+            <shipping-total>
+                <net-price>5.99</net-price>
+                <tax>0.00</tax>
+                <gross-price>5.99</gross-price>
+            </shipping-total>
+            <adjusted-shipping-total>
+                <net-price>5.99</net-price>
+                <tax>0.00</tax>
+                <gross-price>5.99</gross-price>
+            </adjusted-shipping-total>
+            <order-total>
+                <net-price>35.94</net-price>
+                <tax>0.00</tax>
+                <gross-price>35.94</gross-price>
+            </order-total>
+        </totals>
+        <payments>
+        </payments>
+        <custom-attributes>
+        </custom-attributes>
+    </order>
+</orders>
