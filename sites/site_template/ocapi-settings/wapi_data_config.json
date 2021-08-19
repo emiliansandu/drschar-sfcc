@@ -1,5 +1,5 @@
 {
-  "_v": "18.1",
+  "_v": "20.10",
   "clients": [
     {
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
@@ -47,7 +47,84 @@
           "methods": ["get", "patch", "delete"],
           "read_attributes": "(**)",
           "write_attributes": "(**)"
-        }
+        },
+				{
+					"resource_id": "/customer_lists/{{list_id}}/customers/{{customer_no}}",
+					"read_attributes": "(**)",
+					"methods": ["get"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				},
+				{
+					"resource_id": "/customer_lists/{customer_list_id}/customer_search",
+					"read_attributes": "(**)",
+					"methods": ["post"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				}
+      ]
+    },
+    {
+      "client_id": "2d05f0dc-2b4c-43b5-9283-0cf3ab06360c",
+      "allowed_origins": [],
+      "resources": [
+        {
+          "resource_id": "/code_versions/*",
+          "methods": [
+            "patch"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+        {
+          "resource_id": "/jobs/*/executions",
+          "methods": [
+            "post",
+            "get"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+        {
+          "resource_id": "/jobs/*/executions/*",
+          "methods": [
+            "get"
+          ],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+        {
+          "resource_id": "/sites/*/coupons/**",
+          "methods": ["get", "put", "patch", "delete"],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+         {
+          "resource_id": "/sites/*/gift_certificates",
+          "methods": ["get", "post"],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+         {
+          "resource_id": "/sites/*/gift_certificates/**",
+          "methods": ["get", "patch", "delete"],
+          "read_attributes": "(**)",
+          "write_attributes": "(**)"
+        },
+				{
+					"resource_id": "/customer_lists/{{list_id}}/customers/{{customer_no}}",
+					"read_attributes": "(**)",
+					"methods": ["get"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				},
+				{
+					"resource_id": "/customer_lists/{customer_list_id}/customer_search",
+					"read_attributes": "(**)",
+					"methods": ["post"],
+					"write_attributes": "(**)",
+					"cache_time": 900
+				}
       ]
     }
   ]
