@@ -81,7 +81,7 @@
       }
     },
     "project": {
-      "version": "drschar_stg",
+      "version": "release_1_0_0_build",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
