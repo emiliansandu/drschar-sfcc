@@ -1,21 +1,24 @@
 var fs = require('fs');
 var sfcc = require("./sfcc_format.js");
-
 var data_input = require("./read_customers.js");
+
 var order_items = data_input.loadorders();
 var user_address = data_input.loadaddresses();
 var line_items = data_input.loadlineitems();
 var inputfile = "schaer_export/export_users.csv";
 var all_customers = data_input.loadcustomers(inputfile);
+var customers_id = data_input.loadcustomers_id();
+
 
 
 console.log("order_items " + Object.keys(order_items).length);
 console.log("user_address " + Object.keys(user_address).length);
 console.log("line_items " + Object.keys(line_items).length);
 console.log("all_customers " + Object.keys(all_customers).length);
+console.log("customers_id " + Object.keys(customers_id).length);
 
 
-data_input.link_data(order_items,user_address,line_items,all_customers);
+data_input.link_data(order_items,user_address,line_items,customers_id);
 
 var output_filename = "output/orders.xml";
 var output_stream = fs.createWriteStream(output_filename, { flags: 'a' });

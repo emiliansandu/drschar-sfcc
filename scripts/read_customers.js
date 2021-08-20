@@ -24,6 +24,37 @@ function loadcustomers(inputfile){
       return customer_array;
   }
 
+  function loadcustomers_id(){
+    var inputfile = "schaer_export/export_users.csv";
+    var csv =  fs.readFileSync(inputfile, 'utf8');
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
+    var keys = data[0];
+
+    var customers = {};
+          for (var i = 1; i < data.length; i++) {
+            let customer_id = data[i][0];
+            if (customers[customer_id]== null){
+                customers[customer_id] = [];
+            }
+            keys
+            customers[customer_id].push(parseusers(data[i]));
+          }
+      return customers;
+  }
+
+  function parseusers (full_lineitem){
+    let litem = {};
+    litem["A_FIRSTNAME"] = full_lineitem[3];
+    litem["A_LASTNAME"] = full_lineitem[4];
+    litem["A_LOGIN"] = full_lineitem[6];
+    litem["A_EMAIL"] = full_lineitem[8];
+    litem["A_PHONE"] = full_lineitem[9];
+    litem["A_BIRTHDATE"]	= full_lineitem[13];
+    litem["A_GENDER_ID"] = full_lineitem[14];
+    return litem;
+  }
+
   function loadorders(){
     var customer_array = [];
     var inputfile = "schaer_export/export_lineitemcontainers.csv";
@@ -48,7 +79,7 @@ function loadcustomers(inputfile){
   }
 
   function loadlineitems(){
-    var inputfile = "schaer_export/export_lineitems_short.csv";
+    var inputfile = "schaer_export/export_lineitems_short50000.csv";
     //var inputfile = "schaer_export/export_lineitems.csv";
     var csv =  fs.readFileSync(inputfile, 'utf8');
     var options={"separator" : ";"};
@@ -154,7 +185,7 @@ function loadcustomers(inputfile){
     return addr;
   }
 
-function link_data(order_items,user_address,line_items,all_customers){
+function link_data(order_items,user_address,line_items,customers_id){
     var arr_order_items = Object.keys(order_items);
 
     //for (var i = 0, len = arr_order_items.length; i < len; i++) {
@@ -166,7 +197,7 @@ function link_data(order_items,user_address,line_items,all_customers){
         var shipping_address_id = order["A_SHIPPINGADDRESS_ID"];
         var billing_address_id = order["A_INVOICEADDRESS_ID"];
         order["product_line_items"]= line_items[linecontainer_id];
-        order["user"]= all_customers[user_id];
+        order["user"]= customers_id[user_id];
         order["shipping_address"]= user_address[shipping_address_id];
         order["shipping_address"]= user_address[shipping_address_id];
     }
@@ -176,6 +207,7 @@ function link_data(order_items,user_address,line_items,all_customers){
 
 module.exports = {
     loadcustomers:loadcustomers,
+    loadcustomers_id:loadcustomers_id,
     loadlineitems:loadlineitems,
     loadorders:loadorders,
     loadaddresses:loadaddresses,

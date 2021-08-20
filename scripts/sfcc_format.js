@@ -205,6 +205,12 @@ function customer_longname(user){
 function an_order(order) {
     let date = order['A_CREATION_DATE'];
     var date_formated = date.split(" ")[0] + "T" + date.split(" ")[1] + ".000Z"
+
+    order["totals"] = { 
+        "shippingNet": 0 , 
+        "shippingTax": 0 , 
+        "shippingGross": 0 };
+
     var order_text =
     '<order order-no="'+order['A_ORDERNUMBER']+'">'+
     '<order-date>'+date_formated+'</order-date>' +
@@ -238,11 +244,11 @@ function an_order(order) {
 
     '<shipments>' + 
        order_shipment(order) +
-    '</shipments>'+
+    '</shipments>';
 
-    order_totals(order) +
+    order_text += order_totals(order);
     
-    '</order>';
+    order_text += '</order>';
 
     return order_text;
 }
