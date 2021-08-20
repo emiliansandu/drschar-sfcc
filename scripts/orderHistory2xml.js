@@ -31,24 +31,39 @@ output_stream.write('\r\n');
 
 var arr_order_items = Object.keys(order_items);
 
-for (var i = 25, len = arr_order_items.length; i < 30; i++) {
+var count_guests = 0;
+var count_canceled = 0;
+var to_log;
+
+for (var i = 25, len = arr_order_items.length; i < len; i++) {
+    to_log = "";
     console.log("i= " + i);
     var order_no = arr_order_items[i];
     var order = order_items[order_no][0];
 
-    if (order.A_USER_ID !== ''){
-    console.log("order_no= " + order_no);
+
+    if (order.A_ORDERSTATUS_ID === '90'){
+        to_log += "Order Canceled";
+        count_canceled++;
+        continue;
+    }
+    if (order.A_USER_ID === ''){
+        to_log += "Skip Order Without Registered user";
+        count_guests++;
+        continue;
+    }
+
+    to_log = "order_no= " + order_no;
     var order_xml = sfcc.an_order(order);
     output_stream.write(order_xml);
     output_stream.write('\r\n');
-    } else {
-        console.log("Skip Order Without Registered user");
-    }
+
+    console.log(to_log);
 }
 
 output_stream.write("</orders>");
 output_stream.write('\r\n');
 
 console.log("Listing : " + all_customers.length + " Customers");
-//console.log("count_written : " + count_written + "  Correct");
-//console.log("count_errors : " + count_errors + " With Errors");
+console.log("count_guests : " + count_guests + "  Guests ( Skiped )");
+console.log("count_canceled : " + count_canceled + " Canceled");

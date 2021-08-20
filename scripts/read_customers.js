@@ -111,6 +111,15 @@ function loadcustomers(inputfile){
     order["A_CREATION_DATE"] = full_order[3];
     order["A_SHIPPINGADDRESS_ID"] = full_order[5];
     order["A_INVOICEADDRESS_ID"] = full_order[6];
+
+    order["A_ORDERSTATUS_ID"] = full_order[8];
+    order["A_PAYMENTSTATUS_ID"] = full_order[9];
+    order["A_SHIPPINGSTATUS_ID"] = full_order[10];
+    order["A_SHIPPING_AMOUNT"] = full_order[11];
+    order["A_TAX_AMOUNT"] = full_order[12];
+    order["A_SUBTOTAL_NET_PRICE"] = full_order[13];
+    order["A_GRANDTOTAL_GROSS_PRICE"] = full_order[14];
+    order["A_SUBTOTAL_GROSS_PRICE"] = full_order[15];
     return order;
   }
 

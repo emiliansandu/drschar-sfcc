@@ -198,21 +198,23 @@ function customer_longname(user){
 
   let full_name = user.A_FIRSTNAME + '' + user.A_LASTNAME;
   
-  return entities.encode(entities.decode("full_name")) 
+  return entities.encode(entities.decode(full_name)) 
 
 }
 
 function an_order(order) {
+    let date = order['A_CREATION_DATE'];
+    var date_formated = date.split(" ")[0] + "T" + date.split(" ")[1] + ".000Z"
     var order_text =
     '<order order-no="'+order['A_ORDERNUMBER']+'">'+
-    '<order-date>'+order['A_CREATION_DATE']+'</order-date>' +
-    '<created-by>storefront</created-by>' +
+    '<order-date>'+date_formated+'</order-date>' +
+    '<created-by>alpin</created-by>' +
     '<currency>USD</currency>' +
     '<customer-locale>default</customer-locale>' +
     '<taxation>net</taxation>' +
     '<customer>' +
     '  <customer-no>'+order['A_USER_ID']+'</customer-no>' +
-    '  <customer-name>' + customer_longname(order.user); +' </customer-name>' +
+    '  <customer-name>' + customer_longname(order.user) +' </customer-name>' +
     '  <customer-email>' + order.user.A_EMAIL + '</customer-email>' +
     '</customer>';
 
@@ -226,16 +228,11 @@ function an_order(order) {
 
     order_text += 
     ' <shipping-lineitems> '+ 
-    '     <shipping-lineitem> '+ 
-    '         <net-price>5.99</net-price> '+ 
-    '         <tax>0.00</tax> '+ 
-    '         <gross-price>5.99</gross-price> '+ 
-    '         <base-price>5.99</base-price> '+ 
-    '         <lineitem-text>Shipping</lineitem-text> '+ 
-    '         <tax-basis>5.99</tax-basis> '+ 
-    '         <item-id>STANDARD_SHIPPING</item-id> '+ 
-    '         <shipment-id>00005324</shipment-id> '+ 
-    '         <tax-rate>0.0</tax-rate> '+ 
+    '     <shipping-lineitem> ';
+    for (let pli = 0; pli < order.product_line_items.length; pli++) {
+        order_text += shipping_line_item(order.product_line_items[pli],order);
+    }
+    order_text += 
     '     </shipping-lineitem> '+ 
     ' </shipping-lineitems> '+ 
 
@@ -253,10 +250,10 @@ function an_order(order) {
 function order_status(order){
  var os = 
 '<status> ' +
-'    <order-status>NEW</order-status>' +
-'    <shipping-status>NOT_SHIPPED</shipping-status>' +
+'    <order-status>COMPLETED</order-status>' +
+'    <shipping-status>SHIPPED</shipping-status>' +
 '    <confirmation-status>CONFIRMED</confirmation-status>' +
-'    <payment-status>NOT_PAID</payment-status>' +
+'    <payment-status>PAID</payment-status>' +
 '</status>';
 return os;
 }
@@ -284,41 +281,63 @@ function order_shipment(order){
 }
 
 
-function order_totals(){
+function order_totals(order){
     var o_totals = 
     ' <totals> '+
     '     <shipping-total> '+
-    '         <net-price>5.99</net-price> '+
-    '         <tax>0.00</tax> '+
-    '         <gross-price>5.99</gross-price> '+
+    '         <net-price>' + order.totals.shippingNet + '</net-price> '+ 
+    '         <tax>' + order.totals.shippingTax + '</tax> '+
+    '         <gross-price>' + order.totals.shippingGross + '</gross-price> '+
     '     </shipping-total> '+
     '     <order-total> '+
-    '         <net-price>35.94</net-price> '+
-    '         <tax>0.00</tax> '+
-    '         <gross-price>35.94</gross-price> '+
+    '         <net-price>' + order.A_SUBTOTAL_NET_PRICE + '</net-price> '+ 
+    '         <tax>' + order.A_TAX_AMOUNT + '</tax> '+ 
+    '         <gross-price>' + order.A_GRANDTOTAL_GROSS_PRICE + '</gross-price> '+ 
     '     </order-total> '+
     ' </totals> ';
     return o_totals;
 }
 
 function product_line_item(pli,order){
+    if (pli.A_LINEITEM_TYPE_ID !== "1"){ return ""; }
     var plitext = 
     '    <product-lineitem>' +
-    '        <net-price>' + pli.A_TOTAL_NET_PRICE + '</net-price>' +
+    '        <net-price>' + pli.A_SINGLE_PRICE + '</net-price>' +
     '        <tax>' + pli.A_TAXAMOUNT + '</tax>' +
     '        <gross-price>' + pli.A_TOTAL_GROSS_PRICE + '</gross-price>' +
-    '        <base-price>' + pli.A_TOTAL_NET_PRICE + '</base-price>' +
-    '        <lineitem-text>' + pli.A_PRODUCT_NAME + '</lineitem-text>' +
-    '        <tax-basis>' + pli.A_TAX_RATE + '</tax-basis>' +
+    '        <base-price>' + pli.A_SINGLE_PRICE + '</base-price>' +
+    '        <lineitem-text>' + entities.encode(entities.decode(pli.A_PRODUCT_NAME)) + '</lineitem-text>' +
+    '        <tax-basis>' + pli.A_TOTAL_NET_PRICE + '</tax-basis>' +
     '        <position>' + pli.A_POSITION + '</position>' +
-    '        <product-id>' + pli.A_SKU + '</product-id>' + 
-    '        <product-name>' + pli.A_PRODUCT_NAME + '</product-name>' +
+    '        <product-id>' + pli.A_MANUFACTURER_SKU + '</product-id>' + 
+    '        <product-name>' + entities.encode(entities.decode(pli.A_PRODUCT_NAME)) + '</product-name>' +
     '        <quantity unit="' + pli.A_UNIT_CODE + '">' + pli.A_QUANTITY_VALUE + '</quantity>' +
     '        <tax-rate>' + pli.A_TAX_RATE + '</tax-rate>' +
     '        <shipment-id>' + order.A_ORDERNUMBER + '</shipment-id>' +
     '        <gift>false</gift>' +
     '    </product-lineitem>';
     return plitext;
+}
+
+
+function shipping_line_item(pli,order){
+    if (pli.A_LINEITEM_TYPE_ID !== "2"){ return ""; }
+    var slitext = 
+    '         <net-price>' + pli.A_SINGLE_PRICE + '</net-price> '+ 
+    '         <tax>' + pli.A_TAXAMOUNT + '</tax> '+ 
+    '         <gross-price>' + pli.A_TOTAL_GROSS_PRICE + '</gross-price> '+ 
+    '         <base-price>' + pli.A_SINGLE_PRICE + '</base-price> '+ 
+    '         <lineitem-text>' + entities.encode(entities.decode(pli.A_PRODUCT_NAME)) + '</lineitem-text> '+ 
+    '         <tax-basis>' + pli.A_TOTAL_NET_PRICE + '</tax-basis> '+ 
+    '         <item-id>STANDARD_SHIPPING</item-id> '+ 
+    '         <shipment-id>'+order['A_ORDERNUMBER']+'</shipment-id> '+ 
+    '         <tax-rate>' + pli.A_TAX_RATE + '</tax-rate> ';
+
+    order["totals"] = { 
+        "shippingNet": pli.A_TOTAL_NET_PRICE , 
+        "shippingTax": pli.A_TAXAMOUNT , 
+        "shippingGross": pli.A_TOTAL_GROSS_PRICE };
+    return slitext;
 }
 
 
