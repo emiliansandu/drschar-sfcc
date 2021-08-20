@@ -5,7 +5,8 @@ $.csv = require('jquery-csv');
 function loadcustomers(inputfile){
     var customer_array = [];
     var csv =  fs.readFileSync(inputfile, 'utf8');
-    var data = $.csv.toArrays(csv, {});
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
 
     var keys = data[0];
 
@@ -23,10 +24,12 @@ function loadcustomers(inputfile){
       return customer_array;
   }
 
-  function loadorders(inputfile){
+  function loadorders(){
     var customer_array = [];
+    var inputfile = "schaer_export/export_lineitemcontainers.csv";
     var csv =  fs.readFileSync(inputfile, 'utf8');
-    var data = $.csv.toArrays(csv, {});
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
 
     var keys = data[0];
 
@@ -45,9 +48,11 @@ function loadcustomers(inputfile){
   }
 
   function loadlineitems(){
-    var inputfile = "schaer_export_16Ago/lineitemssmall.csv";
+    var inputfile = "schaer_export/export_lineitems_short.csv";
+    //var inputfile = "schaer_export/export_lineitems.csv";
     var csv =  fs.readFileSync(inputfile, 'utf8');
-    var data = $.csv.toArrays(csv, {});
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
 
     var lineItems = {};
           for (var i = 1; i < data.length; i++) {
@@ -64,17 +69,25 @@ function loadcustomers(inputfile){
   function parselineitems (full_lineitem){
     let litem = {};
     litem["A_PRODUCT_NAME"] = full_lineitem[3];
-    litem["A_TAXAMOUNT"] = full_lineitem[5];
-    litem["A_TOTAL_NET_PRICE"]	= full_lineitem[11];
-    litem["A_TOTAL_GROSS_PRICE"] = full_lineitem[12];
-    litem["A_SINGLE_PRICE"] = full_lineitem[13];
+    litem["A_TAXAMOUNT"] = full_lineitem[4];
+    litem["A_QUANTITY_VALUE"] = full_lineitem[5];
+    litem["A_UNIT_CODE"] = full_lineitem[6];
+    litem["A_POSITION"] = full_lineitem[7];
+    litem["A_TOTAL_NET_PRICE"]	= full_lineitem[9];
+    litem["A_TOTAL_GROSS_PRICE"] = full_lineitem[10];
+    litem["A_SINGLE_PRICE"] = full_lineitem[11];
+    litem["A_SKU"] = full_lineitem[19];
+    litem["A_MANUFACTURER_SKU"] = full_lineitem[20];
+    litem["A_TAX_RATE"] = full_lineitem[53];
+    
     return litem;
   }
 
   function loadorders(){
-    var inputfile = "schaer_export_16Ago/export_lineitemcontainers.csv";
+    var inputfile = "schaer_export/export_lineitemcontainers.csv";
     var csv =  fs.readFileSync(inputfile, 'utf8');
-    var data = $.csv.toArrays(csv, {});
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
 
     var lineItems = {};
           for (var i = 1; i < data.length; i++) {
@@ -99,9 +112,42 @@ function loadcustomers(inputfile){
     return order;
   }
 
+  function loadaddresses(){
+    var inputfile = "schaer_export/export_addresses.csv";
+    var csv =  fs.readFileSync(inputfile, 'utf8');
+    var options={"separator" : ";"};
+    var data = $.csv.toArrays(csv, options);
+
+    var addressItems = {};
+          for (var i = 1; i < data.length; i++) {
+          //  for (var i = 1; i < 10; i++) {
+            let addressId = data[i][0]; // A_ADDRESS_ID
+            if (addressItems[addressId]== null){
+                addressItems[addressId] = [];
+            }
+            addressItems[addressId].push(parseAddress(data[i]));
+          }
+      return addressItems;
+  }
+
+  function parseAddress (full_address){
+    let addr = {};
+    addr["A_FIRSTNAME"] = full_address[3];
+    addr["A_LASTNAME"] = full_address[4];
+    addr["A_STREET"]	= full_address[7];
+    addr["A_POSTALCODE"] = full_address[9];
+    addr["A_CITY"] = full_address[10];
+    addr["A_PROVINCE"] = full_address[11];
+    addr["A_COUNTRY_ID"] = full_address[12];  
+    addr["A_PHONE"] = full_address[15];
+    return addr;
+  }
+
+
 
 module.exports = {
     loadcustomers:loadcustomers,
     loadlineitems:loadlineitems,
-    loadorders:loadorders
+    loadorders:loadorders,
+    loadaddresses:loadaddresses
 };

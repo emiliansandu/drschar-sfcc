@@ -5,7 +5,7 @@ var data_input = require("./read_customers.js");
 var line_items = data_input.loadlineitems();
 var order_items = data_input.loadorders();
 
-var inputfile = "schaer_export_16Ago/export_users.csv";
+var inputfile = "schaer_export/export_users.csv";
 var output_filename = "output/users.xml";
 var all_customers = data_input.loadcustomers(inputfile);
 

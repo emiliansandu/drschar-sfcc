@@ -153,8 +153,10 @@ function product_links(){
 }
 
 
-function start_inventory(name){
-var headXML = '<?xml version="1.0" encoding="UTF-8"?>'+
+function start_inventory(name) {
+
+var headXML =
+'<?xml version="1.0" encoding="UTF-8"?>'+
 '<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">'+
     '<inventory-list>'+
         '<header list-id="' + name +'">'+
@@ -195,7 +197,7 @@ function customer(current) {
 
 function order_function(order) {
     var order_text =
-    '<order order-no="'+order['A_LINEITEMCONTAINER_ID']+'">'+
+    '<order order-no="'+order['A_ORDERNUMBER']+'">'+
     '<order-date>'+order['A_CREATION_DATE']+'</order-date>' +
     '<created-by>storefront</created-by>' +
     '<currency>USD</currency>' +
@@ -210,9 +212,9 @@ function order_function(order) {
     order_text += order_status(order);
     
     order_text += '<product-lineitems>';
-    //for (let pli = 0; pli < array.length; pli++) {
-    //    order_text += product_line_items(array[pli]);
-   // }
+    for (let pli = 0; pli < order.product_line_items.length; pli++) {
+        order_text += product_line_items(order.product_line_items[pli]);
+    }
     order_text += '</product-lineitems>';
 
     order_text += 
@@ -254,48 +256,21 @@ return os;
 
 function order_shipment(o_shipment){
  var shipment_text = 
-    '<shipment shipment-id="20000001">' +
+    '<shipment shipment-id="'+o_shipment['A_ORDERNUMBER']+'">' +
     '<status>' +
     '    <shipping-status>SHIPPED</shipping-status>' +
     '</status>' +
     '<shipping-method>001</shipping-method>' +
     '<shipping-address>' +
-    '    <first-name>Ruben</first-name>' +
-    '    <last-name>Cervantes</last-name>' +
-    '    <address1>Uhlandstr 8</address1>' +
-    '    <city>Atlantic City</city>' +
-    '    <postal-code>92237</postal-code>' +
-    '    <state-code>NJ</state-code>' +
-    '    <country-code>US</country-code>' +
-    '    <phone>9876543219</phone>' +
+    '    <first-name>Ruben</first-name>' + 
+    '    <last-name>Cervantes</last-name>' + 
+    '    <address1>Uhlandstr 8</address1>' + 
+    '    <city>Atlantic City</city>' + 
+    '    <postal-code>92237</postal-code>' + 
+    '    <state-code>NJ</state-code>' + 
+    '    <country-code>US</country-code>' + 
+    '    <phone>9876543219</phone>' + 
     '</shipping-address>' +
-    '<totals>' +
-    '    <merchandize-total>' +
-    '        <net-price>1299.95</net-price>' +
-    '        <tax>0.00</tax>' +
-    '        <gross-price>289.95</gross-price>' +
-    '    </merchandize-total>' +
-    '    <adjusted-merchandize-total>' +
-    '        <net-price>279.95</net-price>' +
-    '        <tax>0.00</tax>' +
-    '        <gross-price>269.95</gross-price>' +
-    '    </adjusted-merchandize-total>' +
-    '    <shipping-total>' +
-    '        <net-price>1235.99</net-price>' +
-    '        <tax>0.00</tax>' +
-    '        <gross-price>445.99</gross-price>' +
-    '    </shipping-total>' +
-    '    <adjusted-shipping-total>' +
-    '        <net-price>5412.99</net-price>' +
-    '        <tax>0.00</tax>' +
-    '        <gross-price>5.99</gross-price>' +
-    '    </adjusted-shipping-total>' +
-    '    <shipment-total>' +
-    '        <net-price>35.94</net-price>' +
-    '        <tax>0.00</tax>' +
-    '        <gross-price>35.94</gross-price>' +
-    '    </shipment-total>' +
-    '</totals>' +
     '</shipment>';
 
  return shipment_text;
@@ -305,26 +280,11 @@ function order_shipment(o_shipment){
 function order_totals(){
     var o_totals = 
     ' <totals> '+
-    '     <merchandize-total> '+
-    '         <net-price>2977.95</net-price> '+
-    '         <tax>0.00</tax> '+
-    '         <gross-price>2977.95</gross-price> '+
-    '     </merchandize-total> '+
-    '     <adjusted-merchandize-total> '+
-    '         <net-price>2944.95</net-price> '+
-    '         <tax>0.00</tax> '+
-    '         <gross-price>29.95</gross-price> '+
-    '     </adjusted-merchandize-total> '+
     '     <shipping-total> '+
     '         <net-price>5.99</net-price> '+
     '         <tax>0.00</tax> '+
     '         <gross-price>5.99</gross-price> '+
     '     </shipping-total> '+
-    '     <adjusted-shipping-total> '+
-    '         <net-price>5.99</net-price> '+
-    '         <tax>0.00</tax> '+
-    '         <gross-price>5.99</gross-price> '+
-    '     </adjusted-shipping-total> '+
     '     <order-total> '+
     '         <net-price>35.94</net-price> '+
     '         <tax>0.00</tax> '+
@@ -337,15 +297,15 @@ function order_totals(){
 function product_line_item(pli){
     var plitext = 
     '    <product-lineitem>' +
-    '        <net-price>11229.95</net-price>' +
+    '        <net-price>' + pli.A_TOTAL_NET_PRICE + '</net-price>' +
     '        <tax>0.19</tax>' +
-    '        <gross-price>129.95</gross-price>' +
+    '        <gross-price>' + pli.A_TOTAL_GROSS_PRICE + '</gross-price>' +
     '        <base-price>55.99</base-price>' +
-    '        <lineitem-text>HAMBURGER Chily Cheese BUNS 10.6oz</lineitem-text>' +
+    '        <lineitem-text>' + pli.A_PRODUCT_NAME + '</lineitem-text>' +
     '        <tax-basis>29.95</tax-basis>' +
     '        <position>1</position>' +
-    '        <product-id>1100440502</product-id>' +
-    '        <product-name>HAMBURGER Chily Cheese BUNS 10.6oz</product-name>' +
+    '        <product-id>' + pli.A_SKU + '</product-id>' + 
+    '        <product-name>' + pli.A_PRODUCT_NAME + '</product-name>' +
     '        <quantity unit="UNIT">12.0</quantity>' +
     '        <tax-rate>0.2</tax-rate>' +
     '        <shipment-id>00005324</shipment-id>' +
