@@ -69,16 +69,18 @@ function loadcustomers(inputfile){
   function parselineitems (full_lineitem){
     let litem = {};
     litem["A_PRODUCT_NAME"] = full_lineitem[3];
-    litem["A_TAXAMOUNT"] = full_lineitem[4];
-    litem["A_QUANTITY_VALUE"] = full_lineitem[5];
-    litem["A_UNIT_CODE"] = full_lineitem[6];
-    litem["A_POSITION"] = full_lineitem[7];
-    litem["A_TOTAL_NET_PRICE"]	= full_lineitem[9];
-    litem["A_TOTAL_GROSS_PRICE"] = full_lineitem[10];
-    litem["A_SINGLE_PRICE"] = full_lineitem[11];
-    litem["A_SKU"] = full_lineitem[19];
-    litem["A_MANUFACTURER_SKU"] = full_lineitem[20];
-    litem["A_TAX_RATE"] = full_lineitem[53];
+    litem["A_TAXAMOUNT"] = full_lineitem[5];
+    litem["A_QUANTITY_VALUE"] = full_lineitem[6];
+    litem["A_UNIT_CODE"] = full_lineitem[7];
+
+    litem["A_POSITION"] = full_lineitem[9];
+    litem["A_TOTAL_NET_PRICE"]	= full_lineitem[11];
+    litem["A_TOTAL_GROSS_PRICE"] = full_lineitem[12];
+    litem["A_SINGLE_PRICE"] = full_lineitem[13];
+    litem["A_SKU"] = full_lineitem[21];
+    litem["A_MANUFACTURER_SKU"] = full_lineitem[22];
+    litem["A_LINEITEM_TYPE_ID"] = full_lineitem[28];
+    litem["A_TAX_RATE"] = full_lineitem[55];
     
     return litem;
   }
@@ -143,11 +145,30 @@ function loadcustomers(inputfile){
     return addr;
   }
 
+function link_data(order_items,user_address,line_items,all_customers){
+    var arr_order_items = Object.keys(order_items);
+
+    //for (var i = 0, len = arr_order_items.length; i < len; i++) {
+    for (var i = 25, len = arr_order_items.length; i < len; i++) {
+        var order_no = arr_order_items[i];
+        var order = order_items[order_no][0];
+        var linecontainer_id = order["A_LINEITEMCONTAINER_ID"];
+        var user_id = order["A_USER_ID"];
+        var shipping_address_id = order["A_SHIPPINGADDRESS_ID"];
+        var billing_address_id = order["A_INVOICEADDRESS_ID"];
+        order["product_line_items"]= line_items[linecontainer_id];
+        order["user"]= all_customers[user_id];
+        order["shipping_address"]= user_address[shipping_address_id];
+        order["shipping_address"]= user_address[shipping_address_id];
+    }
+
+}
 
 
 module.exports = {
     loadcustomers:loadcustomers,
     loadlineitems:loadlineitems,
     loadorders:loadorders,
-    loadaddresses:loadaddresses
+    loadaddresses:loadaddresses,
+    link_data:link_data
 };

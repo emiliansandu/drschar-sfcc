@@ -15,25 +15,7 @@ console.log("line_items " + Object.keys(line_items).length);
 console.log("all_customers " + Object.keys(all_customers).length);
 
 
-function link_data(order_items,user_address,line_items,all_customers){
-    var arr_order_items = Object.keys(order_items);
-
-    //for (var i = 0, len = arr_order_items.length; i < len; i++) {
-    for (var i = 25, len = arr_order_items.length; i < 30; i++) {
-        var order_no = arr_order_items[i];
-        var order = order_items[order_no][0];
-        var linecontainer_id = order["A_LINEITEMCONTAINER_ID"];
-        var user_id = order["A_USER_ID"];
-        var shipping_address_id = order["A_SHIPPINGADDRESS_ID"];
-        var billing_address_id = order["A_INVOICEADDRESS_ID"];
-        order["product_line_items"]= line_items[linecontainer_id];
-        order["user"]= all_customers[user_id];
-        order["shipping_address"]= user_address[shipping_address_id];
-        order["shipping_address"]= user_address[shipping_address_id];
-    }
-
-}
-
+data_input.link_data(order_items,user_address,line_items,all_customers);
 
 var output_filename = "output/orders.xml";
 var output_stream = fs.createWriteStream(output_filename, { flags: 'a' });
@@ -49,21 +31,24 @@ output_stream.write('\r\n');
 
 var arr_order_items = Object.keys(order_items);
 
-for (var i = 0, len = arr_order_items.length; i < len; i++) {
-    let order_no = arr_order_items[i];
+for (var i = 25, len = arr_order_items.length; i < 30; i++) {
+    console.log("i= " + i);
+    var order_no = arr_order_items[i];
+    var order = order_items[order_no][0];
 
-//Object.keys(order_items).forEach(function (order_no) { 
-
-    let order_xml = sfcc.an_order(order);
+    if (order.A_USER_ID !== ''){
+    console.log("order_no= " + order_no);
+    var order_xml = sfcc.an_order(order);
     output_stream.write(order_xml);
     output_stream.write('\r\n');
-//})
-
+    } else {
+        console.log("Skip Order Without Registered user");
+    }
 }
 
 output_stream.write("</orders>");
 output_stream.write('\r\n');
 
 console.log("Listing : " + all_customers.length + " Customers");
-console.log("count_written : " + count_written + "  Correct");
-console.log("count_errors : " + count_errors + " With Errors");
+//console.log("count_written : " + count_written + "  Correct");
+//console.log("count_errors : " + count_errors + " With Errors");

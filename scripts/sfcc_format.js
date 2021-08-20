@@ -194,8 +194,15 @@ function customer(current) {
     return custmr;
 }
 
+function customer_longname(user){
 
-function order_function(order) {
+  let full_name = user.A_FIRSTNAME + '' + user.A_LASTNAME;
+  
+  return entities.encode(entities.decode("full_name")) 
+
+}
+
+function an_order(order) {
     var order_text =
     '<order order-no="'+order['A_ORDERNUMBER']+'">'+
     '<order-date>'+order['A_CREATION_DATE']+'</order-date>' +
@@ -205,15 +212,15 @@ function order_function(order) {
     '<taxation>net</taxation>' +
     '<customer>' +
     '  <customer-no>'+order['A_USER_ID']+'</customer-no>' +
-    '  <customer-name>Yo merenges registrado </customer-name>' +
-    '  <customer-email>rcervantes@unitedvirtualities.com</customer-email>' +
+    '  <customer-name>' + customer_longname(order.user); +' </customer-name>' +
+    '  <customer-email>' + order.user.A_EMAIL + '</customer-email>' +
     '</customer>';
 
     order_text += order_status(order);
     
     order_text += '<product-lineitems>';
     for (let pli = 0; pli < order.product_line_items.length; pli++) {
-        order_text += product_line_items(order.product_line_items[pli]);
+        order_text += product_line_item(order.product_line_items[pli],order);
     }
     order_text += '</product-lineitems>';
 
@@ -233,10 +240,10 @@ function order_function(order) {
     ' </shipping-lineitems> '+ 
 
     '<shipments>' + 
-       order_shipment() +
+       order_shipment(order) +
     '</shipments>'+
 
-    order_totals() +
+    order_totals(order) +
     
     '</order>';
 
@@ -254,22 +261,22 @@ function order_status(order){
 return os;
 }
 
-function order_shipment(o_shipment){
+function order_shipment(order){
  var shipment_text = 
-    '<shipment shipment-id="'+o_shipment['A_ORDERNUMBER']+'">' +
+    '<shipment shipment-id="'+order.A_ORDERNUMBER +'">' +
     '<status>' +
     '    <shipping-status>SHIPPED</shipping-status>' +
     '</status>' +
     '<shipping-method>001</shipping-method>' +
     '<shipping-address>' +
-    '    <first-name>Ruben</first-name>' + 
-    '    <last-name>Cervantes</last-name>' + 
-    '    <address1>Uhlandstr 8</address1>' + 
-    '    <city>Atlantic City</city>' + 
-    '    <postal-code>92237</postal-code>' + 
-    '    <state-code>NJ</state-code>' + 
-    '    <country-code>US</country-code>' + 
-    '    <phone>9876543219</phone>' + 
+    '    <first-name>' + order.shipping_address[0].A_FIRSTNAME + '</first-name>' + 
+    '    <last-name>' + order.shipping_address[0].A_LASTNAME + '</last-name>' + 
+    '    <address1>' + order.shipping_address[0].A_STREET + ' 8</address1>' + 
+    '    <city>' + order.shipping_address[0].A_CITY + '</city>' + 
+    '    <postal-code>' + order.shipping_address[0].A_POSTALCODE + '</postal-code>' + 
+    '    <state-code>' + order.shipping_address[0].A_PROVINCE + '</state-code>' + 
+    '    <country-code>' + order.shipping_address[0].A_COUNTRY_ID + '</country-code>' + 
+    '    <phone>' + order.shipping_address[0].A_PHONE + '</phone>' + 
     '</shipping-address>' +
     '</shipment>';
 
@@ -294,21 +301,21 @@ function order_totals(){
     return o_totals;
 }
 
-function product_line_item(pli){
+function product_line_item(pli,order){
     var plitext = 
     '    <product-lineitem>' +
     '        <net-price>' + pli.A_TOTAL_NET_PRICE + '</net-price>' +
-    '        <tax>0.19</tax>' +
+    '        <tax>' + pli.A_TAXAMOUNT + '</tax>' +
     '        <gross-price>' + pli.A_TOTAL_GROSS_PRICE + '</gross-price>' +
-    '        <base-price>55.99</base-price>' +
+    '        <base-price>' + pli.A_TOTAL_NET_PRICE + '</base-price>' +
     '        <lineitem-text>' + pli.A_PRODUCT_NAME + '</lineitem-text>' +
-    '        <tax-basis>29.95</tax-basis>' +
-    '        <position>1</position>' +
+    '        <tax-basis>' + pli.A_TAX_RATE + '</tax-basis>' +
+    '        <position>' + pli.A_POSITION + '</position>' +
     '        <product-id>' + pli.A_SKU + '</product-id>' + 
     '        <product-name>' + pli.A_PRODUCT_NAME + '</product-name>' +
-    '        <quantity unit="UNIT">12.0</quantity>' +
-    '        <tax-rate>0.2</tax-rate>' +
-    '        <shipment-id>00005324</shipment-id>' +
+    '        <quantity unit="' + pli.A_UNIT_CODE + '">' + pli.A_QUANTITY_VALUE + '</quantity>' +
+    '        <tax-rate>' + pli.A_TAX_RATE + '</tax-rate>' +
+    '        <shipment-id>' + order.A_ORDERNUMBER + '</shipment-id>' +
     '        <gift>false</gift>' +
     '    </product-lineitem>';
     return plitext;
@@ -318,7 +325,7 @@ function product_line_item(pli){
 module.exports = {
     start_catalogue:start_catalogue,
     start_orders:start_orders,
-    an_order:order_function,
+    an_order:an_order,
     header_catalogue:header_catalogue,
     root_catalogue:root_catalogue,
     product_part:product_part,
