@@ -196,9 +196,9 @@ function customer(current) {
 
 function customer_longname(user){
 
-  let full_name = user.A_FIRSTNAME + '' + user.A_LASTNAME;
+  let full_name = user[0].A_FIRSTNAME + '' + user[0].A_LASTNAME;
   
-  return entities.encode(entities.decode(full_name)) 
+  return entities.encode(entities.decode(full_name));
 
 }
 
@@ -220,8 +220,8 @@ function an_order(order) {
     '<taxation>net</taxation>' +
     '<customer>' +
     '  <customer-no>'+order['A_USER_ID']+'</customer-no>' +
-    '  <customer-name>' + customer_longname(order.user) +' </customer-name>' +
-    '  <customer-email>' + order.user.A_EMAIL + '</customer-email>' +
+    '  <customer-name>' + customer_longname(order.user) +'</customer-name>' +
+    '  <customer-email>' + order.user[0].A_EMAIL + '</customer-email>' +
     '</customer>';
 
     order_text += order_status(order);
@@ -233,13 +233,11 @@ function an_order(order) {
     order_text += '</product-lineitems>';
 
     order_text += 
-    ' <shipping-lineitems> '+ 
-    '     <shipping-lineitem> ';
+    ' <shipping-lineitems> ';
     for (let pli = 0; pli < order.product_line_items.length; pli++) {
         order_text += shipping_line_item(order.product_line_items[pli],order);
     }
     order_text += 
-    '     </shipping-lineitem> '+ 
     ' </shipping-lineitems> '+ 
 
     '<shipments>' + 
@@ -272,13 +270,13 @@ function order_shipment(order){
     '</status>' +
     '<shipping-method>001</shipping-method>' +
     '<shipping-address>' +
-    '    <first-name>' + order.shipping_address[0].A_FIRSTNAME + '</first-name>' + 
-    '    <last-name>' + order.shipping_address[0].A_LASTNAME + '</last-name>' + 
+    '    <first-name>' + entities.encode(entities.decode(order.shipping_address[0].A_FIRSTNAME)) + '</first-name>' + 
+    '    <last-name>' + entities.encode(entities.decode(order.shipping_address[0].A_LASTNAME)) + '</last-name>' + 
     '    <address1>' + order.shipping_address[0].A_STREET + ' 8</address1>' + 
     '    <city>' + order.shipping_address[0].A_CITY + '</city>' + 
     '    <postal-code>' + order.shipping_address[0].A_POSTALCODE + '</postal-code>' + 
     '    <state-code>' + order.shipping_address[0].A_PROVINCE + '</state-code>' + 
-    '    <country-code>' + order.shipping_address[0].A_COUNTRY_ID + '</country-code>' + 
+    '    <country-code>' + (order.shipping_address[0].A_COUNTRY_ID || "US") + '</country-code>' + 
     '    <phone>' + order.shipping_address[0].A_PHONE + '</phone>' + 
     '</shipping-address>' +
     '</shipment>';
@@ -288,6 +286,9 @@ function order_shipment(order){
 
 
 function order_totals(order){
+
+let thetax = 0;order.A_TAX_AMOUNT
+
     var o_totals = 
     ' <totals> '+
     '     <shipping-total> '+
@@ -297,7 +298,7 @@ function order_totals(order){
     '     </shipping-total> '+
     '     <order-total> '+
     '         <net-price>' + order.A_SUBTOTAL_NET_PRICE + '</net-price> '+ 
-    '         <tax>' + order.A_TAX_AMOUNT + '</tax> '+ 
+    '         <tax>' + (order.A_TAX_AMOUNT || "0") + '</tax> '+ 
     '         <gross-price>' + order.A_GRANDTOTAL_GROSS_PRICE + '</gross-price> '+ 
     '     </order-total> '+
     ' </totals> ';
@@ -329,6 +330,7 @@ function product_line_item(pli,order){
 function shipping_line_item(pli,order){
     if (pli.A_LINEITEM_TYPE_ID !== "2"){ return ""; }
     var slitext = 
+    '     <shipping-lineitem> '+
     '         <net-price>' + pli.A_SINGLE_PRICE + '</net-price> '+ 
     '         <tax>' + pli.A_TAXAMOUNT + '</tax> '+ 
     '         <gross-price>' + pli.A_TOTAL_GROSS_PRICE + '</gross-price> '+ 
@@ -337,8 +339,8 @@ function shipping_line_item(pli,order){
     '         <tax-basis>' + pli.A_TOTAL_NET_PRICE + '</tax-basis> '+ 
     '         <item-id>STANDARD_SHIPPING</item-id> '+ 
     '         <shipment-id>'+order['A_ORDERNUMBER']+'</shipment-id> '+ 
-    '         <tax-rate>' + pli.A_TAX_RATE + '</tax-rate> ';
-
+    '         <tax-rate>' + pli.A_TAX_RATE + '</tax-rate> '+
+    '     </shipping-lineitem> ';
     order["totals"] = { 
         "shippingNet": pli.A_TOTAL_NET_PRICE , 
         "shippingTax": pli.A_TAXAMOUNT , 

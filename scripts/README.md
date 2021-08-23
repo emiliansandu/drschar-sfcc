@@ -24,9 +24,11 @@ Steps
  - Unzip file ( will create the schaer_export folder)
  - run node customers2xml.js 
  - This generates the output/users.xml file wich can be imported to the instance
+    - Merchant Tools >  Customers >  Import &amp; Export > Import Customer List
 
  - run node orderHistory2xml.js
- - This generates the output/xxx.xml 
+ - This generates the output files/ order_<lastcustomernumber>.xml 
+
 
 
  node vkbeautify.js

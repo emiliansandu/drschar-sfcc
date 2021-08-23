@@ -14,7 +14,7 @@ var output_stream = fs.createWriteStream(output_filename, { flags: 'a' });
 var output_error_stream = fs.createWriteStream("errors.xml", { flags: 'a' });
 
 var customer_list;
-customer_list = sfcc.start_customer_list("customer-list");
+customer_list = sfcc.start_customer_list("drschar");
 
 output_stream.write(customer_list);
 output_stream.write('\r\n');

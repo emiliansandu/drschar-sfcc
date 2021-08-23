@@ -1,3 +1,4 @@
+var start = new Date();
 var fs = require('fs');
 var sfcc = require("./sfcc_format.js");
 var data_input = require("./read_customers.js");
@@ -34,34 +35,51 @@ output_stream.write('\r\n');
 
 var arr_order_items = Object.keys(order_items);
 
+var count_orders = 0;
 var count_guests = 0;
 var count_canceled = 0;
-var to_log;
 
-for (var i = 25, len = arr_order_items.length; i < len; i++) {
-    to_log = "";
-    console.log("i= " + i);
+for (var i = 25, len = arr_order_items.length; i < len-3; i++) {
+    //console.log("i= " + i);
     var order_no = arr_order_items[i];
     var order = order_items[order_no][0];
 
 
     if (order.A_ORDERSTATUS_ID === '90'){
-        to_log += "Order Canceled";
+        //console.log("Order Canceled");
         count_canceled++;
         continue;
     }
     if (order.A_USER_ID === ''){
-        to_log += "Skip Order Without Registered user";
+        //console.log("Skip Order Without Registered user");
         count_guests++;
         continue;
     }
 
-    to_log = "order_no= " + order_no;
+    if (order.A_ORDERNUMBER === ''){
+        //console.log("Skip Line no more orders");
+        continue;
+    }
+
     var order_xml = sfcc.an_order(order);
+    count_orders++;
+
+    if (count_orders%5000 == 0){
+        console.log("Corte de Archivo i:" + i + " order_no= " + order_no );
+            output_stream.write(order_xml);
+            output_stream.write('\r\n');
+            output_stream.write("</orders>");
+            output_stream.write('\r\n');
+
+            let output_filename = "output/orders_" + order_no + ".xml";
+            output_stream = fs.createWriteStream(output_filename, { flags: 'a' });
+            output_stream.write(sfcc.start_orders());
+            output_stream.write('\r\n');
+            continue;
+    }
+
     output_stream.write(order_xml);
     output_stream.write('\r\n');
-
-    console.log(to_log);
 }
 
 output_stream.write("</orders>");
@@ -70,3 +88,7 @@ output_stream.write('\r\n');
 console.log("Listing : " + all_customers.length + " Customers");
 console.log("count_guests : " + count_guests + "  Guests ( Skiped )");
 console.log("count_canceled : " + count_canceled + " Canceled");
+console.log("count_orders : " + count_orders + " Imported");
+
+var end = new Date() - start;
+console.log('Execution time: %dms', end)

@@ -79,8 +79,8 @@ function loadcustomers(inputfile){
   }
 
   function loadlineitems(){
-    var inputfile = "schaer_export/export_lineitems_short50000.csv";
-    //var inputfile = "schaer_export/export_lineitems.csv";
+    //var inputfile = "schaer_export/export_lineitems_short50000.csv";
+    var inputfile = "schaer_export/export_lineitems.csv";
     var csv =  fs.readFileSync(inputfile, 'utf8');
     var options={"separator" : ";"};
     var data = $.csv.toArrays(csv, options);
