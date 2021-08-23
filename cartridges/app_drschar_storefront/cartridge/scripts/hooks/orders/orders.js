@@ -1,14 +1,15 @@
 "use strict";
 var Status = require("dw/system/Status");
-var URLUtils = require('dw/web/URLUtils');
 var OrderUtil = require('../util/orderUtil');
 var paymentMgr = require('dw/order/PaymentMgr');
 var COHelpers = require('*/cartridge/scripts/checkout/checkoutHelpers');
+var Site = require('dw/system/Site');
+var hostpreference = Site.current.getCustomPreferenceValue('hostEmailImage');
 
 function sendMail(order) {
   var status;
-  var host = OrderUtil.getHost();
-  var locale = OrderUtil.getLocale();
+  var host = hostpreference || '';
+  var locale = order.customerLocaleID;
   var contentAsset = OrderUtil.getContentAsset();
   var paymentid= order.paymentInstrument.paymentMethod;
   var paymentObject=paymentMgr.getPaymentMethod(paymentid);
