@@ -857,6 +857,25 @@
                                     <!-- Column : END -->
                                     
                                 </tr>
+                                <isloop items="${pdict.order.totals.discounts}" var="discount" status="loopstatus">
+                                    <tr>
+                                        <!-- Column : BEGIN -->
+                                        <td width="33.33%" valign="top"
+                                            style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px; color:green;">
+                                            ${discount.lineItemText}
+                                        </td>
+                                        <!-- Column : END -->
+                                        <!-- Column : BEGIN -->
+                                        <!--- Sales Tax --->
+                                        <td width="66.66%" valign="top" align="right"
+                                            style="font-family: Arial, sans-serif;  padding: 4px 10px; font-size:14px; color:green;"
+                                            valign="top">
+                                            ${discount.price}
+                                        </td>
+                                        <!-- Column : END -->
+                                        
+                                    </tr>
+                                </isloop>
                                 <tr>
                                     <td width="100%" height="20" colspan="2" aria-hidden="true"
                                         style="font-size: 1px; line-height: 1px; background-color: #FFFFFF;">&nbsp;
