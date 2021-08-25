@@ -144,7 +144,15 @@ server.replace('SubmitRegistration',
         var birthday = null;
         if(registrationForm.customer.dateofbirth.htmlValue != ''){
             var birthdayForm = registrationForm.customer.dateofbirth.htmlValue;
-            birthday = new Date(birthdayForm);
+            var arrayDate = birthdayForm.split('-');
+            var year = parseFloat(arrayDate[0]);
+            var mont = parseFloat(arrayDate[1]-1);
+            var day = parseFloat(arrayDate[2]);
+            var newDate = new Date();
+            newDate.setDate(day);
+            newDate.setMonth(mont);
+            newDate.setFullYear(year);
+            birthday=newDate;
         }
 
         // setting variables for the BeforeComplete function

@@ -6613,6 +6613,13 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="hostEmailImage">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="Storefront Configs">
@@ -6687,6 +6694,10 @@ Direct or Redirect</description>
             <attribute-group group-id="AvaTax">
                 <display-name xml:lang="x-default">AvaTax</display-name>
                 <attribute attribute-id="ATSettings"/>
+            </attribute-group>
+            <attribute-group group-id="E-mail">
+                <display-name xml:lang="x-default">E-mail</display-name>
+                <attribute attribute-id="hostEmailImage"/>
             </attribute-group>
             <attribute-group group-id="GTM">
                 <display-name xml:lang="x-default">Google Tag Manager</display-name>
