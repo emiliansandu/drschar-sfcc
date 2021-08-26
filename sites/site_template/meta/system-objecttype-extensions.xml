@@ -4349,6 +4349,13 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="subscribedCorp">
+                <display-name xml:lang="x-default">Subscribed Corp</display-name>
+                <description xml:lang="x-default"></description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
             <attribute-definition attribute-id="synced">
                 <display-name xml:lang="x-default">Synced</display-name>
                 <description xml:lang="x-default"></description>
@@ -4388,6 +4395,7 @@ Direct or Redirect</description>
             <attribute-group group-id="MarketingCloud">
                 <display-name xml:lang="x-default">Marketing Cloud</display-name>
                 <attribute attribute-id="subscribed"/>
+                <attribute attribute-id="subscribedCorp"/>
                 <attribute attribute-id="synced"/>
             </attribute-group>
         </group-definitions>
