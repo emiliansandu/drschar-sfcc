@@ -1,0 +1,4 @@
+<p>
+    I agree to receive the newsletter and to the other marketing purposes from
+    <b><a href="${URLUtils.http('Page-Show', 'cid', 'privacy-policy-USA')}">Dr. Schar US</a></b>
+</p>
