@@ -218,6 +218,7 @@ server.replace('SubmitRegistration',
                                 newCustomerProfile.email = registrationForm.email;
                                 newCustomerProfile.custom.subscribed = registrationForm.form.customer.subscribed.checked;
                                 newCustomerProfile.custom.subscribedCorp = registrationForm.form.customer.subscribedcorp.checked;
+                                newCustomerProfile.custom.synced = false;
                             }
                         });
                     } catch (e) {
