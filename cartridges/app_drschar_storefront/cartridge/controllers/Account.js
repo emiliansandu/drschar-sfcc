@@ -216,7 +216,8 @@ server.replace('SubmitRegistration',
                                 newCustomerProfile.lastName = registrationForm.lastName;
                                 newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.email = registrationForm.email;
-                                newCustomerProfile.custom.subscribed = registrationForm.form.customer.addtoemaillist.checked;
+                                newCustomerProfile.custom.subscribed = registrationForm.form.customer.subscribed.checked;
+                                newCustomerProfile.custom.subscribedCorp = registrationForm.form.customer.subscribedcorp.checked;
                             }
                         });
                     } catch (e) {
