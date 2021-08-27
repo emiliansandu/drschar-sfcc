@@ -55,8 +55,20 @@
 			type="string"/> 
 
 		<field 
-			formid="addtoemaillist" 
-			label="description.checkbox.emailsignup.profile"  
+			formid="abletocreateaccount" 
+			label="description.checkbox.abletocreateaccount.profile"
+			mandatory="true"
+			missing-error="error.message.required"  
+			type="boolean"/>
+
+		<field 
+			formid="subscribed" 
+			label="description.checkbox.subscribed.profile"  
+			type="boolean"/>
+
+		<field 
+			formid="subscribedcorp" 
+			label="description.checkbox.subscribedcorp.profile"  
 			type="boolean"/>
 
 		<field 

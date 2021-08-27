@@ -146,14 +146,42 @@
         <div class="invalid-feedback" id="form-password-confirm-error"></div>
     </div>
 
+    <div class="mandatory-checkbox">
+        <div class="form-group custom-control custom-checkbox 
+            <isif condition="${!!pdict.profileForm.customer.abletocreateaccount.mandatory === true}">required</isif>">
+            <input
+                type="checkbox"
+                class="custom-control-input form-control-label" id="able-to-create-account"
+                data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                <isprint value=${pdict.profileForm.customer.abletocreateaccount.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="able-to-create-account">
+                <isinclude template="account/components/registerPrivacy"/>
+            </label>
+            <div class="invalid-feedback" id="form-phone-error"></div>
+        </div>
+    </div>
+    
+
     <div class="form-group custom-control custom-checkbox">
         <input
             type="checkbox"
-            class="custom-control-input" id="add-to-email-list"
-            <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
+            class="custom-control-input" id="subscribed"
+            <isprint value=${pdict.profileForm.customer.subscribed.attributes} encoding="off" />
         >
-        <label class="custom-control-label" for="add-to-email-list">
-            <isinclude template="account/components/registerPrivacy"/>
+        <label class="custom-control-label" for="subscribed">
+            <isinclude template="account/components/registerSubscribed"/>
+        </label>
+    </div>
+
+    <div class="form-group custom-control custom-checkbox">
+        <input
+            type="checkbox"
+            class="custom-control-input" id="subscribed-corp"
+            <isprint value=${pdict.profileForm.customer.subscribedcorp.attributes} encoding="off" />
+        >
+        <label class="custom-control-label" for="subscribed-corp">
+            <isinclude template="account/components/registerSubscribedCorp"/>
         </label>
     </div>
 

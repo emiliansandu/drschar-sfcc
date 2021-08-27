@@ -1,0 +1,10 @@
+@import '../variables';
+@import 'base/components/_formFields';
+
+.mandatory-checkbox::before {
+    content: "*";
+    color: $danger;
+    margin-left: -10px;
+    margin-bottom: -25px;
+    display: flex;
+}
