@@ -307,6 +307,8 @@ server.replace('SubmitRegistration',
         var result = {
             newPassword: passwordForm.newpassword.value,
             newPasswordConfirm: passwordForm.newpasswordconfirm.value,
+            subscribed: passwordForm.subscribed.checked,
+            subscribedcorp: passwordForm.subscribedcorp.checked,
             token: token,
             passwordForm: passwordForm
         };
@@ -322,6 +324,9 @@ server.replace('SubmitRegistration',
             var resettingCustomer;
             Transaction.wrap(function () {
                 resettingCustomer = CustomerMgr.getCustomerByToken(formInfo.token);
+                resettingCustomer.profile.custom.subscribed = formInfo.subscribed;
+                resettingCustomer.profile.custom.subscribedCorp = formInfo.subscribedcorp;
+                resettingCustomer.profile.custom.synced = false;
                 status = resettingCustomer.profile.credentials.setPasswordWithToken(
                     formInfo.token,
                     formInfo.newPassword
