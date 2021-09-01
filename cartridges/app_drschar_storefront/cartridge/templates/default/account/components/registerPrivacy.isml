@@ -1,19 +1,7 @@
 <p>
-    I declare that I have read and understood the information notice both into the
-    <b><a href="${URLUtils.http('Page-Show', 'cid', 'privacy-policy-EU')}">Dr. Schar Corporate Privacy Policy</a></b> and
+    I have read and understood the information notice both into the
+    <b><a href="${URLUtils.http('Page-Show', 'cid', 'privacy-policy-EU')}">Dr. Schar Corporate Privacy Policy</a></b>
+    and
     <b><a href="${URLUtils.http('Page-Show', 'cid', 'privacy-policy-USA')}">Dr. Schar US Privacy Policy</a></b>
     on the use of my personal data for the creation of my account.
-</p>
-<p>
-    To the processing of my personal data, including for the purpose
-    of sending advertising and marketing material, I give my consent (voluntary consent):
-</p>
-    <div class="row">
-            <li class="col-4">Marketing US</li>
-            <li class="col-4">Marketing Corporate</li>
-            <li class="col-4">Marketing US + Corporate</li>        
-    </div>
-<p>     
-    By clicking "Create Account" you agree to accept these terms and conditions and declare that you are a US Citizen or
-    you are established in US Country.
 </p>

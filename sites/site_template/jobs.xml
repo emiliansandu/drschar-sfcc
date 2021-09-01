@@ -59,7 +59,7 @@
                 <parameters>
                     <parameter name="TargetFolder">MarketingCloud</parameter>
                     <parameter name="Filename">subscribed-customers.xml</parameter>
-                    <parameter name="Query">custom.subscribed = true AND custom.synced= false</parameter>
+                    <parameter name="Query">custom.subscribed = true OR custom.subscribedCorp = true AND custom.synced= false</parameter>
                     <parameter name="OverwriteExportFile">true</parameter>
                 </parameters>
             </step>
