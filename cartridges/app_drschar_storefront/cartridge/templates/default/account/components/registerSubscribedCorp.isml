@@ -1,4 +1,4 @@
 <p>
-    I agree to receive the newsletter and to the other marketing purposes from
+    I agree to be profiled to receive newsletters and other marketing information tailored to my interests from 
     <b><a href="${URLUtils.http('Page-Show', 'cid', 'privacy-policy-EU')}">Dr. Schar Corporate</a></b>
 </p>
