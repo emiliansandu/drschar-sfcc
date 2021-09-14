@@ -4334,28 +4334,24 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
-
             <attribute-definition attribute-id="subscribed">
                 <display-name xml:lang="x-default">Subscribed</display-name>
-                <description xml:lang="x-default"></description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="subscribedCorp">
                 <display-name xml:lang="x-default">Subscribed Corp</display-name>
-                <description xml:lang="x-default"></description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
             </attribute-definition>
             <attribute-definition attribute-id="synced">
                 <display-name xml:lang="x-default">Synced</display-name>
-                <description xml:lang="x-default"></description>
                 <type>boolean</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>    
+            </attribute-definition>
             <attribute-definition attribute-id="yotpoLoyaltyTier">
                 <display-name xml:lang="x-default">Yotpo Loyalty Tier</display-name>
                 <description xml:lang="x-default">The VIP tiers the customer belongs to based on criteria found in Yotpo Loyalty Admin (may be accessed via swellAPI.getVipTiers()).</description>
@@ -4363,7 +4359,7 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-            </attribute-definition> 
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="Standard">
@@ -5848,6 +5844,12 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>true</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="hostEmailImage">
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="installmentType1">
                 <display-name xml:lang="x-default">Installments For Argentina and Brazil</display-name>
                 <type>enum-of-string</type>
@@ -6572,7 +6574,10 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://staticw2.yotpo.com/</default-value>
             </attribute-definition>
+<<<<<<< HEAD
 
+=======
+>>>>>>> release/1.1.2
             <attribute-definition attribute-id="zendeskCartridgeEnabled">
                 <display-name xml:lang="x-default">Zendesk Cartridge Enabled</display-name>
                 <type>boolean</type>
@@ -6580,6 +6585,7 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>true</default-value>
             </attribute-definition>
+<<<<<<< HEAD
 
             <attribute-definition attribute-id="zendeskContacUsKey">
                 <display-name xml:lang="x-default">Zendesk Key</display-name>
@@ -6592,26 +6598,59 @@ Direct or Redirect</description>
 
             <attribute-definition attribute-id="zendeskDomain">
                 <display-name xml:lang="x-default">zendeskDomain</display-name>
+=======
+            <attribute-definition attribute-id="zendeskContacUsKey">
+                <display-name xml:lang="x-default">Zendesk Key</display-name>
+>>>>>>> release/1.1.2
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
                 <default-value>https://xxxxxxxx.zendesk.com</default-value>
             </attribute-definition>
+<<<<<<< HEAD
             <attribute-definition attribute-id="zendeskEmail">
+=======
+            <attribute-definition attribute-id="zendeskDomain">
+                <display-name xml:lang="x-default">zendeskDomain</display-name>
+>>>>>>> release/1.1.2
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
+<<<<<<< HEAD
             </attribute-definition>
             <attribute-definition attribute-id="zendeskKey">
                 <display-name xml:lang="x-default">Zendesk Key</display-name>
+=======
+                <default-value>https://xxxxxxxx.zendesk.com</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="zendeskEmail">
+>>>>>>> release/1.1.2
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
+<<<<<<< HEAD
                 <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="zendeskStaticContentURL">
+                <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
+=======
+            </attribute-definition>
+            <attribute-definition attribute-id="zendeskKey">
+                <display-name xml:lang="x-default">Zendesk Key</display-name>
+>>>>>>> release/1.1.2
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+<<<<<<< HEAD
+                <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
+=======
+                <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
+>>>>>>> release/1.1.2
             </attribute-definition>
             <attribute-definition attribute-id="zendeskStaticContentURL">
                 <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
@@ -6620,13 +6659,6 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
                 <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="hostEmailImage">
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
             </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
@@ -6660,10 +6692,6 @@ Direct or Redirect</description>
                 <attribute attribute-id="zendeskStaticContentURL"/>
                 <attribute attribute-id="zendeskDomain"/>
                 <attribute attribute-id="zendeskEmail"/>
-            </attribute-group>
-            <attribute-group group-id="Zendesk_ContacUs_Config">
-                <display-name xml:lang="x-default">Zendesk Contact Us Configutarion</display-name>
-                <attribute attribute-id="zendeskContacUsKey"/>
             </attribute-group>
             <attribute-group group-id="GA">
                 <display-name xml:lang="x-default">Google Analitytics</display-name>
@@ -6702,10 +6730,6 @@ Direct or Redirect</description>
             <attribute-group group-id="AvaTax">
                 <display-name xml:lang="x-default">AvaTax</display-name>
                 <attribute attribute-id="ATSettings"/>
-            </attribute-group>
-            <attribute-group group-id="E-mail">
-                <display-name xml:lang="x-default">E-mail</display-name>
-                <attribute attribute-id="hostEmailImage"/>
             </attribute-group>
             <attribute-group group-id="GTM">
                 <display-name xml:lang="x-default">Google Tag Manager</display-name>
@@ -6748,6 +6772,14 @@ Direct or Redirect</description>
                 <attribute attribute-id="yotpoLoyaltyEnableOrderFeed"/>
                 <attribute attribute-id="yotpoLoyaltyEnableCustomerFeed"/>
                 <attribute attribute-id="yotpoLoyaltyCheckoutInstanceID"/>
+            </attribute-group>
+            <attribute-group group-id="Zendesk_ContacUs_Config">
+                <display-name xml:lang="x-default">Zendesk Contact Us Configutarion</display-name>
+                <attribute attribute-id="zendeskContacUsKey"/>
+            </attribute-group>
+            <attribute-group group-id="E-mail">
+                <display-name xml:lang="x-default">E-mail</display-name>
+                <attribute attribute-id="hostEmailImage"/>
             </attribute-group>
         </group-definitions>
     </type-extension>

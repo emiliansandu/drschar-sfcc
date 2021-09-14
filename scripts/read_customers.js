@@ -188,8 +188,8 @@ function loadcustomers(inputfile){
 function link_data(order_items,user_address,line_items,customers_id){
     var arr_order_items = Object.keys(order_items);
 
-    //for (var i = 0, len = arr_order_items.length; i < len; i++) {
-    for (var i = 25, len = arr_order_items.length; i < len; i++) {
+    for (var i = 0, len = arr_order_items.length; i < len; i++) {
+    //for (var i = 25, len = arr_order_items.length; i < len; i++) {
         var order_no = arr_order_items[i];
         var order = order_items[order_no][0];
         var linecontainer_id = order["A_LINEITEMCONTAINER_ID"];
