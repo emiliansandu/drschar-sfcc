@@ -1,69 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
-
-
-    <type-extension type-id="SitePreferences">
-        <custom-attribute-definitions>
-            <attribute-definition attribute-id="enableGoogleRecaptcha">
-                <display-name xml:lang="x-default">Enable Google Recaptcha V3</display-name>
-                <description xml:lang="x-default">If enable, Google recaptcha V3 is enabled</description>
-                <type>boolean</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <default-value>false</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="googleRecaptchaSiteKey">
-                <display-name xml:lang="x-default">Google Recaptcha Site Key</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="googleRecaptchaSecretKey">
-                <display-name xml:lang="x-default">Google Recaptcha Secret Key</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="googleRecaptchaScript">
-                <display-name xml:lang="x-default">Google Recaptcha Script</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
-            <attribute-definition attribute-id="botScoreThreshold">
-                <display-name xml:lang="x-default">Bot Score Threshold</display-name>
-                <description xml:lang="x-default">Configure score threshold to identify bot vs human. The score needs to be between 0 to 1 where score 1 is identifies as human.</description>
-                <type>double</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <default-value>0.3</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="formNameForRecaptchaVerification">
-                <display-name xml:lang="x-default">Form Name For Recaptcha Verification</display-name>
-                <description xml:lang="x-default">Configure the Form Name and true/false In JSON format for Recaptcha Verification.</description>
-                <type>text</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-            </attribute-definition>
-        </custom-attribute-definitions>
-        <group-definitions>
-            <attribute-group group-id="GoogleRecaptchaConfig">
-                <display-name xml:lang="x-default">Google Recaptcha Configuration</display-name>
-                <attribute attribute-id="enableGoogleRecaptcha"/>
-                <attribute attribute-id="googleRecaptchaSiteKey"/>
-                <attribute attribute-id="googleRecaptchaSecretKey"/>
-                <attribute attribute-id="googleRecaptchaScript"/>
-                <attribute attribute-id="botScoreThreshold"/>
-                <attribute attribute-id="formNameForRecaptchaVerification"/>
-            </attribute-group>
-        </group-definitions>
-    </type-extension>
-
-
-
     <custom-type type-id="ConfiguredLabels">
         <display-name xml:lang="x-default">Configured Labels</display-name>
         <description xml:lang="x-default">This Custom Object Will Have all The name value pairs of configured labels in BM</description>
@@ -298,8 +234,8 @@
 
     <custom-type type-id="NutritionFacts">
         <display-name xml:lang="x-default">Nutrition Facts</display-name>
-        <staging-mode>source-to-target</staging-mode>
-        <storage-scope>organization</storage-scope>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
         <key-definition attribute-id="ID">
             <type>string</type>
             <min-length>0</min-length>
@@ -970,21 +906,7 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
-    <custom-type type-id="marketingCustomer">
-        <display-name xml:lang="x-default">Marketing Customer</display-name>
-        <staging-mode>no-staging</staging-mode>
-        <storage-scope>organization</storage-scope>
-        <key-definition attribute-id="emailAddress">
-            <type>string</type>
-            <min-length>0</min-length>
-        </key-definition>
-        <group-definitions>
-            <attribute-group group-id="marketingCustomerData">
-                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
-                <attribute attribute-id="emailAddress"/>
-            </attribute-group>
-        </group-definitions>
-    </custom-type>
+
     <custom-type type-id="yotpoConfiguration">
         <display-name xml:lang="x-default">Yotpo Configuration</display-name>
         <description xml:lang="x-default">The configuration object that holds mandatory parameters for Yotpo.</description>
