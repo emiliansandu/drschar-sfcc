@@ -39,25 +39,25 @@ var count_orders = 0;
 var count_guests = 0;
 var count_canceled = 0;
 
-for (var i = 25, len = arr_order_items.length; i < len-3; i++) {
-    //console.log("i= " + i);
+for (var i = 0, len = arr_order_items.length; i < len; i++) {
+    console.log("i= " + i);
     var order_no = arr_order_items[i];
     var order = order_items[order_no][0];
 
 
     if (order.A_ORDERSTATUS_ID === '90'){
-        //console.log("Order Canceled");
+        console.log("Order Canceled");
         count_canceled++;
         continue;
     }
     if (order.A_USER_ID === ''){
-        //console.log("Skip Order Without Registered user");
+        console.log("Skip Order Without Registered user");
         count_guests++;
         continue;
     }
 
     if (order.A_ORDERNUMBER === ''){
-        //console.log("Skip Line no more orders");
+        console.log("Skip Line no more orders");
         continue;
     }
 
