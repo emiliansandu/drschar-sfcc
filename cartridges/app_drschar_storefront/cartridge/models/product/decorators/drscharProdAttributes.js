@@ -36,7 +36,7 @@ module.exports = function (object, apiProduct) {
     });
     Object.defineProperty(object, 'gcWheatFree', {
         enumerable: true,
-        value: apiProduct.custom.gcGlutenFree
+        value: apiProduct.custom.gcWheatFree
     });
     Object.defineProperty(object, 'gcDairyFree', {
         enumerable: true,
