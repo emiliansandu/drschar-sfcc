@@ -16,6 +16,11 @@ module.exports = function (object, apiProduct, type) {
         value: apiProduct.name
     });
 
+    Object.defineProperty(object, 'displayProductName', {
+        enumerable: true,
+        value: apiProduct.custom.displayProductName
+    });
+
     Object.defineProperty(object, 'productType', {
         enumerable: true,
         value: type
