@@ -23,7 +23,11 @@
             <!-- Product Name -->
             <div class="row">
                 <div class="col">
-                    <span class="product-name">${product.productName}</span>
+                    <isif condition="${product.displayProductName}">
+                        <span class="product-name">${product.displayProductName}</span>
+                    <iselse/>
+                        <span class="product-name">${product.productName}</span>
+                    </isif>
                 </div>
             </div>
 
