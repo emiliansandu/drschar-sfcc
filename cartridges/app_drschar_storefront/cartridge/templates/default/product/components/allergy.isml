@@ -26,15 +26,11 @@
                                 class='far fa-check-circle'></i></i>&nbsp;${contentproperties.name}&nbsp;
                         </div>
                     </isif>
-                    <isif condition="${contentproperties.id == 'allergyMayContain'}">
+                    <isif condition="${contentproperties.id == 'allergyMayContain' && contentproperties.value.length > 0}">            
                         <div class="col-12 mt-4">
                             <p>${Resource.msg('label.allergyMaycontains', 'product', null)}
                                 <isloop items="${contentproperties.value}" var="allergyMayvals" status="allergymayvaloopstatus">
-                                    <isif condition="${(allergymayvaloopstatus.index + 1) == allergyMayvals.length }">
-                                        ${allergyMayvals}.
-                                    <iselse/>
-                                        ${allergyMayvals},
-                                    </isif>
+                                    ${allergyMayvals}${allergymayvaloopstatus.last ? '.' : ','}
                                 </isloop>
                             </p>
                         </div>
