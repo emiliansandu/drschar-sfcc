@@ -30,6 +30,7 @@
         "bc_job_components",
         "bm_app_storefront_base",
         "bm_yotpo",
+        "int_handlerframework",
         "int_yotpo_sfra",
         "bm_paypal",
         "bm_paypal_configuration",
