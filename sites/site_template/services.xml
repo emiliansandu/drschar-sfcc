@@ -147,10 +147,16 @@
         <password masked="true">********</password>
     </service-credential>
 
-    <service-credential service-credential-id="marketingcloud.rest.auth">
-        <url>https://YOUR_SUBDOMAIN.auth.marketingcloudapis.com/v2/token</url>
-        <user-id>API User ID</user-id>
-        <password masked="true">********</password>
+    <service-credential service-credential-id="marketingcloud.rest.auth-drschar">
+        <url>https://mcgwbty5rxm171xzvqxcmdft5q-4.auth.marketingcloudapis.com/v2/token</url>
+        <user-id>3dws4km3lheohzj0wj1ff6r0</user-id>
+        <password masked="true">i8UnerGDKjOGJCh2mHyknZCn</password>
+    </service-credential>
+
+    <service-credential service-credential-id="marketingcloud.soap.auth-drschar">
+        <url>https://mcgwbty5rxm171xzvqxcmdft5q-4.soap.marketingcloudapis.com/Service.asmx</url>
+        <user-id>3dws4km3lheohzj0wj1ff6r0</user-id>
+        <password masked="true">i8UnerGDKjOGJCh2mHyknZCn</password>
     </service-credential>
 
     <service-profile service-profile-id="marketingcloud.rest">
@@ -271,7 +277,7 @@
         <comm-log-enabled>true</comm-log-enabled>
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>marketingcloud.rest</profile-id>
-        <credential-id>marketingcloud.rest.auth</credential-id>
+        <credential-id>marketingcloud.rest.auth-drschar</credential-id>
     </service>
 
     <service service-id="marketingcloud.rest.messaging.send">
@@ -291,7 +297,7 @@
         <comm-log-enabled>true</comm-log-enabled>
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>marketingcloud.soap</profile-id>
-        <credential-id/>
+        <credential-id>marketingcloud.soap.auth-drschar</credential-id>
     </service>
 
     <service service-id="marketingcloud.soap.retrieve">
@@ -301,7 +307,7 @@
         <comm-log-enabled>true</comm-log-enabled>
         <mock-mode-enabled>false</mock-mode-enabled>
         <profile-id>marketingcloud.soap</profile-id>
-        <credential-id/>
+        <credential-id>marketingcloud.soap.auth-drschar</credential-id>
     </service>
 
     <service service-id="marketingcloud.sftp">

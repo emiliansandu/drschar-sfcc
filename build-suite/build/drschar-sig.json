@@ -31,6 +31,7 @@
         "bm_app_storefront_base",
         "bm_yotpo",
         "int_handlerframework",
+        "int_marketing_cloud",
         "int_yotpo_sfra",
         "bm_paypal",
         "bm_paypal_configuration",
@@ -44,6 +45,7 @@
         "int_paypal",
         "int_zendesk",        
         "modules",
+        "plugin_marketing_cloud",
         "plugin_dis",
         "plugin_sitemap"
       ]
