@@ -541,7 +541,7 @@
         <description/>
         <parameters/>
         <flow>
-            <context site-id="SiteGenesis"/>
+            <context site-id="drschar"/>
             <step step-id="mcc-compile-datafeed-templates" type="custom.MCC-CompileMappingTemplates" enforce-restart="false">
                 <description/>
                 <parameters>
@@ -574,7 +574,7 @@
         <description/>
         <parameters/>
         <flow>
-            <context site-id="SiteGenesis"/>
+            <context site-id="drschar"/>
             <step step-id="mcc-feed-exportCatalog" type="custom.MCC-Feed-ExportCatalog" enforce-restart="false">
                 <description/>
                 <parameters>
@@ -605,7 +605,7 @@
         <description/>
         <parameters/>
         <flow>
-            <context site-id="SiteGenesis"/>
+            <context site-id="drschar"/>
             <step step-id="mcc-feed-exportContent" type="custom.MCC-Feed-ExportContent" enforce-restart="false">
                 <description/>
                 <parameters>
@@ -638,7 +638,7 @@
         <parameters/>
         <split sequential="false">
             <flow>
-                <context site-id="SiteGenesis"/>
+                <context site-id="drschar"/>
                 <template-ref template-id="template_77"/>
             </flow>
             <flow-template template-id="template_77">
@@ -675,7 +675,7 @@
         <parameters/>
         <split sequential="false">
             <flow>
-                <context site-id="SiteGenesis"/>
+                <context site-id="drschar"/>
                 <template-ref template-id="template_59"/>
             </flow>
             <flow-template template-id="template_59">
@@ -712,7 +712,7 @@
         <parameters/>
         <split sequential="false">
             <flow>
-                <context site-id="SiteGenesis"/>
+                <context site-id="drschar"/>
                 <template-ref template-id="template_59"/>
             </flow>
             <flow-template template-id="template_59">
@@ -749,7 +749,7 @@
         <parameters/>
         <split sequential="false">
             <flow>
-                <context site-id="SiteGenesis"/>
+                <context site-id="drschar"/>
                 <template-ref template-id="template_72"/>
             </flow>
             <flow-template template-id="template_72">
