@@ -37,8 +37,8 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-sig --target=development
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importMeta --project=drschar-sig --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-pig --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importMeta --project=drschar-pig --target=development
     release/*:
       - step:
           name: Deploy to development
@@ -50,8 +50,8 @@ pipelines:
             - npm --prefix ./build-suite/ install
             - npm --prefix ./build-suite/ rebuild node-sass
             - npm run test
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-development --target=development
-            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importMeta --project=drschar-development --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js dist --project=drschar-pig --target=development
+            - npx grunt --base ./build-suite/ --gruntfile ./build-suite/Gruntfile.js importMeta --project=drschar-pig --target=development
     master:
       - step:
           name: Ready?
