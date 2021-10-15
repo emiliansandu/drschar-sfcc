@@ -1010,6 +1010,17 @@
         </group-definitions>
     </type-extension>
 
+    <type-extension type-id="CustomerCDPData">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="segments"/>
+        </system-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Segments">
+                <display-name xml:lang="x-default">Segments</display-name>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
     <type-extension type-id="CustomerGroup">
         <system-attribute-definitions>
             <attribute-definition attribute-id="ID">
@@ -2755,6 +2766,12 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <field-length>28</field-length>
             </attribute-definition>
+            <attribute-definition attribute-id="accountID">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="accountType">
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="creationDate"/>
             <attribute-definition attribute-id="lastModified"/>
             <attribute-definition attribute-id="transactionID">
@@ -3806,18 +3823,6 @@ Direct or Redirect</description>
                 <order-required-flag>false</order-required-flag>
                 <externally-defined-flag>false</externally-defined-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="displayProductName">
-                <display-name xml:lang="x-default">Product Display Name</display-name>
-                <type>string</type>
-                <localizable-flag>false</localizable-flag>
-                <site-specific-flag>false</site-specific-flag>
-                <mandatory-flag>false</mandatory-flag>
-                <visible-flag>true</visible-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <order-required-flag>false</order-required-flag>
-                <externally-defined-flag>false</externally-defined-flag>
-                <min-length>0</min-length>
-            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="ExternalSearch">
@@ -3852,6 +3857,10 @@ Direct or Redirect</description>
                 <attribute attribute-id="EAN" system="true"/>
                 <attribute attribute-id="UPC" system="true"/>
                 <attribute attribute-id="maxOrderQty"/>
+                <attribute attribute-id="taxClassID" system="true"/>
+                <attribute attribute-id="localizedTaxClassID" system="true"/>
+                <attribute attribute-id="unitQuantity" system="true"/>
+                <attribute attribute-id="unitMeasure" system="true"/>
             </attribute-group>
             <attribute-group group-id="Store">
                 <display-name xml:lang="x-default">Store Attributes</display-name>
@@ -3869,7 +3878,6 @@ Direct or Redirect</description>
             </attribute-group>
             <attribute-group group-id="generalInformation">
                 <display-name xml:lang="x-default">General Information</display-name>
-                <attribute attribute-id="displayProductName"/>
                 <attribute attribute-id="dimWeight"/>
                 <attribute attribute-id="gcDairyFree"/>
                 <attribute attribute-id="gcGlutenFree"/>
@@ -7020,6 +7028,7 @@ This will be used in place of fully deleting the record from the list.</descript
                 <attribute attribute-id="storeHours" system="true"/>
                 <attribute attribute-id="storeEvents" system="true"/>
                 <attribute attribute-id="image" system="true"/>
+                <attribute attribute-id="posEnabled" system="true"/>
                 <attribute attribute-id="longitude" system="true"/>
                 <attribute attribute-id="latitude" system="true"/>
             </attribute-group>
