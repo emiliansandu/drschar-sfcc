@@ -133,9 +133,9 @@
     </service-credential>
 
     <service-credential service-credential-id="marketingcloud.sftp">
-        <url>ftp.YOUR_INSTANCE.exacttarget.com</url>
-        <user-id>SFTP USER ID</user-id>
-        <password masked="true">********</password>
+        <url>ftp.mcgwbty5rxm171xzvqxcmdft5q-4.exacttarget.com</url>
+        <user-id>510000497_3</user-id>
+        <password masked="true">!SF22mcftp+3</password>
     </service-credential>
 
     <service-credential service-credential-id="marketingcloud.rest.auth-drschar">
