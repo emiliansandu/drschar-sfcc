@@ -7,6 +7,14 @@
 node_modules/
 dist/
 
+Postman/*
+ProdCert/*
+
+OCAPI*
+Facebook*
+scripts/
+
+
 # Compiled Java class files
 *.class
 
