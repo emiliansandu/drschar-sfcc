@@ -23,7 +23,11 @@
                     <!-- Product Name -->
                     <div class="row">
                         <div class="d-md-none col-sm-12">
-                            <h1 class="product-name">${product.productName}</h1>
+                            <isif condition="${product.displayProductName}">
+                                <h1 class="product-name">${product.displayProductName}</h1>
+                            <iselse/>
+                                <h1 class="product-name">${product.productName}</h1>
+                            </isif>
                             <div class="product-name-Ratings d-sm-none ">
                                 <isinclude template="widget/yotpoRatingsWidget" />
                             </div>
@@ -47,7 +51,11 @@
                     <!-- Product Name -->
                     <div class="row">
                         <div class="col">
-                            <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                            <isif condition="${product.displayProductName}">
+                                <h1 class="product-name">${product.displayProductName}</h1>
+                            <iselse/>
+                                <h1 class="product-name">${product.productName}</h1>
+                            </isif>
                             <div class="product-name-Ratings d-none d-sm-block">
                                 <isinclude template="widget/yotpoRatingsWidget" />
                             </div>

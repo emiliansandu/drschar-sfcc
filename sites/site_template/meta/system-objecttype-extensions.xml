@@ -1010,6 +1010,17 @@
         </group-definitions>
     </type-extension>
 
+    <type-extension type-id="CustomerCDPData">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="segments"/>
+        </system-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Segments">
+                <display-name xml:lang="x-default">Segments</display-name>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
     <type-extension type-id="CustomerGroup">
         <system-attribute-definitions>
             <attribute-definition attribute-id="ID">
@@ -2755,6 +2766,12 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <field-length>28</field-length>
             </attribute-definition>
+            <attribute-definition attribute-id="accountID">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="accountType">
+                <min-length>0</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="creationDate"/>
             <attribute-definition attribute-id="lastModified"/>
             <attribute-definition attribute-id="transactionID">
@@ -3840,6 +3857,10 @@ Direct or Redirect</description>
                 <attribute attribute-id="EAN" system="true"/>
                 <attribute attribute-id="UPC" system="true"/>
                 <attribute attribute-id="maxOrderQty"/>
+                <attribute attribute-id="taxClassID" system="true"/>
+                <attribute attribute-id="localizedTaxClassID" system="true"/>
+                <attribute attribute-id="unitQuantity" system="true"/>
+                <attribute attribute-id="unitMeasure" system="true"/>
             </attribute-group>
             <attribute-group group-id="Store">
                 <display-name xml:lang="x-default">Store Attributes</display-name>
@@ -6574,10 +6595,6 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://staticw2.yotpo.com/</default-value>
             </attribute-definition>
-<<<<<<< HEAD
-
-=======
->>>>>>> release/1.1.2
             <attribute-definition attribute-id="zendeskCartridgeEnabled">
                 <display-name xml:lang="x-default">Zendesk Cartridge Enabled</display-name>
                 <type>boolean</type>
@@ -6585,72 +6602,36 @@ Direct or Redirect</description>
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>true</default-value>
             </attribute-definition>
-<<<<<<< HEAD
-
             <attribute-definition attribute-id="zendeskContacUsKey">
                 <display-name xml:lang="x-default">Zendesk Key</display-name>
-                <type>string</type>
-                <mandatory-flag>false</mandatory-flag>
-                <externally-managed-flag>false</externally-managed-flag>
-                <min-length>0</min-length>
-                <default-value>IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</default-value>
-            </attribute-definition>
-
-            <attribute-definition attribute-id="zendeskDomain">
-                <display-name xml:lang="x-default">zendeskDomain</display-name>
-=======
-            <attribute-definition attribute-id="zendeskContacUsKey">
-                <display-name xml:lang="x-default">Zendesk Key</display-name>
->>>>>>> release/1.1.2
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
                 <default-value>https://xxxxxxxx.zendesk.com</default-value>
             </attribute-definition>
-<<<<<<< HEAD
-            <attribute-definition attribute-id="zendeskEmail">
-=======
             <attribute-definition attribute-id="zendeskDomain">
                 <display-name xml:lang="x-default">zendeskDomain</display-name>
->>>>>>> release/1.1.2
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-<<<<<<< HEAD
-            </attribute-definition>
-            <attribute-definition attribute-id="zendeskKey">
-                <display-name xml:lang="x-default">Zendesk Key</display-name>
-=======
                 <default-value>https://xxxxxxxx.zendesk.com</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="zendeskEmail">
->>>>>>> release/1.1.2
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-<<<<<<< HEAD
-                <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
-            </attribute-definition>
-            <attribute-definition attribute-id="zendeskStaticContentURL">
-                <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
-=======
             </attribute-definition>
             <attribute-definition attribute-id="zendeskKey">
                 <display-name xml:lang="x-default">Zendesk Key</display-name>
->>>>>>> release/1.1.2
                 <type>string</type>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-<<<<<<< HEAD
-                <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
-=======
                 <default-value>5e3b063d-ff00-492d-badd-0b96bedbed16</default-value>
->>>>>>> release/1.1.2
             </attribute-definition>
             <attribute-definition attribute-id="zendeskStaticContentURL">
                 <display-name xml:lang="x-default">Zendesk Static Content URL</display-name>
@@ -6660,8 +6641,85 @@ Direct or Redirect</description>
                 <min-length>0</min-length>
                 <default-value>https://static.zdassets.com/ekr/snippet.js</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="mcEnableAnalytics">
+                <display-name xml:lang="x-default">Marketing Cloud Enable Analytics</display-name>
+                <description xml:lang="x-default">Select Yes to enable Marketing Cloud Analytics tracking. Requires Member ID to be set.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcMID">
+                <display-name xml:lang="x-default">Marketing Cloud Member ID</display-name>
+                <description xml:lang="x-default">Marketing Cloud Business Unit Member ID aka MID</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <regex>[\d\w.-]+</regex>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcIncludeTrackingLink">
+                <display-name xml:lang="x-default">Marketing Cloud Include Tracking Link</display-name>
+                <description xml:lang="x-default">Select Yes to output Marketing Cloud Analytics tracking link into the storefront. Requires Member ID to be set.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcCollectJsUrl">
+                <display-name xml:lang="x-default">Marketing Cloud collect.js URL</display-name>
+                <description xml:lang="x-default">Marketing Cloud collect.js URL. The string MCMID must exist in the URL, for the marketing cloud MID to be inserted into the URL.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <regex>^(?:https?:)?//(?:.*MCMID.*)$</regex>
+                <default-value>//MCMID.collect.igodigital.com/collect.js</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcEnableMailingLists">
+                <display-name xml:lang="x-default">Marketing Cloud Enable Mailing List Hooks</display-name>
+                <description xml:lang="x-default">Select Yes to enable Marketing Cloud mailing list functionality.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcDefaultMailingLists">
+                <display-name xml:lang="x-default">Marketing Cloud Default Mailing Lists</display-name>
+                <description xml:lang="x-default">Default Marketing Cloud mailing lists to assign when customer subscribes. Please provide the numeric "List ID" value.</description>
+                <type>set-of-int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcMailingListsWhitelist">
+                <display-name xml:lang="x-default">Marketing Cloud Mailing Lists Whitelist</display-name>
+                <description xml:lang="x-default">Whitelist of Marketing Cloud mailing lists. If left empty, all lists are listed for customer. Please provide the numeric "List ID" value.</description>
+                <type>set-of-int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+			<attribute-definition attribute-id="mcUnsubscribeAllowed">
+                <display-name xml:lang="x-default">Marketing Cloud Allow Unsubscribing from Lists over Deletion</display-name>
+                <description xml:lang="x-default">This flag will allow the Marketing Cloud cartridge to Unsubscribe users from assigned mailing lists, thus updating the subscriber's status from "Active" to "Unsubscribed".&#13;
+This will be used in place of fully deleting the record from the list.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
+            <attribute-group group-id="Marketing Cloud">
+                <display-name xml:lang="x-default">Marketing Cloud Connector</display-name>
+                <attribute attribute-id="mcEnableAnalytics"/>
+                <attribute attribute-id="mcMID"/>
+                <attribute attribute-id="mcIncludeTrackingLink"/>
+                <attribute attribute-id="mcCollectJsUrl"/>
+                <attribute attribute-id="mcEnableMailingLists"/>
+                <attribute attribute-id="mcDefaultMailingLists"/>
+                <attribute attribute-id="mcMailingListsWhitelist"/>
+				<attribute attribute-id="mcUnsubscribeAllowed"/>
+            </attribute-group>
             <attribute-group group-id="Storefront Configs">
                 <display-name xml:lang="x-default">Storefront Configurations</display-name>
                 <attribute attribute-id="listPriceDefault"/>
@@ -6971,6 +7029,7 @@ Direct or Redirect</description>
                 <attribute attribute-id="storeHours" system="true"/>
                 <attribute attribute-id="storeEvents" system="true"/>
                 <attribute attribute-id="image" system="true"/>
+                <attribute attribute-id="posEnabled" system="true"/>
                 <attribute attribute-id="longitude" system="true"/>
                 <attribute attribute-id="latitude" system="true"/>
             </attribute-group>

@@ -7,7 +7,11 @@
             <!-- Product Name -->
             <div class="row">
                 <div class="col">
-                    <span class="pdp-link">${product.productName}</span>
+                    <isif condition="${product.displayProductName}">
+                        <span class="pdp-link">${product.displayProductName}</span>
+                    <iselse/>
+                        <span class="pdp-link">${product.productName}</span>
+                    </isif>
                 </div>
             </div>
 

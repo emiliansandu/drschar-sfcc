@@ -59,7 +59,7 @@
                 <parameters>
                     <parameter name="TargetFolder">MarketingCloud</parameter>
                     <parameter name="Filename">subscribed-customers.xml</parameter>
-                    <parameter name="Query">custom.subscribed = true OR custom.subscribedCorp = true AND custom.synced= false</parameter>
+                    <parameter name="Query">custom.subscribed = true OR custom.subscribedCorp = true AND custom.synced= false</parameter>
                     <parameter name="OverwriteExportFile">true</parameter>
                 </parameters>
             </step>
@@ -80,37 +80,12 @@
         </flow>
         <rules/>
         <triggers>
-            <run-recurring enabled="true">
+            <run-recurring enabled="false">
                 <recurrence>
                     <date-from>2021-07-28Z</date-from>
                     <date-to>2023-12-01Z</date-to>
                     <start-time>04:00:00.000Z</start-time>
                     <interval>1d</interval>
-                    <day-of-week/>
-                </recurrence>
-            </run-recurring>
-        </triggers>
-    </job>
-
-    <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
-        <description>
-            Removes PaypalNewTransactions custom object that is older than a year with info about PayPal transaction from BM.
-        </description>
-        <parameters/>
-        <flow>
-            <context site-id="drschar"/>
-            <step step-id="removeCustomObject" type="custom.removePaypalCustomObject" enforce-restart="false">
-                <description/>
-                <parameters/>
-            </step>
-        </flow>
-        <rules/>
-        <triggers>
-            <run-recurring enabled="true">
-                <recurrence>
-                    <date-from>2019-10-25Z</date-from>
-                    <start-time>04:00:00.000Z</start-time>
-                    <interval>2M</interval>
                     <day-of-week/>
                 </recurrence>
             </run-recurring>
@@ -170,6 +145,31 @@
                 <date>2018-06-25Z</date>
                 <time>05:38:35.000Z</time>
             </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
+        <description>
+            Removes PaypalNewTransactions custom object that is older than a year with info about PayPal transaction from BM.
+        </description>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="removeCustomObject" type="custom.removePaypalCustomObject" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2019-10-25Z</date-from>
+                    <start-time>04:00:00.000Z</start-time>
+                    <interval>2M</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
         </triggers>
     </job>
 
@@ -235,10 +235,10 @@
             </step>
         </flow>
         <rules>
-            <on-exit status="ERROR" enabled="false">
+            <on-exit status="ERROR" enabled="true">
                 <send-mail>
                     <from>drschar-sfcc-staging@unitedvirtualities.com</from>
-                    <to>Linda.Davidson@drschar.com, Burrell.King@drschar.com</to>
+                    <to>Linda.Davidson@drschar.com</to>
                     <cc>ngarcia@unitedvirtualities.com, rcervantes@unitedvirtualities.com</cc>
                 </send-mail>
             </on-exit>
@@ -248,15 +248,15 @@
                 <recurrence>
                     <date-from>2021-07-22Z</date-from>
                     <start-time>09:00:00.000Z</start-time>
-                    <interval>1d</interval>
+                    <interval>30m</interval>
                     <day-of-week>
-                        <weekday>Thursday</weekday>
-                        <weekday>Wednesday</weekday>
-                        <weekday>Sunday</weekday>
-                        <weekday>Saturday</weekday>
                         <weekday>Tuesday</weekday>
                         <weekday>Monday</weekday>
                         <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
                     </day-of-week>
                 </recurrence>
             </run-recurring>
@@ -309,16 +309,16 @@
             <run-recurring enabled="true">
                 <recurrence>
                     <date-from>2021-07-22Z</date-from>
-                    <start-time>09:00:00.000Z</start-time>
-                    <interval>1d</interval>
+                    <start-time>09:10:00.000Z</start-time>
+                    <interval>30m</interval>
                     <day-of-week>
-                        <weekday>Thursday</weekday>
-                        <weekday>Wednesday</weekday>
-                        <weekday>Sunday</weekday>
-                        <weekday>Saturday</weekday>
                         <weekday>Tuesday</weekday>
                         <weekday>Monday</weekday>
                         <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
                     </day-of-week>
                 </recurrence>
             </run-recurring>
@@ -366,6 +366,7 @@
             </run-once>
         </triggers>
     </job>
+
     <job job-id="marketingCloudSignupEmails" priority="0">
         <description/>
         <parameters/>
@@ -380,7 +381,7 @@
         </flow>
         <rules/>
         <triggers>
-            <run-recurring enabled="true">
+            <run-recurring enabled="false">
                 <recurrence>
                     <date-from>2021-07-28Z</date-from>
                     <start-time>15:14:02.000Z</start-time>
@@ -390,7 +391,6 @@
             </run-recurring>
         </triggers>
     </job>
-
 
     <job job-id="tokenRenew" priority="0">
         <description>This job has been created to renew Instagram API token</description>
@@ -413,13 +413,24 @@
         </split>
         <rules/>
         <triggers>
-            <run-once enabled="false">
-                <date>2018-06-25Z</date>
-                <time>05:36:56.000Z</time>
-            </run-once>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-10-01Z</date-from>
+                    <start-time>04:00:00.000Z</start-time>
+                    <interval>59d</interval>
+                    <day-of-week>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
         </triggers>
     </job>
-
 
     <job job-id="Yotpo Loyalty Order Export" priority="0">
         <description/>
@@ -464,41 +475,39 @@
             </on-exit>
         </rules>
         <triggers>
-            <run-recurring enabled="true">
+            <run-recurring enabled="false">
                 <recurrence>
                     <date-from>2021-07-22Z</date-from>
                     <start-time>09:00:00.000Z</start-time>
                     <interval>1d</interval>
                     <day-of-week>
-                        <weekday>Thursday</weekday>
-                        <weekday>Wednesday</weekday>
-                        <weekday>Sunday</weekday>
-                        <weekday>Saturday</weekday>
                         <weekday>Tuesday</weekday>
                         <weekday>Monday</weekday>
                         <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
                     </day-of-week>
                 </recurrence>
             </run-recurring>
         </triggers>
     </job>
 
-    <job job-id="InventoryImport" priority="0">
-        <description/>
+    <job job-id="Yotpo Order Export (Purchase Feed)" priority="0">
+        <description>This job exports high-level order information (name, email, products purchased, etc.) to Yotpo. Its primary purpose is to supply enough details for Yotpo to trigger "Review Your Product" emails after a preconfigured delay after purchase.Orders are sent to Yotpo in batches, grouped by locale. Additional connection details are configured in the "Manage Yotpo Configuration" Business Manager plugin. The "int_yotpo_sfra.https.post.export.purchase.api.cred" Service facilitates transmission of information.
+	    </description>
         <parameters/>
         <flow>
-            <context site-id="Sites"/>
-            <step step-id="download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
-                <description/>
-                <parameters>
-                    <parameter name="ServiceID">drscharSFTP</parameter>
-                    <parameter name="FilePattern">Inventory_[0-9]*\.xml</parameter>
-                    <parameter name="SourceFolder">OUT</parameter>
-                    <parameter name="TargetFolder">src/download</parameter>
-                    <parameter name="Recursive">false</parameter>
-                    <parameter name="DeleteRemoteFiles">true</parameter>
-                    <parameter name="NoFileFoundStatus">OK</parameter>
-                </parameters>
+            <context site-id="drschar"/>
+            <step step-id="YotpoExportOrders" type="custom.Yotpo.ExportOrdersJson" enforce-restart="false">
+                <description>Sends the order information to Yotpo's endpoint.</description>
+                <parameters/>
+                <rules>
+                    <on-exit status="ERROR">
+                        <continue/>
+                    </on-exit>
+                </rules>
             </step>
         </flow>
         <flow>
@@ -518,10 +527,22 @@
         </flow>
         <rules/>
         <triggers>
-            <run-once enabled="false">
-                <date>2021-06-03Z</date>
-                <time>01:48:35.000Z</time>
-            </run-once>
+            <run-recurring enabled="false">
+                <recurrence>
+                    <date-from>2019-08-08Z</date-from>
+                    <start-time>06:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
         </triggers>
     </job>
 
@@ -544,17 +565,254 @@
         </split>
         <rules/>
         <triggers>
-            <run-recurring enabled="true">
+            <run-recurring enabled="false">
                 <recurrence>
-                    <date-from>2021-07-20Z</date-from>
-                    <start-time>17:59:45.000Z</start-time>
-                    <interval>59d</interval>
-                    <day-of-week/>
+                    <date-from>2019-08-08Z</date-from>
+                    <start-time>06:00:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Thursday</weekday>
+                    </day-of-week>
                 </recurrence>
             </run-recurring>
         </triggers>
     </job>
 
+    <job job-id="MCC-CompileMappingTemplates" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="mcc-compile-datafeed-templates" type="custom.MCC-CompileMappingTemplates" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ObjectType">DataFeeds</parameter>
+                </parameters>
+            </step>
+            <step step-id="mcc-compile-trigger-templates" type="custom.MCC-CompileMappingTemplates" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ObjectType">Triggers</parameter>
+                </parameters>
+            </step>
+            <step step-id="mcc-compile-analytic-templates" type="custom.MCC-CompileMappingTemplates" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ObjectType">Analytics</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-10-03Z</date>
+                <time>05:03:15.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
 
+    <job job-id="MCC-Feed-Catalog" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="mcc-feed-exportCatalog" type="custom.MCC-Feed-ExportCatalog" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExportID">catalogFeed</parameter>
+                    <parameter name="ExportFileName">catalogFeed.psv</parameter>
+                    <parameter name="Delimiter">|</parameter>
+                    <parameter name="IncrementalExport">false</parameter>
+                </parameters>
+            </step>
+            <step step-id="mcc-feed-uploadcatalog" type="custom.MCC-Feed-UploadCatalog" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="SFTPServiceID">marketingcloud.sftp</parameter>
+                    <parameter name="ExportFileName">catalogFeed.psv</parameter>
+                    <parameter name="TargetPath">/Import/</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-05-30Z</date>
+                <time>20:17:25.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MCC-Feed-Content" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="mcc-feed-exportContent" type="custom.MCC-Feed-ExportContent" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExportID">contentFeed</parameter>
+                    <parameter name="ExportFileName">contentFeed.psv</parameter>
+                    <parameter name="Delimiter">|</parameter>
+                    <parameter name="IncrementalExport">false</parameter>
+                </parameters>
+            </step>
+            <step step-id="mcc-feed-uploadcontent" type="custom.MCC-Feed-UploadContent" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="SFTPServiceID">marketingcloud.sftp</parameter>
+                    <parameter name="ExportFileName">contentFeed.psv</parameter>
+                    <parameter name="TargetPath">/Import/</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-05-30Z</date>
+                <time>20:17:25.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MCC-Feed-Customers" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <flow>
+                <context site-id="drschar"/>
+                <template-ref template-id="template_77"/>
+            </flow>
+            <flow-template template-id="template_77">
+                <step step-id="mcc-feed-exportcustomers" type="custom.MCC-Feed-ExportCustomers" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ExportID">customersFeed</parameter>
+                        <parameter name="ExportFileName">customersFeed.psv</parameter>
+                        <parameter name="Delimiter">|</parameter>
+                        <parameter name="IncrementalExport">false</parameter>
+                    </parameters>
+                </step>
+                <step step-id="mcc-feed-uploadcustomers" type="custom.MCC-Feed-UploadCustomers" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="SFTPServiceID">marketingcloud.sftp</parameter>
+                        <parameter name="ExportFileName">customersFeed.psv</parameter>
+                        <parameter name="TargetPath">/Import/</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-06-19Z</date>
+                <time>15:41:10.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MCC-Feed-Orders" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <flow>
+                <context site-id="drschar"/>
+                <template-ref template-id="template_59"/>
+            </flow>
+            <flow-template template-id="template_59">
+                <step step-id="mcc-feed-exportorders" type="custom.MCC-Feed-ExportOrders" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ExportID">ordersFeed</parameter>
+                        <parameter name="ExportFileName">ordersFeed.psv</parameter>
+                        <parameter name="Delimiter">|</parameter>
+                        <parameter name="IncrementalExport">false</parameter>
+                    </parameters>
+                </step>
+                <step step-id="mcc-feed-uploadorders" type="custom.MCC-Feed-UploadOrders" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="SFTPServiceID">marketingcloud.sftp</parameter>
+                        <parameter name="ExportFileName">ordersFeed.psv</parameter>
+                        <parameter name="TargetPath">/Import/</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-06-19Z</date>
+                <time>15:37:40.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MCC-Feed-Promotions" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <flow>
+                <context site-id="drschar"/>
+                <template-ref template-id="template_59"/>
+            </flow>
+            <flow-template template-id="template_59">
+                <step step-id="mcc-feed-exportpromotions" type="custom.MCC-Feed-ExportPromotions" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ExportID">promotionsFeed</parameter>
+                        <parameter name="ExportFileName">promotionsFeed.psv</parameter>
+                        <parameter name="Delimiter">|</parameter>
+                        <parameter name="IncrementalExport">false</parameter>
+                    </parameters>
+                </step>
+                <step step-id="mcc-feed-uploadpromotions" type="custom.MCC-Feed-UploadPromotions" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="SFTPServiceID">marketingcloud.sftp</parameter>
+                        <parameter name="ExportFileName">promotionsFeed.psv</parameter>
+                        <parameter name="TargetPath">/Import/</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-06-19Z</date>
+                <time>15:37:40.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="MCC-InitTriggers" priority="0">
+        <description>For developer use, used to recreate trigger configurations</description>
+        <parameters/>
+        <split sequential="false">
+            <flow>
+                <context site-id="drschar"/>
+                <template-ref template-id="template_72"/>
+            </flow>
+            <flow-template template-id="template_72">
+                <step step-id="mcc-init-triggers" type="custom.MCC-InitTriggers" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-06-19Z</date>
+                <time>08:16:12.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
 
 </jobs>
