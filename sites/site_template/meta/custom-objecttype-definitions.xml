@@ -882,11 +882,9 @@
             <min-length>0</min-length>
         </key-definition>
         <group-definitions>
-            <attribute-group group-id="tokenKeys">
-                <display-name xml:lang="x-default">Token Key Values</display-name>
-                <attribute attribute-id="tokenKey"/>
-                <attribute attribute-id="lastModified" system="true"/>
-                <attribute attribute-id="creationDate" system="true"/>
+            <attribute-group group-id="marketingCustomerData">
+                <display-name xml:lang="x-default">Marketing Customer Data</display-name>
+                <attribute attribute-id="emailAddress"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
@@ -1220,7 +1218,6 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
-
     <custom-type type-id="CommunicationHandlers">
         <display-name xml:lang="x-default">Communication Handlers</display-name>
         <description xml:lang="x-default">Configuration for Communication Handlers</description>

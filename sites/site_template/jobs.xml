@@ -396,14 +396,17 @@
         <description>This job has been created to renew Instagram API token</description>
         <parameters/>
         <split sequential="false">
-            <contexts template-ref="template_30">
-                <all-storefront-sites/>
+            <contexts template-ref="template_45">
+                <context site-id="drschar"/>
             </contexts>
-            <flow-template template-id="template_30">
-                <step step-id="getCustomObjectData" type="custom.getCustomObjects" enforce-restart="true">
-                    <description>This will make a request to renew token for 60 days</description>
+            <flow-template template-id="template_45">
+                <step step-id="Reindex" type="SearchReindex" enforce-restart="false">
+                    <description/>
                     <parameters>
-                        <parameter name="CustomObjectType">instagramToken</parameter>
+                        <parameter name="Product related search indexes">true</parameter>
+                        <parameter name="Active data search index">true</parameter>
+                        <parameter name="Content search index">true</parameter>
+                        <parameter name="Indexer Type">Full Index Rebuild</parameter>
                     </parameters>
                 </step>
             </flow-template>
@@ -433,18 +436,49 @@
         <description/>
         <parameters/>
         <flow>
-            <context site-id="RefArch"/>
-            <step step-id="YotpoLoyaltyOrderExport" type="custom.Yotpo.LoyaltyOrderExport" enforce-restart="false">
+            <context site-id="Sites"/>
+            <step step-id="downdload" type="custom.CSComponents.FtpDownload" enforce-restart="false">
                 <description/>
-                <parameters/>
+                <parameters>
+                    <parameter name="ServiceID">drscharSFTP</parameter>
+                    <parameter name="FilePattern">Catalog_[0-9]*\.xml</parameter>
+                    <parameter name="SourceFolder">OUT</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
             </step>
         </flow>
-        <rules/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="importCatalog" type="ImportCatalog" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Catalog_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">ERROR</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="ERROR" enabled="false">
+                <send-mail>
+                    <from>drschar-sfcc-staging@unitedvirtualities.com</from>
+                    <to>Linda.Davidson@drschar.com, Burrell.King@drschar.com</to>
+                    <cc>ngarcia@unitedvirtualities.com, rcervantes@unitedvirtualities.com</cc>
+                </send-mail>
+            </on-exit>
+        </rules>
         <triggers>
             <run-recurring enabled="false">
                 <recurrence>
-                    <date-from>2019-08-08Z</date-from>
-                    <start-time>06:00:00.000Z</start-time>
+                    <date-from>2021-07-22Z</date-from>
+                    <start-time>09:00:00.000Z</start-time>
                     <interval>1d</interval>
                     <day-of-week>
                         <weekday>Tuesday</weekday>
@@ -475,14 +509,20 @@
                     </on-exit>
                 </rules>
             </step>
-            <step step-id="YotpoJobErrorChecking" type="custom.Yotpo.JobErrorChecking" enforce-restart="true">
-                <description>Checks previously run YotpoExportOrders step for errors.  Modifies job exit status if error exceed threshold</description>
-                <parameters/>
-                <rules>
-                    <on-exit status="ERROR">
-                        <stop-job/>
-                    </on-exit>
-                </rules>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="import" type="ImportInventoryLists" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">download</parameter>
+                    <parameter name="FileNamePattern">Inventory_[0-9]*\.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
             </step>
         </flow>
         <rules/>
@@ -506,16 +546,23 @@
         </triggers>
     </job>
 
-    <job job-id="Yotpo Loyalty Customer Export" priority="0">
-        <description/>
+
+    <job job-id="tokenRenew" priority="0">
+        <description>This job has been created to renew Instagram API token</description>
         <parameters/>
-        <flow>
-            <context site-id="RefArch"/>
-            <step step-id="LoyaltyCustomerExport" type="custom.Yotpo.LoyaltyCustomerExport" enforce-restart="false">
-                <description/>
-                <parameters/>
-            </step>
-        </flow>
+        <split sequential="false">
+            <contexts template-ref="template_30">
+                <all-storefront-sites/>
+            </contexts>
+            <flow-template template-id="template_30">
+                <step step-id="getCustomObjectData" type="custom.getCustomObjects" enforce-restart="true">
+                    <description>This will make a request to renew token for 60 days</description>
+                    <parameters>
+                        <parameter name="CustomObjectType">instagramToken</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
         <rules/>
         <triggers>
             <run-recurring enabled="false">

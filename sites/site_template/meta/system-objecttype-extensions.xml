@@ -6608,11 +6608,12 @@ Direct or Redirect</description>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
-                <default-value>IGAhaRhqP3d8CCBBJaGAWQUtHWtloqiD7WbXWSIt</default-value>
+                <default-value>https://xxxxxxxx.zendesk.com</default-value>
             </attribute-definition>
             <attribute-definition attribute-id="zendeskDomain">
                 <display-name xml:lang="x-default">zendeskDomain</display-name>
                 <type>string</type>
+                <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
