@@ -13,10 +13,6 @@
       "script": "~/cartridge/scripts/hookProxy/trackingProxy"
     },
     {
-      "name": "app.mail.sendMail",
-      "script": "~/cartridge/scripts/hookProxy/sendMailProxy"
-    },
-    {
       "name": "app.template.ajaxPartial",
       "script": "~/cartridge/scripts/hookProxy/templateProxy"
     },
@@ -103,10 +99,6 @@
     {
       "name": "app.communication.order.confirmation",
       "script": "~/cartridge/scripts/communication/order"
-    },
-    {
-      "name": "app.customer.email",
-      "script": "~/cartridge/scripts/hookProxy/emailProxy"
     }
   ]
 }
