@@ -333,6 +333,10 @@
                                             </strong>
                                         </p>
 
+                                        <p style="margin: 0 0 10px;">
+                                            ${Resource.msgf('label.order.custom.delivery.message', 'confirmation', null)}
+                                        </p>
+
                                     </td>
                                 </tr>
                                 <tr>
