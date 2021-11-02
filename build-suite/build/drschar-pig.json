@@ -60,9 +60,9 @@
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
     "staging": {
-      "server": "staging.na01.drschar.demandware.net",
-      "username": "rcervantes@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_gwCoGgDygpp0q9b0BM7uOg==",
+      "server": "staging-na01-drschar.demandware.net",
+      "username": "ocordero@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_42byVmpiKBsRBi9o+Ko92g==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA==",
       "two_factor": {
@@ -86,7 +86,7 @@
       }
     },
     "project": {
-      "version": "release_1_1_3_build",
+      "version": "release_1_1_4_build",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
