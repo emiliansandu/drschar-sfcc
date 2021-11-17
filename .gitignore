@@ -12,8 +12,6 @@ ProdCert/*
 
 OCAPI*
 Facebook*
-scripts/
-
 
 # Compiled Java class files
 *.class
