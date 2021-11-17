@@ -160,6 +160,80 @@
                 }
             ]
           }  
+        },
+        {
+          "@type-id":"custom.UpdateOrderStatus",
+          "@supports-parallel-execution":"false",
+          "@supports-site-context":"true",
+          "@supports-organization-context":"true",
+          "description":"This script retrieves marketingCustomer custom object emailAddress attribute. It runs in site scope.",
+          "module":"app_drschar_storefront/cartridge/scripts/steps/ProcessImportedOrder.js",
+          "function":"updateOrders",
+          "transactional":"true",
+          "timeout-in-seconds":"900",
+          "parameters":
+          {
+            "parameter":
+            [
+              {
+                "@name": "SourceFolder",
+                "@type": "string",
+                "@required": "true",
+                "@trim": "true",
+                "description": "Source folder path (in IMPEX)",
+                "default-value": "src/import/orders"
+              },
+              {
+                "@name": "FilePattern",
+                "description": "File pattern (Regular Expression)",
+                "@type": "string",
+                "@required": "false",
+                "@trim": "true",
+                "default-value": ".*\\.xml"
+              },
+              {
+                "@name": "FileAction",
+                "description": "Action to take with files after successful import",
+                "@type": "string",
+                "@required": true,
+                "@trim": true,
+                "default-value": "ARCHIVE",
+                "enum-values": {
+                    "value": [
+                        "REMOVE",
+                        "KEEP",
+                        "ARCHIVE"
+                    ]
+                }
+              },
+              {
+                "@name": "ArchivePath",
+                "description": "The file archive directory",
+                "@type": "string",
+                "@required": true,
+                "@trim": true,
+                "default-value": "src/archive/orders"
+              }
+            ]
+          },
+          "status-codes": 
+          {
+            "status": 
+            [
+                {
+                    "@code": "ERROR",
+                    "description": "Used when the step failed with an error."
+                },
+                {
+                    "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+                },
+                {
+                    "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+                }
+            ]
+          }  
         }
       ]
     }

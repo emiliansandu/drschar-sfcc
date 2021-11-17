@@ -4,6 +4,7 @@
  * Update Order Status
  */
 var XMLStreamConstants = require('dw/io/XMLStreamConstants');
+var StepUtil = require('~/cartridge/scripts/util/StepUtil');
 var XMLStreamReader = require('dw/io/XMLStreamReader');
 var Transaction = require('dw/system/Transaction')
 var FileReader = require('dw/io/FileReader');
@@ -15,6 +16,32 @@ var File = require('dw/io/File');
 var ORDER_STATUS_CODES = {
     COMPLETED: Order.ORDER_STATUS_COMPLETED,
     CANCELLED: Order.ORDER_STATUS_CANCELLED
+};
+
+/**
+ * @method fileAction
+ *
+ * @description Performs file action : Archive or Remove the file
+ *
+ * @param {dw.io.File} action     - Action to perform (REMOVE,KEEP,ARCHIVE)
+ * @param {dw.io.File} filePath     - path of source file
+ * @param {String} archivePath     - path to archive folder
+ * */
+ function fileAction(action, filePath, archivePath) {
+    try {
+        var file = new File(filePath);
+        if (action === 'ARCHIVE') {
+            // create archive folder if it doesn't exist
+            new File([File.IMPEX, archivePath].join(File.SEPARATOR)).mkdirs();
+
+            var fileToMoveTo = new File([File.IMPEX, archivePath, file.name].join(File.SEPARATOR));
+            file.renameTo(fileToMoveTo);
+        } else if (action === 'REMOVE') { // remove source file
+            file.remove();
+        }
+    } catch (e) {
+        return new Status(Status.ERROR, 'ERROR', '[StandardImport.js] fileAction() method crashed on line:{0}. ERROR: {1}', e.lineNumber , e.message);
+    }
 };
 
 var getFiles = function (directoryPath, filePattern) {
@@ -34,20 +61,18 @@ var getFiles = function (directoryPath, filePattern) {
     });
 };
 
-function execute(args) {
-
-    args.FilePattern = '';
+function updateOrders(args) {
     var filesToImport;
 
     try {
         // Check source directory
-        filesToImport = getFiles('IMPEX' + File.SEPARATOR + 'src' + File.SEPARATOR + 'orders', args.FilePattern);
+        filesToImport = getFiles('IMPEX' + File.SEPARATOR + args.SourceFolder, args.FilePattern);
     } catch (e) {
         return new Status(Status.ERROR, 'ERROR', 'Error loading files: ' + e + (e.stack ? e.stack : ''));
     }
 
     // Overall status to be updated on errors
-    var overallStatus = new Status(Status.OK, 'OK', 'Import successful');
+    var overallStatus = new Status(Status.OK, 'OK', 'Update successful');
 
     //Read each file XML on the IMPEX folder
     filesToImport.forEach(function (filePath) {
@@ -61,7 +86,8 @@ function execute(args) {
             'orderStatus': 'none'
         };
 
-        var updateOrders = new Array;
+        var objectOrders = new Array;
+        var archivePath = StepUtil.replacePathPlaceholders(args.ArchivePath);
 
         //Process to read the XML file
         while (xmlStreamReader.hasNext()) {
@@ -83,17 +109,17 @@ function execute(args) {
                             var newTopush = new Object;
                             newTopush.orderNumber = myObj.orderNumber;
                             newTopush.orderStatus = myObj.orderStatus;
-                            updateOrders.push(newTopush);
+                            objectOrders.push(newTopush);
                         }
                     }
                 }
             }
         }
-
+        //Process to update the status order
         try {
-            for (var i = 0; i < updateOrders.length; i++) {
-                var orderToUpdate = OrderMgr.getOrder(updateOrders[i].orderNumber);
-                var status = validStatus(updateOrders[i].orderStatus);
+            for (var i = 0; i < objectOrders.length; i++) {
+                var orderToUpdate = OrderMgr.getOrder(objectOrders[i].orderNumber);
+                var status = validStatus(objectOrders[i].orderStatus);
                 if (typeof status != 'object') {
                     Transaction.wrap(function () {
                         orderToUpdate.setStatus(status);
@@ -106,10 +132,13 @@ function execute(args) {
         } catch (error) {
             overallStatus = new Status(Status.ERROR, 'Error...');
         }
-
+        //Close file reader
         xmlStreamReader.close();
 
-        //Process to update the status order
+        //Action to take whemn the file is already readed.
+        if (overallStatus.getStatus() == Status.OK) {
+            fileAction(args.FileAction, filePath, archivePath);
+        }
         
     });
 
@@ -169,4 +198,4 @@ function sendEmail(order, status) {
 }
 
 
-module.exports.execute = execute;
+module.exports.updateOrders = updateOrders;
