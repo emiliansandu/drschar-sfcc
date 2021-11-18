@@ -61,6 +61,17 @@ var getFiles = function (directoryPath, filePattern) {
     });
 };
 
+function noFileFound(status) {
+    var msg = 'No files found for import.';
+
+    switch (status) {
+    case 'ERROR':
+        return new Status(Status.ERROR, 'ERROR', msg);
+    default:
+        return new Status(Status.OK, 'NO_FILE_FOUND', msg);
+    }
+}
+
 function updateOrders(args) {
     var filesToImport;
 
@@ -69,6 +80,11 @@ function updateOrders(args) {
         filesToImport = getFiles('IMPEX' + File.SEPARATOR + args.SourceFolder, args.FilePattern);
     } catch (e) {
         return new Status(Status.ERROR, 'ERROR', 'Error loading files: ' + e + (e.stack ? e.stack : ''));
+    }
+
+    // No files found
+    if (!filesToImport || filesToImport.length == 0) {
+        return noFileFound(args.NoFileFoundStatus);
     }
 
     // Overall status to be updated on errors
@@ -123,7 +139,7 @@ function updateOrders(args) {
                 if (typeof status != 'object') {
                     Transaction.wrap(function () {
                         orderToUpdate.setStatus(status);
-                        //sendEmail(orderToUpdate, status);
+                        sendEmail(orderToUpdate, status);
                     });
                 } else {
                     overallStatus = new Status(Status.ERROR, 'Error...');

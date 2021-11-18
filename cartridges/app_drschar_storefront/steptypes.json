@@ -213,6 +213,20 @@
                 "@required": true,
                 "@trim": true,
                 "default-value": "src/archive/orders"
+              },
+              {
+                "@name": "NoFileFoundStatus",
+                "description": "No files found exit code",
+                "@type": "string",
+                "@required": true,
+                "@trim": true,
+                "default-value": "OK",
+                "enum-values": {
+                    "value": [
+                        "OK",
+                        "ERROR"
+                    ]
+                }
               }
             ]
           },
