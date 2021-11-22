@@ -12,7 +12,11 @@
             </ol>
         </isif>
 
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner d-none" role="listbox">
+        <div class="icon-new">
+            <i class="fas fa-certificate"></i>
+        </div>
+            
             <isloop items="${product.images['large']}" var="image" status="loopStatus">
                 <div class='carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
                     <isscript>
@@ -23,7 +27,6 @@
                     var ProductImage=DISHelper.getImage(productid, 'medium', loopStatus.index);
                     var mediaFileURL =ProductImage.getURL();
                     </isscript>
-                    
                     <img src="${mediaFileURL}" class="d-block img-fluid carousel-image"
                         alt="${image.alt} image number ${image.index}" itemprop="image" />
                 </div>

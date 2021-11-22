@@ -258,3 +258,21 @@ label.availability {
         margin: 10px 5px;
     }
 }
+
+i.fas.fa-certificate::after {
+    content: 'NEW';
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    font-size: 12px;
+    color: $white;
+    font-family: $font-family-regular;
+}
+
+i.fas.fa-certificate{
+    display: inline-block;
+    position: relative;
+    font-size: 50px;
+    color: $red;
+}
