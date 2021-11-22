@@ -12,8 +12,8 @@
             </ol>
         </isif>
 
-        <div class="carousel-inner d-none" role="listbox">
-        <div class="icon-new">
+        <div class="carousel-inner" role="listbox">
+        <div class="icon-new d-none">
             <i class="fas fa-certificate"></i>
         </div>
             
