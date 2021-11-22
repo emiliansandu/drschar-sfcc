@@ -3536,6 +3536,16 @@ Direct or Redirect</description>
                 <order-required-flag>false</order-required-flag>
                 <externally-defined-flag>false</externally-defined-flag>
             </attribute-definition>
+            <attribute-definition attribute-id="isNew">
+                <display-name xml:lang="x-default">New Product</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
             <attribute-definition attribute-id="gcPreservativeFree">
                 <display-name xml:lang="x-default">Preservative free</display-name>
                 <type>boolean</type>
@@ -3885,8 +3895,9 @@ Direct or Redirect</description>
                 <attribute attribute-id="gcNonGMO"/>
                 <attribute attribute-id="gcPreservativeFree"/>
                 <attribute attribute-id="gcWheatFree"/>
+                <attribute attribute-id="isNew"/>
                 <attribute attribute-id="textClaim"/>
-                <attribute attribute-id="videoMedia"/>
+                <attribute attribute-id="videoMedia"/>                
             </attribute-group>
             <attribute-group group-id="allergyInformation">
                 <display-name xml:lang="x-default">Allergy Information</display-name>
