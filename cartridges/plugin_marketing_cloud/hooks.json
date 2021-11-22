@@ -1,8 +1,0 @@
-{
-  "hooks": [
-    {
-      "name": "app.contactUs.subscribe",
-      "script": "~/cartridge/scripts/helpers/contactUs"
-    }
-  ]
-}
