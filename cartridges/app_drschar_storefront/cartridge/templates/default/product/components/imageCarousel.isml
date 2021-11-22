@@ -13,7 +13,7 @@
         </isif>
 
         <div class="carousel-inner" role="listbox">
-        <div class="icon-new d-none">
+        <div class="icon-new ${product.isNew ? '' : 'd-none'}">
             <i class="fas fa-certificate"></i>
         </div>
             
