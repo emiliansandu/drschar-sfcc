@@ -50,6 +50,10 @@ module.exports = function (object, apiProduct) {
         enumerable: true,
         value: apiProduct.custom.gcNonGMO
     });
+    Object.defineProperty(object, 'isNew', {
+        enumerable: true,
+        value: apiProduct.custom.isNew
+    });
     Object.defineProperty(object, 'gcPreservativeFree', {
         enumerable: true,
         value: apiProduct.custom.gcPreservativeFree
