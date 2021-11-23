@@ -172,6 +172,19 @@ svg {
     }
 }
 
+.grayscale{
+    filter: grayscale(1);
+}
+
+.oos-tag{
+    position: absolute;
+    z-index: 1;
+    background-color: $red;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    color: $white;
+}
 
 .icon-sale{
     z-index: 1;
