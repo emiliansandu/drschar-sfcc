@@ -13,10 +13,15 @@
         </isif>
 
         <div class="carousel-inner" role="listbox">
-        <div class="icon-new ${product.isNew ? '' : 'd-none'}">
-            <i class="fas fa-certificate"></i>
-        </div>
-            
+            <isif condition="${product.price.list != null}">
+                <div class="icon-sale">
+                    <i class="fas fa-certificate"></i>
+                </div>
+            <iselse/>
+                <div class="icon-new ${product.isNew ? '' : 'd-none'}">
+                    <i class="fas fa-certificate"></i>
+                </div>
+            </isif>            
             <isloop items="${product.images['large']}" var="image" status="loopStatus">
                 <div class='carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
                     <isscript>
