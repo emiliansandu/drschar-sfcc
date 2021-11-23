@@ -60,6 +60,7 @@ server.append('Show', cache.applyPromotionSensitiveCache, function (req, res, ne
         var fullProduct = ProductFactory.get(params);
         product.price.list = fullProduct.price.list;
         product.price.sales = fullProduct.price.sales;
+        product.isNew = fullProduct.isNew;
     } catch (e) {
         product = false;
         productUrl = URLUtils.url('Home-Show');// TODO: change to coming soon page
