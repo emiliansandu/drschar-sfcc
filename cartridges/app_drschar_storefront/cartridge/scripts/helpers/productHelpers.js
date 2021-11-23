@@ -111,5 +111,16 @@ PHelper.addUnitToBundleChilds = function addUnitToBundleChilds (showProductPageH
     return showProductPageHelperResult;
 }
 
+PHelper.verifyAvailability = function verifyAvailability(object){
+    var status = true;
+    for (var key in object) {
+        if (object[key] == 'In Stock') {
+            status = true;
+        }else{
+            status = false;
+        }
+    }
+    return status;
+}
 
 module.exports = PHelper;

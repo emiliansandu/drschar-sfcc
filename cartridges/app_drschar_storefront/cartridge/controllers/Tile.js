@@ -29,7 +29,7 @@ server.extend(page);
 server.append('Show', cache.applyPromotionSensitiveCache, function (req, res, next) {
     var URLUtils = require('dw/web/URLUtils');
     var ProductFactory = require('*/cartridge/scripts/factories/product');
-
+    var productHelper = require('*/cartridge/scripts/helpers/productHelpers');
     // The req parameter has a property called querystring. In this use case the querystring could
     // have the following:
     // pid - the Product ID
@@ -61,6 +61,7 @@ server.append('Show', cache.applyPromotionSensitiveCache, function (req, res, ne
         product.price.list = fullProduct.price.list;
         product.price.sales = fullProduct.price.sales;
         product.isNew = fullProduct.isNew;
+        product.isAvailable = productHelper.verifyAvailability(fullProduct.availability.messages);
     } catch (e) {
         product = false;
         productUrl = URLUtils.url('Home-Show');// TODO: change to coming soon page
