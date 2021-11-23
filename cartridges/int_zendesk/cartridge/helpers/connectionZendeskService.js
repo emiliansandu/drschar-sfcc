@@ -23,7 +23,7 @@ function getZendeskServiceDefinition() {
          */
         createRequest: function(svc, requestObject) {
 
-            const token = Site.getCurrent().getCustomPreferenceValue('zendeskKey');
+            const token = Site.getCurrent().getCustomPreferenceValue('zendeskContacUsKey');
             const user = Site.getCurrent().getCustomPreferenceValue('zendeskEmail');
             const encodedAuthStr = require('dw/util/StringUtils').encodeBase64(user + '/token:' + token);
 
