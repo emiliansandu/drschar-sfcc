@@ -10,8 +10,10 @@
                         var ProductImageChild=DISHelper.getImage(productidChild, 'medium', loopStatusChild.index);
                         var mediaFileURLChild =ProductImageChild.getURL();
                     </isscript>
-                <img src="${mediaFileURLChild}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}"
-                    itemprop="image" />
+                <a class="link" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
+                    <img src="${mediaFileURLChild}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}"
+                        itemprop="image" />
+                </a>
             </isif>
         </isloop>
     </div>

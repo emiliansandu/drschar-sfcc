@@ -21,10 +21,6 @@
                 <iselse>
                     <isinclude template="product/components/pricing/main" />
             </isif>
-
-            <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
-                <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
-            </a>
         </div>
     </div>
 </div>
