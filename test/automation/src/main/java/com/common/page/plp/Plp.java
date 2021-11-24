@@ -94,7 +94,7 @@ public class Plp extends PageObject {
     }
 
     private void clickProduct(WebElement product){
-        WebElement image = product.findElement(By.xpath(".//img[@class='tile-image']"));
+        WebElement image = product.findElement(By.xpath(".//img[contains(@class,'tile-image')]"));
         image.click();
     }
 
