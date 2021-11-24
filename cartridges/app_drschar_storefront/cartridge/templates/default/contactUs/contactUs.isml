@@ -8,7 +8,7 @@
         assets.addCss('/css/contactUs.css');
     </isscript>
 
-    <div class="hero slant-down contact-us-banner">
+    <div class="hero contact-us-banner">
         <h1 class="page-title">${Resource.msg('title.contact.us.page', 'contactUs', null)}</h1>
     </div>
 
@@ -94,6 +94,9 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="container">
+                    <isslot id="contact-us-bottom" description="Space below the Contac Us form" context="global" />
                 </div>
             </div>
         </div>
