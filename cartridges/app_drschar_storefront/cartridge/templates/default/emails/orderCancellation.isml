@@ -631,10 +631,16 @@
                                             <tr>
                                                 <td dir="ltr" valign="top"
                                                     style="padding: 3px 20px; font-size:14px; font-family: Arial, sans-serif;  ">
-                                                    ${pdict.order.billing.payment.selectedPaymentInstruments[0].type}
+                                                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod=="AdyenComponent"}">
+                                                        ${Resource.msgf('label.order.custom.order.payment-type', 'confirmation', null, pdict.order.billing.payment.selectedPaymentInstruments[0].selectedAdyenPM, pdict.order.billing.payment.selectedPaymentInstruments[0].type)}
+                                                    </isif>
+                                                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod=="PayPal"}">
+                                                        ${pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod}
+                                                    </isif>
                                                     <span
-                                                        style="color: #A09698">${Resource.msgf('label.order.custom.order.payment-amount', 'confirmation', null, pdict.order.billing.payment
-                                                                               .selectedPaymentInstruments[0].amount)}</span>
+                                                        style="color: #A09698">
+                                                        ${Resource.msgf('label.order.custom.order.payment-amount', 'confirmation', null, pdict.order.billing.payment.selectedPaymentInstruments[0].amount)}
+                                                    </span>
                                                 </td>
                                             </tr>
                                         </table>
