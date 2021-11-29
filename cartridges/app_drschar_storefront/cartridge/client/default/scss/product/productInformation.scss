@@ -292,9 +292,11 @@
 #product-recomended-carousel{
     .carousel-control-prev{
         margin-left: -25px;
+        width: 40px;
     }
     .carousel-control-next{
         margin-right: -25px;
+        width: 40px;
     }
     .primary-images{
         margin-bottom: 10px;
@@ -316,9 +318,11 @@
         margin-bottom: 20px;
         .carousel-control-prev{
             margin-left: 0px;
+            width: 40px;
         }
         .carousel-control-next{
             margin-right: 0px;
+            width: 40px;
         }
         .col-3 {
             -ms-flex: 0 0 25%;
