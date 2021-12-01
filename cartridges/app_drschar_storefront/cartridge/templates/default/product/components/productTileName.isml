@@ -1,3 +1,5 @@
 <div class="pdp-link">
-    <a class="link" href="${pdict.urls.product}">${product.productName}</a>
+    <a class="link" href="${pdict.urls.product}">
+        ${product.displayProductName != null ? product.displayProductName : product.productName }
+    </a>
 </div>
