@@ -3833,7 +3833,7 @@ Direct or Redirect</description>
                 <order-required-flag>false</order-required-flag>
                 <externally-defined-flag>false</externally-defined-flag>
             </attribute-definition>
-            <attribute-definition attribute-id="displayProductName ">
+            <attribute-definition attribute-id="displayProductName">
                 <display-name xml:lang="x-default">Display Product Name </display-name>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
