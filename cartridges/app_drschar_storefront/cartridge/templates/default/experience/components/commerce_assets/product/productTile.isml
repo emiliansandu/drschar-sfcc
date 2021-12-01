@@ -33,7 +33,7 @@
                 <figcaption>
                     <div class="product-tile-body">
                         <div class="product-name-link">
-                            <a href="${pdict.urls.product}">${product.productName}</a>
+                            <a href="${pdict.urls.product}">${product.displayProductName != null ? product.displayProductName : product.productName }</a>
                         </div>
 
                         <isset name="price" value="${product.price}" scope="page" />
