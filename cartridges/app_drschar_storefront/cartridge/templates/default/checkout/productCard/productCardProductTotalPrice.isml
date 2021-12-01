@@ -3,4 +3,4 @@
 >
     ${lineItem.priceTotal.nonAdjustedPrice}
 </div>
-<div class="pricing line-item-total-price-amount item-total-${lineItem.UUID}">${lineItem.priceTotal.price}</div>
+<div class="pricing line-item-total-price-amount item-total-${lineItem.UUID} ${lineItem.priceTotal.nonAdjustedPrice ? 'promotion-price' : '' }">${lineItem.priceTotal.price}</div>
