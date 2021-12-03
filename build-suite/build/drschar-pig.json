@@ -86,7 +86,7 @@
       }
     },
     "project": {
-      "version": "release_1_1_6_build",
+      "version": "release_1_1_7_build",
       "build": "${BITBUCKET_BUILD_NUMBER}"
     },
     "optimize": {
