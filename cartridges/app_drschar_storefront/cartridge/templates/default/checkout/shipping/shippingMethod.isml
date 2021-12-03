@@ -1,3 +1,7 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/shippingMethod.js');    
+</isscript>
 <isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
 <div class="row leading-lines shipping-method-list" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
     <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
@@ -16,6 +20,8 @@
         </div>
     </isloop>
 </div>
+
+<p class="warningShipping d-none">${Resource.msg('label.warning.shipping', 'checkout' , null)}</p>
 
 <!---------------------------------------------------------------------------------->
 <!-- Template used by client to redraw shipping methods                           -->
