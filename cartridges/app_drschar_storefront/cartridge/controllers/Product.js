@@ -125,7 +125,7 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
     if (productType == 'bundle') {
         productHelper.addUnitToBundleChilds(showProductPageHelperResult);
     }
-    if (!showProductPageHelperResult.product.online && productType !== 'set' && productType !== 'bundle') {
+    if (!fullProduct.online) {
         res.setStatusCode(404);
         res.render('error/notFound');
     } else {
