@@ -3845,8 +3845,34 @@ Direct or Redirect</description>
                 <externally-defined-flag>false</externally-defined-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="isCustomBundle">
+                <display-name xml:lang="x-default">Custom Bundle Product</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="customBundleProductsId">
+                <display-name xml:lang="x-default">Custom Bundle Products Ids</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
+            <attribute-group group-id="CustomProductBundle">
+                <display-name xml:lang="x-default">Custom Product Bundle</display-name>
+                <attribute attribute-id="isCustomBundle"/>
+                <attribute attribute-id="customBundleProductsId"/>
+            </attribute-group>
             <attribute-group group-id="ExternalSearch">
                 <display-name xml:lang="x-default">Search Engine Optimization Support</display-name>
                 <attribute attribute-id="pageTitle" system="true"/>
