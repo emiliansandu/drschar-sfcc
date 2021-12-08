@@ -10,6 +10,7 @@
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isCustomProductBundle" value="${true}" scope="page" />
     <isset name="isProductBundle" value="${false}" scope="page" />
+    <isset name="bundle" value="${pdict.product}" scope="page" />
     
     <isobject object="${product.raw}" view="detail" />
         <div class="container product-detail product-wrapper" data-pid="${product.id}">

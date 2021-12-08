@@ -1,6 +1,6 @@
 <div id="m-bundle-${loopState && loopState.count ? loopState.count : '1'}" class="col-12 content tabContent">
     <div class="container d-flex flex-column justify-content-center">
-        <isif condition="${isProductBundle}">
+        <isif condition="${isProductBundle || isCustomProductBundle}">
             <isprint value="${bundle.longDescription}" encoding="off" />
         <iselse/>
             <isif condition="${product.videoMedia}">
