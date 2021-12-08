@@ -132,7 +132,7 @@ PHelper.showProductPage = function showProductPage(querystring, reqPageMetaData)
     var product = ProductFactory.get(params);
     var addToCartUrl = URLUtils.url('Cart-AddProduct');
     var canonicalUrl = URLUtils.url('Product-Show', 'pid', product.id);
-    var breadcrumbs = getAllBreadcrumbs(null, product.id, []).reverse();
+    var breadcrumbs = PHelper.getAllBreadcrumbs(null, product.id, []).reverse();
 
     var template = 'product/productDetails';
 
@@ -140,6 +140,9 @@ PHelper.showProductPage = function showProductPage(querystring, reqPageMetaData)
         template = 'product/bundleDetails';
     } else if (product.productType === 'set' && !product.template) {
         template = 'product/setDetails';
+    } else if (product.isCustomBundle) {
+        buildBundledProducts(product,params);
+        template = 'product/customBundleDetails';
     } else if (product.template) {
         template = product.template;
     }
@@ -152,11 +155,28 @@ PHelper.showProductPage = function showProductPage(querystring, reqPageMetaData)
         template: template,
         product: product,
         addToCartUrl: addToCartUrl,
-        resources: getResources(),
+        resources: PHelper.getResources(),
         breadcrumbs: breadcrumbs,
         canonicalUrl: canonicalUrl,
         schemaData: schemaData
     };
+}
+
+function buildBundledProducts(product,params) {
+    var ProductFactory = require('*/cartridge/scripts/factories/product');
+
+    var bundleds = product.customBundleProductsId;
+    if (bundleds.length > 0) {
+        var bundledProducts = new Array;
+        product.bundledProducts = bundledProducts;
+        for (var i = 0; i < bundleds.length; i++) {
+            params.pid = bundleds[i];
+            var childProduct = ProductFactory.get(params);
+            if(childProduct != null){
+                bundledProducts.push(childProduct);
+            }
+        }
+    }
 }
 
 module.exports = PHelper;
