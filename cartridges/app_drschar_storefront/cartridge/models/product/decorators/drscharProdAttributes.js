@@ -62,6 +62,15 @@ module.exports = function (object, apiProduct) {
         enumerable: true,
         value: apiProduct.custom.textClaim
     });
+    Object.defineProperty(object, 'isCustomBundle', {
+        enumerable: true,
+        value: apiProduct.custom.isCustomBundle
+    });
+    Object.defineProperty(object, 'customBundleProductsId', {
+        enumerable: true,
+        value: apiProduct.custom.customBundleProductsId
+    });
+
  //Product custom attributes asigned to allergyInformation group
     for (var i=0; i<attrGroups.length; i++){
         if(attrGroups[i].ID=='allergyInformation'){
