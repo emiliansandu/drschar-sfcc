@@ -87,15 +87,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row quantity-unit">
-                <isinclude template="product/components/quantityStatic" />
-                <span class="selected-quantity-child d-none">${parseInt(product.selectedQuantity, 10).toString()}</span>
-            </div>
-
-            <a class="btn btn-primary col-12" href="${URLUtils.url('Product-Show', 'pid', product.id)}">
-                <span>${Resource.msg('button.bundle.details', 'product', null)}</span>
-            </a>
         </div>
     </div>
 </div>
