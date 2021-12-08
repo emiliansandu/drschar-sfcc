@@ -24,16 +24,16 @@ server.prepend(
         var BasketMgr = require('dw/order/BasketMgr');
         var CartModel = require('*/cartridge/models/cart');
         var currentBasket = BasketMgr.getCurrentBasket();
-        
+
         var basketModel = new CartModel(currentBasket);
         res.setViewData(basketModel);
         var viewData = res.getViewData();
 
-        if(viewData.numItems>0){
-            var orderMinimum=Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
-            var subTotal=Number(viewData.totals.subTotal.slice(1));
+        if (viewData.numItems > 0) {
+            var orderMinimum = Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
+            var subTotal = Number(viewData.totals.subTotal.slice(1));
             var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
-            if(subTotal<orderMinimum){
+            if (subTotal < orderMinimum) {
                 res.setViewData({
                     orderMinimumNotCompleted: true,
                     orderMinimumMessage: minimumMessage
@@ -56,24 +56,59 @@ server.prepend(
  * @param {returns} - json
  * @param {serverfunction} - get
  */
- server.append('UpdateQuantity', function (req, res, next) {
+server.append('UpdateQuantity', function (req, res, next) {
     var Resource = require('dw/web/Resource');
 
     var viewData = res.getViewData();
 
-    if(viewData.numItems>0){
-        var orderMinimum=Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
-        var subTotal=Number(viewData.totals.grandTotal.slice(1));
+    if (viewData.numItems > 0) {
+        var orderMinimum = Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
+        var subTotal = Number(viewData.totals.subTotal.slice(1));
         var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
-        if(subTotal<orderMinimum){
+        if (subTotal < orderMinimum) {
             res.setViewData({
-               orderMinimumNotCompleted:true,
-               orderMinimumMessage: minimumMessage
+                orderMinimumNotCompleted: true,
+                orderMinimumMessage: minimumMessage
             });
         }
     }
-    
+
     return next();
 });
+
+/**
+ * Cart-MiniCartShow : The Cart-MiniCartShow is responsible for getting the basket and showing the contents when you hover over minicart in header
+ * @name Base/Cart-MiniCartShow
+ * @function
+ * @memberof Cart
+ * @param {category} - sensitive
+ * @param {renders} - isml
+ * @param {serverfunction} - get
+ */
+server.prepend('MiniCartShow', function (req, res, next) {
+        var Resource = require('dw/web/Resource');
+        var BasketMgr = require('dw/order/BasketMgr');
+        var CartModel = require('*/cartridge/models/cart');
+        var currentBasket = BasketMgr.getCurrentBasket();
+
+        var basketModel = new CartModel(currentBasket);
+        res.setViewData(basketModel);
+        var viewData = res.getViewData();
+
+        if (viewData.numItems > 0) {
+            var orderMinimum = Site.current.getCustomPreferenceValue('orderMinimumThresholdAmount');
+            var subTotal = Number(viewData.totals.subTotal.slice(1));
+            var minimumMessage = Resource.msg('error.cart.orderMinimumThresholdAmount', 'cart', null) + Number(orderMinimum).toFixed(2);
+            if (subTotal < orderMinimum) {
+                res.setViewData({
+                    orderMinimumNotCompleted: true,
+                    orderMinimumMessage: minimumMessage
+                });
+            }
+        }
+        next();
+    });
+
+
 
 module.exports = server.exports();
