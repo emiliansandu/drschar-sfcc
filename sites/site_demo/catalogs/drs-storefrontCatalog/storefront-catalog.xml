@@ -20,7 +20,7 @@
         <page-attributes/>
     </category>
 
-    <category category-id="Products">
+    <category category-id="products">
         <display-name xml:lang="x-default">Products</display-name>
         <online-flag>true</online-flag>
         <parent>root</parent>
