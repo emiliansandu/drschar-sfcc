@@ -8,7 +8,7 @@
       Then Verify logo is visible
 
     Scenario: Place an Order with Credit Card as guest
-      Given User clicks on "Products" category
+      Given User clicks on "products" category
       And User closes cookie
       And User opens a PDP from current PLP
       Then Verify user is seeing the selected PDP

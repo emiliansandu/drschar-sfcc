@@ -9,7 +9,7 @@
 
 
     Scenario Outline: Add to cart from PDP - navigate from category
-      Given User clicks on "Products" category
+      Given User clicks on "products" category
       And User closes cookie
       And User opens a PDP from current PLP
       Then Verify user is seeing the selected PDP
