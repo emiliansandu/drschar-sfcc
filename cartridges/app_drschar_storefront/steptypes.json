@@ -45,6 +45,47 @@
           }
         },
         {
+          "@type-id":"custom.getInstagramContent",
+          "@supports-parallel-execution":"false",
+          "@supports-site-context":"true",
+          "@supports-organization-context":"true",
+          "description":"This script retrieves instagramToken custom object tokenKey attribute. It runs in site scope.",
+          "module":"app_drschar_storefront/cartridge/scripts/steps/InstagramContent.js",
+          "function":"getInstagramContent",
+          "transactional":"true",
+          "timeout-in-seconds":"900",
+          "parameters":
+          {
+            "parameter":
+            [
+              {
+                "@name":"CustomObjectKey",
+                "@type":"string",
+                "@required":"true",
+                "description":"The Custom Object type to be data retrieved."
+              }
+            ]
+          },
+          "status-codes": 
+          {
+            "status": 
+            [
+                {
+                    "@code": "ERROR",
+                    "description": "Used when the step failed with an error."
+                },
+                {
+                    "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+                },
+                {
+                    "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+                }
+            ]
+          }
+        },
+        {
           "@type-id":"custom.getCustomObjectEmails",
           "@supports-parallel-execution":"false",
           "@supports-site-context":"true",
