@@ -55,7 +55,7 @@
     "ci": {
       "server": "bgpc-001.sandbox.us01.dx.commercecloud.salesforce.com",
       "username": "ocordero@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_42byVmpiKBsRBi9o+Ko92g==",
+      "password": "t8kdrXdL61E_zfs6cPsYgXEVcjpeYYNQKw==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
@@ -69,7 +69,7 @@
     "dev3": {
       "server": "bgpc-003.sandbox.us01.dx.commercecloud.salesforce.com",
       "username": "ocordero@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_42byVmpiKBsRBi9o+Ko92g==",
+      "password": "t8kdrXdL61E_zfs6cPsYgXEVcjpeYYNQKw==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
@@ -97,7 +97,7 @@
     "development": {
       "server": "development-na01-drschar.demandware.net",
       "username": "ocordero@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_42byVmpiKBsRBi9o+Ko92g==",
+      "password": "t8kdrXdL61E_zfs6cPsYgXEVcjpeYYNQKw==",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     }
