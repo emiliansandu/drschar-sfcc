@@ -2,6 +2,7 @@
 
 var Template = require('dw/util/Template');
 var HashMap = require('dw/util/HashMap');
+var CustomObjectMgr = require('dw/object/CustomObjectMgr');
 
 /**
  * Render logic for the storefront.editorialRichText component
@@ -12,15 +13,13 @@ var HashMap = require('dw/util/HashMap');
  */
 module.exports.render = function (context, modelIn) {
     var model = modelIn || new HashMap();
-    var content = context.content;
 
-    var instaHelper = require('*/cartridge/scripts/helpers/instagramHelper');
-
-    if (content.apiPath && content.accessToken) {
-    var apiPath=content.apiPath+'&limit=8';  
-    var instaFeed = instaHelper.getFeed(apiPath, content.accessToken);
-    model.instagramFeed=instaFeed;    
-    }
+   
+    var CustomObjectInstance = CustomObjectMgr.getAllCustomObjects('instagramContent');
+    var CustomObjectCount = CustomObjectInstance.getCount();
+    var CustomObjectData = CustomObjectInstance.asList(0, CustomObjectCount); 
+    model.instagramFeed=CustomObjectData;  
+ 
    
     return new Template('experience/components/drschar_components/instagramFeed').render(model).text;
 };

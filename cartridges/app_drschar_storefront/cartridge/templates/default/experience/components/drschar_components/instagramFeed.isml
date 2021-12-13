@@ -5,25 +5,25 @@
 </isscript>    
     <div class="container">
             <div class="row">
-            <isloop items="${pdict.instagramFeed.data}" var="post">
-                <div class="col-lg-3 col-6" data-pid="${post.id}">
+            <isloop items="${pdict.instagramFeed}" var="post">
+                <div class="col-lg-3 col-6" data-pid="${post.custom.ID}">
                     <div class="product-tile">
                         <div class="image-container">
-                                <isif condition="${post.media_type=='IMAGE' || post.media_type=='CAROUSEL_ALBUM'}">
-                                <div class="tile-image-background" style="background-image:url(${post.media_url})">
-                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden" alt="${post.id}" title="${post.id}"/>
+                                <isif condition="${post.custom.mediaType=='IMAGE' || post.custom.mediaType=='CAROUSEL_ALBUM'}">
+                                <div class="tile-image-background" style="background-image:url(${post.custom.mediaURL})">
+                                <img src="${post.custom.mediaURL}" class="tile-image" style="visibility:hidden" alt="${post.custom.ID}" title="${post.custom.ID}"/>
                                 </div>
                                 </isif>
-                                <isif condition="${post.media_type=='VIDEO'}">
-                                <div class="tile-image-background" style="background-image:url(${post.thumbnail_url})" >
-                                <img src="${post.media_url}" class="tile-image" style="visibility:hidden" alt="${post.id}" title="${post.id}"/>
+                                <isif condition="${post.custom.mediaType=='VIDEO'}">
+                                <div class="tile-image-background" style="background-image:url(${post.custom.thumbnailURL})" >
+                                <img src="${post.custom.mediaURL}" class="tile-image" style="visibility:hidden" alt="${post.custom.ID}" title="${post.custom.ID}"/>
                                 </div>
                                 </isif>
                             <div class="overlay">
                                 <p class="overlay-text">
-                                <isprint value = "${post.caption}" padding = "160"/>
+                                <isprint value = "${post.custom.caption}" padding = "160"/>
                                 </p>
-                                <a class="overlay-link" target="_blank" href="${post.permalink}">
+                                <a class="overlay-link" target="_blank" href="${post.custom.permalink}">
                                 <p>View More</p>
                                 </a>
                             </div>
