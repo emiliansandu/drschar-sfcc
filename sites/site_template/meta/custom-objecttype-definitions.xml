@@ -890,7 +890,7 @@
     </custom-type>
 
 <custom-type type-id="instagramContent">
-        <display-name xml:lang="x-default">Intagram Content</display-name>
+        <display-name xml:lang="x-default">Instagram Content</display-name>
         <description xml:lang="x-default">This Custom Object is designed to contain the data response from the API of instagram</description>
         <staging-mode>source-to-target</staging-mode>
         <storage-scope>site</storage-scope>
