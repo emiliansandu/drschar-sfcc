@@ -889,19 +889,65 @@
         </group-definitions>
     </custom-type>
 
-    <custom-type type-id="instagramContent">
+<custom-type type-id="instagramContent">
         <display-name xml:lang="x-default">Intagram Content</display-name>
         <description xml:lang="x-default">This Custom Object is designed to contain the data response from the API of instagram</description>
         <staging-mode>source-to-target</staging-mode>
         <storage-scope>site</storage-scope>
         <key-definition attribute-id="contentKey">
             <display-name xml:lang="x-default">Content Key</display-name>
-            <type>string</type>
+            <type>int</type>
             <min-length>0</min-length>
         </key-definition>
         <attribute-definitions>
-            <attribute-definition attribute-id="data">
-                <display-name xml:lang="x-default">Data</display-name>
+            <attribute-definition attribute-id="ID">
+                <display-name xml:lang="x-default">ID</display-name>
+                <description xml:lang="x-default">ID of the instagram post retrieved by the response of our API request</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="caption">
+                <display-name xml:lang="x-default">caption</display-name>
+                <description xml:lang="x-default">text with a brief coment or description about the post retrieved by the response to our APi request</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="mediaType">
+                <display-name xml:lang="x-default">mediaType</display-name>
+                <description xml:lang="x-default">Type of the media content retrieved by the response to our APi request</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="mediaURL">
+                <display-name xml:lang="x-default">mediaURL</display-name>
+                <description xml:lang="x-default">URL to the media content retrieved by the response to our API request</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="permalink">
+                <display-name xml:lang="x-default">permalink</display-name>
+                <description xml:lang="x-default">URL to the instagram post website retrieved by the response to our API request</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="thumbnailURL">
+                <display-name xml:lang="x-default">thumbnailURL</display-name>
+                <description xml:lang="x-default">The thumbnail URL intended to be used is image miniature for video content posts retrieved by the response to our API request</description>
                 <type>string</type>
                 <localizable-flag>false</localizable-flag>
                 <mandatory-flag>false</mandatory-flag>
@@ -911,9 +957,16 @@
         </attribute-definitions>
         <group-definitions>
             <attribute-group group-id="instagramContentData">
-                <display-name xml:lang="x-default">Istagram Content Data</display-name>
+                <display-name xml:lang="x-default">Instagram Content Data</display-name>
                 <attribute attribute-id="contentKey"/>
-                <attribute attribute-id="data"/>
+                <attribute attribute-id="ID"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="mediaURL"/>
+                <attribute attribute-id="thumbnailURL"/>
+                <attribute attribute-id="permalink"/>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="caption"/>
+                <attribute attribute-id="mediaType"/>
             </attribute-group>
         </group-definitions>
     </custom-type>
