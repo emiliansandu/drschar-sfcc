@@ -814,5 +814,38 @@
             </run-once>
         </triggers>
     </job>
+        <job job-id="instagramAPIGetDataContent" priority="0">
+        <description>This job was created to run InstagramContent steptype which gets data from instagram API and save it to instagramContent Custom Object</description>
+        <parameters/>
+        <flow>
+            <context site-id="drschar"/>
+            <step step-id="custom.getInstagramContent" type="custom.getInstagramContent" enforce-restart="true">
+                <description>This will get Instagram API Data and save it to instagramContent Custom Object</description>
+                <parameters>
+                    <parameter name="CustomObjectKey">instagramToken</parameter>
+                    <parameter name="CustomObjectApiPath">me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2021-12-11Z</date-from>
+                    <start-time>21:20:48.000Z</start-time>
+                    <interval>23h</interval>
+                    <day-of-week>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Thursday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Friday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
 
 </jobs>
