@@ -62,7 +62,15 @@
                 "@name":"CustomObjectKey",
                 "@type":"string",
                 "@required":"true",
-                "description":"The Custom Object type to be data retrieved."
+                "description":"The Custom Object type to be data retrieved.",
+                "default-value": "instagramToken"
+              },
+              {
+                "@name":"CustomObjectApiPath",
+                "@type":"string",
+                "@required":"true",
+                "description":"The Custom Object API Path to be data retrieved.",
+                "default-value": "me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url"
               }
             ]
           },
