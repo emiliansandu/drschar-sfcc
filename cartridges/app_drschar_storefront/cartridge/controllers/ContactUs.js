@@ -47,13 +47,15 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
     var emailHelper = require('*/cartridge/scripts/helpers/emailHelpers');
     var Site = require('dw/system/Site');
     var recaptcha = require('*/cartridge/helpers/recaptchaGoogle');
+    var URLUtils = require('dw/web/URLUtils');
     var enableGoogle = Site.getCurrent().getCustomPreferenceValue('enableGoogleRecaptcha');
     var myForm = req.form;
     const g_token = myForm.g_token;
+    var submittedfrom='Submitted from: '+URLUtils.https('ContactUs-Landing');
     const ticketData = {
         ticket: {
             comment: {
-                body: myForm.contactProblem
+                body: myForm.contactProblem+"\n\n"+submittedfrom
             },
             subject: myForm.contactSubject,
             requester: {
