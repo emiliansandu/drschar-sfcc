@@ -51,11 +51,11 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
     var enableGoogle = Site.getCurrent().getCustomPreferenceValue('enableGoogleRecaptcha');
     var myForm = req.form;
     const g_token = myForm.g_token;
-    var submittedfrom='Submitted from: '+URLUtils.https('ContactUs-Landing');
+    var submittedfrom='\n\n------------------\n'+'Submitted from: '+URLUtils.https('ContactUs-Landing');
     const ticketData = {
         ticket: {
             comment: {
-                body: myForm.contactProblem+"\n\n"+submittedfrom
+                body: myForm.contactProblem+submittedfrom
             },
             subject: myForm.contactSubject,
             requester: {
