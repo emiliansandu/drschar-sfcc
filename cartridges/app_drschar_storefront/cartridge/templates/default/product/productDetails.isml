@@ -124,7 +124,9 @@
 
                         <!-- Product Availability -->
                         <isinclude template="product/components/productAvailability" />
-
+                        <isif condition="${product.available === false}">
+                        <isinclude template="product/components/forms/addEmailToWaitlist" />
+                        </isif>
                         <!-- EAN number -->
                             <div class="row mb-3">
                                 <isinclude template="product/components/eanNumber" />
