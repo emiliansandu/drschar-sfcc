@@ -1541,5 +1541,29 @@
             </attribute-group>
         </group-definitions>
     </custom-type>
+    <custom-type type-id="Waitlist">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="productId">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="emails">
+                <display-name xml:lang="x-default">Waitlist Emails</display-name>
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="general">
+                <display-name xml:lang="x-default">General</display-name>
+                <attribute attribute-id="productId"/>
+                <attribute attribute-id="emails"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
 
 </metadata>
