@@ -14,7 +14,7 @@
                     <isif condition="${message =='In Stock'}">
                         <i class="far fa-check-circle"></i>                        
                     </isif> 
-                    <isif condition="${message =='Out of Stock'}">
+                    <isif condition="${message =='This item is currently not available'}">
                         <i class="far fa-times-circle"></i>                        
                     </isif>
                     ${message}
