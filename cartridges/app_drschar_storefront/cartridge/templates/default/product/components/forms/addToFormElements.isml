@@ -1,0 +1,7 @@
+<!-- Cart and [Optionally] Apple Pay -->
+<iscache type="relative" minute="0"/>
+<isif condition="${product.available === false}">
+    <isinclude template="product/components/forms/addEmailToWaitlist" />
+<iselse/>
+    <isinclude template="product/components/addToCartProduct" />
+</isif>
