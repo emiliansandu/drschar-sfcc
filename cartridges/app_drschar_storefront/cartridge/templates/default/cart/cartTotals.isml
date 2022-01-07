@@ -1,3 +1,31 @@
+<!--- Order Grand Total --->
+<div class="row">
+    <div class="col-8">
+        <strong>${Resource.msg('label.total.price','cart',null)}</strong>
+    </div>
+    <div class="col-4">
+        <p class="text-right grand-total">${pdict.totals.grandTotal}</p>
+    </div>
+</div>
+<!--- Order Discount --->
+<div class="row order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-8">
+        <p>${Resource.msg('label.order.discount', 'common', null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right order-discount-total">(-${pdict.totals.orderLevelDiscountTotal.formatted})</p>
+    </div>
+</div>
+<!--- Order SubTotal --->
+<div class="row">
+    <div class="col-8">
+        <p>${Resource.msg('label.subtotal.price','cart',null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right subtotal">${pdict.totals.subTotal}</p>
+    </div>
+</div>
+<!--- Order Shipping Cost --->
 <div class="row">
     <div class="col-8">
         <p>${Resource.msg('label.shipping.cost','cart',null)}</p>
@@ -6,14 +34,13 @@
         <p class="text-right shipping-cost">${pdict.totals.totalShippingCost}</p>
     </div>
 </div>
-
 <!--- Shipping Discount --->
 <div class="row shipping-discount <isif condition="${pdict.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
     <div class="col-8">
         <p>${Resource.msg('label.shipping.discount', 'common', null)}</p>
     </div>
     <div class="col-4">
-        <p class="text-right shipping-discount-total">- ${pdict.totals.shippingLevelDiscountTotal.formatted}</p>
+        <p class="text-right shipping-discount-total">(-${pdict.totals.shippingLevelDiscountTotal.formatted})</p>
     </div>
 </div>
 
@@ -26,17 +53,7 @@
         <p class="text-right tax-total">${pdict.totals.totalTax}</p>
     </div>
 </div>
-
-<!--- Order Discount --->
-<div class="row order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
-    <div class="col-8">
-        <p>${Resource.msg('label.order.discount', 'common', null)}</p>
-    </div>
-    <div class="col-4">
-        <p class="text-right order-discount-total"> - ${pdict.totals.orderLevelDiscountTotal.formatted}</p>
-    </div>
-</div>
-
+<!--- Order Grand Total --->
 <div class="row">
     <div class="col-8">
         <strong>${Resource.msg('label.estimatedtotal','cart',null)}</strong>
