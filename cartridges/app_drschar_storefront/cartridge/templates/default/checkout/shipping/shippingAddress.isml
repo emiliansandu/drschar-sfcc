@@ -1,4 +1,5 @@
 <isset name="addressFields" value="${pdict.forms.shippingForm.shippingAddress.addressFields}" scope="page"/>
+<isset name="contactInfoEmailField" value="${pdict.forms.shippingForm.shippingAddress.emailOnShipping}" scope="page"/>
 <isif condition="${shippingModel.shippingAddress}">
     <isset name="shippingAddress" value="${shippingModel.shippingAddress}" scope="page" />
 <iselse/>
@@ -138,7 +139,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <div class="form-group
             ${addressFields.phone.mandatory === true ? 'required' : ''}
             ${addressFields.phone.htmlName}">
@@ -152,4 +153,30 @@
             <span>${Resource.msg('example.phone','forms',null)}</span>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="form-group
+            ${contactInfoEmailField.mandatory === true ? 'required' : ''}
+            ${contactInfoEmailField.htmlName}">
+            <label class="form-control-label" for="emailOnShipping">${Resource.msg('field.customer.email','checkout',null)}</label>
+
+            <button type="button" class="info-icon">
+                <i class="fas fa-info-circle"></i>
+                <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
+                <span class="tooltip d-none">
+                    ${Resource.msg('tooltip.email','creditCard',null)}
+                </span>
+            </button>
+            <isif condition="${pdict.customer.profile.email}">
+                        <input type="text" class="form-control email" id="emailOnShipping"
+                            value="${pdict.order.orderEmail||pdict.customer.profile.email}" <isprint value=${contactInfoEmailField.attributes} encoding="off"/>
+                            aria-describedby="emailInvalidMessage" />
+                <iselse/>
+                        <input type="text" class="form-control email" id="emailOnShipping"
+                            value="${pdict.order.orderEmail||''}" <isprint value=${contactInfoEmailField.attributes} encoding="off"/>
+                            aria-describedby="emailInvalidMessage" />
+            </isif>
+            <div class="invalid-feedback" id="emailInvalidMessage"></div>
+        </div>
+    </div>
+    
 </div>
