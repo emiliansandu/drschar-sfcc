@@ -535,6 +535,37 @@ var adyenCheckout = require('../adyenCheckout');
 
         return this;
     };
+//here we listen to changes or click on new shipping form email input element 
+//and pass it the old billing form input text element this includes remove the original input element en generate a new one which must contain all the original form-input attributes 
+        $('body').on('change', "#emailOnShipping", function() {   
+            emailBillingInputRecreate();
+        });
+
+        $(".submit-shipping").on('click', function(){
+            emailBillingInputRecreate();
+        });
+
+        //here we wait to listen to click event on submit payment button to add form attributes this way we avoid to need to write value by hand which is a must when this value have to be changed on this input        
+        $(".submit-payment").on('click', function(){
+                $('#email').attr({'name':'dwfrm_billing_contactInfoFields_email', 'required':'', 'aria-required':"true", 'maxlength':"50", 'pattern':"^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"});
+        });
+        //edit button now enable submit shipping button when click event
+        $(".edit-button").on('click', function(){
+            $('.submit-shipping').attr('disabled', false);
+        });
+
+        
+
+    function emailBillingInputRecreate() {
+        var emailInputValue=$('#emailOnShipping').val();
+            $('#email').remove();
+            $('.dwfrm_billing_contactInfoFields_email').append('<input type="text" class="form-control email" id="email" value='+emailInputValue+' aria-describedby="emailInvalidMessage"/>');
+        var emailInvalidMessage=$('#emailInvalidMessage').clone();
+            $('#emailInvalidMessage').remove();
+            emailInvalidMessage.appendTo('.dwfrm_shipping_shippingAddress_emailOnShipping'); 
+            emailInvalidMessage.appendTo('.dwfrm_billing_contactInfoFields_email');
+            
+    }
 }(jQuery));
 
 
