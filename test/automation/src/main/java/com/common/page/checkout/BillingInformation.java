@@ -75,6 +75,9 @@ public class BillingInformation extends PageObject {
         field = billingAddress.findElement(By.id("shippingPhoneNumberdefault"));
         field.sendKeys(propertyReader.getProperty("billing.phone"));*/
 
+        field = billingAddress.findElement(By.id("emailOnShipping"));
+        field.sendKeys(propertyReader.getProperty("billing.emailOnShipping"));
+
 
 
     }
