@@ -11,11 +11,11 @@ public class BillingInfoSteps extends DriverFactory {
     @Given("User fills billing data")
     public void fill_billing_data() {billing.fillBillingAddress();}
 
-    @Given("User fills payment data")
-    public void fill_payment_data() {payment.fillPaymentData();}
-
     @Given("User fills email data")
     public void fill_email_data() {payment.fillEmailData();}
+
+    @Given("User fills payment data")
+    public void fill_payment_data() {payment.fillPaymentData();}
 
     @Given("User fills Payment cvv field")
     public void fill_cvv() {payment.fillCvv();}

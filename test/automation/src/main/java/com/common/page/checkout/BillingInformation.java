@@ -82,6 +82,13 @@ public class BillingInformation extends PageObject {
 
     }
 
+    public void fillEmailData() {
+        wait.until(ExpectedConditions.visibilityOf(billingAddress));
+
+        WebElement field = paymentData.findElement(By.id("emailOnShipping"));
+        field.sendKeys(propertyReader.getProperty("billing.emailOnShipping"));
+    }
+
     public void fillPaymentData() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
 
@@ -116,13 +123,6 @@ public class BillingInformation extends PageObject {
         driver.switchTo().defaultContent();
 
     }
-
-   /* public void fillEmailData() {
-        wait.until(ExpectedConditions.visibilityOf(paymentData));
-
-        WebElement field = paymentData.findElement(By.id("email"));
-        field.sendKeys(propertyReader.getProperty("payment.email"));
-    }*/
 
         public void fillCvv() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
