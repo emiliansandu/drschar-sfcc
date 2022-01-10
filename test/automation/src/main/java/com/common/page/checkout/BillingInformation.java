@@ -85,8 +85,8 @@ public class BillingInformation extends PageObject {
     public void fillPaymentData() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
 
-        WebElement field = paymentData.findElement(By.id("email"));
-        field.sendKeys(propertyReader.getProperty("payment.email"));
+       /* WebElement field = paymentData.findElement(By.id("email"));
+        field.sendKeys(propertyReader.getProperty("payment.email"));*/
 
         /*driver.switchTo().frame("js-iframe");
             driver.findElement(
@@ -117,12 +117,12 @@ public class BillingInformation extends PageObject {
 
     }
 
-    public void fillEmailData() {
+   /* public void fillEmailData() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
 
         WebElement field = paymentData.findElement(By.id("email"));
         field.sendKeys(propertyReader.getProperty("payment.email"));
-    }
+    }*/
 
         public void fillCvv() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
