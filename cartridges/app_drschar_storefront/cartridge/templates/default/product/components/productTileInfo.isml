@@ -1,0 +1,16 @@
+<iscache type="relative" minute="0"/>
+<isif condition="${product.isAvailable}">
+            <isif condition="${product.price.list != null}">
+                <div class="icon-sale">
+                    <i class="fas fa-certificate"></i>
+                </div>
+            <iselse/>
+                <div class="icon-new ${product.isNew ? '' : 'd-none'}">
+                    <i class="fas fa-certificate"></i>
+                </div>
+            </isif>
+        <iselse/>
+            <div class="oos-tag">
+                <span>${Resource.msg('label.title.oos', 'product', null)}</span>
+            </div>
+</isif>    
