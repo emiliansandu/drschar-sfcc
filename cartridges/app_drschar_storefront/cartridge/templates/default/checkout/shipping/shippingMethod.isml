@@ -16,7 +16,14 @@
             </label>
         </div>
         <div class="col-3 text-right shipping-method-pricing end-lines">
+        <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value!='' && pdict.order.totals.shippingLevelDiscountTotal.value!='0.0' && pdict.order.totals.shippingLevelDiscountTotal.value!=null}">
+            <del>
+            <span class="shipping-cost" data-shipping-level-discount-total="${pdict.order.totals.shippingLevelDiscountTotal.value}">${shippingMethod.shippingCost}</span>
+            </del>
+            <span class="shipping-cost totalWithAppliedPromotion"></span>
+        <iselse/>
             <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+        </isif>
         </div>
     </isloop>
 </div>
