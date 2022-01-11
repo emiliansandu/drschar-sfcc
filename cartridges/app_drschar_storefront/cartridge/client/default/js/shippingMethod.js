@@ -10,7 +10,13 @@ $(document).ready(function() {
         shippingCost = shippingCost.split('$');
         shippingCost = shippingCost[1];
         var shippingLevelDiscountTotal=$(this).data("shipping-level-discount-total");
-        var totalWithAppliedPromotion=shippingCost-shippingLevelDiscountTotal;
+        var totalWithAppliedPromotion;
+        if(shippingLevelDiscountTotal>shippingCost){
+            totalWithAppliedPromotion=0;
+        }else{
+            totalWithAppliedPromotion=shippingCost-shippingLevelDiscountTotal;
+        }
+        totalWithAppliedPromotion='$'+parseFloat(totalWithAppliedPromotion).toFixed(2);
         $(this).parent().parent().find(".totalWithAppliedPromotion").text(totalWithAppliedPromotion);
    });
 });
