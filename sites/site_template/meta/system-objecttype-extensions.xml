@@ -4545,6 +4545,24 @@ Direct or Redirect</description>
             </attribute-definition>
             <attribute-definition attribute-id="tags"/>
         </system-attribute-definitions>
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="relatedContentAssetID">
+                <display-name xml:lang="x-default">Related Content Asset ID</display-name>
+                <description xml:lang="x-default">This custom atribute is intended to be used as a relation attribute betwen a promotion and a promotion content asset by setting on this attribute the same ID of the content asset that we want to display in case we want to do it</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="customPromotionAttributes">
+                <display-name xml:lang="x-default">Custom Promotion Attributes</display-name>
+                <description xml:lang="x-default">This group was created to group all the custom attributes created for promotios system object</description>
+                <attribute attribute-id="relatedContentAssetID"/>
+            </attribute-group>
+        </group-definitions>
     </type-extension>
 
     <type-extension type-id="Recommendation">
