@@ -63,7 +63,8 @@ function createDiscountObject(collection, discounts) {
                 lineItemText: item.lineItemText,
                 price: formatMoney(item.price),
                 type: 'promotion',
-                callOutMsg: (typeof item.promotion !== 'undefined' && item.promotion !== null) ? item.promotion.calloutMsg : ''
+                callOutMsg: (typeof item.promotion !== 'undefined' && item.promotion !== null) ? item.promotion.calloutMsg : '',
+                relatedContentAssetID: item.promotion.custom.relatedContentAssetID
             };
         }
     });
