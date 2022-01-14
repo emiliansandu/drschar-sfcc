@@ -148,7 +148,7 @@ function updateShippingAddressFormValues(shipping) {
  * updates the shipping method radio buttons within shipping forms
  * @param {Object} shipping - the shipping (shipment model) model
  */
-function updateShippingMethods(shipping) {
+function updateShippingMethods(shipping, order) {
     var uuidEl = $('input[value=' + shipping.UUID + ']');
     if (uuidEl && uuidEl.length > 0) {
         $.each(uuidEl, function (shipmentIndex, el) {
@@ -191,8 +191,9 @@ function updateShippingMethods(shipping) {
             }
         });
     }
+    updateShippingCostWithPromoDiscount(order)
 
-    $('body').trigger('shipping:updateShippingMethods', { shipping: shipping });
+    $('body').trigger('shipping:updateShippingMethods', { shipping: shipping, order: order });
 }
 
 /**
@@ -230,6 +231,7 @@ function updateShippingMethodList($shippingForm) {
             }
         });
     }, 300);
+    updateShippingCostWithPromoDiscount(urlParams.order)
 }
 
 /**
@@ -407,7 +409,7 @@ function updateShippingInformation(shipping, order, customer, options) {
     });
 
     // Now update shipping information, based on those associations
-    updateShippingMethods(shipping);
+    updateShippingMethods(shipping, order);
     updateShippingAddressFormValues(shipping);
     updateShippingSummaryInformation(shipping, order);
 
@@ -664,6 +666,27 @@ function editOrEnterMultiShipInfo(element, mode) {
     };
 
     root.data('saved-state', JSON.stringify(savedState));
+}
+
+function updateShippingCostWithPromoDiscount(order) {
+    var shippingLevelDiscountTotalValue = order.totals.shippingLevelDiscountTotal.value;
+    if(shippingLevelDiscountTotalValue!=='' && shippingLevelDiscountTotalValue!==0 && shippingLevelDiscountTotalValue!==null){
+    var shippingMethod = $('.shipping-method-list:visible').find('.form-check-input:radio:checked');
+    var shippingMethodPricing = $(shippingMethod).parent().siblings('.shipping-method-pricing').first();
+    var shippingMethodPricingVal = shippingMethodPricing.text();
+    var shippingMethodPricingValue = shippingMethodPricingVal.split('$');
+    shippingMethodPricingValue = shippingMethodPricingValue[1];
+   
+    var shippingCostWithPromoApplied;
+    if(shippingMethodPricingValue>=shippingLevelDiscountTotalValue){ 
+        shippingCostWithPromoApplied = shippingMethodPricingValue-shippingLevelDiscountTotalValue;
+        shippingCostWithPromoApplied='$'+parseFloat(shippingCostWithPromoApplied).toFixed(2);  
+    }else{
+        shippingCostWithPromoApplied='$0.00';  
+    } 
+    shippingMethodPricing.empty();
+    shippingMethodPricing.append('<del class="strike-through"><span class="shipping-cost">'+shippingMethodPricingVal+'</span></del>&nbsp;<span class="totalWithAppliedPromotion">'+shippingCostWithPromoApplied+'</span>');
+    }
 }
 
 module.exports = {
