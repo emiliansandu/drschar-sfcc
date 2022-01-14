@@ -16,13 +16,13 @@
             </label>
         </div>
         <div class="col-3 text-right shipping-method-pricing end-lines">
-        <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value!='' && pdict.order.totals.shippingLevelDiscountTotal.value!='0.0' && pdict.order.totals.shippingLevelDiscountTotal.value!=null}">
-            <del>
-            <span class="shipping-cost" data-shipping-level-discount-total="${pdict.order.totals.shippingLevelDiscountTotal.value}">${shippingMethod.shippingCost}</span>
+        <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value!='' && pdict.order.totals.shippingLevelDiscountTotal.value!='0.0' && pdict.order.totals.shippingLevelDiscountTotal.value!=null && shippingModel.selectedShippingMethod.ID==shippingMethod.ID}">
+            <del class="strike-through">
+            <span class="shipping-cost" data-shipping-level-discount-total="${pdict.order.totals.shippingLevelDiscountTotal.value}" data-selected-shipping-method="${shippingModel.selectedShippingMethod.ID}">${shippingMethod.shippingCost}</span>
             </del>&nbsp;
             <span class="shipping-cost totalWithAppliedPromotion"></span>
         <iselse/>
-            <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+            <span class="shipping-cost" data-shipping-level-discount-total="" data-selected-shipping-method="${shippingModel.selectedShippingMethod.ID}">${shippingMethod.shippingCost}</span>
         </isif>
         </div>
     </isloop>

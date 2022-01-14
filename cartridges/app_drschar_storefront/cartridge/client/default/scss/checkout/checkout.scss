@@ -4,3 +4,9 @@
 .warningShipping {
     color: $red;
 }
+.shipping-method-pricing .strike-through{
+    color: $grey5;
+}
+.shipping-method-pricing .totalWithAppliedPromotion{
+    color: $danger;
+}
