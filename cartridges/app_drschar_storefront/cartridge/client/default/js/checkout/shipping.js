@@ -1,8 +1,8 @@
 'use strict';
 
-var addressHelpers = require('./address');
-var formHelpers = require('./formErrors');
-var scrollAnimate = require('../components/scrollAnimate');
+var addressHelpers = require('base/checkout/address');
+var formHelpers = require('base/checkout/formErrors');
+var scrollAnimate = require('base/components/scrollAnimate');
 
 /**
  * updates the shipping address selector within shipping forms
@@ -669,10 +669,12 @@ function editOrEnterMultiShipInfo(element, mode) {
 }
 
 function updateShippingCostWithPromoDiscount(order) {
+    
     var shippingLevelDiscountTotalValue = order.totals.shippingLevelDiscountTotal.value;
     if(shippingLevelDiscountTotalValue!=='' && shippingLevelDiscountTotalValue!==0 && shippingLevelDiscountTotalValue!==null){
     var shippingMethod = $('.shipping-method-list:visible').find('.form-check-input:radio:checked');
-    var shippingMethodPricing = $(shippingMethod).parent().siblings('.shipping-method-pricing').first();
+    
+    var shippingMethodPricing = $(shippingMethod).parent().next('.shipping-method-pricing').first();
     var shippingMethodPricingVal = shippingMethodPricing.text();
     var shippingMethodPricingValue = shippingMethodPricingVal.split('$');
     shippingMethodPricingValue = shippingMethodPricingValue[1];

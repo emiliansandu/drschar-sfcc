@@ -1,9 +1,9 @@
 'use strict';
 
 var addressHelpers = require('base/checkout/address');
-var shippingHelpers = require('./checkout/shipping');
+var shippingHelpers = require('./shipping');
 var billingHelpers = require('./billing');
-var summaryHelpers = require('./checkout/summary');
+var summaryHelpers = require('./summary');
 var formHelpers = require('base/checkout/formErrors');
 var scrollAnimate = require('base/components/scrollAnimate');
 var adyenCheckout = require('../adyenCheckout');
