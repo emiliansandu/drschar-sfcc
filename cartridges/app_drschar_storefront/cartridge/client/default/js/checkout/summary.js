@@ -13,9 +13,10 @@ function updateTotals(totals) {
     if (totals.orderLevelDiscountTotal.value > 0) {
         $('.order-discount').removeClass('hide-order-discount');
         $('.order-discount-total').text('- ' + totals.orderLevelDiscountTotal.formatted);
-    } else {
-        $('.order-discount').addClass('hide-order-discount');
-    }
+        updateDrScharSubTotalWithOrderDiscount();
+            } else {
+                $('.order-discount').addClass('hide-order-discount');
+            }
 
     if (totals.shippingLevelDiscountTotal.value > 0) {
         $('.shipping-discount').removeClass('hide-shipping-discount');
@@ -139,8 +140,25 @@ function updateOrderProductSummaryInformation(order) {
         }
     });
 }
+/*here we do changes to show a subtotal quantity on totals summary for checkout which is a result
+we get from the subtotal (now is treated as total on top of summary) 
+and the order level discount value substraccion operation*/
+function updateDrScharSubTotalWithOrderDiscount() {
+                var grandSubtotal=$(".grand-subtotal").text();
+                grandSubtotal = grandSubtotal.split('$');
+                grandSubtotal = grandSubtotal[1];
+                var orderDiscountTotal = $('.order-discount-total').data("order-level-discount-total");
+                    if(grandSubtotal>=orderDiscountTotal){
+                        var subTotal = grandSubtotal-orderDiscountTotal;
+                        subTotal='$'+parseFloat(subTotal).toFixed(2);
+                        $(".sub-total").text(subTotal);
+                    }else{
+                        $(".sub-total").text('$0.00');  
+                    }
+                }
 
 module.exports = {
     updateTotals: updateTotals,
-    updateOrderProductSummaryInformation: updateOrderProductSummaryInformation
+    updateOrderProductSummaryInformation: updateOrderProductSummaryInformation,
+    updateDrScharSubTotalWithOrderDiscount: updateDrScharSubTotalWithOrderDiscount
 };

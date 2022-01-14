@@ -3,7 +3,7 @@
 var addressHelpers = require('base/checkout/address');
 var shippingHelpers = require('base/checkout/shipping');
 var billingHelpers = require('./billing');
-var summaryHelpers = require('base/checkout/summary');
+var summaryHelpers = require('./checkout/summary');
 var formHelpers = require('base/checkout/formErrors');
 var scrollAnimate = require('base/components/scrollAnimate');
 var adyenCheckout = require('../adyenCheckout');
@@ -553,7 +553,7 @@ var adyenCheckout = require('../adyenCheckout');
         $(".edit-button").on('click', function(){
             $('.submit-shipping').attr('disabled', false);
         });
-
+        summaryHelpers.updateDrScharSubTotalWithOrderDiscount();
         
 
     function emailBillingInputRecreate() {

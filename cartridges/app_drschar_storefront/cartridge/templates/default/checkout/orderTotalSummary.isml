@@ -1,10 +1,10 @@
-<!--- Grand Total --->
+<!--- Sub Total --->
 <div class="row grand-total leading-lines">
     <div class="col-6 start-lines">
         <p class="order-receipt-label"><span>${Resource.msg('label.order.grand.total','confirmation', null)}</span></p>
     </div>
     <div class="col-6 end-lines">
-        <p class="text-right"><span class="grand-total-sum">${pdict.order.totals.grandTotal}</span></p>
+        <p class="text-right"><span class="grand-subtotal">${pdict.order.totals.subTotal}</span></p>
     </div>
 </div>
 <!--- Order Discount --->
@@ -13,16 +13,16 @@
         <p class="order-receipt-label"><span>${Resource.msg('label.order.discount', 'common', null)}</span></p>
     </div>
     <div class="col-6 end-lines">
-        <p class="text-right"><span class="order-discount-total">(-${pdict.order.totals.orderLevelDiscountTotal.formatted})</span></p>
+        <p class="text-right"><span class="order-discount-total" data-order-level-discount-total="${pdict.order.totals.orderLevelDiscountTotal.value}">(-${pdict.order.totals.orderLevelDiscountTotal.formatted})</span></p>
     </div>
 </div>
-<!--- Subtotal --->
+<!--- Subtotal after Order Discount --->
 <div class="row leading-lines subtotal-item">
     <div class="col-6 start-lines">
         <p class="order-receipt-label"><span>${Resource.msg('label.order.subtotal','confirmation', null)}</span></p>
     </div>
     <div class="col-6 end-lines">
-        <p class="text-right"><span class="sub-total">${pdict.order.totals.subTotal}</span></p>
+        <p class="text-right"><span class="sub-total"></span></p>
     </div>
 </div>
 <!--- Shipping Cost --->
