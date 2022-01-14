@@ -1,7 +1,7 @@
 'use strict';
 
 var addressHelpers = require('base/checkout/address');
-var shippingHelpers = require('base/checkout/shipping');
+var shippingHelpers = require('./checkout/shipping');
 var billingHelpers = require('./billing');
 var summaryHelpers = require('./checkout/summary');
 var formHelpers = require('base/checkout/formErrors');
