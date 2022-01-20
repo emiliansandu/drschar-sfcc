@@ -1,10 +1,14 @@
 <isinclude template="/components/modules" sf-toolkit="off" />
-    <button class="btn btn-link" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">
-        <i class="fa fa-plus"></i>${Resource.msg('label.promotions.applied','cart',null)}
+<div class="promotionsContentAssets">
+    <button class="btn" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">
+        <span>${Resource.msg('label.promotions.applied','cart',null)} </span>
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-down"></i>
     </button>
-<div class="row">
+    
+<div class="col">
 <isloop items="${pdict.totals.discounts}" var="discount">
-  <div class="col">
+  <div class="row">
     <div class="collapse" id="collapsePromo">
       <div class="card card-body">
         <iscontentasset aid="${discount.relatedContentAssetID}"/>
@@ -12,4 +16,5 @@
     </div>
   </div>
 </isloop>
+</div>
 </div>

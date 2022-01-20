@@ -13,3 +13,47 @@
 .cart-page{
     margin-bottom: 20px;
 }
+.promotionsContentAssets{
+        width:100%;
+        .btn{
+            width: 50%;
+            text-align: left;
+        }
+        .col .row #collapsePromo{
+                width: 50%;
+                align-content: center;
+                .card.card-body{
+                    border: none;
+                }
+            }
+            
+            @include media-breakpoint-down(lg) {
+                .btn{
+                    width: 100%;
+                }
+                .col .row #collapsePromo{
+                    width: 100%;
+                }
+            }
+            @include media-breakpoint-up(lg) {
+                .btn{
+                    width: 50%;
+                }
+                .col .row #collapsePromo{
+                    width: 50%;
+                }
+            }
+    }
+    
+
+.promotionsContentAssets .btn i   {
+        float: right;
+        line-height: unset;
+    }
+.promotionsContentAssets .btn[aria-expanded=true] .fa-chevron-up {
+    display: none;  
+    }
+.promotionsContentAssets .btn[aria-expanded=false] .fa-chevron-down {
+    display: none;  
+    }
+
