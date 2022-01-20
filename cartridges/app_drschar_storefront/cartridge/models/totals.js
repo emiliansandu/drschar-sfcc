@@ -91,7 +91,8 @@ function getDiscounts(lineItemContainer) {
             couponCode: couponLineItem.couponCode,
             applied: couponLineItem.applied,
             valid: couponLineItem.valid,
-            relationship: priceAdjustments
+            relationship: priceAdjustments,
+            relatedContentAssetID: couponLineItem.promotion.custom.relatedContentAssetID
         };
     });
 
