@@ -2,6 +2,7 @@
 
 var base = require('base/product/base');
 var focusHelper = require('base/components/focus');
+var summaryHelpers = require('../checkout/summary');
 
 $(document).ready(function () {
     carouselFormat(3000);
@@ -109,8 +110,12 @@ function updateCartTotals(data) {
         $('.order-discount').removeClass('hide-order-discount');
         $('.order-discount-total').empty()
             .append('- ' + data.totals.orderLevelDiscountTotal.formatted);
+        $('.order-discount-total').attr("data-order-level-discount-total", data.totals.orderLevelDiscountTotal.value);
+            summaryHelpers.updateDrScharSubTotalWithOrderDiscount();
     } else {
         $('.order-discount').addClass('hide-order-discount');
+        $('.order-discount-total').attr("data-order-level-discount-total", data.totals.orderLevelDiscountTotal.value);
+            summaryHelpers.updateDrScharSubTotalWithOrderDiscount();
     }
 
     if (data.totals.shippingLevelDiscountTotal.value > 0) {
@@ -315,6 +320,7 @@ function confirmDelete(actionUrl, productID, productName, uuid) {
 
     $productToRemoveSpan.empty().append(productName);
 }
+summaryHelpers.updateDrScharSubTotalWithOrderDiscount();
 
 module.exports = function () {
     $('body').on('click', '.remove-product', function (e) {

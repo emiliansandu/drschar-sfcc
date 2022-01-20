@@ -146,14 +146,15 @@ and the order level discount value substraccion operation*/
 function updateDrScharSubTotalWithOrderDiscount() {
                 var grandSubtotal=$(".grand-subtotal").text();
                 grandSubtotal = grandSubtotal.split('$');
-                grandSubtotal = grandSubtotal[1];
-                var orderDiscountTotal = $('.order-discount-total').data("order-level-discount-total");
+                grandSubtotal = parseFloat(grandSubtotal[1]);
+                var orderDiscountTotal = $('.order-discount-total').attr("data-order-level-discount-total");
+                orderDiscountTotal = parseFloat(orderDiscountTotal);
                     if(grandSubtotal>=orderDiscountTotal){
                         var subTotal = grandSubtotal-orderDiscountTotal;
                         subTotal='$'+parseFloat(subTotal).toFixed(2);
-                        $(".sub-total").text(subTotal);
+                        $(".subtotal").text(subTotal);
                     }else{
-                        $(".sub-total").text('$0.00');  
+                        $(".subtotal").text('$0.00');  
                     }
                 }
 

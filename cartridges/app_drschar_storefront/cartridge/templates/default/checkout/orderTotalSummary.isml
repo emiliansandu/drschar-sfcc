@@ -22,7 +22,7 @@
         <p class="order-receipt-label"><span>${Resource.msg('label.order.subtotal','confirmation', null)}</span></p>
     </div>
     <div class="col-6 end-lines">
-        <p class="text-right"><span class="sub-total"></span></p>
+        <p class="text-right"><span class="subtotal"></span></p>
     </div>
 </div>
 <!--- Shipping Cost --->
