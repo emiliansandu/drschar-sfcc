@@ -73,6 +73,9 @@
                             </isif>
                         </isif>
                     </isloop>
+                    <isif condition="${pdict.totals.discounts.length>0}">
+                        <isinclude template="cart/promotionsTermsAndConditions" />
+                    </isif>
                     <isinclude template="cart/cartApproachingDiscount" />
                 </div>
                 <!---totals, and checkout actions--->
@@ -85,9 +88,6 @@
                         <isinclude template="cart/cartShippingMethodSelection" />
                     </div>
                     <isinclude template="cart/cartTotals" />
-                    <isif condition="${pdict.totals.discounts.length>0}">
-                        <isinclude template="cart/promotionsTermsAndConditions" />
-                    </isif>
                     <div class="row">
                         <div class="col-12 checkout-continue">
                             <isinclude template="cart/checkoutButtons" />
