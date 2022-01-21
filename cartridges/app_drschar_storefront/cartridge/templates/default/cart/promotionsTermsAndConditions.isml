@@ -1,20 +1,32 @@
 <isinclude template="/components/modules" sf-toolkit="off" />
-<div class="promotionsContentAssets">
+  <isif condition="${pdict.totals.discounts.length>0}">
+          <isloop items="${pdict.totals.discounts}" var="discountCheck">
+            <isif condition="${discountCheck.relatedContentAssetID!==null}">
+                <isset name=dNone value="" scope="page"/> 
+              <isbreak/>
+            <iselse/>
+              <isset name=dNone value=d-none scope="page"/> 
+            </isif>
+          </isloop>
+  <iselse/>
+      <isset name=dNone value=d-none scope="page"/>
+  </isif>
+<div class="promotionsContentAssets ${dNone}">
     <button class="btn" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">
         <span>${Resource.msg('label.promotions.applied','cart',null)} </span>
         <i class="fas fa-chevron-up"></i>
         <i class="fas fa-chevron-down"></i>
     </button>
-    
+      
 <div class="col">
-<isloop items="${pdict.totals.discounts}" var="discount">
-  <div class="row">
-    <div class="collapse" id="collapsePromo">
-      <div class="card card-body">
-        <iscontentasset aid="${discount.relatedContentAssetID}"/>
+  <isloop items="${pdict.totals.discounts}" var="discount">
+    <div class="row">
+      <div class="collapse" id="collapsePromo">
+        <div class="card card-body">
+          <iscontentasset aid="${discount.relatedContentAssetID}"/>
+        </div>
       </div>
     </div>
+  </isloop>
   </div>
-</isloop>
-</div>
 </div>
