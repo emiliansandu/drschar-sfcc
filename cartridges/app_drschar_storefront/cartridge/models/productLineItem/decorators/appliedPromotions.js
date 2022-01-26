@@ -20,7 +20,8 @@ function getAppliedPromotions(lineItem) {
                         priceAdjustment.promotion.calloutMsg.markup : '',
                     name: priceAdjustment.promotion.name,
                     details: priceAdjustment.promotion.details ?
-                        priceAdjustment.promotion.details.markup : ''
+                        priceAdjustment.promotion.details.markup : '',
+                    relatedContentAssetID: priceAdjustment.promotion.custom.relatedContentAssetID
                 };
             }
             return {
