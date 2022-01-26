@@ -1,4 +1,5 @@
 <isinclude template="/components/modules" sf-toolkit="off" />
+<!--this section is to check for discounts due to applied promotions on order, promocode or shipping level and depending on that show o not to show terms and conditions content asset reltaed promotions information element-->
   <isif condition="${pdict.totals.discounts.length>0}">
           <isloop items="${pdict.totals.discounts}" var="discountCheck">
             <isif condition="${discountCheck.relatedContentAssetID!==null}">
@@ -11,8 +12,29 @@
   <iselse/>
       <isset name=dNone value=d-none scope="page"/>
   </isif>
+  
+<!--this section is to check for discounts due to applied promotions on product level and depending on that show o not to show terms and conditions content asset reltaed promotions information element-->
+  <isloop items="${pdict.items}" var="lineItem">
+     <isif condition="${lineItem.appliedPromotions.length>0}">        
+            <isloop items="${lineItem.appliedPromotions}" var="lineItemRelatedContentAssetCheck">
+              <isif condition="${lineItemRelatedContentAssetCheck.relatedContentAssetID!==null}">
+                  <isset name=dNone value="" scope="page"/>
+                  <isset name=productLevelDiscount value="${true}" scope="page"/>
+                <isbreak/>
+              <iselseif condition="${dNone=='d-none'}"/>
+                <isset name=dNone value=d-none scope="page"/> 
+              </isif>
+            </isloop>
+      <iselseif condition="${dNone=='d-none'}"/>
+            <isset name=dNone value=d-none scope="page"/>
+      </isif>
+  </isloop>
+  
+      
+  
+
 <div class="promotionsContentAssets ${dNone}">
-    <button class="btn" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">
+    <button class="btn" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo" disabled>
         <span>${Resource.msg('label.promotions.applied','cart',null)} </span>
         <i class="fas fa-chevron-up"></i>
         <i class="fas fa-chevron-down"></i>
@@ -28,5 +50,18 @@
       </div>
     </div>
   </isloop>
+  <isif condition="${productLevelDiscount==true}">
+  <isloop items="${pdict.items}" var="lineItem">
+    <isloop items="${lineItem.appliedPromotions}" var="lineItemRelatedContentAsset">
+      <div class="row">
+        <div class="collapse" id="collapsePromo">
+          <div class="card card-body">
+            <iscontentasset aid="${lineItemRelatedContentAsset.relatedContentAssetID}"/>
+          </div>
+        </div>
+      </div>
+    </isloop>
+  </isloop>
+  </isif>
   </div>
 </div>
