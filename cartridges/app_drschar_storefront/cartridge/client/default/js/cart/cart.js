@@ -6,7 +6,31 @@ var summaryHelpers = require('../checkout/summary');
 
 $(document).ready(function () {
     carouselFormat(3000);
+    removeDuplicatedContentAssets();  
 });
+
+
+function removeDuplicatedContentAssets(){
+    setTimeout(function() {
+   var contentAssetsArray=[];    
+    $('.promotionsContentAssets').find('.row').each(function( index ) {   
+            contentAssetsArray.push($(this).html());
+            });
+        var uniqueAssets = [];
+        $(contentAssetsArray).each(function( index, element ) {
+            if(uniqueAssets.indexOf(element)===-1){
+                uniqueAssets.push(element);
+                $('.promotionsContentAssets .btn').removeAttr('disabled');
+            }
+            
+        }); 
+        $('.promotionsContentAssets .col').empty();  
+        $(uniqueAssets).each(function( index ) {    
+            $('.promotionsContentAssets .col').append('<div class="row">'+this+'</div>'); 
+        }); }, 2000);  
+    }
+
+
 
 function carouselFormat(time){
     setTimeout(function(){  
@@ -322,37 +346,83 @@ function confirmDelete(actionUrl, productID, productName, uuid) {
 }
 
 function updatePromotionsRelatedContentAssetDisplaying(data){
-    var dataDiscounts=data.totals.discounts;
-    if(dataDiscounts!=null && dataDiscounts!=undefined && dataDiscounts.length>0){
-        for(var i=0; i<dataDiscounts.length; i++){ 
-            var relatedContentAssetID=data.totals.discounts[i].relatedContentAssetID;
-            if(relatedContentAssetID!==null){ 
-            if($('.promotionsContentAssets').hasClass('d-none')){ 
-                    $('.promotionsContentAssets .col').empty();
-                    $('.promotionsContentAssets').removeClass('d-none');
-                }else{
-                    $('.promotionsContentAssets .col').empty();    
-                }
-            $('.promotionsContentAssets .col').append('<div class="row"><div class="collapse" id="collapsePromo"><div class="card card-body"><iscontentasset aid='+relatedContentAssetID+'/></div></div>');
-            $(".promotionsContentAssets .col").load("#" + " .promotionsContentAssets .col>*");// this is very important to force the content asset to render correctly
-                }else{
-                    if(!$('.promotionsContentAssets').hasClass('d-none')){
-                        $('.promotionsContentAssets').addClass('d-none'); 
-                        }
-                    if(!$('.promotionsContentAssets .col').is(':empty')){
-                        $('.promotionsContentAssets .col').empty(); 
-                        } 
+            if(data.totals && data.totals.discounts){
+                    var dataDiscounts=data.totals.discounts;
                     }
+            if(data.items){
+                var dataItems=data.items;
+                for(var l=0; l<dataItems.length; l++){
+                    if(dataItems[l].appliedPromotions!==undefined){
+                        for(var m=0; m<dataItems[l].appliedPromotions.length; m++){
+                            var appliedPromotions = dataItems[l].appliedPromotions;
+                            if(dataItems[l].appliedPromotions[m].relatedContentAssetID!='' && dataItems[l].appliedPromotions[m].relatedContentAssetID!=undefined){
+                                var checkProductLevelPromotionsExists =dataItems[l].appliedPromotions[m].relatedContentAssetID;
+                            break   
+                            }
+                        }
+                    } 
+                }
+            }
+        if(dataDiscounts!=null && dataDiscounts!=undefined && dataDiscounts.length>0){
+            for(var i=0; i<dataDiscounts.length; i++){ 
+                var relatedContentAssetID=data.totals.discounts[i].relatedContentAssetID;
+                if(relatedContentAssetID!==null){ 
+                if($('.promotionsContentAssets').hasClass('d-none')){ 
+                        $('.promotionsContentAssets .col').empty();
+                        $('.promotionsContentAssets').removeClass('d-none');
+                    }else{
+                        $('.promotionsContentAssets .col').empty();    
+                    }
+                $('.promotionsContentAssets .col').append('<div class="row"><div class="collapse" id="collapsePromo"><div class="card card-body"><iscontentasset aid='+relatedContentAssetID+'/></div></div></div>');
+                $(".promotionsContentAssets .col").load("#" + " .promotionsContentAssets .col>*");// this is very important to force the content asset to render correctly
+                    }else{
+                        if(!$('.promotionsContentAssets').hasClass('d-none')){
+                            $('.promotionsContentAssets').addClass('d-none'); 
+                            }
+                        if(!$('.promotionsContentAssets .col').is(':empty')){
+                            $('.promotionsContentAssets .col').empty(); 
+                            } 
+                        }
+            }
         }
-    }else{
-            if(!$('.promotionsContentAssets').hasClass('d-none')){ 
-                $('.promotionsContentAssets').addClass('d-none');
-             }
-            if(!$('.promotionsContentAssets .col').is(':empty')){
-                $('.promotionsContentAssets .col').empty(); 
-            } 
+        if(dataItems!=null && dataItems!=undefined && dataItems.length>0){
+                for(var j=0; j<dataItems.length; j++){ 
+                    if(dataItems[j].appliedPromotions!=null && dataItems[j].appliedPromotions!=undefined && dataItems[j].appliedPromotions.length>0){
+                    for(var k=0; k<dataItems[j].appliedPromotions.length; k++){
+                    var relatedContentAssetID=dataItems[j].appliedPromotions[k].relatedContentAssetID;
+                    if(relatedContentAssetID!==null){ 
+                    if($('.promotionsContentAssets').hasClass('d-none')){ 
+                            $('.promotionsContentAssets .col').empty();
+                            $('.promotionsContentAssets').removeClass('d-none');
+                        }else{
+                            $('.promotionsContentAssets .col').empty();    
+                        }
+                    $('.promotionsContentAssets .col').append('<div class="row"><div class="collapse" id="collapsePromo"><div class="card card-body"><iscontentasset aid='+relatedContentAssetID+'/></div></div>');
+                    $(".promotionsContentAssets .col").load("#" + " .promotionsContentAssets .col>*");// this is very important to force the content asset to render correctly
+                            }else{
+                            if(!$('.promotionsContentAssets').hasClass('d-none')){
+                                $('.promotionsContentAssets').addClass('d-none'); 
+                                }
+                            if(!$('.promotionsContentAssets .col').is(':empty')){
+                                $('.promotionsContentAssets .col').empty(); 
+                                } 
+                            }
+                    }
+                }
+            }
         }
-    }
+            
+        if((dataDiscounts==null || dataDiscounts==undefined || dataDiscounts.length==0) && (appliedPromotions==undefined || checkProductLevelPromotionsExists==undefined))
+            {
+                if(!$('.promotionsContentAssets').hasClass('d-none')){ 
+                    $('.promotionsContentAssets').addClass('d-none');
+                }
+                if(!$('.promotionsContentAssets .col').is(':empty')){
+                    $('.promotionsContentAssets .col').empty(); 
+                } 
+            }
+            removeDuplicatedContentAssets();          
+        }
 summaryHelpers.updateDrScharSubTotalWithOrderDiscount();
 
 module.exports = function () {
@@ -520,9 +590,9 @@ module.exports = function () {
                     updateCartTotals(data);
                     updateApproachingDiscounts(data.approachingDiscounts);
                     validateBasket(data);
-                }
+ 
                 updatePromotionsRelatedContentAssetDisplaying(data);
-                $.spinner().stop();
+                }$.spinner().stop();
             },
             error: function (err) {
                 if (err.redirectUrl) {
@@ -568,9 +638,10 @@ module.exports = function () {
                     updateApproachingDiscounts(data.approachingDiscounts);
                     validateBasket(data);
                     $('body').trigger('promotion:success', data);
+                    updatePromotionsRelatedContentAssetDisplaying(data);
                 }
                 $('.coupon-code-field').val('');
-                updatePromotionsRelatedContentAssetDisplaying(data);
+
                 $.spinner().stop();
             },
             error: function (err) {
