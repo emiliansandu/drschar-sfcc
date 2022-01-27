@@ -288,7 +288,17 @@ function mappingFilter(key, val, data) {
         if ('type' in key) {
             switch (key.type) {
                 case 'bool':
-                    val = val ? 'Y' : 'N';
+                    var subscribed=val.custom.subscribed;
+                    var subscribedCorp=val.custom.subscribedCorp;
+                    if(key.label=='Subscribed' || key.label=='Subscribed Corp'){
+                        if(key.label=='Subscribed' && subscribed==true){
+                            val = 'Y';
+                           }
+                        else if(key.label=='Subscribed Corp' && subscribedCorp==true){
+                            val = 'Y';
+                           }
+                           else{ val = 'N'; }
+                       }else { val = val ? 'Y' : 'N'; }
                     break;
                 case 'array':
                     // mappedValue can be a string or an object
