@@ -88,8 +88,6 @@ public class BillingInformation extends PageObject {
         WebElement field = paymentData.findElement(By.id("emailOnShipping"));
         field.sendKeys(propertyReader.getProperty("billing.emailOnShipping"));
 
-        WebElement field = paymentData.findElement(By.id("email"));
-        field.sendKeys(propertyReader.getProperty("billing.email"));
     }
 
     public void fillPaymentData() {
