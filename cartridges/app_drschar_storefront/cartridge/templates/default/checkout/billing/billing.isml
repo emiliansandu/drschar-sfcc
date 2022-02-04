@@ -48,7 +48,7 @@
             <!-------------------------------------------------------------------------->
             <fieldset class="contact-info-block">
                 <div class="row">
-                    <div class="col-sm-6 d-none">
+                    <div class="col-sm-6">
                         <div class="form-group
                             <isif condition=${pdict.forms.billingForm.contactInfoFields.email.mandatory === true}>required</isif>
                             ${pdict.forms.billingForm.contactInfoFields.email.htmlName}">
@@ -62,12 +62,12 @@
                                 </span>
                             </button>
                             <input type="text" class="form-control email" id="email"
-                                value="${pdict.order.orderEmail||pdict.customer.profile.email}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
+                                value="${pdict.order.orderEmail||''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
                                 aria-describedby="emailInvalidMessage" >
                             <div class="invalid-feedback" id="emailInvalidMessage"></div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group
                             <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
                             ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">

@@ -538,11 +538,11 @@ var adyenCheckout = require('../adyenCheckout');
 //here we listen to changes or click on new shipping form email input element 
 //and pass it the old billing form input text element this includes remove the original input element en generate a new one which must contain all the original form-input attributes 
         $('body').on('change', "#emailOnShipping", function() {   
-            emailBillingInputRecreate();
+         //   emailBillingInputRecreate();
         });
 
         $(".submit-shipping").on('click', function(){
-            emailBillingInputRecreate();
+        //    emailBillingInputRecreate();
         });
 
         //here we wait to listen to click event on submit payment button to add form attributes this way we avoid to need to write value by hand which is a must when this value have to be changed on this input        
