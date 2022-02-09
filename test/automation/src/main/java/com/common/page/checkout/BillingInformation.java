@@ -87,14 +87,13 @@ public class BillingInformation extends PageObject {
 
         WebElement field = paymentData.findElement(By.id("emailOnShipping"));
         field.sendKeys(propertyReader.getProperty("billing.emailOnShipping"));
-
     }
 
     public void fillPaymentData() {
         wait.until(ExpectedConditions.visibilityOf(paymentData));
 
-        WebElement field = paymentData.findElement(By.id("email"));
-        field.sendKeys(propertyReader.getProperty("payment.email"));
+       /* WebElement field = paymentData.findElement(By.id("email"));
+        field.sendKeys(propertyReader.getProperty("payment.email"));*/
 
         /*driver.switchTo().frame("js-iframe");
             driver.findElement(
