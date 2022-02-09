@@ -231,7 +231,9 @@ function updateShippingMethodList($shippingForm) {
             }
         });
     }, 300);
-    updateShippingCostWithPromoDiscount(urlParams.order)
+    if(urlParams){
+    updateShippingCostWithPromoDiscount(urlParams.order);
+    }
 }
 
 /**
