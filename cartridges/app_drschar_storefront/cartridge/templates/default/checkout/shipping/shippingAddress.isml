@@ -169,13 +169,13 @@
             <isif condition="${pdict.customer.profile.email}">
                         <input type="text" class="form-control email" id="emailOnShipping"
                             value="${pdict.order.orderEmail||pdict.customer.profile.email}" <isprint value=${contactInfoEmailField.attributes} encoding="off"/>
-                            aria-describedby="emailInvalidMessage" />
+                            aria-describedby="emailInvalidMessageOnShipping" />
                 <iselse/>
                         <input type="text" class="form-control email" id="emailOnShipping"
                             value="${pdict.order.orderEmail||''}" <isprint value=${contactInfoEmailField.attributes} encoding="off"/>
-                            aria-describedby="emailInvalidMessage" />
+                            aria-describedby="emailInvalidMessageOnShipping" />
             </isif>
-            <div class="invalid-feedback" id="emailInvalidMessage"></div>
+            <div class="invalid-feedback" id="emailInvalidMessageOnShipping"></div>
         </div>
     </div>
     
