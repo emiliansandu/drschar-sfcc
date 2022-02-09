@@ -536,19 +536,26 @@ var adyenCheckout = require('../adyenCheckout');
         return this;
     };
 //here we listen to changes or click on new shipping form email input element 
-//and pass it the old billing form input text element this includes remove the original input element en generate a new one which must contain all the original form-input attributes 
+//and pass it the old billing form input text element this includes remove the original input element en generate a new one which will not contain all the original form attributes due to problems with credit card function when all atributes are present
         $('body').on('change', "#emailOnShipping", function() {   
-         //   emailBillingInputRecreate();
+            emailBillingInputRecreate();
         });
 
         $(".submit-shipping").on('click', function(){
-        //    emailBillingInputRecreate();
+            emailBillingInputRecreate();            
         });
-
-        //here we wait to listen to click event on submit payment button to add form attributes this way we avoid to need to write value by hand which is a must when this value have to be changed on this input        
-        $(".submit-payment").on('click', function(){
-                $('#email').attr({'name':'dwfrm_billing_contactInfoFields_email', 'required':'', 'aria-required':"true", 'maxlength':"50", 'pattern':"^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"});
+        
+        //here we wait to listen to click event on submit payment or paypal-tab buttons to add form attributes this way we avoid to need to write value by hand which is a must when this value have to be changed on this input        
+        $(".paypal-tab, .submit-payment").on('click', function(){
+            $('#email').attr({'name':'dwfrm_billing_contactInfoFields_email', 'required':'', 'aria-required':"true", 'maxlength':"50", 'pattern':"^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"});
         });
+        //here detects when user move accross body of page and check if paypal tab is active and visible to proceed to add email form attributes needed by paypal to handle email data and avoid paypal pop up window from not being populate due to email form name attribute not being found
+        $('body').on('mouseover touchmove', function(e) {
+            if ($('.paypal-tab').hasClass('active') && $(".paypal-tab").is(":visible")) {
+            $('#email').attr({'name':'dwfrm_billing_contactInfoFields_email', 'required':'', 'aria-required':"true", 'maxlength':"50", 'pattern':"^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"});
+            }    });
+        //here sessionStorage.email value is assigned to email input field when page is refreshed this to prevent a null value on this field when page is refreshed
+        $(".email").attr('value', sessionStorage.email);
         //edit button now enable submit shipping button when click event
         $(".edit-button").on('click', function(){
             $('.submit-shipping').attr('disabled', false);
@@ -560,9 +567,9 @@ var adyenCheckout = require('../adyenCheckout');
         var emailInputValue=$('#emailOnShipping').val();
             $('#email').remove();
             $('.dwfrm_billing_contactInfoFields_email').append('<input type="text" class="form-control email" id="email" value='+emailInputValue+' aria-describedby="emailInvalidMessage"/>');
+            sessionStorage.email = emailInputValue; //eemailOnShipping value saved on sessionStorage object to use it when needed 
         var emailInvalidMessage=$('#emailInvalidMessage').clone();
-            $('#emailInvalidMessage').remove();
-            emailInvalidMessage.appendTo('.dwfrm_shipping_shippingAddress_emailOnShipping'); 
+            $('#emailInvalidMessage').remove(); 
             emailInvalidMessage.appendTo('.dwfrm_billing_contactInfoFields_email');
             
     }
