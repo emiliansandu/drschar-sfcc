@@ -9,8 +9,6 @@ server.extend(module.superModule);
 server.append('Show', function (req, res, next) {
     var YotpoIntegrationHelper = require('*/cartridge/scripts/common/integrationHelper.js');
     var viewData = YotpoIntegrationHelper.addRatingsOrReviewsToViewData(res.getViewData());
-    var displayRatings = dw.system.Site.getCurrent().getCustomPreferenceValue('yotpoDisplayPLPRatings');
-    viewData.yotpoWidgetData.isRatingsEnabled = displayRatings;
     res.setViewData(viewData);
 
     next();
