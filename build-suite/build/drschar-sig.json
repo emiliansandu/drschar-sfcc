@@ -54,8 +54,8 @@
   "environments": {
     "ci": {
       "server": "bgpc-001.sandbox.us01.dx.commercecloud.salesforce.com",
-      "username": "ocordero@unitedvirtualities.com",
-      "password": "t8kdrXdL61E_zfs6cPsYgXEVcjpeYYNQKw==",
+      "username": "jmorodriguez@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_ArmXlfQKbNfAtrK2FpCc9r5ApM48ZUaojg0PO0/QHos=",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     },
@@ -96,8 +96,8 @@
     },
     "development": {
       "server": "development-na01-drschar.demandware.net",
-      "username": "miguel.ortiz@argano.com",
-      "password": "P3jeeLagart000s",
+      "username": "jmorodriguez@unitedvirtualities.com",
+      "password": "t8kdrXdL61E_ArmXlfQKbNfAtrK2FpCc9r5ApM48ZUaojg0PO0/QHos=",
       "client_id": "3684c81c-c13a-40f5-8d88-c79f97b04e4e",
       "client_secret": "t8kdrXdL61E_qxdFTXTfiaF6BPhgEUtZuA=="
     }
