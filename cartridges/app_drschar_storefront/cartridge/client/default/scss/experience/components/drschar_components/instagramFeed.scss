@@ -47,7 +47,7 @@
   }
   
   .image-container:hover{
-    .overlay-link p{
+    .overlay-link a{
         color:$primary;
       }
       .overlay-text{
@@ -59,7 +59,7 @@
     font-size: 1rem;
     text-align: center;
   }
-  .overlay-link p{
+  .overlay-link a{
     color: transparent;
   }
   .overlay-link:hover {
