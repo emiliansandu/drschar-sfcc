@@ -23,7 +23,7 @@
                                 <p class="overlay-text">
                                 <isprint value = "${post.custom.caption}" padding = "160"/>
                                 </p>
-                                <a class="overlay-link" target="_blank" href="${post.custom.permalink}">
+                                <a class="overlay-link" aria-label="View More" target="_blank" href="${post.custom.permalink}">
                                 <p>View More</p>
                                 </a>
                             </div>
